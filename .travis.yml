@@ -1,0 +1,13 @@
+language: ruby
+rvm:
+  - 2.2
+install:
+  - gem install mdl
+
+script:
+  - find . -name "*.md" | xargs mdl
+  - bash builder/deploy.sh
+env:
+  global:
+    - ENCRYPTION_LABEL: "1c729a2c8c03"
+    - COMMIT_AUTHOR_EMAIL: "Travis Autodeploy <rc-support@ucl.ac.uk>"
