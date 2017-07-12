@@ -1,2 +1,6 @@
 site_name: My Docs
 theme: cinder
+repo_url: https://github.com/UCL-RITS/mkdocs-rc-docs
+edit_uri: blob/master/mkdocs-project-dir/docs/
+site_author: UCL RCAS Team
+site_description: Documentation for the centrally provided Research Computing HPC services at UCL.
