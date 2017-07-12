@@ -1,0 +1,10 @@
+language: python
+python:
+  - 3.6
+
+script:
+  - bash builder/deploy.sh
+env:
+  global:
+    - ENCRYPTION_LABEL: "a3691f9ebf06"
+    - COMMIT_AUTHOR_EMAIL: "Travis Autodeploy <rc-support@ucl.ac.uk>"
