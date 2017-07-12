@@ -7,9 +7,10 @@ set -o errexit \
 build_dir="$(mktemp -d)"
 echo "Building in: $build_dir" >&2
 
+echo "Copying repo..." >&2
 owd="$(pwd)"
 mkdir -p "$build_dir/sources"
-cp -r ./* ./.* "$build_dir/sources/"
+cp -r ./* "$build_dir/sources/"
 
 ## Trying Travis's pip support for now, otherwise use below:
 #echo "Using pip to obtain local MkDocs install..." >&2
@@ -21,7 +22,7 @@ cp -r ./* ./.* "$build_dir/sources/"
 #  if this is the first build, or a local build
 echo "Building site..." >&2
 mkdir -p out 
-cd "$build_dir/mkdocs-project-dir"
+cd "$build_dir/sources/mkdocs-project-dir"
 mkdocs build --site-dir "$owd/out"
 
 rm -Rf -- "$build_dir"
