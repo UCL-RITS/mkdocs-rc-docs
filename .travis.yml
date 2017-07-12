@@ -1,11 +1,8 @@
-language: ruby
-rvm:
-  - 2.2
-install:
-  - gem install mdl
+language: python
+python:
+  - 3.6
 
 script:
-  - find . -name "*.md" | xargs mdl
   - bash builder/deploy.sh
 env:
   global:

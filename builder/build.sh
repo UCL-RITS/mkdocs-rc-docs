@@ -1,26 +1,29 @@
 #!/usr/bin/env bash
 
-set \
-  -o errexit \
-  -o pipefail
+set -o errexit \
+    -o nounset \
+    -o pipefail
 
-# Make a virtualenv with mkdocs if there isn't one
+build_dir="$(mktemp -d)"
+echo "Building in: $build_dir" >&2
 
-if [[ ! -d "./venv" ]]; then
-  virtualenv ./venv
-  source ./venv/bin/activate
-  pip install -r requirements.txt
-fi
+owd="$(pwd)"
+mkdir -p "$build_dir/sources"
+cp -r ./* ./.* "$build_dir/sources/"
 
+## Trying Travis's pip support for now, otherwise use below:
+#echo "Using pip to obtain local MkDocs install..." >&2
+#virtualenv venv
+#source ./venv/bin/activate
+#pip install -r requirements.txt
 
-# run some legit tests
-# probably mdl or something?
-:
+# There only shouldn't be an out directory
+#  if this is the first build, or a local build
+echo "Building site..." >&2
+mkdir -p out 
+cd "$build_dir/mkdocs-project-dir"
+mkdocs build --site-dir "$owd/out"
 
+rm -Rf -- "$build_dir"
 
-# build the site
-
-mkdocs build --clean
-
-
-
+echo "Finished." >&2
