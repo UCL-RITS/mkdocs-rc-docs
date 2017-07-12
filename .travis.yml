@@ -6,5 +6,5 @@ script:
   - bash builder/deploy.sh
 env:
   global:
-    - ENCRYPTION_LABEL: "1c729a2c8c03"
+    - ENCRYPTION_LABEL: "a3691f9ebf06"
     - COMMIT_AUTHOR_EMAIL: "Travis Autodeploy <rc-support@ucl.ac.uk>"
