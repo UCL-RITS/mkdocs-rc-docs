@@ -7,6 +7,8 @@ set -e # Exit with nonzero exit code if anything fails
 SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages"
 
+UPDATE_PULL_WEBHOOK="https://wiki.rc.ucl.ac.uk/webhooks/update_docs.sh"
+
 function doCompile {
   bash builder/build.sh
 }
@@ -67,4 +69,9 @@ git push "$SSH_REPO" "$TARGET_BRANCH"
 
 # Clean up our ssh-agent process
 killall ssh-agent
+
+# Last thing: ping the hosting server to pull the updated docs
+if [[ -n "$UPDATE_PULL_WEBHOOK" ]]; then
+  curl "$UPDATE_PULL_WEBHOOK" || echo 'Did not successfully call update pull hook url.' && exit 1
+fi
 
