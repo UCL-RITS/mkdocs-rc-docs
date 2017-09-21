@@ -20,13 +20,13 @@ On Windows you need something that will give you a suitable terminal and ssh - u
 
 #### Using PuTTY
 
-PuTTY is a common SSH client on Windows and is available on Desktop@UCL. You can find it under Start > All Programs > Applications O-P > PuTTY
+PuTTY is a common SSH client on Windows and is available on Desktop@UCL. You can find it under `Start > All Programs > Applications O-P > PuTTY`
 
 You will need to create an entry for the host you are connecting to with the settings below. If you want to save your settings, give them an easily-identifiable name in the "Saved Sessions" box and press "Save". Then you can select it and "Load" next time you use PuTTY. 
 
 *TODO: img*
 
-You will then have a screen come up that asks you for your username and password. Only enter your username, not "@legion.rc.ucl.ac.uk". The password field will remain entirely blank when you enter it - it does not show placeholders to indicate you have typed something. 
+You will then have a screen come up that asks you for your username and password. Only enter your username, not `@legion.rc.ucl.ac.uk`. The password field will remain entirely blank when you enter it - it does not show placeholders to indicate you have typed something. 
 
 ### Logging in from outside the UCL firewall
 
