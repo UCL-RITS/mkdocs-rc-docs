@@ -26,6 +26,10 @@ You will need to create an entry for the host you are connecting to with the set
 
 ![PuTTY screenshot](img/Putty_gui.png)
 
+In newer versions of PuTTY, it looks like this.
+
+*TODO: new putty*
+
 You will then have a screen come up that asks you for your username and password. Only enter your username, not `@legion.rc.ucl.ac.uk`. The password field will remain entirely blank when you enter it - it does not show placeholders to indicate you have typed something. 
 
 ### Logging in from outside the UCL firewall
