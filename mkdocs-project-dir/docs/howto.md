@@ -64,6 +64,8 @@ This will copy a data file from somewhere on your local machine to a specified l
 
 ```
 scp <local_data_file> <remote_user_id>@<remote_hostname>:<remote_path>
+```
+```
 # Example: copy myfile from your local current directory into Scratch on Legion
 scp myfile ccxxxxx@legion.rc.ucl.ac.uk:~/Scratch/
 ```
@@ -72,6 +74,8 @@ This will do the reverse, copying from the remote machine to your local machine.
 
 ```
 scp <remote_user_id>@<remote_hostname>:<remote_path><remote_data_file> <local_path>
+```
+```
 # Example: copy myfile from Legion into the Backups directory in your local current directory
 scp ccxxxxx@legion.rc.ucl.ac.uk:~/Scratch/myfile Backups/
 ```
@@ -86,7 +90,8 @@ cd <remote_path>
 get <remote_file>
 lcd <local_path>
 put <local_file>
-
+```
+```
 # Example: download a copy of file1 into your local current directory,
 # change local directory and upload a copy of file2
 sftp ccxxxxx@legion.rc.ucl.ac.uk
