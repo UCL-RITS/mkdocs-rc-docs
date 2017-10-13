@@ -145,8 +145,22 @@
         
             <li class="second-level"><a href="#how-do-i-submit-a-job-to-the-scheduler">How do I submit a job to the scheduler?</a></li>
             
+                <li class="third-level"><a href="#passing-in-qsub-options-on-the-command-line">Passing in qsub options on the command line</a></li>
+            
+                <li class="third-level"><a href="#checking-your-previous-jobscripts">Checking your previous jobscripts</a></li>
+            
         
             <li class="second-level"><a href="#how-do-i-monitor-a-job">How do I monitor a job?</a></li>
+            
+                <li class="third-level"><a href="#qstat">qstat</a></li>
+            
+                <li class="third-level"><a href="#qexplain">qexplain</a></li>
+            
+                <li class="third-level"><a href="#qdel">qdel</a></li>
+            
+                <li class="third-level"><a href="#more-scheduler-commands">More scheduler commands</a></li>
+            
+                <li class="third-level"><a href="#nodesforjob">nodesforjob</a></li>
             
         
             <li class="second-level"><a href="#how-do-i-run-a-graphical-program">How do I run a graphical program?</a></li>
@@ -266,7 +280,7 @@ Host aristotle
 </code></pre>
 
 <p>You can now just type <code>ssh legion</code> or <code>scp file1 aristotle:~</code> and you will go through Socrates. You'll be asked for login details twice since you're logging in to two machines, Socrates and your endpoint.  </p>
-<h4 id="windows_1">Windows</h4>
+<h4 id="windows-winscp">Windows - WinSCP</h4>
 <p>WinSCP can also set up SSH tunnels.</p>
 <ol>
 <li>Create a new session as before, and tick the Advanced options box in the bottom left corner.</li>
@@ -277,9 +291,88 @@ Host aristotle
 <li>Fill in your username and password for that host and set the file protocol to SCP.</li>
 <li>Save your settings with a useful name.</li>
 </ol>
+<h4 id="windows-putty">Windows - PuTTY</h4>
+<p>You can use PuTTY for tunnelling when you just want a single-step login and not a file transfer.</p>
 <h3 id="managing-your-quota">Managing your quota</h3>
 <h2 id="how-do-i-submit-a-job-to-the-scheduler">How do I submit a job to the scheduler?</h2>
+<p>To submit a job to the scheduler you need to write a jobscript that contains the resources the job is asking for and the actual commands you want to run. This jobscript is then submitted using the <code>qsub</code> command.</p>
+<pre><code>qsub myjobscript
+</code></pre>
+
+<p>It will be put in to the queue and will begin running on the compute nodes at some point later when it has been allocated resources.</p>
+<h3 id="passing-in-qsub-options-on-the-command-line">Passing in qsub options on the command line</h3>
+<p>The <code>#$</code> lines in your jobscript are options to qsub. It will take each line which has <code>#$</code> as the first two characters and use the contents beyond that as an option. </p>
+<p>You can also pass options directly to the qsub command and this will override the settings in your script. This can be useful if you are scripting your job submissions in more complicated ways.</p>
+<p>For example, if you want to change the name of the job for this one instance of the job you can submit your script with:</p>
+<pre><code>qsub -N NewName myscript.sh
+</code></pre>
+
+<p>Or if you want to increase the wall-clock time to 24 hours:</p>
+<pre><code>qsub -l h_rt=24:0:0 myscript.sh
+</code></pre>
+
+<p>You can submit jobs with dependencies by using the <code>-hold_jid</code> option. For example, the command below submits a job that won't run until job 12345 has finished:</p>
+<pre><code>qsub -hold_jid 12345 myscript.sh
+</code></pre>
+
+<p>You may specify node type with the <code>-ac allow=</code> flags as below: </p>
+<pre><code>qsub -ac allow=XYZ myscript.sh
+</code></pre>
+
+<p>That would restrict the job to running on nodes of type X, Y or Z (the older Legion nodes).</p>
+<p>Note that for debugging purposes, it helps us if you have these options inside your jobscript rather than passed in on the command line whenever possible. We (and you) can see the exact jobscript that was submitted for every job that ran but not what command line options you submitted it with.</p>
+<h3 id="checking-your-previous-jobscripts">Checking your previous jobscripts</h3>
+<p>If you want to check what you submitted for a specific job ID, you can do it with the <code>scriptfor</code> utility.</p>
+<pre><code>scriptfor 12345
+</code></pre>
+
+<p>As mentioned above, this will not show any command line options you passed in.</p>
 <h2 id="how-do-i-monitor-a-job">How do I monitor a job?</h2>
+<h3 id="qstat">qstat</h3>
+<p>The <code>qstat</code> command shows the status of your jobs. By default, if you run it with no options, it shows only your jobs (and no-one else’s). This makes it easier to keep track of your jobs. </p>
+<p>The output will look something like this:</p>
+<pre><code>job-ID  prior   name       user         state submit/start at     queue                          slots ja-task-ID 
+-----------------------------------------------------------------------------------------------------------------
+123454 2.00685 DI_m3      ccxxxxx      Eqw   10/13/2017 15:29:11                                    12 
+123456 2.00685 DI_m3      ccxxxxx      r     10/13/2017 15:29:11 Yorick@node-x02e-006               24 
+123457 2.00398 DI_m2      ucappka      qw    10/12/2017 14:42:12                                    1 
+</code></pre>
+
+<p>This shows you the job ID, the numeric priority the scheduler has assigned to the job, the name you have given the job, your username, the state the job is in, the date and time it was submitted at (or started at, if it has begun), the head node of the job, the number of 'slots' it is taking up, and if it is an array job the last column shows the task ID.</p>
+<p>The queue name (<code>Yorick</code> here) is generally not useful. The head node name (<code>node-x02e-006</code>) is useful - the <code>node-x</code> part tells you this is an X-type node. </p>
+<p>If you want to get more information on a particular job, note its job ID and then use the -f and -j flags to get full output about that job. Most of this information is not very useful.</p>
+<pre><code>qstat -f -j 12345
+</code></pre>
+
+<h4 id="job-states">Job states</h4>
+<p><code>qw</code>: queueing, waiting
+ <code>r</code>: running
+ <code>Rq</code>: a pre-job check on a node failed and this job was put back in the queue
+ <code>Rr</code>: this job was rescheduled but is now running on a new node
+ <code>Eqw</code>: there was an error in this jobscript. This will not run.
+ <code>t</code>: this job is being transferred
+ <code>dr</code>: this job is being deleted</p>
+<p>Many jobs cycling between <code>Rq</code> and <code>Rr</code> generally means there is a dodgy compute node which is failing pre-job checks, but is free so everything tries to run there. In this case, let us know and we will investigate. </p>
+<p>If a job stays in <code>t</code> or <code>dr</code> state for a long time, the node it was on is likely to be unresponsive - again let us know and we'll investigate.</p>
+<p>A job in <code>Eqw</code> will remain in that state until you delete it - you should first have a look at what the error was with <code>qexplain</code>.</p>
+<h3 id="qexplain">qexplain</h3>
+<p>This is a utility to show you the non-truncated error reported by your job. <code>qstat -j</code> will show you a truncated version near the bottom of the output.</p>
+<pre><code>qexplain 123454
+</code></pre>
+
+<h3 id="qdel">qdel</h3>
+<p>You use <code>qdel</code> to delete a job from the queue.</p>
+<pre><code>qdel 123454
+</code></pre>
+
+<p>You can delete all your jobs at once:</p>
+<pre><code>qdel '*'
+</code></pre>
+
+<h3 id="more-scheduler-commands">More scheduler commands</h3>
+<p>Have a look at <code>man qstat</code> and note the commands shown in the <code>SEE ALSO</code> section of the manual page. Exit the manual page and then look at the <code>man</code> pages for those. (You will not be able to run all commands).</p>
+<h3 id="nodesforjob">nodesforjob</h3>
+<p>This is a utility that shows you the current </p>
 <h2 id="how-do-i-run-a-graphical-program">How do I run a graphical program?</h2></div>
         
     </div>
