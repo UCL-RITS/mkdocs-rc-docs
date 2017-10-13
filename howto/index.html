@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="author" content="UCL RCAS Team">  
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    <title>Howto - My Docs</title>
+
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">My Docs</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href="./">Howto</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="..">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="prev" >
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a href="https://github.com/UCL-RITS/mkdocs-rc-docs">
+                            
+                                <i class="fa fa-github"></i>
+                            
+                            GitHub
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#how-do-i">How do I?</a></li>
+        
+            <li class="second-level"><a href="#how-do-i-log-in">How do I log in?</a></li>
+            
+                <li class="third-level"><a href="#linux-unix-mac-os-x">Linux / Unix / Mac OS X</a></li>
+            
+                <li class="third-level"><a href="#windows">Windows</a></li>
+            
+                <li class="third-level"><a href="#logging-in-from-outside-the-ucl-firewall">Logging in from outside the UCL firewall</a></li>
+            
+                <li class="third-level"><a href="#login-problems">Login problems</a></li>
+            
+        
+            <li class="second-level"><a href="#how-do-i-transfer-data-onto-the-system">How do I transfer data onto the system?</a></li>
+            
+                <li class="third-level"><a href="#copying-files-using-linux-or-mac-os-x">Copying files using Linux or Mac OS X</a></li>
+            
+                <li class="third-level"><a href="#copying-files-using-windows-and-winscp">Copying files using Windows and WinSCP</a></li>
+            
+                <li class="third-level"><a href="#transferring-files-from-outside-the-ucl-firewall">Transferring files from outside the UCL firewall</a></li>
+            
+                <li class="third-level"><a href="#single-step-logins-using-tunnelling">Single-step logins using tunnelling</a></li>
+            
+                <li class="third-level"><a href="#managing-your-quota">Managing your quota</a></li>
+            
+        
+            <li class="second-level"><a href="#how-do-i-submit-a-job-to-the-scheduler">How do I submit a job to the scheduler?</a></li>
+            
+        
+            <li class="second-level"><a href="#how-do-i-monitor-a-job">How do I monitor a job?</a></li>
+            
+        
+            <li class="second-level"><a href="#how-do-i-run-a-graphical-program">How do I run a graphical program?</a></li>
+            
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="how-do-i">How do I?</h1>
+<p>I have an account, now:</p>
+<h2 id="how-do-i-log-in">How do I log in?</h2>
+<p>Logging in is most straightforward if you are inside the UCL firewall. If you are logging in from home or other external networks then you first have to <a href="#logging-in-from-outside-the-ucl-firewall">get on to the UCL network</a>.</p>
+<h3 id="linux-unix-mac-os-x">Linux / Unix / Mac OS X</h3>
+<p>Use the terminal and type the below command to secure shell (ssh) into the machine you wish to access. Replace <code>&lt;your_UCL_user_id&gt;</code> with your central UCL username, and <code>&lt;system_name&gt;</code> with the name of the machine you want to log in to, eg. <code>legion</code>, <code>grace</code>, <code>aristotle</code>. </p>
+<pre><code>ssh &lt;your_UCL_user_id&gt;@&lt;system_name&gt;.rc.ucl.ac.uk
+</code></pre>
+
+<h3 id="windows">Windows</h3>
+<p>On Windows you need something that will give you a suitable terminal and ssh - usually PuTTY, although you could also use Cygwin if you wanted a full Linux-like environment.</p>
+<h4 id="using-putty">Using PuTTY</h4>
+<p>PuTTY is a common SSH client on Windows and is available on Desktop@UCL. You can find it under <code>Start &gt; All Programs &gt; Applications O-P &gt; PuTTY</code></p>
+<p>You will need to create an entry for the host you are connecting to with the settings below. If you want to save your settings, give them an easily-identifiable name in the "Saved Sessions" box and press "Save". Then you can select it and "Load" next time you use PuTTY. </p>
+<p><img alt="PuTTY screenshot" src="../img/Putty_gui.png" /></p>
+<p>In newer versions of PuTTY, it looks like this.</p>
+<p><em>TODO: new putty</em></p>
+<p>You will then be asked to enter your username and password. Only enter your username, not <code>@legion.rc.ucl.ac.uk</code>. The password field will remain entirely blank when you type in to it - it does not show placeholders to indicate you have typed something. </p>
+<h3 id="logging-in-from-outside-the-ucl-firewall">Logging in from outside the UCL firewall</h3>
+<p>You will need to either use the <a href="http://www.ucl.ac.uk/isd/staff/network/vpn">UCL Virtual Private Network</a> or ssh in to UCL's gateway <code>socrates.ucl.ac.uk</code> first. From Socrates you can then ssh in to our systems by typing <code>ssh &lt;your_UCL_user_id&gt;@&lt;system_name&gt;.rc.ucl.ac.uk</code>. </p>
+<p><strong>Advanced:</strong> If you find you need to go via Socrates often, you can set up this jump automatically, see <a href="#single-step-logins-using-tunnelling">Single-step logins using tunnelling</a></p>
+<h3 id="login-problems">Login problems</h3>
+<p>If you experience difficulties with your login, please make sure that you are typing your UCL user ID and your password correctly. If you have recently updated your password, it takes some hours to propagate to all UCL systems.</p>
+<p>If you still cannot get access but can access other UCL services like Socrates, please contact us on rc-support@ucl.ac.uk. Your account may have expired, or you may have gone over quota.</p>
+<p>If you cannot access anything, please see UCL MyAccount - you may need to request a password reset from the Service Desk. </p>
+<p>If you get a host key error message, you will need to delete old host keys. <em>TODO: details</em></p>
+<h2 id="how-do-i-transfer-data-onto-the-system">How do I transfer data onto the system?</h2>
+<p>You can transfer data to and from our systems using any program capable of using the Secure Copy (SCP) protocol. This uses the same SSH system as you use to log in to a command line session, but then transfers data over it. This means that if you can use SSH to connect to a system, you can usually use SCP to transfer files to it. </p>
+<h3 id="copying-files-using-linux-or-mac-os-x">Copying files using Linux or Mac OS X</h3>
+<p>You can use the command-line utilities scp, sftp or rsync to copy your data about. You can also use a graphical client (Transmit, CyberDuck, FileZilla).</p>
+<h4 id="scp">scp</h4>
+<p>This will copy a data file from somewhere on your local machine to a specified location on the remote machine (Legion, Grace etc).</p>
+<pre><code>scp &lt;local_data_file&gt; &lt;remote_user_id&gt;@&lt;remote_hostname&gt;:&lt;remote_path&gt;
+</code></pre>
+
+<pre><code># Example: copy myfile from your local current directory into Scratch on Legion
+scp myfile ccxxxxx@legion.rc.ucl.ac.uk:~/Scratch/
+</code></pre>
+
+<p>This will do the reverse, copying from the remote machine to your local machine. (This is still run from your local machine).</p>
+<pre><code>scp &lt;remote_user_id&gt;@&lt;remote_hostname&gt;:&lt;remote_path&gt;&lt;remote_data_file&gt; &lt;local_path&gt;
+</code></pre>
+
+<pre><code># Example: copy myfile from Legion into the Backups directory in your local current directory
+scp ccxxxxx@legion.rc.ucl.ac.uk:~/Scratch/myfile Backups/
+</code></pre>
+
+<h4 id="sftp">sftp</h4>
+<p>You can use sftp to log in to the remote machine, navigate through directories and use <code>put</code> and <code>get</code> to copy files from and to your local machine. <code>lcd</code> and <code>lls</code> are local equivalents of <code>cd</code> and <code>ls</code> so you can navigate through your local directories as you go. </p>
+<pre><code>sftp &lt;remote_user_id&gt;@&lt;remote_hostname&gt;
+cd &lt;remote_path&gt;
+get &lt;remote_file&gt;
+lcd &lt;local_path&gt;
+put &lt;local_file&gt;
+</code></pre>
+
+<pre><code># Example: download a copy of file1 into your local current directory,
+# change local directory and upload a copy of file2
+sftp ccxxxxx@legion.rc.ucl.ac.uk
+cd Scratch/files
+get file1
+lcd ../files_to_upload
+put file2
+</code></pre>
+
+<h4 id="rsync">rsync</h4>
+<p>Rsync is used to remotely synchronise directories, so can be used to only copy files which have changed. Have a look at <code>man rsync</code> as there are many options. </p>
+<h3 id="copying-files-using-windows-and-winscp">Copying files using Windows and WinSCP</h3>
+<p>WinSCP is a graphical client that you can use for scp or sftp.</p>
+<ol>
+<li>The login/create new session screen will open if this is the first time you are using WinSCP.</li>
+<li>You can choose SFTP or SCP as the file protocol. If you have an unstable connection with one, you may wish to try the other. SCP is probably generally better.</li>
+<li>Fill in the hostname of the machine you wish to connect to, your username and password.</li>
+<li>Click Save and give your settings a useful name.</li>
+<li>You'll then be shown your list of Stored sessions, which will have the one you just created.</li>
+<li>Select the session and click Login.</li>
+</ol>
+<h3 id="transferring-files-from-outside-the-ucl-firewall">Transferring files from outside the UCL firewall</h3>
+<p>As when logging in, when you are outside the UCL firewall you will need a method to connect inside it before you copy files. (You do not want to be copying files on to Socrates and then on to our systems - this is slow, unnecessary, and it means you need space available on Socrates too).</p>
+<p>You can use the <a href="http://www.ucl.ac.uk/isd/staff/network/vpn">UCL Virtual Private Network</a> and scp direct to our systems or you can do some form of ssh tunnelling.</p>
+<h3 id="single-step-logins-using-tunnelling">Single-step logins using tunnelling</h3>
+<h4 id="linux-unix-mac-os-x_1">Linux / Unix / Mac OS X</h4>
+<p>Inside your <code>~/.ssh</code> directory on your local machine, add the below to your <code>config</code> file (or create a file called <code>config</code> if you don't already have one).</p>
+<p>Generically, it should be of this form where <code>&lt;name&gt;</code> can be anything you want to call this entry.</p>
+<pre><code>Host &lt;name&gt;
+   User &lt;remote_user_id&gt;
+   HostName &lt;remote_hostname&gt;
+   proxyCommand ssh -W &lt;remote_hostname&gt;:22 &lt;remote_user_id&gt;@socrates.ucl.ac.uk
+</code></pre>
+
+<p>This causes the commands you type in your client to be forwarded on over a secure channel to the specified remote host.</p>
+<p>Here are some examples - you can have as many of these as you need in your config file.</p>
+<pre><code>Host legion
+   User ccxxxxx
+   HostName legion.rc.ucl.ac.uk
+   proxyCommand ssh -W legion.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
+
+Host login05
+   User ccxxxxx
+   HostName login05.external.legion.ucl.ac.uk
+   proxyCommand ssh -W login05.external.legion.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
+
+Host aristotle
+   User ccxxxxx
+   HostName aristotle.rc.ucl.ac.uk
+   proxyCommand ssh -W aristotle.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
+</code></pre>
+
+<p>You can now just type <code>ssh legion</code> or <code>scp file1 aristotle:~</code> and you will go through Socrates. You'll be asked for login details twice since you're logging in to two machines, Socrates and your endpoint.  </p>
+<h4 id="windows_1">Windows</h4>
+<p>WinSCP can also set up SSH tunnels.</p>
+<ol>
+<li>Create a new session as before, and tick the Advanced options box in the bottom left corner.</li>
+<li>Select Connection &gt; Tunnel from the left pane.</li>
+<li>Tick the Connect through SSH tunnel box and enter the hostname of the gateway you are tunnelling through, for example socrates.ucl.ac.uk</li>
+<li>Fill in your username and password for that host. (Central UCL ones for Socrates).</li>
+<li>Select Session from the left pane and fill in the hostname you want to end up on after the tunnel.</li>
+<li>Fill in your username and password for that host and set the file protocol to SCP.</li>
+<li>Save your settings with a useful name.</li>
+</ol>
+<h3 id="managing-your-quota">Managing your quota</h3>
+<h2 id="how-do-i-submit-a-job-to-the-scheduler">How do I submit a job to the scheduler?</h2>
+<h2 id="how-do-i-monitor-a-job">How do I monitor a job?</h2>
+<h2 id="how-do-i-run-a-graphical-program">How do I run a graphical program?</h2></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
+
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '..';
+    </script>
+    <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+    <script src="../js/base.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>

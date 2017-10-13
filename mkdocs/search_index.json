@@ -19,6 +19,116 @@
             "location": "/#project-layout",
             "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.",
             "title": "Project layout"
+        },
+        {
+            "location": "/howto/",
+            "text": "How do I?\n\n\nI have an account, now:\n\n\nHow do I log in?\n\n\nLogging in is most straightforward if you are inside the UCL firewall. If you are logging in from home or other external networks then you first have to \nget on to the UCL network\n.\n\n\nLinux / Unix / Mac OS X\n\n\nUse the terminal and type the below command to secure shell (ssh) into the machine you wish to access. Replace \n<your_UCL_user_id>\n with your central UCL username, and \n<system_name>\n with the name of the machine you want to log in to, eg. \nlegion\n, \ngrace\n, \naristotle\n. \n\n\nssh <your_UCL_user_id>@<system_name>.rc.ucl.ac.uk\n\n\n\n\nWindows\n\n\nOn Windows you need something that will give you a suitable terminal and ssh - usually PuTTY, although you could also use Cygwin if you wanted a full Linux-like environment.\n\n\nUsing PuTTY\n\n\nPuTTY is a common SSH client on Windows and is available on Desktop@UCL. You can find it under \nStart > All Programs > Applications O-P > PuTTY\n\n\nYou will need to create an entry for the host you are connecting to with the settings below. If you want to save your settings, give them an easily-identifiable name in the \"Saved Sessions\" box and press \"Save\". Then you can select it and \"Load\" next time you use PuTTY. \n\n\n\n\nIn newer versions of PuTTY, it looks like this.\n\n\nTODO: new putty\n\n\nYou will then be asked to enter your username and password. Only enter your username, not \n@legion.rc.ucl.ac.uk\n. The password field will remain entirely blank when you type in to it - it does not show placeholders to indicate you have typed something. \n\n\nLogging in from outside the UCL firewall\n\n\nYou will need to either use the \nUCL Virtual Private Network\n or ssh in to UCL's gateway \nsocrates.ucl.ac.uk\n first. From Socrates you can then ssh in to our systems by typing \nssh <your_UCL_user_id>@<system_name>.rc.ucl.ac.uk\n. \n\n\nAdvanced:\n If you find you need to go via Socrates often, you can set up this jump automatically, see \nSingle-step logins using tunnelling\n\n\nLogin problems\n\n\nIf you experience difficulties with your login, please make sure that you are typing your UCL user ID and your password correctly. If you have recently updated your password, it takes some hours to propagate to all UCL systems.\n\n\nIf you still cannot get access but can access other UCL services like Socrates, please contact us on rc-support@ucl.ac.uk. Your account may have expired, or you may have gone over quota.\n\n\nIf you cannot access anything, please see UCL MyAccount - you may need to request a password reset from the Service Desk. \n\n\nIf you get a host key error message, you will need to delete old host keys. \nTODO: details\n\n\nHow do I transfer data onto the system?\n\n\nYou can transfer data to and from our systems using any program capable of using the Secure Copy (SCP) protocol. This uses the same SSH system as you use to log in to a command line session, but then transfers data over it. This means that if you can use SSH to connect to a system, you can usually use SCP to transfer files to it. \n\n\nCopying files using Linux or Mac OS X\n\n\nYou can use the command-line utilities scp, sftp or rsync to copy your data about. You can also use a graphical client (Transmit, CyberDuck, FileZilla).\n\n\nscp\n\n\nThis will copy a data file from somewhere on your local machine to a specified location on the remote machine (Legion, Grace etc).\n\n\nscp <local_data_file> <remote_user_id>@<remote_hostname>:<remote_path>\n\n\n\n\n# Example: copy myfile from your local current directory into Scratch on Legion\nscp myfile ccxxxxx@legion.rc.ucl.ac.uk:~/Scratch/\n\n\n\n\nThis will do the reverse, copying from the remote machine to your local machine. (This is still run from your local machine).\n\n\nscp <remote_user_id>@<remote_hostname>:<remote_path><remote_data_file> <local_path>\n\n\n\n\n# Example: copy myfile from Legion into the Backups directory in your local current directory\nscp ccxxxxx@legion.rc.ucl.ac.uk:~/Scratch/myfile Backups/\n\n\n\n\nsftp\n\n\nYou can use sftp to log in to the remote machine, navigate through directories and use \nput\n and \nget\n to copy files from and to your local machine. \nlcd\n and \nlls\n are local equivalents of \ncd\n and \nls\n so you can navigate through your local directories as you go. \n\n\nsftp <remote_user_id>@<remote_hostname>\ncd <remote_path>\nget <remote_file>\nlcd <local_path>\nput <local_file>\n\n\n\n\n# Example: download a copy of file1 into your local current directory,\n# change local directory and upload a copy of file2\nsftp ccxxxxx@legion.rc.ucl.ac.uk\ncd Scratch/files\nget file1\nlcd ../files_to_upload\nput file2\n\n\n\n\nrsync\n\n\nRsync is used to remotely synchronise directories, so can be used to only copy files which have changed. Have a look at \nman rsync\n as there are many options. \n\n\nCopying files using Windows and WinSCP\n\n\nWinSCP is a graphical client that you can use for scp or sftp.\n\n\n\n\nThe login/create new session screen will open if this is the first time you are using WinSCP.\n\n\nYou can choose SFTP or SCP as the file protocol. If you have an unstable connection with one, you may wish to try the other. SCP is probably generally better.\n\n\nFill in the hostname of the machine you wish to connect to, your username and password.\n\n\nClick Save and give your settings a useful name.\n\n\nYou'll then be shown your list of Stored sessions, which will have the one you just created.\n\n\nSelect the session and click Login.\n\n\n\n\nTransferring files from outside the UCL firewall\n\n\nAs when logging in, when you are outside the UCL firewall you will need a method to connect inside it before you copy files. (You do not want to be copying files on to Socrates and then on to our systems - this is slow, unnecessary, and it means you need space available on Socrates too).\n\n\nYou can use the \nUCL Virtual Private Network\n and scp direct to our systems or you can do some form of ssh tunnelling.\n\n\nSingle-step logins using tunnelling\n\n\nLinux / Unix / Mac OS X\n\n\nInside your \n~/.ssh\n directory on your local machine, add the below to your \nconfig\n file (or create a file called \nconfig\n if you don't already have one).\n\n\nGenerically, it should be of this form where \n<name>\n can be anything you want to call this entry.\n\n\nHost <name>\n   User <remote_user_id>\n   HostName <remote_hostname>\n   proxyCommand ssh -W <remote_hostname>:22 <remote_user_id>@socrates.ucl.ac.uk\n\n\n\n\nThis causes the commands you type in your client to be forwarded on over a secure channel to the specified remote host.\n\n\nHere are some examples - you can have as many of these as you need in your config file.\n\n\nHost legion\n   User ccxxxxx\n   HostName legion.rc.ucl.ac.uk\n   proxyCommand ssh -W legion.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk\n\nHost login05\n   User ccxxxxx\n   HostName login05.external.legion.ucl.ac.uk\n   proxyCommand ssh -W login05.external.legion.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk\n\nHost aristotle\n   User ccxxxxx\n   HostName aristotle.rc.ucl.ac.uk\n   proxyCommand ssh -W aristotle.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk\n\n\n\n\nYou can now just type \nssh legion\n or \nscp file1 aristotle:~\n and you will go through Socrates. You'll be asked for login details twice since you're logging in to two machines, Socrates and your endpoint.  \n\n\nWindows\n\n\nWinSCP can also set up SSH tunnels.\n\n\n\n\nCreate a new session as before, and tick the Advanced options box in the bottom left corner.\n\n\nSelect Connection > Tunnel from the left pane.\n\n\nTick the Connect through SSH tunnel box and enter the hostname of the gateway you are tunnelling through, for example socrates.ucl.ac.uk\n\n\nFill in your username and password for that host. (Central UCL ones for Socrates).\n\n\nSelect Session from the left pane and fill in the hostname you want to end up on after the tunnel.\n\n\nFill in your username and password for that host and set the file protocol to SCP.\n\n\nSave your settings with a useful name.\n\n\n\n\nManaging your quota\n\n\nHow do I submit a job to the scheduler?\n\n\nHow do I monitor a job?\n\n\nHow do I run a graphical program?",
+            "title": "Howto"
+        },
+        {
+            "location": "/howto/#how-do-i",
+            "text": "I have an account, now:",
+            "title": "How do I?"
+        },
+        {
+            "location": "/howto/#how-do-i-log-in",
+            "text": "Logging in is most straightforward if you are inside the UCL firewall. If you are logging in from home or other external networks then you first have to  get on to the UCL network .",
+            "title": "How do I log in?"
+        },
+        {
+            "location": "/howto/#linux-unix-mac-os-x",
+            "text": "Use the terminal and type the below command to secure shell (ssh) into the machine you wish to access. Replace  <your_UCL_user_id>  with your central UCL username, and  <system_name>  with the name of the machine you want to log in to, eg.  legion ,  grace ,  aristotle .   ssh <your_UCL_user_id>@<system_name>.rc.ucl.ac.uk",
+            "title": "Linux / Unix / Mac OS X"
+        },
+        {
+            "location": "/howto/#windows",
+            "text": "On Windows you need something that will give you a suitable terminal and ssh - usually PuTTY, although you could also use Cygwin if you wanted a full Linux-like environment.",
+            "title": "Windows"
+        },
+        {
+            "location": "/howto/#using-putty",
+            "text": "PuTTY is a common SSH client on Windows and is available on Desktop@UCL. You can find it under  Start > All Programs > Applications O-P > PuTTY  You will need to create an entry for the host you are connecting to with the settings below. If you want to save your settings, give them an easily-identifiable name in the \"Saved Sessions\" box and press \"Save\". Then you can select it and \"Load\" next time you use PuTTY.    In newer versions of PuTTY, it looks like this.  TODO: new putty  You will then be asked to enter your username and password. Only enter your username, not  @legion.rc.ucl.ac.uk . The password field will remain entirely blank when you type in to it - it does not show placeholders to indicate you have typed something.",
+            "title": "Using PuTTY"
+        },
+        {
+            "location": "/howto/#logging-in-from-outside-the-ucl-firewall",
+            "text": "You will need to either use the  UCL Virtual Private Network  or ssh in to UCL's gateway  socrates.ucl.ac.uk  first. From Socrates you can then ssh in to our systems by typing  ssh <your_UCL_user_id>@<system_name>.rc.ucl.ac.uk .   Advanced:  If you find you need to go via Socrates often, you can set up this jump automatically, see  Single-step logins using tunnelling",
+            "title": "Logging in from outside the UCL firewall"
+        },
+        {
+            "location": "/howto/#login-problems",
+            "text": "If you experience difficulties with your login, please make sure that you are typing your UCL user ID and your password correctly. If you have recently updated your password, it takes some hours to propagate to all UCL systems.  If you still cannot get access but can access other UCL services like Socrates, please contact us on rc-support@ucl.ac.uk. Your account may have expired, or you may have gone over quota.  If you cannot access anything, please see UCL MyAccount - you may need to request a password reset from the Service Desk.   If you get a host key error message, you will need to delete old host keys.  TODO: details",
+            "title": "Login problems"
+        },
+        {
+            "location": "/howto/#how-do-i-transfer-data-onto-the-system",
+            "text": "You can transfer data to and from our systems using any program capable of using the Secure Copy (SCP) protocol. This uses the same SSH system as you use to log in to a command line session, but then transfers data over it. This means that if you can use SSH to connect to a system, you can usually use SCP to transfer files to it.",
+            "title": "How do I transfer data onto the system?"
+        },
+        {
+            "location": "/howto/#copying-files-using-linux-or-mac-os-x",
+            "text": "You can use the command-line utilities scp, sftp or rsync to copy your data about. You can also use a graphical client (Transmit, CyberDuck, FileZilla).",
+            "title": "Copying files using Linux or Mac OS X"
+        },
+        {
+            "location": "/howto/#scp",
+            "text": "This will copy a data file from somewhere on your local machine to a specified location on the remote machine (Legion, Grace etc).  scp <local_data_file> <remote_user_id>@<remote_hostname>:<remote_path>  # Example: copy myfile from your local current directory into Scratch on Legion\nscp myfile ccxxxxx@legion.rc.ucl.ac.uk:~/Scratch/  This will do the reverse, copying from the remote machine to your local machine. (This is still run from your local machine).  scp <remote_user_id>@<remote_hostname>:<remote_path><remote_data_file> <local_path>  # Example: copy myfile from Legion into the Backups directory in your local current directory\nscp ccxxxxx@legion.rc.ucl.ac.uk:~/Scratch/myfile Backups/",
+            "title": "scp"
+        },
+        {
+            "location": "/howto/#sftp",
+            "text": "You can use sftp to log in to the remote machine, navigate through directories and use  put  and  get  to copy files from and to your local machine.  lcd  and  lls  are local equivalents of  cd  and  ls  so you can navigate through your local directories as you go.   sftp <remote_user_id>@<remote_hostname>\ncd <remote_path>\nget <remote_file>\nlcd <local_path>\nput <local_file>  # Example: download a copy of file1 into your local current directory,\n# change local directory and upload a copy of file2\nsftp ccxxxxx@legion.rc.ucl.ac.uk\ncd Scratch/files\nget file1\nlcd ../files_to_upload\nput file2",
+            "title": "sftp"
+        },
+        {
+            "location": "/howto/#rsync",
+            "text": "Rsync is used to remotely synchronise directories, so can be used to only copy files which have changed. Have a look at  man rsync  as there are many options.",
+            "title": "rsync"
+        },
+        {
+            "location": "/howto/#copying-files-using-windows-and-winscp",
+            "text": "WinSCP is a graphical client that you can use for scp or sftp.   The login/create new session screen will open if this is the first time you are using WinSCP.  You can choose SFTP or SCP as the file protocol. If you have an unstable connection with one, you may wish to try the other. SCP is probably generally better.  Fill in the hostname of the machine you wish to connect to, your username and password.  Click Save and give your settings a useful name.  You'll then be shown your list of Stored sessions, which will have the one you just created.  Select the session and click Login.",
+            "title": "Copying files using Windows and WinSCP"
+        },
+        {
+            "location": "/howto/#transferring-files-from-outside-the-ucl-firewall",
+            "text": "As when logging in, when you are outside the UCL firewall you will need a method to connect inside it before you copy files. (You do not want to be copying files on to Socrates and then on to our systems - this is slow, unnecessary, and it means you need space available on Socrates too).  You can use the  UCL Virtual Private Network  and scp direct to our systems or you can do some form of ssh tunnelling.",
+            "title": "Transferring files from outside the UCL firewall"
+        },
+        {
+            "location": "/howto/#single-step-logins-using-tunnelling",
+            "text": "",
+            "title": "Single-step logins using tunnelling"
+        },
+        {
+            "location": "/howto/#linux-unix-mac-os-x_1",
+            "text": "Inside your  ~/.ssh  directory on your local machine, add the below to your  config  file (or create a file called  config  if you don't already have one).  Generically, it should be of this form where  <name>  can be anything you want to call this entry.  Host <name>\n   User <remote_user_id>\n   HostName <remote_hostname>\n   proxyCommand ssh -W <remote_hostname>:22 <remote_user_id>@socrates.ucl.ac.uk  This causes the commands you type in your client to be forwarded on over a secure channel to the specified remote host.  Here are some examples - you can have as many of these as you need in your config file.  Host legion\n   User ccxxxxx\n   HostName legion.rc.ucl.ac.uk\n   proxyCommand ssh -W legion.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk\n\nHost login05\n   User ccxxxxx\n   HostName login05.external.legion.ucl.ac.uk\n   proxyCommand ssh -W login05.external.legion.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk\n\nHost aristotle\n   User ccxxxxx\n   HostName aristotle.rc.ucl.ac.uk\n   proxyCommand ssh -W aristotle.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk  You can now just type  ssh legion  or  scp file1 aristotle:~  and you will go through Socrates. You'll be asked for login details twice since you're logging in to two machines, Socrates and your endpoint.",
+            "title": "Linux / Unix / Mac OS X"
+        },
+        {
+            "location": "/howto/#windows_1",
+            "text": "WinSCP can also set up SSH tunnels.   Create a new session as before, and tick the Advanced options box in the bottom left corner.  Select Connection > Tunnel from the left pane.  Tick the Connect through SSH tunnel box and enter the hostname of the gateway you are tunnelling through, for example socrates.ucl.ac.uk  Fill in your username and password for that host. (Central UCL ones for Socrates).  Select Session from the left pane and fill in the hostname you want to end up on after the tunnel.  Fill in your username and password for that host and set the file protocol to SCP.  Save your settings with a useful name.",
+            "title": "Windows"
+        },
+        {
+            "location": "/howto/#managing-your-quota",
+            "text": "",
+            "title": "Managing your quota"
+        },
+        {
+            "location": "/howto/#how-do-i-submit-a-job-to-the-scheduler",
+            "text": "",
+            "title": "How do I submit a job to the scheduler?"
+        },
+        {
+            "location": "/howto/#how-do-i-monitor-a-job",
+            "text": "",
+            "title": "How do I monitor a job?"
+        },
+        {
+            "location": "/howto/#how-do-i-run-a-graphical-program",
+            "text": "",
+            "title": "How do I run a graphical program?"
         }
     ]
 }
