@@ -8,6 +8,7 @@ SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages"
 
 UPDATE_PULL_WEBHOOK="https://wiki.rc.ucl.ac.uk/webhooks/update_docs.sh"
+SKIP_WEBHOOK_DEPLOY=y
 
 function doCompile {
   bash builder/build.sh
@@ -71,7 +72,9 @@ git push "$SSH_REPO" "$TARGET_BRANCH"
 killall ssh-agent
 
 # Last thing: ping the hosting server to pull the updated docs
-if [[ -n "$UPDATE_PULL_WEBHOOK" ]]; then
+if [[ -n "$UPDATE_PULL_WEBHOOK" ]] && [[ -n "$SKIP_WEBHOOK_DEPLOY" ]]; then
   curl "$UPDATE_PULL_WEBHOOK" || echo 'Did not successfully call update pull hook url.' && exit 1
+else
+  echo "Skipping webhook deploy."
 fi
 
