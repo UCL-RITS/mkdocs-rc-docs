@@ -72,7 +72,7 @@ git push "$SSH_REPO" "$TARGET_BRANCH"
 killall ssh-agent
 
 # Last thing: ping the hosting server to pull the updated docs
-if [[ -n "$UPDATE_PULL_WEBHOOK" ]] || [[ -n "$SKIP_WEBHOOK_DEPLOY" ]]; then
+if [[ -n "$UPDATE_PULL_WEBHOOK" ]] && [[ -z "$SKIP_WEBHOOK_DEPLOY" ]]; then
   curl "$UPDATE_PULL_WEBHOOK" || echo 'Did not successfully call update pull hook url.' && exit 1
 else
   echo "Skipping webhook deploy."
