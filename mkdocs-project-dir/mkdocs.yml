@@ -34,3 +34,9 @@ markdown_extensions:
       #linenums: true
   - toc:
       permalink: true
+
+# Customization
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/UCL-RITS'
