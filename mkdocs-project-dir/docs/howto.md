@@ -20,11 +20,11 @@ On Windows you need something that will give you a suitable terminal and ssh - u
 
 #### Using PuTTY
 
-PuTTY is a common SSH client on Windows and is available on Desktop@UCL. You can find it under `Start > All Programs > Applications O-P > PuTTY`
+PuTTY is a common SSH client on Windows and is available on Desktop@UCL. You can find it under: `Start > All Programs > Applications O-P > PuTTY`
 
 You will need to create an entry for the host you are connecting to with the settings below. If you want to save your settings, give them an easily-identifiable name in the "Saved Sessions" box and press "Save". Then you can select it and "Load" next time you use PuTTY. 
 
-![PuTTY screenshot](img/Putty_gui.png)
+![PuTTY screenshot](img/putty_gui.png)
 
 In newer versions of PuTTY, it looks like this.
 
