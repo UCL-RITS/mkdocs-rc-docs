@@ -1,6 +1,36 @@
-site_name: My Docs
-theme: cinder
-repo_url: https://github.com/UCL-RITS/mkdocs-rc-docs
-edit_uri: blob/master/mkdocs-project-dir/docs/
+# Base
+site_name: UCL Research Computing Documentation
+#site_url: https://wiki.rc.ucl.ac.uk/docs/
 site_author: UCL RCAS Team
 site_description: Documentation for the centrally provided Research Computing HPC services at UCL.
+
+# Copyright
+copyright: 'Copyright &copy; 2014 - 2018 UCL Research Computing Group'
+
+# Associated Git Repo Config
+repo_name: UCL-RITS/mkdocs-rc-docs
+repo_url: https://github.com/UCL-RITS/mkdocs-rc-docs
+edit_uri: blob/master/mkdocs-project-dir/docs/
+
+# Theme Configuration
+theme:
+  name: 'material'
+  language: 'en'
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+
+# Extensions
+# NB: omitting linenums: setting means they get added when there's a shebang
+# Even if it's a secret shebang -- shebangs with no forward-slash count but are removed
+# See also: https://python-markdown.github.io/extensions/code_hilite/#usage
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      #linenums: true
+  - toc:
+      permalink: true
