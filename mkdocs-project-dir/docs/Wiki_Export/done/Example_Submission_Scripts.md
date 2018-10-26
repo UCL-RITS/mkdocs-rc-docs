@@ -1,5 +1,5 @@
 ---
-title: Example submission scripts
+title: Example Submission Scripts
 categories:
  - User Guide
 layout: docs
@@ -311,7 +311,7 @@ cd $TMPDIR
 hostname > hostname.txt
 ```
 
-## Array job script with a stride
+## Array Job Script with a Stride
 
 If each task for your array job is very small, you will get better use of the cluster if you can combine a number of these so each has a couple of hours' worth of work to do. There is a startup cost associated with the amount of time it takes to set up a new job. If your job's runtime is very small, this cost is proportionately high, and you incur it with every array task.
 
@@ -364,7 +364,7 @@ do
 done
 ```
 
-## GPU job script example
+## GPU Job Script Example
 
 To use NVIDIA GPUs with the CUDA libraries, you need to load the CUDA runtime libraries module or else set up the environment yourself. The script below shows what you'll need to unload and load the appropriate modules.
 
