@@ -36,11 +36,11 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.5">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.6">
     
     
       
-        <title>Example submission scripts</title>
+        <title>Example Submission Scripts</title>
       
     
     
@@ -124,7 +124,7 @@
                 UCL Research Computing Documentation
               </span>
               <span class="md-header-nav__topic">
-                Example submission scripts
+                Example Submission Scripts
               </span>
             
           
@@ -446,11 +446,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Example submission scripts
+        Example Submission Scripts
       </label>
     
-    <a href="./" title="Example submission scripts" class="md-nav__link md-nav__link--active">
-      Example submission scripts
+    <a href="./" title="Example Submission Scripts" class="md-nav__link md-nav__link--active">
+      Example Submission Scripts
     </a>
     
       
@@ -525,15 +525,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#array-job-script-with-a-stride" title="Array job script with a stride" class="md-nav__link">
-    Array job script with a stride
+  <a href="#array-job-script-with-a-stride" title="Array Job Script with a Stride" class="md-nav__link">
+    Array Job Script with a Stride
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gpu-job-script-example" title="GPU job script example" class="md-nav__link">
-    GPU job script example
+  <a href="#gpu-job-script-example" title="GPU Job Script Example" class="md-nav__link">
+    GPU Job Script Example
   </a>
   
 </li>
@@ -1020,15 +1020,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#array-job-script-with-a-stride" title="Array job script with a stride" class="md-nav__link">
-    Array job script with a stride
+  <a href="#array-job-script-with-a-stride" title="Array Job Script with a Stride" class="md-nav__link">
+    Array Job Script with a Stride
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gpu-job-script-example" title="GPU job script example" class="md-nav__link">
-    GPU job script example
+  <a href="#gpu-job-script-example" title="GPU Job Script Example" class="md-nav__link">
+    GPU Job Script Example
   </a>
   
 </li>
@@ -1059,7 +1059,7 @@
                   <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Wiki_Export/done/Example_Submission_Scripts.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Example submission scripts</h1>
+                  <h1>Example Submission Scripts</h1>
                 
                 <p>On this page we describe some basic example scripts to submit jobs to
 Legion or Grace.</p>
@@ -1472,7 +1472,7 @@ hostname &gt; hostname.txt
 </pre></div>
 </td></tr></table>
 
-<h2 id="array-job-script-with-a-stride">Array job script with a stride<a class="headerlink" href="#array-job-script-with-a-stride" title="Permanent link">&para;</a></h2>
+<h2 id="array-job-script-with-a-stride">Array Job Script with a Stride<a class="headerlink" href="#array-job-script-with-a-stride" title="Permanent link">&para;</a></h2>
 <p>If each task for your array job is very small, you will get better use of the cluster if you can combine a number of these so each has a couple of hours' worth of work to do. There is a startup cost associated with the amount of time it takes to set up a new job. If your job's runtime is very small, this cost is proportionately high, and you incur it with every array task.</p>
 <p>Using a stride will allow you to leave your input files numbered as before, and each array task will run N inputs.</p>
 <p>For example, a stride of 10 will give you these task IDs: 1, 11, 21...</p>
@@ -1559,7 +1559,7 @@ done
 </pre></div>
 </td></tr></table>
 
-<h2 id="gpu-job-script-example">GPU job script example<a class="headerlink" href="#gpu-job-script-example" title="Permanent link">&para;</a></h2>
+<h2 id="gpu-job-script-example">GPU Job Script Example<a class="headerlink" href="#gpu-job-script-example" title="Permanent link">&para;</a></h2>
 <p>To use NVIDIA GPUs with the CUDA libraries, you need to load the CUDA runtime libraries module or else set up the environment yourself. The script below shows what you'll need to unload and load the appropriate modules.</p>
 <p>You also need to use the <code>-l gpu=&lt;number&gt;</code> option to request the GPUs from the scheduler.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -1773,7 +1773,7 @@ gerun myGPUapp
       
     </div>
     
-      <script src="../../../assets/javascripts/application.583bbe55.js"></script>
+      <script src="../../../assets/javascripts/application.5e60981f.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
