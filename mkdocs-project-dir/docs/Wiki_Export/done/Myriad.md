@@ -2,14 +2,16 @@
 title: Myriad
 layout: cluster
 ---
+# Myriad
+
 Myriad is designed for high I/O, high throughput jobs that will run
 within a single node rather than multi-node parallel jobs.
 
-# Accounts
+## Accounts
 
 Everyone who [signs up for a Research Computing account](Account_Services) gets access to Myriad.
 
-# Logging in
+## Logging in
 
 You will use your UCL username and password to ssh in to Myriad.
 
@@ -26,7 +28,7 @@ If you are outside the UCL firewall you will need to follow the
 instructions for [accessing services from outside
 UCL](Accessing_RC_Systems).
 
-## Logging in to a specific node
+### Logging in to a specific node
 
 You can access a specific Myriad login node with: 
 
@@ -37,12 +39,12 @@ ssh uccaxxx@login13.myriad.rc.ucl.ac.uk
 
 The main address will redirect you on to either one of them.
 
-# Copying data onto Myriad
+## Copying data onto Myriad
 
 You will need to use an SCP or SFTP client to copy data onto Myriad.
 Have a look at [Managing Data on RC Systems](Managing_Data_on_RC_Systems).
 
-# Quotas
+## Quotas
 
 The default quotas on Myriad are 150GB for home and 1TB for Scratch.
 
@@ -71,7 +73,7 @@ You can apply for quota increases using the form at [Additional Resource Request
 Here are some tips for [managing your quota](Managing_Data_on_RC_Systems#Managing_your_quota) and
 finding where space is being used.
 
-# Job sizes
+## Job sizes
 
 | Cores   | Max wallclock |
 | ------- | ------------- |
@@ -82,7 +84,7 @@ finding where space is being used.
 [Interactive jobs](Interactive Jobs) run with `qrsh` have a
 maximum wallclock time of 2 hours.
 
-# Node types
+## Node types
 
 Myriad contains three node types: standard compute nodes, high memory
 nodes and GPU nodes.
@@ -97,7 +99,7 @@ nodes and GPU nodes.
 You can tell the type of a node by its name: type H nodes are named
 `node-h00a-001` etc.
 
-# GPUs
+## GPUs
 
 Myriad has two GPU nodes, each with two nVidia Tesla P100s.
 
@@ -113,7 +115,7 @@ You can request one or two GPUs by adding them as a resource request to your job
 
 The [GPU nodes](GPU_nodes) page has some sample code for running GPU jobs if you need a test example.
 
-## Tensorflow
+### Tensorflow
 
 Tensorflow is installed: type `module avail tensorflow` to see the
 available versions.
