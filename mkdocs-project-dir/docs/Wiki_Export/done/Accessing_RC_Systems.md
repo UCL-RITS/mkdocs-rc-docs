@@ -8,6 +8,8 @@ categories:
  - Aristotle
 layout: docs
 ---
+# Accessing RC Systems
+
 After you have [applied for and been granted access to our services](Account_Services), you can log in using a terminal
 application that supports the ssh access protocol.
 
@@ -111,12 +113,12 @@ directly, for example:
 ssh ccaaxyz@legion.rc.ucl.ac.uk
 ```
 
-# Running graphical applications using X-forwarding
+## Running graphical applications using X-forwarding
 
 X-forwarding allows users to run a graphical program on a remote
 computer and display the user interface on their own computer.
 
-## X-forwarding on Linux
+### X-forwarding on Linux
 
 If you wish to have X-windows functionality enabled you have to make
 sure that you add either the -X or -Y flags (see man ssh for details) on
@@ -134,14 +136,14 @@ and then
 ssh -X ccaaxyz@legion.rc.ucl.ac.uk
 ```
 
-## X-forwarding on Mac OS X
+### X-forwarding on Mac OS X
 
 You will need to install XQuartz to provide an X-Window System for Mac
 OS X. (Previously known as X11.app).
 
 You can then follow the Linux instructions using Terminal.app.
 
-## X-forwarding on Windows
+### X-forwarding on Windows
 
 You will need:
 
@@ -152,7 +154,7 @@ Exceed is available on Desktop@UCL machines and downloadable from the
 [UCL software database](http://swdb.ucl.ac.uk/). Xming is open source
 (and mentioned here without testing).
 
-### Exceed on Desktop@UCL
+#### Exceed on Desktop@UCL
 
 1.  Load Exceed. You can find it under Start \> All Programs \>
     Applications O-P \> Open Text Exceed 14 \> Exceed
@@ -178,7 +180,7 @@ Exceed is available on Desktop@UCL machines and downloadable from the
 If these work, you have successfully enabled X forwarding for graphical
 applications. (Note they may not be available on all systems).
 
-### Installing Xming on your own computer
+#### Installing Xming on your own computer
 
 Xming is a popular open source X server for Windows. These are
 instructions for using it alongside PuTTY. Other SSH clients and X
@@ -190,7 +192,7 @@ servers are available. We cannot verify how well it may be working.
 3.  Open PuTTY
 4.  Set up PuTTY as shown in the Exceed section.
 
-# Transferring files
+## Transferring files
 
 Read on to [Managing data on RC systems](Managing_Data_on_RC_Systems).
 
