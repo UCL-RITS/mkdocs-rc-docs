@@ -105,8 +105,7 @@ For example, a multi-threaded serial script should look something like:
 
 ```bash
 #!/bin/bash -l
-# Batch script to run a serial job on Legion with the upgraded
-# software stack under SGE.
+# Batch script to run a serial job on Legion under SGE.
 
 # Force bash as the executing shell.
 #$ -S /bin/bash
@@ -127,11 +126,11 @@ For example, a multi-threaded serial script should look something like:
 # Set the name of the job.
 #$ -N Matlab_Job_1
 
-# Set the working directory to somewhere in your scratch space.  This is
-# a necessary step with the upgraded software stack as compute nodes cannot
-# write to $HOME. For example:
+# Set the working directory to somewhere in your scratch space.
+# For example:
 ##$ -wd /home//Scratch
-# Alternatively, launch your job from anywhere *within ~/Scratch*
+# Alternatively, you can automatically use the current working directory 
+#  if you launch your job from anywhere *within ~/Scratch*
 #$ -cwd
 
 # store the MATLAB runtime path in a global environment variable (MCR_HOME)
