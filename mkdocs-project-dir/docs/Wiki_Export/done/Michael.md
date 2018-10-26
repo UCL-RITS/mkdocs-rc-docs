@@ -5,6 +5,8 @@ categories:
  - Tier 2
 layout: docs
 ---
+# Michael
+
 Michael is an extension to the UCL-hosted Hub for Materials and
 Molecular Modelling, an EPSRC-funded Tier 2 system providing large scale
 computation to UK researchers; and delivers computational capability for
@@ -51,7 +53,7 @@ You may need to run `ssh-add` to add the key to your agent so you can
 use it. If you aren't sure what keys your agent can see, running
 `ssh-add -L` will show all the public parts of the keys it is aware of.
 
-## Creating an ssh key in Windows
+### Creating an ssh key in Windows
 
 Have a look at [Key-Based SSH Logins With PuTTY](https://www.howtoforge.com/ssh_key_based_logins_putty) which has
 step-by-step instructions. You can choose whether to use Pageant or not
@@ -61,8 +63,7 @@ pick SSH-1** as that is a very old and insecure key type.
 ## Information for Points of Contact
 
 Points of Contact have some tools they can use to manage users and
-allocations, documented at [Points of
-Contact](Points_of_Contact "wikilink").
+allocations, documented at [Points of Contact](Points_of_Contact "wikilink").
 
 ## Logging in
 
@@ -76,11 +77,11 @@ You connect with ssh directly to:
 michael.rc.ucl.ac.uk
 ```
 
-## SSH timeouts
+### SSH timeouts
 
 Idle ssh sessions will be disconnected after 7 days.
 
-# Using the system
+## Using the system
 
 Michael is a batch system. The login nodes allow you to manage your
 files, compile code and submit jobs. Very short (\<15mins) and
@@ -136,7 +137,7 @@ These utilities live in GitHub at
 <https://github.com/UCL-RITS/go-clustertools> and
 <https://github.com/UCL-RITS/rcps-cluster-scripts>
 
-# Software
+## Software
 
 Michael mounts the [RC Systems software stack](Software).
 
@@ -152,7 +153,7 @@ Access to software is managed through the use of modules.
 Access to licensed software may vary based on your host institution and
 project.
 
-## Requesting software installs
+### Requesting software installs
 
 To request software installs, email us at the [support address
 below](#Support) or open an issue on our
@@ -161,12 +162,12 @@ see what software has already been requested in the Github issues and
 can add a comment if you're also interested in something already
 requested.
 
-## Installing your own software
+### Installing your own software
 
 You may install software in your own space. Please look at
 [Compiling](Compiling) for tips.
 
-## Maintaining a piece of software for a group
+### Maintaining a piece of software for a group
 
 It is possible for people to be given central areas to install software
 that they wish to make available to everyone or to a select group -
@@ -174,7 +175,7 @@ generally because they are the developers or if they wish to use
 multiple versions or developer versions. The people given install access
 would then be responsible for managing and maintaining these installs.
 
-## Licensed software
+### Licensed software
 
 Reserved application groups exist for software that requires them. The
 group name will begin with `leg` or `lg`. After we add you to one of
