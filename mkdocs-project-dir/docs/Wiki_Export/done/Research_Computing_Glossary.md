@@ -101,12 +101,19 @@ display output via the monitor. Users type specific shell commands
 in order to run [processes](#process), e.g. `ls` to list
 directory contents.
 
-## Son of Grid Engine (SGE)
+## Son of Grid Engine (SGE or SoGE)
 
 The queuing system used by many cluster computing systems (including, currently, all the ones we run)
 to organise and schedule [jobs](#job). Once jobs are submitted to SGE, it takes
 care of executing them when the required resources become available.
 Job priority is subject to the local fair use policy.
+
+## Sun Grid Engine (SGE)
+
+The original software written by Sun Microsystems that was later modified to
+make Son of Grid Engine (among other products, like Univa Grid Engine).
+Documentation may refer to Sun Grid Engine instead of Son of Grid Engine, and
+for most user purposes, the terms are interchangeable.
 
 ## Thread
 
