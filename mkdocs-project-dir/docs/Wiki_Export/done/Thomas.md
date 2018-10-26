@@ -227,7 +227,6 @@ facilities.
 | Cores | Max wallclock |
 | ----- | ------------- |
 | 864   | 48hrs         |
-|       |               |
 
 On Thomas, interactive sessions using qrsh have the same wallclock limit
 as other jobs.
