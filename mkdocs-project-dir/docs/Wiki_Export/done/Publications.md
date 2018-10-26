@@ -2,14 +2,14 @@
 title: Publications
 layout: docs
 ---
-Some key publications arising from use of the [Legion HPC
-service](Legion "wikilink"), from several of the [Research Computing
-Consortia](Consortia "wikilink") are listed below.
+# Publications
+
+Some key publications arising from use of the [Legion HPC service](Legion).
 
 Papers preceded by \*\*\* resulted from research conducted on the Legion
 cluster via 'non‑standard' use of resources (see [Requesting Additional or Unusual Resources](Requesting_Additional_or_Unusual_Resources)).
 
-# Astrophysics and Remote Sensing
+## Astrophysics and Remote Sensing
 
 ‘Cosmological simulations using GCMHD+’ by Barnes, David J., Kawata,
 Daisuke and Wu, Kinwah. *Monthly Notices of the Royal Astronomical
@@ -37,7 +37,7 @@ RJ and Tennyson J. *Monthly Notices of the Royal Astronomical Society*
 Press* (2012).
 [5](http://www.cambridge.org/gb/knowledge/isbn/item2709668/?site_locale=en_GB)
 
-# Bioinformatics and Computational Biology
+## Bioinformatics and Computational Biology
 
 ‘AIP Mutation in Pituitary Adenomas in the 18th Century and Today’ by
 Chahal HS, Stals K, Unterlander M, Balding DJ, Thomas MG, Kumar AV,
@@ -69,14 +69,14 @@ branch-site test of positive selection’ by Fletcher W and Yang Z.
 *Molecular Biology and Evolution* 27 (2010) 2257.
 [10](http://mbe.oxfordjournals.org/content/27/10/2257.short)
 
-# Earth Materials
+## Earth Materials
 
 'Lattice electrical resistivity of magnetic bcc iron from
 first-principles calculations' by D. Alfè, M. Pozzo, and M. P.
 Desjarlais. *Physical Review B* 85, (2012) 024102 1-5.
 [11](http://www.homepages.ucl.ac.uk/~ucfbdxa/pubblicazioni/PhysRevB.85.024102.pdf)
 
-# Epidemiology
+## Epidemiology
 
 ‘Effect on transmission of HIV-1 resistance of timing of implementation
 of viral load monitoring to determine switches from first to second line
@@ -108,7 +108,7 @@ Abrams, Ruoling Chen, Aroon D. Hingorani and Harry Hemingway. *Public
 Library of Science Medicine* 8 (2011) e1000439.
 [15](http://www.plosmedicine.org/article/info%3Adoi%2F10.1371%2Fjournal.pmed.1000439)
 
-# Molecular Quantum Dynamics and Electronic Structure
+## Molecular Quantum Dynamics and Electronic Structure
 
 ‘Experimental and computational studies of small molecule activation by
 uranium tris(aryloxides): binding of N2, coupling of CO and
@@ -141,7 +141,7 @@ initio intensities’ by Lorenzo Lodi and Jonathan Tennyson. *Journal of
 Quantitative Spectroscopy & Radiative Transfer* 113 (2012) 850.
 [21](http://www.sciencedirect.com/science/article/pii/S0022407312000878)
 
-# Nanoscience and Defects
+## Nanoscience and Defects
 
 'Point defects at the ice (0001) surface’ by Matthew Watkin, Joost
 VandeVondele and Ben Slater. *Proceedings of the National Academy of
@@ -173,7 +173,7 @@ and J. Blumberger. *Proceedings of the National Academy of Sciences* 109
 
 [27](http://www.plosmedicine.org/article/info%3Adoi%2F10.1371%2Fjournal.pmed.1000439)
 
-# Neuroscience
+## Neuroscience
 
 ‘Rapid Desynchronization of an Electrically Coupled Interneuron Network
 with Sparse Excitatory Synaptic Input’ by Koen Vervaeke, Andrea Lőrincz,
@@ -181,7 +181,7 @@ Padraig Gleeson, Matteo Farinella, Zoltan Nusser, R. Angus Silver.
 *Neuron* 67 (2010) 435.
 [28](http://www.cell.com/neuron/fulltext/S0896-6273\(10\)00512-X?switch=standard)
 
-# Surface Science and Catalysis
+## Surface Science and Catalysis
 
 ‘Ab initio molecular dynamics simulations of the cooperative adsorption
 of hydrazine and water on copper surfaces: Implications for shape
@@ -211,7 +211,7 @@ hydroxyapatite at a collagen template’ by N. Almora-Barrios and N.H. de
 Leeuw. *Crystal Growth & Design* 12 (2012) 756.
 [33](http://pubs.acs.org/doi/abs/10.1021/cg201092s)
 
-# Systems Biomedicine
+## Systems Biomedicine
 
 ‘Resolution of Discordant HIV-1 Protease Resistance Rankings Using
 Molecular Dynamics Simulations’ by D. Wright and P. V. Coveney. *Journal
@@ -228,7 +228,7 @@ Large-Scale Atomistic Simulation Study’ by J. B. Swadling, P. V. Coveney
 and H. C. Greenwell. *Journal of the American Chemical Society* 132
 (2010) 13750.[36](http://pubs.acs.org/doi/abs/10.1021/ja104106y)
 
-# Other
+## Other
 
 ‘Universality of Performance Parameters in Vehicular ad hoc Networks’ by
 T. Hewer, M. Nekovee and P. V. Coveney. *IEEE Communications Letters* 15
