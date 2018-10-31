@@ -207,7 +207,7 @@ be requested is 100G.
 Jobs of less than 32 cores will only run on two of the compute nodes and
 the maximum wallclock for those is 12hrs, intended for testing purposes.
 If people submit many jobs of that size, the queue for those two nodes
-will be long. These workloads should be run on Legion.
+will be long. These workloads should be run on [Myriad](Myriad).
 
 ### Wallclock times
 
@@ -228,7 +228,7 @@ Requests to run jobs outside the above limits should be addressed to
 the request must be included; where requests are made to run jobs for
 longer than 3 days, it is expected:
 
-  - the code to be run has been optimised for Legion or Grace
+  - the code to be run has been optimised for the cluster you are running it on
   - the code to be run cannot do checkpoint/restart without major
     modifications.
 
