@@ -1181,15 +1181,6 @@ requested.</p>
 <td>32</td>
 <td>1024G</td>
 </tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 <p>Nodes of type W are the original nodes (now retired), whilst X, Y and Z
@@ -1344,9 +1335,12 @@ need is to submit one job which requests far more than you think
 necessary, and gather data on what it actually uses. If you aren't sure
 what 'far more' entails, request the maximum wallclock time and job size
 that will fit on one node, and reduce this after you have some idea.</p>
-<p>Run your program as: ```</p>
-<p><code>/usr/bin/time --verbose myprogram myargs</code></p>
-<p><code>`` where</code>myprogram myargs` is however you normally run your
+<p>Run your program as: </p>
+<div class="codehilite"><pre><span></span>/usr/bin/time --verbose myprogram myargs
+</pre></div>
+
+
+<p>where <code>myprogram myargs</code> is however you normally run your
 program, with whatever options you pass to it.</p>
 <p>When your job finishes, you will get output about the resources it used
 and how long it took - the relevant one for memory is <code>maxrss</code> (maximum
