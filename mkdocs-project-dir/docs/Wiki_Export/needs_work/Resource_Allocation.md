@@ -1,7 +1,6 @@
 ---
 title: Resource Allocation
 categories:
- - Legion
  - User Guide
 layout: docs
 ---
@@ -46,7 +45,6 @@ requested.
 | O    | 16              | 64GB         | Infiniband   | 36    | 576             | 792G  |
 | P    | 12 + 1 K40c GPU | 8GB          | Ethernet     | 1     | 12 + 1 K40c GPU | 112G  |
 | Q    | 32              | 512GB        | Ethernet     | 1     | 32              | 1024G |
-|      |                 |              |              |       |                 |       |
 
 Nodes of type W are the original nodes (now retired), whilst X, Y and Z
 are the new nodes added during the Legion III upgrade. Nodes of type X
@@ -152,11 +150,13 @@ necessary, and gather data on what it actually uses. If you aren't sure
 what 'far more' entails, request the maximum wallclock time and job size
 that will fit on one node, and reduce this after you have some idea.
 
-Run your program as: ```
+Run your program as: 
 
-`/usr/bin/time --verbose myprogram myargs`
+```
+/usr/bin/time --verbose myprogram myargs
+``` 
 
-``` where `myprogram myargs` is however you normally run your
+where `myprogram myargs` is however you normally run your
 program, with whatever options you pass to it.
 
 When your job finishes, you will get output about the resources it used
