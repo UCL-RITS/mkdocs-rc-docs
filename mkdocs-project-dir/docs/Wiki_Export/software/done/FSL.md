@@ -1,5 +1,5 @@
 ---
-title: Running FSL on Legion
+title: FSL
 layout: docs
 ---
 
