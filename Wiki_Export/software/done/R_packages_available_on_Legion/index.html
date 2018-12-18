@@ -1,0 +1,2902 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Documentation for the centrally provided Research Computing HPC services at UCL.">
+      
+      
+      
+        <meta name="author" content="UCL RCAS Team">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+    
+    
+      
+        <title>R packages available on Legion</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.11e41852.css">
+      
+        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#7e57c2">
+      
+    
+    
+      <script src="../../../../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
+      
+    
+    <link rel="stylesheet" href="../../../../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#r-and-bioconductor-packages-installed-on-rc-systems" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../../.." title="UCL Research Computing Documentation" class="md-header-nav__button md-logo">
+          
+            <img src="../../../../img/portico.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                UCL Research Computing Documentation
+              </span>
+              <span class="md-header-nav__topic">
+                R packages available on Legion
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      UCL-RITS/mkdocs-rc-docs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../../.." title="UCL Research Computing Documentation" class="md-nav__button md-logo">
+      
+        <img src="../../../../img/portico.svg" width="48" height="48">
+      
+    </a>
+    UCL Research Computing Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      UCL-RITS/mkdocs-rc-docs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../.." title="Welcome to MkDocs" class="md-nav__link">
+      Welcome to MkDocs
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../../howto/" title="How do I?" class="md-nav__link">
+      How do I?
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Wiki Export
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Wiki Export
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Done
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Done
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Accessing_RC_Systems/" title="Accessing RC Systems" class="md-nav__link">
+      Accessing RC Systems
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Account_Services/" title="Account Services" class="md-nav__link">
+      Account Services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Acknowledging_RC_Systems/" title="Acknowledging the Use of RC Systems" class="md-nav__link">
+      Acknowledging the Use of RC Systems
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Additional_Resource_Requests/" title="Additional Resource Requests" class="md-nav__link">
+      Additional Resource Requests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Aristotle/" title="Aristotle" class="md-nav__link">
+      Aristotle
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Batch_Processing/" title="An introduction to batch processing" class="md-nav__link">
+      An introduction to batch processing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Building_and_Running_Matlab_Programs/" title="Building and Running Matlab Programs" class="md-nav__link">
+      Building and Running Matlab Programs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Cluster_Computing/" title="Cluster Computing" class="md-nav__link">
+      Cluster Computing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Compiling/" title="Compiling your code" class="md-nav__link">
+      Compiling your code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Connecting_to_Research_Data_Services/" title="Connecting to Research Data Services" class="md-nav__link">
+      Connecting to Research Data Services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Contact_and_Support/" title="Contact and Support" class="md-nav__link">
+      Contact and Support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Example_Submission_Scripts/" title="Example Submission Scripts" class="md-nav__link">
+      Example Submission Scripts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/FAQ/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/GPU_clusters/" title="GPU clusters" class="md-nav__link">
+      GPU clusters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/GPU_nodes/" title="GPU nodes" class="md-nav__link">
+      GPU nodes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Installing_PGI/" title="Installing PGI" class="md-nav__link">
+      Installing PGI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Interactive_Sessions/" title="Interactive Sessions" class="md-nav__link">
+      Interactive Sessions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Known_Issues/" title="Known Issues" class="md-nav__link">
+      Known Issues
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Main_Page/" title="Research Computing Services" class="md-nav__link">
+      Research Computing Services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Michael/" title="Michael" class="md-nav__link">
+      Michael
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Myriad/" title="Myriad" class="md-nav__link">
+      Myriad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/News_and_Events/" title="News and Events" class="md-nav__link">
+      News and Events
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Paid-For_Resources/" title="Paid-For Resources" class="md-nav__link">
+      Paid-For Resources
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Planned_Service_Outages/" title="Planned Service Outages" class="md-nav__link">
+      Planned Service Outages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Points_of_Contact/" title="Points of Contact" class="md-nav__link">
+      Points of Contact
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Publications/" title="Publications" class="md-nav__link">
+      Publications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Quick_Start/" title="Legion Quick Start" class="md-nav__link">
+      Legion Quick Start
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/RC_Systems/" title="Research Computing Platforms" class="md-nav__link">
+      Research Computing Platforms
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/RC_Systems_user_environment/" title="RC Systems user environment" class="md-nav__link">
+      RC Systems user environment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Reporting_problems/" title="Reporting problems" class="md-nav__link">
+      Reporting problems
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Research_Computing_Glossary/" title="Research Computing Glossary" class="md-nav__link">
+      Research Computing Glossary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Terms_And_Conditions/" title="Terms and Conditions" class="md-nav__link">
+      Terms and Conditions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/The_Scheduler/" title="How the scheduler works" class="md-nav__link">
+      How the scheduler works
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Thomas/" title="Thomas" class="md-nav__link">
+      Thomas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/Training/" title="Training" class="md-nav__link">
+      Training
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/UCL_UK_e-Science_Certificates/" title="UCL UK e-Science Certificates" class="md-nav__link">
+      UCL UK e-Science Certificates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/User_Scripts/" title="User Scripts" class="md-nav__link">
+      User Scripts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../done/X11_Forwarding_With_Windows/" title="X11 Forwarding With Windows" class="md-nav__link">
+      X11 Forwarding With Windows
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Needs work
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Needs work
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../needs_work/Managing_Data_on_RC_Systems/" title="Managing Data on RC Systems" class="md-nav__link">
+      Managing Data on RC Systems
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../needs_work/Resource_Allocation/" title="Resource Allocation" class="md-nav__link">
+      Resource Allocation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../needs_work/Running_Hybrid_OpenMP__MPI_Code/" title="Running Hybrid OpenMP/MPI Code" class="md-nav__link">
+      Running Hybrid OpenMP/MPI Code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../needs_work/Summary_of_Legion_changes/" title="Summary of Legion changes" class="md-nav__link">
+      Summary of Legion changes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Software
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Software
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-1" type="checkbox" id="nav-3-3-1" checked>
+    
+    <label class="md-nav__link" for="nav-3-3-1">
+      Done
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-3-1">
+        Done
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ATLAS/" title="ATLAS" class="md-nav__link">
+      ATLAS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../BEAST/" title="BEAST" class="md-nav__link">
+      BEAST
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../CASTEP/" title="CASTEP" class="md-nav__link">
+      CASTEP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../FSL/" title="Running FSL on Legion" class="md-nav__link">
+      Running FSL on Legion
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../FreeSurfer/" title="FreeSurfer" class="md-nav__link">
+      FreeSurfer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../MKL/" title="MKL" class="md-nav__link">
+      MKL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../OpenBLAS/" title="OpenBLAS" class="md-nav__link">
+      OpenBLAS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Quantum_Espresso/" title="Quantum Espresso" class="md-nav__link">
+      Quantum Espresso
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="R packages available on Legion" class="md-nav__link md-nav__link--active">
+      R packages available on Legion
+    </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Wiki_Export/software/done/R_packages_available_on_Legion.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="r-and-bioconductor-packages-installed-on-rc-systems">R and Bioconductor Packages installed on RC Systems<a class="headerlink" href="#r-and-bioconductor-packages-installed-on-rc-systems" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please consider replacing this with instructions on how to retrieve this list, instead of the list itself.</p>
+</div>
+<p>This is a list of the R add-on packages available with R 3.4.0 and
+Bioconductor 3.5 on Legion, Grace, Thomas and Aristotle.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Package</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">abc</td>
+<td align="left">Tools for Approximate Bayesian Computation (ABC)</td>
+</tr>
+<tr>
+<td align="center">abc.data</td>
+<td align="left">Data Only: Tools for Approximate Bayesian Computation (ABC)</td>
+</tr>
+<tr>
+<td align="center">abind</td>
+<td align="left">Combine Multidimensional Arrays</td>
+</tr>
+<tr>
+<td align="center">acepack</td>
+<td align="left">ACE and AVAS for Selecting Multiple Regression Transformations</td>
+</tr>
+<tr>
+<td align="center">adapt</td>
+<td align="left">adapt -- multidimensional numerical integration</td>
+</tr>
+<tr>
+<td align="center">ade4</td>
+<td align="left">Analysis of Ecological Data : Exploratory and Euclidean Methods in Environmental Sciences</td>
+</tr>
+<tr>
+<td align="center">adegenet</td>
+<td align="left">Exploratory Analysis of Genetic and Genomic Data</td>
+</tr>
+<tr>
+<td align="center">ADGofTest</td>
+<td align="left">Anderson-Darling GoF test</td>
+</tr>
+<tr>
+<td align="center">affxparser</td>
+<td align="left">Affymetrix File Parsing SDK</td>
+</tr>
+<tr>
+<td align="center">affy</td>
+<td align="left">Methods for Affymetrix Oligonucleotide Arrays</td>
+</tr>
+<tr>
+<td align="center">affydata</td>
+<td align="left">Affymetrix Data for Demonstration Purpose</td>
+</tr>
+<tr>
+<td align="center">affyio</td>
+<td align="left">Tools for parsing Affymetrix data files</td>
+</tr>
+<tr>
+<td align="center">affylmGUI</td>
+<td align="left">GUI for limma package with Affymetrix microarrays</td>
+</tr>
+<tr>
+<td align="center">affyPLM</td>
+<td align="left">Methods for fitting probe-level models</td>
+</tr>
+<tr>
+<td align="center">affyQCReport</td>
+<td align="left">QC Report Generation for affyBatch objects</td>
+</tr>
+<tr>
+<td align="center">akima</td>
+<td align="left">Interpolation of Irregularly and Regularly Spaced Data</td>
+</tr>
+<tr>
+<td align="center">annaffy</td>
+<td align="left">Annotation tools for Affymetrix biological metadata</td>
+</tr>
+<tr>
+<td align="center">annmap</td>
+<td align="left">Genome annotation and visualisation package pertaining to Affymetrix arrays and NGS analysis.</td>
+</tr>
+<tr>
+<td align="center">annotate</td>
+<td align="left">Annotation for microarrays</td>
+</tr>
+<tr>
+<td align="center">AnnotationDbi</td>
+<td align="left">Annotation Database Interface</td>
+</tr>
+<tr>
+<td align="center">AnnotationForge</td>
+<td align="left">Code for Building Annotation Database Packages</td>
+</tr>
+<tr>
+<td align="center">AnnotationHub</td>
+<td align="left">Client to access AnnotationHub resources</td>
+</tr>
+<tr>
+<td align="center">ape</td>
+<td align="left">Analyses of Phylogenetics and Evolution</td>
+</tr>
+<tr>
+<td align="center">aroma.affymetrix</td>
+<td align="left">Analysis of Large Affymetrix Microarray Data Sets</td>
+</tr>
+<tr>
+<td align="center">aroma.apd</td>
+<td align="left">A Probe-Level Data File Format Used by 'aroma.affymetrix' [deprecated]</td>
+</tr>
+<tr>
+<td align="center">aroma.core</td>
+<td align="left">Core Methods and Classes Used by 'aroma.*' Packages Part of the Aroma Framework</td>
+</tr>
+<tr>
+<td align="center">assertthat</td>
+<td align="left">Easy pre and post assertions.</td>
+</tr>
+<tr>
+<td align="center">backports</td>
+<td align="left">Reimplementations of Functions Introduced Since R-3.0.0</td>
+</tr>
+<tr>
+<td align="center">base</td>
+<td align="left">The R Base Package</td>
+</tr>
+<tr>
+<td align="center">base64</td>
+<td align="left">Base64 Encoder and Decoder</td>
+</tr>
+<tr>
+<td align="center">base64enc</td>
+<td align="left">Tools for base64 encoding</td>
+</tr>
+<tr>
+<td align="center">BaSTA</td>
+<td align="left">Age-Specific Survival Analysis from Incomplete Capture-Recapture/Recovery Data</td>
+</tr>
+<tr>
+<td align="center">BatchJobs</td>
+<td align="left">Batch Computing with R</td>
+</tr>
+<tr>
+<td align="center">bayesplot</td>
+<td align="left">Plotting for Bayesian Models</td>
+</tr>
+<tr>
+<td align="center">BBmisc</td>
+<td align="left">Miscellaneous Helper Functions for B. Bischl</td>
+</tr>
+<tr>
+<td align="center">beadarray</td>
+<td align="left">Quality assessment and low-level analysis for Illumina BeadArray data</td>
+</tr>
+<tr>
+<td align="center">beadarrayExampleData</td>
+<td align="left">Example data for the beadarray package</td>
+</tr>
+<tr>
+<td align="center">BeadDataPackR</td>
+<td align="left">Compression of Illumina BeadArray data</td>
+</tr>
+<tr>
+<td align="center">beanplot</td>
+<td align="left">Visualization via Beanplots (like Boxplot/Stripchart/Violin Plot)</td>
+</tr>
+<tr>
+<td align="center">BH</td>
+<td align="left">Boost C++ Header Files</td>
+</tr>
+<tr>
+<td align="center">BiasedUrn</td>
+<td align="left">Biased Urn Model Distributions</td>
+</tr>
+<tr>
+<td align="center">Biobase</td>
+<td align="left">Biobase: Base functions for Bioconductor</td>
+</tr>
+<tr>
+<td align="center">BiocGenerics</td>
+<td align="left">S4 generic functions for Bioconductor</td>
+</tr>
+<tr>
+<td align="center">BiocInstaller</td>
+<td align="left">Install/Update Bioconductor, CRAN, and github Packages</td>
+</tr>
+<tr>
+<td align="center">BiocParallel</td>
+<td align="left">Bioconductor facilities for parallel evaluation</td>
+</tr>
+<tr>
+<td align="center">biomaRt</td>
+<td align="left">Interface to BioMart databases (e.g. Ensembl, COSMIC, Wormbase and Gramene)</td>
+</tr>
+<tr>
+<td align="center">Biostrings</td>
+<td align="left">String objects representing biological sequences, and matching algorithms</td>
+</tr>
+<tr>
+<td align="center">biovizBase</td>
+<td align="left">Basic graphic utilities for visualization of genomic data.</td>
+</tr>
+<tr>
+<td align="center">bitops</td>
+<td align="left">Bitwise Operations</td>
+</tr>
+<tr>
+<td align="center">blockmodeling</td>
+<td align="left">An R package for Generalized and classical blockmodeling of valued networks</td>
+</tr>
+<tr>
+<td align="center">boot</td>
+<td align="left">Bootstrap Functions (Originally by Angelo Canty for S)</td>
+</tr>
+<tr>
+<td align="center">brew</td>
+<td align="left">Templating Framework for Report Generation</td>
+</tr>
+<tr>
+<td align="center">BSgenome</td>
+<td align="left">Infrastructure for Biostrings-based genome data packages and support for efficient SNP representation</td>
+</tr>
+<tr>
+<td align="center">BSgenome.Hsapiens.UCSC.hg19</td>
+<td align="left">Full genome sequences for Homo sapiens (UCSC version hg19)</td>
+</tr>
+<tr>
+<td align="center">bsseq</td>
+<td align="left">Analyze, manage and store bisulfite sequencing data</td>
+</tr>
+<tr>
+<td align="center">bumphunter</td>
+<td align="left">Bump Hunter</td>
+</tr>
+<tr>
+<td align="center">car</td>
+<td align="left">Companion to Applied Regression</td>
+</tr>
+<tr>
+<td align="center">caret</td>
+<td align="left">Classification and Regression Training</td>
+</tr>
+<tr>
+<td align="center">Category</td>
+<td align="left">Category Analysis</td>
+</tr>
+<tr>
+<td align="center">caTools</td>
+<td align="left">Tools: moving window statistics, GIF, Base64, ROC AUC, etc.</td>
+</tr>
+<tr>
+<td align="center">ChAMP</td>
+<td align="left">Chip Analysis Methylation Pipeline for Illumina HumanMethylation450 and EPIC</td>
+</tr>
+<tr>
+<td align="center">ChAMPdata</td>
+<td align="left">Data Packages for ChAMP package</td>
+</tr>
+<tr>
+<td align="center">checkmate</td>
+<td align="left">Fast and Versatile Argument Checks</td>
+</tr>
+<tr>
+<td align="center">class</td>
+<td align="left">Functions for Classification</td>
+</tr>
+<tr>
+<td align="center">cluster</td>
+<td align="left">"Finding Groups in Data": Cluster Analysis Extended Rousseeuw et al.</td>
+</tr>
+<tr>
+<td align="center">cmprsk</td>
+<td align="left">Subdistribution Analysis of Competing Risks</td>
+</tr>
+<tr>
+<td align="center">coda</td>
+<td align="left">Output Analysis and Diagnostics for MCMC</td>
+</tr>
+<tr>
+<td align="center">codetools</td>
+<td align="left">Code Analysis Tools for R</td>
+</tr>
+<tr>
+<td align="center">colorRamps</td>
+<td align="left">Builds color tables</td>
+</tr>
+<tr>
+<td align="center">colorspace</td>
+<td align="left">Color Space Manipulation</td>
+</tr>
+<tr>
+<td align="center">colourpicker</td>
+<td align="left">A Colour Picker Widget for Shiny Apps, RStudio, R-markdown, and 'htmlwidgets'</td>
+</tr>
+<tr>
+<td align="center">combinat</td>
+<td align="left">combinatorics utilities</td>
+</tr>
+<tr>
+<td align="center">compiler</td>
+<td align="left">The R Compiler Package</td>
+</tr>
+<tr>
+<td align="center">copula</td>
+<td align="left">Multivariate Dependence with Copulas</td>
+</tr>
+<tr>
+<td align="center">copynumber</td>
+<td align="left">Segmentation of single- and multi-track copy number data by penalized least squares regression.</td>
+</tr>
+<tr>
+<td align="center">corpcor</td>
+<td align="left">Efficient Estimation of Covariance and (Partial) Correlation</td>
+</tr>
+<tr>
+<td align="center">corrplot</td>
+<td align="left">Visualization of a Correlation Matrix</td>
+</tr>
+<tr>
+<td align="center">crayon</td>
+<td align="left">Colored Terminal Output</td>
+</tr>
+<tr>
+<td align="center">curl</td>
+<td align="left">A Modern and Flexible Web Client for R</td>
+</tr>
+<tr>
+<td align="center">data.table</td>
+<td align="left">Extension of Data.frame</td>
+</tr>
+<tr>
+<td align="center">datasets</td>
+<td align="left">The R Datasets Package</td>
+</tr>
+<tr>
+<td align="center">DBI</td>
+<td align="left">R Database Interface</td>
+</tr>
+<tr>
+<td align="center">deldir</td>
+<td align="left">Delaunay Triangulation and Dirichlet (Voronoi) Tessellation</td>
+</tr>
+<tr>
+<td align="center">dendextend</td>
+<td align="left">Extending R's Dendrogram Functionality</td>
+</tr>
+<tr>
+<td align="center">DEoptimR</td>
+<td align="left">Differential Evolution Optimization in Pure R</td>
+</tr>
+<tr>
+<td align="center">DESeq</td>
+<td align="left">Differential gene expression analysis based on the negative binomial distribution</td>
+</tr>
+<tr>
+<td align="center">DESeq2</td>
+<td align="left">Differential gene expression analysis based on the negative binomial distribution</td>
+</tr>
+<tr>
+<td align="center">Design</td>
+<td align="left">Design Package</td>
+</tr>
+<tr>
+<td align="center">DEXSeq</td>
+<td align="left">Inference of differential exon usage in RNA-Seq</td>
+</tr>
+<tr>
+<td align="center">dichromat</td>
+<td align="left">Color Schemes for Dichromats</td>
+</tr>
+<tr>
+<td align="center">digest</td>
+<td align="left">Create Compact Hash Digests of R Objects</td>
+</tr>
+<tr>
+<td align="center">diptest</td>
+<td align="left">Hartigan's Dip Test Statistic for Unimodality - Corrected</td>
+</tr>
+<tr>
+<td align="center">DMRcate</td>
+<td align="left">Methylation array and sequencing spatial analysis methods</td>
+</tr>
+<tr>
+<td align="center">DMRcatedata</td>
+<td align="left">Data Package for DMRcate package</td>
+</tr>
+<tr>
+<td align="center">DNAcopy</td>
+<td align="left">DNA copy number data analysis</td>
+</tr>
+<tr>
+<td align="center">doMC</td>
+<td align="left">Foreach Parallel Adaptor for 'parallel'</td>
+</tr>
+<tr>
+<td align="center">doParallel</td>
+<td align="left">Foreach Parallel Adaptor for the 'parallel' Package</td>
+</tr>
+<tr>
+<td align="center">doRNG</td>
+<td align="left">Generic Reproducible Parallel Backend for foreach Loops</td>
+</tr>
+<tr>
+<td align="center">dplyr</td>
+<td align="left">A Grammar of Data Manipulation</td>
+</tr>
+<tr>
+<td align="center">DSS</td>
+<td align="left">Dispersion shrinakge for sequencing data.</td>
+</tr>
+<tr>
+<td align="center">DT</td>
+<td align="left">A Wrapper of the JavaScript Library 'DataTables'</td>
+</tr>
+<tr>
+<td align="center">dygraphs</td>
+<td align="left">Interface to 'Dygraphs' Interactive Time Series Charting Library</td>
+</tr>
+<tr>
+<td align="center">dynamicTreeCut</td>
+<td align="left">Methods for Detection of Clusters in Hierarchical Clustering Dendrograms</td>
+</tr>
+<tr>
+<td align="center">DynDoc</td>
+<td align="left">Dynamic document tools</td>
+</tr>
+<tr>
+<td align="center">e1071</td>
+<td align="left">Misc Functions of the Department of Statistics, Probability Theory Group (Formerly: E1071), TU Wien</td>
+</tr>
+<tr>
+<td align="center">easyRNASeq</td>
+<td align="left">Count summarization and normalization for RNA-Seq data</td>
+</tr>
+<tr>
+<td align="center">EBSeq</td>
+<td align="left">An R package for gene and isoform differential expression analysis of RNA-seq data</td>
+</tr>
+<tr>
+<td align="center">edgeR</td>
+<td align="left">Empirical Analysis of Digital Gene Expression Data in R</td>
+</tr>
+<tr>
+<td align="center">effects</td>
+<td align="left">Effect Displays for Linear, Generalized Linear, and Other Models</td>
+</tr>
+<tr>
+<td align="center">ellipse</td>
+<td align="left">Functions for drawing ellipses and ellipse-like confidence regions</td>
+</tr>
+<tr>
+<td align="center">ensembldb</td>
+<td align="left">Utilities to create and use an Ensembl based annotation database</td>
+</tr>
+<tr>
+<td align="center">Epi</td>
+<td align="left">A Package for Statistical Analysis in Epidemiology</td>
+</tr>
+<tr>
+<td align="center">etm</td>
+<td align="left">Empirical Transition Matrix</td>
+</tr>
+<tr>
+<td align="center">evaluate</td>
+<td align="left">Parsing and Evaluation Tools that Provide More Details than the Default</td>
+</tr>
+<tr>
+<td align="center">expm</td>
+<td align="left">Matrix Exponential</td>
+</tr>
+<tr>
+<td align="center">FactoMineR</td>
+<td align="left">Multivariate Exploratory Data Analysis and Data Mining</td>
+</tr>
+<tr>
+<td align="center">fail</td>
+<td align="left">File Abstraction Interface Layer (FAIL)</td>
+</tr>
+<tr>
+<td align="center">fastcluster</td>
+<td align="left">Fast Hierarchical Clustering Routines for R and Python</td>
+</tr>
+<tr>
+<td align="center">fastICA</td>
+<td align="left">FastICA Algorithms to perform ICA and Projection Pursuit</td>
+</tr>
+<tr>
+<td align="center">fastmatch</td>
+<td align="left">Fast match() function</td>
+</tr>
+<tr>
+<td align="center">FDb.InfiniumMethylation.hg19</td>
+<td align="left">Annotation package for Illumina Infinium DNA methylation probes</td>
+</tr>
+<tr>
+<td align="center">fdrtool</td>
+<td align="left">Estimation of (Local) False Discovery Rates and Higher Criticism</td>
+</tr>
+<tr>
+<td align="center">FEM</td>
+<td align="left">Identification of Functional Epigenetic Modules</td>
+</tr>
+<tr>
+<td align="center">fields</td>
+<td align="left">Tools for Spatial Data</td>
+</tr>
+<tr>
+<td align="center">flashClust</td>
+<td align="left">Implementation of optimal hierarchical clustering</td>
+</tr>
+<tr>
+<td align="center">flexmix</td>
+<td align="left">Flexible Mixture Modeling</td>
+</tr>
+<tr>
+<td align="center">foreach</td>
+<td align="left">Provides Foreach Looping Construct for R</td>
+</tr>
+<tr>
+<td align="center">foreign</td>
+<td align="left">Read Data Stored by Minitab, S, SAS, SPSS, Stata, Systat, Weka, dBase, ...</td>
+</tr>
+<tr>
+<td align="center">Formula</td>
+<td align="left">Extended Model Formulas</td>
+</tr>
+<tr>
+<td align="center">fpc</td>
+<td align="left">Flexible Procedures for Clustering</td>
+</tr>
+<tr>
+<td align="center">futile.logger</td>
+<td align="left">A Logging Utility for R</td>
+</tr>
+<tr>
+<td align="center">futile.options</td>
+<td align="left">Futile options management</td>
+</tr>
+<tr>
+<td align="center">future</td>
+<td align="left">A Future API for R</td>
+</tr>
+<tr>
+<td align="center">gam</td>
+<td align="left">Generalized Additive Models</td>
+</tr>
+<tr>
+<td align="center">gamlss</td>
+<td align="left">Generalised Additive Models for Location Scale and Shape</td>
+</tr>
+<tr>
+<td align="center">gamlss.data</td>
+<td align="left">GAMLSS Data</td>
+</tr>
+<tr>
+<td align="center">gamlss.dist</td>
+<td align="left">Distributions to be Used for GAMLSS Modelling</td>
+</tr>
+<tr>
+<td align="center">gamlss.mx</td>
+<td align="left">Fitting Mixture Distributions with GAMLSS</td>
+</tr>
+<tr>
+<td align="center">gamlss.nl</td>
+<td align="left">Fitting non linear parametric GAMLSS models</td>
+</tr>
+<tr>
+<td align="center">gcrma</td>
+<td align="left">Background Adjustment Using Sequence Information</td>
+</tr>
+<tr>
+<td align="center">gdata</td>
+<td align="left">Various R Programming Tools for Data Manipulation</td>
+</tr>
+<tr>
+<td align="center">GenABEL</td>
+<td align="left">genome-wide SNP association analysis</td>
+</tr>
+<tr>
+<td align="center">GenABEL.data</td>
+<td align="left">Package contains data which is used by GenABEL example and test functions</td>
+</tr>
+<tr>
+<td align="center">genefilter</td>
+<td align="left">genefilter: methods for filtering genes from high-throughput experiments</td>
+</tr>
+<tr>
+<td align="center">geneLenDataBase</td>
+<td align="left">Lengths of mRNA transcripts for a number of genomes</td>
+</tr>
+<tr>
+<td align="center">GeneNet</td>
+<td align="left">Modeling and Inferring Gene Networks</td>
+</tr>
+<tr>
+<td align="center">geneplotter</td>
+<td align="left">Graphics related functions for Bioconductor</td>
+</tr>
+<tr>
+<td align="center">genetics</td>
+<td align="left">Population Genetics</td>
+</tr>
+<tr>
+<td align="center">GenomeGraphs</td>
+<td align="left">Plotting genomic information from Ensembl</td>
+</tr>
+<tr>
+<td align="center">GenomeInfoDb</td>
+<td align="left">Utilities for manipulating chromosome and other 'seqname' identifiers</td>
+</tr>
+<tr>
+<td align="center">genomeIntervals</td>
+<td align="left">Operations on genomic intervals</td>
+</tr>
+<tr>
+<td align="center">GenomicAlignments</td>
+<td align="left">Representation and manipulation of short genomic alignments</td>
+</tr>
+<tr>
+<td align="center">GenomicFeatures</td>
+<td align="left">Tools for making and manipulating transcript centric annotations</td>
+</tr>
+<tr>
+<td align="center">GenomicRanges</td>
+<td align="left">Representation and manipulation of genomic intervals and variables defined along a genome</td>
+</tr>
+<tr>
+<td align="center">GEOquery</td>
+<td align="left">Get data from NCBI Gene Expression Omnibus (GEO)</td>
+</tr>
+<tr>
+<td align="center">GGally</td>
+<td align="left">Extension to 'ggplot2'</td>
+</tr>
+<tr>
+<td align="center">ggplot2</td>
+<td align="left">Create Elegant Data Visualisations Using the Grammar of Graphics</td>
+</tr>
+<tr>
+<td align="center">ggvis</td>
+<td align="left">Interactive Grammar of Graphics</td>
+</tr>
+<tr>
+<td align="center">glmnet</td>
+<td align="left">Lasso and Elastic-Net Regularized Generalized Linear Models</td>
+</tr>
+<tr>
+<td align="center">globals</td>
+<td align="left">Identify Global Objects in R Expressions</td>
+</tr>
+<tr>
+<td align="center">gmodels</td>
+<td align="left">Various R Programming Tools for Model Fitting</td>
+</tr>
+<tr>
+<td align="center">GO.db</td>
+<td align="left">A set of annotation maps describing the entire Gene Ontology</td>
+</tr>
+<tr>
+<td align="center">goseq</td>
+<td align="left">Gene Ontology analyser for RNA-seq and other length biased data</td>
+</tr>
+<tr>
+<td align="center">GOstats</td>
+<td align="left">Tools for manipulating GO and microarrays.</td>
+</tr>
+<tr>
+<td align="center">gplots</td>
+<td align="left">Various R Programming Tools for Plotting Data</td>
+</tr>
+<tr>
+<td align="center">graph</td>
+<td align="left">graph: A package to handle graph data structures</td>
+</tr>
+<tr>
+<td align="center">graphics</td>
+<td align="left">The R Graphics Package</td>
+</tr>
+<tr>
+<td align="center">grDevices</td>
+<td align="left">The R Graphics Devices and Support for Colours and Fonts</td>
+</tr>
+<tr>
+<td align="center">grid</td>
+<td align="left">The Grid Graphics Package</td>
+</tr>
+<tr>
+<td align="center">gridBase</td>
+<td align="left">Integration of base and grid graphics</td>
+</tr>
+<tr>
+<td align="center">gridExtra</td>
+<td align="left">Miscellaneous Functions for &quot;Grid&quot; Graphics</td>
+</tr>
+<tr>
+<td align="center">GSEABase</td>
+<td align="left">Gene set enrichment data structures and methods</td>
+</tr>
+<tr>
+<td align="center">gsl</td>
+<td align="left">wrapper for the Gnu Scientific Library</td>
+</tr>
+<tr>
+<td align="center">gsmoothr</td>
+<td align="left">Smoothing tools</td>
+</tr>
+<tr>
+<td align="center">gtable</td>
+<td align="left">Arrange 'Grobs' in Tables</td>
+</tr>
+<tr>
+<td align="center">gtools</td>
+<td align="left">Various R Programming Tools</td>
+</tr>
+<tr>
+<td align="center">Gviz</td>
+<td align="left">Plotting data and annotation information along genomic coordinates</td>
+</tr>
+<tr>
+<td align="center">HAC</td>
+<td align="left">Estimation, Simulation and Visualization of Hierarchical Archimedean Copulae (HAC)</td>
+</tr>
+<tr>
+<td align="center">haplo.stats</td>
+<td align="left">Statistical Analysis of Haplotypes with Traits and Covariates when Linkage Phase is Ambiguous</td>
+</tr>
+<tr>
+<td align="center">hexbin</td>
+<td align="left">Hexagonal Binning Routines</td>
+</tr>
+<tr>
+<td align="center">hgu95av2.db</td>
+<td align="left">Affymetrix Human Genome U95 Set annotation data (chip hgu95av2)</td>
+</tr>
+<tr>
+<td align="center">HI</td>
+<td align="left">Simulation from distributions supported by nested hyperplanes</td>
+</tr>
+<tr>
+<td align="center">highr</td>
+<td align="left">Syntax Highlighting for R Source Code</td>
+</tr>
+<tr>
+<td align="center">Hmisc</td>
+<td align="left">Harrell Miscellaneous</td>
+</tr>
+<tr>
+<td align="center">HotDeckImputation</td>
+<td align="left">Hot Deck Imputation Methods for Missing Data</td>
+</tr>
+<tr>
+<td align="center">htmlTable</td>
+<td align="left">Advanced Tables for Markdown/HTML</td>
+</tr>
+<tr>
+<td align="center">htmltools</td>
+<td align="left">Tools for HTML</td>
+</tr>
+<tr>
+<td align="center">htmlwidgets</td>
+<td align="left">HTML Widgets for R</td>
+</tr>
+<tr>
+<td align="center">httpuv</td>
+<td align="left">HTTP and WebSocket Server Library</td>
+</tr>
+<tr>
+<td align="center">httr</td>
+<td align="left">Tools for Working with URLs and HTTP</td>
+</tr>
+<tr>
+<td align="center">hugene10stprobeset.db</td>
+<td align="left">Affymetrix hugene10 annotation data (chip hugene10stprobeset)</td>
+</tr>
+<tr>
+<td align="center">hugene10sttranscriptcluster.db</td>
+<td align="left">Affymetrix hugene10 annotation data (chip hugene10sttranscriptcluster)</td>
+</tr>
+<tr>
+<td align="center">hwriter</td>
+<td align="left">HTML Writer - Outputs R objects in HTML format</td>
+</tr>
+<tr>
+<td align="center">igraph</td>
+<td align="left">Network Analysis and Visualization</td>
+</tr>
+<tr>
+<td align="center">Illumina450ProbeVariants.db</td>
+<td align="left">Annotation Package combining variant data from 1000 Genomes Project for Illumina HumanMethylation450 Bead Chip probes</td>
+</tr>
+<tr>
+<td align="center">IlluminaHumanMethylation450kanno.ilmn12.hg19</td>
+<td align="left">Annotation for Illumina's 450k methylation arrays</td>
+</tr>
+<tr>
+<td align="center">IlluminaHumanMethylation450kmanifest</td>
+<td align="left">Annotation for Illumina's 450k methylation arrays</td>
+</tr>
+<tr>
+<td align="center">IlluminaHumanMethylationEPICanno.ilm10b2.hg19</td>
+<td align="left">Annotation for Illumina's EPIC methylation arrays</td>
+</tr>
+<tr>
+<td align="center">IlluminaHumanMethylationEPICmanifest</td>
+<td align="left">Manifest for Illumina's EPIC methylation arrays</td>
+</tr>
+<tr>
+<td align="center">illuminaHumanv4.db</td>
+<td align="left">Illumina HumanHT12v4 annotation data (chip illuminaHumanv4)</td>
+</tr>
+<tr>
+<td align="center">illuminaio</td>
+<td align="left">Parsing Illumina Microarray Output Files</td>
+</tr>
+<tr>
+<td align="center">impute</td>
+<td align="left">impute: Imputation for microarray data</td>
+</tr>
+<tr>
+<td align="center">INLA</td>
+<td align="left">Functions which Allow to Perform Full Bayesian Analysis of Latent Gaussian Models using Integrated Nested Laplace Approximations</td>
+</tr>
+<tr>
+<td align="center">inline</td>
+<td align="left">Functions to Inline C, C++, Fortran Function Calls from R</td>
+</tr>
+<tr>
+<td align="center">interactiveDisplayBase</td>
+<td align="left">Base package for enabling powerful shiny web displays of Bioconductor objects</td>
+</tr>
+<tr>
+<td align="center">intervals</td>
+<td align="left">Tools for Working with Points and Intervals</td>
+</tr>
+<tr>
+<td align="center">IRanges</td>
+<td align="left">Infrastructure for manipulating intervals on sequences</td>
+</tr>
+<tr>
+<td align="center">irlba</td>
+<td align="left">Fast Truncated SVD, PCA and Symmetric Eigendecomposition for Large Dense and Sparse Matrices</td>
+</tr>
+<tr>
+<td align="center">isva</td>
+<td align="left">Independent Surrogate Variable Analysis</td>
+</tr>
+<tr>
+<td align="center">iterators</td>
+<td align="left">Provides Iterator Construct for R</td>
+</tr>
+<tr>
+<td align="center">jsonlite</td>
+<td align="left">A Robust, High Performance JSON Parser and Generator for R</td>
+</tr>
+<tr>
+<td align="center">KEGG.db</td>
+<td align="left">A set of annotation maps for KEGG</td>
+</tr>
+<tr>
+<td align="center">kernlab</td>
+<td align="left">Kernel-Based Machine Learning Lab</td>
+</tr>
+<tr>
+<td align="center">KernSmooth</td>
+<td align="left">Functions for Kernel Smoothing Supporting Wand &amp; Jones (1995)</td>
+</tr>
+<tr>
+<td align="center">knitr</td>
+<td align="left">A General-Purpose Package for Dynamic Report Generation in R</td>
+</tr>
+<tr>
+<td align="center">labeling</td>
+<td align="left">Axis Labeling</td>
+</tr>
+<tr>
+<td align="center">lambda.r</td>
+<td align="left">Modeling Data with Functional Programming</td>
+</tr>
+<tr>
+<td align="center">lattice</td>
+<td align="left">Trellis Graphics for R</td>
+</tr>
+<tr>
+<td align="center">latticeExtra</td>
+<td align="left">Extra Graphical Utilities Based on Lattice</td>
+</tr>
+<tr>
+<td align="center">lazyeval</td>
+<td align="left">Lazy (Non-Standard) Evaluation</td>
+</tr>
+<tr>
+<td align="center">leaps</td>
+<td align="left">regression subset selection</td>
+</tr>
+<tr>
+<td align="center">LearnBayes</td>
+<td align="left">Functions for Learning Bayesian Inference</td>
+</tr>
+<tr>
+<td align="center">limma</td>
+<td align="left">Linear Models for Microarray Data</td>
+</tr>
+<tr>
+<td align="center">listenv</td>
+<td align="left">Environments Behaving (Almost) as Lists</td>
+</tr>
+<tr>
+<td align="center">lme4</td>
+<td align="left">Linear Mixed-Effects Models using 'Eigen' and S4</td>
+</tr>
+<tr>
+<td align="center">locfit</td>
+<td align="left">Local Regression, Likelihood and Density Estimation.</td>
+</tr>
+<tr>
+<td align="center">longitudinal</td>
+<td align="left">Analysis of Multiple Time Course Data</td>
+</tr>
+<tr>
+<td align="center">loo</td>
+<td align="left">Efficient Leave-One-Out Cross-Validation and WAIC for Bayesian Models</td>
+</tr>
+<tr>
+<td align="center">lpSolve</td>
+<td align="left">Interface to 'Lp_solve' v. 5.5 to Solve Linear/Integer Programs</td>
+</tr>
+<tr>
+<td align="center">LSD</td>
+<td align="left">Lots of Superior Depictions</td>
+</tr>
+<tr>
+<td align="center">lumi</td>
+<td align="left">BeadArray Specific Methods for Illumina Methylation and Expression Microarrays</td>
+</tr>
+<tr>
+<td align="center">made4</td>
+<td align="left">Multivariate analysis of microarray data using ADE4</td>
+</tr>
+<tr>
+<td align="center">magrittr</td>
+<td align="left">A Forward-Pipe Operator for R</td>
+</tr>
+<tr>
+<td align="center">maps</td>
+<td align="left">Draw Geographical Maps</td>
+</tr>
+<tr>
+<td align="center">maptree</td>
+<td align="left">Mapping, pruning, and graphing tree models</td>
+</tr>
+<tr>
+<td align="center">markdown</td>
+<td align="left">'Markdown' Rendering for R</td>
+</tr>
+<tr>
+<td align="center">marray</td>
+<td align="left">Exploratory analysis for two-color spotted microarray data</td>
+</tr>
+<tr>
+<td align="center">MASS</td>
+<td align="left">Support Functions and Datasets for Venables and Ripley's MASS</td>
+</tr>
+<tr>
+<td align="center">Matrix</td>
+<td align="left">Sparse and Dense Matrix Classes and Methods</td>
+</tr>
+<tr>
+<td align="center">MatrixModels</td>
+<td align="left">Modelling with Sparse And Dense Matrices</td>
+</tr>
+<tr>
+<td align="center">matrixStats</td>
+<td align="left">Functions that Apply to Rows and Columns of Matrices (and to Vectors)</td>
+</tr>
+<tr>
+<td align="center">mclust</td>
+<td align="left">Gaussian Mixture Modelling for Model-Based Clustering, Classification, and Density Estimation</td>
+</tr>
+<tr>
+<td align="center">mcmc</td>
+<td align="left">Markov Chain Monte Carlo</td>
+</tr>
+<tr>
+<td align="center">memoise</td>
+<td align="left">Memoisation of Functions</td>
+</tr>
+<tr>
+<td align="center">metafor</td>
+<td align="left">Meta-Analysis Package for R</td>
+</tr>
+<tr>
+<td align="center">methods</td>
+<td align="left">Formal Methods and Classes</td>
+</tr>
+<tr>
+<td align="center">methylumi</td>
+<td align="left">Handle Illumina methylation data</td>
+</tr>
+<tr>
+<td align="center">mgcv</td>
+<td align="left">Mixed GAM Computation Vehicle with GCV/AIC/REML Smoothness Estimation</td>
+</tr>
+<tr>
+<td align="center">mime</td>
+<td align="left">Map Filenames to MIME Types</td>
+</tr>
+<tr>
+<td align="center">minfi</td>
+<td align="left">Analyze Illumina Infinium DNA methylation arrays</td>
+</tr>
+<tr>
+<td align="center">miniUI</td>
+<td align="left">Shiny UI Widgets for Small Screens</td>
+</tr>
+<tr>
+<td align="center">minqa</td>
+<td align="left">Derivative-free optimization algorithms by quadratic approximation</td>
+</tr>
+<tr>
+<td align="center">missMethyl</td>
+<td align="left">Analysing Illumina HumanMethylation BeadChip Data</td>
+</tr>
+<tr>
+<td align="center">mitools</td>
+<td align="left">Tools for multiple imputation of missing data</td>
+</tr>
+<tr>
+<td align="center">mlr</td>
+<td align="left">Machine Learning in R</td>
+</tr>
+<tr>
+<td align="center">mnormt</td>
+<td align="left">The Multivariate Normal and t Distributions</td>
+</tr>
+<tr>
+<td align="center">ModelMetrics</td>
+<td align="left">Rapid Calculation of Model Metrics</td>
+</tr>
+<tr>
+<td align="center">modeltools</td>
+<td align="left">Tools and Classes for Statistical Models</td>
+</tr>
+<tr>
+<td align="center">msm</td>
+<td align="left">Multi-State Markov and Hidden Markov Models in Continuous Time</td>
+</tr>
+<tr>
+<td align="center">mstate</td>
+<td align="left">Data Preparation, Estimation and Prediction in Multi-State Models</td>
+</tr>
+<tr>
+<td align="center">multcomp</td>
+<td align="left">Simultaneous Inference in General Parametric Models</td>
+</tr>
+<tr>
+<td align="center">multtest</td>
+<td align="left">Resampling-based multiple hypothesis testing</td>
+</tr>
+<tr>
+<td align="center">munsell</td>
+<td align="left">Utilities for Using Munsell Colours</td>
+</tr>
+<tr>
+<td align="center">mvtnorm</td>
+<td align="left">Multivariate Normal and t Distributions</td>
+</tr>
+<tr>
+<td align="center">NetworkAnalysis</td>
+<td align="left">Statistical inference on populations of weighted or unweighted networks.</td>
+</tr>
+<tr>
+<td align="center">nleqslv</td>
+<td align="left">Solve Systems of Nonlinear Equations</td>
+</tr>
+<tr>
+<td align="center">nlme</td>
+<td align="left">Linear and Nonlinear Mixed Effects Models</td>
+</tr>
+<tr>
+<td align="center">nloptr</td>
+<td align="left">R interface to NLopt</td>
+</tr>
+<tr>
+<td align="center">NMF</td>
+<td align="left">Algorithms and Framework for Nonnegative Matrix Factorization (NMF)</td>
+</tr>
+<tr>
+<td align="center">nnet</td>
+<td align="left">Feed-Forward Neural Networks and Multinomial Log-Linear Models</td>
+</tr>
+<tr>
+<td align="center">nnls</td>
+<td align="left">The Lawson-Hanson algorithm for non-negative least squares (NNLS)</td>
+</tr>
+<tr>
+<td align="center">nor1mix</td>
+<td align="left">Normal (1-d) Mixture Models (S3 Classes and Methods)</td>
+</tr>
+<tr>
+<td align="center">numDeriv</td>
+<td align="left">Accurate Numerical Derivatives</td>
+</tr>
+<tr>
+<td align="center">nutshell</td>
+<td align="left">Data for &quot;R in a Nutshell&quot;</td>
+</tr>
+<tr>
+<td align="center">nutshell.audioscrobbler</td>
+<td align="left">Audioscrobbler data for &quot;R in a Nutshell&quot;</td>
+</tr>
+<tr>
+<td align="center">nutshell.bbdb</td>
+<td align="left">Baseball Database for &quot;R in a Nutshell&quot;</td>
+</tr>
+<tr>
+<td align="center">OPE</td>
+<td align="left">Outer-product emulator</td>
+</tr>
+<tr>
+<td align="center">openssl</td>
+<td align="left">Toolkit for Encryption, Signatures and Certificates Based on OpenSSL</td>
+</tr>
+<tr>
+<td align="center">org.Hs.eg.db</td>
+<td align="left">Genome wide annotation for Human</td>
+</tr>
+<tr>
+<td align="center">packrat</td>
+<td align="left">A Dependency Management System for Projects and their R Package Dependencies</td>
+</tr>
+<tr>
+<td align="center">parallel</td>
+<td align="left">Support for Parallel computation in R</td>
+</tr>
+<tr>
+<td align="center">parallelMap</td>
+<td align="left">Unified Interface to Parallelization Back-Ends</td>
+</tr>
+<tr>
+<td align="center">ParamHelpers</td>
+<td align="left">Helpers for Parameters in Black-Box Optimization, Tuning and Machine Learning</td>
+</tr>
+<tr>
+<td align="center">parcor</td>
+<td align="left">Regularized estimation of partial correlation matrices</td>
+</tr>
+<tr>
+<td align="center">pbkrtest</td>
+<td align="left">Parametric Bootstrap and Kenward Roger Based Methods for Mixed Model Comparison</td>
+</tr>
+<tr>
+<td align="center">pcaPP</td>
+<td align="left">Robust PCA by Projection Pursuit</td>
+</tr>
+<tr>
+<td align="center">pegas</td>
+<td align="left">Population and Evolutionary Genetics Analysis System</td>
+</tr>
+<tr>
+<td align="center">permute</td>
+<td align="left">Functions for Generating Restricted Permutations of Data</td>
+</tr>
+<tr>
+<td align="center">phangorn</td>
+<td align="left">Phylogenetic Analysis in R</td>
+</tr>
+<tr>
+<td align="center">pixmap</td>
+<td align="left">Bitmap Images (``Pixel Maps'')</td>
+</tr>
+<tr>
+<td align="center">pkgmaker</td>
+<td align="left">Package development utilities</td>
+</tr>
+<tr>
+<td align="center">PKI</td>
+<td align="left">Public Key Infrastucture for R Based on the X.509 Standard</td>
+</tr>
+<tr>
+<td align="center">plogr</td>
+<td align="left">The 'plog' C++ Logging Library</td>
+</tr>
+<tr>
+<td align="center">plotly</td>
+<td align="left">Create Interactive Web Graphics via 'plotly.js'</td>
+</tr>
+<tr>
+<td align="center">pls</td>
+<td align="left">Partial Least Squares and Principal Component Regression</td>
+</tr>
+<tr>
+<td align="center">plyr</td>
+<td align="left">Tools for Splitting, Applying and Combining Data</td>
+</tr>
+<tr>
+<td align="center">polspline</td>
+<td align="left">Polynomial Spline Routines</td>
+</tr>
+<tr>
+<td align="center">poweRlaw</td>
+<td align="left">Analysis of Heavy Tailed Distributions</td>
+</tr>
+<tr>
+<td align="center">ppls</td>
+<td align="left">Penalized Partial Least Squares</td>
+</tr>
+<tr>
+<td align="center">prabclus</td>
+<td align="left">Functions for Clustering of Presence-Absence, Abundance and Multilocus Genetic Data</td>
+</tr>
+<tr>
+<td align="center">pracma</td>
+<td align="left">Practical Numerical Math Functions</td>
+</tr>
+<tr>
+<td align="center">praise</td>
+<td align="left">Praise Users</td>
+</tr>
+<tr>
+<td align="center">preprocessCore</td>
+<td align="left">A collection of pre-processing functions</td>
+</tr>
+<tr>
+<td align="center">prettyunits</td>
+<td align="left">Pretty, Human Readable Formatting of Quantities</td>
+</tr>
+<tr>
+<td align="center">progress</td>
+<td align="left">Terminal Progress Bars</td>
+</tr>
+<tr>
+<td align="center">proto</td>
+<td align="left">Prototype Object-Based Programming</td>
+</tr>
+<tr>
+<td align="center">PSCBS</td>
+<td align="left">Analysis of Parent-Specific DNA Copy Numbers</td>
+</tr>
+<tr>
+<td align="center">pspline</td>
+<td align="left">Penalized Smoothing Splines</td>
+</tr>
+<tr>
+<td align="center">psych</td>
+<td align="left">Procedures for Psychological, Psychometric, and Personality Research</td>
+</tr>
+<tr>
+<td align="center">purrr</td>
+<td align="left">Functional Programming Tools</td>
+</tr>
+<tr>
+<td align="center">quadprog</td>
+<td align="left">Functions to solve Quadratic Programming Problems.</td>
+</tr>
+<tr>
+<td align="center">quantreg</td>
+<td align="left">Quantile Regression</td>
+</tr>
+<tr>
+<td align="center">qvalue</td>
+<td align="left">Q-value estimation for false discovery rate control</td>
+</tr>
+<tr>
+<td align="center">R.cache</td>
+<td align="left">Fast and Light-Weight Caching (Memoization) of Objects and Results to Speed Up Computations</td>
+</tr>
+<tr>
+<td align="center">R.devices</td>
+<td align="left">Unified Handling of Graphics Devices</td>
+</tr>
+<tr>
+<td align="center">R.filesets</td>
+<td align="left">Easy Handling of and Access to Files Organized in Structured Directories</td>
+</tr>
+<tr>
+<td align="center">R.huge</td>
+<td align="left">Methods for Accessing Huge Amounts of Data [deprecated]</td>
+</tr>
+<tr>
+<td align="center">R.methodsS3</td>
+<td align="left">S3 Methods Simplified</td>
+</tr>
+<tr>
+<td align="center">R.oo</td>
+<td align="left">R Object-Oriented Programming with or without References</td>
+</tr>
+<tr>
+<td align="center">R.rsp</td>
+<td align="left">Dynamic Generation of Scientific Reports</td>
+</tr>
+<tr>
+<td align="center">R.utils</td>
+<td align="left">Various Programming Utilities</td>
+</tr>
+<tr>
+<td align="center">R2HTML</td>
+<td align="left">HTML Exportation for R Objects</td>
+</tr>
+<tr>
+<td align="center">R2jags</td>
+<td align="left">Using R to Run 'JAGS'</td>
+</tr>
+<tr>
+<td align="center">R2WinBUGS</td>
+<td align="left">Running 'WinBUGS' and 'OpenBUGS' from 'R' / 'S-PLUS'</td>
+</tr>
+<tr>
+<td align="center">R6</td>
+<td align="left">Classes with Reference Semantics</td>
+</tr>
+<tr>
+<td align="center">randomForest</td>
+<td align="left">Breiman and Cutler's Random Forests for Classification and Regression</td>
+</tr>
+<tr>
+<td align="center">RBGL</td>
+<td align="left">An interface to the BOOST graph library</td>
+</tr>
+<tr>
+<td align="center">RColorBrewer</td>
+<td align="left">ColorBrewer Palettes</td>
+</tr>
+<tr>
+<td align="center">Rcpp</td>
+<td align="left">Seamless R and C++ Integration</td>
+</tr>
+<tr>
+<td align="center">RcppArmadillo</td>
+<td align="left">'Rcpp' Integration for the 'Armadillo' Templated Linear Algebra Library</td>
+</tr>
+<tr>
+<td align="center">RcppEigen</td>
+<td align="left">'Rcpp' Integration for the 'Eigen' Templated Linear Algebra Library</td>
+</tr>
+<tr>
+<td align="center">RcppGSL</td>
+<td align="left">'Rcpp' Integration for 'GNU GSL' Vectors and Matrices</td>
+</tr>
+<tr>
+<td align="center">RCurl</td>
+<td align="left">General Network (HTTP/FTP/...) Client Interface for R</td>
+</tr>
+<tr>
+<td align="center">RefFreeEWAS</td>
+<td align="left">EWAS using Reference-Free DNA Methylation Mixture Deconvolution</td>
+</tr>
+<tr>
+<td align="center">registry</td>
+<td align="left">Infrastructure for R Package Registries</td>
+</tr>
+<tr>
+<td align="center">relaimpo</td>
+<td align="left">Relative importance of regressors in linear models</td>
+</tr>
+<tr>
+<td align="center">Repitools</td>
+<td align="left">Epigenomic tools</td>
+</tr>
+<tr>
+<td align="center">reshape</td>
+<td align="left">Flexibly Reshape Data</td>
+</tr>
+<tr>
+<td align="center">reshape2</td>
+<td align="left">Flexibly Reshape Data: A Reboot of the Reshape Package</td>
+</tr>
+<tr>
+<td align="center">rgdal</td>
+<td align="left">Bindings for the Geospatial Data Abstraction Library</td>
+</tr>
+<tr>
+<td align="center">rgeos</td>
+<td align="left">Interface to Geometry Engine - Open Source (GEOS)</td>
+</tr>
+<tr>
+<td align="center">rgl</td>
+<td align="left">3D Visualization Using OpenGL</td>
+</tr>
+<tr>
+<td align="center">Rglpk</td>
+<td align="left">R/GNU Linear Programming Kit Interface</td>
+</tr>
+<tr>
+<td align="center">ridge</td>
+<td align="left">Ridge Regression with automatic selection of the penalty parameter</td>
+</tr>
+<tr>
+<td align="center">Ringo</td>
+<td align="left">R Investigation of ChIP-chip Oligoarrays</td>
+</tr>
+<tr>
+<td align="center">rjags</td>
+<td align="left">Bayesian Graphical Models using MCMC</td>
+</tr>
+<tr>
+<td align="center">RJSONIO</td>
+<td align="left">Serialize R objects to JSON, JavaScript Object Notation</td>
+</tr>
+<tr>
+<td align="center">rlecuyer</td>
+<td align="left">R Interface to RNG with Multiple Streams</td>
+</tr>
+<tr>
+<td align="center">Rmpi</td>
+<td align="left">Interface (Wrapper) to MPI (Message-Passing Interface)</td>
+</tr>
+<tr>
+<td align="center">rms</td>
+<td align="left">Regression Modeling Strategies</td>
+</tr>
+<tr>
+<td align="center">RMySQL</td>
+<td align="left">Database Interface and 'MySQL' Driver for R</td>
+</tr>
+<tr>
+<td align="center">RNetCDF</td>
+<td align="left">Interface to NetCDF Datasets</td>
+</tr>
+<tr>
+<td align="center">rngtools</td>
+<td align="left">Utility functions for working with Random Number Generators</td>
+</tr>
+<tr>
+<td align="center">robustbase</td>
+<td align="left">Basic Robust Statistics</td>
+</tr>
+<tr>
+<td align="center">ROC</td>
+<td align="left">utilities for ROC, with uarray focus</td>
+</tr>
+<tr>
+<td align="center">rpart</td>
+<td align="left">Recursive Partitioning and Regression Trees</td>
+</tr>
+<tr>
+<td align="center">RPMM</td>
+<td align="left">Recursively Partitioned Mixture Model</td>
+</tr>
+<tr>
+<td align="center">Rsamtools</td>
+<td align="left">Binary alignment (BAM), FASTA, variant call (BCF), and tabix file import</td>
+</tr>
+<tr>
+<td align="center">rsconnect</td>
+<td align="left">Deployment Interface for R Markdown Documents and Shiny Applications</td>
+</tr>
+<tr>
+<td align="center">Rsolnp</td>
+<td align="left">General Non-Linear Optimization</td>
+</tr>
+<tr>
+<td align="center">RSQLite</td>
+<td align="left">'SQLite' Interface for R</td>
+</tr>
+<tr>
+<td align="center">rstan</td>
+<td align="left">R Interface to Stan</td>
+</tr>
+<tr>
+<td align="center">rstanarm</td>
+<td align="left">Bayesian Applied Regression Modeling via Stan</td>
+</tr>
+<tr>
+<td align="center">rstantools</td>
+<td align="left">Tools for Developing R Packages Interfacing with 'Stan'</td>
+</tr>
+<tr>
+<td align="center">rstudioapi</td>
+<td align="left">Safely Access the RStudio API</td>
+</tr>
+<tr>
+<td align="center">Rsubread</td>
+<td align="left">Subread sequence alignment for R</td>
+</tr>
+<tr>
+<td align="center">rtracklayer</td>
+<td align="left">R interface to genome browsers and their annotation tracks</td>
+</tr>
+<tr>
+<td align="center">ruv</td>
+<td align="left">Detect and Remove Unwanted Variation using Negative Controls</td>
+</tr>
+<tr>
+<td align="center">S4Vectors</td>
+<td align="left">S4 implementation of vectors and lists</td>
+</tr>
+<tr>
+<td align="center">saemix</td>
+<td align="left">Stochastic Approximation Expectation Maximization (SAEM) algorithm</td>
+</tr>
+<tr>
+<td align="center">sampling</td>
+<td align="left">Survey Sampling</td>
+</tr>
+<tr>
+<td align="center">sandwich</td>
+<td align="left">Robust Covariance Matrix Estimators</td>
+</tr>
+<tr>
+<td align="center">scales</td>
+<td align="left">Scale Functions for Visualization</td>
+</tr>
+<tr>
+<td align="center">scatterplot3d</td>
+<td align="left">3D Scatter Plot</td>
+</tr>
+<tr>
+<td align="center">schoolmath</td>
+<td align="left">Functions and datasets for math used in school</td>
+</tr>
+<tr>
+<td align="center">segmented</td>
+<td align="left">Regression Models with Breakpoints/Changepoints Estimation</td>
+</tr>
+<tr>
+<td align="center">sendmailR</td>
+<td align="left">send email using R</td>
+</tr>
+<tr>
+<td align="center">seqinr</td>
+<td align="left">Biological Sequences Retrieval and Analysis</td>
+</tr>
+<tr>
+<td align="center">seqLogo</td>
+<td align="left">Sequence logos for DNA sequence alignments</td>
+</tr>
+<tr>
+<td align="center">shiny</td>
+<td align="left">Web Application Framework for R</td>
+</tr>
+<tr>
+<td align="center">shinyjs</td>
+<td align="left">Easily Improve the User Experience of Your Shiny Apps in Seconds</td>
+</tr>
+<tr>
+<td align="center">shinystan</td>
+<td align="left">Interactive Visual and Numerical Diagnostics and Posterior Analysis for Bayesian Models</td>
+</tr>
+<tr>
+<td align="center">shinythemes</td>
+<td align="left">Themes for Shiny</td>
+</tr>
+<tr>
+<td align="center">ShortRead</td>
+<td align="left">FASTQ input and manipulation</td>
+</tr>
+<tr>
+<td align="center">siggenes</td>
+<td align="left">Multiple testing using SAM and Efron's empirical Bayes approaches</td>
+</tr>
+<tr>
+<td align="center">simpleaffy</td>
+<td align="left">Very simple high level analysis of Affymetrix data</td>
+</tr>
+<tr>
+<td align="center">slam</td>
+<td align="left">Sparse Lightweight Arrays and Matrices</td>
+</tr>
+<tr>
+<td align="center">sn</td>
+<td align="left">The Skew-Normal and Skew-t Distributions</td>
+</tr>
+<tr>
+<td align="center">snow</td>
+<td align="left">Simple Network of Workstations</td>
+</tr>
+<tr>
+<td align="center">snowfall</td>
+<td align="left">Easier cluster computing (based on snow).</td>
+</tr>
+<tr>
+<td align="center">softImpute</td>
+<td align="left">Matrix Completion via Iterative Soft-Thresholded SVD</td>
+</tr>
+<tr>
+<td align="center">sourcetools</td>
+<td align="left">Tools for Reading, Tokenizing and Parsing R Code</td>
+</tr>
+<tr>
+<td align="center">sp</td>
+<td align="left">Classes and Methods for Spatial Data</td>
+</tr>
+<tr>
+<td align="center">spam</td>
+<td align="left">SPArse Matrix</td>
+</tr>
+<tr>
+<td align="center">SparseM</td>
+<td align="left">Sparse Linear Algebra</td>
+</tr>
+<tr>
+<td align="center">spatial</td>
+<td align="left">Functions for Kriging and Point Pattern Analysis</td>
+</tr>
+<tr>
+<td align="center">spdep</td>
+<td align="left">Spatial Dependence: Weighting Schemes, Statistics and Models</td>
+</tr>
+<tr>
+<td align="center">splines</td>
+<td align="left">Regression Spline Functions and Classes</td>
+</tr>
+<tr>
+<td align="center">stabledist</td>
+<td align="left">Stable Distribution Functions</td>
+</tr>
+<tr>
+<td align="center">StanHeaders</td>
+<td align="left">C++ Header Files for Stan</td>
+</tr>
+<tr>
+<td align="center">statmod</td>
+<td align="left">Statistical Modeling</td>
+</tr>
+<tr>
+<td align="center">stats</td>
+<td align="left">The R Stats Package</td>
+</tr>
+<tr>
+<td align="center">stats4</td>
+<td align="left">Statistical Functions using S4 Classes</td>
+</tr>
+<tr>
+<td align="center">stringdist</td>
+<td align="left">Approximate String Matching and String Distance Functions</td>
+</tr>
+<tr>
+<td align="center">stringi</td>
+<td align="left">Character String Processing Facilities</td>
+</tr>
+<tr>
+<td align="center">stringr</td>
+<td align="left">Simple, Consistent Wrappers for Common String Operations</td>
+</tr>
+<tr>
+<td align="center">SummarizedExperiment</td>
+<td align="left">SummarizedExperiment container</td>
+</tr>
+<tr>
+<td align="center">survey</td>
+<td align="left">Analysis of Complex Survey Samples</td>
+</tr>
+<tr>
+<td align="center">survival</td>
+<td align="left">Survival Analysis</td>
+</tr>
+<tr>
+<td align="center">sva</td>
+<td align="left">Surrogate Variable Analysis</td>
+</tr>
+<tr>
+<td align="center">tcltk</td>
+<td align="left">Tcl/Tk Interface</td>
+</tr>
+<tr>
+<td align="center">testthat</td>
+<td align="left">Unit Testing for R</td>
+</tr>
+<tr>
+<td align="center">tgp</td>
+<td align="left">Bayesian Treed Gaussian Process Models</td>
+</tr>
+<tr>
+<td align="center">TH.data</td>
+<td align="left">TH's Data Archive</td>
+</tr>
+<tr>
+<td align="center">threejs</td>
+<td align="left">Interactive 3D Scatter Plots, Networks and Globes</td>
+</tr>
+<tr>
+<td align="center">tibble</td>
+<td align="left">Simple Data Frames</td>
+</tr>
+<tr>
+<td align="center">tidyr</td>
+<td align="left">Easily Tidy Data with <code>spread()</code> and <code>gather()</code> Functions</td>
+</tr>
+<tr>
+<td align="center">tkrplot</td>
+<td align="left">TK Rplot</td>
+</tr>
+<tr>
+<td align="center">tools</td>
+<td align="left">Tools for Package Development</td>
+</tr>
+<tr>
+<td align="center">trimcluster</td>
+<td align="left">Cluster analysis with trimming</td>
+</tr>
+<tr>
+<td align="center">truncnorm</td>
+<td align="left">Truncated normal distribution</td>
+</tr>
+<tr>
+<td align="center">tseries</td>
+<td align="left">Time Series Analysis and Computational Finance</td>
+</tr>
+<tr>
+<td align="center">TxDb.Hsapiens.UCSC.hg19.knownGene</td>
+<td align="left">Annotation package for TxDb object(s)</td>
+</tr>
+<tr>
+<td align="center">utils</td>
+<td align="left">The R Utils Package</td>
+</tr>
+<tr>
+<td align="center">VariantAnnotation</td>
+<td align="left">Annotation of Genetic Variants</td>
+</tr>
+<tr>
+<td align="center">vegan</td>
+<td align="left">Community Ecology Package</td>
+</tr>
+<tr>
+<td align="center">VGAM</td>
+<td align="left">Vector Generalized Linear and Additive Models</td>
+</tr>
+<tr>
+<td align="center">viridis</td>
+<td align="left">Default Color Maps from 'matplotlib'</td>
+</tr>
+<tr>
+<td align="center">viridisLite</td>
+<td align="left">Default Color Maps from 'matplotlib' (Lite Version)</td>
+</tr>
+<tr>
+<td align="center">vsn</td>
+<td align="left">Variance stabilization and calibration for microarray data</td>
+</tr>
+<tr>
+<td align="center">wateRmelon</td>
+<td align="left">Illumina 450 methylation array normalization and metrics</td>
+</tr>
+<tr>
+<td align="center">WGCNA</td>
+<td align="left">Weighted Correlation Network Analysis</td>
+</tr>
+<tr>
+<td align="center">whisker</td>
+<td align="left">for R, logicless templating</td>
+</tr>
+<tr>
+<td align="center">widgetTools</td>
+<td align="left">Creates an interactive tcltk widget</td>
+</tr>
+<tr>
+<td align="center">XML</td>
+<td align="left">Tools for Parsing and Generating XML Within R and S-Plus</td>
+</tr>
+<tr>
+<td align="center">xps</td>
+<td align="left">Processing and Analysis of Affymetrix Oligonucleotide Arrays including Exon Arrays, Whole Genome Arrays and Plate Arrays</td>
+</tr>
+<tr>
+<td align="center">xtable</td>
+<td align="left">Export Tables to LaTeX or HTML</td>
+</tr>
+<tr>
+<td align="center">xts</td>
+<td align="left">eXtensible Time Series</td>
+</tr>
+<tr>
+<td align="center">XVector</td>
+<td align="left">Representation and manpulation of external sequences</td>
+</tr>
+<tr>
+<td align="center">yaml</td>
+<td align="left">Methods to Convert R Data to YAML and Back</td>
+</tr>
+<tr>
+<td align="center">zlibbioc</td>
+<td align="left">An R packaged zlib-1.2.5</td>
+</tr>
+<tr>
+<td align="center">zoo</td>
+<td align="left">S3 Infrastructure for Regular and Irregular Time Series (Z's Ordered Observations)</td>
+</tr>
+</tbody>
+</table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Quantum_Espresso/" title="Quantum Espresso" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Quantum Espresso
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2014 - 2018 UCL Research Computing Group
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/UCL-RITS" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../../assets/javascripts/application.9e1f3b71.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
