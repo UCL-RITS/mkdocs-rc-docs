@@ -27,3 +27,16 @@ The installation of MkDocs uses the Material theme and several Markdown extensio
  - [Admonition](https://squidfunk.github.io/mkdocs-material/extensions/admonition/) -- allowing call-out blocks
  - [CodeHiLite](https://squidfunk.github.io/mkdocs-material/extensions/codehilite/) -- uses Pygments for syntax-highlighting instead of JavaScript
  - [Permalinks](https://squidfunk.github.io/mkdocs-material/extensions/permalinks/) -- inserts anchors for all headings
+
+## Initial Conversion Notes
+
+The conversion process from MediaWiki markup to Markdown did not go very well. There were two main classes of problem:
+
+ - pandoc appears to hate code blocks, and has done some very weird things.
+ - MediaWiki appears to have refused to render the giant Application template, so a lot of the application pages converted to no content.
+
+Unfortunately this means that a lot of manual editing is necessary:
+
+ - Code blocks need to have their extra single-line backticks removed and be correctedly marked-up with backtick fences (\`\`\`). Language will be inferred from shebang lines, but otherwise you might want to add the language if it's a Python or bash script block. In many cases it's quicker to copy/paste the code from the corresponding original mediawiki page source.
+ - Application pages that haven't rendered need to be manually converted. Thankfully, it's not *that* much work, but there are a lot of them and some of them are functional duplicates.
+
