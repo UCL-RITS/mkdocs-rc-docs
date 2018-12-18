@@ -41,3 +41,5 @@ Unfortunately this means that a lot of manual editing is necessary:
  - Application pages that haven't rendered need to be manually converted. Thankfully, it's not *that* much work, but there are a lot of them and some of them are functional duplicates of other pages.
 
 Some pages need non-trivial changes, in most cases because they're extremely out-of-date. I've put these in `needs_work` directories.
+
+Remember to use `git rm` to remove pages that you're deleting from the repository, not just normal `rm`.
