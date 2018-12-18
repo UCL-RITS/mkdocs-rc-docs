@@ -38,5 +38,6 @@ The conversion process from MediaWiki markup to Markdown did not go very well. T
 Unfortunately this means that a lot of manual editing is necessary:
 
  - Code blocks need to have their extra single-line backticks removed and be correctedly marked-up with backtick fences (\`\`\`). Language will be inferred from shebang lines, but otherwise you might want to add the language if it's a Python or bash script block. In many cases it's quicker to copy/paste the code from the corresponding original mediawiki page source.
- - Application pages that haven't rendered need to be manually converted. Thankfully, it's not *that* much work, but there are a lot of them and some of them are functional duplicates.
+ - Application pages that haven't rendered need to be manually converted. Thankfully, it's not *that* much work, but there are a lot of them and some of them are functional duplicates of other pages.
 
+Some pages need non-trivial changes, in most cases because they're extremely out-of-date. I've put these in `needs_work` directories.
