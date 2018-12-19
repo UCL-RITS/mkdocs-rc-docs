@@ -1,0 +1,48 @@
+---
+title: SAMtools on Legion
+layout: application
+---
+{{Applications
+|name=SAMtools
+|platform=Legion
+|version=0.1.19, 1.2
+|short=SAM Tools provide various utilities for manipulating alignments in the SAM format, including sorting, merging, indexing and generating alignments in a per-position format.
+|about=SAM Tools provide various utilities for manipulating alignments in the SAM format, including sorting, merging, indexing and generating alignments in a per-position format.
+
+In SAMtools 1, it was split into the separate packages SAMtools and BCFtools.
+|link1=[http://samtools.sourceforge.net/ SAMtools website]
+|link2=
+|link3=
+|link4=
+|setup-title=
+|setup-intro=
+|module-intro=
+|moduleunload1=
+|moduleunload2=
+|moduleunload3=
+|moduleunload4=
+|moduleload1=samtools/1.2/gnu-4.9.2
+|moduleload2=
+|moduleload3=
+|moduleload4=
+|source1=
+|setup-notes=
+|script-title=
+|script-intro=
+|script=
+|script-path=
+|script-notes=
+|script2-title=
+|script2-intro=
+|script2=
+|script2-path=
+|script2-notes=
+|script3-title=
+|script3-intro=
+|script3=
+|script3-path=
+|script3-notes=
+|coda-title=
+|coda=
+
+}}

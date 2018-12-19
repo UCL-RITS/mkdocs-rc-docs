@@ -1,0 +1,5 @@
+---
+title: Blast on Legion
+layout: docs
+---
+#REDIRECT [[BLAST on Legion]]

@@ -1,0 +1,34 @@
+---
+title: MRtrix on Legion
+layout: application
+---
+{{Applications
+
+|name=MRtrix
+|platform=Legion
+|version=0.3.12
+|short=
+MRtrix provides a set of tools to perform diffusion-weighted MRI white matter tractography in the presence of crossing fibres.
+|about=
+MRtrix provides a set of tools to perform diffusion-weighted MRI white matter tractography in the presence of crossing fibres.
+|link1= [http://www.mrtrix.org/ MRtrix website]
+|setup-intro=
+|moduleload1=python/2.7.9
+|moduleload2=qt/4.8.6/gnu-4.9.2
+|moduleload3=gsl/1.16/gnu-4.9.2
+|moduleload4=mrtrix/0.3.12/nogui
+|setup-notes=
+MRtrix has a .mrtrix.conf that is copied to your home directory the first time you run this module from a login node. It sets:
+
+   Analyse.LeftToRight: false
+   NumberOfThreads: 4
+
+Alter <code>NumberOfThreads</code> to what you are using in your job script.
+
+=GUI tools unavailable=
+
+<code>mrview</code> and <code>shview</code> in MRtrix 3 cannot be run over a remote X11 connection so are not usable on Legion. To use these tools you will need a local install on your own computer.
+|coda-title=
+|coda=
+
+}}

@@ -1,0 +1,54 @@
+---
+title: MISO
+layout: application
+---
+{{Applications
+
+|name=MISO
+|platform=Legion
+|version=
+|short=
+MISO (Mixture of Isoforms) is a probabilistic framework that quantitates the expression level of alternatively spliced genes from RNA-Seq data, and identifies differentially regulated isoforms or exons across samples.
+|about=
+MISO (Mixture of Isoforms) is a probabilistic framework that quantitates the expression level of alternatively spliced genes from RNA-Seq data, and identifies differentially regulated isoforms or exons across samples. By modeling the generative process by which reads are produced from isoforms in RNA-Seq, the MISO model uses Bayesian inference to compute the probability that a read originated from a particular isoform.
+|link1= [http://genes.mit.edu/burgelab/miso/docs/ MISO website]
+|moduleunload1=
+|moduleload1=
+|moduleload2=
+|moduleload3=
+|moduleload4=
+|moduleload5=
+|setup-intro=
+|setup-notes=misopy is available as part of the <code>python2/recommended</code> bundle.
+
+=Submitting jobs from within MISO=
+
+MISO has an option to create and submit parallel jobs itself. If using this, you can copy miso_settings.txt as shown below and add the correct qsub options to the qsub command.
+
+If letting MISO call qsub, don't do this inside a qsubbed jobscript - jobs running on the compute nodes cannot create new jobs. Instead invoke MISO from a terminal and it will submit the parallel jobs itself.
+
+{{Script
+|script-title=Example miso_settings.txt
+|script-intro=Settings files can be used with the <tt>--settings-filename=SETTINGS_FILENAME</tt> option. You need to put your module unload and load commands in your .bashrc if using <tt>cluster_command</tt>, because you are no longer passing them in the script.
+|script-path=
+|script-code=
+<nowiki>
+[data]
+filter_results = True
+min_event_reads = 20
+
+[cluster]
+cluster_command = "qsub -l h_rt=00:10:00 -l mem=1GB -wd ~/Scratch"
+
+[sampler]
+burn_in = 500
+lag = 10
+num_iters = 5000
+num_chains = 6
+num_processors = 4
+</nowiki>
+}}
+|coda-title=
+|coda=
+
+}}

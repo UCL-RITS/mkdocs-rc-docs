@@ -1,0 +1,38 @@
+---
+title: miRDeep2 on Legion
+layout: application
+---
+{{Applications
+|name=miRDeep2
+|platform=Legion
+|version=2.0.0.7 
+|short=
+|about=Discovering known and novel miRNAs from deep sequencing data, miRDeep2 is a completely overhauled tool which discovers microRNA genes by analyzing sequenced RNAs. The tool reports known and hundreds of novel microRNAs with high accuracy in seven species representing the major animal clades. 
+|link1=[https://www.mdc-berlin.de/8551903/en/research/research_teams/systems_biology_of_gene_regulatory_elements/projects/miRDeep mIRDeep2 website]
+|link2=
+|link3=
+|link4=
+|setup-title=
+|setup-intro=
+|module-intro=
+|moduleunload1=
+|moduleunload2=
+|moduleunload3=
+|moduleunload4=
+|moduleunload5=
+|moduleunload6=
+|moduleunload7=
+|moduleload1=squid/1.9g
+|moduleload2=randfold/2.0
+|moduleload3=perl/5.22.0
+|moduleload4=bowtie/1.1.2
+|moduleload5=python/2.7.9
+|moduleload6=viennarna/2.1.9
+|moduleload7=mirdeep/2.0.0.7
+|source1=
+|setup-notes=
+|scripts=
+|coda-title=
+|coda=
+
+}}

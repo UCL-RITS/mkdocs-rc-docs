@@ -1,0 +1,152 @@
+---
+title: ANSYS/Fluent
+categories:
+ - Applications
+ - Pages with bash scripts
+ - Software
+
+layout: application
+---
+{{Applications
+|name=ANSYS/Fluent
+|platform=Legion
+|short=ANSYS/CFX and ANSYS/Fluent are commercial fluid dynamics packages.
+|about=ANSYS/CFX and ANSYS/Fluent are commercial fluid dynamics packages.
+
+ANSYS/CFX and ANSYS/Fluent version 17.2, 18.0 and 19.1 are available on Legion, Grace and Myriad. Before either application can be run, the user needs to go though a number of set up steps.
+
+|setup-notes=
+
+Load the module for the version of ansys you wish to run.
+
+<code>
+ module load ansys/19.1
+</code>
+
+ANSYS/CFX and ANSYS/Fluent are intended to be run primarily within batch jobs however you may run short (less than 5 minutes execution time) interactive tests on the Login Nodes and longer (up to two hours) on the User Test Nodes. Interactive work can be done using the ANSYS interactive tools provided you have X-windows functionality enabled though your ssh connection. See our [https://wiki.rc.ucl.ac.uk/wiki/Category:Legion_User_Guide RC Systems User Guide] for more information about enabling X-windows functionality and the User Test nodes.
+
+UCL's campus-wide license covers 125 instances with 512 HPC licenses (for parallel jobs) available for running CFX and Fluent jobs and in order to make sure that jobs only run if there are licenses available, it is necessary for users to request ANSYS licenses with their jobs, by adding "-ac app=cfx" to their job submission.
+
+In addition, because Fluent handles its own parallelisation, a number of options need to be passed in job scripts to make it run correctly. 
+
+The .in file mentioned below is a [http://www.cfd-online.com/Wiki/Fluent_FAQ#Journal_File_and_Text_User_Interface_.28TUI.29_Related Fluent journal file], giving it the list of commands to carry out in batch mode.
+
+|scripts=
+{{Script
+|script-title=Serial run
+|script-code=
+<nowiki>
+#!/bin/bash -l
+
+# ANSYS 19.1: Batch script to run ANSYS/fluent in serial mode 
+# (1 core). 
+
+# 1. Force bash as the executing shell.
+#$ -S /bin/bash
+
+# 2. Request 2 hours of wallclock time (format hours:minutes:seconds).
+#$ -l h_rt=2:0:0
+
+# 3. Request 2 gigabyte of RAM.
+#$ -l mem=2G
+
+# 4. Request 25 Gb TEMPDIR space
+#$ -l tmpfs=25G
+
+# 5. Set the name of the job.
+#$ -N Fluent_ser1
+
+# 6. Request ANSYS licences
+#$ -ac app=cfx
+
+# 7. Set the working directory to somewhere in your scratch space.  In this
+# case the subdirectory fluent-tests-19.1
+#$ -wd /home/<your userid>/Scratch/fluent-tests-19.1
+
+# 8. Load the ANSYS module to set up your environment
+
+module load ansys/19.1
+
+# 9. Copy Fluent input files into the working (current) directory
+
+cp <path to your input files>/test-1.cas .
+cp <path to your input files>/test-1.in .
+
+# 10. Run fluent  in 2D single precision (-g no GUI). For double precision use
+# 2ddp. For 3D use 3d or 3ddp. 
+
+fluent 2d -g < test-1.in
+</nowiki>
+|script-path=
+|script-notes=Please copy if you wish and edit it to suit your jobs. You will need to change the ''-wd /home/<your_UCL_id>/Scratch/fluent-tests-19.1'' SGE directive and may need to change the memory, wallclock time, and job name directives as well. Replace the ''.cas'' and ''.in'' files in 9 and 10 by your ones. The simplest form of qsub command can be used to submit the job eg:
+<code>
+ qsub run-ANSYS-fluent-ser.sh
+</code>
+Output files will be saved in the job's working directory. 
+[[#top | Back to top]]
+}}
+{{Script
+|script-title=Parallel run
+|script-code=
+<nowiki>
+#!/bin/bash -l
+
+# ANSYS 19.1: Batch script to run ANSYS/fluent distributed parallel 
+# (32 cores). 
+
+# 1. Force bash as the executing shell.
+#$ -S /bin/bash
+
+# 2. Request 1 hour of wallclock time (format hours:minutes:seconds).
+#$ -l h_rt=1:0:0
+
+# 3. Request 2 gigabyte of RAM per core.
+#$ -l mem=2G
+
+# 4. Set the name of the job.
+#$ -N Fluent_par32
+
+# 5. Select the MPI parallel environment (qlc) and 32 processors.
+#$ -pe mpi 32
+
+# 6. Request 25 Gb TEMPDIR space
+#$ -l tmpfs=25G
+
+# 7. Request ANSYS licences
+#$ -ac app=cfx
+
+# 8. Set the working directory to somewhere in your scratch space.  In this
+# case the subdirectory fluent-tests-19.1
+#$ -wd /home/<your userid>/Scratch/fluent-tests-19.1
+
+# 9. Load the ANSYS module to set up your environment
+
+module load ansys/19.1
+
+# 10. Copy Fluent input files into the working (current) directory
+
+cp <path to your input files>/test-1.cas .
+cp <path to your input files>/test-1.in .
+
+# 11. Run fluent  in 3D double precision (-g no GUI). For single precision use
+# 3d. For 2D use 2d or 2ddp. 
+# Do not change -t, -mpi, and -cnf options.
+
+fluent 3ddp -t$NSLOTS -mpi=ibmmpi -cnf=$TMPDIR/machines -g < test-ucemnp1.in
+</nowiki>
+|script-path=
+|script-notes=Please copy if you wish and edit it to suit your jobs. You will need to change the ''-wd /home/<your_UCL_id>/Scratch/fluent-tests-19.1'' SGE directive and may need to change the memory, wallclock time, number of MPI Processors (item 5) and job name directives as well. Replace the ''.cas'' and ''.in'' files in 10 and 11 by your ones. The simplest form of qsub command can be used to submit the job eg:
+<code>
+ qsub run-ANSYS-fluent-par-32.sh
+</code>
+Output files will be saved in the job's working directory. 
+
+=Troubleshooting=
+
+If you are getting licensing errors when trying to run a parallel job and you have a <code>~/.ansys/v161/licensing/license.preferences.xml</code> file, delete it. It does not work with the newer license server. (This applies to all versions, not just v161).
+
+Fluent 14 required <code>-pinfiniband</code> in the options: if you have older scripts remember to remove this.
+
+[[#top | Back to top]]
+}}
+}}

@@ -1,0 +1,30 @@
+---
+title: MEME Suite on Legion
+layout: application
+---
+{{Applications
+
+|name=MEME Suite
+|platform=Legion
+|version=4.10.1_4
+|short=
+MEME Suite: Motif-based sequence analysis tools. 
+|about=
+MEME Suite: Motif-based sequence analysis tools. This install is for the command-line tools and connects to their website for further analysis.
+
+|link1= [http://meme.nbcr.net/meme/intro.html MEME Suite website]
+
+|moduleunload1=compilers
+|moduleunload2=mpi
+|moduleload1=compilers/gnu/4.9.2
+|moduleload2=mpi/openmpi/1.8.4/gnu-4.9.2
+|moduleload3=perl/5.22.0
+|moduleload4=python2/recommended
+|moduleload5=ghostscript/9.16/gnu-4.9.2
+|moduleload6=meme/4.10.1_4
+|setup-intro=
+
+|coda-title=
+|coda=
+
+}}

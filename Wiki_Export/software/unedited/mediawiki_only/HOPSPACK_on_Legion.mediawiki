@@ -1,0 +1,82 @@
+---
+title: HOPSPACK on Legion
+layout: application
+---
+{{Applications
+
+|name=HOPSPACK
+|platform=Legion
+|version=2.0.2
+|short=
+HOPSPACK (Hybrid Optimization Parallel Search PACKage) solves derivative-free optimization problems using an open source, C++ software framework.
+|about=
+HOPSPACK (Hybrid Optimization Parallel Search PACKage) solves derivative-free optimization problems using an open source, C++ software framework. The framework enables parallel operation using MPI or multithreading, and allows multiple solvers to run simultaneously and interact to find solution points. HOPSPACK comes with an asynchronous pattern search solver that handles general optimization problems with linear and nonlinear constraints, and continuous and integer-valued variables.
+
+HOPSPACK was built using lapack from ATLAS 3.10, OpenMPI and GCC. Serial and parallel versions are available, HOPSPACK_main_mpi and HOPSPACK_main_serial.
+
+|setup-intro=
+|module-intro=To use HOPSPACK in your job script, load these modules:
+|moduleunload1=compilers
+|moduleunload2=mpi
+|moduleunload3=
+|moduleunload4=
+|moduleunload5=
+|moduleunload6=
+|moduleunload7=
+|moduleunload8=
+|moduleload1=compilers/gnu/4.9.2
+|moduleload2=mpi/openmpi/1.8.4/gnu-4.9.2
+|moduleload3=atlas/3.10.2/gnu-4.9.2
+|moduleload4=hopspack/2.0.2/gnu-4.9.2
+|moduleload5=
+|moduleload6=
+|moduleload7=
+|moduleload8=
+
+|script-title=Creating a submittable HOPSPACK script
+|script-intro=
+|script=
+<nowiki>
+#!/bin/bash -l
+
+# Batch script to run an MPI parallel job on Legion with the upgraded software
+# stack under SGE with OpenMPI. Updated Oct 2015.
+
+# 1. Force bash as the executing shell.
+#$ -S /bin/bash
+
+# 2. Request ten minutes of wallclock time (format hours:minutes:seconds).
+#$ -l h_rt=0:10:0
+
+# 3. Request 1 gigabyte of RAM per process.
+#$ -l mem=1G
+
+# 5. Set the name of the job.
+#$ -N hopspack-test
+
+# 6. Select the MPI parallel environment and 2 processes.
+#$ -pe mpi 2
+
+# 7. Set the working directory to somewhere in your scratch space.  This is
+# a necessary step with the upgraded software stack as compute nodes cannot
+# write to $HOME. This directory must exist.
+# Replace "<your_UCL_id>" with your UCL user ID :)
+#$ -wd /home/<your_UCL_id>/Scratch/hopspack-output
+
+module unload compilers
+module unload mpi
+module load compilers/gnu/4.9.2
+module load mpi/openmpi/1.8.4/gnu-4.9.2
+module load atlas/3.10.2/gnu-4.9.2
+module load hopspack/2.0.2/gnu-4.9.2
+
+# Add the examples directory we are using to our path. 
+# Replace this with the path to your own executables.
+export PATH=$PATH:~/Scratch/examples/1-var-bnds-only/
+
+# Run HOPSPACK. GERun is a wrapper that launches MPI jobs on Legion.
+gerun HOPSPACK_main_mpi ~/Scratch/examples/1-var-bnds-only/example1_params.txt > example1_output.txt
+</nowiki>
+|script-path=
+|script-notes=
+}}

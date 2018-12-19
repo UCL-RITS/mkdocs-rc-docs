@@ -1,0 +1,37 @@
+---
+title: Rmpi
+layout: application
+---
+{{Applications
+
+|name=Rmpi
+|platform=Legion, Grace
+|version=
+|short=
+Rmpi provides an interface (wrapper) to MPI APIs. It also provides an interactive R slave environment.
+|about=
+Rmpi provides an interface (wrapper) to MPI APIs. It also provides an interactive R slave environment. 
+
+Rmpi allows you to write R programs which run across multiple nodes using MPI.
+|setup-intro=
+|module-intro=
+|moduleunload1=compilers
+|moduleunload2=mpi
+|moduleunload3=
+|moduleunload4=
+|moduleload1=r/recommended
+|moduleload2=
+|moduleload3=
+|moduleload4=
+|setup-notes=
+You can check that the module is loaded using:
+<code>
+ module list
+</code>
+
+Please see [[R_on_Legion#Multi-node_Parallel_Jobs_using_Rmpi_and_snow | Multi-node_Parallel_Jobs_using_Rmpi_and_snow]] for instructions on using Rmpi and snow.
+
+|coda-title=
+|coda=
+
+}}

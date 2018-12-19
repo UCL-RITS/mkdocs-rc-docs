@@ -1,0 +1,16 @@
+---
+title: Torch
+layout: application
+---
+{{Applications
+|name=Torch
+|platform=Legion and Grace
+|short=Torch is a scientific computing framework with wide support for machine learning algorithms that puts GPUs first. 
+|about=Torch is a scientific computing framework with wide support for machine learning algorithms that puts GPUs first.
+|version=
+|setup-intro=We provide a torch-deps module that contains the main Torch dependencies and creates a quick-install alias, <code>do-torch-install</code>. This uses Torch's installation script to git clone the current distribution and install LuaJIT, LuaRocks and Torch in <code>~/torch</code>.
+|moduleunload1=compilers
+|moduleload1=torch-deps
+|setup-notes=
+
+}}

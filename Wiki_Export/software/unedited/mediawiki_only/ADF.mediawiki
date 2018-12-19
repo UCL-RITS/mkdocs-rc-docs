@@ -1,0 +1,189 @@
+---
+title: ADF
+layout: application
+---
+{{Applications
+|name=ADF
+|platform=Grace
+|short=ADF is a parallelized computational chemistry program for chemical structure analysis with density functional theory (DFT). 
+|about=ADF is a parallelized computational chemistry program for chemical structure analysis with density functional theory (DFT).
+|version=2014.10
+|setup-intro=ADF version 2014.10 is available on Grace. 
+|moduleload1=adf/2014.10
+|setup-notes=
+
+ADF is commercial software. We have a 128 core floating licence for ADF only and the licence is restricted to the Grace cluster. Access to ADF is enabled by being a member of he appropriate reserved application group. Please email [mailto:rc-support@ucl.ac.uk rc-support@ucl.ac.uk] to get your userid added to the ADF group.
+
+ADF is intended to be run primarily within batch jobs however you may run short (less than 5 minutes execution time) interactive tests on the Login Nodes and longer (up to two hours) using qrsh to request an interactive session on the compute nodes. See the [https://wiki.rc.ucl.ac.uk/wiki/Category:User_Guide RC Systems User Guide] for more information.
+
+Here is an example runscript using one of the examples from the ADF manual.
+
+|scripts=
+{{Script
+|script-title=Multi Node ADF Example Runscript
+|script-code=
+<nowiki>
+#!/bin/bash -l
+
+# ADF 2014.10: Batch script to run ADF on the simple water example 
+# from the ADF documentation, distributed parallel (32 cores).
+
+# 1. Force bash as the executing shell.
+#$ -S /bin/bash
+
+# 2. Request one hour of wallclock time (format hours:minutes:seconds).
+#$ -l h_rt=1:00:0
+
+# 3. Request 2 gigabyte of RAM.
+#$ -l mem=2G
+
+# 4. Set the name of the job.
+#$ -N ADF_CuH+_S-squared_32
+
+# 5. Select the MPI parallel environment (qlc) and 32 processors.
+#$ -pe mpi 32
+
+# 7. Set the working directory to somewhere in your scratch space.  In this
+# case the subdirectory ADF_examples
+#$ -wd /home/<your_UCL_id>/Scratch/ADF_examples
+
+# 8. Load the ADF module to set up your environment
+
+module load adf/2014.10
+
+module list
+
+# 9. Copy the ADF example script into the working (current) directory
+
+cp /home/ccaabaa/Software/ADF/Examples/CuH+_S-squared.run .
+
+# 10. Run the ADF script
+
+./CuH+_S-squared.run > CuH+_S-squared.out_$JOB_ID
+</nowiki>
+}}
+{{Script
+|script-title=The example used
+|script-code=
+<nowiki>
+#! /bin/sh
+
+
+$ADFBIN/adf -n 1 <<eor
+Create H $ADFRESOURCES/TZP/H
+end input
+eor
+
+mv TAPE21 t21.H
+
+$ADFBIN/adf -n 1 <<eor
+Create Cu $ADFRESOURCES/TZP/Cu.2p
+end input
+eor
+
+mv TAPE21 t21.Cu
+
+$ADFBIN/adf << eor
+Title calculate expectation value of S-squared
+
+Symmetry Nosym
+
+ATOMS Z-Matrix
+ Cu   0 0 0
+ H    1 0 0  1.463
+END
+
+CHARGE 1.0 1.0
+Unrestricted
+
+FRAGMENTS
+H  t21.H
+Cu t21.Cu
+END
+
+endinput
+eor
+
+rm TAPE21 logfile
+
+$ADFBIN/adf << eor
+Title calculate expectation value of S-squared
+
+Symmetry C(LIN)
+
+ATOMS Z-Matrix
+ Cu   0 0 0
+ H    1 0 0  1.463
+END
+
+CHARGE 1.0 1.0
+Unrestricted
+
+FRAGMENTS
+H  t21.H
+Cu t21.Cu
+END
+
+endinput
+eor
+
+
+rm TAPE21 logfile
+
+$ADFBIN/adf << eor
+Title calculate expectation value of S-squared
+
+Symmetry C(S)
+
+ATOMS Z-Matrix
+ Cu   0 0 0
+ H    1 0 0  1.463
+END
+
+CHARGE 1.0 1.0
+Unrestricted
+
+FRAGMENTS
+H  t21.H
+Cu t21.Cu
+END
+
+endinput
+eor
+
+rm TAPE21 logfile
+
+$ADFBIN/adf << eor
+Title calculate expectation value of S-squared
+
+ATOMS Z-Matrix
+ Cu   0 0 0
+ H    1 0 0  1.463
+END
+
+CHARGE 1.0 -1.0
+Unrestricted
+
+FRAGMENTS
+H  t21.H
+Cu t21.Cu
+END
+
+endinput
+eor
+
+mv TAPE21 CuH_plus.t21
+</nowiki>
+|script-path=/shared/ucl/apps/ADF/run_adf_CuH+_S-squared.sh
+|script-notes=
+You will need to change the '-wd /home/<your_UCL_id>/Scratch/ADF_examples' Grid Engine directive and may need to change the memory, wallclock time, number of MPI Processors (item 5) and job name directives as well. Replace the CuH+_S-squared.run example file by your own ADF input file.
+
+The simplest form of qsub command can be used to submit the job eg:
+<code>
+ qsub run_adf_CuH+_S-squared_ex.sh
+</code>
+Output files will be saved in the job's working directory. 
+
+[[#top | Back to top]]
+}}
+}}

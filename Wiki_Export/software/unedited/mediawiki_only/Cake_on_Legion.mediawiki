@@ -1,0 +1,67 @@
+---
+title: Cake on Legion
+layout: application
+---
+{{Applications
+
+|name=Cake
+|platform=Legion
+|version=1.0
+|short=
+A pipeline for the integrated analysis of somatic variants in cancer genomes.
+|about=
+A pipeline for the integrated analysis of somatic variants in cancer genomes. 
+
+Cake pipelines can run mpileup, varscan, bambino, and somaticsniper, which are bundled into this module. On first load, creates ~/cakeconfig/SomaticCallerConfig.pm, where you can set options.
+|link1= [http://cakesomatic.sourceforge.net/ Cake website]
+|moduleunload1=compilers
+|moduleload1=compilers/gnu/4.6.3
+|moduleload2=samtools/0.1.19
+|moduleload3=cake/1.0
+|setup-intro=
+Cake was built with the GNU 4.6.3 compilers and uses samtools 0.1.19.
+|setup-notes=
+The first time you load this module, it will create a cakeconfig directory in your home and put a copy of SomaticCallerConfig.pm in there. (Existing files or directories with those names will not be overwritten). SomaticCallerConfig.pm contains the locations of all the separate software that the Cake pipeline uses - if for any reason you need a different version of those, you can compile your own and change the path to it. SomaticCallerConfig.pm also contains other variables you will need to alter to tweak your runs.
+
+The reference files currently referred to in SomaticCallerConfig.pm are test mouse data. 
+
+Cake uses version 75 of the Ensembl database (June 2014).
+
+Cake has a cluster option, but only knows about LSF and not SGE, so this option will not work.
+
+Note: trying to use .fai files that were created with an older version of samtools will result in the creation of blank pileup files and an error from varscan:
+<pre>Input file(s) were not ready for parsing after 100 5-second cycles! Pileup output may be invalid or too slow</pre>
+
+If this happens, recreate your .fai files or use the original .fa files and Cake will do the indexing step.
+
+{{Script
+|script-title=Run Cake
+|script-intro=Example variant calling run using mouse sample data
+|script-code=
+<nowiki> 
+run_somatic_pipeline.pl \
+-s /shared/ucl/apps/cake/1.0/required/Cake_Example_Run_SampleInformation_File.csv \
+-species mouse \
+-callers mpileup,varscan,bambino,somaticsniper \
+-separator , \
+-o ~/Scratch/cake_test/ \
+-mode CALLING
+</nowiki> 
+}}
+
+{{Script
+|script-title=Example .csv file
+|script-intro=Uses example mouse BAMfiles
+|script-path=/shared/ucl/apps/cake/1.0/required/Cake_Example_Run_SampleInformation_File.csv
+|script-code=
+<nowiki> 
+SampleID,NormalID,Cohort,PatientID,Type,TumorBAM,NormalBAM
+MouseT1,MouseN1,Mouse100,MouseT1,Tumor,/shared/ucl/apps/cake/1.0/required/bamfiles/MouseT1.bam,/shared/ucl/apps/cake/1.0/required/bamfiles/MouseN1.bam
+MouseT2,MouseN2,Mouse100,MouseT2,Tumor,/shared/ucl/apps/cake/1.0/required/bamfiles/MouseT2.bam,/shared/ucl/apps/cake/1.0/required/bamfiles/MouseN2.bam
+</nowiki>
+}}
+
+|coda-title=
+|coda=
+
+}}

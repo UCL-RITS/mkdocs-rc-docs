@@ -1,0 +1,147 @@
+---
+title: Running TractoR on Legion
+categories:
+ - Bash script pages
+ - Legion
+
+layout: docs
+---
+[[Category:Bash script pages]]
+[[Category:Legion]]
+TractoR (Tractography with R) is an R application for reading, writing, analysing and visualising magnetic resonance images stored in Analyze, NIfTI and DICOM file formats. It also contains functions specifically designed for working with diffusion MRI and tractography, including a standard implementation of the neighbourhood tractography approach to white matter tract segmentation. TractoR is developed at UCL by Jonathan Clayden and colleagues.
+
+Two versions of TractoR are available on Legion - 2.4.2 and 2.2.1.
+
+TractoR packages can be used from within an R session. In addition a control script is provided that allows using TractoR without interacting with R. On Legion TractoR is intended to be run primarily within batch jobs however you may run short (less than 5 minutes execution time) interactive tests on the Login Nodes and longer interactive tests on the User Test Nodes.
+
+To use TractoR version 2.4.2 in either mode (within R or using the control script) you need to load the following modules:
+<code>
+ module unload compilers/intel/11.1/072
+ module unload mpi/qlogic/1.2.7/intel
+ module unload mkl/10.2.5/035
+ module load recommended/r
+ module load fsl/5.0.2.2/gnu.4.6.3
+ module load tractor/2.4.2
+ source $FSLDIR/etc/fslconf/fsl.sh
+</code>
+To use the older version 2.2.1 replace the FSL and TractoR modules in the above with:
+<code>
+ module load fsl/5.0.1/gnu.4.6.3
+ module load tractor/2.2.1
+</code>
+TractoR also uses the FMRIB Software Library (FSL) hence the need to source its setup script. You should now be able to run a TractoR command, for example:
+<code>
+ tractor list
+</code>
+which should display the list of available commands:
+<code>
+ Starting TractoR environment...
+ Experiment scripts found in /shared/ucl/apps/R/TractoR/tractor-2.2.1/share/experiments:
+  [1] age             bedpost         binarise        camino2fsl
+  [5] caminofiles     chfiletype      clone           contact
+  [9] dicomread       dicomsort       dicomtags       dirviz
+ [13] dpreproc        extract         fsl2camino      gmap
+ [17] gmean           gradcheck       gradread        gradrotate
+ [21] hnt-eval        hnt-interpret   hnt-ref         hnt-viz
+ [25] identify        imageinfo       imagestats      list
+ [29] mean            mkroi           morph           mtrack
+ [33] peek            platform        plotcorrections pnt-collate
+ [37] pnt-data        pnt-data-sge    pnt-em          pnt-eval
+ [41] pnt-interpret   pnt-prune       pnt-ref         pnt-train
+ [45] pnt-viz         proj            ptrack          rtrack
+ [49] slice           smooth          status          streamlines2trk
+ [53] tensorfit       track           update          upgrade
+ [57] values          view
+
+Experiment completed with 0 warning(s) and 0 error(s)
+</code>
+
+Here is an example run script using the command script mode for submitting batch jobs to the cluster:
+{|style="background-color:#F9F9F9;" width=100%
+|-
+|
+<code>
+ #!/bin/bash -l
+
+ # Batch script to run an OpenMP threaded TractoR job on Legion with the upgraded
+ # software stack under SGE. 
+
+ # This version works with the modules environment upgraded in Feb 2012.
+
+ # TractoR Version 2.4.2
+
+ # 1. Force bash as the executing shell.
+ #$ -S /bin/bash
+
+ # 2. Request ten minutes of wallclock time (format hours:minutes:seconds).
+ #    Change this to suit your requirements.
+ #$ -l h_rt=0:10:0
+
+ # 3. Request 1 gigabyte of RAM. Change this to suit your requirements.
+ #$ -l mem=1G
+
+ # 4. Set the name of the job. You can change this if you wish.
+ #$ -N TractoR_job_1
+
+ # 5. Select 12 threads (the most possible on Legion). 
+ #$ -l thr=12
+
+ # 6. Select the project that this job will run under.
+ # Find <your_project_id> by running the command "groups"
+ #$ -P <your_project_id>
+
+ # 7. Set the working directory to somewhere in your scratch space.  This is
+ # a necessary step with the upgraded software stack as compute nodes cannot
+ # write to $HOME.
+ #
+ # NOTE: this directory must exist.
+ #
+ # Replace "<your_UCL_id>" with your UCL user ID :)
+ #$ -wd /home/<your_UCL_id>/Scratch/TractoR_output
+
+
+ # 8. Load correct modules for TractoR and R
+ module unload compilers/intel/11.1/072
+ module unload mpi/qlogic/1.2.7/intel
+ module unload mkl/10.2.5/035
+ module load recommended/r
+ module load fsl/5.0.2.2/gnu.4.6.3
+ module load tractor/2.4.2
+ source $FSLDIR/etc/fslconf/fsl.sh
+
+ # 9. Run TractoR commands - example from 
+ #    http://www.tractor-mri.org.uk/HNT-tutorial
+ cd $TMPDIR
+ cp -r $TRACTOR_HOME/tests/data/session-12dir/ .
+ mkdir tmp
+ tractor  hnt-eval SessionList:session-12dir TractName:genu SearchWidth:7
+ echo ''
+ echo '--------------------------------------------'
+ echo ''
+ tractor hnt-viz SessionList:session-12dir TractName:genu ResultsName:results CreateVolumes:true
+ echo ''
+ echo '--------------------------------------------'
+ echo ''
+ tractor mean genu_session1 session-12dir Metric:FA AveragingMode:binary
+ echo ''
+ echo '--------------------------------------------'
+ echo ''
+
+ # 10. Preferably, tar-up (archive) all output files onto the shared scratch area
+ #    this will include the R_output file above.
+ tar zcvf $HOME/Scratch/TractoR_output/files_from_job_$JOB_ID.tgz $TMPDIR
+
+ # Make sure you have given enough time for the copy to complete! 
+</code>
+|}
+
+A copy of this runscript is available on Legion in:
+<code>
+ /shared/ucl/apps/R/TractoR/run-TractoR.sh
+</code>
+Please copy if you wish and edit it to suit your jobs. You will need to change the ''-P <your_project_id>'' and ''-wd /home/<your_UCL_id>/Scratch/TractoR_output'' grid engine directives and the TractoR commands. You may also need to change the ''-l thr=12'', ''-l mem=1G'' and ''-l h_rt=0:10:0'' directives. The script can be submitted using the simplest form of the qsub command ie:
+<code>
+ qsub run-TractoR.sh
+</code>
+
+Output will be written to ''$TMPDIR'' and so will need to be copied back to your ~/Scratch directory - step 10 in the runscript.

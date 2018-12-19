@@ -1,0 +1,73 @@
+---
+title: Bowtie on Legion
+layout: application
+---
+{{Applications
+
+|name=Bowtie
+|platform=Legion
+|version=1.1.2 and 2.2.5
+|short=The Bowties are tools for aligning sequencing reads to their reference sequences. Bowtie 1 is geared towards reads shorter than 50bp and Bowtie 2 towards longer reads.
+|about=
+Bowtie is an ultrafast, memory-efficient short read aligner. It aligns short DNA sequences (reads) to the human genome at a rate of over 25 million 35-bp reads per hour. Bowtie indexes the genome with a Burrows-Wheeler index to keep its memory footprint small: typically about 2.2 GB for the human genome (2.9 GB for paired-end). 
+
+Bowtie 2 is an ultrafast and memory-efficient tool for aligning sequencing reads to long reference sequences. It is particularly good at aligning reads of about 50 up to 100s or 1,000s of characters, and particularly good at aligning to relatively long (e.g. mammalian) genomes. Bowtie 2 indexes the genome with an FM Index to keep its memory footprint small: for the human genome, its memory footprint is typically around 3.2 GB. Bowtie 2 supports gapped, local, and paired-end alignment modes. 
+
+For reads longer than about 50 bp Bowtie 2 is generally faster, more sensitive, and uses less memory than Bowtie 1. For relatively short reads (e.g. less than 50 bp) Bowtie 1 is sometimes faster and/or more sensitive. For further differences, see [http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml#how-is-bowtie-2-different-from-bowtie-1 How is Bowtie 2 different from Bowtie 1?]
+
+Versions prior to Bowtie 1.1.0 and Bowtie2 2.2.0 used 32-bit integer representations internally, so had a 4-billion-nucleotide barrier. Later versions do not have that problem. You can see the available versions on Legion by typing <code>module avail bowtie</code>.
+
+Bowtie sets $BT1_HOME and Bowtie2 sets $BT2_HOME. You can have both modules loaded at once.
+
+{{Script
+|script-title=Example Bowtie2 script
+|script-intro=
+|script-code=
+<nowiki>
+#!/bin/bash -l
+
+# Batch script to run a multi-threaded Bowtie2 job on Legion with the upgraded
+# software stack under SGE. Updated Oct 2015.
+
+# 1. Force bash as the executing shell.
+#$ -S /bin/bash
+
+# 2. Request ten minutes of wallclock time (format hours:minutes:seconds).
+#$ -l h_rt=0:10:0
+
+# 3. Request 1 gigabyte of RAM.
+#$ -l mem=1G
+
+# 4. Select 12 threads (the most possible on Legion).
+#$ -pe smp 12
+
+# 5. Set the name of the job.
+#$ -N Bowtie2_job1
+
+# 6. Set the working directory to somewhere in your scratch space.  This is
+# a necessary step with the upgraded software stack as compute nodes cannot
+# write to $HOME.
+# Replace "<your_UCL_id>" with your UCL user ID :)
+#$ -wd /home/<your_UCL_id>/Scratch/Bowtie2_output
+
+# 7. Your work *must* be done in $TMPDIR 
+cd $TMPDIR
+
+# 8. Load the Bowtie2 module
+module load bowtie2/2.2.5
+
+# 9. Run Bowtie2 example from getting started guide:
+# http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml#getting-started-with-bowtie-2-lambda-phage-example
+#
+# Replace with your Bowtie2 commands.
+bowtie2-build $BT2_HOME/example/reference/lambda_virus.fa lambda_virus
+bowtie2 -x lambda_virus -U $BT2_HOME/example/reads/reads_1.fq -S eg1.sam
+
+# 10. Preferably, tar-up (archive) all output files onto the shared scratch area
+tar zcvf $HOME/Scratch/Bowtie2_output/files_from_job_$JOB_ID.tgz $TMPDIR
+
+# Make sure you have given enough time for the copy to complete!
+</nowiki>
+}}
+
+}}

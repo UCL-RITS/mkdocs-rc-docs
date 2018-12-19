@@ -1,0 +1,116 @@
+---
+title: StarCCM+
+layout: application
+---
+{{Applications
+
+|name=StarCCM+
+|platform=Legion
+|version=12.04.010 and 13.02.011
+|short=StarCCM+ is a commercial CFD package that handles fluid flows, heat transfer, stress simulations, and other common applications of such.
+|about=StarCCM+ is a commercial CFD package that handles fluid flows, heat transfer, stress simulations, and other common applications of such.
+|link1=
+|link2=
+|link3=
+|link4=
+|setup-title=
+|setup-intro=You must request access to the group controlling StarCCM+ access (legstarcd) to use it. The license is owned by the Department of Mechanical Engineering who will need to approve your access request.
+
+StarCCM+ is intended to be run primarily within batch jobs however you may run short (less than 15 minutes execution time) interactive work on the Login Nodes and longer (up to two hours) on the User Test Nodes. Interactive work can be done using the full  GUI provided you have X-windows functionality enabled though your ssh connection. See our [[:Category:Legion User Guide | Legion User Guide]] for more information about enabling X-windows functionality and the User Test nodes.
+|module-intro=
+|moduleunload1=
+|moduleunload2=
+|moduleunload3=
+|moduleunload4=
+|moduleadd1=
+|moduleadd2=
+|moduleadd3=
+|moduleadd4=
+|moduleload1=star-ccm+/13.02.011
+|moduleload2=
+|moduleload3=
+|moduleload4=
+|source1=
+|setup-notes=
+Before running any StarCCM+ jobs on the clusters you '''MUST''' load the StarCCM+ module on a login node. This is so the module can  set up two symbolic links in your home directory to directories  created in your Scratch area. This is so that users settings etc can be written by running jobs. 
+|scripts=
+{{Script
+
+|script-title=Example StarCCM+ runscript 
+|script-intro=Here is an example run script for submitting batch jobs to the cluster: 
+|script-code=
+<nowiki>
+#!/bin/bash -l
+
+# Batch script to run a parallel STAR-CCM+ job on Grace OS upgrade
+# software stack under SGE. 
+
+# STAR-CCM+ Version 13.02.011 using default IBM Platform MPI
+
+# Submit using a qsub command of the form:
+#
+#   qsub -v simFile=`pwd`/my_input_file run-starccm+.sh
+#
+
+# 1. Force bash as the executing shell.
+#$ -S /bin/bash
+
+# 2. Request 15 hour(s) of wallclock time (format hours:minutes:seconds).
+#    Change this to suit your requirements.
+#$ -l h_rt=15:0:0
+
+# 3. Request 2 gigabyte of RAM. Change this to suit your requirements.
+#$ -l mem=2G
+
+# 4. Request 15 gigabyte of TMPDIR space (default is 10 GB)
+#$ -l tmpfs=15G
+
+# 5. Set the name of the job. You can change this if you wish.
+#$ -N StarCCM+_PlatformMPI_Job1
+
+# 6. Merge output and error files
+#$ -j y
+
+# 7. Request MPI environment with 32 processors
+#$ -pe mpi 32
+
+# 8. Request 1 license per core - may not be working so turned off.
+#$ -l ccmpsuite=1
+
+# 9. Run from the current working directory which must be in your Scratch area
+#$ -cwd
+
+# 10. Load modules needed for STAR-ccm+
+
+# module use --append ~ccaabaa/lib/modulefiles/applications
+module load star-ccm+/13.02.011
+
+# 11. Run the simulation using IBM Platform MPI
+
+starccm+ -np $NSLOTS -machinefile $TMPDIR/machines -rsh ssh -batch $simFile
+
+
+</nowiki>
+|script-path=
+|script-notes=Please copy if you wish and edit it to suit your jobs. The script can then be submitted using a qsub command like:
+<code>
+ qsub -v simFile=`pwd`/my_input.sim run-starccm+.sh
+</code>
+Output will be written to the current working directory, so this should be submitted from a directory in the Scratch area. 
+
+}} 
+
+=hfi error=
+If you get an error like this:
+<code>
+ hfi_wait_for_device: The /dev/hfi1_0 device failed to appear after 15.0 seconds: Connection timed out
+</code>
+then you need to add <code>-fabric ibv</code> to your options as shown in the example script.
+
+It is trying to use an OmniPath device on a cluster that has InfiniBand, so the fabric needs to be changed.
+
+[[#top | back to top]]
+|coda-title=
+|coda=
+
+}}

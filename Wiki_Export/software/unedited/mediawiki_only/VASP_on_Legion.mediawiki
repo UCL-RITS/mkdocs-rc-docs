@@ -1,0 +1,79 @@
+---
+title: VASP
+categories:
+ - Applications
+ - Software
+
+layout: application
+---
+{{Applications
+
+|name=VASP
+|platform=Legion
+|version=5.4.1, 5.4.4
+|short=VAMP/VASP is a package for performing ab-initio quantum-mechanical molecular dynamics (MD) using pseudo-potentials and a plane wave basis set. 
+|about=__NOTOC__
+Most VASP resources require us to have proof that you have a license before we can make them available to you. When you request access you need to send us the name and email of the main VASP license holder along with the license number. We will then ask VASP if we can add you, and on confirmation can do so. We will add you to the legvasp reserved application group.
+
+Although centrally available versions of VASP 5.x exist, we recognise that many users will wish to compile their own copies for optimisation or integration of externally developed modules. 
+
+If you do not have a VASP license, please contact http://vasp.at for information on how to obtain one.
+
+==Compiled Versions==
+
+Currently available is version 5.4.4, runnable using the default modules on the system (built with Intel 2017 update 1 compilers including MKL, and Intel MPI). The executables are
+
+* vasp_gam - optimised for gamma point calculations only
+* vasp_std - standard version
+* vasp_ncl - for non-collinear magnetic structure and/or spin-orbit coupling calculations
+
+|script-title=Example script for centrally installed versions
+|script-intro=Type <code>module avail vasp</code> to see all available modules. Type <code>module show <modulename></code> to see what prerequisites those modules have and the environment variables they set up.
+|script=
+<nowiki>
+#!/bin/bash -l
+
+# Batch script to run an MPI parallel job on Legion with the upgraded software
+# stack under SGE with Intel MPI.
+
+# 1. Force bash as the executing shell.
+#$ -S /bin/bash
+
+# 2. Request wallclock time (format hours:minutes:seconds).
+#$ -l h_rt=02:00:00
+
+# 3. Request RAM per process.
+#$ -l mem=1G
+
+# 4. Request TMPDIR space per node (default is 10 GB)
+#$ -l tmpfs=10G
+
+# 5. Set the name of the job.
+#$ -N vasptest
+
+# 6. Select the MPI parallel environment and number of processes.
+#$ -pe mpi 12
+
+# 7. Set the Current Working Directory
+#$ -cwd
+
+# 8. Load the correct modules for this version of VASP. This also outputs some information about
+# what you have loaded and the source dir - you can remove those lines if you wish.
+module load vasp/5.4.4-18apr2017/intel-2017-update1
+module list
+echo "VASP_SRC_DIR: "$VASP_SRC_DIR
+
+# 9. Run our MPI job. GERun is a wrapper that launches MPI jobs on Legion.
+gerun vasp_std > vasp_output.$JOB_ID
+</nowiki>
+|script-path=
+|script-notes=
+
+==Building your own VASP==
+
+You may also install your own copy of VASP in your home if you have access to the source, and we provide a simple [https://github.com/UCL-RITS/rcps-buildscripts/blob/master/vasp_individual_install build script on Github] (tested with VASP 5.4.4, no patches). You need to download the VASP source code and then you can run the script following the instructions at the top.
+
+To build VASP 5.3.5, have a look at [https://software.intel.com/en-us/articles/building-vasp-with-intel-mkl-and-intel-compilers Intel's guide to building VASP for Xeon processors] and also read [[Compiling]]. You don't need to source any Intel compiler files as the module sets up the environment variables for you.
+
+
+}}

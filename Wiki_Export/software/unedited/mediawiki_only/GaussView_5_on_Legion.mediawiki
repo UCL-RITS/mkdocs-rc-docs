@@ -1,0 +1,76 @@
+---
+title: GaussView 5
+categories:
+ - Applications
+ - Software
+
+layout: application
+---
+{{Applications
+
+|name=GaussView 5
+|platform=Legion
+|short=
+A graphical tool to help prepare input for submission to Gaussian and view output.
+|about=
+GaussView 5.0.8 is available on Legion and currently can be used on the login nodes. GaussView is a graphical tool to help prepare input for submission to Gaussian and to examine graphically the output from Gaussian jobs. Job submission directly from GaussView is  not possible, instead save molecular structures as Gaussian input files and submit in the normal way for Gaussian jobs.
+|version=5.0.8, 6.0.16
+|link1= [http://www.gaussian.com/g_tech/gv5ref/gv5ref_toc.htm GaussView 5 Reference manual on the Gaussian Inc website]
+|moduleunload1=
+|moduleunload2=
+|moduleunload3=
+|moduleunload4=
+|moduleunload5=
+|moduleunload6=
+|moduleunload7=
+|moduleunload8=
+|moduleload1=
+|moduleload2=
+|moduleload3=
+|moduleload4=
+|moduleload5=
+|moduleload6=
+|moduleload7=
+|moduleload8=
+|setup-notes=
+Access to GaussView is enabled by a module file and being a member of the appropriate reserved application group. Please email [mailto:rc-support@ucl.ac.uk rc-support@ucl.ac.uk] to get your userid added to the G09 group.
+
+As GaussView uses the X Window System to display its graphical user interface, the computer you are logging in to Legion from must be running X and your ssh session must have X tunnelling enabled. From a Linux/Unix workstation use an ssh command of the form:
+<code>
+ ssh -X your_userid@legion.rc.ucl.ac.uk
+</code>
+If you use Windows then you can use the Exceed X server. UCL has a site licence for Exceed and  it's available for download from the [http://swdb.ucl.ac.uk/ UCL Software Database]. If you use a Mac then you can use [http://xquartz.macosforge.org/trac/wiki XQuartz].
+
+Before you can run GaussView interactively you need to load the G09 or G16 module and run an initialisation script using: 
+<code>
+ module load gaussian/g09-d01/pgi-2015.4
+ . $g09root/g09/bsd/g09.profile
+</code>
+You can use:
+<code>
+ module list
+</code>
+to check that the module is loaded. 
+
+You can now run GaussView using:
+<code>
+ gview &
+</code>
+For more information about using GaussView see the [http://www.gaussian.com/g_tech/gv5ref/gv5ref_toc.htm GaussView 5 Reference Manual] on the Gaussian web site.
+
+=GaussView problems=
+
+==Segfaults with newer Xservers==
+
+gview 5 is segfaulting with newer Xservers on Linux and Windows. It is confirmed working with Xquartz 2.7.8 for Mac OS X. It is failing with xorg-server 2:1.18.4-0ubuntu0.8 and with Xming 6.9.0.31.
+
+The Gaussian 16 module contains gview.exe 6, which is currently working with the newer Xservers.
+
+==GaussView exiting when used from Macs==
+
+If either version of GaussView is exiting immediately with no errors shown in the terminal, try using XQuartz 2.7.8 as your local Xserver instead of later versions.
+
+|coda-title=
+|coda=
+
+}}

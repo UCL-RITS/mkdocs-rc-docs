@@ -1,0 +1,106 @@
+---
+title: CASTEP
+categories:
+ - Applications
+
+layout: application
+---
+{{Applications
+
+|name=CASTEP
+|platform=Legion
+|version= 
+|short=
+CASTEP is a full-featured materials modelling code based on a first-principles quantum mechanical description of electrons and nuclei. 
+|about=
+CASTEP is a full-featured materials modelling code based on a first-principles quantum mechanical description of electrons and nuclei. Using density functional theory, it can simulate a wide range of properties of materials proprieties including energetics, structure at the atomic level, vibrational properties, electronic response properties etc. In particular it has a wide range of spectroscopic features that link directly to experiment, such as infra-red and Raman spectroscopies, NMR, and core level spectra. CASTEP is developed by members of the Castep Developers Group (CDG) who are currently all UK based academics.
+
+On RC systems CASTEP is intended to be run primarily within batch jobs however you may run short (less than 5 minutes execution time) interactive tests on the Login Nodes and longer interactive tests on the User Test Nodes.
+|link1= [http://www.castep.org/ CASTEP website]
+|setup-title=
+|setup-intro=
+|module-intro=The following changes need to be made to the standard modules before running this software:
+|moduleunload1=
+|moduleunload2=
+|moduleunload3=
+|moduleunload4=
+|moduleadd1=
+|moduleadd2=
+|moduleadd3=
+|moduleadd4=
+|moduleload1=castep/17.21/intel-2017
+|moduleload2=
+|moduleload3=
+|moduleload4=
+|source1=
+|setup-notes=
+
+|script=
+<nowiki>
+#!/bin/bash -l
+
+# Batch script to run CASTEP.
+
+# 1. Force bash as the executing shell.
+#$ -S /bin/bash
+
+# 2. Request 1 hour of wallclock time (format hours:minutes:seconds).
+#$ -l h_rt=1:0:0
+
+# 3. Request 2 gigabyte of RAM per core.
+#$ -l mem=2G
+
+# 4. Reguest 32 MPI processes
+#$ -pe mpi 32
+
+# 5. Set the name of the job.
+#$ -N CASTEP_test
+
+# 6. Set the working directory to somewhere in your scratch space.  This is
+# a necessary step with the upgraded software stack as compute nodes cannot
+# write to $HOME. 
+#
+# Replace <your userid> with your UCL userid where it occurs below.
+
+#$ -wd /home/<your userid>/Scratch/castep_examples
+
+# 7. Set up environment
+
+module load castep/17.21/intel-2017
+
+# 8. Run the application. Gerun is our wrapper for mpirun which sets the
+# machinefile and number of processes to the amount you requested above with -pe.
+
+gerun castep.mpi input
+
+</nowiki>
+|script-path=
+|script-notes=
+
+==Installing your own copy==
+If you have access to the source code, you may install it in your home. You may wish to refer to [[Compiling]].
+
+==Optimisation==
+It has been suggested that compiling with these options (on Grace) gave a build that ran about 10% faster than the default compilation options.
+
+<code>
+ make COMMS_ARCH=mpi SUBARCH=mpi FFT=mkl MATHLIBS=mkl10 BUILD=fast
+</code> 
+
+Do check for numerical accuracy with any optimisations you carry out. If you have further suggestions, please let us know.
+
+
+|script2-title=
+|script2-intro=
+|script2=
+|script2-path=
+|script2-notes=
+|script3-title=
+|script3-intro=
+|script3=
+|script3-path=
+|script3-notes=
+|coda-title=
+|coda=
+
+}}

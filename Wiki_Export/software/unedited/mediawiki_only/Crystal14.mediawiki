@@ -1,0 +1,161 @@
+---
+title: Crystal14
+layout: application
+---
+{{Applications
+|name=Crystal14
+|platform=Legion and Grace
+|short=ACrystal14 is a general-purpose program for the study of crystalline solids. The CRYSTAL program computes the electronic structure of periodic systems within Hartree Fock, density functional or various hybrid approximations.  
+|about=Crystal14 is a general-purpose program for the study of crystalline solids. The CRYSTAL program computes the electronic structure of periodic systems within Hartree Fock, density functional or various hybrid approximations. 
+|version=1.0.4
+|setup-intro=Crystal14 version 1.0.4 is available on Legion and Grace
+|moduleunload1=mpi
+|moduleload1=mpi/openmpi/1.10.1/intel-2015-update2
+|moduleload2=crystal14/v1.0.4_2017
+|setup-notes=
+
+Crystal14 is commercial software which is available free of charge to UK academics. You must obtain a license from Crystal Solutions [http://www.crystalsolutions.eu/cat/crystal-cryscor/academic-uk CRYSTAL/CRYSCOR - Academic UK license site]. Access to Crystal14 is enabled by being a member of he appropriate reserved application group. Please email [mailto:rc-support@ucl.ac.uk rc-support@ucl.ac.uk] including proof you have access to get your userid added to the Crystal14 group. For proof of access we accept emails from CRYSTAL saying your account has been upgraded to "Academic UK", or a screenshot of your account page showing you have the full download available rather than just the demo version.
+
+Crystal14 is intended to be run primarily within batch jobs however you may run short (less than 5 minutes execution time) interactive tests on the Login Nodes and longer (up to two hours) using qrsh to request an interactive session on the compute nodes. See the [https://wiki.rc.ucl.ac.uk/wiki/Category:User_Guide RC Systems User Guide] for more information.
+
+Here is an example runscript for running the parallel version of Crystal.
+
+|scripts=
+{{Script
+|script-title=Parallel Crystal (Pcrystal) Example Runscript
+|script-code=
+<nowiki>
+#!/bin/bash -l
+
+# Crystal14: Batch script to run Crystal14 in parallel (Pcrystal)
+# using one of the supplied examples, distributed parallel (32 cores).
+
+# Usage eg: qsub -v JOB=test00 run_Crystal14_p.sh
+
+# 1. Force bash as the executing shell.
+#$ -S /bin/bash
+
+# 2. Request one hour of wallclock time (format hours:minutes:seconds).
+#$ -l h_rt=1:00:0
+
+# 3. Request 2 gigabyte of RAM.
+#$ -l mem=2G
+
+# 4. Merge output and error files
+#$ -j y
+
+# 5. Set the name of the job.
+#$ -N Pcrystal_32
+
+# 6. Select the MPI parallel environment (qlc) and 32 processors.
+#$ -pe mpi 32
+
+# 7. Set the working directory to somewhere in your scratch space.  
+# Replace <your userid> with your UCL userid.
+#$ -wd /home/<your userid>/Scratch/Crystal14_examples
+
+# 8. Load the Crystal14 modules to set up your environment
+
+module unload mpi
+module load mpi/openmpi/1.10.1/intel-2015-update2
+module load crystal14/v1.0.4_2017
+
+module list
+
+# 9. Create a directory for this job and copy the input file into it. 
+mkdir $JOB
+cd $JOB
+cp /home/<your userid>/Crystal14/test_cases/inputs/${JOB}.d12 INPUT
+
+# 10. Run Pcrystal using gerun
+
+gerun $CRY14_EXEDIR/$VERSION/Pcrystal
+</nowiki>
+
+|script-path=/shared/ucl/apps/Crystal14/v1.0.4_2/run_Crystal14_p.sh
+|script-notes=
+You will need to change the '-wd /home/<your userid>/Scratch/Crystal14_examples' Grid Engine directive and may need to change the memory, wallclock time, number of MPI Processors (item 6) and job name directives as well.
+
+A qsub command of the form:
+<code>
+ qsub -v JOB=test00 run_Crystal14_p.sh
+</code>
+can be used to submit the job. In this example your Crystal14 input file would be called:
+<code>
+ test00.d12
+</code>
+so replace 'test00' with the name of your file.
+
+Output files will be saved in the job's working directory and $JOB sub-directory. 
+}}
+
+Similarly the parallel version of Properties can be run using a runscript like:
+
+{{Script
+|script-title=Parallel Properties (Pproperties) Example Runscript
+|script-code=
+<nowiki>
+#!/bin/bash -l
+
+# Crystal14: Batch script to run Crystal14 in parallel (Pproperties)
+# using one of the supplied examples, distributed parallel (32 cores).
+
+# Usage: qsub -v JOB=test00 run_Crystal14Prop_p.sh
+
+# 1. Force bash as the executing shell.
+#$ -S /bin/bash
+
+# 2. Request one hour of wallclock time (format hours:minutes:seconds).
+#$ -l h_rt=1:0:0
+
+# 3. Request 2 gigabyte of RAM.
+#$ -l mem=2G
+
+# 4. Merge output and error files
+#$ -j y
+
+# 5. Set the name of the job.
+#$ -N Pproperties_32
+
+# 6. Select the MPI parallel environment (qlc) and 32 processors.
+#$ -pe mpi 32
+
+# 7. Set the working directory to somewhere in your scratch space.  In this
+# case the subdirectory ADF_examples
+#$ -wd /home/<your userid>/Scratch/Crystal14_examples
+
+# 8. Load the Crystal14 modules to set up your environment
+
+module unload mpi
+module load mpi/openmpi/1.10.1/intel-2015-update2
+module load crystal14/v1.0.4_2017
+
+module list
+
+cd $JOB
+cp ./${JOB}.d3 INPUT
+
+# 9. Run Pcrystal using gerun
+
+gerun $CRY14_EXEDIR/$VERSION/Pproperties
+</nowiki>
+
+|script-path=/shared/ucl/apps/Crystal14/v1.0.4_2/run_Crystal14Prop_p.sh
+|script-notes=
+Change the your copy in the same way as the PCrystal one.
+
+A similar qsub command can be used:
+<code>
+ qsub -v JOB=test00 run_Crystal14Prop_p.sh
+</code>
+to submit the job. In this example your Crystal14 input file would be called:
+<code>
+ test00.d3
+</code>
+so replace 'test00' with the name of your file.
+
+Output files will be saved in the job's working directory and $JOB sub-directory. 
+
+[[#top | Back to top]]
+}}
+}}
