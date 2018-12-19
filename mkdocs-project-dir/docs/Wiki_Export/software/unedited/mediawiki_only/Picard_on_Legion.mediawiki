@@ -1,0 +1,68 @@
+---
+title: Picard on Legion
+categories:
+ - Legion
+ - Legion Applications
+ - Legion Software
+
+layout: application
+---
+{{Applications
+
+|name=Picard
+|platform=Legion
+|version=1.136
+|short=Picard comprises Java-based command-line utilities that manipulate SAM files, and a Java API (SAM-JDK) for creating new programs that read and write SAM files. Both SAM text format and SAM binary (BAM) format are supported. 
+|about=Picard comprises Java-based command-line utilities that manipulate SAM files, and a Java API (SAM-JDK) for creating new programs that read and write SAM files. Both SAM text format and SAM binary (BAM) format are supported. 
+|link1=[http://picard.sourceforge.net/index.shtml Picard website]
+|link2=
+|link3=
+|link4=
+|setup-title=
+|setup-intro=
+|module-intro=
+|moduleunload1=
+|moduleunload2=
+|moduleunload3=
+|moduleunload4=
+|moduleload1=java/1.8.0_45
+|moduleload2=picard-tools/1.136
+|moduleload3=
+|moduleload4=
+|source1=
+|setup-notes=
+Then to run picard itself, you can prefix the .jar you want to run with $PICARDPATH and give the full command, or we have wrappers.
+
+<code>
+ java -Xmx2g -jar $PICARDPATH/picard.jar PicardCommand TMP_DIR=$TMPDIR OPTION1=value1 OPTION2=value2...
+</code>
+
+The wrappers allow you to run commands like this - in this case our wrapper sets TMP_DIR for you:
+
+<code>
+ PicardCommand OPTION1=value1 OPTION2=value2...
+</code>
+
+===Temporary files===
+
+By default, Picard writes temporary files into /tmp rather than into $TMPDIR. These are not cleaned up after your job ends, and means future runs can fail because /tmp is full (and requesting more tmpfs in your job doesn't make it larger). If you run Picard with the full java -jar command then give Picard the <code>TMP_DIR=$TMPDIR</code> option to get it to write in the correct place.
+
+|script-title=
+|script-intro=
+|script=
+|script-path=
+|script-notes=
+|script2-title=
+|script2-intro=
+|script2=
+|script2-path=
+|script2-notes=
+|script3-title=
+|script3-intro=
+|script3=
+|script3-path=
+|script3-notes=
+|coda-title=
+|coda=
+
+}}

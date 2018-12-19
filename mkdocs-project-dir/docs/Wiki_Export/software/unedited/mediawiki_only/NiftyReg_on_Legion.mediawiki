@@ -1,0 +1,55 @@
+---
+title: NiftyReg on Legion
+categories:
+ - Legion
+ - Legion Applications
+ - Legion Software
+
+layout: application
+---
+{{Applications
+|name=NiftyReg
+|platform=Legion
+|version=1.3.9
+|short=NiftyReg contains programs to perform rigid, affine and non-linear registration of medical images.
+|about=NiftyReg contains programs to perform rigid, affine and non-linear registration of medical images.
+|link1=[http://sourceforge.net/projects/niftyreg/ NiftyReg website]
+|link2=
+|link3=
+|link4=
+|setup-title=
+|setup-intro=
+|module-intro=
+|moduleunload1=
+|moduleunload2=
+|moduleunload3=
+|moduleunload4=
+|moduleadd1=
+|moduleadd2=
+|moduleadd3=
+|moduleadd4=
+|moduleload1=
+|moduleload2=
+|moduleload3=
+|moduleload4=
+|source1=
+|setup-notes=
+|script-title=
+|script-intro=
+|script=
+|script-path=
+|script-notes=
+|script2-title=
+|script2-intro=
+|script2=
+|script2-path=
+|script2-notes=
+|script3-title=
+|script3-intro=
+|script3=
+|script3-path=
+|script3-notes=
+|coda-title=
+|coda=
+
+}}

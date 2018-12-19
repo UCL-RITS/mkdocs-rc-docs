@@ -1,0 +1,89 @@
+---
+title: Running DL Poly 4 on Legion
+categories:
+ - Bash script pages
+ - Legion
+
+layout: docs
+---
+[[Category:Bash script pages]]
+[[Category:Legion]]
+A build of DL_Poly 4 is available to users on Legion. It has been built with the default modules environment (Intel compilers and QLogic MPI).
+
+Please read and understand the [http://www.stfc.ac.uk/CSE/os/25526.aspx DL_Poly 4 license]. Please read this as it restricts what you may do with the software.
+
+'''In order to use the central builds of DL_Poly 4, you will need to be added to the appropriate UNIX user group. Please forward your registration confirmation e-mail to [mailto:rc-support@ucl.ac.uk rc-support@ucl.ac.uk] to be added to the group.'''
+
+DL_Poly looks for its input files in the directory which its executable has been placed. Since this is not practical in a multi-user environment, it is necessary for a user to copy the DL_Poly executable to their working directory before running it. The script below does this as part of the job, as well as creating a job-specific working directory. In addition, many of the scripts provided with the DL_Poly distribution that live in the execute subdirectory have had the execute bit removed so that they cannot run (they would not work anyway as users do not have permission to write to this directory).
+
+===Example submission script===
+
+You will need to modify the contents of section 7 so that it points to the directory with your input files in it, as well as correctly setting the project in section 6. This script will create a sub-directory of that directory called <jobname>_<job id> with your data and output in it.
+
+More advanced users may wish to create their own scripts and work-flows around the DL_Poly binary. This binary may be found in /shared/ucl/apps/dl_poly/4/4.01/execute/DLPOLY.Z on Legion.
+{|style="background-color:#F9F9F9;" width=100%
+|-
+|
+<code>
+ #!/bin/bash -i
+
+ # Batch script to run an MPI DL_POLY job on Legion with the upgraded 
+ # software stack under SGE with QLogic MPI.
+
+ # 1. Force bash as the executing shell.
+ #$ -S /bin/bash
+
+ # 2. Request thirty minutes of wallclock time (format hours:minutes:seconds).
+ #$ -l h_rt=0:30:0
+
+ # 3. Request 1 gigabyte of RAM.
+ #$ -l mem=1G
+
+ # 4. Set the name of the job.
+ #$ -N DL_POLY
+
+ # 5. Select the QLogic parallel environment (qlc) and 16 processors.
+ #$ -pe qlc 16
+
+ # 6. Select the project that this job will run under.
+ #$ -P <your project>
+
+ # 7. Set the working directory to somewhere in your scratch space.  This 
+ # is a necessary step with the upgraded software stack as compute nodes 
+ # cannot write to $HOME.  This should be set to the directory where 
+ # your DL_Poly input files are.
+ #$ -wd /home/<your username>/scratch/output/
+
+ # 8. Now we need to set up and run our DL_Poly job.  DL_Poly is a bit 
+ # odd, so we need to move files about to make things run.
+
+ dl_poly_work_dir=$SGE_O_WORKDIR/${JOB_NAME}_${JOB_ID}
+ dl_poly_executable=/shared/ucl/apps/dl_poly/4/4.01/execute/DLPOLY.Z
+
+ # Make a working directory.
+ mkdir $dl_poly_work_dir
+
+ # Copy DL_Poly input files to temporary directory.
+ for a in CONTROL FIELD CONFIG TABLE TABEAM
+ do
+   if [ -f $SGE_O_WORKDIR/$a ]; then
+     echo Copying $SGE_O_WORKDIR/$a to $dl_poly_work_dir/$a
+     cp $SGE_O_WORKDIR/$a $dl_poly_work_dir/$a
+   else
+     echo No $SGE_O_WORKDIR/$a found.
+   fi
+ done
+
+ # Copy DL_Poly executable to temporary working directory.
+ echo Copying DL_Poly executable to $dl_poly_work_dir
+ cp $dl_poly_executable $dl_poly_work_dir
+
+ # Run it.
+ cd $dl_poly_work_dir
+ echo Running $dl_poly_work_dir/DLPOLY.Z.
+ mpirun -m $TMPDIR/machines -np $NSLOTS $dl_poly_work_dir/DLPOLY.Z
+
+ # Delete executable.
+ rm $dl_poly_work_dir/DLPOLY.Z
+</code>
+|}

@@ -1,0 +1,71 @@
+---
+title: Running StarCCM+ on Legion
+layout: docs
+---
+[[Category:Bash script pages]]
+[[Category:Legion]]
+StarCCM+ is a commercial CFD package that handles fluid flows, heat transfer, stress simulations, and other common applications of such. 
+
+You must request access to the group controlling StarCCM+ access (legstarcd) to use it.
+
+You will also need to load the appropriate OpenMPI module, and the StarCCM+ module:
+<code>
+ module unload mpi
+ module load mpi/openmpi/1.4.1/intel
+ module load starccm
+</code>
+Before running StarCCM+ for the first time you will need to set up two symbolic links in your home directory to directories you have created in your Scratch area. This is so that users settings etc can be written by running jobs. In your home directory:
+<code>
+ mkdir Scratch/star-7.02.011
+ mkdir Scratch/star-7.02.011-<your userid>
+ ln -s ~/Scratch/star-7.02.011 .star-7.02.011
+ ln -s ~/Scratch/star-7.02.011-<your userid> .star-7.02.011-<your userid>
+</code>
+Replace <your userid> with your UCL userid eg ucemxxx. You can now run StarCCM+ programs.
+
+Here is an example run script for submitting batch jobs to the cluster:
+
+{|style="background-color:#F9F9F9;" width=100%
+|-
+|
+<code>
+ #!/bin/bash -l
+
+ # Job Name (shows up in qstat)
+ #$ -N StarCCM
+
+ # Merge output and error files
+ #$ -j y
+
+ # Maximum runtime of job
+ #$ -l h_rt=0:20:00
+
+ # Request OpenMPI environment with 16 processors
+ #$ -pe openmpi 16
+
+ # Request 1 license per core
+ #$ -l ccmpsuite=1
+
+ # Your Project Name
+ #$ -P ProjectName
+
+ # Run from the current working directory
+ #$ -cwd
+
+ module unload mpi
+ module load mpi/openmpi/1.4.1/intel
+ module load starccm
+
+ starccm+ -np $NSLOTS -machinefile $TMPDIR/machines -rsh ssh -batch Example.sim
+</code>
+|}
+
+This is available on Legion in:
+<code>
+ /shared/ucl/apps/starccm+_7.02.011/run-starccm.sh
+</code>
+Please copy if you wish and edit it to suit your jobs. The script can then be submitted using the simplest form of the qsub command ie:
+<code>
+ qsub run-starccm.sh
+</code>
+Output will be written to the current working directory, so this should be submitted from a directory in the Scratch area.

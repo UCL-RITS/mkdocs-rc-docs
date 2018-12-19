@@ -1,0 +1,65 @@
+---
+title: Running GROMACS on Legion
+layout: docs
+---
+[[Category:Bash script pages]]
+[[Category:Legion]]
+GROMACS on Legion was built with FFTW, the OpenMPI library and the GNU compilers. It is therefore strongly recommended that you have these modules loaded when running it:
+
+* sge/6.2u3
+* compilers/gnu/4.6.3
+* mpi/openmpi/1.4.5/gnu.4.6.3
+* gromacs/4.6.1/openmpi/gnu.4.6.3
+
+Which version you require depends on the problem you wish to solve.  For both single and double precisions version builds, serial binaries and an MPI binary for mdrun (mdrun_mpi) are provided. Double precision binaries have a _d suffix (so mdrun_d, mdrun_mpi_d etc).  The MPI binaries should be run in the OpenMPI (openmpi) parallel environment with the OpenMPI implementation.
+
+===Job Script===
+{|style="background-color:#F9F9F9;" width=100%
+|-
+|
+<code>
+ #!/bin/bash -l
+
+ # Batch script to run an MPI parallel GROMACS job on Legion with the upgraded software
+ # stack under SGE with OpenMPI.
+
+ # 1. Force bash as the executing shell.
+ #$ -S /bin/bash
+
+ # 2. Request ten minutes of wallclock time (format hours:minutes:seconds).
+ #$ -l h_rt=0:10:0
+
+ # 3. Request 1 gigabyte of RAM per process.
+ #$ -l mem=1G
+
+ # 4. Request 15 gigabyte of TMPDIR space per node (default is 10 GB)
+ #$ -l tmpfs=15G
+
+ # 5. Set the name of the job.
+ #$ -N GROMACS_1_16_OpenMPI
+
+ # 6. Select the OpenMPI parallel environment and 16 processes.
+ #$ -pe openmpi 16
+
+ # 7. Select the project that this job will run under.
+ # Find <your_project_id> by running the command "groups"
+ #$ -P <your_project_id>
+
+ # 8. Set the working directory of the job to the current directory
+ #     containing your input files.
+ #    This *has* to be somewhere in your Scratch space, or else your
+ #     job will go into the Eqw state.
+ #$ -cwd
+
+ module unload compilers/intel/11.1/072
+ module unload mpi/qlogic/1.2.7/intel
+ module unload mkl/10.2.5/035
+ module load compilers/gnu/4.6.3
+ module load mpi/openmpi/1.4.5/gnu.4.6.3
+ module load gromacs/4.6.1/openmpi/gnu.4.6.3
+
+ # Run GROMACS - replace with mdrun command line suitable for your job!
+
+ gerun mdrun_mpi -v -stepout 10000
+</code>
+|}

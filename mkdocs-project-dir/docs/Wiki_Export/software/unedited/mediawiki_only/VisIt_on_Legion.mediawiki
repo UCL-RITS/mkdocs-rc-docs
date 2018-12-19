@@ -1,0 +1,171 @@
+---
+title: VisIt
+categories:
+ - Applications
+ - Software
+
+layout: application
+---
+{{Applications
+
+|name=VisIt
+|platform=Legion
+|short=
+VisIt is a distributed, parallel visualization and graphical analysis tool for data defined on two- and three-dimensional (2D and 3D) meshes.
+|about=
+VisIt is an Open Source, interactive, scalable, visualization, animation and analysis tool. From Unix, Windows or Mac workstations, users can interactively visualize and analyze data ranging in scale from small (<101 core) desktop-sized projects to large (>105 core) leadership-class computing facility simulation campaigns. Users can quickly generate visualizations, animate them through time, manipulate them with a variety of operators and mathematical expressions, and save the resulting images and animations for presentations. VisIt contains a rich set of visualization features to enable users to view a wide variety of data including scalar and vector fields defined on two- and three-dimensional (2D and 3D) structured, adaptive and unstructured meshes. Owing to its customizeable plugin design, VisIt is capabable of visualizing data from over 120 different scientific data formats.
+|version=2.9.2
+|link1=[https://wci.llnl.gov/simulation/computer-codes/visit/ VisIt homepage]
+|link2=[http://www.visitusers.org VisIt Users wiki]
+|moduleunload1=compilers
+|moduleunload2=mpi
+|moduleunload3=
+|moduleunload4=
+|moduleunload5=
+|moduleunload6=
+|moduleunload7=
+|moduleunload8=
+|moduleload1=compilers/gnu/4.9.2
+|moduleload2=mpi/openmpi/1.8.4/gnu-4.9.2
+|moduleload3=visit/2.9.2
+|moduleload4=
+|moduleload5=
+|moduleload6=
+|moduleload7=
+|moduleload8=
+|setup-notes=
+There is sample data available at <code>/shared/ucl/apps/visit/2.9.2/gnu-4.9.2/data</code>
+
+===Before use===
+
+You need to load the VisIt module once from a login node before submitting any jobs locally or remotely. It will create a <code>.visit</code> directory in your home, plus a <code>visit</code> directory in Scratch, and copy the Legion hostfile into <code>~/.visit/hosts/</code>.
+
+You then need to launch VisIt once on the login node by typing <code>visit</code> for it to create more user directories in <code>~/.visit/2.9.2/</code>. (If you don't have [[Accessing_RC_Systems#Running_graphical_applications_using_X-forwarding| X-forwarding]] on it will exit with an error saying "visit-gui: cannot connect to X server" but will still create the directories for you).
+
+===Legion hostfile===
+
+VisIt needs a hostfile to give it the correct options for running on Legion. If you alter the options and find you have broken something, the original hostfile resides at 
+<code>
+ /shared/ucl/apps/visit/2.9.2/gnu-4.9.2/host_legion.xml
+</code>
+You can rename yours for a backup and when you reload the VisIt module it will restore the original for you.
+
+
+==Non-interactive submission with a jobscript and a VisIt Python script==
+
+If you want to generate a specific result and do not need to be able to interact on-the-fly with your data, you can use VisIt's scripting capabilities.
+
+===Example jobscript for non-interactive submission===
+
+This will run a very short 8 processor VisIt job that will execute the commands in the Python script and generate an image as the result.
+
+<code>
+ #!/bin/bash -l
+
+ # Example script to run VisIt 2.8.1. Tutorial data is coloured by processor ID.
+ # Updated Oct 2015.
+
+ #$ -S /bin/bash
+ #$ -l h_rt=0:10:0
+ #$ -l mem=1G
+ #$ -N VisIt_parallelcolour
+ #$ -pe mpi 8
+ #$ -wd $HOME/Scratch/visit
+
+ module unload compilers mpi
+ module load compilers/gnu/4.9.2
+ module load mpi/openmpi/1.8.4/gnu-4.9.2
+ module load visit/2.9.2
+
+ # run your Python simulation file
+ visit -l mpirun -np 8 -cli -nowin -s parallelcolour.py
+</code>
+
+
+===Example Python script===
+
+This Python script loads a tutorial data file and colours the mesh by which MPI process ID owns that chunk of data. The image generated is of the default end-on view, so you probably won't see them all.
+
+<code>
+ import sys  # required by VisIt
+ from time import sleep
+
+ # Open sample data and colour it by MPI process ID. The plot it draws by 
+ # default is end-on, so you won't see every processor.
+ datasource = "/shared/ucl/apps/visit/2.9.2/gnu-4.9.2/data/multi_ucd3d.silo"
+
+ OpenDatabase(datasource)
+ DefineScalarExpression("procid", "procid(mesh1)")
+ AddPlot("Pseudocolor", "procid")
+ DrawPlots()
+ SaveWindow()
+
+ DeleteAllPlots()
+ CloseDatabase(datasource)
+ CloseComputeEngine()
+ sleep(30) # wait for engines to terminate
+
+ sys.exit() # required by VisIt
+</code>
+
+
+==Submitting via the GUI on Legion==
+
+You can run the GUI on Legion's login nodes and submit interactive jobs.
+
+You'll need to log in to Legion with ssh -X for X-forwarding in order to use the GUI, and have an X Window server available on your local machine.
+
+Load the correct modules and launch VisIt. The GUI will load.
+
+===Launch a remote compute engine===
+
+First, make sure the data you want to visualise is on Legion.
+
+*Click Open
+*Choose Legion from the Host dropdown
+*Choose legion-remote (and you can change num procs and time here).
+*Enter your password
+*It will bring up a 'compute engine launch progress' window while it waits for your job to be scheduled. On Legion, you will be able to see your queueing job with qstat. 
+*When your job has begun and the compute engine has launched on Legion's compute nodes, you'll be able to use the 'File open' window you already have to pick where your data source is on Legion. You can then use VisIt as normal.
+Note that if you ask for resources that take a long time to be available, you will need to wait until you can do anything. Your job will terminate as usual when you run out of wallclock time.
+
+The jobscripts generated and submitted by VisIt are saved in ~/Scratch/visit as visit.username.date. You won't be able to see any additional launcher arguments for memory or working directory in them though, as those are passed directly to the qsub command (which you will see in the terminal if you are running the GUI on Legion). You can alter the additional launcher arguments by altering your hostfile as below.
+
+==Submitting from your remote desktop==
+
+You can run VisIt on your own computer and submit interactive jobs from there. Please use the same version of VisIt as Legion has - you may come across errors otherwise.
+
+===Set up VisIt hostfile===
+You will need to download and unzip the Legion hostfile on your local machine, or else set up the profile fields as below using the GUI.
+
+[https://wiki.rc.ucl.ac.uk/mediawiki119/images/c/c0/Host_legion.zip Download Legion hostfile] and save host_legion.xml into VisIt's .visit/hosts directory.
+
+Manually:
+*Launch VisIt
+*From the menu, Options > Host profiles
+*New Host (bottom left)
+*Click the Machines sidetab.
+*Host Settings tab:
+**Host nickname: <code>Legion</code>
+**Remote host name: <code>legion.rc.ucl.ac.uk</code>
+**Host name aliases: <code>node-????-###, node-????-###.data.legion.ucl.ac.uk, login##, login##.legion.ucl.ac.uk</code>
+**Path to VisIt installation: <code>/shared/ucl/apps/VisIt/2.8.1</code>
+**Connection section:
+***Tick <code>'Share batch job with Metadata Server'</code>
+
+*Launch Profiles tab:
+**Settings tab
+***Call your profile something like legion-remote
+**Parallel tab
+***Launch tab:
+****Parallel launch method (ticked): <code>qsub/mpirun</code>
+****You can fill in a default number of processors and time limit - you can change this per job anyway.
+***Advanced tab:
+****Launcher arguments: This is where you put any additional SGE options, for example <code>"-wd /home/<username>/Scratch/visit/project_a -l mem=2G"</code> That changes the working directory from the default and lets you set how much RAM you want each process to have. You must put quotes around this.
+
+*Click Apply, then Dismiss
+*From the menu, Options > Save Settings
+The last step is important or it won't save any of this!
+
+To launch your remote job, see [https://wiki.rc.ucl.ac.uk/wiki/VisIt_on_Legion#Launch_a_remote_compute_engine Launch a remote compute engine]
+}}

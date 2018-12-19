@@ -1,0 +1,125 @@
+---
+title: SAS on Legion
+categories:
+ - Legion
+ - Legion Applications
+ - Legion Software
+
+layout: application
+---
+{{Applications
+
+|name=SAS
+|platform=Legion
+|version=9.4/64
+|short=
+SAS is a statistics package providing a wide range of tools for data management, analysis and presentation.
+|about=
+SAS version 9.4/64 is available on Legion.
+
+SAS is intended to be run primarily within batch jobs however you may run short (less than 5 minutes execution time) interactive tests on the Login Nodes and longer (up to two hours) on the User Test Nodes. Interactive work can be done using the full SAS GUI provided you have X-windows functionality enabled though your ssh connection or using a SAS terminal session. See our [[:Category:Legion User Guide | RC Systems User Guide]] for more information about enabling X-windows functionality and the User Test nodes.
+|setup-intro=
+|moduleunload1=
+|moduleunload2=
+|moduleunload3=
+|moduleunload4=
+|moduleload1=
+|moduleload2=
+|moduleload3=
+|moduleload4=
+|setup-notes=
+Before you can run SAS interactively or in a job, you need to load the SAS module using:
+<code>
+ module load sas/9.4/64
+</code>
+
+Once you've done this, you can start an interactive session by entering the command:
+<code>
+ sas
+</code>
+or run a SAS program with a command like:
+<code>
+ sas myprog.sas
+</code>
+where ''myprog.sas'' is the file containing your SAS program. When running on a login node SAS is single threaded using only one core.
+|script-title=
+|script-intro=
+To submit batch jobs to the cluster for longer tests, and production runs, you will need a runscript. SAS runs multi threaded on compute and user test nodes.  Here is a simple example of such a script.
+|script=
+<nowiki>
+#!/bin/bash -l
+
+# Updated Oct 2015.
+# This script runs the SAS program $sas_infile on Legion with the upgraded
+# software stack under SGE. Additional input files (data etc) can be passed in
+# as a colon separated list in the $addinfiles variable.
+
+# An example qsub command is:
+#
+#	qsub -v sas_infile=`pwd`/grades.sas,addinfiles=`pwd`/gpa.dat run_sas.sh
+
+# 1. Force bash as the executing shell.
+#$ -S /bin/bash
+
+# 2. Request ten minutes of wallclock time (format hours:minutes:seconds).
+#$ -l h_rt=0:10:0
+
+# 3. Request 1 gigabyte of RAM per core.
+#$ -l mem=1G
+
+# 4. Set the name of the job.
+#$ -N SASJob_1
+
+# 5. Select 12 threads (the most possible on Legion).
+#$ -pe smp 12
+
+# 7. Set the working directory to somewhere in your scratch space.  This is
+# a necessary step with the upgraded software stack as compute nodes cannot
+# write to $HOME.
+
+# Replace "<your_UCL_id>" with your UCL user ID :)
+#$ -wd /home/<your_UCL_id>/Scratch/SAS_output
+
+# 8. load the sas module
+
+module load sas/9.4/64
+
+# 9. Your work *must* be done in $TMPDIR 
+cd $TMPDIR
+
+# 10. Run SAS
+
+# Copy any additional input files to TMPDIR
+for file in `echo $addinfiles | tr ':' ' '` 
+ do
+   cp $file .
+done
+
+sas $sas_infile
+
+# 11. Preferably, tar-up (archive) all output files onto the shared scratch area
+tar cvzf $HOME/Scratch/SAS_output/files_from_job_$JOB_ID.tgz $TMPDIR
+
+# Make sure you have given enough time for the copy to complete!
+</nowiki>
+|script-path= 
+|script-notes=
+Please copy if you wish and edit it to suit your jobs. You will need to change the ''-wd /home/<your_UCL_id>/Scratch/SAS_output'' SGE directives and may need to change the memory, wallclock time, number of threads and job name directives as well. A suitable qsub command to submit a single SAS job using this runscript would be:
+<code>
+ qsub -v sas_infile=`pwd`/myprog.sas,addinfiles=`pwd`/mydb.dat run_sas.sh
+</code>
+where ''myprog.sas'' is the file containing your SAS program and ''mydb.dat'' is a datafile used by the program. In this example program, data, and your runscript files are in your current working directory. The output files are saved in the tar archive produced by the last  command in the runscript and will be in ''$HOME/Scratch/SAS_output''.
+|script2-title=
+|script2-intro=
+|script2=
+|script2-path=
+|script2-notes=
+|script3-title=
+|script3-intro=
+|script3=
+|script3-path=
+|script3-notes=
+|coda-title=
+|coda=
+
+}}

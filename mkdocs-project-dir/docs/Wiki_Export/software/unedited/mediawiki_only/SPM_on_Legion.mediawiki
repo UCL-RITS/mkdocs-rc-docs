@@ -1,0 +1,52 @@
+---
+title: SPM on Legion
+layout: application
+---
+{{Applications
+
+|name=SPM
+|platform=Legion
+|version=8, 12
+|short=
+SPM is a package written in MATLAB for analysing brain image data. 
+|about=
+SPM is a package written in MATLAB for analysing brain image data. Both modules require full MATLAB to be loaded.
+|link1=[http://www.fil.ion.ucl.ac.uk/spm/ SPM homepage]
+|setup-intro=
+|module-intro=Setup for SPM 12 (r6470). In order to run SPM on legion, you need to have the Matlab R2015a (v 8.5) module loaded and the SPM module. To use SPM 8 instead, load a different SPM module.
+|moduleunload1=
+|moduleunload2=
+|moduleunload3=
+|moduleunload4=
+|moduleadd1=
+|moduleadd2=
+|moduleadd3=
+|moduleadd4=
+|moduleload1=matlab/full/r2015a/8.5
+|moduleload2=spm/12/r6470/matlab.r2015a
+|moduleload3=
+|moduleload4=
+|setup-notes=
+These add SPM to your MATLABPATH. They are the MATLAB toolbox version and not standalone versions.
+
+When constructing job scripts, remember to load the modules in the job script (or your .bashrc).
+
+|script-title=
+|script-intro=
+|script=
+|script-path=
+|script-notes=
+|script2-title=
+|script2-intro=
+|script2=
+|script2-path=
+|script2-notes=
+|script3-title=
+|script3-intro=
+|script3=
+|script3-path=
+|script3-notes=
+|coda-title=
+|coda=
+
+}}

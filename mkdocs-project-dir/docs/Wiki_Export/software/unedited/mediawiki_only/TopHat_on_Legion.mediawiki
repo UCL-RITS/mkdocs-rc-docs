@@ -1,0 +1,113 @@
+---
+title: TopHat on Legion
+categories:
+ - Legion
+ - Legion Applications
+ - Legion Software
+
+layout: application
+---
+{{Applications
+
+|name=TopHat
+|platform=Legion
+|version=2.1.0 
+|short=
+TopHat is a fast splice junction mapper for RNA-Seq reads. It aligns RNA-Seq reads to mammalian-sized genomes using the ultra high-throughput short read aligner Bowtie, and then analyzes the mapping results to identify splice junctions between exons.
+|about=
+TopHat is a fast splice junction mapper for RNA-Seq reads. It aligns RNA-Seq reads to mammalian-sized genomes using the ultra high-throughput short read aligner Bowtie, and then analyzes the mapping results to identify splice junctions between exons.
+
+TopHat is intended to be run primarily within batch jobs however you may run short (less than 5 minutes execution time) interactive tests on the Login Nodes and longer interactive tests on the User Test Nodes.
+|link1 = [http://tophat.cbcb.umd.edu/ TopHat website]
+|setup-intro=
+|module-intro=Before you run TopHat you will need to remove and load the following modules:
+|moduleunload1=
+|moduleunload2=
+|moduleunload3=
+|moduleunload4=
+|moduleload1=python/2.7.9
+|moduleload2=bowtie
+|moduleload3=bowtie2
+|moduleload4=tophat/2.1.0
+|moduleload5=
+|moduleload6=
+|setup-notes=You can now run the TopHat pipeline.
+|script-title=
+|script-intro=Here is an example run script for submitting batch jobs to the cluster:
+|script=
+<nowiki>
+#!/bin/bash -l
+
+# Batch script to run an OpenMP threaded TopHat job on Legion with the upgraded
+# software stack under SGE. Using the fprovided test data as an example.
+
+# This version works with the modules environment upgraded in Oct 2015.
+
+# 1. Force bash as the executing shell.
+#$ -S /bin/bash
+
+# 2. Request ten minutes of wallclock time (format hours:minutes:seconds).
+#    Change this to suit your requirements.
+#$ -l h_rt=0:10:0
+
+# 3. Request 1 gigabyte of RAM per core. Change this to suit your requirements.
+#$ -l mem=1G
+
+# 4. Set the name of the job. You can change this if you wish.
+#$ -N TopHat_jobMC_4
+
+# 5. Select 4 threads (The max number is 12). The number of threads here
+#    must equal the number of threads on the -p option below.
+#$ -pe smp 4
+
+# 7. Set the working directory to somewhere in your scratch space.  This is
+# a necessary step with the upgraded software stack as compute nodes cannot
+# write to $HOME.
+#
+# NOTE: this directory must exist.
+#
+# Replace "<your_UCL_id>" with your UCL user ID :)
+#$ -wd /home/<your_UCL_id>/Scratch/TopHat_output
+
+# 8. Your work *must* be done in $TMPDIR 
+
+cp test_data.tar.gz $TMPDIR
+cd $TMPDIR
+
+# 9. Run the TopHat pipeline
+module load python/2.7.9
+module load bowtie
+module load bowtie2
+module load tophat/2.1.0
+
+tar xvzf test_data.tar.gz
+cd test_data
+tophat -r 20 -p 4 test_ref reads_1.fq reads_2.fq
+
+# 10. Preferably, tar-up (archive) all output files onto the shared scratch area
+#    - ignore the input files by only taring the tophat_out directory.
+tar zcvf $HOME/Scratch/TopHat_output/files_from_job_$JOB_ID.tgz $TMPDIR/test_data/tophat_out
+
+# Make sure you have given enough time for the copy to complete!
+</nowiki>
+|script-path= /shared/ucl/apps/TopHat/run-tophat.sh
+|script-notes=
+Please copy if you wish and edit it to suit your jobs. You will need to change the ''-wd /home/<your_UCL_id>/Scratch/TopHat_output'' SGE directives. You will also need to change the tophat command in the example and may need to change the memory, wallclock time and job name directives as well. The script can be submitted using the simplest form of the qsub command ie:
+<code>
+ qsub run-tophat.sh
+</code>
+Output will be written to ''$TMPDIR'' and so will need to be copied back to your ~/Scratch directory - step 10 in the runscript.
+|script2-title=
+|script2-intro=
+|script2=
+|script2-path=
+|script2-notes=
+|script3-title=
+|script3-intro=
+|script3=
+|script3-path=
+|script3-notes=
+|coda-title=
+|coda=
+
+}}

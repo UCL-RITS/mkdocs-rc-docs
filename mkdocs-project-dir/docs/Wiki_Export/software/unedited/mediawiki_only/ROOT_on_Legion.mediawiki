@@ -1,0 +1,71 @@
+---
+title: ROOT on Legion
+categories:
+ - Legion
+ - Legion Applications
+ - Legion Software
+
+layout: application
+---
+{{Applications
+
+|name=ROOT
+|platform=Legion
+|version=5.34.30 and 6.04.00
+|short=
+ROOT provides a set of OO frameworks for handling, analysing, and visualising large amounts of data. Included are specialised storage methods, methods for histograming, curve fitting, function evaluation, minimization etc. ROOT includes a built-in CINT C++ interpreter. 
+|about=
+ROOT has been installed on Legion primarily because it is required by a number of R add-on packages. It is also available for batch use in its own right and for short interactive runs (less than 15 minutes execution time) on the Login nodes. 
+
+ROOT 5 and ROOT 6 are available.
+|link1 = [http://root.cern.ch/drupal/ ROOT website hosted by CERN]
+|setup-intro=
+|moduleunload1=compilers
+|moduleunload2=
+|moduleunload3=
+|moduleunload4=
+|moduleunload5=
+|moduleunload6=
+|moduleunload7=
+|moduleunload8=
+|moduleload1=compilers/gnu/4.9.2
+|moduleload2=fftw/3.3.4/gnu-4.9.2
+|moduleload3=gsl/1.16/gnu-4.9.2
+|moduleload4=root/6.04.00/gnu-4.9.2
+|moduleload5=
+|moduleload6=
+|moduleload7=
+|moduleload8=
+|setup-notes=
+ROOT can now be run interactively using:
+<code>
+ root
+</code>
+or in batch mode running a script:
+<code>
+ root -b -q myMacro.C > myMacro.out
+</code>
+In the above example the ROOT script is read from file ''myMacro.C'' and output saved to file ''myMacro.out''. Type:
+<code>
+ man root
+</code>
+for further details about the root command. Extensive documentation is available on the [http://root.cern.ch/drupal/ ROOT website].
+|script-title=
+|script-intro=
+|script=
+|script-path=
+|script-notes=
+|script2-title=
+|script2-intro=
+|script2=
+|script2-path=
+|script2-notes=
+|script3-title=
+|script3-intro=
+|script3=
+|script3-path=
+|script3-notes=
+|coda-title=
+|coda=
+
+}}

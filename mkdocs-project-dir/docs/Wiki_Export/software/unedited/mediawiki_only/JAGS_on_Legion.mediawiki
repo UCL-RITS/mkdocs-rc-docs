@@ -1,0 +1,48 @@
+---
+title: JAGS on Legion
+categories:
+ - Legion
+
+layout: application
+---
+{{Applications
+|name=JAGS
+|platform=Legion
+|version=3.4.0 
+|short=JAGS (Just Another Gibbs Sampler) is a program for analysis of Bayesian hierarchical models using Markov Chain Monte Carlo (MCMC) simulation not wholly unlike BUGS.
+|about=JAGS (Just Another Gibbs Sampler) is a program for analysis of Bayesian hierarchical models using Markov Chain Monte Carlo (MCMC) simulation not wholly unlike BUGS.
+|link1=JAGS documentation is available on the [http://mcmc-jags.sourceforge.net/ JAGS website]
+|link2=
+|link3=
+|link4=
+|setup-title=
+|setup-intro=
+|module-intro=
+|moduleunload1=
+|moduleunload2=
+|moduleunload3=
+|moduleunload4=
+|moduleadd1=
+|moduleadd2=
+|moduleadd3=
+|moduleadd4=
+|moduleload1=
+|moduleload2=
+|moduleload3=
+|moduleload4=
+|source1=
+|setup-notes=Use:
+<code>
+ module unload compilers
+ module load compilers/gnu/4.9.2
+ module load atlas/3.10.2/gnu-4.9.2
+ module load jags/3.4.0/gnu.4.9.2-atlas
+</code>
+to use JAGS in standalone command line mode.
+
+We have also added JAGS support to our recommended version of R using the <code>rjags</code> and <code>R2jags</code> R packages. See the [[R packages available on Legion]] page.
+|scripts=
+|coda-title=
+|coda=
+
+}}

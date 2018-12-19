@@ -1,0 +1,53 @@
+---
+title: Running StarCD on Legion
+layout: docs
+---
+[[Category:Bash script pages]]
+[[Category:Legion]]
+StarCD is a commercial CFD package that handles combustion and engine simulation. 
+
+You must request access to the group controlling StarCD access (legstarcd) to use it.
+
+Here is an example run script for submitting batch jobs to the cluster: 
+
+{|style="background-color:#F9F9F9;" width=100%
+|-
+|
+<code>
+ #!/bin/bash -l
+
+ # Job Name (shows up in qstat)
+ #$ -N StarCD
+
+ # Merge output and error files
+ #$ -j y
+
+ # Maximum runtime of job
+ #$ -l h_rt=0:20:00
+
+ # Request OpenMPI environment with 16 processors
+ #$ -pe qlc 16
+
+ # Request one license per core
+ #$ -l starsuite=1
+
+ # Your Project Name
+ #$ -P ProjectName
+
+ # Run from the current working directory
+ #$ -cwd
+
+ module load starcd
+ star
+</code>
+|}
+
+This is available on Legion in:
+<code>
+ /shared/ucl/apps/starcd_4.18.019/run-starcd.sh
+</code>
+Please copy if you wish and edit it to suit your jobs. The script can then be submitted using the simplest form of the qsub command ie:
+<code>
+ qsub run-starcd.sh
+</code>
+Input files will be used from the current working directory, and output written to the same, so this should be submitted from a directory containing your input files in the Scratch area.

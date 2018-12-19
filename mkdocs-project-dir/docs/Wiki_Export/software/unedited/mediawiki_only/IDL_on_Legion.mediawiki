@@ -1,0 +1,163 @@
+---
+title: IDL on Legion
+layout: application
+---
+{{Applications
+|name=IDL
+|platform=Legion
+|version=8.4.1
+|short=IDL is a complete environment and language for the analysis and visualisation of scientific and other technical data. It can be used for everything from quick interactive data exploration to building complex applications. 
+|about=IDL is a complete environment and language for the analysis and visualisation of scientific and other technical data. It can be used for everything from quick interactive data exploration to building complex applications.
+|link1=[http://www.exelisvis.com/docs/using_idl_home.html IDL documentayion on the EXELIS website]
+|link2=
+|link3=
+|link4=
+|setup-title=
+|setup-intro=
+|module-intro=
+|moduleunload1=
+|moduleunload2=
+|moduleunload3=
+|moduleunload4=
+|moduleadd1=
+|moduleadd2=
+|moduleadd3=
+|moduleadd4=
+|moduleload1=idl/8.4.1
+|moduleload2=
+|moduleload3=
+|moduleload4=
+|source1=
+|setup-notes=Use IDL in either interactive mode or batch jobs.
+|scripts=
+{{Script
+
+|script-title=Single threaded jobs - example submission script
+|script-intro=
+|script-code=
+<nowiki>
+#!/bin/bash -l
+
+# Batch script to run a serial IDL job on Legion with the upgraded
+# software stack under SGE. This version works with the modules
+# environment upgraded in Oct 2015.
+
+# 1. Force bash as the executing shell.
+#$ -S /bin/bash
+
+# 2. Request ten minutes of wallclock time (format hours:minutes:seconds).
+#    Change this to suit your requirements.
+#$ -l h_rt=0:10:0
+
+# 3. Request 1 gigabyte of RAM. Change this to suit your requirements.
+#$ -l mem=1G
+
+# 4. Set the name of the job. You can change this if you wish.
+#$ -N IDL_job_1
+
+# 6. Set the working directory to somewhere in your scratch space.  This is
+# a necessary step with the upgraded software stack as compute nodes cannot
+# write to your $HOME.
+#
+# NOTE: this directory must exist.
+#
+# Replace "<your_UCL_id>" with your UCL user ID :)
+#$ -wd /home/<your_UCL_id>/Scratch/IDL_output
+
+# 7. Your work *must* be done in $TMPDIR
+cd $TMPDIR
+
+# 8. Load correct modules for IDL
+module load idl/8.4.1
+module list
+
+# 9. Run IDL
+
+# Copy IDL source files to $TMPDIR
+cp /home/uczzxxx/Scratch/IDL/fib.pro $TMPDIR
+cp /home/uczzxxx/Scratch/IDL/run1.pro $TMPDIR
+
+idl -queue -e @run1.pro
+
+# 10. Preferably, tar-up (archive) all output files onto the shared scratch area
+#    this will include the mathOut file above.
+tar zcvf $HOME/Scratch/IDL_output/files_from_job_$JOB_ID.tgz $TMPDIR
+
+# Make sure you have given enough time for the copy to complete!
+
+</nowiki>
+|script-path=/shared/ucl/apps/IDL/share/run-idl.sh
+|script-notes=
+[[#top | back to top]]
+}} 
+
+{{Script
+
+|script-title=Multi-threaded jobs - example submission script
+|script-intro=
+|script-code=
+<nowiki>
+#!/bin/bash -l
+
+# Batch script to run a multi-threaded IDL job on Legion with the upgraded
+# software stack under SGE. This version works with the modules
+# environment upgraded in Oct 2015.
+
+# 1. Force bash as the executing shell.
+#$ -S /bin/bash
+
+# 2. Request ten minutes of wallclock time (format hours:minutes:seconds).
+#    Change this to suit your requirements.
+#$ -l h_rt=0:10:0
+
+# 3. Request 1 gigabyte of RAM per core. Change this to suit your requirements.
+#$ -l mem=1G
+
+# 4. Select 6 threads (the most possible on the majority of Legion is 12).
+#$ -pe smp 6
+
+# 4. Set the name of the job. You can change this if you wish.
+#$ -N IDL_job_MP1
+
+# 6. Set the working directory to somewhere in your scratch space.  This is
+# a necessary step with the upgraded software stack as compute nodes cannot
+# write to your $HOME.
+#
+# NOTE: this directory must exist.
+#
+# Replace "<your_UCL_id>" with your UCL user ID :)
+#$ -wd /home/<your_UCL_id>/Scratch/IDL_output
+
+# 7. Your work *must* be done in $TMPDIR
+cd $TMPDIR
+
+# 8. Load correct modules for IDL and set IDL thread pool correctly
+module load idl/8.1
+module list
+
+# 9. Do not change this!
+export IDL_CPU_TPOOL_NTHREADS=$OMP_NUM_THREADS
+
+# 10. Run IDL
+
+# Copy IDL source files to $TMPDIR
+cp /home/uczzxxx/Scratch/IDL/fib.pro $TMPDIR
+cp /home/uczzxxx/Scratch/IDL/run2mp.pro $TMPDIR
+
+idl -queue -e @run2mp.pro
+
+# 11. Preferably, tar-up (archive) all output files onto the shared scratch area
+#    this will include the mathOut file above.
+tar zcvf $HOME/Scratch/IDL_output/files_from_job_$JOB_ID.tgz $TMPDIR
+
+# Make sure you have given enough time for the copy to complete!
+
+</nowiki>
+|script-path=
+|script-notes=
+[[#top | back to top]]
+}} 
+|coda-title=
+|coda=
+
+}}

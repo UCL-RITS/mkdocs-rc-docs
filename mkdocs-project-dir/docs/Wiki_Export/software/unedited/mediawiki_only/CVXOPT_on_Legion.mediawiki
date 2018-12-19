@@ -1,0 +1,24 @@
+---
+title: CVXOPT on Legion
+layout: application
+---
+{{Applications
+
+|name=CVXOPT
+|platform=Legion
+|version=
+|short=
+CVXOPT is a free software package for convex optimization based on the Python programming language.
+|about=
+CVXOPT is a free software package for convex optimization based on the Python programming language. It can be used with the interactive Python interpreter, on the command line by executing Python scripts, or integrated in other software via Python extension modules. Its main purpose is to make the development of software for convex optimization applications straightforward by building on Python’s extensive standard library and on the strengths of Python as a high-level programming language.
+
+|link1= [http://cvxopt.org CVXOPT website]
+
+
+|setup-intro=
+CVXOPT is available as part of both the <code>python2/recommended</code> and <code>python3/recommended</code> bundles.
+
+|coda-title=
+|coda=
+
+}}

@@ -1,0 +1,116 @@
+---
+title: NONMEM
+layout: application
+---
+{{Applications
+
+|name=NONMEM
+|platform=Legion
+|short=NONMEM® is a nonlinear mixed effects modelling tool used in population pharmacokinetic / pharmacodynamic analysis.  
+|about=
+NONMEM® is a nonlinear mixed effects modelling tool used in population pharmacokinetic / pharmacodynamic analysis. 
+
+|link1=[https://nonmem.iconplc.com/ NONMEM website]
+|version=7.3.0
+|setup-title=
+|setup-intro=
+|module-intro=
+|moduleunload1=
+|moduleunload2=
+|moduleunload3=
+|moduleunload4=
+|moduleunload5=
+|moduleunload6=
+|moduleunload7=
+|moduleunload8=
+|moduleload1=
+|moduleload2=
+|moduleload3=
+|moduleload4=
+|moduleload5=
+|moduleload6=
+|moduleload7=
+|moduleload8=
+|setup-notes=
+We have one build that uses gcc and ATLAS and an Intel build using MKL. Both use Intel MPI.
+
+==Modules for Intel build==
+
+<code>
+ module unload compilers mpi
+ module load compilers/intel/2015/update2
+ module load mpi/intel/2015/update3/intel
+ module load nonmem/7.3.0/intel-2015-update2
+</code>
+
+==Modules for GNU build==
+
+<code>
+ module unload compilers
+ module unload mpi
+ module load compilers/gnu/4.9.2
+ module load atlas/3.10.2/gnu-4.9.2
+ module load mpi/intel/2015/update3/gnu-4.9.2
+ module load nonmem/7.3.0/gnu-4.9.2
+</code>
+
+
+|script-title=Example NONMEM Script
+|script-intro=
+|script=
+<nowiki>
+#!/bin/bash -l
+
+# Batch script to run a parallel NONMEM job on Legion with the upgraded
+# software stack under SGE. This version works with the modules
+# environment upgraded in Oct 2015.
+
+# 1. Force bash as the executing shell.
+#$ -S /bin/bash
+
+# 2. Request ten minutes of wallclock time (format hours:minutes:seconds).
+#    Change this to suit your requirements.
+#$ -l h_rt=0:10:0
+
+# 3. Request 1 gigabyte of RAM. Change this to suit your requirements.
+#$ -l mem=1G
+
+# 4. Set the name of the job. You can change this if you wish.
+#$ -N NONMEM_Intel_MPI_job_24
+
+# 5. Select the MPI parallel environment and 24 processes.
+#$ -pe mpi 24
+
+# 6. Set the working directory to somewhere in your scratch space.  This is
+# a necessary step with the upgraded software stack as compute nodes cannot
+# write to your $HOME.
+#
+# NOTE: this directory must exist.
+#
+# Replace "<your_UCL_id>" with your UCL user ID :)
+#$ -wd /home/<your_UCL_id>/Scratch/nonmem
+
+jobDir=example1_parallel_$JOB_ID
+mkdir $jobDir
+
+# 8. Copy control and datafiles to jobDir
+cp /shared/ucl/apps/NONMEM/examples/foce_parallel.ctl $jobDir
+cp /shared/ucl/apps/NONMEM/examples/example1b.csv $jobDir
+cd $jobDir
+
+# 9. Load NONMEM modules  - currently need old 2015 Intel modules.
+module unload compilers mpi
+module load compilers/intel/2015/update2
+module load mpi/intel/2015/update3/intel
+module load nonmem/7.3.0/intel-2015-update2
+
+# 10. Create parafile for job using $TMPDIR/machines
+parafile.sh $TMPDIR/machines > example1.pnm
+
+#11. Run NONMEM
+nmfe73 foce_parallel.ctl example1.res -parafile=example1.pnm -background -maxlim=1 > example1.log
+</nowiki>
+|script-path=
+|script-notes=
+
+}}
