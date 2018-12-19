@@ -25,6 +25,10 @@ mkdir -p out
 cd "$build_dir/sources/mkdocs-project-dir"
 mkdocs build --site-dir "$owd/out"
 
+# This disables Jekyll on GitHub Pages, so it just uses our built 
+#  content instead of trying to run Jekyll on it
+touch "$owd/out/.nojekyll"
+
 rm -Rf -- "$build_dir"
 
 echo "Finished." >&2
