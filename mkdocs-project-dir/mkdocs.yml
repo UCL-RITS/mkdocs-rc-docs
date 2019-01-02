@@ -28,6 +28,9 @@ theme:
 #  font:
 #    text: 'Roboto'
 #    code: 'Roboto Mono'
+# To elaborate: when you specify fonts here, they are sourced from Google Fonts. This is an info leak.
+# I'm not sure if this is a problem for GDPR-compliance, but strictly, removing the font spec here
+#  makes it use the fonts UCL says we "should" anyway, so I guess it's an "improvement" either way.
   favicon: 'img/favicon.ico'
 
 # Extensions
