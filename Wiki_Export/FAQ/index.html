@@ -13,6 +13,8 @@
         <meta name="description" content="Documentation for the centrally provided Research Computing HPC services at UCL.">
       
       
+        <link rel="canonical" href="http://rits.github-pages.ucl.ac.uk/mkdocs-rc-docs/Wiki_Export/FAQ/">
+      
       
         <meta name="author" content="UCL RCAS Team">
       
@@ -99,7 +101,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#why-is-my-job-in-eqw-status" tabindex="1" class="md-skip">
+      <a href="#frequently-asked-questions" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -108,7 +110,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="UCL Research Computing Documentation" class="md-header-nav__button md-logo">
+        <a href="http://rits.github-pages.ucl.ac.uk/mkdocs-rc-docs/" title="UCL Research Computing Documentation" class="md-header-nav__button md-logo">
           
             <img src="../../img/portico.svg" width="24" height="24">
           
@@ -204,7 +206,7 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="UCL Research Computing Documentation" class="md-nav__button md-logo">
+    <a href="http://rits.github-pages.ucl.ac.uk/mkdocs-rc-docs/" title="UCL Research Computing Documentation" class="md-nav__button md-logo">
       
         <img src="../../img/portico.svg" width="48" height="48">
       
@@ -436,6 +438,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         FAQ
@@ -448,6 +452,8 @@
       
 <nav class="md-nav md-nav--secondary">
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
@@ -1354,6 +1360,8 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -1468,27 +1476,32 @@
                   <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Wiki_Export/FAQ.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>FAQ</h1>
-                
-                <p>This page attempts to address some of the topics we most frequently
+                <h1 id="frequently-asked-questions">Frequently-Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permanent link">&para;</a></h1>
+<p>This page attempts to address some of the topics we most frequently
 receive questions about, or to which the answers are most complex.</p>
 <h3 id="why-is-my-job-in-eqw-status">Why is my job in Eqw status?<a class="headerlink" href="#why-is-my-job-in-eqw-status" title="Permanent link">&para;</a></h3>
 <p>If your job goes straight into Eqw state, there was an error in your
-jobscript that meant your job couldn't be started. You can see a
-truncated version of the error with:</p>
+jobscript that meant your job couldn't be started. The standard <code>qstat</code>
+job information command will give you a truncated version of the error:</p>
 <div class="codehilite"><pre><span></span>qstat -j &lt;job_ID&gt;
 </pre></div>
 
 
-<p>To see the full error (in most cases you won't need to load userscripts
-as it is a default module now):</p>
-<div class="codehilite"><pre><span></span>module load userscripts
-qexplain &lt;job_ID&gt;
+<p>To see the full error instead:</p>
+<div class="codehilite"><pre><span></span>qexplain &lt;job_ID&gt;
 </pre></div>
 
 
-<p>This often happens because a file or directory you are trying to use
-doesn't exist.</p>
+<p>The <code>qexplain</code> script is part of our <code>userscripts</code> set -- if you try to use it and get
+an error that it doesn't exist, load the <code>userscripts</code> module:</p>
+<div class="codehilite"><pre><span></span>module load userscripts
+</pre></div>
+
+
+<p>The most common reason jobs go into this error state is that 
+a file or directory your job is trying to use doesn't exist.
+Creating it after the job is in the <code>Eqw</code> state won't make the job
+run: it'll still have to be deleted and re-submitted.</p>
 <h3 id="unable-to-determine-job-requirements-error">"Unable to determine job requirements" error<a class="headerlink" href="#unable-to-determine-job-requirements-error" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>Unable to run job: Rejected by ucl_jsv4h Reason:Unable to determine job requirements.
 Exiting.
@@ -1504,12 +1517,11 @@ will work.</p>
 a Unix one - the line break characters are different. Type <code>dos2unix
 &lt;yourscriptname&gt;</code> in your terminal to convert it.</p>
 <p>Sometimes the offending characters will be visible in the error. You can
-see here it's trying to parse ^M as an option. </p>
+see here it's trying to parse <code>^M</code> as an option.</p>
 <h3 id="your-scratch-space-goes-missing">Your Scratch space goes missing<a class="headerlink" href="#your-scratch-space-goes-missing" title="Permanent link">&para;</a></h3>
 <p>You may have accidentally deleted or replaced the link to your Scratch
 space. Do an <code>ls -al</code> in your home - if set up correctly, it should look
-like
-this:</p>
+like this:</p>
 <div class="codehilite"><pre><span></span>lrwxrwxrwx   1 username private       24 Apr 14  2014 Scratch -&gt; /scratch/scratch/username
 </pre></div>
 
