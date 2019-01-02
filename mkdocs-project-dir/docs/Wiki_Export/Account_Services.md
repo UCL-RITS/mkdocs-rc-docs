@@ -2,10 +2,13 @@
 title: Account Services
 layout: docs
 ---
+
+# Account Services
+
 Information about how to apply for an account to use available Research
 Computing services is provided below.
 
-# Internal UCL Clusters
+## Internal UCL Clusters
 
 We have a single simplified application process for access to the Legion, Myriad, and Grace clusters. Use of these services is subject to a common
 set of [terms and conditions](https://wiki.rc.ucl.ac.uk/wiki/Terms_and_Conditions). All
@@ -13,7 +16,7 @@ applications currently cover a Legion and Myriad account while access to other s
 
 We also run clusters that serve particular user groups including users from outside UCL. For information about apply for accounts on those resources, please see their information pages:
 
- - [Molecular Modelling and Materials Hub -- Thomas](Thomas)
+ - [Molecular Modelling and Materials Hub -- Thomas](Thomas.md)
  - [Molecular Modelling and Materials Hub -- Michael](Michael)
 
 ### Account sponsors
@@ -59,7 +62,7 @@ The application process then runs as follows:
 If your sponsor does not receive the email, you can send them the link
 to your application directly (will look like <https://signup.rc.ucl.ac.uk/computing/requests/0000>).
 
-# Accounts for visitors
+## Accounts for visitors
 
 Applications for UCL visitors to use Research Computing services are
 welcomed. Please note that:
@@ -75,7 +78,7 @@ welcomed. Please note that:
     application process includes agreeing to relevant legal terms and
     conditions.
 
-# Accounts for honorary staff
+## Accounts for honorary staff
 
 UCL Staff Members may sponsor Honorary members (named individuals) to
 be provided with access to Research Computing services where this is
@@ -86,7 +89,7 @@ This application process is identical to the process above for students and non-
 All accounts thus provided are subject to all other ‘standard’ T\&C’s
 relating to their use of Research Computing services.
 
-# Charges for use of research computing services
+## Charges for use of research computing services
 
 No direct charges are currently applicable for non-exceptional use of
 any Research Computing services in accordance with standard resource
