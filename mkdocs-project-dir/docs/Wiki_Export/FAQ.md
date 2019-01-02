@@ -4,29 +4,39 @@ categories:
  - User Guide
 layout: docs
 ---
+
+# Frequently-Asked Questions
+
 This page attempts to address some of the topics we most frequently
 receive questions about, or to which the answers are most complex.
 
 ### Why is my job in Eqw status?
 
 If your job goes straight into Eqw state, there was an error in your
-jobscript that meant your job couldn't be started. You can see a
-truncated version of the error with:
+jobscript that meant your job couldn't be started. The standard `qstat`
+job information command will give you a truncated version of the error:
 
 ```
 qstat -j <job_ID>
 ```
 
-To see the full error (in most cases you won't need to load userscripts
-as it is a default module now):
+To see the full error instead:
 
 ```
-module load userscripts
 qexplain <job_ID>
 ```
 
-This often happens because a file or directory you are trying to use
-doesn't exist.
+The `qexplain` script is part of our `userscripts` set -- if you try to use it and get
+an error that it doesn't exist, load the `userscripts` module:
+
+```
+module load userscripts
+```
+
+The most common reason jobs go into this error state is that 
+a file or directory your job is trying to use doesn't exist.
+Creating it after the job is in the `Eqw` state won't make the job
+run: it'll still have to be deleted and re-submitted.
 
 ### "Unable to determine job requirements" error
 
@@ -47,14 +57,13 @@ a Unix one - the line break characters are different. Type `dos2unix
 <yourscriptname>` in your terminal to convert it.
 
 Sometimes the offending characters will be visible in the error. You can
-see here it's trying to parse ^M as an option. 
+see here it's trying to parse `^M` as an option.
 
 ### Your Scratch space goes missing
 
 You may have accidentally deleted or replaced the link to your Scratch
 space. Do an `ls -al` in your home - if set up correctly, it should look
-like
-this:
+like this:
 
 ```
 lrwxrwxrwx   1 username private       24 Apr 14  2014 Scratch -> /scratch/scratch/username
