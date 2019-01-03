@@ -5,20 +5,26 @@ categories:
 layout: docs
 ---
 
+# Aristotle
+
 ## Overview
 
-Aristotle is a stop-gap interactive service for teaching running on a
-pair of nodes of the same specification as [Legion's U-type nodes](Legion#Hardware), each with 64 gigabytes of RAM and 16
-cores. The machines run [RHEL 7](https://en.wikipedia.org/wiki/Red_Hat_Enterprise_Linux)
-and have a subset of the RCPS software
-stack available. The main aim of this service is to allow specific
-teaching courses to run that need to run Unix applications and have
-outgrown the Socrates service.
+Aristotle is an interactive, Linux-based compute service for
+teaching, running on three nodes of the same specification as
+[Legion's U-type nodes](Legion.md#Hardware), each with 64 gigabytes
+of RAM and 16 cores. The nodes run the Red Hat Enterprise Linux operating system
+([RHEL 7](https://en.wikipedia.org/wiki/Red_Hat_Enterprise_Linux))
+and have a subset of the RCPS software stack available.
+
+The main aim of this service is to allow specific teaching courses to run
+that need to run Linux/UNIX applications, but it is available to all UCL users.
+
+<!-- TODO: Linkify "RCPS software stack"? -->
 
 ## Access
 
 Anyone with a UCL userid and within the UCL institutional firewall can
-access Aristotle by connecting via ssh to:
+access Aristotle by connecting via `ssh` to:
 
 ```
 aristotle.rc.ucl.ac.uk
@@ -44,7 +50,7 @@ Socrates first, [as with our main UCL clusters](Accessing Clusters from Outside 
 ## User Environment
 
 Aristotle runs Red Hat Enterprise Linux 7 and NFS mounts the [RCPS
-Software Stack](RCPS_Software). As this machine is intended
+Software Stack](RCPS_Software.md). As this machine is intended
 for teaching, work has focused on getting specific applications required
 for specific courses to work and these are:
 
@@ -55,3 +61,5 @@ for specific courses to work and these are:
 
 Packages are available through modules and users should consult the
 relevant [modules documentation](Modules).
+
+<!-- TODO: Link above doesn't seem to correspond to a page -->

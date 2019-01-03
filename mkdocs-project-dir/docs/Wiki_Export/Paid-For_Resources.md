@@ -2,6 +2,9 @@
 title: Paid-For Resources
 layout: docs
 ---
+
+# Using Paid-For Resources
+
 Users with access to paid resources have some extra flags and a tool for
 monitoring their nodes.
 

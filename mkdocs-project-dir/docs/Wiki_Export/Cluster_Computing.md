@@ -13,11 +13,11 @@ layout: docs
 UCL has a number of centrally-funded compute cluster facilities
 available, aimed at supporting all types of research at UCL.
 
-  - [Legion](Legion), a mixed-use cluster hosted in UCL's
+  - [Legion](Legion.md), a mixed-use cluster hosted in UCL's
     Bloomsbury datacentres.
-  - [Myriad](Myriad), another mixed-use cluster hosted in UCL's
+  - [Myriad](Myriad.md), another mixed-use cluster hosted in UCL's
     portion of the Virtus datacentre in Slough.
-  - [Grace](Grace), a cluster designed for medium-scale
+  - [Grace](Grace.md), a cluster designed for medium-scale
     parallel workloads, hosted in UCL's portion of the Virtus
     datacentre in Slough.
 
@@ -79,7 +79,7 @@ contact us if you're not sure.)
 We recognise that researchers may sometimes require resources than the
 basic all-purpose allocation. Options for acquiring additional resources
 on a short or long term basis are described on the 
-[Additional Resource Requests](Additional_Resource_Requests) page.
+[Additional Resource Requests](Additional_Resource_Requests.md) page.
 
 ## Do I have to pay for any of this?
 

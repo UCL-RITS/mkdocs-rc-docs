@@ -5,6 +5,9 @@ categories:
  - Background Info
 layout: docs
 ---
+
+# Compiling Your Code
+
 ## Download your code
 
 Use wget or curl to download the source code for the software you want

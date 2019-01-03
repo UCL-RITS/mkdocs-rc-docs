@@ -1,10 +1,13 @@
 ---
-title: An introduction to batch processing
+title: Batch Processing
 categories:
  - User Guide
  - Background Info
 layout: docs
 ---
+
+# An Introduction to Batch Processing
+
 When running jobs on Legion or Grace, users need to interact with the
 batch system. For users unfamiliar with HPC environments, this can be a
 way of working which is unfamiliar to them.

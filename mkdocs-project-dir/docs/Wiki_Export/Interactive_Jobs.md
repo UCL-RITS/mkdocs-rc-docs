@@ -1,9 +1,12 @@
 ---
-title: Interactive Sessions
+title: Interactive Job Sessions
 categories:
  - User Guide
 layout: docs
 ---
+
+# Interactive Job Sessions
+
 For an interactive session, you reserve some compute nodes via the
 scheduler and then are logged in live, just like on the login nodes.
 These can be used for live visualisation, software debugging, or to work up a script to run
@@ -13,7 +16,7 @@ queue and wait for it to complete.
 Please note that time limits are restricted to two hours for interactive
 sessions, and available core counts are limited.
 
-### Requesting Access
+## Requesting Access
 
 You will be granted an interactive shell after running a command that
 checks with the scheduler whether the resources you wish to use in your
@@ -28,7 +31,7 @@ within an MPI environment, 512MB RAM per process, for a period of two
 hours (the maximum allowed for interactive sessions).
 
 All job types we support on the system are supported via an interactive
-session (see our [ examples section](Legion_Scripts "wikilink")).
+session (see our [examples section](Legion_Scripts "wikilink")).
 Likewise, all qsub options are supported like regular job submission
 with the difference that with qrsh they must be given at the command
 line, and not with any job script (or via -@).
@@ -40,7 +43,7 @@ until it gets scheduled. Pressing Ctrl+C (i.e. the control key
 and the C key at the same time) will safely cancel the request
 if it doesn't seem to be able to get you a session.
 
-### Interactive X sessions
+## Interactive X sessions
 
 You can get an interactive X session from the head node of the job back
 to the login  node. The way to do this is to run the qrsh command in the
@@ -62,7 +65,7 @@ qrsh -l mem=512M,h_rt=0:30:0 \
    /shared/ucl/apps/mrxvt/0.5.4/bin/mrxvt -title 'User Test Node'
 ```
 
-### Working on the nodes
+## Working on the nodes
 
  If you want to run a command on one of your allocated nodes which is
 not the headnode, you can use a standard `ssh` command: 
@@ -74,10 +77,10 @@ ssh <hostname> <command> [args]
 Where `<hostname>` can be obtained by inspecting the file
 $TMPDIR/machines.
 
-### GPU test nodes
+## GPU test nodes
 
 You can also run GPU jobs interactively simply by adding the `-l gpu=1`
-or `-l gpu=2` options to the qrsh command.
+or `-l gpu=2` options to the qrsh command as normal.
 
 For more information, please contact us on <rc-support@ucl.ac.uk>
 

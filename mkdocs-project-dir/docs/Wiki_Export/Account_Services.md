@@ -17,7 +17,7 @@ applications currently cover a Legion and Myriad account while access to other s
 We also run clusters that serve particular user groups including users from outside UCL. For information about apply for accounts on those resources, please see their information pages:
 
  - [Molecular Modelling and Materials Hub -- Thomas](Thomas.md)
- - [Molecular Modelling and Materials Hub -- Michael](Michael)
+ - [Molecular Modelling and Materials Hub -- Michael](Michael.md)
 
 ### Account sponsors
 
@@ -98,5 +98,5 @@ allocation policy as defined by the
 
 Several methods are available to researchers who wish to gain access to
 additional resources, or obtain 'priority' use, including chargeable
-options. Details are available [here](Legion_Priority_Access).
+options. Details are available [here](Additional_Resource_Requests.md).
 

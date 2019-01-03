@@ -9,7 +9,7 @@ within a single node rather than multi-node parallel jobs.
 
 ## Accounts
 
-Everyone who [signs up for a Research Computing account](Account_Services) gets access to Myriad.
+Everyone who [signs up for a Research Computing account](Account_Services.md) gets access to Myriad.
 
 ## Logging in
 
@@ -26,7 +26,7 @@ bulletpoints will show on screen - this is normal.
 
 If you are outside the UCL firewall you will need to follow the
 instructions for [accessing services from outside
-UCL](Accessing_RC_Systems).
+UCL](Accessing_RC_Systems.md).
 
 ### Logging in to a specific node
 
@@ -68,7 +68,7 @@ uccaxxx        150GB          0GB        0.00% /home/
 uccaxxx       1024GB          0GB        0.00% /scratch/scratch/uccaxxx
 ```
 
-You can apply for quota increases using the form at [Additional Resource Requests](Additional_Resource_Requests).
+You can apply for quota increases using the form at [Additional Resource Requests](Additional_Resource_Requests.md).
 
 Here are some tips for [managing your quota](Managing_Data_on_RC_Systems#Managing_your_quota) and
 finding where space is being used.
@@ -81,7 +81,7 @@ finding where space is being used.
 | 2 to 36 | 48hrs         |
 |         |               |
 
-[Interactive jobs](Interactive Jobs) run with `qrsh` have a
+[Interactive jobs](Interactive_Job_Sessions.md) run with `qrsh` have a
 maximum wallclock time of 2 hours.
 
 ## Node types
@@ -113,7 +113,7 @@ You can request one or two GPUs by adding them as a resource request to your job
 #$ -l gpu=2
 ```
 
-The [GPU nodes](GPU_nodes) page has some sample code for running GPU jobs if you need a test example.
+The [GPU nodes](GPU_Nodes.md) page has some sample code for running GPU jobs if you need a test example.
 
 ### Tensorflow
 

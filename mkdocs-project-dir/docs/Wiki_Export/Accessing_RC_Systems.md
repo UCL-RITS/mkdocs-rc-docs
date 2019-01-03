@@ -10,7 +10,7 @@ layout: docs
 ---
 # Accessing RC Systems
 
-After you have [applied for and been granted access to our services](Account_Services), you can log in using a terminal
+After you have [applied for and been granted access to our services](Account_Services.md), you can log in using a terminal
 application that supports the ssh access protocol.
 
 Aristotle is a teaching machine accessible to everyone with a UCL user

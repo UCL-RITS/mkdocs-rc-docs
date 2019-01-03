@@ -2,16 +2,19 @@
 title: GPU nodes
 layout: docs
 ---
+
+# GPU Nodes
+
 ## Node Types
 
-You can view the hardware specifications for GPU node types on the [RC Systems Platforms Overview](RC_Systems) page.
+You can view the hardware specifications for GPU node types on the [RC Systems Platforms Overview](RC_Systems.md) page.
 
 There are GPU nodes available in Legion and Myriad.
 
 ### Legion Type P GPU node
 
 There is one NVIDIA K40c GPU node in Legion. To use this, you need to
-specify this in your jobscript or [interactive qrsh request](Interactive Jobs) (remove the `#$` for qrsh): 
+specify this in your jobscript or [interactive qrsh request](Interactive_Jobs.md) (remove the `#$` for qrsh): 
 
 ```
 #$ -l gpu=1

@@ -6,6 +6,8 @@ categories:
  - Grace
 layout: docs
 ---
+# Additional Resource Requests
+
 We recognise that researchers may sometimes require a higher throughput
 of work than it is possible to achieve with free ‘fair share’ usage of
 Legion. There a couple of ways of obtaining additional Legion resource
@@ -58,17 +60,16 @@ To apply for a hosted dataset, please send this form to
 
   - [Hosted dataset request form](hosted_dataset_request_form.rtf)
 
-# Purchase dedicated compute nodes within Legion or Myriad
+## Purchase dedicated compute nodes within Legion or Myriad
 
 There has previously been a programme allowing researchers to purchase
-compute nodes to be attached to the [Legion](Legion) cluster. This has been
-discontinued, while the new [Myriad](Myriad) cluster is
-installed and configured, as Myriad will replace the Legion cluster for
+compute nodes to be attached to the [Legion](Legion.md) cluster. This has been
+discontinued, as the [Myriad](Myriad.md) cluster replaces the Legion cluster for
 the majority of users.
 
 There are plans to allow the purchase of nodes for Myriad in future but these have not yet been finalised.
 
-# Further information
+## Further information
 
 For further advice or information on future hardware options, please
 contact <rits@ucl.ac.uk>.
