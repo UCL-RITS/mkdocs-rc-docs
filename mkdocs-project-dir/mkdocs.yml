@@ -5,6 +5,9 @@ site_url: http://rits.github-pages.ucl.ac.uk/mkdocs-rc-docs/
 site_author: UCL RCAS Team
 site_description: Documentation for the centrally provided Research Computing HPC services at UCL.
 
+# Halts site-build if broken internal links are found: disable in alpha
+# strict: true
+
 # Copyright
 copyright: 'Copyright &copy; 2014 - 2018 UCL Research Computing Group'
 
