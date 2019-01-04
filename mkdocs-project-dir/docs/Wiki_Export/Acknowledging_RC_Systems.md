@@ -11,10 +11,12 @@ layout: docs
 
 # Acknowledging the Use of RC Systems
 
+To keep running our services, we depend on being able to demonstrate that
+they are used in published research.
 
-When preparing papers describing work that has been run on RC systems,
-please ensure that you use the following words to acknowledge use of the
-service:
+When preparing papers describing work that has used any of our clusters or
+services, please use the terms below, especially the "*service*@UCL" label,
+so that we can easily search for them.
 
 ## Legion
 
@@ -42,9 +44,5 @@ this work."
 
 ## Thomas
 
-Please find the wording at [Acknowledging the use of Thomas in publications](Thomas.md#Acknowledging_the_use_of_Thomas_in_publications).
-
-Please ensure that you use the wording as above, most importantly the
-character string "*service*@UCL", so that publications arising from use of
-the service can be readily found using simple search methods and tools.
+Please find the appropriate wording at [Acknowledging the use of Thomas in publications](Thomas.md#Acknowledging_the_use_of_Thomas_in_publications).
 
