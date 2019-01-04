@@ -104,10 +104,11 @@ there.
 
 ### IS VPN Service
 
-Alternatively, you can use the [IS VPN service](http://www.ucl.ac.uk/isd/staff/network/vpn) to connect to UCL
-using a virtual private network. That way, once the connection has been
-established, you can establish an ssh connection to the host machine
-directly, for example:
+Alternatively, you can use the 
+[ISD VPN service](https://www.ucl.ac.uk/isd/services/get-connected/remote-working-services/ucl-virtual-private-network-vpn)
+to connect to UCL using a virtual private network. This makes your computer
+a part of the UCL network, once the connection has been established, 
+so you can establish an ssh connection to the host machine directly, for example:
 
 ```
 ssh ccaaxyz@legion.rc.ucl.ac.uk
@@ -121,19 +122,22 @@ computer and display the user interface on their own computer.
 ### X-forwarding on Linux
 
 If you wish to have X-windows functionality enabled you have to make
-sure that you add either the -X or -Y flags (see man ssh for details) on
-all ssh commands you have to run to establish a connection to Legion.
+sure that you add either the `-X` or `-Y` flags (see `man ssh` for details) on
+all `ssh` commands you have to run to establish a connection to Legion.
 
-For example, connecting from outside of UCL:
-
-```
-ssh -X ccaaxyz@socrates.ucl.ac.uk
-```
-
-and then
+For example:
 
 ```
 ssh -X ccaaxyz@legion.rc.ucl.ac.uk
+```
+
+To use X-Forwarding from outside UCL, you must either use the VPN, or the
+appropriate flags with *both* `ssh` steps, for example:
+
+```
+[me@my_computer ~]$ ssh -X ccaaxyz@socrates.ucl.ac.uk
+[...]
+[ccaaxyz@socrates-a ~]$ ssh -X ccaaxyz@legion.rc.ucl.ac.uk
 ```
 
 ### X-forwarding on Mac OS X
@@ -141,7 +145,7 @@ ssh -X ccaaxyz@legion.rc.ucl.ac.uk
 You will need to install XQuartz to provide an X-Window System for Mac
 OS X. (Previously known as X11.app).
 
-You can then follow the Linux instructions using Terminal.app.
+You can then follow the Linux instructions using the Mac OS X Terminal.
 
 ### X-forwarding on Windows
 
