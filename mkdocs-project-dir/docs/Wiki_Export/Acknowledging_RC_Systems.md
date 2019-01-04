@@ -44,5 +44,5 @@ this work."
 
 ## Thomas
 
-Please find the appropriate wording at [Acknowledging the use of Thomas in publications](Thomas.md#Acknowledging_the_use_of_Thomas_in_publications).
+Please find the appropriate wording at [Acknowledging the use of Thomas in publications](Thomas.md#acknowledging-the-use-of-thomas-in-publications).
 
