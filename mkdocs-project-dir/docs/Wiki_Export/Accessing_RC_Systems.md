@@ -83,7 +83,7 @@ If you experience difficulties with your login, please make sure that
 you are typing your UCL user ID and your password correctly.
 
 If you still cannot get access but can access other UCL services like
-Socrates, please contact us on <rc-support@ucl.ac.uk>.
+Socrates, please contact us on [rc-support@ucl.ac.uk](mailto:rc-support@ucl.ac.uk).
 
 If you cannot access anything, please see [UCL MyAccount](https://myaccount.ucl.ac.uk) - you may need to request a
 password reset from the Service Desk.
