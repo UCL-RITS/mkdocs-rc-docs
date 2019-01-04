@@ -81,7 +81,7 @@ finding where space is being used.
 | 2 to 36 | 48hrs         |
 |         |               |
 
-[Interactive jobs](Interactive_Job_Sessions.md) run with `qrsh` have a
+[Interactive jobs](Interactive_Jobs.md) run with `qrsh` have a
 maximum wallclock time of 2 hours.
 
 ## Node types
