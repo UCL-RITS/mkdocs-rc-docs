@@ -287,6 +287,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../" title="Research Computing Services" class="md-nav__link">
+      Research Computing Services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -675,18 +687,6 @@
   <li class="md-nav__item">
     <a href="../Known_Issues/" title="Known Issues" class="md-nav__link">
       Known Issues
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Main_Page/" title="Research Computing Services" class="md-nav__link">
-      Research Computing Services
     </a>
   </li>
 
@@ -1661,10 +1661,11 @@ to either use ssh to connect to UCL's gateway first:</p>
 first to your departmental gateway (if you have one) and then login from
 there.</p>
 <h3 id="is-vpn-service">IS VPN Service<a class="headerlink" href="#is-vpn-service" title="Permanent link">&para;</a></h3>
-<p>Alternatively, you can use the <a href="http://www.ucl.ac.uk/isd/staff/network/vpn">IS VPN service</a> to connect to UCL
-using a virtual private network. That way, once the connection has been
-established, you can establish an ssh connection to the host machine
-directly, for example:</p>
+<p>Alternatively, you can use the 
+<a href="https://www.ucl.ac.uk/isd/services/get-connected/remote-working-services/ucl-virtual-private-network-vpn">ISD VPN service</a>
+to connect to UCL using a virtual private network. This makes your computer
+a part of the UCL network, once the connection has been established, 
+so you can establish an ssh connection to the host machine directly, for example:</p>
 <div class="codehilite"><pre><span></span>ssh ccaaxyz@legion.rc.ucl.ac.uk
 </pre></div>
 
@@ -1674,22 +1675,25 @@ directly, for example:</p>
 computer and display the user interface on their own computer.</p>
 <h3 id="x-forwarding-on-linux">X-forwarding on Linux<a class="headerlink" href="#x-forwarding-on-linux" title="Permanent link">&para;</a></h3>
 <p>If you wish to have X-windows functionality enabled you have to make
-sure that you add either the -X or -Y flags (see man ssh for details) on
-all ssh commands you have to run to establish a connection to Legion.</p>
-<p>For example, connecting from outside of UCL:</p>
-<div class="codehilite"><pre><span></span>ssh -X ccaaxyz@socrates.ucl.ac.uk
+sure that you add either the <code>-X</code> or <code>-Y</code> flags (see <code>man ssh</code> for details) on
+all <code>ssh</code> commands you have to run to establish a connection to Legion.</p>
+<p>For example:</p>
+<div class="codehilite"><pre><span></span>ssh -X ccaaxyz@legion.rc.ucl.ac.uk
 </pre></div>
 
 
-<p>and then</p>
-<div class="codehilite"><pre><span></span>ssh -X ccaaxyz@legion.rc.ucl.ac.uk
+<p>To use X-Forwarding from outside UCL, you must either use the VPN, or the
+appropriate flags with <em>both</em> <code>ssh</code> steps, for example:</p>
+<div class="codehilite"><pre><span></span>[me@my_computer ~]$ ssh -X ccaaxyz@socrates.ucl.ac.uk
+[...]
+[ccaaxyz@socrates-a ~]$ ssh -X ccaaxyz@legion.rc.ucl.ac.uk
 </pre></div>
 
 
 <h3 id="x-forwarding-on-mac-os-x">X-forwarding on Mac OS X<a class="headerlink" href="#x-forwarding-on-mac-os-x" title="Permanent link">&para;</a></h3>
 <p>You will need to install XQuartz to provide an X-Window System for Mac
 OS X. (Previously known as X11.app).</p>
-<p>You can then follow the Linux instructions using Terminal.app.</p>
+<p>You can then follow the Linux instructions using the Mac OS X Terminal.</p>
 <h3 id="x-forwarding-on-windows">X-forwarding on Windows<a class="headerlink" href="#x-forwarding-on-windows" title="Permanent link">&para;</a></h3>
 <p>You will need:</p>
 <ul>
@@ -1763,7 +1767,7 @@ servers are available. We cannot verify how well it may be working.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../howto/" title="How do I?" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../" title="Research Computing Services" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1772,7 +1776,7 @@ servers are available. We cannot verify how well it may be working.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                How do I?
+                Research Computing Services
               </span>
             </div>
           </a>

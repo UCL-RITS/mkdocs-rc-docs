@@ -11,6 +11,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>http://rits.github-pages.ucl.ac.uk/mkdocs-rc-docs/Wiki_Export/</loc>
+     <lastmod>2019-01-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://rits.github-pages.ucl.ac.uk/mkdocs-rc-docs/Wiki_Export/Accessing_RC_Systems/</loc>
      <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
@@ -97,11 +102,6 @@
     </url>
     <url>
      <loc>http://rits.github-pages.ucl.ac.uk/mkdocs-rc-docs/Wiki_Export/Known_Issues/</loc>
-     <lastmod>2019-01-04</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>http://rits.github-pages.ucl.ac.uk/mkdocs-rc-docs/Wiki_Export/Main_Page/</loc>
      <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
