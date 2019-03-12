@@ -50,10 +50,10 @@ instance.
 
 The Research Computing Team are located at:
 
-UCL - Information Services Division  
-1 St Martins-Le-Grand
-London
-EC1A 4AS
+> 1-19 Torrington Place
+> Floor 6
+> London
+> WC1E 7HB
 
-Please note that this is a busy, mixed-group office, and people attempting to gain support by walking in uninvited will not be made welcome.
+Please note that this is a busy, mixed-group office, and people attempting to gain support by walking in uninvited may not be made welcome.
 
