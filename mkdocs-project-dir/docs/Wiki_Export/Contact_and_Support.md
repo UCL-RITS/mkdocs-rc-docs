@@ -23,14 +23,19 @@ We aim to provide to you with a useful response within 24 hours.
 **Please do not email individuals unless you are explicitly asked to do
 so; always use the rc-support email address provided.**
 
+## Drop-In Sessions
+
+Research IT Services holds drop-in sessions roughly every two weeks which at least one member of the Research Computing team usually attends. More details and dates for these sessions are available on the [the RITS pages](https://www.ucl.ac.uk/isd/services/research-it/research-it-data-management-drop-ins).
+
+If you have a particularly complex problem, it may be useful to email the [support address]<rc-support@ucl.ac.uk> beforehand so that the person attending can prepare.
+
 ## Contacts
 
 The members of the Research Computing Services Group are:
 
 |     |        |
 |:----|:-------|
-| Peter Maccallum | Head of Research Computing Services |
-| Dr Owain Kenway | Research Computing Analyst, Team Lead |
+| Dr Owain Kenway | Acting Head of Research Computing |
 | Brian Alston    | Research Computing Analyst |
 | Dr Ian Kirker   | Research Computing Analyst |
 | Heather Kelly   | Research Computing Analyst |
@@ -50,5 +55,5 @@ UCL - Information Services Division
 London
 EC1A 4AS
 
-<!-- TODO: Something about drop-in sessions? -->
+Please note that this is a busy, mixed-group office, and people attempting to gain support by walking in uninvited will not be made welcome.
 
