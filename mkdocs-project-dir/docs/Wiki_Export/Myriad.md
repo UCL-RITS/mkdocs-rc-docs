@@ -25,8 +25,7 @@ in, eg. `uccaxxx`. When entering your password in PuTTY no characters or
 bulletpoints will show on screen - this is normal.
 
 If you are outside the UCL firewall you will need to follow the
-instructions for [accessing services from outside
-UCL](Accessing_RC_Systems.md).
+instructions for [accessing services from outside UCL](Accessing_RC_Systems.md).
 
 ### Logging in to a specific node
 

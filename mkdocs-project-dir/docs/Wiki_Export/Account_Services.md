@@ -10,23 +10,26 @@ Computing services is provided below.
 
 ## Internal UCL Clusters
 
-We have a single simplified application process for access to the Legion, Myriad, and Grace clusters. Use of these services is subject to a common
-set of [terms and conditions](https://wiki.rc.ucl.ac.uk/wiki/Terms_and_Conditions). All
-applications currently cover a Legion and Myriad account while access to other systems depends on the resources you apply for.
+We have a single simplified application process for access to the Legion,
+Myriad, and Grace clusters. Use of these services is subject to a common
+set of [terms and conditions](https://wiki.rc.ucl.ac.uk/wiki/Terms_and_Conditions). 
+All applications currently cover a Legion and Myriad account while access
+to other systems depends on the resources you apply for.
 
-We also run clusters that serve particular user groups including users from outside UCL. For information about apply for accounts on those resources, please see their information pages:
+We also run clusters that serve particular user groups including users
+from outside UCL. For information about apply for accounts on those
+resources, please see their information pages:
 
  - [Molecular Modelling and Materials Hub -- Thomas](Thomas.md)
  - [Molecular Modelling and Materials Hub -- Michael](Michael.md)
 
 ### Account sponsors
 
-If you are a student or postdoctoral researcher, your application must
-be approved by a permanent member of staff (normally your supervisor or
-PI). You will need to enter the UCL username (e.g. ccaaxyz, not the UPI)
-of this sponsor in the application form, and an email will be sent to
-this person asking them to approve the application before the account
-can be created.
+If you are a student or postdoctoral researcher, your application must be
+approved by a permanent member of staff (normally your supervisor or PI). You
+will need to enter the UCL username (e.g. ccaaxyz, not the UPI) of this sponsor
+in the application form, and an email will be sent to this person asking them
+to approve the application before the account can be created.
 
 Permanent members of staff do not need a sponsor and their accounts will
 be automatically approved.
@@ -84,7 +87,8 @@ UCL Staff Members may sponsor Honorary members (named individuals) to
 be provided with access to Research Computing services where this is
 beneficial to UCL’s research interests.
 
-This application process is identical to the process above for students and non-permanent staff.
+This application process is identical to the process above for students and
+non-permanent staff.
 
 All accounts thus provided are subject to all other ‘standard’ T\&C’s
 relating to their use of Research Computing services.
@@ -94,7 +98,7 @@ relating to their use of Research Computing services.
 No direct charges are currently applicable for non-exceptional use of
 any Research Computing services in accordance with standard resource
 allocation policy as defined by the
-[CRAG](http://www.ucl.ac.uk/isd/about/governance/research-it/crag).
+[Computational Resource Allocation Group](http://www.ucl.ac.uk/isd/about/governance/research-it/crag) (CRAG).
 
 Several methods are available to researchers who wish to gain access to
 additional resources, or obtain 'priority' use, including chargeable
