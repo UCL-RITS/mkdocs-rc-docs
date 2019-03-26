@@ -1,5 +1,5 @@
 ---
-title: Thomas
+title: Thomas (MMM)
 layout: cluster
 ---
 Thomas is the UK National Tier 2 High Performance Computing Hub in

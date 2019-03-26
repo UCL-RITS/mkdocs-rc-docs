@@ -41,7 +41,7 @@ The main address will redirect you on to either one of them.
 ## Copying data onto Myriad
 
 You will need to use an SCP or SFTP client to copy data onto Myriad.
-Have a look at [Managing Data on RC Systems](Managing_Data_on_RC_Systems).
+Please refer to the page on [Managing Data on RC Systems](Managing_Data.md).
 
 ## Quotas
 
