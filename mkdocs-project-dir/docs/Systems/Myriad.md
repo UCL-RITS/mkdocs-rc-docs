@@ -78,7 +78,6 @@ finding where space is being used.
 | ------- | ------------- |
 | 1       | 72hrs         |
 | 2 to 36 | 48hrs         |
-|         |               |
 
 [Interactive jobs](Interactive_Jobs.md) run with `qrsh` have a
 maximum wallclock time of 2 hours.
@@ -93,7 +92,6 @@ nodes and GPU nodes.
 | H    | 36             | 192GB        | 48    |
 | I    | 36             | 1.5TB        | 2     |
 | J    | 36 + 2 GPUs    | 192GB        | 2     |
-|      |                |              |       |
 
 You can tell the type of a node by its name: type H nodes are named
 `node-h00a-001` etc.
