@@ -5,9 +5,11 @@ categories: missing-info
 ---
 # Grace
 
-Grace is designed for extensively parallel, multi-node jobs, having high-bandwidth connections between each individual node.
+Grace is a compute cluster designed for extensively parallel, multi-node batch-processing jobs, having high-bandwidth connections between each individual node.
 
 ## Accounts
+
+Grace accounts can be applied for via the [Research Computing sign up process](Accounts.md).
 
 As Grace is intended for multi-node jobs, users who specify that they will need to use multi-node jobs (e.g. with [MPI](Glossary.md#MPI)) will be given access to Grace.
 

@@ -1,5 +1,5 @@
 ---
-title: Thomas (MMM)
+title: MMM Thomas
 layout: cluster
 ---
 Thomas is the UK National Tier 2 High Performance Computing Hub in
@@ -14,7 +14,7 @@ You will need to supply an SSH public key, which is the only method used to log 
 ## Creating an ssh key pair
 
 An ssh key consists of a public and a private part, typically named
-id\_rsa and id\_rsa.pub by default. The public part is what we need. You
+`id_rsa` and `id_rsa.pub` by default. The public part is what we need. You
 must not share your private key with anyone else. You can copy it onto
 multiple machines belonging to you so you can log in from all of them
 (or you can have a separate pair for each machine).
@@ -59,7 +59,7 @@ allocations, documented at [Points of Contact](Points_of_Contact).
 
 You will be assigned a personal username and your SSH key pair will be
 used to log in. External users will have a username in the form
-`mmmxxxx` and UCL users will use their central username.
+`mmmxxxx` (where `xxxx` is a number) and UCL users will use their central username.
 
 You ssh directly to:
 

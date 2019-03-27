@@ -77,7 +77,6 @@ As Legion has been added to in small quantities at many times, it has many types
 | T     | 2 ⨉ Intel Xeon E5-4620 0 @ 2.20GHz
 | U     | 2 ⨉ Intel Xeon E5-2650 v2 @ 2.60GHz | 
 
-booooooored
 
 -->
 

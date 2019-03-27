@@ -9,7 +9,9 @@ within a single node rather than multi-node parallel jobs.
 
 ## Accounts
 
-Everyone who [signs up for a Research Computing account](Account_Services.md) gets access to Myriad.
+Myriad accounts can be applied for via the [Research Computing sign up process](Accounts.md).
+
+As Myriad is our most general-purpose system, everyone who signs up for a Research Computing account is given access to Myriad.
 
 ## Logging in
 
