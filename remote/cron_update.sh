@@ -8,7 +8,7 @@ local_repo_dir="/data/rcps_mkdocs/docs"
 remote_repo="UCL-RITS/mkdocs-rc-docs"
 
 function get_remote_update_time() {
-    curl -q https://api.github.com/repos/"$remote_repo" \
+    curl -sS https://api.github.com/repos/"$remote_repo" \
         | jq '.updated_at' \
         | tr 'TZ"' '   '
 }
