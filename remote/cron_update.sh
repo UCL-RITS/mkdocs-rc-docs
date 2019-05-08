@@ -39,8 +39,7 @@ function update_is_available() {
 
 function update_docs() {
     cd "$local_repo_dir"
-    git fetch
-    git merge
+    git pull
 }
 
 if update_is_available; then
