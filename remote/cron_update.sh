@@ -43,5 +43,7 @@ function update_docs() {
 }
 
 if update_is_available; then
+    echo "[$(date)] Update available, pulling from repository..."
     update_docs
+    echo "[$(date)] Update complete."
 fi
