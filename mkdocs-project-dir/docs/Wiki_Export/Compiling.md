@@ -46,11 +46,9 @@ so if it doesn't specify you may want to begin there (do check what the
 newest modules available are):
 
 ```
-
-`module unload compilers mpi mkl`  
-`module load compilers/gnu/4.9.2`  
-`module load mpi/openmpi/1.10.1/gnu-4.9.2`
-
+module unload compilers mpi mkl
+module load compilers/gnu/4.9.2  
+module load mpi/openmpi/1.10.1/gnu-4.9.2
 ```
 
 ## Available compilers
@@ -189,7 +187,7 @@ To tell the Intel compilers to build for SSE4.2 instructions and no AVX,
 add this to CFLAGS (and CXXFLAGS if relevant):
 
 ```
-`CFLAGS=-axSSE4.2`
+CFLAGS=-axSSE4.2
 ```
 
 (Also see `icc -help codegen`).
@@ -200,7 +198,7 @@ To tell GCC to build for SSE4.2 without AVX, add this to CFLAGS (and
 CXXFLAGS if relevant): 
 
 ```
-`CFLAGS=-march=nehalem`
+CFLAGS=-march=nehalem
 ```
 
 ### Restrict node type
@@ -227,7 +225,7 @@ MKL) then this will find AVX instructions but they won't cause your code
 to segfault.
 
 ```
-`find /home/username/path/ -perm /111 -type f | xargs /shared/ucl/apps/rcops_scripts/hasavx -q`
+find /home/username/path/ -perm /111 -type f | xargs /shared/ucl/apps/rcops_scripts/hasavx -q
 ```
 
 ## BLAS and LAPACK
@@ -257,7 +255,7 @@ front of your PATH, so if you install a newer version of something, it
 will be found before the system one.
 
 ```
-`export PATH=/home/username/location/of/software/binary:$PATH`
+export PATH=/home/username/location/of/software/binary:$PATH
 ```
 
 If you built a library that you'll go on to compile other software with,
@@ -311,7 +309,7 @@ pip install --user <python2pkg>
 pip3 install --user <python3pkg>
 ```
 
-These will install into `.python2local` or `.python3local` respectively.
+These will install into `.python2local` or `.python3local` directories in your home directory, respectively.
 
 To see what is already installed, the [Python-shared list](https://github.com/UCL-RITS/rcps-buildscripts/blob/master/lists/python-shared.list)
 shows what is installed for both Python2 and 3, while the [Python2 list](https://github.com/UCL-RITS/rcps-buildscripts/blob/master/lists/python-2.list)
@@ -374,7 +372,7 @@ like this, and it fails because that python doesn't exist in that
 location or isn't the one that has the additional packages installed:
 
 ```
-`#!/usr/bin/python2.6`
+#!/usr/bin/python2.6
 ```
 
 You should change it so it uses the first python found in your
@@ -409,7 +407,7 @@ If it is automatically configured, you need to edit these lines in your
 `.cpan/CPAN/MyConfig.pm`, for example if you want it to be in a lib
 directory in your home (change username to your own username):
 
-```
+```perl
 'make_install_arg' => q[PREFIX=/home/username/lib],
  # other lines in here  
 'makepl_arg' => q[PREFIX=/home/username/lib],
