@@ -21,6 +21,16 @@ Exceed comes in two parts: the main package, and the add-on that handles certain
 
 You can download both parts from the [Exceed page in the UCL Software Database](http://swdb.ucl.ac.uk/package/view/id/150). First, install the main package, then the 3D package.
 
+### Using PuTTY with Exceed
+
+When you run the Exceed program, it will automatically wait in the background until you run a remote application, so you only have to configure PuTTY to pass the data through.
+
+To do this, first fill in the details for your PuTTY connection as normal with the hostname and any other details you'd normally use to connect, and then, in the pane labelled "Category" on the left, click the "+" next to "SSH" and then select "X11".
+
+The main pane should change to one labelled "Options controlling SSH X11 forwarding". Check the box labelled "Enable X11 Forwarding".
+
+You can now click "Open" to start the connection, or you can return to the "Session" options to save this setup. 
+
 ## macOS
 
 Like Windows, macOS doesn't come with an X server to receive X windows. The most commonly used X server for macOS is [XQuartz](https://www.xquartz.org/). If you download and install that, you can follow the Linux instructions below. When you connect with X-Forwarding enabled, the XQuartz server program should start automatically, ready to present remote windows.
@@ -46,3 +56,24 @@ To use X-Forwarding from outside UCL, you must either use the VPN, or use the [S
 !!! note
     This assumes you use a Linux distribution that uses Xorg as its display server. If your distribution uses Wayland instead, and you aren't sure how to make this work, please [contact us](Contact_Us.md), letting us know what version of which distribution you're using.
 
+## Checking your Setup
+
+There are some simple programs on the system that use X, which can be used to check whether your setup is working correctly.
+
+ - `xterm` is a terminal emulator -- it presents a terminal much like you would already be using.
+
+ - `glxgears` is a small test/benchmark program for the 3D remote rendering capability. It presents a small set of animated gears.
+
+If these work, you have a working X connection. If not, you should see an error when you try to run them that may look something like:
+
+```
+xterm: Xt error: Can't open display:
+```
+
+Or:
+
+```
+Error: couldn't open display (null)
+```
+
+If you see these, please check you have followed all the appropriate steps above, and if you still have problems, contact <rc-support@ucl.ac.uk> for assistance.
