@@ -1,29 +1,29 @@
 ---
-title: Account Services
+title: Getting an Account
 layout: docs
 ---
 
-# Account Services
+# Getting an Account 
 
-Information about how to apply for an account to use available Research
-Computing services is provided below.
+We have a single simplified application process for access to our internal UCL clusters: Legion,
+Myriad, and Grace. These are available to all UCL researcher staff, and available to research 
+students upon sponsorship by an appropriate member of UCL staff. (See application process below.) 
 
-## Internal UCL Clusters
+Use of these services is subject to a common set of [terms and conditions](Terms_and_Conditions.md). 
 
-We have a single simplified application process for access to the Legion,
-Myriad, and Grace clusters. Use of these services is subject to a common
-set of [terms and conditions](https://wiki.rc.ucl.ac.uk/wiki/Terms_and_Conditions). 
-All applications currently cover a Legion and Myriad account while access
-to other systems depends on the resources you apply for.
+The online application form can be found here:
+
+  - [User account application form](https://signup.rc.ucl.ac.uk/computing/requests/new) (UCL login
+    required via Shibboleth)
 
 We also run clusters that serve particular user groups including users
-from outside UCL. For information about apply for accounts on those
+from outside UCL. For information about applying for accounts on those
 resources, please see their information pages:
 
  - [Molecular Modelling and Materials Hub -- Thomas](Thomas.md)
  - [Molecular Modelling and Materials Hub -- Michael](Michael.md)
 
-### Account sponsors
+## Account sponsors
 
 If you are a student or postdoctoral researcher, your application must be
 approved by a permanent member of staff (normally your supervisor or PI). You
@@ -34,16 +34,11 @@ to approve the application before the account can be created.
 Permanent members of staff do not need a sponsor and their accounts will
 be automatically approved.
 
-  - You will need a UCL userid and password.
+!!! note
+    You and your sponsor will need a central UCL username and password. 
+    For most people, this is the account they use to access their UCL email.
 
-### Apply for an account
-
-The online application form can be found here:
-
-  - [User account application form](https://signup.rc.ucl.ac.uk/computing/requests/new) (UCL login
-    required via Shibboleth)
-
-### Application process
+## Application process
 
 The application process then runs as follows:
 
@@ -63,7 +58,7 @@ The application process then runs as follows:
     between an application being approved and it being created.
 
 If your sponsor does not receive the email, you can send them the link
-to your application directly (will look like <https://signup.rc.ucl.ac.uk/computing/requests/0000>).
+to your application directly (which will look like <https://signup.rc.ucl.ac.uk/computing/requests/0000>).
 
 ## Accounts for visitors
 
@@ -90,7 +85,7 @@ beneficial to UCL’s research interests.
 This application process is identical to the process above for students and
 non-permanent staff.
 
-All accounts thus provided are subject to all other ‘standard’ T\&C’s
+All accounts thus provided are subject to all other ‘standard’ terms and conditions
 relating to their use of Research Computing services.
 
 ## Charges for use of research computing services
