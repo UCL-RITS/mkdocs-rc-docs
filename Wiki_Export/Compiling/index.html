@@ -416,18 +416,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../Account_Services/" title="Account Services" class="md-nav__link">
-      Account Services
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../Acknowledging_RC_Systems/" title="Acknowledging the Use of RC Systems" class="md-nav__link">
       Acknowledging the Use of RC Systems
     </a>
@@ -831,6 +819,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../Getting_an_Account/" title="Getting an Account" class="md-nav__link">
+      Getting an Account
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../Installing_PGI/" title="Installing PGI" class="md-nav__link">
       Installing PGI
     </a>
@@ -1058,27 +1058,15 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../X11_Forwarding_with_Windows/" title="X11 Forwarding With Windows" class="md-nav__link">
-      X11 Forwarding With Windows
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-35" type="checkbox" id="nav-5-35">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-34" type="checkbox" id="nav-5-34">
     
-    <label class="md-nav__link" for="nav-5-35">
+    <label class="md-nav__link" for="nav-5-34">
       Needs work
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-35">
+      <label class="md-nav__title" for="nav-5-34">
         Needs work
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1144,13 +1132,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-36" type="checkbox" id="nav-5-36">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-35" type="checkbox" id="nav-5-35">
     
-    <label class="md-nav__link" for="nav-5-36">
+    <label class="md-nav__link" for="nav-5-35">
       Software
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-36">
+      <label class="md-nav__title" for="nav-5-35">
         Software
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1163,13 +1151,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-36-1" type="checkbox" id="nav-5-36-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-35-1" type="checkbox" id="nav-5-35-1">
     
-    <label class="md-nav__link" for="nav-5-36-1">
+    <label class="md-nav__link" for="nav-5-35-1">
       Done
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-5-36-1">
+      <label class="md-nav__title" for="nav-5-35-1">
         Done
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1307,13 +1295,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-36-2" type="checkbox" id="nav-5-36-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-35-2" type="checkbox" id="nav-5-35-2">
     
-    <label class="md-nav__link" for="nav-5-36-2">
+    <label class="md-nav__link" for="nav-5-35-2">
       Unedited
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-5-36-2">
+      <label class="md-nav__title" for="nav-5-35-2">
         Unedited
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1859,9 +1847,9 @@ available. Most Open Source software tends to assume you're using GCC
 and OpenMPI (if it uses MPI) and is most tested with that combination,
 so if it doesn't specify you may want to begin there (do check what the
 newest modules available are):</p>
-<div class="codehilite"><pre><span></span>`module unload compilers mpi mkl`  
-`module load compilers/gnu/4.9.2`  
-`module load mpi/openmpi/1.10.1/gnu-4.9.2`
+<div class="codehilite"><pre><span></span>module unload compilers mpi mkl
+module load compilers/gnu/4.9.2  
+module load mpi/openmpi/1.10.1/gnu-4.9.2
 </pre></div>
 
 
@@ -1976,7 +1964,7 @@ running on the XYZ nodes (or during a qrsh session on the same).</p>
 <h3 id="intel-compilers">Intel compilers<a class="headerlink" href="#intel-compilers" title="Permanent link">&para;</a></h3>
 <p>To tell the Intel compilers to build for SSE4.2 instructions and no AVX,
 add this to CFLAGS (and CXXFLAGS if relevant):</p>
-<div class="codehilite"><pre><span></span>`CFLAGS=-axSSE4.2`
+<div class="codehilite"><pre><span></span>CFLAGS=-axSSE4.2
 </pre></div>
 
 
@@ -1984,7 +1972,7 @@ add this to CFLAGS (and CXXFLAGS if relevant):</p>
 <h3 id="gnu-compilers">GNU compilers<a class="headerlink" href="#gnu-compilers" title="Permanent link">&para;</a></h3>
 <p>To tell GCC to build for SSE4.2 without AVX, add this to CFLAGS (and
 CXXFLAGS if relevant): </p>
-<div class="codehilite"><pre><span></span>`CFLAGS=-march=nehalem`
+<div class="codehilite"><pre><span></span>CFLAGS=-march=nehalem
 </pre></div>
 
 
@@ -2006,7 +1994,7 @@ test everything in there. Note that if your code builds multiple kernels
 and so can choose based on where it runs which instructions to use (like
 MKL) then this will find AVX instructions but they won't cause your code
 to segfault.</p>
-<div class="codehilite"><pre><span></span>`find /home/username/path/ -perm /111 -type f | xargs /shared/ucl/apps/rcops_scripts/hasavx -q`
+<div class="codehilite"><pre><span></span>find /home/username/path/ -perm /111 -type f | xargs /shared/ucl/apps/rcops_scripts/hasavx -q
 </pre></div>
 
 
@@ -2031,7 +2019,7 @@ create. Replace username with your username and point to the directory
 your binary was built in (frequently <code>program/bin</code>). This adds it to the
 front of your PATH, so if you install a newer version of something, it
 will be found before the system one.</p>
-<div class="codehilite"><pre><span></span>`export PATH=/home/username/location/of/software/binary:$PATH`
+<div class="codehilite"><pre><span></span>export PATH=/home/username/location/of/software/binary:$PATH
 </pre></div>
 
 
@@ -2077,7 +2065,7 @@ pip3 install --user &lt;python3pkg&gt;
 </pre></div>
 
 
-<p>These will install into <code>.python2local</code> or <code>.python3local</code> respectively.</p>
+<p>These will install into <code>.python2local</code> or <code>.python3local</code> directories in your home directory, respectively.</p>
 <p>To see what is already installed, the <a href="https://github.com/UCL-RITS/rcps-buildscripts/blob/master/lists/python-shared.list">Python-shared list</a>
 shows what is installed for both Python2 and 3, while the <a href="https://github.com/UCL-RITS/rcps-buildscripts/blob/master/lists/python-2.list">Python2 list</a>
 and <a href="https://github.com/UCL-RITS/rcps-buildscripts/blob/master/lists/python-3.list">Python3 list</a>
@@ -2128,9 +2116,9 @@ you need to change or create the PYTHONPATH directory.</p>
 <p>If you have an executable python script giving the location of python
 like this, and it fails because that python doesn't exist in that
 location or isn't the one that has the additional packages installed:</p>
-<div class="codehilite"><pre><span></span>`#!/usr/bin/python2.6`
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#!/usr/bin/python2.6
 </pre></div>
-
+</td></tr></table>
 
 <p>You should change it so it uses the first python found in your
 environment. </p>
@@ -2157,11 +2145,11 @@ it to set them automatically.</p>
 <p>If it is automatically configured, you need to edit these lines in your
 <code>.cpan/CPAN/MyConfig.pm</code>, for example if you want it to be in a lib
 directory in your home (change username to your own username):</p>
-<div class="codehilite"><pre><span></span>&#39;make_install_arg&#39; =&gt; q[PREFIX=/home/username/lib],
- # other lines in here  
-&#39;makepl_arg&#39; =&gt; q[PREFIX=/home/username/lib],
-&#39;mbuild_install_arg&#39; =&gt; q[PREFIX=/home/username/lib],
-&#39;mbuildpl_arg&#39; =&gt; q[--install_base /home/username/lib],
+<div class="codehilite"><pre><span></span><span class="s">&#39;make_install_arg&#39;</span> <span class="o">=&gt;</span> <span class="sx">q[PREFIX=/home/username/lib]</span><span class="p">,</span>
+ <span class="c1"># other lines in here  </span>
+<span class="s">&#39;makepl_arg&#39;</span> <span class="o">=&gt;</span> <span class="sx">q[PREFIX=/home/username/lib]</span><span class="p">,</span>
+<span class="s">&#39;mbuild_install_arg&#39;</span> <span class="o">=&gt;</span> <span class="sx">q[PREFIX=/home/username/lib]</span><span class="p">,</span>
+<span class="s">&#39;mbuildpl_arg&#39;</span> <span class="o">=&gt;</span> <span class="sx">q[--install_base /home/username/lib]</span><span class="p">,</span>
 </pre></div>
 
 
