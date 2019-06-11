@@ -1,5 +1,5 @@
 ---
-title: Accessing RC Systems
+title: Connecting to RC Systems
 categories:
  - User Guide
  - Legion
@@ -8,7 +8,7 @@ categories:
  - Aristotle
 layout: docs
 ---
-# Accessing RC Systems
+# Connecting to RC Systems
 
 After you have [applied for and been granted access to our services](Account_Services.md), you can log in using a terminal
 application that supports the ssh access protocol.
