@@ -2,6 +2,10 @@
 layout: docs
 ---
 
+!!! warning
+    This documentation is still being created. In the meanwhile, please use the  old pages at <https://wiki.rc.ucl.ac.uk>.
+
+
 # Research Computing Services
 
 This documentation is maintained by the research computing team for the purpose
