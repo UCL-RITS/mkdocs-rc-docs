@@ -6,13 +6,13 @@ categories:
 layout: docs
 ---
 
-# An Introduction to Batch Processing
+## An Introduction to Batch Processing
 
 When running jobs on Legion or Grace, users need to interact with the
 batch system. For users unfamiliar with HPC environments, this can be a
 way of working which is unfamiliar to them.
 
-## What is a batch system?
+### What is a batch system?
 
 On a large, multi-user machine like Legion many users compete for
 relatively limited resources. There are two possible ways of organising
@@ -45,13 +45,13 @@ machine is. It is therefore necessary for users to plan ahead and submit
 their jobs in a timely manner, rather than waiting until the last
 minute.
 
-## Basic commands
+### Basic commands
 
 There are three basic commonly used commands in any batch system - one
 for submitting jobs, one for checking the status of jobs and one for
 deleting jobs. On Sun Grid Engine, these are qsub, qstat and qdel.
 
-### qsub
+#### qsub
 
 The qsub command submits your job to the batch queue. 
 
@@ -97,7 +97,7 @@ inside your jobscript rather than passed in on the command line, if
 possible. We can see your jobscript but not what command line you
 submitted with.
 
-### qstat
+#### qstat
 
 The qstat command shows the status of your jobs. By default, if you run
 it with no options, it shows only your jobs (and no-one else’s). This
@@ -120,7 +120,7 @@ You can get the full error with `qexplain`.
 qexplain 12345
 ```
 
-### qdel
+#### qdel
 
 The qdel command lets you delete a job from the queue. You need to
 provide qdel with a job ID like so: 
@@ -134,6 +134,8 @@ You can delete all your jobs with:
 ```
 qdel '*'
 ```
+
+#### More Information
 
 If you wish to learn about additional commands, please run the command
 "man qstat" and take note of the commands shown in the "SEE ALSO"
