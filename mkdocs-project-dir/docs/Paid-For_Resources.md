@@ -34,7 +34,7 @@ them.
 
 ## Check what is running on your nodes
 
-We have a `whatsonmynode` script that does a `qhost -j` on each of the
+We have a script named `whatsonmynode`, that runs `qhost -j` for all the
 nodes belonging to your project, so you can see which nodes you have,
 what is running on them and from which user.
 
@@ -43,16 +43,9 @@ module load userscripts
 whatsonmynode <project>
 ```
 
-## Nodetypes
-
-Legion nodes are named beginning with `node-[pqstuvxyz]` so you can
-tell the nodetype from the name. The standard option for paid nodes is
-type U - the exact hardware varies over time as newer ones are bought,
-so U nodes are similar rather than identical.
-
 ## Backfill
 
-In our usual arrangement, paid-for nodes are available for backfill from
+In our usual arrangement, paid-for nodes become available for short jobs from
 other users when you have not been using them. The policy is set by the
 CRAG: this is the current policy as of November 2015.
 
