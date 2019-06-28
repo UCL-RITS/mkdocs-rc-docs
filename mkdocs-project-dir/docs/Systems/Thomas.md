@@ -276,6 +276,10 @@ Pilot users temporarily had access to a project for their institution,
 eg. Imperial\_pilot. These projects are no longer active and will not
 show up.
 
+!!! info
+    1 Gold unit is 1 hour of using 1 processor core.
+
+
 ### Subprojects
 
 You might be in a subproject that does not itself have an allocation,

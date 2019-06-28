@@ -1,7 +1,6 @@
 ---
-title: Legion Quick Start
+title: Quick Start
 categories:
- - Legion
  - User Guide
  - Pages with bash scripts
 layout: docs

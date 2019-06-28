@@ -1,5 +1,5 @@
 ---
-title: Compiling your code
+title: Compiling Your Code
 categories:
  - User Guide
  - Background Info

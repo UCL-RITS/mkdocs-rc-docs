@@ -92,7 +92,7 @@ arrays of single processor jobs) but should be clear that if the cause
 is a) the scheduler is merely being efficient, and if it is b) it is
 being fair.
 
-## Cores \!= Slots
+## Cores are not Slots
 
 Another confusion that can arise is in utilisation of the machine. It
 may seem obvious to the user that the number of cores in use is the sum
