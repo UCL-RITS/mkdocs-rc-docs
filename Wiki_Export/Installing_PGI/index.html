@@ -1352,33 +1352,43 @@ on a system outside the Institutional Firewall, please connect to the
 <a href="http://www.ucl.ac.uk/isd/services/get-connected/remote-working/vpn">UCL VPN service</a>
 first.</p>
 <ul>
-<li>Download version 13.9 or 11.9 from the <a href="http://swdb.ucl.ac.uk/">UCL Software
-    Database</a> on your Linux system in a empty
-    directory. You will need to login with your UCL userid and password.</li>
+<li>Download version 13.9 or 11.9 from the <a href="http://swdb.ucl.ac.uk/">UCL Software Database</a>
+    on your Linux system in a empty directory. You will need to login 
+    with your UCL userid and password.</li>
 <li>Untar the installer files using:  </li>
 </ul>
-<p><code>tar xvzf pgilinux-2013-139.tar.gz</code></p>
+<div class="codehilite"><pre><span></span>tar xvzf pgilinux-2013-139.tar.gz
+</pre></div>
+
+
 <ul>
 <li>Run the installer as root and follow the instructions:</li>
 </ul>
-<p><code>./install</code></p>
+<div class="codehilite"><pre><span></span>./install`
+</pre></div>
+
+
 <ul>
 <li>
 <p>During the installation you will be asked: <em>Do you wish to generate
-    license keys? (y/n)</em> - Enter <em>n</em> as you will need to use the central
+    license keys? (y/n)</em> - Enter <code>n</code> as you will need to use the central
     UCL licence server.</p>
 </li>
 <li>
 <p>Add the PGI Suite bin directory to your PATH. The default location
-    used by the installer is <em>/opt/pgi/linux86-64/13.9/bin</em>.</p>
+    used by the installer is <code>/opt/pgi/linux86-64/13.9/bin</code>.</p>
 </li>
 <li>Open access to TCP ports 27000 and 27055 in your local firewall and
     any departmental firewall.</li>
-<li>Setup access to the licence server by setting the LM_LICENSE_FILE
+<li>Setup access to the licence server by setting the <code>LM_LICENSE_FILE</code>
     environment variable. Use either:</li>
 </ul>
-<p><code>export LM_LICENSE_FILE=27000@lic-pgi.ucl.ac.uk</code></p>
-<p><code>export LM_LICENSE_FILE=$LM_LICENSE_FILE:27000@lic-pgi.ucl.ac.uk</code></p>
+<div class="codehilite"><pre><span></span>export LM_LICENSE_FILE=27000@lic-pgi.ucl.ac.uk
+
+export LM_LICENSE_FILE=$LM_LICENSE_FILE:27000@lic-pgi.ucl.ac.uk
+</pre></div>
+
+
 <ul>
 <li>Use the second version if you have other licence managers already
     defined.</li>
