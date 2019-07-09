@@ -10,7 +10,8 @@ layout: docs
 
 We recognise that researchers may sometimes require a higher throughput
 of work than it is possible to achieve with free ‘fair share’ usage of
-Legion. There a couple of ways of obtaining additional Legion resource
+[Legion](Legion.md), [Myriad](Myriad.md), and [Grace](Grace.md). 
+There a couple of ways of obtaining additional Legion resource
 beyond this fair share:
 
 ## Make a special request to the CRAG for free access to additional resources

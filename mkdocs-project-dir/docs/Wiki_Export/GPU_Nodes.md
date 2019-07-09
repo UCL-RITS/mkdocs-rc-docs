@@ -161,7 +161,7 @@ It is possible to run MPI programs that use GPUs but only within a
 single node, so you can request 1 GPU and 12 processor cores on Legion, or up to 2
 GPUs and 36 cores on Myriad.
 
-# Looking for more GPUs?
+## Looking for more GPUs?
 
   - [GPU clusters available to UCL users](GPU_clusters).
 

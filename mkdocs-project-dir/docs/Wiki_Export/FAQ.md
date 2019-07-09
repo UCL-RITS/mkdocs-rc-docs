@@ -143,8 +143,9 @@ Per session, you can try `LANG=C ssh userid@legion.rc.ucl.ac.uk`
 
 ### Why can't I find out when my job will run?
 
-An informative discussion on this matter can be found in the [Scheduler](The_Scheduler) section of the User
-Guide.
+An informative discussion on this matter can be 
+found in the [Scheduler](The_Scheduler) section 
+of the User Guide.
 
 ### What can I do to minimise the time I need to wait for my job(s) to run?
 
