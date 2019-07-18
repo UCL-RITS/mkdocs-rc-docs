@@ -12,7 +12,7 @@ In order to help our support team deal with your ticket efficiently,
 please ensure the following is the case:
 
 1.  You have a clear description of your problem. This should include:
-      - Which system you are using (Legion, Grace, Aristotle etc).
+      - Which system you are using (Myriad, Legion, Grace, Aristotle etc).
       - Your userid.
       - What you were doing when you got the error.
       - What the error was (including a copy of the exact error message
