@@ -17,16 +17,17 @@ service updates and account request and renewal support.
 General User Information:
 
  - [Getting an Account](Account_Services.md)
- - [User Guide](User_Guide.md)
+ - [Guide for New Users](New_Users.md)
+ - [Guide for Experienced Users](Experienced_Users.md)
  - [Planned Outages](Planned_Outages.md)
 
 Clusters:
 
- - [Legion](Legion.md)
- - [Myriad](Myriad.md)
- - [Grace](Grace.md)
- - [Thomas](Thomas.md)
- - [Michael](Michael.md)
+ - [Legion](Systems/Legion)
+ - [Myriad](Systems/Myriad)
+ - [Grace](Systems/Grace.md)
+ - [Thomas](Systems/Thomas.md)
+ - [Michael](Systems/Michael.md)
 
 ## Email Support
 
