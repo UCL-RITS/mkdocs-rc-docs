@@ -23,11 +23,11 @@ General User Information:
 
 Clusters:
 
- - [Legion](Systems/Legion.md)
- - [Myriad](Systems/Myriad.md)
- - [Grace](Systems/Grace.md)
- - [Thomas](Systems/Thomas.md)
- - [Michael](Systems/Michael.md)
+ - [Legion](Systems/Legion)
+ - [Myriad](Systems/Myriad)
+ - [Grace](Systems/Grace)
+ - [Thomas](Systems/Thomas)
+ - [Michael](Systems/Michael)
 
 ## Email Support
 
