@@ -25,9 +25,9 @@ Clusters:
 
  - [Legion](Systems/Legion)
  - [Myriad](Systems/Myriad)
- - [Grace](Systems/Grace.md)
- - [Thomas](Systems/Thomas.md)
- - [Michael](Systems/Michael.md)
+ - [Grace](Systems/Grace)
+ - [Thomas](Systems/Thomas)
+ - [Michael](Systems/Michael)
 
 ## Email Support
 
