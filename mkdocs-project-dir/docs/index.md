@@ -16,10 +16,10 @@ service updates and account request and renewal support.
 
 General User Information:
 
- - [Getting an Account](Account_Services.md)
- - [Guide for New Users](New_Users.md)
- - [Guide for Experienced Users](Experienced_Users.md)
- - [Planned Outages](Planned_Outages.md)
+ - [Getting an Account](Account_Services/)
+ - [Guide for New Users](New_Users/)
+ - [Guide for Experienced Users](Experienced_Users/)
+ - [Planned Outages](Planned_Outages/)
 
 Clusters:
 
