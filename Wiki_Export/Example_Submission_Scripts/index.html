@@ -1397,13 +1397,13 @@ Legion or Grace.</p>
 the user guide.</p>
 <p>After creating your script, submit it to the scheduler with:</p>
 <p><code>qsub my_script.sh</code></p>
-<h2 id="service-differences">Service Differences<a class="headerlink" href="#service-differences" title="Permanent link">&para;</a></h2>
+<h2 id="service-differences">Service Differences<a class="headerlink" href="#service-differences" title="Permanent link">§</a></h2>
 <p>These scripts are all applicable to
 <a href="RC_Systems#Legion">Legion</a>, <a href="RC_Systems#Grace">Grace</a>, <a href="RC_Systems#Myriad">Myriad</a>, <a href="Thomas">Thomas</a>, and <a href="Michael">Michael</a>,
 but node sizes (core count, memory, and temporary storage sizes) differ
 between the different machines, and Grace and Thomas are more suited to
 MPI and hybrid MPI/OpenMP jobs.</p>
-<h2 id="working-directories-and-output">Working Directories and Output<a class="headerlink" href="#working-directories-and-output" title="Permanent link">&para;</a></h2>
+<h2 id="working-directories-and-output">Working Directories and Output<a class="headerlink" href="#working-directories-and-output" title="Permanent link">§</a></h2>
 <p>The parallel filesystems we use to provide the home and scratch filesystems perform best when reading or writing single large files, and worst when operating on many different small files. To avoid causing problems, many of the scripts below are written to create all their files in the temporary TMPDIR storage, and compress and copy them to the scratch area at the end of the job.</p>
 <p>This can be a problem if your job is not finishing and you need to see the output, or if your job is crashing or failing to produce what you expected. Feel free to modify the scripts to read from or write to scratch directly, however, your performance will generally not be as good as writing to TMPDIR, and you may impact the general performance of the machine if you do this with many jobs simultaneously.</p>
 <p>Note that there is also the option of using the <code>Local2Scratch</code> process 
@@ -1411,7 +1411,7 @@ MPI and hybrid MPI/OpenMP jobs.</p>
 job has finished, in the clean-up step. This gives you the option of always
 getting the contents of TMPDIR back, at the cost of possibly getting incomplete
 files and not having any control over where the files go.</p>
-<h2 id="note-about-projects">Note about Projects<a class="headerlink" href="#note-about-projects" title="Permanent link">&para;</a></h2>
+<h2 id="note-about-projects">Note about Projects<a class="headerlink" href="#note-about-projects" title="Permanent link">§</a></h2>
 <p>Projects are a system used in the scheduler and the accounting system 
 to track budgets and access controls.</p>
 <p>The majority of users of UCL's internal clusters - Legion, Grace, and 
@@ -1423,7 +1423,7 @@ pages for those machines, and the information they were given when they register
 </pre></div>
 
 
-<h2 id="serial-job-script-example">Serial Job Script Example<a class="headerlink" href="#serial-job-script-example" title="Permanent link">&para;</a></h2>
+<h2 id="serial-job-script-example">Serial Job Script Example<a class="headerlink" href="#serial-job-script-example" title="Permanent link">§</a></h2>
 <p>The most basic type of job a user can submit to the Legion cluster is a serial job. These jobs run on a single processor with a single thread. </p>
 <p>Shown below is a simple job script that runs /bin/date (which prints the current date) on the compute node, and puts the output into the job's output file.</p>
 <div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash -l</span>
@@ -1460,7 +1460,7 @@ tar -zcvf <span class="nv">$HOME</span>/Scratch/files_from_job_<span class="nv">
 </pre></div>
 
 
-<h2 id="multi-threaded-job-example">Multi-threaded Job Example<a class="headerlink" href="#multi-threaded-job-example" title="Permanent link">&para;</a></h2>
+<h2 id="multi-threaded-job-example">Multi-threaded Job Example<a class="headerlink" href="#multi-threaded-job-example" title="Permanent link">§</a></h2>
 <p>For programs that can use multiple threads, you can request multiple <a href="Glossary#Core">processor cores</a> using the <code>-pe smp &lt;number&gt;</code> option. One common method for using multiple threads in a program is OpenMP, and the <code>OMP_NUM_THREADS</code> environment variable is set automatically in a job of this type to tell OpenMP how many threads it should use. Most methods for running multi-threaded applications should correctly detect how many cores have been allocated, though (<em>via</em> a mechanism called <code>cgroups</code>).</p>
 <p>Note that this job script works directly in scratch instead of in the temporary TMPDIR storage.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -1515,7 +1515,7 @@ $HOME/my_program/example
 </pre></div>
 </td></tr></table>
 
-<h2 id="mpi-job-script-example">MPI Job Script Example<a class="headerlink" href="#mpi-job-script-example" title="Permanent link">&para;</a></h2>
+<h2 id="mpi-job-script-example">MPI Job Script Example<a class="headerlink" href="#mpi-job-script-example" title="Permanent link">§</a></h2>
 <p>The default MPI implementation on our clusters is the Intel MPI stack. MPI programs don’t use a shared memory model so they can be run across multiple nodes.
 This script differs considerably from the serial and OpenMP jobs in that MPI programs need to be invoked by a program called gerun. This is a wrapper for mpirun and takes care of passing the number of processors and a file called a machine file.</p>
 <p>'''Important''': If you wish to pass a file or stream of data to the standard input (stdin) of an MPI program, there are specific command-line options you need to use to control which MPI tasks are able to receive it. (<code>-s</code> for Intel MPI, <code>--stdin</code> for OpenMPI.) Please consult the help output of the <code>mpirun</code> command for further information. The <code>gerun</code> launcher does not automatically handle this.</p>
@@ -1572,7 +1572,7 @@ gerun $HOME/src/science/simulate
 </pre></div>
 </td></tr></table>
 
-<h2 id="array-job-script-example">Array Job Script Example<a class="headerlink" href="#array-job-script-example" title="Permanent link">&para;</a></h2>
+<h2 id="array-job-script-example">Array Job Script Example<a class="headerlink" href="#array-job-script-example" title="Permanent link">§</a></h2>
 <p>If you want to submit a large number of similar serial jobs then it may be
 easier to submit them as an array job. Array jobs are similar to serial jobs
 except we use the <code>-t</code> option to get Sun Grid Engine to run 10,000 copies of
@@ -1637,7 +1637,7 @@ echo &quot;$JOB_NAME $SGE_TASK_ID&quot;
 </pre></div>
 </td></tr></table>
 
-<h2 id="array-job-script-example-using-parameter-file">Array Job Script Example Using Parameter File<a class="headerlink" href="#array-job-script-example-using-parameter-file" title="Permanent link">&para;</a></h2>
+<h2 id="array-job-script-example-using-parameter-file">Array Job Script Example Using Parameter File<a class="headerlink" href="#array-job-script-example-using-parameter-file" title="Permanent link">§</a></h2>
 <p>Often a user will want to submit a large number of similar jobs but their input parameters don't match easily on to an index from 1 to n. In these cases it's possible to use a parameter file. To use this script a user needs to construct a file with a line for each element in the job array, with parameters separated by spaces.</p>
 <p>For example: </p>
 <div class="codehilite"><pre><span></span>0001 1.5 3 aardvark
@@ -1730,7 +1730,7 @@ echo &quot;$index&quot; &quot;$variable1&quot; &quot;$variable2&quot; &quot;$var
 </pre></div>
 </td></tr></table>
 
-<h2 id="example-array-job-using-local2scratch">Example Array Job Using Local2Scratch<a class="headerlink" href="#example-array-job-using-local2scratch" title="Permanent link">&para;</a></h2>
+<h2 id="example-array-job-using-local2scratch">Example Array Job Using Local2Scratch<a class="headerlink" href="#example-array-job-using-local2scratch" title="Permanent link">§</a></h2>
 <p>Users can automate the transfer of data from $TMPDIR to their scratch space by
 adding the text <code>#Local2Scratch</code> to their script on a line alone as a special comment.
 During the clean-up phase of the job, a tool checks whether the script contains that
@@ -1801,7 +1801,7 @@ hostname &gt; hostname.txt
 </pre></div>
 </td></tr></table>
 
-<h2 id="array-job-script-with-a-stride">Array Job Script with a Stride<a class="headerlink" href="#array-job-script-with-a-stride" title="Permanent link">&para;</a></h2>
+<h2 id="array-job-script-with-a-stride">Array Job Script with a Stride<a class="headerlink" href="#array-job-script-with-a-stride" title="Permanent link">§</a></h2>
 <p>If each task for your array job is very small, you will get better use of the cluster if you can combine a number of these so each has a couple of hours' worth of work to do. There is a startup cost associated with the amount of time it takes to set up a new job. If your job's runtime is very small, this cost is proportionately high, and you incur it with every array task.</p>
 <p>Using a stride will allow you to leave your input files numbered as before, and each array task will run N inputs.</p>
 <p>For example, a stride of 10 will give you these task IDs: 1, 11, 21...</p>
@@ -1888,7 +1888,7 @@ done
 </pre></div>
 </td></tr></table>
 
-<h2 id="gpu-job-script-example">GPU Job Script Example<a class="headerlink" href="#gpu-job-script-example" title="Permanent link">&para;</a></h2>
+<h2 id="gpu-job-script-example">GPU Job Script Example<a class="headerlink" href="#gpu-job-script-example" title="Permanent link">§</a></h2>
 <p>To use NVIDIA GPUs with the CUDA libraries, you need to load the CUDA runtime libraries module or else set up the environment yourself. The script below shows what you'll need to unload and load the appropriate modules.</p>
 <p>You also need to use the <code>-l gpu=&lt;number&gt;</code> option to request the GPUs from the scheduler.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -1969,7 +1969,7 @@ tar zcvf $HOME/Scratch/files_from_job_$JOB_ID.tar.gz $TMPDIR
 </pre></div>
 </td></tr></table>
 
-<h2 id="job-using-mpi-and-gpus">Job using MPI and GPUs<a class="headerlink" href="#job-using-mpi-and-gpus" title="Permanent link">&para;</a></h2>
+<h2 id="job-using-mpi-and-gpus">Job using MPI and GPUs<a class="headerlink" href="#job-using-mpi-and-gpus" title="Permanent link">§</a></h2>
 <p>It is possible to run MPI programs that use GPUs but our clusters currently only support this within a single node. The script below shows how to run a program using 2 gpus and 12 cpus.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2

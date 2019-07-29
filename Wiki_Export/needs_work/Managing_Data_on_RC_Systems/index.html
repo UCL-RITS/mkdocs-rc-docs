@@ -1352,7 +1352,7 @@
                   <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Wiki_Export/needs_work/Managing_Data_on_RC_Systems.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="managing-data-on-research-computing-systems">Managing Data on Research Computing Systems<a class="headerlink" href="#managing-data-on-research-computing-systems" title="Permanent link">&para;</a></h1>
+                <h1 id="managing-data-on-research-computing-systems">Managing Data on Research Computing Systems<a class="headerlink" href="#managing-data-on-research-computing-systems" title="Permanent link">§</a></h1>
 <p>This section contains information about storage hierarchy in RC systems
 and the ways in which you can move data in and out of them.</p>
 <p>These services should not be used to store data for which you have
@@ -1365,13 +1365,13 @@ elsewhere. (It is good practice to always make your own backups). First
 we give generic instructions for doing so - do also check the
 machine-specific information on this page for details about things like
 dedicated transfer nodes, different file storage areas and quotas.</p>
-<h2 id="copying-files-using-linux-or-mac-os-x">Copying files using Linux or Mac OS X<a class="headerlink" href="#copying-files-using-linux-or-mac-os-x" title="Permanent link">&para;</a></h2>
+<h2 id="copying-files-using-linux-or-mac-os-x">Copying files using Linux or Mac OS X<a class="headerlink" href="#copying-files-using-linux-or-mac-os-x" title="Permanent link">§</a></h2>
 <p>You can use the command-line utilities scp, sftp or rsync to copy your
 data about.</p>
 <p>Note that as our systems use Linux, you can use these instructions to
 copy data between systems (e.g. from Legion to Myriad) as well as from
 your own computer to a system.</p>
-<h3 id="scp">scp<a class="headerlink" href="#scp" title="Permanent link">&para;</a></h3>
+<h3 id="scp">scp<a class="headerlink" href="#scp" title="Permanent link">§</a></h3>
 <p>This will copy a data file from somewhere on your local machine to a
 specified location on the remote
 machine.</p>
@@ -1392,7 +1392,7 @@ option:</p>
 </pre></div>
 
 
-<h3 id="sftp">sftp<a class="headerlink" href="#sftp" title="Permanent link">&para;</a></h3>
+<h3 id="sftp">sftp<a class="headerlink" href="#sftp" title="Permanent link">§</a></h3>
 <p>You can use sftp to log in to the remote machine, navigate through
 directories and use put and get to copy files from and to your local
 machine. <code>lcd</code> and <code>lls</code> are local equivalents of <code>cd</code> and <code>ls</code> so you
@@ -1405,11 +1405,11 @@ put &lt;local_file&gt;
 </pre></div>
 
 
-<h3 id="rsync">rsync<a class="headerlink" href="#rsync" title="Permanent link">&para;</a></h3>
+<h3 id="rsync">rsync<a class="headerlink" href="#rsync" title="Permanent link">§</a></h3>
 <p>Rsync is used to remotely synchronise directories, so can be used to
 only copy files which have changed. Have a look at the man pages as
 there are many options.</p>
-<h2 id="copying-files-using-windows-and-winscp">Copying files using Windows and WinSCP<a class="headerlink" href="#copying-files-using-windows-and-winscp" title="Permanent link">&para;</a></h2>
+<h2 id="copying-files-using-windows-and-winscp">Copying files using Windows and WinSCP<a class="headerlink" href="#copying-files-using-windows-and-winscp" title="Permanent link">§</a></h2>
 <p>WinSCP is a graphical client that you can use for scp or sftp.</p>
 <ol>
 <li>The login/create new session screen will open if this is the first
@@ -1424,14 +1424,14 @@ there are many options.</p>
     the one you just created.</li>
 <li>Select the session and click Login.</li>
 </ol>
-<h2 id="transferring-files-from-outside-the-ucl-firewall">Transferring files from outside the UCL firewall<a class="headerlink" href="#transferring-files-from-outside-the-ucl-firewall" title="Permanent link">&para;</a></h2>
+<h2 id="transferring-files-from-outside-the-ucl-firewall">Transferring files from outside the UCL firewall<a class="headerlink" href="#transferring-files-from-outside-the-ucl-firewall" title="Permanent link">§</a></h2>
 <p>To transfer files when you are outside UCL's network, you can use the
 <a href="http://www.ucl.ac.uk/isd/staff/network/vpn">IS VPN</a>, which will allow
 you to ssh directly into Legion or login05 as if you were inside the
 network, without having to go via Socrates first.</p>
 <p>If not using the VPN, you will need to do some form of ssh tunnelling -
 read on.</p>
-<h2 id="single-step-login-on-linux-or-mac-os-x-using-tunnelling">Single-step login on Linux or Mac OS X using tunnelling<a class="headerlink" href="#single-step-login-on-linux-or-mac-os-x-using-tunnelling" title="Permanent link">&para;</a></h2>
+<h2 id="single-step-login-on-linux-or-mac-os-x-using-tunnelling">Single-step login on Linux or Mac OS X using tunnelling<a class="headerlink" href="#single-step-login-on-linux-or-mac-os-x-using-tunnelling" title="Permanent link">§</a></h2>
 <p>Inside your <code>~/.ssh</code> directory on your local machine, add the below to
 your config file (or create a file called config if you don't already
 have one).</p>
@@ -1468,7 +1468,7 @@ Host aristotle
 <p>You can now just do <code>ssh legion</code> or <code>scp aristotle</code> and you will go
 through Socrates. You'll be asked for login details twice since you're
 logging in to two machines. (Socrates uses central UCL credentials).</p>
-<h2 id="single-step-login-on-windows-using-tunnelling">Single-step login on Windows using tunnelling<a class="headerlink" href="#single-step-login-on-windows-using-tunnelling" title="Permanent link">&para;</a></h2>
+<h2 id="single-step-login-on-windows-using-tunnelling">Single-step login on Windows using tunnelling<a class="headerlink" href="#single-step-login-on-windows-using-tunnelling" title="Permanent link">§</a></h2>
 <p>WinSCP can also set up SSH tunnels.</p>
 <ol>
 <li>Create a new session as before, and tick the <em>Advanced options</em> box
@@ -1485,7 +1485,7 @@ logging in to two machines. (Socrates uses central UCL credentials).</p>
     protocol to SCP.</li>
 <li>Save your settings with a useful name.</li>
 </ol>
-<h1 id="managing-your-quota">Managing your quota<a class="headerlink" href="#managing-your-quota" title="Permanent link">&para;</a></h1>
+<h1 id="managing-your-quota">Managing your quota<a class="headerlink" href="#managing-your-quota" title="Permanent link">§</a></h1>
 <p>To check your quota, run the command <code>lquota</code>. (Note: not currently
 available on Grace or Thomas - see below). Also useful is <code>du</code>, giving
 you information about your disk usage. For example, <code>du -ch &lt;dir&gt;</code> 
@@ -1504,11 +1504,11 @@ from submitting more jobs.</p>
 amounts of storage (typically ~1TB or larger), a request must be
 submitted as described <a href="Additional_Resource_Requests">on the "Additional Resource Requests" page</a>.</p>
 <p>Please contact <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#99;&#45;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#117;&#99;&#108;&#46;&#97;&#99;&#46;&#117;&#107;">&#114;&#99;&#45;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#117;&#99;&#108;&#46;&#97;&#99;&#46;&#117;&#107;</a> for more information.</p>
-<h1 id="accessing-research-data-storage">Accessing Research Data Storage<a class="headerlink" href="#accessing-research-data-storage" title="Permanent link">&para;</a></h1>
+<h1 id="accessing-research-data-storage">Accessing Research Data Storage<a class="headerlink" href="#accessing-research-data-storage" title="Permanent link">§</a></h1>
 <p>To access data stored in Research Data Storage, you can use scp to
 transfer data to/from the RC Services machine. Here is a guide on
 <a href="Connecting_to_Research_Data_Services" title="wikilink">Connecting to Research Data Services</a>.</p>
-<h1 id="legion-specific-information">Legion-specific information<a class="headerlink" href="#legion-specific-information" title="Permanent link">&para;</a></h1>
+<h1 id="legion-specific-information">Legion-specific information<a class="headerlink" href="#legion-specific-information" title="Permanent link">§</a></h1>
 <p>To transfer your data to and from Legion in the most efficient manner,
 you must have a basic understanding of the bandwidth limitations of the
 machine.</p>
@@ -1523,7 +1523,7 @@ protocol overheads, you should see a maximum throughput of around
 100MB/s on each node.</p>
 <p>For this reason we have to make the distinction between transferring
 large and modest amounts of data.</p>
-<h2 id="transferring-modest-amounts-of-data">Transferring modest amounts of data<a class="headerlink" href="#transferring-modest-amounts-of-data" title="Permanent link">&para;</a></h2>
+<h2 id="transferring-modest-amounts-of-data">Transferring modest amounts of data<a class="headerlink" href="#transferring-modest-amounts-of-data" title="Permanent link">§</a></h2>
 <p>You can use Legion's login nodes to transfer modest amounts of data.</p>
 <p>Please bear in mind that there is no limit on the number of users that
 can be logged in to the Login nodes. Their activity may cause your data
@@ -1534,7 +1534,7 @@ following section.</p>
 <p>If you are running scp from your local machine, use
 <code>legion.rc.ucl.ac.uk</code> as the hostname and you will transfer via the
 login nodes.</p>
-<h2 id="dedicated-transfer-node">Dedicated transfer node<a class="headerlink" href="#dedicated-transfer-node" title="Permanent link">&para;</a></h2>
+<h2 id="dedicated-transfer-node">Dedicated transfer node<a class="headerlink" href="#dedicated-transfer-node" title="Permanent link">§</a></h2>
 <p>Legion provides a dedicated transfer node with ten gigabit network
 connections to the UCL network and to Legion. To access this node, log
 in via scp, sftp or ssh to:</p>
@@ -1544,10 +1544,10 @@ in via scp, sftp or ssh to:</p>
 
 <p>Please note that you cannot submit or view the status of your compute
 jobs on this node - it is only available for data transfer.</p>
-<h2 id="legions-storage-architecture-and-hierarchy">Legion's storage architecture and hierarchy<a class="headerlink" href="#legions-storage-architecture-and-hierarchy" title="Permanent link">&para;</a></h2>
+<h2 id="legions-storage-architecture-and-hierarchy">Legion's storage architecture and hierarchy<a class="headerlink" href="#legions-storage-architecture-and-hierarchy" title="Permanent link">§</a></h2>
 <p>Legion has three types of storage with distinct levels of performance,
 volatility and reliability:</p>
-<h3 id="home-directories-home">Home directories ($HOME)<a class="headerlink" href="#home-directories-home" title="Permanent link">&para;</a></h3>
+<h3 id="home-directories-home">Home directories ($HOME)<a class="headerlink" href="#home-directories-home" title="Permanent link">§</a></h3>
 <ul>
 <li>Smaller amount of storage</li>
 <li>Backed up</li>
@@ -1562,7 +1562,7 @@ amounts of Input/Output such as that which happens within a large
 cluster like Legion. This is also to make sure that only important data
 is backed up as otherwise there would be excessive load on the backup
 system both in terms of performance and capacity.</p>
-<h3 id="shared-scratch-area-homescratch">Shared scratch area ($HOME/Scratch)<a class="headerlink" href="#shared-scratch-area-homescratch" title="Permanent link">&para;</a></h3>
+<h3 id="shared-scratch-area-homescratch">Shared scratch area ($HOME/Scratch)<a class="headerlink" href="#shared-scratch-area-homescratch" title="Permanent link">§</a></h3>
 <ul>
 <li>Larger storage</li>
 <li>Not backed up</li>
@@ -1633,7 +1633,7 @@ subject to the following policies:</p>
     and requested to delete or move unwanted or currently unused files.</p>
 </li>
 </ul>
-<h3 id="local-node-scratch-area-tmpdir">Local node scratch area (<code>$TMPDIR</code>)<a class="headerlink" href="#local-node-scratch-area-tmpdir" title="Permanent link">&para;</a></h3>
+<h3 id="local-node-scratch-area-tmpdir">Local node scratch area (<code>$TMPDIR</code>)<a class="headerlink" href="#local-node-scratch-area-tmpdir" title="Permanent link">§</a></h3>
 <ul>
 <li>Only exists during your job</li>
 <li>Fastest access as is local</li>
@@ -1667,7 +1667,7 @@ include the following in the job script: </p>
 <p>The following diagram illustrates how these various levels of storage
 relate to login and compute nodes:</p>
 <p><img alt="Storage_diagram.jpeg" src="Storage_diagram.jpeg" title="Storage_diagram.jpeg" /></p>
-<h2 id="transferring-files-to-or-from-legion-using-a-batch-job">Transferring files to or from Legion using a batch job<a class="headerlink" href="#transferring-files-to-or-from-legion-using-a-batch-job" title="Permanent link">&para;</a></h2>
+<h2 id="transferring-files-to-or-from-legion-using-a-batch-job">Transferring files to or from Legion using a batch job<a class="headerlink" href="#transferring-files-to-or-from-legion-using-a-batch-job" title="Permanent link">§</a></h2>
 <p><strong>Note: we recommend using the dedicated transfer node, as explained
 above, to perform large transfers. This method should only be used if
 the transfer node is unavailable for some reason.</strong></p>
@@ -1682,7 +1682,7 @@ supply a password.</p>
 <p>The recommended method of doing this is to use RSA based authentication,
 i.e. using an SSH public/private key pair, generated by (for example)
 the Unix command <code>ssh-keygen</code>.</p>
-<h3 id="setting-up-the-necessary-authentication-keys">Setting up the necessary Authentication Keys<a class="headerlink" href="#setting-up-the-necessary-authentication-keys" title="Permanent link">&para;</a></h3>
+<h3 id="setting-up-the-necessary-authentication-keys">Setting up the necessary Authentication Keys<a class="headerlink" href="#setting-up-the-necessary-authentication-keys" title="Permanent link">§</a></h3>
 <p>If you already have such a key pair for other purposes (e.g. for
 password-less login to Legion from your desktop machine), then all you
 need to do is to copy the private key file <code>id_rsa</code> into the <code>~/.ssh</code>
@@ -1718,7 +1718,7 @@ password-less connection in both directions.</p>
 machine; this method also works with a remote Windows machine, though
 the location of the <code>.ssh</code> directory is different, and may depend on your
 version of Windows.</p>
-<h3 id="using-scp-or-sftp-without-interactive-input-in-a-batch-job">Using SCP or SFTP without interactive input in a batch job<a class="headerlink" href="#using-scp-or-sftp-without-interactive-input-in-a-batch-job" title="Permanent link">&para;</a></h3>
+<h3 id="using-scp-or-sftp-without-interactive-input-in-a-batch-job">Using SCP or SFTP without interactive input in a batch job<a class="headerlink" href="#using-scp-or-sftp-without-interactive-input-in-a-batch-job" title="Permanent link">§</a></h3>
 <p>Having set up the SSH keys as described above, you can now use scp or
 sftp to do file transfer within a batch job. For instance, you could use
 an scp command like this: </p>
@@ -1780,7 +1780,7 @@ example above, and should be submitted as a batch job using a similar
 job script to the one shown.</p>
 <p>As usual, please contact research-computing@ucl.ac.uk if you need any
 assistance with doing this.</p>
-<h1 id="iridis-specific-information">Iridis-Specific Information<a class="headerlink" href="#iridis-specific-information" title="Permanent link">&para;</a></h1>
+<h1 id="iridis-specific-information">Iridis-Specific Information<a class="headerlink" href="#iridis-specific-information" title="Permanent link">§</a></h1>
 <p>The Iridis service was discontinued on 31 July 2015, and all the data it
 held in UCL user home directories was copied to Legion, into a read-only
 storage area only accessible from the Legion transfer node, login05:

@@ -1282,7 +1282,7 @@
                   <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Wiki_Export/Interactive_Jobs.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="interactive-job-sessions">Interactive Job Sessions<a class="headerlink" href="#interactive-job-sessions" title="Permanent link">&para;</a></h1>
+                <h1 id="interactive-job-sessions">Interactive Job Sessions<a class="headerlink" href="#interactive-job-sessions" title="Permanent link">§</a></h1>
 <p>For an interactive session, you reserve some compute nodes via the
 scheduler and then are logged in live, just like on the login nodes.
 These can be used for live visualisation, software debugging, or to work up a script to run
@@ -1290,7 +1290,7 @@ your program without having to submit each attempt separately to the
 queue and wait for it to complete.</p>
 <p>Please note that time limits are restricted to two hours for interactive
 sessions, and available core counts are limited.</p>
-<h2 id="requesting-access">Requesting Access<a class="headerlink" href="#requesting-access" title="Permanent link">&para;</a></h2>
+<h2 id="requesting-access">Requesting Access<a class="headerlink" href="#requesting-access" title="Permanent link">§</a></h2>
 <p>You will be granted an interactive shell after running a command that
 checks with the scheduler whether the resources you wish to use in your
 tests/analysis are available. It typically takes the form:</p>
@@ -1312,7 +1312,7 @@ cycle or give up. The <code>-now no</code> option tells it to keep waiting
 until it gets scheduled. Pressing Ctrl+C (i.e. the control key
 and the C key at the same time) will safely cancel the request
 if it doesn't seem to be able to get you a session.</p>
-<h2 id="interactive-x-sessions">Interactive X sessions<a class="headerlink" href="#interactive-x-sessions" title="Permanent link">&para;</a></h2>
+<h2 id="interactive-x-sessions">Interactive X sessions<a class="headerlink" href="#interactive-x-sessions" title="Permanent link">§</a></h2>
 <p>You can get an interactive X session from the head node of the job back
 to the login  node. The way to do this is to run the qrsh command in the
 following generic fashion:</p>
@@ -1330,7 +1330,7 @@ example of how you can get a X terminal session with the qrsh command: </p>
 </pre></div>
 
 
-<h2 id="working-on-the-nodes">Working on the nodes<a class="headerlink" href="#working-on-the-nodes" title="Permanent link">&para;</a></h2>
+<h2 id="working-on-the-nodes">Working on the nodes<a class="headerlink" href="#working-on-the-nodes" title="Permanent link">§</a></h2>
 <p>If you want to run a command on one of your allocated nodes which is
 not the headnode, you can use a standard <code>ssh</code> command: </p>
 <div class="codehilite"><pre><span></span>ssh &lt;hostname&gt; &lt;command&gt; [args]
@@ -1339,7 +1339,7 @@ not the headnode, you can use a standard <code>ssh</code> command: </p>
 
 <p>Where <code>&lt;hostname&gt;</code> can be obtained by inspecting the file
 $TMPDIR/machines.</p>
-<h2 id="gpu-test-nodes">GPU test nodes<a class="headerlink" href="#gpu-test-nodes" title="Permanent link">&para;</a></h2>
+<h2 id="gpu-test-nodes">GPU test nodes<a class="headerlink" href="#gpu-test-nodes" title="Permanent link">§</a></h2>
 <p>You can also run GPU jobs interactively simply by adding the <code>-l gpu=1</code>
 or <code>-l gpu=2</code> options to the qrsh command as normal.</p>
 <p>For more information, please contact us on <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#99;&#45;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#117;&#99;&#108;&#46;&#97;&#99;&#46;&#117;&#107;">&#114;&#99;&#45;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#117;&#99;&#108;&#46;&#97;&#99;&#46;&#117;&#107;</a></p>

@@ -1706,8 +1706,8 @@
                   <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Wiki_Export/Compiling.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="compiling-your-code">Compiling Your Code<a class="headerlink" href="#compiling-your-code" title="Permanent link">&para;</a></h1>
-<h2 id="download-your-code">Download your code<a class="headerlink" href="#download-your-code" title="Permanent link">&para;</a></h2>
+                <h1 id="compiling-your-code">Compiling Your Code<a class="headerlink" href="#compiling-your-code" title="Permanent link">§</a></h1>
+<h2 id="download-your-code">Download your code<a class="headerlink" href="#download-your-code" title="Permanent link">§</a></h2>
 <p>Use wget or curl to download the source code for the software you want
 to install to your account. There might be binaries available, but they
 often won't work on our clusters because they were compiled for other
@@ -1721,7 +1721,7 @@ tar -xvf program.tar.gz
 <p>You won't be able to use a package manager like yum, you'll need to
 follow the manual installation instructions for a user-space install
 (not using sudo).</p>
-<h2 id="set-up-your-modules">Set up your modules<a class="headerlink" href="#set-up-your-modules" title="Permanent link">&para;</a></h2>
+<h2 id="set-up-your-modules">Set up your modules<a class="headerlink" href="#set-up-your-modules" title="Permanent link">§</a></h2>
 <p>Before you start compiling, you need to make sure you have the right
 compilers, libraries and other tools available for your software. If you
 haven't changed anything, you will have the default modules loaded. For
@@ -1742,7 +1742,7 @@ module load mpi/openmpi/1.10.1/gnu-4.9.2
 </pre></div>
 
 
-<h2 id="available-compilers">Available compilers<a class="headerlink" href="#available-compilers" title="Permanent link">&para;</a></h2>
+<h2 id="available-compilers">Available compilers<a class="headerlink" href="#available-compilers" title="Permanent link">§</a></h2>
 <p>The following compilers are available and supported on Legion:</p>
 <ul>
 <li>Intel C, C++ and Fortran</li>
@@ -1757,10 +1757,10 @@ few minutes and try again.</p>
 installed on Legion which are not supported (for example the PGI
 compilers) which were installed to build certain supported packages.
 Users who use the unsupported packages do so at their own risk.</p>
-<h2 id="build-systems">Build systems<a class="headerlink" href="#build-systems" title="Permanent link">&para;</a></h2>
+<h2 id="build-systems">Build systems<a class="headerlink" href="#build-systems" title="Permanent link">§</a></h2>
 <p>Most software will use some kind of build system to manage how files are
 compiled and linked and in what order. Here are a few common ones.</p>
-<h3 id="automake-configure">Automake configure<a class="headerlink" href="#automake-configure" title="Permanent link">&para;</a></h3>
+<h3 id="automake-configure">Automake configure<a class="headerlink" href="#automake-configure" title="Permanent link">§</a></h3>
 <p><a href="http://www.gnu.org/software/automake/manual/automake.html">Automake</a>
 will generate the Makefile for you and hopefully pick up sensible
 options through configuration. You can give it an install prefix to tell
@@ -1779,7 +1779,7 @@ view them.</p>
 <p>Usually configure will create a config.log: you can look in there to
 find if any tests have failed or things you think should have been
 picked up haven't.</p>
-<h3 id="cmake">CMake<a class="headerlink" href="#cmake" title="Permanent link">&para;</a></h3>
+<h3 id="cmake">CMake<a class="headerlink" href="#cmake" title="Permanent link">§</a></h3>
 <p><a href="http://www.cmake.org/">CMake</a> is another build system. It will have a
 CMakeFile or the instructions will ask you to use cmake or ccmake rather
 than make. It also generates Makefiles for you. <code>ccmake</code> is a
@@ -1805,7 +1805,7 @@ make install
 Turning on verbose Makefiles in ccmake is also useful if your code
 didn't compile first time - you'll be able to see what flags the
 compiler or linker is actually being given when it fails.</p>
-<h3 id="make">Make<a class="headerlink" href="#make" title="Permanent link">&para;</a></h3>
+<h3 id="make">Make<a class="headerlink" href="#make" title="Permanent link">§</a></h3>
 <p>Your code may just come with a Makefile and have no configure, in which
 case the generic way to compile it is as follows:</p>
 <div class="codehilite"><pre><span></span>make targetname
@@ -1840,7 +1840,7 @@ LDLIBS=&quot;-lfoo -lbar&quot;
 
 
 <p>Remember to <code>make clean</code> first if you are recompiling with new options!</p>
-<h2 id="avx-instructions">AVX instructions<a class="headerlink" href="#avx-instructions" title="Permanent link">&para;</a></h2>
+<h2 id="avx-instructions">AVX instructions<a class="headerlink" href="#avx-instructions" title="Permanent link">§</a></h2>
 <p><strong>Note</strong>: Legion's current login nodes are of a newer architecture than
 some of the compute nodes - the login nodes have AVX instructions but
 the XYZ type nodes do not. This means if you want your code to run on
@@ -1850,7 +1850,7 @@ the older nodes, some compiler options cannot be used (e.g.
 to only running on the newer nodes, compile the code with appropriate
 options for all the nodes, or compile your code inside a job that is
 running on the XYZ nodes (or during a qrsh session on the same).</p>
-<h3 id="intel-compilers">Intel compilers<a class="headerlink" href="#intel-compilers" title="Permanent link">&para;</a></h3>
+<h3 id="intel-compilers">Intel compilers<a class="headerlink" href="#intel-compilers" title="Permanent link">§</a></h3>
 <p>To tell the Intel compilers to build for SSE4.2 instructions and no AVX,
 add this to CFLAGS (and CXXFLAGS if relevant):</p>
 <div class="codehilite"><pre><span></span>CFLAGS=-axSSE4.2
@@ -1858,14 +1858,14 @@ add this to CFLAGS (and CXXFLAGS if relevant):</p>
 
 
 <p>(Also see <code>icc -help codegen</code>).</p>
-<h3 id="gnu-compilers">GNU compilers<a class="headerlink" href="#gnu-compilers" title="Permanent link">&para;</a></h3>
+<h3 id="gnu-compilers">GNU compilers<a class="headerlink" href="#gnu-compilers" title="Permanent link">§</a></h3>
 <p>To tell GCC to build for SSE4.2 without AVX, add this to CFLAGS (and
 CXXFLAGS if relevant): </p>
 <div class="codehilite"><pre><span></span>CFLAGS=-march=nehalem
 </pre></div>
 
 
-<h3 id="restrict-node-type">Restrict node type<a class="headerlink" href="#restrict-node-type" title="Permanent link">&para;</a></h3>
+<h3 id="restrict-node-type">Restrict node type<a class="headerlink" href="#restrict-node-type" title="Permanent link">§</a></h3>
 <p>To restrict a job to newer nodes only, put this in your script:</p>
 <div class="codehilite"><pre><span></span>#$ -ac allow=LMNOPQSTU
 </pre></div>
@@ -1876,7 +1876,7 @@ take advantage of the newer nodes when possible. You could use
 <code>hostname</code> in your jobscript to check what type of node you were on and
 run the appropriate binary. Hostnames begin with node-x for an X-type
 node, node-u for a U-type and so on.</p>
-<h3 id="test-for-avx">Test for AVX<a class="headerlink" href="#test-for-avx" title="Permanent link">&para;</a></h3>
+<h3 id="test-for-avx">Test for AVX<a class="headerlink" href="#test-for-avx" title="Permanent link">§</a></h3>
 <p>We have a script that will let you test whether your compiled code is
 using AVX instructions. If you pass it a directory it will recursively
 test everything in there. Note that if your code builds multiple kernels
@@ -1887,7 +1887,7 @@ to segfault.</p>
 </pre></div>
 
 
-<h2 id="blas-and-lapack">BLAS and LAPACK<a class="headerlink" href="#blas-and-lapack" title="Permanent link">&para;</a></h2>
+<h2 id="blas-and-lapack">BLAS and LAPACK<a class="headerlink" href="#blas-and-lapack" title="Permanent link">§</a></h2>
 <p>BLAS and LAPACK are provided as part of MKL, OpenBLAS or ATLAS. There
 are several different OpenBLAS and ATLAS modules on Legion for different
 compilers. MKL is available in the Intel compiler module.</p>
@@ -1899,7 +1899,7 @@ that allow you to do this).</p>
 <li><a href="OpenBLAS_on_Legion" title="wikilink">OpenBLAS on Legion</a></li>
 <li><a href="ATLAS_on_Legion" title="wikilink">ATLAS on Legion</a></li>
 </ul>
-<h2 id="set-your-path-and-other-environment-variables">Set your PATH and other environment variables<a class="headerlink" href="#set-your-path-and-other-environment-variables" title="Permanent link">&para;</a></h2>
+<h2 id="set-your-path-and-other-environment-variables">Set your PATH and other environment variables<a class="headerlink" href="#set-your-path-and-other-environment-variables" title="Permanent link">§</a></h2>
 <p>After you have installed your software, you'll need to add it to your
 <code>PATH</code> environment variable so you can run it without having to give the
 full path to its location.</p>
@@ -1923,11 +1923,11 @@ session:</p>
 </pre></div>
 
 
-<h2 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h2>
+<h2 id="python">Python<a class="headerlink" href="#python" title="Permanent link">§</a></h2>
 <p>There are <code>python2/recommended</code> and <code>python3/recommended</code> bundles. These
 use a virtualenv and have pip set up for you. They both have numpy and
 scipy available.</p>
-<h3 id="set-compiler-module">Set compiler module<a class="headerlink" href="#set-compiler-module" title="Permanent link">&para;</a></h3>
+<h3 id="set-compiler-module">Set compiler module<a class="headerlink" href="#set-compiler-module" title="Permanent link">§</a></h3>
 <p>The Python versions on Legion were built with GCC. You can run them with
 the default Intel compilers loaded because everything depends on the
 gcc-libs/4.9.2 module. When you are building your own Python packages
@@ -1946,7 +1946,7 @@ compiler you used.</p>
 </pre></div>
 
 
-<h3 id="install-your-own-packages-in-the-same-virtualenv">Install your own packages in the same virtualenv<a class="headerlink" href="#install-your-own-packages-in-the-same-virtualenv" title="Permanent link">&para;</a></h3>
+<h3 id="install-your-own-packages-in-the-same-virtualenv">Install your own packages in the same virtualenv<a class="headerlink" href="#install-your-own-packages-in-the-same-virtualenv" title="Permanent link">§</a></h3>
 <p>This will use our central virtualenv, which contains a number of
 packages already installed.</p>
 <div class="codehilite"><pre><span></span>pip install --user &lt;python2pkg&gt;  
@@ -1962,7 +1962,7 @@ show what is only installed for one or the other. (There may also be
 prereqs that aren't listed explicitly - pip will tell you if something
 is already installed as long as you have the recommended module bundle
 loaded).</p>
-<h3 id="use-your-own-virtualenvs">Use your own virtualenvs<a class="headerlink" href="#use-your-own-virtualenvs" title="Permanent link">&para;</a></h3>
+<h3 id="use-your-own-virtualenvs">Use your own virtualenvs<a class="headerlink" href="#use-your-own-virtualenvs" title="Permanent link">§</a></h3>
 <p>If you need different packages that are not compatible with the central
 installs, you can create a new virtualenv and only yours will be
 available.</p>
@@ -1972,7 +1972,7 @@ source &lt;DIR&gt;/bin/activate
 
 
 <p>Your bash prompt will show you that a different virtualenv is active.</p>
-<h3 id="installing-via-setuppy">Installing via setup.py<a class="headerlink" href="#installing-via-setuppy" title="Permanent link">&para;</a></h3>
+<h3 id="installing-via-setuppy">Installing via setup.py<a class="headerlink" href="#installing-via-setuppy" title="Permanent link">§</a></h3>
 <p>If you need to install using setup.py, you can use the <code>--user</code> flag and
 as long as one of the python bundles is loaded, it will install into the
 same <code>.python2local</code> or <code>.python3local</code> as pip and you won't need to add
@@ -2001,7 +2001,7 @@ export PATH=/home/username/your/path/bin:$PATH
 <p>Check that the PATH is where your Python executables were installed, and
 the PYTHONPATH is correct. It will tend to tell you at install time if
 you need to change or create the PYTHONPATH directory.</p>
-<h3 id="python-script-executable-paths">Python script executable paths<a class="headerlink" href="#python-script-executable-paths" title="Permanent link">&para;</a></h3>
+<h3 id="python-script-executable-paths">Python script executable paths<a class="headerlink" href="#python-script-executable-paths" title="Permanent link">§</a></h3>
 <p>If you have an executable python script giving the location of python
 like this, and it fails because that python doesn't exist in that
 location or isn't the one that has the additional packages installed:</p>
@@ -2015,7 +2015,7 @@ environment. </p>
 </pre></div>
 </td></tr></table>
 
-<h2 id="perl">Perl<a class="headerlink" href="#perl" title="Permanent link">&para;</a></h2>
+<h2 id="perl">Perl<a class="headerlink" href="#perl" title="Permanent link">§</a></h2>
 <p>Perl modules will freqently have a Makefile.PL (especially if you
 download the tar files from CPAN.org yourself). You can install manually
 as:</p>
@@ -2025,7 +2025,7 @@ make install
 </pre></div>
 
 
-<h3 id="cpan">CPAN<a class="headerlink" href="#cpan" title="Permanent link">&para;</a></h3>
+<h3 id="cpan">CPAN<a class="headerlink" href="#cpan" title="Permanent link">§</a></h3>
 <p>You can use CPAN to download and install modules locally for you. The
 first time you run the <code>cpan</code> command, it will create a <code>.cpan</code>
 directory for you and ask you to give it configuration settings or allow
@@ -2044,7 +2044,7 @@ directory in your home (change username to your own username):</p>
 
 <p>It will download and build modules inside .cpan and install them where
 you specified.</p>
-<h3 id="set-perl5lib-paths">Set PERL5LIB paths<a class="headerlink" href="#set-perl5lib-paths" title="Permanent link">&para;</a></h3>
+<h3 id="set-perl5lib-paths">Set PERL5LIB paths<a class="headerlink" href="#set-perl5lib-paths" title="Permanent link">§</a></h3>
 <p>If you install your own Perl or Perl modules, you will need to append
 them to your PERL5LIB:</p>
 <div class="codehilite"><pre><span></span>export PERL5LIB=/home/username/your/perl/location:$PERL5LIB
@@ -2053,8 +2053,8 @@ them to your PERL5LIB:</p>
 
 <p>If you installed with CPAN, you may need to add several paths to this
 based on the layout it creates inside your nominated Perl directory.</p>
-<h3 id="errors-when-using-non-default-perl-versions">Errors when using non-default Perl versions<a class="headerlink" href="#errors-when-using-non-default-perl-versions" title="Permanent link">&para;</a></h3>
-<h4 id="warningspm">warnings.pm<a class="headerlink" href="#warningspm" title="Permanent link">&para;</a></h4>
+<h3 id="errors-when-using-non-default-perl-versions">Errors when using non-default Perl versions<a class="headerlink" href="#errors-when-using-non-default-perl-versions" title="Permanent link">§</a></h3>
+<h4 id="warningspm">warnings.pm<a class="headerlink" href="#warningspm" title="Permanent link">§</a></h4>
 <p>If you are using a version of Perl that is not the default system Perl
 and get strange errors when trying to run a Perl script, particularly
 ones about
@@ -2067,13 +2067,13 @@ warnings.pm:</p>
 <code>#!/usr/bin/perl</code>, it begins with <code>#!/usr/bin/env perl</code>. Otherwise it
 will try to use the old system Perl libraries with your newer Perl
 executable, which won't work.</p>
-<h4 id="libperlso-not-found">libperl.so not found<a class="headerlink" href="#libperlso-not-found" title="Permanent link">&para;</a></h4>
+<h4 id="libperlso-not-found">libperl.so not found<a class="headerlink" href="#libperlso-not-found" title="Permanent link">§</a></h4>
 <p>You probably built perl without telling it to build the shared library
 too. Add <code>-Duseshrplib</code> to your build flags.</p>
-<h2 id="r">R<a class="headerlink" href="#r" title="Permanent link">&para;</a></h2>
+<h2 id="r">R<a class="headerlink" href="#r" title="Permanent link">§</a></h2>
 <p>There are instructions on installing and using local R packages in
 <a href="https://wiki.rc.ucl.ac.uk/wiki/R_on_Legion#Using_your_own_local_R_packages">Using your own local R packages</a>.</p>
-<h2 id="compiling-with-mpi">Compiling with MPI<a class="headerlink" href="#compiling-with-mpi" title="Permanent link">&para;</a></h2>
+<h2 id="compiling-with-mpi">Compiling with MPI<a class="headerlink" href="#compiling-with-mpi" title="Permanent link">§</a></h2>
 <p>OpenMPI and Intel MPI are available. Certain programs do not work well
 with one or the other, so if you are having problems try the other one.
 Intel MPI is based on MPICH, so if the program you are compiling
@@ -2081,11 +2081,11 @@ mentions that, try Intel MPI first.</p>
 <p>The Intel MPI is threadsafe; some versions of OpenMPI aren't.</p>
 <p>Note that OpenMPI 1.8.4 had a segv bug in non-blocking collectives that
 is fixed in OpenMPI 1.10.1.</p>
-<h2 id="enabling-openmp">Enabling OpenMP<a class="headerlink" href="#enabling-openmp" title="Permanent link">&para;</a></h2>
+<h2 id="enabling-openmp">Enabling OpenMP<a class="headerlink" href="#enabling-openmp" title="Permanent link">§</a></h2>
 <p>To enable OpenMP with the Intel compilers, you simply need to add
 <code>-openmp</code> to your compile line. With the GNU compilers you need to add
 <code>-fopenmp</code>.</p>
-<h2 id="problems">Problems<a class="headerlink" href="#problems" title="Permanent link">&para;</a></h2>
+<h2 id="problems">Problems<a class="headerlink" href="#problems" title="Permanent link">§</a></h2>
 <p>If you experience problems building your applications, please contact
 your local IT support in the first instance. We are available at
 rc-support AT ucl.ac.uk to help you if you still cannot build your app

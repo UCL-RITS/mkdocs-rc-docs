@@ -1292,7 +1292,7 @@
                 
                   <h1>Building and Running Matlab Programs</h1>
                 
-                <h3 id="before-you-start-here-are-the-caveats">Before you start, here are the caveats:<a class="headerlink" href="#before-you-start-here-are-the-caveats" title="Permanent link">&para;</a></h3>
+                <h3 id="before-you-start-here-are-the-caveats">Before you start, here are the caveats:<a class="headerlink" href="#before-you-start-here-are-the-caveats" title="Permanent link">§</a></h3>
 <p>Although full Matlab is now available on Legion, you can still compile
 Matlab programs on an external machine and then run them on Legion using
 the Matlab runtime.</p>
@@ -1308,7 +1308,7 @@ arguments, where necessary, must be converted to numbers using the
 <code>str2num()</code> function.</p>
 <p>Because of the way Matlab threads work, you <strong>must</strong> request exclusive
 access to Legion nodes when running compiled Matlab programs.</p>
-<h3 id="compiling-your-program">Compiling your program:<a class="headerlink" href="#compiling-your-program" title="Permanent link">&para;</a></h3>
+<h3 id="compiling-your-program">Compiling your program:<a class="headerlink" href="#compiling-your-program" title="Permanent link">§</a></h3>
 <p>The Matlab code is must be compiled using the <strong>mcc</strong> tool; this must be
 initially run as <code>mcc -setup</code> before anything is built. The mcc tool can
 actually be invoked from the interpreter command prompt and executing
@@ -1321,13 +1321,13 @@ which are handled in the build line using the <code>-a &lt;datafile&gt;</code> o
 Please remember to make the <code>.m</code> file an actual function and all other
 dependencies sub-functions, otherwise the compiled code will not
 execute.</p>
-<h3 id="some-important-mcc-options">Some important mcc options:<a class="headerlink" href="#some-important-mcc-options" title="Permanent link">&para;</a></h3>
+<h3 id="some-important-mcc-options">Some important mcc options:<a class="headerlink" href="#some-important-mcc-options" title="Permanent link">§</a></h3>
 <ul>
 <li><code>-m</code>: this is option which runs the macro to generate a C stand-alone
     application.<br />
 <code>-R</code>: specify runtime options for the Matlab compiler runtime.</li>
 </ul>
-<h3 id="some-important-runtime-options">Some important runtime options:<a class="headerlink" href="#some-important-runtime-options" title="Permanent link">&para;</a></h3>
+<h3 id="some-important-runtime-options">Some important runtime options:<a class="headerlink" href="#some-important-runtime-options" title="Permanent link">§</a></h3>
 <ul>
 <li><code>-nojvm</code>: disables the java virtual machine, which may speed-up
     certain codes. This option cannot be used if you are planning to
@@ -1358,7 +1358,7 @@ installation directory of Matlab. The runtime has a GUI install
 interface and it can be installed at any location in your home
 directory.</p>
 <p>For more information, please read your Matlab documentation.</p>
-<h3 id="job-submission-scripts">Job submission scripts:<a class="headerlink" href="#job-submission-scripts" title="Permanent link">&para;</a></h3>
+<h3 id="job-submission-scripts">Job submission scripts:<a class="headerlink" href="#job-submission-scripts" title="Permanent link">§</a></h3>
 <p>There are three things that you must take into account:</p>
 <ol>
 <li>The location of the Matlab compiler runtime needs to be passed to

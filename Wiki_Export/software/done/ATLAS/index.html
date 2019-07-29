@@ -1298,11 +1298,11 @@
                   <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Wiki_Export/software/done/ATLAS.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="atlas">ATLAS<a class="headerlink" href="#atlas" title="Permanent link">&para;</a></h1>
+                <h1 id="atlas">ATLAS<a class="headerlink" href="#atlas" title="Permanent link">§</a></h1>
 <p>ATLAS (Automatically Tuned Linear Algebra Software) provides self-tuning
 implementations of BLAS and LAPACK. We have versions of ATLAS available
 that were built with various different compilers.</p>
-<h2 id="linking-atlas-3102">Linking ATLAS 3.10.2<a class="headerlink" href="#linking-atlas-3102" title="Permanent link">&para;</a></h2>
+<h2 id="linking-atlas-3102">Linking ATLAS 3.10.2<a class="headerlink" href="#linking-atlas-3102" title="Permanent link">§</a></h2>
 <p>There are ATLAS modules for GCC 4.9.2 and the Intel 2015 compilers.</p>
 <p>The modules add the relevant lib directory to your LD_LIBRARY_PATH and
 LIBRARY_PATH. You can see what those are with <code>module show</code> followed by
@@ -1310,7 +1310,7 @@ the module name.</p>
 <ul>
 <li><a href="http://math-atlas.sourceforge.net/errata.html#LINK">ATLAS website</a></li>
 </ul>
-<h3 id="dynamic-linking">Dynamic linking<a class="headerlink" href="#dynamic-linking" title="Permanent link">&para;</a></h3>
+<h3 id="dynamic-linking">Dynamic linking<a class="headerlink" href="#dynamic-linking" title="Permanent link">§</a></h3>
 <p>There is one combined library each for serial and threaded ATLAS (in
 most circumstances you probably want the serial version).</p>
 <p>Serial:</p>
@@ -1323,7 +1323,7 @@ most circumstances you probably want the serial version).</p>
 </pre></div>
 
 
-<h3 id="static-linking">Static linking<a class="headerlink" href="#static-linking" title="Permanent link">&para;</a></h3>
+<h3 id="static-linking">Static linking<a class="headerlink" href="#static-linking" title="Permanent link">§</a></h3>
 <p>There are multiple libraries.</p>
 <p>Serial:</p>
 <div class="codehilite"><pre><span></span>-L${ATLASROOT}/lib -llapack -lf77blas -lcblas -latlas
@@ -1335,7 +1335,7 @@ most circumstances you probably want the serial version).</p>
 </pre></div>
 
 
-<h3 id="runtime-errors">Runtime errors<a class="headerlink" href="#runtime-errors" title="Permanent link">&para;</a></h3>
+<h3 id="runtime-errors">Runtime errors<a class="headerlink" href="#runtime-errors" title="Permanent link">§</a></h3>
 <p>If you get a runtime error saying that <code>libgfortran.so</code> cannot be found,
 you need to add <code>-lgfortran</code> to your link line.</p>
 <p>The Intel equivalent is <code>-lifcore</code>.</p>

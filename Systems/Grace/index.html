@@ -1336,12 +1336,12 @@
                   <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Systems/Grace.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="grace">Grace<a class="headerlink" href="#grace" title="Permanent link">&para;</a></h1>
+                <h1 id="grace">Grace<a class="headerlink" href="#grace" title="Permanent link">§</a></h1>
 <p>Grace is a compute cluster designed for extensively parallel, multi-node batch-processing jobs, having high-bandwidth connections between each individual node.</p>
-<h2 id="accounts">Accounts<a class="headerlink" href="#accounts" title="Permanent link">&para;</a></h2>
+<h2 id="accounts">Accounts<a class="headerlink" href="#accounts" title="Permanent link">§</a></h2>
 <p>Grace accounts can be applied for via the <a href="Accounts.md">Research Computing sign up process</a>.</p>
 <p>As Grace is intended for multi-node jobs, users who specify that they will need to use multi-node jobs (e.g. with <a href="Glossary.md#MPI">MPI</a>) will be given access to Grace.</p>
-<h2 id="logging-in">Logging in<a class="headerlink" href="#logging-in" title="Permanent link">&para;</a></h2>
+<h2 id="logging-in">Logging in<a class="headerlink" href="#logging-in" title="Permanent link">§</a></h2>
 <p>Please use your UCL username and password to connect to Grace with an SSH client.</p>
 <div class="codehilite"><pre><span></span>ssh uccaxxx@grace.rc.ucl.ac.uk
 </pre></div>
@@ -1353,7 +1353,7 @@ in, eg. <code>uccaxxx</code>. When entering your password in PuTTY no characters
 bulletpoints will show on screen - this is normal.</p>
 <p>If you are outside the UCL firewall you will need to follow the
 instructions for <a href="Accessing_RC_Systems.md">accessing services from outside UCL</a>.</p>
-<h3 id="logging-in-to-a-specific-node">Logging in to a specific node<a class="headerlink" href="#logging-in-to-a-specific-node" title="Permanent link">&para;</a></h3>
+<h3 id="logging-in-to-a-specific-node">Logging in to a specific node<a class="headerlink" href="#logging-in-to-a-specific-node" title="Permanent link">§</a></h3>
 <p>You can access a specific Grace login node by using their dedicated addresses instead of the main <code>grace.rc.ucl.ac.uk</code> address, for example:</p>
 <div class="codehilite"><pre><span></span>ssh uccaxxx@login01.ext.grace.ucl.ac.uk
 ssh uccaxxx@login02.ext.grace.ucl.ac.uk
@@ -1361,15 +1361,15 @@ ssh uccaxxx@login02.ext.grace.ucl.ac.uk
 
 
 <p>The main address will unpredictably direct you to either one of these (to balance load), so if you need multiple sessions on one, this lets you do that.</p>
-<h2 id="copying-data-onto-grace">Copying data onto Grace<a class="headerlink" href="#copying-data-onto-grace" title="Permanent link">&para;</a></h2>
+<h2 id="copying-data-onto-grace">Copying data onto Grace<a class="headerlink" href="#copying-data-onto-grace" title="Permanent link">§</a></h2>
 <p>You will need to use an SCP or SFTP client to copy data onto Grace.
 Please refer to the page on <a href="Managing_Data.md">Managing Data on RC Systems</a>.</p>
-<h2 id="quotas">Quotas<a class="headerlink" href="#quotas" title="Permanent link">&para;</a></h2>
+<h2 id="quotas">Quotas<a class="headerlink" href="#quotas" title="Permanent link">§</a></h2>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>This section has not been filled in.</p>
 </div>
-<h2 id="job-sizes-and-durations">Job sizes and durations<a class="headerlink" href="#job-sizes-and-durations" title="Permanent link">&para;</a></h2>
+<h2 id="job-sizes-and-durations">Job sizes and durations<a class="headerlink" href="#job-sizes-and-durations" title="Permanent link">§</a></h2>
 <p>For interactive jobs:</p>
 <table>
 <thead>
@@ -1413,7 +1413,7 @@ Please refer to the page on <a href="Managing_Data.md">Managing Data on RC Syste
 </tbody>
 </table>
 <p>If you have a workload that requires longer jobs than this, you may be able to apply to our governance group for access to a longer queue. Applications will be expected to demonstrate that their work cannot be run using techniques like checkpointing that would allow their workload to be broken up into smaller parts. Please see the section on <a href="CRAG_Exceptions.md">Applying for special access</a> for more details.</p>
-<h2 id="node-types">Node types<a class="headerlink" href="#node-types" title="Permanent link">&para;</a></h2>
+<h2 id="node-types">Node types<a class="headerlink" href="#node-types" title="Permanent link">§</a></h2>
 <p>Grace's compute capability comprises roughly 650 compute nodes each with two 8-core <a href="https://ark.intel.com/content/www/us/en/ark/products/83356/intel-xeon-processor-e5-2630-v3-20m-cache-2-40-ghz.html">Intel Xeon E5-2630v3 2.4GHz</a> processors, 64 gigabytes of 2133MHz DDR4 RAM, 120GB hard drives, and an Intel TrueScale network.</p>
 <p>Two nodes identical to these serve as the login nodes.</p>
                 

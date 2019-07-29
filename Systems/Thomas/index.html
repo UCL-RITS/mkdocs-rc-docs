@@ -1780,17 +1780,17 @@
                 
                 <p>Thomas is the UK National Tier 2 High Performance Computing Hub in
 Materials and Molecular Modelling.</p>
-<h2 id="applying-for-an-account">Applying for an account<a class="headerlink" href="#applying-for-an-account" title="Permanent link">&para;</a></h2>
+<h2 id="applying-for-an-account">Applying for an account<a class="headerlink" href="#applying-for-an-account" title="Permanent link">§</a></h2>
 <p>Thomas accounts belong to you as an individual and are applied for
 through your own institution's <a href="https://mmmhub.ac.uk/2017/06/14/access/">Point of Contact</a>.
 You will need to supply an SSH public key, which is the only method used to log in.</p>
-<h2 id="creating-an-ssh-key-pair">Creating an ssh key pair<a class="headerlink" href="#creating-an-ssh-key-pair" title="Permanent link">&para;</a></h2>
+<h2 id="creating-an-ssh-key-pair">Creating an ssh key pair<a class="headerlink" href="#creating-an-ssh-key-pair" title="Permanent link">§</a></h2>
 <p>An ssh key consists of a public and a private part, typically named
 <code>id_rsa</code> and <code>id_rsa.pub</code> by default. The public part is what we need. You
 must not share your private key with anyone else. You can copy it onto
 multiple machines belonging to you so you can log in from all of them
 (or you can have a separate pair for each machine).</p>
-<h3 id="creating-an-ssh-key-in-linuxunixmac-os-x">Creating an ssh key in Linux/Unix/Mac OS X<a class="headerlink" href="#creating-an-ssh-key-in-linuxunixmac-os-x" title="Permanent link">&para;</a></h3>
+<h3 id="creating-an-ssh-key-in-linuxunixmac-os-x">Creating an ssh key in Linux/Unix/Mac OS X<a class="headerlink" href="#creating-an-ssh-key-in-linuxunixmac-os-x" title="Permanent link">§</a></h3>
 <div class="codehilite"><pre><span></span>ssh-keygen -t rsa
 </pre></div>
 
@@ -1811,15 +1811,15 @@ for a passphrase depends on how long your local ssh agent keeps it.</p>
 <p>You may need to run <code>ssh-add</code> to add the key to your agent so you can
 use it. If you aren't sure what keys your agent can see, running
 <code>ssh-add -L</code> will show all the public parts of the keys it is aware of.</p>
-<h3 id="creating-an-ssh-key-in-windows">Creating an ssh key in Windows<a class="headerlink" href="#creating-an-ssh-key-in-windows" title="Permanent link">&para;</a></h3>
+<h3 id="creating-an-ssh-key-in-windows">Creating an ssh key in Windows<a class="headerlink" href="#creating-an-ssh-key-in-windows" title="Permanent link">§</a></h3>
 <p>Have a look at <a href="https://www.howtoforge.com/ssh_key_based_logins_putty">Key-Based SSH Logins With PuTTY</a> which has
 step-by-step instructions. You can choose whether to use Pageant or not
 to manage your key. You can again pick RSA, DSA, ECDSA etc <strong>but do not
 pick SSH-1</strong> as that is a very old and insecure key type.</p>
-<h2 id="information-for-points-of-contact">Information for Points of Contact<a class="headerlink" href="#information-for-points-of-contact" title="Permanent link">&para;</a></h2>
+<h2 id="information-for-points-of-contact">Information for Points of Contact<a class="headerlink" href="#information-for-points-of-contact" title="Permanent link">§</a></h2>
 <p>Points of Contact have some tools they can use to manage users and
 allocations, documented at <a href="Points_of_Contact">Points of Contact</a>.</p>
-<h2 id="logging-in">Logging in<a class="headerlink" href="#logging-in" title="Permanent link">&para;</a></h2>
+<h2 id="logging-in">Logging in<a class="headerlink" href="#logging-in" title="Permanent link">§</a></h2>
 <p>You will be assigned a personal username and your SSH key pair will be
 used to log in. External users will have a username in the form
 <code>mmmxxxx</code> (where <code>xxxx</code> is a number) and UCL users will use their central username.</p>
@@ -1828,19 +1828,19 @@ used to log in. External users will have a username in the form
 </pre></div>
 
 
-<h3 id="ssh-timeouts">SSH timeouts<a class="headerlink" href="#ssh-timeouts" title="Permanent link">&para;</a></h3>
+<h3 id="ssh-timeouts">SSH timeouts<a class="headerlink" href="#ssh-timeouts" title="Permanent link">§</a></h3>
 <p>Idle ssh sessions will be disconnected after 7 days.</p>
-<h2 id="using-the-system">Using the system<a class="headerlink" href="#using-the-system" title="Permanent link">&para;</a></h2>
+<h2 id="using-the-system">Using the system<a class="headerlink" href="#using-the-system" title="Permanent link">§</a></h2>
 <p>Thomas is a batch system. The login nodes allow you to manage your
 files, compile code and submit jobs. Very short (\&lt;15mins) and
 non-resource-intensive software tests can be run on the login nodes, but
 anything more should be submitted as a job.</p>
-<h3 id="full-user-guide">Full user guide<a class="headerlink" href="#full-user-guide" title="Permanent link">&para;</a></h3>
+<h3 id="full-user-guide">Full user guide<a class="headerlink" href="#full-user-guide" title="Permanent link">§</a></h3>
 <p>Thomas has the same user environment as RC Support's other clusters, so
 the <a href="User_Guide">User guide</a> is relevant and is a
 good starting point for further information about how the environment
 works. Any variations that Thomas has should be listed on this page.</p>
-<h3 id="submitting-a-job">Submitting a job<a class="headerlink" href="#submitting-a-job" title="Permanent link">&para;</a></h3>
+<h3 id="submitting-a-job">Submitting a job<a class="headerlink" href="#submitting-a-job" title="Permanent link">§</a></h3>
 <p>Create a <a href="Example_Submission_Scripts">jobscript</a> for
 non-interactive use and submit it using
 <a href="Batch_Processing">qsub</a>. Jobscripts must begin <code>#!/bin/bash -l</code> 
@@ -1849,18 +1849,18 @@ modules.</p>
 <p>A job on Thomas must also specify what type of job it is (Gold, Free,
 Test) and the project it is being submitted for. 
 (See <a href="Budgets_and_allocations">Budgets and allocations</a> below.)</p>
-<h4 id="memory-requests">Memory requests<a class="headerlink" href="#memory-requests" title="Permanent link">&para;</a></h4>
+<h4 id="memory-requests">Memory requests<a class="headerlink" href="#memory-requests" title="Permanent link">§</a></h4>
 <p>Note: the memory you request is always per core, not the total amount.
 If you ask for 128GB RAM and 24 cores, that will run on 24 nodes using
 only one core per node. This allows you to have sparse process placement
 when you do actually need that much RAM per process.</p>
-<h3 id="monitoring-a-job">Monitoring a job<a class="headerlink" href="#monitoring-a-job" title="Permanent link">&para;</a></h3>
+<h3 id="monitoring-a-job">Monitoring a job<a class="headerlink" href="#monitoring-a-job" title="Permanent link">§</a></h3>
 <p>In addition to <a href="Batch_Processing">qstat</a>, <code>nodesforjob
 $JOB_ID</code> can be useful to see what proportion of cpu/memory/swap is
 being used on the nodes a certain job is running on.</p>
 <p><code>qexplain $JOB_ID</code> will show you the full error for a job that is in
 <code>Eqw</code> status.</p>
-<h3 id="useful-utilities">Useful utilities<a class="headerlink" href="#useful-utilities" title="Permanent link">&para;</a></h3>
+<h3 id="useful-utilities">Useful utilities<a class="headerlink" href="#useful-utilities" title="Permanent link">§</a></h3>
 <p>As well as <code>nodesforjob</code>, there are the following utilities which can
 help you find information about your jobs after they have run.</p>
 <ul>
@@ -1873,7 +1873,7 @@ help you find information about your jobs after they have run.</p>
 <p>These utilities live in GitHub at
 <a href="https://github.com/UCL-RITS/go-clustertools">https://github.com/UCL-RITS/go-clustertools</a> and
 <a href="https://github.com/UCL-RITS/rcps-cluster-scripts">https://github.com/UCL-RITS/rcps-cluster-scripts</a></p>
-<h3 id="queue-names">Queue names<a class="headerlink" href="#queue-names" title="Permanent link">&para;</a></h3>
+<h3 id="queue-names">Queue names<a class="headerlink" href="#queue-names" title="Permanent link">§</a></h3>
 <p>On Thomas, users do not submit directly to queues - the scheduler
 assigns your job to one based on the resources it requested. The queues
 have somewhat unorthodox names as they are only used internally, but
@@ -1884,7 +1884,7 @@ this is what they mean:</p>
 <li>Spike: cross-CU job, using superqueue (any multi-node job may end up
     using this)</li>
 </ul>
-<h2 id="software">Software<a class="headerlink" href="#software" title="Permanent link">&para;</a></h2>
+<h2 id="software">Software<a class="headerlink" href="#software" title="Permanent link">§</a></h2>
 <p>Thomas mounts the <a href="Software">RC Systems software stack</a>.</p>
 <p>Have a look at <a href="Applications">Applications</a> for specific
 information on running some applications, including example scripts. The
@@ -1896,22 +1896,22 @@ list there is not exhaustive.</p>
 </ul>
 <p>Access to licensed software may vary based on your host institution and
 project.</p>
-<h3 id="requesting-software-installs">Requesting software installs<a class="headerlink" href="#requesting-software-installs" title="Permanent link">&para;</a></h3>
+<h3 id="requesting-software-installs">Requesting software installs<a class="headerlink" href="#requesting-software-installs" title="Permanent link">§</a></h3>
 <p>To request software installs, email us at the <a href="#Support">support address below</a> or open an issue on our
 <a href="https://github.com/UCL-RITS/rcps-buildscripts/issues">GitHub</a>. You can
 see what software has already been requested in the Github issues and
 can add a comment if you're also interested in something already
 requested.</p>
-<h3 id="installing-your-own-software">Installing your own software<a class="headerlink" href="#installing-your-own-software" title="Permanent link">&para;</a></h3>
+<h3 id="installing-your-own-software">Installing your own software<a class="headerlink" href="#installing-your-own-software" title="Permanent link">§</a></h3>
 <p>You may install software in your own space. Please look at
 <a href="Compiling">Compiling</a> for tips.</p>
-<h3 id="maintaining-a-piece-of-software-for-a-group">Maintaining a piece of software for a group<a class="headerlink" href="#maintaining-a-piece-of-software-for-a-group" title="Permanent link">&para;</a></h3>
+<h3 id="maintaining-a-piece-of-software-for-a-group">Maintaining a piece of software for a group<a class="headerlink" href="#maintaining-a-piece-of-software-for-a-group" title="Permanent link">§</a></h3>
 <p>It is possible for people to be given central areas to install software
 that they wish to make available to everyone or to a select group -
 generally because they are the developers or if they wish to use
 multiple versions or developer versions. The people given install access
 would then be responsible for managing and maintaining these installs.</p>
-<h3 id="licensed-software">Licensed software<a class="headerlink" href="#licensed-software" title="Permanent link">&para;</a></h3>
+<h3 id="licensed-software">Licensed software<a class="headerlink" href="#licensed-software" title="Permanent link">§</a></h3>
 <p>Reserved application groups exist for software that requires them. The
 group name will begin with <code>leg</code> or <code>lg</code>. After we add you to one of
 these groups, the central group change will happen overnight. You can
@@ -1947,12 +1947,12 @@ check your groups with the <code>groups</code> command.</p>
     source code and then you can run the script following the
     instructions at the top.</li>
 </ul>
-<h2 id="suggested-job-sizes">Suggested job sizes<a class="headerlink" href="#suggested-job-sizes" title="Permanent link">&para;</a></h2>
+<h2 id="suggested-job-sizes">Suggested job sizes<a class="headerlink" href="#suggested-job-sizes" title="Permanent link">§</a></h2>
 <p>The target job sizes for Thomas are 48-120 cores (2-5 nodes). Jobs
 larger than this may have a longer queue time and are better suited to
 ARCHER, and single node jobs may be more suited to your local
 facilities.</p>
-<h2 id="maximum-job-resources">Maximum job resources<a class="headerlink" href="#maximum-job-resources" title="Permanent link">&para;</a></h2>
+<h2 id="maximum-job-resources">Maximum job resources<a class="headerlink" href="#maximum-job-resources" title="Permanent link">§</a></h2>
 <table>
 <thead>
 <tr>
@@ -1987,7 +1987,7 @@ for: contact the support address below for details.</p>
 easier for larger jobs to be scheduled, as otherwise they can have very
 long waits if every CU is half full.</p>
 <p><a href="#top" title="wikilink"> back to top</a></p>
-<h2 id="budgets-and-allocations">Budgets and allocations<a class="headerlink" href="#budgets-and-allocations" title="Permanent link">&para;</a></h2>
+<h2 id="budgets-and-allocations">Budgets and allocations<a class="headerlink" href="#budgets-and-allocations" title="Permanent link">§</a></h2>
 <p>We have enabled Gold for allocation management. Jobs that are run under
 a project budget have higher priority than free non-budgeted jobs. All
 jobs need to specify what project they belong to, whether they are paid
@@ -2008,7 +2008,7 @@ show up.</p>
 <p class="admonition-title">Info</p>
 <p>1 Gold unit is 1 hour of using 1 processor core.</p>
 </div>
-<h3 id="subprojects">Subprojects<a class="headerlink" href="#subprojects" title="Permanent link">&para;</a></h3>
+<h3 id="subprojects">Subprojects<a class="headerlink" href="#subprojects" title="Permanent link">§</a></h3>
 <p>You might be in a subproject that does not itself have an allocation,
 but instead takes allocation from a different project:</p>
 <div class="codehilite"><pre><span></span>Project       Machines Balance
@@ -2021,7 +2021,7 @@ UCL_physM_Bowler ANY        0.00
 <p>In this case, you submit jobs using the subproject (<code>UCL_physM_Bowler</code>
 here) even though it says it has 0 budget and it takes Gold from the
 superproject.</p>
-<h3 id="submitting-a-job-under-a-project">Submitting a job under a project<a class="headerlink" href="#submitting-a-job-under-a-project" title="Permanent link">&para;</a></h3>
+<h3 id="submitting-a-job-under-a-project">Submitting a job under a project<a class="headerlink" href="#submitting-a-job-under-a-project" title="Permanent link">§</a></h3>
 <p>To submit a paid job that will take Gold from a particular project
 budget, add this to your jobscript:</p>
 <div class="codehilite"><pre><span></span>#$ -P Gold
@@ -2044,7 +2044,7 @@ walltime:</p>
 </pre></div>
 
 
-<h4 id="troubleshooting-unable-to-verify-membership-of-username-in-the-policyjsv-project">Troubleshooting: Unable to verify membership of username in the policyjsv project<a class="headerlink" href="#troubleshooting-unable-to-verify-membership-of-username-in-the-policyjsv-project" title="Permanent link">&para;</a></h4>
+<h4 id="troubleshooting-unable-to-verify-membership-of-username-in-the-policyjsv-project">Troubleshooting: Unable to verify membership of username in the policyjsv project<a class="headerlink" href="#troubleshooting-unable-to-verify-membership-of-username-in-the-policyjsv-project" title="Permanent link">§</a></h4>
 <div class="codehilite"><pre><span></span>Unable to run job: Rejected by policyjsv
 Unable to verify membership of `&lt;username&gt;` in the policyjsv project
 </pre></div>
@@ -2052,14 +2052,14 @@ Unable to verify membership of `&lt;username&gt;` in the policyjsv proj
 
 <p>You asked for a Free job but didn't specify <code>#$ -A MyProject</code> in your
 jobscript.</p>
-<h3 id="gold-charging">Gold charging<a class="headerlink" href="#gold-charging" title="Permanent link">&para;</a></h3>
+<h3 id="gold-charging">Gold charging<a class="headerlink" href="#gold-charging" title="Permanent link">§</a></h3>
 <p>When you submit a job, it will reserve the total number of core hours
 that the job script is asking for. When the job ends, the Gold will move
 from 'reserved' into charged. If the job doesn't run for the full time
 it asked for, the unused reserved portion will be refunded after the job
 ends. You cannot submit a job that you do not have the budget to
 run.</p>
-<h4 id="troubleshooting-unable-to-verify-sufficient-material-worth-to-submit-this-job">Troubleshooting: Unable to verify sufficient material worth to submit this job<a class="headerlink" href="#troubleshooting-unable-to-verify-sufficient-material-worth-to-submit-this-job" title="Permanent link">&para;</a></h4>
+<h4 id="troubleshooting-unable-to-verify-sufficient-material-worth-to-submit-this-job">Troubleshooting: Unable to verify sufficient material worth to submit this job<a class="headerlink" href="#troubleshooting-unable-to-verify-sufficient-material-worth-to-submit-this-job" title="Permanent link">§</a></h4>
 <div class="codehilite"><pre><span></span>Unable to run job: Rejected by policyjsv
 Reason:Unable to verify sufficient material worth to submit this job:
 Insufficient balance to reserve job
@@ -2071,28 +2071,28 @@ cores ⨉ wallclock time cost of the job you are trying to submit. You need
 to wait for queued jobs to finish and return unused Gold to your
 project, or submit a smaller/shorter job. Note that array jobs have to
 cover the whole cost of all the tasks at submit time.</p>
-<h3 id="job-deletion">Job deletion<a class="headerlink" href="#job-deletion" title="Permanent link">&para;</a></h3>
+<h3 id="job-deletion">Job deletion<a class="headerlink" href="#job-deletion" title="Permanent link">§</a></h3>
 <p>If you <code>qdel</code> a submitted Gold job, the reserved Gold will be made
 available again. This is done by a cron job that runs every 15 minutes,
 so you may not see it back instantly.</p>
-<h2 id="support">Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h2>
+<h2 id="support">Support<a class="headerlink" href="#support" title="Permanent link">§</a></h2>
 <p>Email <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#99;&#45;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#117;&#99;&#108;&#46;&#97;&#99;&#46;&#117;&#107;">&#114;&#99;&#45;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#117;&#99;&#108;&#46;&#97;&#99;&#46;&#117;&#107;</a> with any support queries. It will be helpful
 to include Thomas in the subject along with some descriptive text about
 the type of problem, and you should mention your username in the body.</p>
-<h2 id="acknowledging-the-use-of-thomas-in-publications">Acknowledging the use of Thomas in publications<a class="headerlink" href="#acknowledging-the-use-of-thomas-in-publications" title="Permanent link">&para;</a></h2>
+<h2 id="acknowledging-the-use-of-thomas-in-publications">Acknowledging the use of Thomas in publications<a class="headerlink" href="#acknowledging-the-use-of-thomas-in-publications" title="Permanent link">§</a></h2>
 <p>All work arising from this facility should be properly acknowledged in
 presentations and papers with the following text:</p>
 <p>"We are grateful to the UK Materials and Molecular Modelling Hub for
 computational resources, which is partially funded by EPSRC
 (EP/P020194/1)"</p>
-<h3 id="mcc">MCC<a class="headerlink" href="#mcc" title="Permanent link">&para;</a></h3>
+<h3 id="mcc">MCC<a class="headerlink" href="#mcc" title="Permanent link">§</a></h3>
 <p>When publishing work that benefited from resources allocated by the MCC:
 please include the following acknowledgment:</p>
 <p>"Via our membership of the UK's HEC Materials Chemistry Consortium,
 which is funded by EPSRC (EP/L000202), this work used the UK Materials
 and Molecular Modelling Hub for computational resources, MMM Hub, which
 is partially funded by EPSRC (EP/P020194)"</p>
-<h3 id="ukcp">UKCP<a class="headerlink" href="#ukcp" title="Permanent link">&para;</a></h3>
+<h3 id="ukcp">UKCP<a class="headerlink" href="#ukcp" title="Permanent link">§</a></h3>
 <p>When publishing work that benefited from 
 <a href="http://www.ukcp.ac.uk/pmwiki.php/UKCP/Acknowledgement">resources allocated by UKCP</a>,
 please include:</p>

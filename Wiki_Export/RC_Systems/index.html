@@ -1459,12 +1459,12 @@ services and their technical specifications.</p>
 support training.</p>
 <p>We also host <a href="Thomas">Thomas</a> and <a href="Michael">Michael</a>, clusters associated with the UK National Tier 2 High Performance Computing
 Hub in Materials and Molecular Modelling.</p>
-<h2 id="legion">Legion<a class="headerlink" href="#legion" title="Permanent link">&para;</a></h2>
+<h2 id="legion">Legion<a class="headerlink" href="#legion" title="Permanent link">§</a></h2>
 <p>Legion is our general-use cluster. It contains nodes of different types,
 some specialist hardware, and nodes belonging to research groups. You
 can run serial or parallel jobs on it, and the combinations of resources
 you may request depend on the node type.</p>
-<h3 id="legion-technical-specs">Legion technical specs<a class="headerlink" href="#legion-technical-specs" title="Permanent link">&para;</a></h3>
+<h3 id="legion-technical-specs">Legion technical specs<a class="headerlink" href="#legion-technical-specs" title="Permanent link">§</a></h3>
 <p>The Legion cluster nodes have several different types.</p>
 <p>Type T:</p>
 <ul>
@@ -1546,11 +1546,11 @@ you may request depend on the node type.</p>
 <li>Please note that this file system is for active data and not archive
     data. It should be used <strong>for temporary storage only</strong>.</li>
 </ul>
-<h2 id="myriad">Myriad<a class="headerlink" href="#myriad" title="Permanent link">&para;</a></h2>
+<h2 id="myriad">Myriad<a class="headerlink" href="#myriad" title="Permanent link">§</a></h2>
 <p>Myriad is our high-I/O, high-throughput cluster. It contains nodes of a
 few different types including GPUs. It runs jobs that will run within a
 single node rather than multi-node parallel jobs.</p>
-<h3 id="myriad-technical-specs">Myriad technical specs<a class="headerlink" href="#myriad-technical-specs" title="Permanent link">&para;</a></h3>
+<h3 id="myriad-technical-specs">Myriad technical specs<a class="headerlink" href="#myriad-technical-specs" title="Permanent link">§</a></h3>
 <p>Myriad consists of Lenovo SD530 nodes. There are two login nodes and two
 transfer nodes.</p>
 <p>There are three types of compute nodes:</p>
@@ -1588,11 +1588,11 @@ transfer nodes.</p>
 <li>2 OSS servers</li>
 <li>Mellanox ConnectX-4 2x100Gb/EDR InfiniBand storage network</li>
 </ul>
-<h2 id="grace">Grace<a class="headerlink" href="#grace" title="Permanent link">&para;</a></h2>
+<h2 id="grace">Grace<a class="headerlink" href="#grace" title="Permanent link">§</a></h2>
 <p>Grace is intended for large multinode parallel jobs. As per CRAG policy,
 jobs that require less than 32 cores are subject to a dramatic priority
 penalty.</p>
-<h3 id="grace-technical-specs">Grace technical specs<a class="headerlink" href="#grace-technical-specs" title="Permanent link">&para;</a></h3>
+<h3 id="grace-technical-specs">Grace technical specs<a class="headerlink" href="#grace-technical-specs" title="Permanent link">§</a></h3>
 <p>Grace consists of 684 identical Lenovo NeXtScale nodes connected by
 non-blocking Intel TrueScale QDR Infiniband to each other and a 1.1
 PetaByte DDN Lustre storage appliance. Four of the nodes are used as
@@ -1604,14 +1604,14 @@ login and admin nodes. The remainder are available for running jobs.</p>
 <li>120 Gigabyte SSD for OS and TMPDIR</li>
 <li>Intel TrueScale QDR Infiniband adaptor</li>
 </ul>
-<h2 id="thomas">Thomas<a class="headerlink" href="#thomas" title="Permanent link">&para;</a></h2>
+<h2 id="thomas">Thomas<a class="headerlink" href="#thomas" title="Permanent link">§</a></h2>
 <p>Thomas is the UK National Tier 2 High Performance Computing Hub in
 Materials and Molecular Modelling, a domain-specific multi-institute
 machine hosted by UCL.</p>
 <ul>
 <li><a href="Thomas">Further details about Thomas</a></li>
 </ul>
-<h3 id="thomas-technical-specs">Thomas technical specs<a class="headerlink" href="#thomas-technical-specs" title="Permanent link">&para;</a></h3>
+<h3 id="thomas-technical-specs">Thomas technical specs<a class="headerlink" href="#thomas-technical-specs" title="Permanent link">§</a></h3>
 <p>Thomas consists of 720 Lenovo Intel x86-64 nodes, giving 17.2k cores in
 total, with Intel OmniPath interconnect (1:1 nonblocking in 36 node
 blocks, 3:1 between blocks and across the system).</p>
@@ -1621,24 +1621,24 @@ blocks, 3:1 between blocks and across the system).</p>
 <li>128GB RAM</li>
 <li>120GB SSD</li>
 </ul>
-<h2 id="aristotle">Aristotle<a class="headerlink" href="#aristotle" title="Permanent link">&para;</a></h2>
+<h2 id="aristotle">Aristotle<a class="headerlink" href="#aristotle" title="Permanent link">§</a></h2>
 <p>Aristotle is a teaching machine, usable by everyone. It does not have a
 batch system - you run programs directly on the nodes and share
 resources with all other users. Use with consideration!</p>
-<h3 id="aristotle-technical-specs">Aristotle technical specs<a class="headerlink" href="#aristotle-technical-specs" title="Permanent link">&para;</a></h3>
+<h3 id="aristotle-technical-specs">Aristotle technical specs<a class="headerlink" href="#aristotle-technical-specs" title="Permanent link">§</a></h3>
 <ul>
 <li>4x 16 core Dell servers with Intel(R) Xeon(R) CPU E5-2650 v2</li>
 <li>64 gigabytes of RAM per node</li>
 <li>RedHat 7.2</li>
 <li>No Infiniband so MPI may only be used within a node</li>
 </ul>
-<h3 id="how-do-i-apply-for-an-account">How do I apply for an account?<a class="headerlink" href="#how-do-i-apply-for-an-account" title="Permanent link">&para;</a></h3>
+<h3 id="how-do-i-apply-for-an-account">How do I apply for an account?<a class="headerlink" href="#how-do-i-apply-for-an-account" title="Permanent link">§</a></h3>
 <p>Please apply at <a href="Account_Services">Account Services</a> for
 everything other than Thomas - you will be approved for a Legion and
 Myriad account. You will be approved for a Grace account if the
 resources you request meet the requirements.</p>
 <p>For Thomas, see <a href="Thomas#Applying_for_an_account">Applying for a Thomas account</a>.</p>
-<h3 id="access-to-aristotle">Access to Aristotle<a class="headerlink" href="#access-to-aristotle" title="Permanent link">&para;</a></h3>
+<h3 id="access-to-aristotle">Access to Aristotle<a class="headerlink" href="#access-to-aristotle" title="Permanent link">§</a></h3>
 <p>Everyone with a UCL account has access to Aristotle. Login via SSH to:</p>
 <div class="codehilite"><pre><span></span>aristotle.rc.ucl.ac.uk
 </pre></div>

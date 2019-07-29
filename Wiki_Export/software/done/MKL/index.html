@@ -1284,7 +1284,7 @@
                   <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Wiki_Export/software/done/MKL.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="intels-math-kernel-library">Intel's Math Kernel Library<a class="headerlink" href="#intels-math-kernel-library" title="Permanent link">&para;</a></h1>
+                <h1 id="intels-math-kernel-library">Intel's Math Kernel Library<a class="headerlink" href="#intels-math-kernel-library" title="Permanent link">§</a></h1>
 <p>Intel MKL implements CDFT, BLACS and ScaLAPACK and provides Fortran 95
 interfaces for BLAS and LAPACK.</p>
 <p>MKL is now part of the default Intel compiler module. (Type <code>module avail compilers/intel</code> to see the current versions of Intel modules).</p>
@@ -1294,11 +1294,11 @@ interfaces for BLAS and LAPACK.</p>
 
 <p><code>module show</code> on the Intel compiler module will display that <code>$MKLROOT</code>
 is set.</p>
-<h2 id="easy-linking-of-mkl">Easy linking of MKL<a class="headerlink" href="#easy-linking-of-mkl" title="Permanent link">&para;</a></h2>
+<h2 id="easy-linking-of-mkl">Easy linking of MKL<a class="headerlink" href="#easy-linking-of-mkl" title="Permanent link">§</a></h2>
 <p>If you can, try to use <code>-mkl</code> as a compiler flag - if that works, it
 should get all the correct libraries linked in the right order. Some
 build systems do not work with this however.</p>
-<h2 id="intel-mkl-link-line-advisor">Intel MKL link line advisor<a class="headerlink" href="#intel-mkl-link-line-advisor" title="Permanent link">&para;</a></h2>
+<h2 id="intel-mkl-link-line-advisor">Intel MKL link line advisor<a class="headerlink" href="#intel-mkl-link-line-advisor" title="Permanent link">§</a></h2>
 <p>It can be complicated to get the correct link line for MKL, so Intel has
 provided a tool which will give you the link line with the libraries in
 the right
@@ -1339,7 +1339,7 @@ ${MKLROOT}/lib/intel64/libmkl_blas95_ilp64 ${MKLROOT}/lib/intel64/libmkl_lapack
 </pre></div>
 
 
-<h3 id="corrections">Corrections<a class="headerlink" href="#corrections" title="Permanent link">&para;</a></h3>
+<h3 id="corrections">Corrections<a class="headerlink" href="#corrections" title="Permanent link">§</a></h3>
 <p>It is a good idea to double check the library locations given by the
 tool are correct: do an <code>ls</code> and make sure the directory exists and
 contains the libraries. In the past there have been slight path

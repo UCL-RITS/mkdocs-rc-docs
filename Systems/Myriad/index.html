@@ -1376,13 +1376,13 @@
                   <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Systems/Myriad.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="myriad">Myriad<a class="headerlink" href="#myriad" title="Permanent link">&para;</a></h1>
+                <h1 id="myriad">Myriad<a class="headerlink" href="#myriad" title="Permanent link">§</a></h1>
 <p>Myriad is designed for high I/O, high throughput jobs that will run
 within a single node rather than multi-node parallel jobs.</p>
-<h2 id="accounts">Accounts<a class="headerlink" href="#accounts" title="Permanent link">&para;</a></h2>
+<h2 id="accounts">Accounts<a class="headerlink" href="#accounts" title="Permanent link">§</a></h2>
 <p>Myriad accounts can be applied for via the <a href="Accounts.md">Research Computing sign up process</a>.</p>
 <p>As Myriad is our most general-purpose system, everyone who signs up for a Research Computing account is given access to Myriad.</p>
-<h2 id="logging-in">Logging in<a class="headerlink" href="#logging-in" title="Permanent link">&para;</a></h2>
+<h2 id="logging-in">Logging in<a class="headerlink" href="#logging-in" title="Permanent link">§</a></h2>
 <p>You will use your UCL username and password to ssh in to Myriad.</p>
 <div class="codehilite"><pre><span></span>ssh uccaxxx@myriad.rc.ucl.ac.uk
 </pre></div>
@@ -1394,7 +1394,7 @@ in, eg. <code>uccaxxx</code>. When entering your password in PuTTY no characters
 bulletpoints will show on screen - this is normal.</p>
 <p>If you are outside the UCL firewall you will need to follow the
 instructions for <a href="Accessing_RC_Systems.md">accessing services from outside UCL</a>.</p>
-<h3 id="logging-in-to-a-specific-node">Logging in to a specific node<a class="headerlink" href="#logging-in-to-a-specific-node" title="Permanent link">&para;</a></h3>
+<h3 id="logging-in-to-a-specific-node">Logging in to a specific node<a class="headerlink" href="#logging-in-to-a-specific-node" title="Permanent link">§</a></h3>
 <p>You can access a specific Myriad login node with: </p>
 <div class="codehilite"><pre><span></span>ssh uccaxxx@login12.myriad.rc.ucl.ac.uk
 ssh uccaxxx@login13.myriad.rc.ucl.ac.uk
@@ -1402,10 +1402,10 @@ ssh uccaxxx@login13.myriad.rc.ucl.ac.uk
 
 
 <p>The main address will redirect you on to either one of them.</p>
-<h2 id="copying-data-onto-myriad">Copying data onto Myriad<a class="headerlink" href="#copying-data-onto-myriad" title="Permanent link">&para;</a></h2>
+<h2 id="copying-data-onto-myriad">Copying data onto Myriad<a class="headerlink" href="#copying-data-onto-myriad" title="Permanent link">§</a></h2>
 <p>You will need to use an SCP or SFTP client to copy data onto Myriad.
 Please refer to the page on <a href="Managing_Data.md">Managing Data on RC Systems</a>.</p>
-<h2 id="quotas">Quotas<a class="headerlink" href="#quotas" title="Permanent link">&para;</a></h2>
+<h2 id="quotas">Quotas<a class="headerlink" href="#quotas" title="Permanent link">§</a></h2>
 <p>The default quotas on Myriad are 150GB for home and 1TB for Scratch.</p>
 <p>These are hard quotas: once you reach them, you will no longer be able
 to write more data. Keep an eye on them, as this will cause jobs to fail
@@ -1427,7 +1427,7 @@ uccaxxx       1024GB          0GB        0.00% /scratc
 <p>You can apply for quota increases using the form at <a href="Additional_Resource_Requests.md">Additional Resource Requests</a>.</p>
 <p>Here are some tips for <a href="Managing_Data_on_RC_Systems#Managing_your_quota">managing your quota</a> and
 finding where space is being used.</p>
-<h2 id="job-sizes">Job sizes<a class="headerlink" href="#job-sizes" title="Permanent link">&para;</a></h2>
+<h2 id="job-sizes">Job sizes<a class="headerlink" href="#job-sizes" title="Permanent link">§</a></h2>
 <table>
 <thead>
 <tr>
@@ -1448,7 +1448,7 @@ finding where space is being used.</p>
 </table>
 <p><a href="Interactive_Jobs.md">Interactive jobs</a> run with <code>qrsh</code> have a
 maximum wallclock time of 2 hours.</p>
-<h2 id="node-types">Node types<a class="headerlink" href="#node-types" title="Permanent link">&para;</a></h2>
+<h2 id="node-types">Node types<a class="headerlink" href="#node-types" title="Permanent link">§</a></h2>
 <p>Myriad contains three node types: standard compute nodes, high memory
 nodes and GPU nodes.</p>
 <table>
@@ -1483,7 +1483,7 @@ nodes and GPU nodes.</p>
 </table>
 <p>You can tell the type of a node by its name: type H nodes are named
 <code>node-h00a-001</code> etc.</p>
-<h2 id="gpus">GPUs<a class="headerlink" href="#gpus" title="Permanent link">&para;</a></h2>
+<h2 id="gpus">GPUs<a class="headerlink" href="#gpus" title="Permanent link">§</a></h2>
 <p>Myriad has two GPU nodes, each with two nVidia Tesla P100s.</p>
 <p>You can request one or two GPUs by adding them as a resource request to your jobscript: </p>
 <div class="codehilite"><pre><span></span># For 1 GPU
@@ -1495,7 +1495,7 @@ nodes and GPU nodes.</p>
 
 
 <p>The <a href="GPU_Nodes.md">GPU nodes</a> page has some sample code for running GPU jobs if you need a test example.</p>
-<h3 id="tensorflow">Tensorflow<a class="headerlink" href="#tensorflow" title="Permanent link">&para;</a></h3>
+<h3 id="tensorflow">Tensorflow<a class="headerlink" href="#tensorflow" title="Permanent link">§</a></h3>
 <p>Tensorflow is installed: type <code>module avail tensorflow</code> to see the
 available versions.</p>
 <p>Modules to load for the non-MKL GPU version: </p>

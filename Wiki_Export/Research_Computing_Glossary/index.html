@@ -1446,63 +1446,63 @@
                 
                   <h1>Research Computing Glossary</h1>
                 
-                <h2 id="bash">Bash<a class="headerlink" href="#bash" title="Permanent link">&para;</a></h2>
+                <h2 id="bash">Bash<a class="headerlink" href="#bash" title="Permanent link">§</a></h2>
 <p>A <a href="#shell">shell</a> and <a href="#script">scripting</a> language, which is the default
 command processor on most Linux operating systems.</p>
-<h2 id="cluster">Cluster<a class="headerlink" href="#cluster" title="Permanent link">&para;</a></h2>
+<h2 id="cluster">Cluster<a class="headerlink" href="#cluster" title="Permanent link">§</a></h2>
 <p>A cluster consists of a set of computer <a href="#node">nodes</a>
 connected together over a fast local area network. A message passing
 protocol such as <a href="#mpi">MPI</a> allows individual nodes to
 work together as a single system.</p>
-<h2 id="core">Core<a class="headerlink" href="#core" title="Permanent link">&para;</a></h2>
+<h2 id="core">Core<a class="headerlink" href="#core" title="Permanent link">§</a></h2>
 <p>A core refers to a processing unit within a <a href="#node">node</a>. A node may have multiple cores which can
 work in parallel on a single task, operating on the same data in
 memory. This kind of parallelism is coordinated using the <a href="#openmp">OpenMP</a> library. Alternatively, cores may work
 independently on different tasks. Cores may or may not also share
 cache.</p>
-<h2 id="interconnect">Interconnect<a class="headerlink" href="#interconnect" title="Permanent link">&para;</a></h2>
+<h2 id="interconnect">Interconnect<a class="headerlink" href="#interconnect" title="Permanent link">§</a></h2>
 <p>The interconnect is the network which is used to transfer data
 between <a href="#node">nodes</a> in a <a href="#cluster">cluster</a>. Different types of interconnect
 operate at different bandwidths and with different amounts of latency, which affects the
 suitability of a collection of nodes for jobs which use message
 passing (<a href="#mpi">MPI</a>).</p>
-<h2 id="job">Job<a class="headerlink" href="#job" title="Permanent link">&para;</a></h2>
+<h2 id="job">Job<a class="headerlink" href="#job" title="Permanent link">§</a></h2>
 <p>In the context of <a href="Batch Processing">Batch Processing</a>, a job refers to a
 computational task to be performed such as a single simulation or
 analysis.</p>
-<h2 id="job-script">Job Script<a class="headerlink" href="#job-script" title="Permanent link">&para;</a></h2>
+<h2 id="job-script">Job Script<a class="headerlink" href="#job-script" title="Permanent link">§</a></h2>
 <p>A job script is essentially a special kind of <a href="#script">script</a> used to specify the parameters of a job.
 Users can specify the data to input, program to use, and the
 computing resources required. The job script is specified when a job
 is submitted to SGE, which reads lines starting with <code>#$</code>.</p>
-<h2 id="mpi">MPI<a class="headerlink" href="#mpi" title="Permanent link">&para;</a></h2>
+<h2 id="mpi">MPI<a class="headerlink" href="#mpi" title="Permanent link">§</a></h2>
 <p>The Message Passing Interface (MPI) system is a set of portable
 libraries which can be incorporated into programs in order to
 control parallel computation. Specifically it coordinates effort
 between <a href="#node">nodes</a> which do not share the same
 memory address space cf. <a href="#openmp">OpenMP</a>.</p>
-<h2 id="node">Node<a class="headerlink" href="#node" title="Permanent link">&para;</a></h2>
+<h2 id="node">Node<a class="headerlink" href="#node" title="Permanent link">§</a></h2>
 <p>In cluster computing, a node refers to a computational unit which is
 capable of operating independently of other parts of the cluster. As
 a minimum it consists of one (or more) processing <a href="#core">cores</a>, has its own memory, and runs its own
 operating system.</p>
-<h2 id="openmp">OpenMP<a class="headerlink" href="#openmp" title="Permanent link">&para;</a></h2>
+<h2 id="openmp">OpenMP<a class="headerlink" href="#openmp" title="Permanent link">§</a></h2>
 <p>Open Multi-Processing. OpenMP supports multithreading, a process
 whereby a master <a href="#thread">thread</a> generates a number of
 slave threads to run a task which is divided among them. OpenMP
 applies to processes running on shared memory platforms, i.e. 
 <a href="#job">jobs</a> running on a single <a href="#node">node</a>. Hybrid applications may make use of both
 OpenMP and <a href="#mpi">MPI</a>.</p>
-<h2 id="process">Process<a class="headerlink" href="#process" title="Permanent link">&para;</a></h2>
+<h2 id="process">Process<a class="headerlink" href="#process" title="Permanent link">§</a></h2>
 <p>A process is a single instance of a program that is running on a
 computer. A single process may consist of many <a href="#thread">threads</a> acting concurrently, and there may
 multiple instances of a program running as separate processes.</p>
-<h2 id="script">Script<a class="headerlink" href="#script" title="Permanent link">&para;</a></h2>
+<h2 id="script">Script<a class="headerlink" href="#script" title="Permanent link">§</a></h2>
 <p>A <a href="#shell">shell</a> script enables users to list commands
 to be run consecutively by typing them into a text file instead of typing them out live. The first
 line of the script uses the <a href="#Shebang">shebang</a> notation <code>#!</code> to designate the
 scripting language interpreter program to be used to interpret the commands, e.g. <a href="#bash">bash</a>.</p>
-<h2 id="shebang">Shebang<a class="headerlink" href="#shebang" title="Permanent link">&para;</a></h2>
+<h2 id="shebang">Shebang<a class="headerlink" href="#shebang" title="Permanent link">§</a></h2>
 <p>"Shebang" is a common abbreviation for "hash-bang" -- the character sequence <code>#!</code> -- which is placed at
 the start of a <a href="#script">script</a> to specify the
 interpreter that should be used. When the shebang is found in the
@@ -1511,23 +1511,23 @@ line as the path to the required interpreter (e.g. <code>/bin/bash</code> is the
 usual path to the <a href="#bash">bash</a> shell). The specified
 interpreter is then run with the path to the script passed as an
 argument to it.</p>
-<h2 id="shell">Shell<a class="headerlink" href="#shell" title="Permanent link">&para;</a></h2>
+<h2 id="shell">Shell<a class="headerlink" href="#shell" title="Permanent link">§</a></h2>
 <p>A command line interpreter which provides an interface for users to
 type instructions to be interpreted by the operating system and
 display output via the monitor. Users type specific shell commands
 in order to run <a href="#process">processes</a>, e.g. <code>ls</code> to list
 directory contents.</p>
-<h2 id="son-of-grid-engine-sge-or-soge">Son of Grid Engine (SGE or SoGE)<a class="headerlink" href="#son-of-grid-engine-sge-or-soge" title="Permanent link">&para;</a></h2>
+<h2 id="son-of-grid-engine-sge-or-soge">Son of Grid Engine (SGE or SoGE)<a class="headerlink" href="#son-of-grid-engine-sge-or-soge" title="Permanent link">§</a></h2>
 <p>The queuing system used by many cluster computing systems (including, currently, all the ones we run)
 to organise and schedule <a href="#job">jobs</a>. Once jobs are submitted to SGE, it takes
 care of executing them when the required resources become available.
 Job priority is subject to the local fair use policy.</p>
-<h2 id="sun-grid-engine-sge">Sun Grid Engine (SGE)<a class="headerlink" href="#sun-grid-engine-sge" title="Permanent link">&para;</a></h2>
+<h2 id="sun-grid-engine-sge">Sun Grid Engine (SGE)<a class="headerlink" href="#sun-grid-engine-sge" title="Permanent link">§</a></h2>
 <p>The original software written by Sun Microsystems that was later modified to
 make Son of Grid Engine (among other products, like Univa Grid Engine).
 Documentation may refer to Sun Grid Engine instead of Son of Grid Engine, and
 for most user purposes, the terms are interchangeable.</p>
-<h2 id="thread">Thread<a class="headerlink" href="#thread" title="Permanent link">&para;</a></h2>
+<h2 id="thread">Thread<a class="headerlink" href="#thread" title="Permanent link">§</a></h2>
 <p>A thread refers to a serial computational process which can run on a
 single <a href="#core">core</a>. The number of threads generated by
 a parallel job may exceed the number of cores available though, in

@@ -1726,38 +1726,38 @@
                   <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/howto.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="how-do-i">How do I?<a class="headerlink" href="#how-do-i" title="Permanent link">&para;</a></h1>
+                <h1 id="how-do-i">How do I?<a class="headerlink" href="#how-do-i" title="Permanent link">§</a></h1>
 <p>I have an account, now:</p>
-<h2 id="how-do-i-log-in">How do I log in?<a class="headerlink" href="#how-do-i-log-in" title="Permanent link">&para;</a></h2>
+<h2 id="how-do-i-log-in">How do I log in?<a class="headerlink" href="#how-do-i-log-in" title="Permanent link">§</a></h2>
 <p>Logging in is most straightforward if you are inside the UCL firewall. If you are logging in from home or other external networks then you first have to <a href="#logging-in-from-outside-the-ucl-firewall">get on to the UCL network</a>.</p>
-<h3 id="linux-unix-mac-os-x">Linux / Unix / Mac OS X<a class="headerlink" href="#linux-unix-mac-os-x" title="Permanent link">&para;</a></h3>
+<h3 id="linux-unix-mac-os-x">Linux / Unix / Mac OS X<a class="headerlink" href="#linux-unix-mac-os-x" title="Permanent link">§</a></h3>
 <p>Use the terminal and type the below command to secure shell (ssh) into the machine you wish to access. Replace <code>&lt;your_UCL_user_id&gt;</code> with your central UCL username, and <code>&lt;system_name&gt;</code> with the name of the machine you want to log in to, eg. <code>legion</code>, <code>grace</code>, <code>aristotle</code>. </p>
 <div class="codehilite"><pre><span></span>ssh &lt;your_UCL_user_id&gt;@&lt;system_name&gt;.rc.ucl.ac.uk
 </pre></div>
 
 
-<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
+<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">§</a></h3>
 <p>On Windows you need something that will give you a suitable terminal and ssh - usually PuTTY, although you could also use Cygwin if you wanted a full Linux-like environment.</p>
-<h4 id="using-putty">Using PuTTY<a class="headerlink" href="#using-putty" title="Permanent link">&para;</a></h4>
+<h4 id="using-putty">Using PuTTY<a class="headerlink" href="#using-putty" title="Permanent link">§</a></h4>
 <p>PuTTY is a common SSH client on Windows and is available on Desktop@UCL. You can find it under: <code>Start &gt; All Programs &gt; Applications O-P &gt; PuTTY</code></p>
 <p>You will need to create an entry for the host you are connecting to with the settings below. If you want to save your settings, give them an easily-identifiable name in the "Saved Sessions" box and press "Save". Then you can select it and "Load" next time you use PuTTY. </p>
 <p><img alt="PuTTY screenshot" src="img/putty_gui.png" /></p>
 <p>In newer versions of PuTTY, it looks like this.</p>
 <p><em>TODO: new putty</em></p>
 <p>You will then be asked to enter your username and password. Only enter your username, not <code>@legion.rc.ucl.ac.uk</code>. The password field will remain entirely blank when you type in to it - it does not show placeholders to indicate you have typed something. </p>
-<h3 id="logging-in-from-outside-the-ucl-firewall">Logging in from outside the UCL firewall<a class="headerlink" href="#logging-in-from-outside-the-ucl-firewall" title="Permanent link">&para;</a></h3>
+<h3 id="logging-in-from-outside-the-ucl-firewall">Logging in from outside the UCL firewall<a class="headerlink" href="#logging-in-from-outside-the-ucl-firewall" title="Permanent link">§</a></h3>
 <p>You will need to either use the <a href="http://www.ucl.ac.uk/isd/staff/network/vpn">UCL Virtual Private Network</a> or ssh in to UCL's gateway <code>socrates.ucl.ac.uk</code> first. From Socrates you can then ssh in to our systems by typing <code>ssh &lt;your_UCL_user_id&gt;@&lt;system_name&gt;.rc.ucl.ac.uk</code>. </p>
 <p><strong>Advanced:</strong> If you find you need to go via Socrates often, you can set up this jump automatically, see <a href="#single-step-logins-using-tunnelling">Single-step logins using tunnelling</a></p>
-<h3 id="login-problems">Login problems<a class="headerlink" href="#login-problems" title="Permanent link">&para;</a></h3>
+<h3 id="login-problems">Login problems<a class="headerlink" href="#login-problems" title="Permanent link">§</a></h3>
 <p>If you experience difficulties with your login, please make sure that you are typing your UCL user ID and your password correctly. If you have recently updated your password, it takes some hours to propagate to all UCL systems.</p>
 <p>If you still cannot get access but can access other UCL services like Socrates, please contact us on rc-support@ucl.ac.uk. Your account may have expired, or you may have gone over quota.</p>
 <p>If you cannot access anything, please see UCL MyAccount - you may need to request a password reset from the Service Desk. </p>
 <p>If you get a host key error message, you will need to delete old host keys. <em>TODO: details</em></p>
-<h2 id="how-do-i-transfer-data-onto-the-system">How do I transfer data onto the system?<a class="headerlink" href="#how-do-i-transfer-data-onto-the-system" title="Permanent link">&para;</a></h2>
+<h2 id="how-do-i-transfer-data-onto-the-system">How do I transfer data onto the system?<a class="headerlink" href="#how-do-i-transfer-data-onto-the-system" title="Permanent link">§</a></h2>
 <p>You can transfer data to and from our systems using any program capable of using the Secure Copy (SCP) protocol. This uses the same SSH system as you use to log in to a command line session, but then transfers data over it. This means that if you can use SSH to connect to a system, you can usually use SCP to transfer files to it. </p>
-<h3 id="copying-files-using-linux-or-mac-os-x">Copying files using Linux or Mac OS X<a class="headerlink" href="#copying-files-using-linux-or-mac-os-x" title="Permanent link">&para;</a></h3>
+<h3 id="copying-files-using-linux-or-mac-os-x">Copying files using Linux or Mac OS X<a class="headerlink" href="#copying-files-using-linux-or-mac-os-x" title="Permanent link">§</a></h3>
 <p>You can use the command-line utilities scp, sftp or rsync to copy your data about. You can also use a graphical client (Transmit, CyberDuck, FileZilla).</p>
-<h4 id="scp">scp<a class="headerlink" href="#scp" title="Permanent link">&para;</a></h4>
+<h4 id="scp">scp<a class="headerlink" href="#scp" title="Permanent link">§</a></h4>
 <p>This will copy a data file from somewhere on your local machine to a specified location on the remote machine (Legion, Grace etc).</p>
 <div class="codehilite"><pre><span></span>scp &lt;local_data_file&gt; &lt;remote_user_id&gt;@&lt;remote_hostname&gt;:&lt;remote_path&gt;
 </pre></div>
@@ -1778,7 +1778,7 @@ scp ccxxxxx@legion.rc.ucl.ac.uk:~/Scratch/myfile Backups/
 </pre></div>
 
 
-<h4 id="sftp">sftp<a class="headerlink" href="#sftp" title="Permanent link">&para;</a></h4>
+<h4 id="sftp">sftp<a class="headerlink" href="#sftp" title="Permanent link">§</a></h4>
 <p>You can use sftp to log in to the remote machine, navigate through directories and use <code>put</code> and <code>get</code> to copy files from and to your local machine. <code>lcd</code> and <code>lls</code> are local equivalents of <code>cd</code> and <code>ls</code> so you can navigate through your local directories as you go. </p>
 <div class="codehilite"><pre><span></span>sftp &lt;remote_user_id&gt;@&lt;remote_hostname&gt;
 cd &lt;remote_path&gt;
@@ -1798,9 +1798,9 @@ put file2
 </pre></div>
 
 
-<h4 id="rsync">rsync<a class="headerlink" href="#rsync" title="Permanent link">&para;</a></h4>
+<h4 id="rsync">rsync<a class="headerlink" href="#rsync" title="Permanent link">§</a></h4>
 <p>Rsync is used to remotely synchronise directories, so can be used to only copy files which have changed. Have a look at <code>man rsync</code> as there are many options. </p>
-<h3 id="copying-files-using-windows-and-winscp">Copying files using Windows and WinSCP<a class="headerlink" href="#copying-files-using-windows-and-winscp" title="Permanent link">&para;</a></h3>
+<h3 id="copying-files-using-windows-and-winscp">Copying files using Windows and WinSCP<a class="headerlink" href="#copying-files-using-windows-and-winscp" title="Permanent link">§</a></h3>
 <p>WinSCP is a graphical client that you can use for scp or sftp.</p>
 <ol>
 <li>The login/create new session screen will open if this is the first time you are using WinSCP.</li>
@@ -1810,11 +1810,11 @@ put file2
 <li>You'll then be shown your list of Stored sessions, which will have the one you just created.</li>
 <li>Select the session and click Login.</li>
 </ol>
-<h3 id="transferring-files-from-outside-the-ucl-firewall">Transferring files from outside the UCL firewall<a class="headerlink" href="#transferring-files-from-outside-the-ucl-firewall" title="Permanent link">&para;</a></h3>
+<h3 id="transferring-files-from-outside-the-ucl-firewall">Transferring files from outside the UCL firewall<a class="headerlink" href="#transferring-files-from-outside-the-ucl-firewall" title="Permanent link">§</a></h3>
 <p>As when logging in, when you are outside the UCL firewall you will need a method to connect inside it before you copy files. (You do not want to be copying files on to Socrates and then on to our systems - this is slow, unnecessary, and it means you need space available on Socrates too).</p>
 <p>You can use the <a href="http://www.ucl.ac.uk/isd/staff/network/vpn">UCL Virtual Private Network</a> and scp direct to our systems or you can do some form of ssh tunnelling.</p>
-<h3 id="single-step-logins-using-tunnelling">Single-step logins using tunnelling<a class="headerlink" href="#single-step-logins-using-tunnelling" title="Permanent link">&para;</a></h3>
-<h4 id="linux-unix-mac-os-x_1">Linux / Unix / Mac OS X<a class="headerlink" href="#linux-unix-mac-os-x_1" title="Permanent link">&para;</a></h4>
+<h3 id="single-step-logins-using-tunnelling">Single-step logins using tunnelling<a class="headerlink" href="#single-step-logins-using-tunnelling" title="Permanent link">§</a></h3>
+<h4 id="linux-unix-mac-os-x_1">Linux / Unix / Mac OS X<a class="headerlink" href="#linux-unix-mac-os-x_1" title="Permanent link">§</a></h4>
 <p>Inside your <code>~/.ssh</code> directory on your local machine, add the below to your <code>config</code> file (or create a file called <code>config</code> if you don't already have one).</p>
 <p>Generically, it should be of this form where <code>&lt;name&gt;</code> can be anything you want to call this entry.</p>
 <div class="codehilite"><pre><span></span>Host &lt;name&gt;
@@ -1844,7 +1844,7 @@ Host aristotle
 
 
 <p>You can now just type <code>ssh legion</code> or <code>scp file1 aristotle:~</code> and you will go through Socrates. You'll be asked for login details twice since you're logging in to two machines, Socrates and your endpoint.  </p>
-<h4 id="windows-winscp">Windows - WinSCP<a class="headerlink" href="#windows-winscp" title="Permanent link">&para;</a></h4>
+<h4 id="windows-winscp">Windows - WinSCP<a class="headerlink" href="#windows-winscp" title="Permanent link">§</a></h4>
 <p>WinSCP can also set up SSH tunnels.</p>
 <ol>
 <li>Create a new session as before, and tick the Advanced options box in the bottom left corner.</li>
@@ -1855,17 +1855,17 @@ Host aristotle
 <li>Fill in your username and password for that host and set the file protocol to SCP.</li>
 <li>Save your settings with a useful name.</li>
 </ol>
-<h4 id="windows-putty">Windows - PuTTY<a class="headerlink" href="#windows-putty" title="Permanent link">&para;</a></h4>
+<h4 id="windows-putty">Windows - PuTTY<a class="headerlink" href="#windows-putty" title="Permanent link">§</a></h4>
 <p>You can use PuTTY for tunnelling when you just want a single-step login and not a file transfer.</p>
-<h3 id="managing-your-quota">Managing your quota<a class="headerlink" href="#managing-your-quota" title="Permanent link">&para;</a></h3>
-<h2 id="how-do-i-submit-a-job-to-the-scheduler">How do I submit a job to the scheduler?<a class="headerlink" href="#how-do-i-submit-a-job-to-the-scheduler" title="Permanent link">&para;</a></h2>
+<h3 id="managing-your-quota">Managing your quota<a class="headerlink" href="#managing-your-quota" title="Permanent link">§</a></h3>
+<h2 id="how-do-i-submit-a-job-to-the-scheduler">How do I submit a job to the scheduler?<a class="headerlink" href="#how-do-i-submit-a-job-to-the-scheduler" title="Permanent link">§</a></h2>
 <p>To submit a job to the scheduler you need to write a jobscript that contains the resources the job is asking for and the actual commands you want to run. This jobscript is then submitted using the <code>qsub</code> command.</p>
 <div class="codehilite"><pre><span></span>qsub myjobscript
 </pre></div>
 
 
 <p>It will be put in to the queue and will begin running on the compute nodes at some point later when it has been allocated resources.</p>
-<h3 id="passing-in-qsub-options-on-the-command-line">Passing in qsub options on the command line<a class="headerlink" href="#passing-in-qsub-options-on-the-command-line" title="Permanent link">&para;</a></h3>
+<h3 id="passing-in-qsub-options-on-the-command-line">Passing in qsub options on the command line<a class="headerlink" href="#passing-in-qsub-options-on-the-command-line" title="Permanent link">§</a></h3>
 <p>The <code>#$</code> lines in your jobscript are options to qsub. It will take each line which has <code>#$</code> as the first two characters and use the contents beyond that as an option. </p>
 <p>You can also pass options directly to the qsub command and this will override the settings in your script. This can be useful if you are scripting your job submissions in more complicated ways.</p>
 <p>For example, if you want to change the name of the job for this one instance of the job you can submit your script with:</p>
@@ -1890,15 +1890,15 @@ Host aristotle
 
 <p>That would restrict the job to running on nodes of type X, Y or Z (the older Legion nodes).</p>
 <p>Note that for debugging purposes, it helps us if you have these options inside your jobscript rather than passed in on the command line whenever possible. We (and you) can see the exact jobscript that was submitted for every job that ran but not what command line options you submitted it with.</p>
-<h3 id="checking-your-previous-jobscripts">Checking your previous jobscripts<a class="headerlink" href="#checking-your-previous-jobscripts" title="Permanent link">&para;</a></h3>
+<h3 id="checking-your-previous-jobscripts">Checking your previous jobscripts<a class="headerlink" href="#checking-your-previous-jobscripts" title="Permanent link">§</a></h3>
 <p>If you want to check what you submitted for a specific job ID, you can do it with the <code>scriptfor</code> utility.</p>
 <div class="codehilite"><pre><span></span>scriptfor 12345
 </pre></div>
 
 
 <p>As mentioned above, this will not show any command line options you passed in.</p>
-<h2 id="how-do-i-monitor-a-job">How do I monitor a job?<a class="headerlink" href="#how-do-i-monitor-a-job" title="Permanent link">&para;</a></h2>
-<h3 id="qstat">qstat<a class="headerlink" href="#qstat" title="Permanent link">&para;</a></h3>
+<h2 id="how-do-i-monitor-a-job">How do I monitor a job?<a class="headerlink" href="#how-do-i-monitor-a-job" title="Permanent link">§</a></h2>
+<h3 id="qstat">qstat<a class="headerlink" href="#qstat" title="Permanent link">§</a></h3>
 <p>The <code>qstat</code> command shows the status of your jobs. By default, if you run it with no options, it shows only your jobs (and no-one else’s). This makes it easier to keep track of your jobs. </p>
 <p>The output will look something like this:</p>
 <div class="codehilite"><pre><span></span>job-ID  prior   name       user         state submit/start at     queue                          slots ja-task-ID 
@@ -1916,7 +1916,7 @@ Host aristotle
 </pre></div>
 
 
-<h4 id="job-states">Job states<a class="headerlink" href="#job-states" title="Permanent link">&para;</a></h4>
+<h4 id="job-states">Job states<a class="headerlink" href="#job-states" title="Permanent link">§</a></h4>
 <p><code>qw</code>: queueing, waiting
  <code>r</code>: running
  <code>Rq</code>: a pre-job check on a node failed and this job was put back in the queue
@@ -1927,13 +1927,13 @@ Host aristotle
 <p>Many jobs cycling between <code>Rq</code> and <code>Rr</code> generally means there is a dodgy compute node which is failing pre-job checks, but is free so everything tries to run there. In this case, let us know and we will investigate. </p>
 <p>If a job stays in <code>t</code> or <code>dr</code> state for a long time, the node it was on is likely to be unresponsive - again let us know and we'll investigate.</p>
 <p>A job in <code>Eqw</code> will remain in that state until you delete it - you should first have a look at what the error was with <code>qexplain</code>.</p>
-<h3 id="qexplain">qexplain<a class="headerlink" href="#qexplain" title="Permanent link">&para;</a></h3>
+<h3 id="qexplain">qexplain<a class="headerlink" href="#qexplain" title="Permanent link">§</a></h3>
 <p>This is a utility to show you the non-truncated error reported by your job. <code>qstat -j</code> will show you a truncated version near the bottom of the output.</p>
 <div class="codehilite"><pre><span></span>qexplain 123454
 </pre></div>
 
 
-<h3 id="qdel">qdel<a class="headerlink" href="#qdel" title="Permanent link">&para;</a></h3>
+<h3 id="qdel">qdel<a class="headerlink" href="#qdel" title="Permanent link">§</a></h3>
 <p>You use <code>qdel</code> to delete a job from the queue.</p>
 <div class="codehilite"><pre><span></span>qdel 123454
 </pre></div>
@@ -1944,11 +1944,11 @@ Host aristotle
 </pre></div>
 
 
-<h3 id="more-scheduler-commands">More scheduler commands<a class="headerlink" href="#more-scheduler-commands" title="Permanent link">&para;</a></h3>
+<h3 id="more-scheduler-commands">More scheduler commands<a class="headerlink" href="#more-scheduler-commands" title="Permanent link">§</a></h3>
 <p>Have a look at <code>man qstat</code> and note the commands shown in the <code>SEE ALSO</code> section of the manual page. Exit the manual page and then look at the <code>man</code> pages for those. (You will not be able to run all commands).</p>
-<h3 id="nodesforjob">nodesforjob<a class="headerlink" href="#nodesforjob" title="Permanent link">&para;</a></h3>
+<h3 id="nodesforjob">nodesforjob<a class="headerlink" href="#nodesforjob" title="Permanent link">§</a></h3>
 <p>This is a utility that shows you the current </p>
-<h2 id="how-do-i-run-a-graphical-program">How do I run a graphical program?<a class="headerlink" href="#how-do-i-run-a-graphical-program" title="Permanent link">&para;</a></h2>
+<h2 id="how-do-i-run-a-graphical-program">How do I run a graphical program?<a class="headerlink" href="#how-do-i-run-a-graphical-program" title="Permanent link">§</a></h2>
                 
                   
                 

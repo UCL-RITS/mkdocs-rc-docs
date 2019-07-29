@@ -1390,13 +1390,13 @@
                 
                 <p>For information about requesting additional resources see
 <a href="Additional_Resource_Requests" title="wikilink">Additional Resource Requests</a>.</p>
-<h2 id="governance">Governance<a class="headerlink" href="#governance" title="Permanent link">&para;</a></h2>
+<h2 id="governance">Governance<a class="headerlink" href="#governance" title="Permanent link">§</a></h2>
 <p>Resource allocation policy for Research Computing services is determined by the
 <a href="http://www.ucl.ac.uk/isd/about/governance/research-it/crag">CRAG</a>,
 informed by the user community.</p>
 <p>The CRAG reports to the 
 <a href="http://www.ucl.ac.uk/isd/staff/research_services/governance/research-computing-group">Research Computing Governance Group</a>.</p>
-<h2 id="resource-allocation-on-legion">Resource Allocation on Legion<a class="headerlink" href="#resource-allocation-on-legion" title="Permanent link">&para;</a></h2>
+<h2 id="resource-allocation-on-legion">Resource Allocation on Legion<a class="headerlink" href="#resource-allocation-on-legion" title="Permanent link">§</a></h2>
 <p>Allocation of computational resources on the Legion cluster is based on
 a combination of job class, wait time and fairshare.</p>
 <p>Resource allocation is based on four features of job:</p>
@@ -1540,7 +1540,7 @@ There are three job types:</p>
 <li>X is under constant evaluation: Assumptions should not be made as to
     the value of X at any given time.</li>
 </ul>
-<h3 id="assignment-rules">Assignment rules<a class="headerlink" href="#assignment-rules" title="Permanent link">&para;</a></h3>
+<h3 id="assignment-rules">Assignment rules<a class="headerlink" href="#assignment-rules" title="Permanent link">§</a></h3>
 <p>The policy defined by the CRAG for scheduling jobs is based on the eight
 rules below:</p>
 <ol>
@@ -1566,7 +1566,7 @@ rules below:</p>
 <li>Any other resource matching will be done automatically by the
     scheduler to soonest available resource.</li>
 </ol>
-<h2 id="wallclock-times">Wallclock times<a class="headerlink" href="#wallclock-times" title="Permanent link">&para;</a></h2>
+<h2 id="wallclock-times">Wallclock times<a class="headerlink" href="#wallclock-times" title="Permanent link">§</a></h2>
 <p>Specific information related to wall-clock times and where jobs will run
 is summarised in the table
 below.</p>
@@ -1659,7 +1659,7 @@ assign resources for large jobs than for small ones. However, the higher
 priority assigned to large jobs should prevent smaller jobs from
 delaying them. Jobs that request 64 nodes or a little less may be
 delayed by the requirement to run within a computational unit.</p>
-<h2 id="estimating-resources-needed-by-your-job">Estimating resources needed by your job<a class="headerlink" href="#estimating-resources-needed-by-your-job" title="Permanent link">&para;</a></h2>
+<h2 id="estimating-resources-needed-by-your-job">Estimating resources needed by your job<a class="headerlink" href="#estimating-resources-needed-by-your-job" title="Permanent link">§</a></h2>
 <p>It can be difficult to know where to start when estimating the resources
 your job will need. One way you can find out what resources your jobs
 need is to submit one job which requests far more than you think
@@ -1685,7 +1685,7 @@ snapshot of the memory, swap and load on the nodes your job is running
 on. (But if your job is sharing nodes it will show you the total
 resources in use, not just those used by your job). Bear in mind that
 memory use can increase over time as your job runs.</p>
-<h2 id="memory-requests-must-be-integers">Memory requests must be integers<a class="headerlink" href="#memory-requests-must-be-integers" title="Permanent link">&para;</a></h2>
+<h2 id="memory-requests-must-be-integers">Memory requests must be integers<a class="headerlink" href="#memory-requests-must-be-integers" title="Permanent link">§</a></h2>
 <p>SoGE's memory specifiers are integers followed by a multiplier letter.
 Valid multiplier letters are k, K, m, M, g, G, t, and T, where k means
 multiply the value by 1000, K multiply by 1024, m multiply by 1000×1000,
@@ -1701,17 +1701,17 @@ counted in bytes.</p>
 
 
 <p>but you cannot ask for 1.5G.</p>
-<h2 id="resource-allocation-on-grace">Resource Allocation on Grace<a class="headerlink" href="#resource-allocation-on-grace" title="Permanent link">&para;</a></h2>
+<h2 id="resource-allocation-on-grace">Resource Allocation on Grace<a class="headerlink" href="#resource-allocation-on-grace" title="Permanent link">§</a></h2>
 <p>Grace is intended for parallel multi-node jobs requesting a minimum of
 32 cores.</p>
 <p>All nodes on Grace have 16 cores and 64G RAM. The maximum tmpfs that can
 be requested is 100G.</p>
-<h3 id="jobs-of-less-than-32-cores">Jobs of less than 32 cores<a class="headerlink" href="#jobs-of-less-than-32-cores" title="Permanent link">&para;</a></h3>
+<h3 id="jobs-of-less-than-32-cores">Jobs of less than 32 cores<a class="headerlink" href="#jobs-of-less-than-32-cores" title="Permanent link">§</a></h3>
 <p>Jobs of less than 32 cores will only run on two of the compute nodes and
 the maximum wallclock for those is 12hrs, intended for testing purposes.
 If people submit many jobs of that size, the queue for those two nodes
 will be long. These workloads should be run on <a href="Myriad">Myriad</a>.</p>
-<h3 id="wallclock-times_1">Wallclock times<a class="headerlink" href="#wallclock-times_1" title="Permanent link">&para;</a></h3>
+<h3 id="wallclock-times_1">Wallclock times<a class="headerlink" href="#wallclock-times_1" title="Permanent link">§</a></h3>
 <table>
 <thead>
 <tr>
@@ -1740,7 +1740,7 @@ will be long. These workloads should be run on <a href="Myriad">Myriad</a>.</p>
 </table>
 <p>You may have a very long queue time if you try to use the maximum job
 size...</p>
-<h2 id="priority-access-requests">Priority access requests<a class="headerlink" href="#priority-access-requests" title="Permanent link">&para;</a></h2>
+<h2 id="priority-access-requests">Priority access requests<a class="headerlink" href="#priority-access-requests" title="Permanent link">§</a></h2>
 <p>Requests to run jobs outside the above limits should be addressed to
 <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#99;&#45;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#117;&#99;&#108;&#46;&#97;&#99;&#46;&#117;&#107;">&#114;&#99;&#45;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#117;&#99;&#108;&#46;&#97;&#99;&#46;&#117;&#107;</a> for review (see <a href="Priority_Access">Priority Access</a>). A clear justification for
 the request must be included; where requests are made to run jobs for

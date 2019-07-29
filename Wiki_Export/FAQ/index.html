@@ -1408,10 +1408,10 @@
                   <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Wiki_Export/FAQ.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="frequently-asked-questions">Frequently-Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permanent link">&para;</a></h1>
+                <h1 id="frequently-asked-questions">Frequently-Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permanent link">§</a></h1>
 <p>This page attempts to address some of the topics we most frequently
 receive questions about, or to which the answers are most complex.</p>
-<h3 id="why-is-my-job-in-eqw-status">Why is my job in Eqw status?<a class="headerlink" href="#why-is-my-job-in-eqw-status" title="Permanent link">&para;</a></h3>
+<h3 id="why-is-my-job-in-eqw-status">Why is my job in Eqw status?<a class="headerlink" href="#why-is-my-job-in-eqw-status" title="Permanent link">§</a></h3>
 <p>If your job goes straight into Eqw state, there was an error in your
 jobscript that meant your job couldn't be started. The standard <code>qstat</code>
 job information command will give you a truncated version of the error:</p>
@@ -1434,7 +1434,7 @@ an error that it doesn't exist, load the <code>userscripts</code> module:</p>
 a file or directory your job is trying to use doesn't exist.
 Creating it after the job is in the <code>Eqw</code> state won't make the job
 run: it'll still have to be deleted and re-submitted.</p>
-<h3 id="unable-to-determine-job-requirements-error">"Unable to determine job requirements" error<a class="headerlink" href="#unable-to-determine-job-requirements-error" title="Permanent link">&para;</a></h3>
+<h3 id="unable-to-determine-job-requirements-error">"Unable to determine job requirements" error<a class="headerlink" href="#unable-to-determine-job-requirements-error" title="Permanent link">§</a></h3>
 <div class="codehilite"><pre><span></span>Unable to run job: Rejected by ucl_jsv4h Reason:Unable to determine job requirements.
 Exiting.
 </pre></div>
@@ -1444,13 +1444,13 @@ Exiting.
 space before them. This means SGE isn't picking them up and doesn't know
 what resources you are requesting. Add them or remove the spaces and it
 will work.</p>
-<h3 id="binbash-invalid-option-error">"/bin/bash: invalid option" error<a class="headerlink" href="#binbash-invalid-option-error" title="Permanent link">&para;</a></h3>
+<h3 id="binbash-invalid-option-error">"/bin/bash: invalid option" error<a class="headerlink" href="#binbash-invalid-option-error" title="Permanent link">§</a></h3>
 <p>This is a sign that your jobscript is a DOS-formatted text file and not
 a Unix one - the line break characters are different. Type <code>dos2unix
 &lt;yourscriptname&gt;</code> in your terminal to convert it.</p>
 <p>Sometimes the offending characters will be visible in the error. You can
 see here it's trying to parse <code>^M</code> as an option.</p>
-<h3 id="your-scratch-space-goes-missing">Your Scratch space goes missing<a class="headerlink" href="#your-scratch-space-goes-missing" title="Permanent link">&para;</a></h3>
+<h3 id="your-scratch-space-goes-missing">Your Scratch space goes missing<a class="headerlink" href="#your-scratch-space-goes-missing" title="Permanent link">§</a></h3>
 <p>You may have accidentally deleted or replaced the link to your Scratch
 space. Do an <code>ls -al</code> in your home - if set up correctly, it should look
 like this:</p>
@@ -1463,7 +1463,7 @@ like this:</p>
 </pre></div>
 
 
-<h3 id="which-mkl-library-files-should-i-use-to-build-my-application">Which MKL library files should I use to build my application?<a class="headerlink" href="#which-mkl-library-files-should-i-use-to-build-my-application" title="Permanent link">&para;</a></h3>
+<h3 id="which-mkl-library-files-should-i-use-to-build-my-application">Which MKL library files should I use to build my application?<a class="headerlink" href="#which-mkl-library-files-should-i-use-to-build-my-application" title="Permanent link">§</a></h3>
 <p>Depending on which whether you wish to use BLAS/LAPACK/ScaLAPACK/etc...
 there is a specific set of libraries that you need to pass to your
 compilation command line. Fortunately, Intel have released a tool that
@@ -1471,7 +1471,7 @@ allows you to determine which libraries to link and in which order for a
 number of compilers and operating systems:</p>
 <p><a href="http://software.intel.com/en-us/articles/intel-mkl-link-line-advisor/">http://software.intel.com/en-us/articles/intel-mkl-link-line-advisor/</a></p>
 <p>See also: <a href="MKL_on_Legion">MKL_on_Legion</a>.</p>
-<h3 id="ssh-known95hosts">SSH known_hosts<a class="headerlink" href="#ssh-known95hosts" title="Permanent link">&para;</a></h3>
+<h3 id="ssh-known95hosts">SSH known_hosts<a class="headerlink" href="#ssh-known95hosts" title="Permanent link">§</a></h3>
 <p>1. If you get a warning when connecting in via ssh, we may have updated the login nodes, and 
 you probably need to delete old host keys from your <code>~/.ssh/known_hosts</code>. You can also delete
 the whole file, and the <code>ssh</code> command will recreate it (asking you to check) next time you try to connect.</p>
@@ -1483,7 +1483,7 @@ indicate a problem.</p>
 </pre></div>
 
 
-<h3 id="ssh-unsupported-option-x-errors">"ssh: Unsupported option - -x" errors<a class="headerlink" href="#ssh-unsupported-option-x-errors" title="Permanent link">&para;</a></h3>
+<h3 id="ssh-unsupported-option-x-errors">"ssh: Unsupported option - -x" errors<a class="headerlink" href="#ssh-unsupported-option-x-errors" title="Permanent link">§</a></h3>
 <p>These errors indicate that you are attempting to use the QLogic version
 of mpirun in the OpenMPI parallel environment. It is likely you are
 doing this by accident and probably intend to use the OpenMPI mpirun but
@@ -1492,18 +1492,18 @@ do not have your modules configured correctly.</p>
 loaded in your .bashrc, or else in your job script before mpirun: 
 <strong>Note</strong>: the above assumes you are using the Intel
 compilers.</p>
-<h3 id="you-get-program-not-started-through-mpirun-exiting-but-are-using-mpirun33">You get "Program not started through mpirun. Exiting..." but are using mpirun!<a class="headerlink" href="#you-get-program-not-started-through-mpirun-exiting-but-are-using-mpirun33" title="Permanent link">&para;</a></h3>
+<h3 id="you-get-program-not-started-through-mpirun-exiting-but-are-using-mpirun33">You get "Program not started through mpirun. Exiting..." but are using mpirun!<a class="headerlink" href="#you-get-program-not-started-through-mpirun-exiting-but-are-using-mpirun33" title="Permanent link">§</a></h3>
 <p>This is most often caused by launching a program built with QLogic MPI
 with the mpirun from another MPI implementation (e.g. OpenMPI). You can
 determine which version of MPI your program was built with by running
 <code>ldd</code> on the application
 binary.</p>
-<h3 id="you-want-to-know-where-the-libraries-loaded-via-modules-system-are-on-disk">You want to know where the libraries loaded via modules system are on disk<a class="headerlink" href="#you-want-to-know-where-the-libraries-loaded-via-modules-system-are-on-disk" title="Permanent link">&para;</a></h3>
+<h3 id="you-want-to-know-where-the-libraries-loaded-via-modules-system-are-on-disk">You want to know where the libraries loaded via modules system are on disk<a class="headerlink" href="#you-want-to-know-where-the-libraries-loaded-via-modules-system-are-on-disk" title="Permanent link">§</a></h3>
 <p>Look at the contents of the default modules to find the path to those
 libraries on the current system. Look at the following command listing: 
 As you can see, the modules system sets the paths to libraries in
 environment variables which the system uses to locate files.</p>
-<h3 id="unable-to-run-job-jsv-stderr-perl-warning-setting-locale-failed">Unable to run job: JSV stderr: perl: warning: Setting locale failed.<a class="headerlink" href="#unable-to-run-job-jsv-stderr-perl-warning-setting-locale-failed" title="Permanent link">&para;</a></h3>
+<h3 id="unable-to-run-job-jsv-stderr-perl-warning-setting-locale-failed">Unable to run job: JSV stderr: perl: warning: Setting locale failed.<a class="headerlink" href="#unable-to-run-job-jsv-stderr-perl-warning-setting-locale-failed" title="Permanent link">§</a></h3>
 <p>This error is generally because your SSH client is passing LANG through
 as part of the SSH command, and is passing something that conflicts with
 what Legion has it set to. You may be more likely to come across this
@@ -1512,11 +1512,11 @@ look for an equivalent option.</p>
 <p>In Mac OS X Terminal, click Settings and under International untick the
 box that says "Set locale environment variables on startup".</p>
 <p>Per session, you can try <code>LANG=C ssh userid@legion.rc.ucl.ac.uk</code></p>
-<h3 id="why-cant-i-find-out-when-my-job-will-run">Why can't I find out when my job will run?<a class="headerlink" href="#why-cant-i-find-out-when-my-job-will-run" title="Permanent link">&para;</a></h3>
+<h3 id="why-cant-i-find-out-when-my-job-will-run">Why can't I find out when my job will run?<a class="headerlink" href="#why-cant-i-find-out-when-my-job-will-run" title="Permanent link">§</a></h3>
 <p>An informative discussion on this matter can be 
 found in the <a href="The_Scheduler">Scheduler</a> section 
 of the User Guide.</p>
-<h3 id="what-can-i-do-to-minimise-the-time-i-need-to-wait-for-my-jobs-to-run">What can I do to minimise the time I need to wait for my job(s) to run?<a class="headerlink" href="#what-can-i-do-to-minimise-the-time-i-need-to-wait-for-my-jobs-to-run" title="Permanent link">&para;</a></h3>
+<h3 id="what-can-i-do-to-minimise-the-time-i-need-to-wait-for-my-jobs-to-run">What can I do to minimise the time I need to wait for my job(s) to run?<a class="headerlink" href="#what-can-i-do-to-minimise-the-time-i-need-to-wait-for-my-jobs-to-run" title="Permanent link">§</a></h3>
 <ol>
 <li>Minimise the amount of wall clock time you request.</li>
 <li>Use job arrays instead of submitting large numbers of jobs (see our
@@ -1525,7 +1525,7 @@ of the User Guide.</p>
     being scheduled - the rule of thumb is that you will have to wait
     about twice the requested wall clock time (on average).</li>
 </ol>
-<h3 id="what-is-my-project-code-short-string-project-id">What is my project code (short string) / project ID?<a class="headerlink" href="#what-is-my-project-code-short-string-project-id" title="Permanent link">&para;</a></h3>
+<h3 id="what-is-my-project-code-short-string-project-id">What is my project code (short string) / project ID?<a class="headerlink" href="#what-is-my-project-code-short-string-project-id" title="Permanent link">§</a></h3>
 <p>Prior to July 2014, every user had a project code. Now all users belong
 to the default project "AllUsers" and no longer have to specify this. If
 you see older job script examples mentioning a project ID, you can

@@ -1442,7 +1442,7 @@
                   <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Wiki_Export/software/done/ANSYS.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="ansys-software">ANSYS Software<a class="headerlink" href="#ansys-software" title="Permanent link">&para;</a></h1>
+                <h1 id="ansys-software">ANSYS Software<a class="headerlink" href="#ansys-software" title="Permanent link">§</a></h1>
 <p>UCL has licenses for ANSYS/CFX and ANSYS/Fluent, and we try to keep the copies on our clusters up-to-date.</p>
 <p>Before either application can be run, the user needs to go though a
 number of set up steps. These are detailed here.</p>
@@ -1471,7 +1471,7 @@ X-windows functionality and the User Test nodes.</p>
 <p>Our current licence allows up to ten ANSYS/CFX and ANSYS/Fluent jobs
 running at one time using no more than 64 cores in addition to cores on
 each job's head node.</p>
-<h2 id="ansyscfx-job-submission">ANSYS/CFX Job Submission<a class="headerlink" href="#ansyscfx-job-submission" title="Permanent link">&para;</a></h2>
+<h2 id="ansyscfx-job-submission">ANSYS/CFX Job Submission<a class="headerlink" href="#ansyscfx-job-submission" title="Permanent link">§</a></h2>
 <p>On Legion, there are a limited number of licenses (10 jobs, additional
 64 cores) available for running CFX and Fluent jobs and in order to make
 sure that jobs only run if there are licenses available, it is necessary
@@ -1480,10 +1480,10 @@ app=cfx" to their job submission.</p>
 <p>In addition, because CFX handles its own parallelisation, a number of
 complex options need to be passed in job scripts to make it run
 correctly.</p>
-<h3 id="single-node-run">Single node run<a class="headerlink" href="#single-node-run" title="Permanent link">&para;</a></h3>
+<h3 id="single-node-run">Single node run<a class="headerlink" href="#single-node-run" title="Permanent link">§</a></h3>
 <p>Here is an example runscript for running cfx5solve multi-threaded on a
 given <code>.def</code> file including comments.</p>
-<h5 id="example-multi-threaded-ansyscfx-runscript">Example Multi-threaded ANSYS/CFX Runscript<a class="headerlink" href="#example-multi-threaded-ansyscfx-runscript" title="Permanent link">&para;</a></h5>
+<h5 id="example-multi-threaded-ansyscfx-runscript">Example Multi-threaded ANSYS/CFX Runscript<a class="headerlink" href="#example-multi-threaded-ansyscfx-runscript" title="Permanent link">§</a></h5>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -1588,10 +1588,10 @@ qsub command can be used to submit the job eg: </p>
 
 
 <p>Output files will be saved in the job's working directory.</p>
-<h3 id="multi-node-run">Multi node run<a class="headerlink" href="#multi-node-run" title="Permanent link">&para;</a></h3>
+<h3 id="multi-node-run">Multi node run<a class="headerlink" href="#multi-node-run" title="Permanent link">§</a></h3>
 <p>Here is an example runscript for running cfx5solve on more than one node
 (using MPI) on a given .def file including comments.</p>
-<h5 id="example-multi-nodempi-ansyscfx-runscript">Example Multi-node/MPI ANSYS/CFX Runscript<a class="headerlink" href="#example-multi-nodempi-ansyscfx-runscript" title="Permanent link">&para;</a></h5>
+<h5 id="example-multi-nodempi-ansyscfx-runscript">Example Multi-node/MPI ANSYS/CFX Runscript<a class="headerlink" href="#example-multi-nodempi-ansyscfx-runscript" title="Permanent link">§</a></h5>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -1706,7 +1706,7 @@ simplest form of qsub command can be used to submit the job eg:</p>
 
 
 <p>Output files will be saved in the job's working directory.</p>
-<h2 id="ansysfluent-job-submission">ANSYS/Fluent Job Submission<a class="headerlink" href="#ansysfluent-job-submission" title="Permanent link">&para;</a></h2>
+<h2 id="ansysfluent-job-submission">ANSYS/Fluent Job Submission<a class="headerlink" href="#ansysfluent-job-submission" title="Permanent link">§</a></h2>
 <p>On Legion, there are a limited number of licenses (10 jobs, additional
 64 cores) available for running CFX and Fluent jobs and in order to make
 sure that jobs only run if there are licenses available, it is necessary
@@ -1715,10 +1715,10 @@ for users to request ANSYS licenses with their jobs, by adding
 <p>In addition, because Fluent handles its own parallelisation, a number of
 complex options need to be passed in job scripts to make it run
 correctly.</p>
-<h3 id="serial-run">Serial Run<a class="headerlink" href="#serial-run" title="Permanent link">&para;</a></h3>
+<h3 id="serial-run">Serial Run<a class="headerlink" href="#serial-run" title="Permanent link">§</a></h3>
 <p>Here is an example runscript for running Fluent in serial mode (1 core)
 with comments.</p>
-<h5 id="example-serial-ansysfluent-runscript">Example Serial ANSYS/Fluent Runscript<a class="headerlink" href="#example-serial-ansysfluent-runscript" title="Permanent link">&para;</a></h5>
+<h5 id="example-serial-ansysfluent-runscript">Example Serial ANSYS/Fluent Runscript<a class="headerlink" href="#example-serial-ansysfluent-runscript" title="Permanent link">§</a></h5>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -1810,10 +1810,10 @@ simplest form of qsub command can be used to submit the job eg:</p>
 
 
 <p>Output files will be saved in the job's working directory.</p>
-<h3 id="parallel-run">Parallel Run<a class="headerlink" href="#parallel-run" title="Permanent link">&para;</a></h3>
+<h3 id="parallel-run">Parallel Run<a class="headerlink" href="#parallel-run" title="Permanent link">§</a></h3>
 <p>Here is an example runscript for running Fluent in parallel potentially
 across more than one node.</p>
-<h5 id="example-parallel-mpi-ansysfluent-runscript">Example Parallel (MPI) ANSYS/Fluent Runscript<a class="headerlink" href="#example-parallel-mpi-ansysfluent-runscript" title="Permanent link">&para;</a></h5>
+<h5 id="example-parallel-mpi-ansysfluent-runscript">Example Parallel (MPI) ANSYS/Fluent Runscript<a class="headerlink" href="#example-parallel-mpi-ansysfluent-runscript" title="Permanent link">§</a></h5>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3

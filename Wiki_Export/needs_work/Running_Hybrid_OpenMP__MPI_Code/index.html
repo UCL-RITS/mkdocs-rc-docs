@@ -1272,7 +1272,7 @@ then you have a number of challenges you need to think about. </p>
 Support for this in OpenMPI is still in development, and Intel MPI (the default on our systems) is recommended for this instead.</p>
 <p>This guide will give you are short walk-through of the process of
 writing, building and running a simple hybrid code on Legion.</p>
-<h2 id="set-up-modules">Set up modules<a class="headerlink" href="#set-up-modules" title="Permanent link">&para;</a></h2>
+<h2 id="set-up-modules">Set up modules<a class="headerlink" href="#set-up-modules" title="Permanent link">§</a></h2>
 <p>The default modules are correct - in case you have others loaded, these
 are what you need:</p>
 <div class="codehilite"><pre><span></span>module unload compilers mpi  
@@ -1289,7 +1289,7 @@ ifort version 15.0.2
 </pre></div>
 
 
-<h2 id="compile-the-code">Compile the code<a class="headerlink" href="#compile-the-code" title="Permanent link">&para;</a></h2>
+<h2 id="compile-the-code">Compile the code<a class="headerlink" href="#compile-the-code" title="Permanent link">§</a></h2>
 <p>To compile the code, you need to use the mpif90 compiler wrapper (or the
 C equivalent for your own C code) and pass it the -openmp option to
 enable the processing of OpenMP directives. Run:</p>
@@ -1299,7 +1299,7 @@ enable the processing of OpenMP directives. Run:</p>
 
 <p>This should produce a binary called "hybrid" in your current working
 directory.</p>
-<h2 id="submit-the-job">Submit the Job<a class="headerlink" href="#submit-the-job" title="Permanent link">&para;</a></h2>
+<h2 id="submit-the-job">Submit the Job<a class="headerlink" href="#submit-the-job" title="Permanent link">§</a></h2>
 <p>You will need to request the total number of cores you wish to use, and either set
 <code>$OMP_NUM_THREADS</code> for the number of OpenMP threads yourself, or allow it to be
 worked out automatically by setting it to <code>OMP_NUM_THREADS=$(ppn)</code>.

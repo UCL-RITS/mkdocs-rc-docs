@@ -1320,21 +1320,21 @@
                 
                 <p>X is a system and protocol that lets remote computers push interactive windows to your local computer over a network. We use a method known as X-Forwarding, together with an SSH client, to direct the network messages for X over the same connection you use for the command-line.</p>
 <p>The setup steps for getting this working on Windows, Linux, and macOS are each different, and we've put them below.</p>
-<h2 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h2>
+<h2 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">§</a></h2>
 <p>Windows doesn't natively have the ability to receive X windows, so you need to install an X server separately.</p>
 <p>There are a few choices; UCL has a site-wide license (covering UCL-owned and personal computers) for one called <a href="https://www.opentext.co.uk/products-and-solutions/products/specialty-technologies/connectivity/exceed">Exceed</a>, which is pretty reliable and seems to handle 3D content well, but there's also <a href="http://www.straightrunning.com/XmingNotes/">Xming</a>, which is free and open-source if that's a concern.</p>
 <p>Exceed is installed on all UCL's centrally-managed Windows computers.</p>
-<h3 id="installing-exceed">Installing Exceed<a class="headerlink" href="#installing-exceed" title="Permanent link">&para;</a></h3>
+<h3 id="installing-exceed">Installing Exceed<a class="headerlink" href="#installing-exceed" title="Permanent link">§</a></h3>
 <p>Exceed comes in two parts: the main package, and the add-on that handles certain types of rendered 3D content.</p>
 <p>You can download both parts from the <a href="http://swdb.ucl.ac.uk/package/view/id/150">Exceed page in the UCL Software Database</a>. First, install the main package, then the 3D package.</p>
-<h3 id="using-putty-with-exceed">Using PuTTY with Exceed<a class="headerlink" href="#using-putty-with-exceed" title="Permanent link">&para;</a></h3>
+<h3 id="using-putty-with-exceed">Using PuTTY with Exceed<a class="headerlink" href="#using-putty-with-exceed" title="Permanent link">§</a></h3>
 <p>When you run the Exceed program, it will automatically wait in the background until you run a remote application, so you only have to configure PuTTY to pass the data through.</p>
 <p>To do this, first fill in the details for your PuTTY connection as normal with the hostname and any other details you'd normally use to connect, and then, in the pane labelled "Category" on the left, click the "+" next to "SSH" and then select "X11".</p>
 <p>The main pane should change to one labelled "Options controlling SSH X11 forwarding". Check the box labelled "Enable X11 Forwarding".</p>
 <p>You can now click "Open" to start the connection, or you can return to the "Session" options to save this setup. </p>
-<h2 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h2>
+<h2 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">§</a></h2>
 <p>Like Windows, macOS doesn't come with an X server to receive X windows. The most commonly used X server for macOS is <a href="https://www.xquartz.org/">XQuartz</a>. If you download and install that, you can follow the Linux instructions below. When you connect with X-Forwarding enabled, the XQuartz server program should start automatically, ready to present remote windows.</p>
-<h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
+<h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">§</a></h2>
 <p>Almost all Linux versions that have a graphical desktop use an X server to provide it, so you don't have to install a separate one.</p>
 <p>You still have to set up your SSH client's connection to "tunnel" the X windows from the remote computer, though. You can do this by simply adding the <code>-X</code> option to your <code>ssh</code> command line, so for example to connect to Legion with X-Forwarding:</p>
 <div class="codehilite"><pre><span></span>ssh -X ccaaxyz@legion.rc.ucl.ac.uk
@@ -1352,7 +1352,7 @@
 <p class="admonition-title">Note</p>
 <p>This assumes you use a Linux distribution that uses Xorg as its display server. If your distribution uses Wayland instead, and you aren't sure how to make this work, please <a href="Contact_Us.md">contact us</a>, letting us know what version of which distribution you're using.</p>
 </div>
-<h2 id="checking-your-setup">Checking your Setup<a class="headerlink" href="#checking-your-setup" title="Permanent link">&para;</a></h2>
+<h2 id="checking-your-setup">Checking your Setup<a class="headerlink" href="#checking-your-setup" title="Permanent link">§</a></h2>
 <p>There are some simple programs on the system that use X, which can be used to check whether your setup is working correctly.</p>
 <ul>
 <li>

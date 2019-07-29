@@ -1392,18 +1392,18 @@
                   <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Wiki_Export/GPU_Nodes.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="gpu-nodes">GPU Nodes<a class="headerlink" href="#gpu-nodes" title="Permanent link">&para;</a></h1>
-<h2 id="node-types">Node Types<a class="headerlink" href="#node-types" title="Permanent link">&para;</a></h2>
+                <h1 id="gpu-nodes">GPU Nodes<a class="headerlink" href="#gpu-nodes" title="Permanent link">§</a></h1>
+<h2 id="node-types">Node Types<a class="headerlink" href="#node-types" title="Permanent link">§</a></h2>
 <p>You can view the hardware specifications for GPU node types on the <a href="../RC_Systems/">RC Systems Platforms Overview</a> page.</p>
 <p>There are GPU nodes available in Legion and Myriad.</p>
-<h3 id="legion-type-p-gpu-node">Legion Type P GPU node<a class="headerlink" href="#legion-type-p-gpu-node" title="Permanent link">&para;</a></h3>
+<h3 id="legion-type-p-gpu-node">Legion Type P GPU node<a class="headerlink" href="#legion-type-p-gpu-node" title="Permanent link">§</a></h3>
 <p>There is one NVIDIA K40c GPU node in Legion. To use this, you need to
 specify this in your jobscript or <a href="../Interactive_Jobs/">interactive qrsh request</a> (remove the <code>#$</code> for qrsh): </p>
 <div class="codehilite"><pre><span></span>#$ -l gpu=1
 </pre></div>
 
 
-<h3 id="myriad-type-j-gpu-nodes">Myriad Type J GPU nodes<a class="headerlink" href="#myriad-type-j-gpu-nodes" title="Permanent link">&para;</a></h3>
+<h3 id="myriad-type-j-gpu-nodes">Myriad Type J GPU nodes<a class="headerlink" href="#myriad-type-j-gpu-nodes" title="Permanent link">§</a></h3>
 <p>Myriad has two GPU nodes each with two NVIDIA Tesla P100s. To use them,
 you need to request one or two GPUs in your jobscript or <a href="Interactive Jobs">interactive
 qrsh request</a> (remove the <code>#$</code> for qrsh):</p>
@@ -1411,13 +1411,13 @@ qrsh request</a> (remove the <code>#$</code> for qrsh):</p>
 </pre></div>
 
 
-<h2 id="available-modules">Available modules<a class="headerlink" href="#available-modules" title="Permanent link">&para;</a></h2>
+<h2 id="available-modules">Available modules<a class="headerlink" href="#available-modules" title="Permanent link">§</a></h2>
 <p>You can see the available CUDA modules by typing</p>
 <div class="codehilite"><pre><span></span>`module avail cuda`
 </pre></div>
 
 
-<h2 id="sample-cuda-code">Sample CUDA code<a class="headerlink" href="#sample-cuda-code" title="Permanent link">&para;</a></h2>
+<h2 id="sample-cuda-code">Sample CUDA code<a class="headerlink" href="#sample-cuda-code" title="Permanent link">§</a></h2>
 <p>There are samples in the CUDA install locations, e.g. </p>
 <div class="codehilite"><pre><span></span>/shared/ucl/apps/cuda/7.5.18/gnu-4.9.2/samples
 /shared/ucl/apps/cuda/8.0.61/gnu-4.9.2/samples
@@ -1426,7 +1426,7 @@ qrsh request</a> (remove the <code>#$</code> for qrsh):</p>
 
 <p>which are further documented <a href="http://docs.nvidia.com/cuda/cuda-samples/index.html">by NVIDIA here</a>. In general,
 you should look at their CUDA docs: <a href="http://docs.nvidia.com/cuda/">http://docs.nvidia.com/cuda/</a></p>
-<h2 id="sample-jobscripts">Sample jobscripts<a class="headerlink" href="#sample-jobscripts" title="Permanent link">&para;</a></h2>
+<h2 id="sample-jobscripts">Sample jobscripts<a class="headerlink" href="#sample-jobscripts" title="Permanent link">§</a></h2>
 <p>You can see <a href="Example Scripts">sample jobscripts here</a>.</p>
 <p>Use this in your script to request up to 2 GPUs. </p>
 <div class="codehilite"><pre><span></span>`#$ -l gpu=2`
@@ -1440,7 +1440,7 @@ module load cuda/7.5.18/gnu-4.9.2
 </pre></div>
 
 
-<h2 id="running-the-sample-code">Running the sample code<a class="headerlink" href="#running-the-sample-code" title="Permanent link">&para;</a></h2>
+<h2 id="running-the-sample-code">Running the sample code<a class="headerlink" href="#running-the-sample-code" title="Permanent link">§</a></h2>
 <p>To get started, here's how you would compile and run one of the cuda
 samples interactively on a user test node using a GPU.</p>
 <p>1. Load the cuda module </p>
@@ -1496,12 +1496,12 @@ Test Succeeded!
 </pre></div>
 
 
-<h2 id="building-your-own-code">Building your own code<a class="headerlink" href="#building-your-own-code" title="Permanent link">&para;</a></h2>
+<h2 id="building-your-own-code">Building your own code<a class="headerlink" href="#building-your-own-code" title="Permanent link">§</a></h2>
 <p>Please note: if the code you are trying to compile needs to link
 libcuda, it must also be built on a GPU node because only the GPU node
 has the correct libraries.</p>
 <p>The NVIDIA examples don't require this, but things like Tensorflow do.</p>
-<h2 id="tensorflow">Tensorflow<a class="headerlink" href="#tensorflow" title="Permanent link">&para;</a></h2>
+<h2 id="tensorflow">Tensorflow<a class="headerlink" href="#tensorflow" title="Permanent link">§</a></h2>
 <p>Tensorflow is installed: type <code>module avail tensorflow</code> to see the
 available versions.</p>
 <p>Modules to load for the non-MKL GPU version: </p>
@@ -1514,11 +1514,11 @@ module load tensorflow/1.4.1/gpu
 </pre></div>
 
 
-<h2 id="using-mpi-and-gpus">Using MPI and GPUs<a class="headerlink" href="#using-mpi-and-gpus" title="Permanent link">&para;</a></h2>
+<h2 id="using-mpi-and-gpus">Using MPI and GPUs<a class="headerlink" href="#using-mpi-and-gpus" title="Permanent link">§</a></h2>
 <p>It is possible to run MPI programs that use GPUs but only within a
 single node, so you can request 1 GPU and 12 processor cores on Legion, or up to 2
 GPUs and 36 cores on Myriad.</p>
-<h2 id="looking-for-more-gpus">Looking for more GPUs?<a class="headerlink" href="#looking-for-more-gpus" title="Permanent link">&para;</a></h2>
+<h2 id="looking-for-more-gpus">Looking for more GPUs?<a class="headerlink" href="#looking-for-more-gpus" title="Permanent link">§</a></h2>
 <ul>
 <li><a href="GPU_clusters">GPU clusters available to UCL users</a>.</li>
 </ul>
