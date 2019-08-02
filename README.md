@@ -27,6 +27,28 @@ The installation of MkDocs uses the Material theme and several Markdown extensio
  - [CodeHiLite](https://squidfunk.github.io/mkdocs-material/extensions/codehilite/) -- uses Pygments for syntax-highlighting instead of JavaScript
  - [Permalinks](https://squidfunk.github.io/mkdocs-material/extensions/permalinks/) -- inserts anchors for all headings
 
+## Running the MkDocs Server Locally
+
+You can run a local MkDocs server on your own machine if you want to see how things look while you're working on them, rather than relying on them being pushed to the server and waiting for them to be rendered by the automatic pipeline.
+
+To do this, create a virtualenv with MkDocs and the skin we use:
+
+```
+$ python -m venv env
+$ source env/bin/activate
+$ pip install mkdocs mkdocs-material
+[...]
+Successfully installed Jinja2-2.10.1 Markdown-3.1.1 MarkupSafe-1.1.1 PyYAML-5.1.2 Pygments-2.4.2 click-7.0 htmlmin-0.1.12 jsmin-2.2.2 livereload-2.6.1 mkdocs-1.0.4 mkdocs-material-4.4.0 mkdocs-minify-plugin-0.2.1 pymdown-extensions-6.0 six-1.12.0 tornado-6.0.3
+
+# Then change into the directory with the mkdocs.yml file in.
+$ cd mkdocs-project-dir
+$ mkdocs serve
+INFO    -  Building documentation... 
+INFO    -  Cleaning site directory 
+[...a bunch of linking warnings, probably...]
+[I 190802 16:48:43 server:296] Serving on http://127.0.0.1:8000
+```
+
 ## Initial Conversion Notes
 
 The conversion process from MediaWiki markup to Markdown did not go very well. There were two main classes of problem:
