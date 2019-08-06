@@ -1,3 +1,7 @@
+---
+title: Services-For-Me
+layout: docs
+---
 
 # Which service(s) at UCL are right for me?
 
