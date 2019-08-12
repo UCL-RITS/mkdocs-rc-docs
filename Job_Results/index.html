@@ -256,9 +256,45 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Where do my results go?
+      </label>
+    
     <a href="./" title="Where do my results go?" class="md-nav__link md-nav__link--active">
       Where do my results go?
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#output-and-error-files" title="Output and error files" class="md-nav__link">
+    Output and error files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grid-engine-mailing-system" title="Grid engine mailing system" class="md-nav__link">
+    Grid engine mailing system
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -1192,6 +1228,29 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#output-and-error-files" title="Output and error files" class="md-nav__link">
+    Output and error files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grid-engine-mailing-system" title="Grid engine mailing system" class="md-nav__link">
+    Grid engine mailing system
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1206,7 +1265,10 @@
                 
                 
                 <h1 id="where-do-my-results-go">Where do my results go?<a class="headerlink" href="#where-do-my-results-go" title="Permanent link">§</a></h1>
-<p>After submitting your job you can use the command 'qstat' to view the status of the job you have submitted. Once you can no longer see your job on the qstat list this means your job has completed. You can find your .o and .e files in your specified directory in you job script to any errors or output from your job.</p>
+<p>After submitting your job you can use the command 'qstat' to view the status of the job you have submitted. Once you can no longer see your job on the qstat list this means your job has completed to view the jobs that have completed you can run 'jobhist'. </p>
+<h2 id="output-and-error-files">Output and error files<a class="headerlink" href="#output-and-error-files" title="Permanent link">§</a></h2>
+<p>When writing up your job script you specifiy your working directory, within this working directory you can find your output(.o) and error(.e) files. These files will contain any possible error your jobs may have come across or any output that was excepted from your job.</p>
+<h2 id="grid-engine-mailing-system">Grid engine mailing system<a class="headerlink" href="#grid-engine-mailing-system" title="Permanent link">§</a></h2>
                 
                   
                 
