@@ -1,5 +1,5 @@
 ---
-title: UCL-Service-For-Me
+title: UCL Service For Me
 layout: docs
 ---
 
