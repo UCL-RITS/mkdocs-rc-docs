@@ -18,5 +18,7 @@ Depending on the type of jobs you would like to run each cluster can have differ
     At least one GPGPU
     At least ten GPGPUs
     
-### Myriad
-### Grace
+Each cluster has it's own specifications for the types of jobs that they run depedning on whether they are signole core jobs or parallel jobs. The cluster machines we have available are:
+
+[Myriad]()
+[Grace]()
