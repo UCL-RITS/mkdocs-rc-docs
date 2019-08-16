@@ -9,26 +9,26 @@ We maintain a large software stack that is available across all our clusters (li
 
 We use environment modules to let you manage which specific versions of software packages you are using. 
 
-# General use of environment modules
+## General use of environment modules
 
 We have a default set of modules that everyone has loaded when they log in: these include the current default compiler and MPI, some utili
 ties to make your life easier and some text editors.
 
-## Summary of module commands
+### Summary of module commands
 ```
-module avail		# shows available modules
-module whatis		# shows available modules with brief explanations
-module list		# shows your currently loaded modules
+module avail            # shows available modules
+module whatis           # shows available modules with brief explanations
+module list             # shows your currently loaded modules
 
-module load <module>	# load this module
-module unload <module>	# unload this module
-module purge		# unload all modules
+module load <module>    # load this module
+module unload <module>  # unload this module
+module purge            # unload all modules
 
-module show <module>	# Shows what the module requires and what it sets up
-module help <module>	# Shows a longer text description for the software
+module show <module>    # Shows what the module requires and what it sets up
+module help <module>    # Shows a longer text description for the software
 ```
 
-## Find out if a software package is installed and load it
+### Find out if a software package is installed and load it
 
 Generically, the way you find out if a piece of software is installed is to run
 ```
@@ -45,7 +45,7 @@ Once you have found the modules you want to load, it is good practice to refer t
 
 You may need to unload current modules in order to load some requirements (eg different compiler, different MPI).
 
-This example switches from having Intel compiler and MPI modules loaded, to GNU ones.
+This example switches from Intel compiler and MPI modules to GNU ones.
 ```
 module unload compilers mpi
 module load compilers/gnu/4.9.2
@@ -59,7 +59,7 @@ Once the module is loaded, you should have all the usual executables in your pat
 
 # Notes on how to run specific packages
 
-The packages below have slightly complex commands needed to run them, or different settings needed on our clusters. These are what should be added to your jobscripts.
+The packages below have slightly complex commands needed to run them, or different settings needed on our clusters. These are examples of what should be added to your jobscripts. Change the module load command to the version you want to load and check that the dependencies are the same.
 
 ## ABAQUS
 
@@ -84,7 +84,7 @@ CFD-SOLVER -model 3Dstepchannel_060414.DTF -num $NSLOTS -wd `pwd` -hosts $TMPDIR
 ```
 # Run a parallel COMSOL job
 
-# Versions 52 and 52s have this module prerequisite
+# Versions 52 and 52a have this module prerequisite
 module load xulrunner/3.6.28/gnu-4.9.2
 
 # pick the version to load
