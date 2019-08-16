@@ -292,9 +292,58 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Software
+      </label>
+    
     <a href="./" title="Software" class="md-nav__link md-nav__link--active">
       Software
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-use-of-environment-modules" title="General use of environment modules" class="md-nav__link">
+    General use of environment modules
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-module-commands" title="Summary of module commands" class="md-nav__link">
+    Summary of module commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-out-if-a-software-package-is-installed-and-load-it" title="Find out if a software package is installed and load it" class="md-nav__link">
+    Find out if a software package is installed and load it
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -1204,6 +1253,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-use-of-environment-modules" title="General use of environment modules" class="md-nav__link">
+    General use of environment modules
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-module-commands" title="Summary of module commands" class="md-nav__link">
+    Summary of module commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-out-if-a-software-package-is-installed-and-load-it" title="Find out if a software package is installed and load it" class="md-nav__link">
+    Find out if a software package is installed and load it
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1220,24 +1305,24 @@
                 <h1 id="software">Software<a class="headerlink" href="#software" title="Permanent link">§</a></h1>
 <p>We maintain a large software stack that is available across all our clusters (licenses permitting).</p>
 <p>We use environment modules to let you manage which specific versions of software packages you are using. </p>
-<h1 id="general-use-of-environment-modules">General use of environment modules<a class="headerlink" href="#general-use-of-environment-modules" title="Permanent link">§</a></h1>
+<h2 id="general-use-of-environment-modules">General use of environment modules<a class="headerlink" href="#general-use-of-environment-modules" title="Permanent link">§</a></h2>
 <p>We have a default set of modules that everyone has loaded when they log in: these include the current default compiler and MPI, some utili
 ties to make your life easier and some text editors.</p>
-<h2 id="summary-of-module-commands">Summary of module commands<a class="headerlink" href="#summary-of-module-commands" title="Permanent link">§</a></h2>
-<div class="codehilite"><pre><span></span>module avail        # shows available modules
-module whatis       # shows available modules with brief explanations
-module list     # shows your currently loaded modules
+<h3 id="summary-of-module-commands">Summary of module commands<a class="headerlink" href="#summary-of-module-commands" title="Permanent link">§</a></h3>
+<div class="codehilite"><pre><span></span>module avail            # shows available modules
+module whatis           # shows available modules with brief explanations
+module list             # shows your currently loaded modules
 
 module load &lt;module&gt;    # load this module
 module unload &lt;module&gt;  # unload this module
-module purge        # unload all modules
+module purge            # unload all modules
 
 module show &lt;module&gt;    # Shows what the module requires and what it sets up
 module help &lt;module&gt;    # Shows a longer text description for the software
 </pre></div>
 
 
-<h2 id="find-out-if-a-software-package-is-installed-and-load-it">Find out if a software package is installed and load it<a class="headerlink" href="#find-out-if-a-software-package-is-installed-and-load-it" title="Permanent link">§</a></h2>
+<h3 id="find-out-if-a-software-package-is-installed-and-load-it">Find out if a software package is installed and load it<a class="headerlink" href="#find-out-if-a-software-package-is-installed-and-load-it" title="Permanent link">§</a></h3>
 <p>Generically, the way you find out if a piece of software is installed is to run</p>
 <div class="codehilite"><pre><span></span>module avail packagename
 </pre></div>
@@ -1251,7 +1336,7 @@ module help &lt;module&gt;    # Shows a longer text description for the software
 <p>and it will show you the other software dependencies this module has: these have to be loaded first. It also shows where the software is installed and what environment variables it sets up.</p>
 <p>Once you have found the modules you want to load, it is good practice to refer to them using their full name, including the version. If you use the short form (<code>package</code> rather than <code>package/5.1.2/gnu-4.9.2</code>) then a matching module will be loaded, but if we install a different version, your jobs may begin using the new one and you would not know which version created your results. Different software versions may not be compatible or may have different default settings, so this is undesirable.</p>
 <p>You may need to unload current modules in order to load some requirements (eg different compiler, different MPI).</p>
-<p>This example switches from having Intel compiler and MPI modules loaded, to GNU ones.</p>
+<p>This example switches from Intel compiler and MPI modules to GNU ones.</p>
 <div class="codehilite"><pre><span></span>module unload compilers mpi
 module load compilers/gnu/4.9.2
 module load mpi/openmpi/3.1.4/gnu-4.9.2
@@ -1262,7 +1347,7 @@ module load mpi/openmpi/3.1.4/gnu-4.9.2
 <p>The last part of a module name usually tells you what compiler it was built with. There may be a GNU compiler version and an Intel compiler version of the same software available.</p>
 <p>Once the module is loaded, you should have all the usual executables in your path, and can use its commands. You load modules in exactly the same way inside a jobscript.</p>
 <h1 id="notes-on-how-to-run-specific-packages">Notes on how to run specific packages<a class="headerlink" href="#notes-on-how-to-run-specific-packages" title="Permanent link">§</a></h1>
-<p>The packages below have slightly complex commands needed to run them, or different settings needed on our clusters. These are what should be added to your jobscripts.</p>
+<p>The packages below have slightly complex commands needed to run them, or different settings needed on our clusters. These are examples of what should be added to your jobscripts. Change the module load command to the version you want to load and check that the dependencies are the same.</p>
 <h2 id="abaqus">ABAQUS<a class="headerlink" href="#abaqus" title="Permanent link">§</a></h2>
 <h2 id="beast">BEAST<a class="headerlink" href="#beast" title="Permanent link">§</a></h2>
 <h2 id="bowtie">Bowtie<a class="headerlink" href="#bowtie" title="Permanent link">§</a></h2>
@@ -1278,7 +1363,7 @@ CFD-SOLVER -model 3Dstepchannel_060414.DTF -num $NSLOTS -wd `pwd` -hosts $TMPDIR
 <h2 id="comsol">COMSOL<a class="headerlink" href="#comsol" title="Permanent link">§</a></h2>
 <div class="codehilite"><pre><span></span># Run a parallel COMSOL job
 
-# Versions 52 and 52s have this module prerequisite
+# Versions 52 and 52a have this module prerequisite
 module load xulrunner/3.6.28/gnu-4.9.2
 
 # pick the version to load
