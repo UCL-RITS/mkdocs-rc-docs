@@ -1969,9 +1969,12 @@ gerun castep.mpi input
 </pre></div>
 
 
-<p>If you have access to the source code and wish to build your own copy, it has been suggested that compiling with these options (on Grace) gave a build that ran about 10% faster than the default compilation options:
-<code>make COMMS_ARCH=mpi SUBARCH=mpi FFT=mkl MATHLIBS=mkl10 BUILD=fast</code>
-Do check for numerical accuracy with any optimisations you carry out.</p>
+<p>If you have access to the source code and wish to build your own copy, it has been suggested that compiling with these options (on Grace) gave a build that ran about 10% faster than the default compilation options:</p>
+<div class="codehilite"><pre><span></span>make COMMS_ARCH=mpi SUBARCH=mpi FFT=mkl MATHLIBS=mkl10 BUILD=fast
+</pre></div>
+
+
+<p>Do check for numerical accuracy with any optimisations you carry out.</p>
 <h3 id="cctools">Cctools<a class="headerlink" href="#cctools" title="Permanent link">§</a></h3>
 <p>By default, the cctools module sets the following:</p>
 <div class="codehilite"><pre><span></span>export PARROT_CVMFS_REPO=&lt;default-repositories&gt; 
@@ -1997,7 +2000,8 @@ exit
 <h3 id="cfd-ace">CFD-ACE<a class="headerlink" href="#cfd-ace" title="Permanent link">§</a></h3>
 <div class="codehilite"><pre><span></span>module load cfd-ace/2018.0
 
-CFD-SOLVER -model 3Dstepchannel_060414.DTF -num $NSLOTS -wd `pwd` -hosts $TMPDIR/machines -rsh=ssh -decomp -metis -sim 1 -platformmpi -job
+CFD-SOLVER -model 3Dstepchannel_060414.DTF -num $NSLOTS -wd `pwd` \ 
+   -hosts $TMPDIR/machines -rsh=ssh -decomp -metis -sim 1 -platformmpi -job
 </pre></div>
 
 
@@ -2014,10 +2018,12 @@ module load comsol/53a
 # $NHOSTS gets the number of nodes the job is running on and
 # $TMPDIR/machines is the machinefile that tells it which nodes.
 # These are automatically set up in a &quot;-pe mpi&quot; job environment.
-comsol -nn $NHOSTS -clustersimple batch -f $TMPDIR/machines -inputfile micromixer_batch.mph -outputfile micromixer_batch_output_${JOB_ID}.mph
+comsol -nn $NHOSTS -clustersimple batch -f $TMPDIR/machines -inputfile micromixer_batch.mph \ 
+       -outputfile micromixer_batch_output_${JOB_ID}.mph
 
 # On Myriad you need to specify the fabric:
-comsol batch -f $TMPDIR/machines -np $NSLOTS -mpifabrics shm:tcp -inputfile micromixer_batch.mph -outputfile micromixer_batch_output_${JOB_ID}.mph
+comsol batch -f $TMPDIR/machines -np $NSLOTS -mpifabrics shm:tcp \ 
+    -inputfile micromixer_batch.mph -outputfile micromixer_batch_output_${JOB_ID}.mph
 </pre></div>
 
 
@@ -2040,11 +2046,17 @@ module load submission-scripts
 
 <p>The command <code>submitters</code> will then list the submitters available.
 You can then run <code>cp2k.submit</code> which will ask you questions in order to create a suitable jobscript.</p>
-<p>The <code>cp2k.submit</code> submitter takes up to 6 arguments, and any omitted will be asked for interactively:
-<code>cp2k.submit «input_file» «cores» «version» «maximum_run_time» «memory_per_core» «job_name»</code></p>
-<p>So, for example:
-<code>cp2k.submit water.inp 8 4.1 2:00:00 4G mywatermolecule</code>
-would request a job running CP2K 4.1 with the input file <code>water.inp</code>, on 8 cores, with a maximum runtime of 2 hours, with 4 gigabytes of memory per core, and a job name of <code>mywatermolecule</code>. </p>
+<p>The <code>cp2k.submit</code> submitter takes up to 6 arguments, and any omitted will be asked for interactively:</p>
+<div class="codehilite"><pre><span></span>cp2k.submit «input_file» «cores» «version» «maximum_run_time» «memory_per_core» «job_name»
+</pre></div>
+
+
+<p>So, for example:</p>
+<div class="codehilite"><pre><span></span>cp2k.submit water.inp 8 4.1 2:00:00 4G mywatermolecule
+</pre></div>
+
+
+<p>would request a job running CP2K 4.1 with the input file <code>water.inp</code>, on 8 cores, with a maximum runtime of 2 hours, with 4 gigabytes of memory per core, and a job name of <code>mywatermolecule</code>. </p>
 <h3 id="crystal">CRYSTAL<a class="headerlink" href="#crystal" title="Permanent link">§</a></h3>
 <p>CRYSTAL is commercial software which is available free of charge to UK academics. You must obtain a license from Crystal Solutions: <a href="http://www.crystalsolutions.eu/cat/crystal-cryscor/academic-uk">How to get CRYSTAL - Academic UK license</a>. You need to create an account and then request to be upgraded to Academic UK. Access to CRYSTAL is enabled by being a member of the reserved application group <code>legcryst</code>. For proof of access we accept emails from CRYSTAL saying your account has been upgraded to "Academic UK", or a screenshot of your account page showing you have the full download available rather than just the demo version. </p>
 <div class="codehilite"><pre><span></span>module unload mpi
@@ -2060,8 +2072,10 @@ cp ~/Scratch/Crystal17/test_cases/inputs/test00.d12 INPUT
 # processes to the amount you requested with -pe mpi.
 # The CRYSTAL module sets $CRYxx_EXEDIR and $VERSION environment variables.
 gerun $CRY17_EXEDIR/$VERSION/Pcrystal
+</pre></div>
 
-# Similarly, for Pproperties the command would be
+
+<div class="codehilite"><pre><span></span># Similarly, for Pproperties the command would be
 gerun $CRY17_EXEDIR/$VERSION/Pproperties
 </pre></div>
 
@@ -2097,11 +2111,20 @@ rungms exam01.inp 00 $NSLOTS $(ppn)
 <p>Version 4 of GATK is BSD-licensed so does not require a group to control access to the software. </p>
 <p>Version 3 of GATK requires you to agree to the GATK license before we can add you to the <code>leggatk</code> group which gives you access: you can do this by downloading GATK 3 from <a href="https://software.broadinstitute.org/gatk/download/">The Broad Institute GATK download page</a>, reading the license, and telling us you agree to it. You may need to create a gatkforums account before you can download.</p>
 <p>GATK 3 uses Java 1.7 (the system Java) so you do not need to load a Java module. GATK 4 uses 1.8 so you need to load <code>java/1.8.0_92</code> first.</p>
-<p>Load the version you want, then to run GATK you should either prefix the .jar you want to run with <code>$GATKPATH</code>:
-<code>java -Xmx2g -jar $GATKPATH/GenomeAnalysisTK.jar OPTION1=value1 OPTION2=value2...</code></p>
-<p>Or we provide wrappers, so you can run it one of these ways instead:
-<code>GenomeAnalysisTK OPTION1=value1 OPTION2=value2...</code>
-<code>gatk OPTION1=value1 OPTION2=value2...</code></p>
+<p>Load the version you want, then to run GATK you should either prefix the .jar you want to run with <code>$GATKPATH</code>:</p>
+<div class="codehilite"><pre><span></span>java -Xmx2g -jar $GATKPATH/GenomeAnalysisTK.jar OPTION1=value1 OPTION2=value2...
+</pre></div>
+
+
+<p>Or we provide wrappers, so you can run it one of these ways instead:</p>
+<div class="codehilite"><pre><span></span>GenomeAnalysisTK OPTION1=value1 OPTION2=value2...
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>gatk OPTION1=value1 OPTION2=value2...
+</pre></div>
+
+
 <h3 id="hammock">Hammock<a class="headerlink" href="#hammock" title="Permanent link">§</a></h3>
 <p>Hammock has to be installed in your own space to function, so we provide a hammock module that contains the main dependencies and creates a quick-install alias:</p>
 <div class="codehilite"><pre><span></span># on the login nodes
@@ -2111,7 +2134,7 @@ do-hammock-install
 </pre></div>
 
 
-<p>This will install Hammock 1.0.5 in your home, and edit settings.prop to use clustal-omega and hmmer from our modules and tell it to write temporary files in your Scratch directory (in the form <code>Hammock_temp_time</code>). </p>
+<p>This will install Hammock 1.0.5 in your home, edit settings.prop to use clustal-omega and hmmer from our modules and tell it to write temporary files in your Scratch directory (in the form <code>Hammock_temp_time</code>). </p>
 <div class="codehilite"><pre><span></span># in your jobscript
 module unload compilers
 module load hammock/1.0.5
@@ -2120,6 +2143,7 @@ module load hammock/1.0.5
 # directory and runs it. The module sets $HAMMOCKPATH for you. 
 # You must set the output directory to somewhere in Scratch with -d. 
 # Below makes a different outputdir per job so multiple runs don&#39;t overwrite files.
+
 cp $HAMMOCKPATH/../examples/MUSI/musi.fa .
 outputdir=~/Scratch/hammock-examples/musi_$JOB_ID
 mkdir -p $outputdir
