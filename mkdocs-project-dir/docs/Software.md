@@ -371,6 +371,7 @@ echo "Running java -jar $HAMMOCKPATH/Hammock.jar full -i musi.fa -d $outputdir"
 java -jar $HAMMOCKPATH/Hammock.jar full -i musi.fa -d $outputdir
 ```
 
+
 ### HOPSPACK
 
 HOPSPACK (Hybrid Optimization Parallel Search PACKage) solves derivative-free optimization problems using an open source, C++ software framework.
@@ -394,6 +395,7 @@ export PATH=$PATH:~/Scratch/examples/1-var-bnds-only/
 # processes to the amount you requested with -pe mpi.
 gerun HOPSPACK_main_mpi ~/Scratch/examples/1-var-bnds-only/example1_params.txt > example1_output.txt
 ```
+
 
 ### IDL
 
@@ -433,6 +435,7 @@ idl -queue -e @run2mp.pro
 # tar up all contents of $TMPDIR back into your space
 tar zcvf $HOME/Scratch/IDL_output/files_from_job_$JOB_ID.tgz $TMPDIR
 ```
+
 
 ### JAGS
 
@@ -506,18 +509,166 @@ module load mirdeep/2.0.0.7
 
 ### MISO/misopy
 
+MISO (Mixture of Isoforms) is a probabilistic framework that quantitates the expression level of alternatively spliced genes from RNA-Seq data, and identifies differentially regulated isoforms or exons across samples.
 
+misopy is available as part of the `python2/recommended` bundle. 
+
+MISO has an option to create and submit parallel jobs itself. If using this, you can copy miso_settings.txt as shown below and add the correct qsub options to the qsub command. 
+
+Settings files can be used with the `--settings-filename=SETTINGS_FILENAME` option. You need to put your module unload and load commands in your .bashrc if using `cluster_command`, because you are no longer passing them in the script.
+
+Example `miso_settings.txt`:
+```
+[data]
+filter_results = True
+min_event_reads = 20
+
+[cluster]
+cluster_command = "qsub -l h_rt=00:10:00 -l mem=1GB -wd ~/Scratch"
+
+[sampler]
+burn_in = 500
+lag = 10
+num_iters = 5000
+num_chains = 6
+num_processors = 4
+```
 
 
 ### MOLPRO
 
+Molpro is a complete system of ab initio programs for molecular electronic structure calculations. 
+
+Molpro 2015.1.3 was provided as binary only and supports communication over Ethernet and not Infiniband - use this one on single-node jobs primarily.
+
+Molpro 2015.1.5 was built from source with the Intel compilers and Intel MPI.
+
+```
+module load molpro/2015.1.5/intel-2015-update2
+
+# Example files available in /shared/ucl/apps/molpro/2015.1.5/intel-2015-update2/molprop_2015_1_linux_x86_64_i8/examples/
+# You need to set the wavefunction directory to somewhere in Scratch with -W.
+# $SGE_O_WORKDIR is what your job specified with -wd.
+# $NSLOTS will use the number of cores you requested with -pe mpi.
+
+echo "Running molpro -n $NSLOTS -W $SGE_O_WORKDIR h2o_scf.com"
+
+molpro -n $NSLOTS -W $SGE_O_WORKDIR h2o_scf.com
+```
+
+On Myriad, if you get this error, please use the binary 2015.1.3 install.
+```
+libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+```
+
+
 ### MRtrix
+
+MRtrix provides a set of tools to perform diffusion-weighted MRI white matter tractography in the presence of crossing fibres. 
+
+```
+module load python3/recommended
+module load qt/4.8.6/gnu-4.9.2
+module load eigen/3.2.5/gnu-4.9.2
+module load fftw/3.3.6-pl2/gnu-4.9.2
+module load mrtrix/3.0rc3/gnu-4.9.2/nogui
+```
+
+You must load these modules once from a login node before submitting a job. It copies a `.mrtrix.conf` to your home directory the first time you run this module from a login node, which sets:
+```
+  Analyse.LeftToRight: false
+  NumberOfThreads: 4
+```
+
+You need to alter `NumberOfThreads` to what you are using in your job script before you submit a job. 
+
+The MRtrix GUI tools are unavailable: `mrview` and `shview` in MRtrix 3 cannot be run over a remote X11 connection so are not usable on our clusters. To use these tools you will need a local install on your own computer. 
+
 
 ### MuTect
 
+MuTect is a tool developed at the Broad Institute for the reliable and accurate identification of somatic point mutations in next generation sequencing data of cancer genomes. It is built on top of the GenomeAnalysisToolkit (GATK), which is also developed at the Broad Institute, so it uses the same command-line conventions and (almost all) the same input and output file formats. 
+
+MuTect requires you to agree to the GATK license before we can add you to the `lgmutect` group which gives you access: you can do this by downloading MuTect from [The Broad Institute CGA page](https://software.broadinstitute.org/cancer/cga/mutect). You may need to create a gatkforums account before you can download.
+
+MuTect is currently not compatible with Java 1.8, so you need to use the system Java 1.7. Set up your modules as follows: 
+```
+module load mutect/1.1.7
+```
+
+Then to run MuTect, you should either prefix the .jar you want to run with `$MUTECTPATH`:
+```
+java -Xmx2g -jar $MUTECTPATH/mutect-1.1.7.jar OPTION1=value1 OPTION2=value2...
+``` 
+Or we provide wrappers, so you can run it this way instead: 
+```
+mutect OPTION1=value1 OPTION2=value2...
+```
+
+
 ### NONMEM
 
+NONMEM® is a nonlinear mixed effects modelling tool used in population pharmacokinetic / pharmacodynamic analysis. 
+
+We have one build that uses the GNU compiler and ATLAS and an Intel build using MKL. Both use Intel MPI. 
+
+This example uses the Intel build.
+
+```
+jobDir=example1_parallel_$JOB_ID
+mkdir $jobDir
+
+# Copy control and datafiles to jobDir
+cp /shared/ucl/apps/NONMEM/examples/foce_parallel.ctl $jobDir
+cp /shared/ucl/apps/NONMEM/examples/example1b.csv $jobDir
+cd $jobDir
+
+module unload compilers mpi
+module load compilers/intel/2015/update2
+module load mpi/intel/2015/update3/intel
+module load nonmem/7.3.0/intel-2015-update2
+
+# Create parafile for job using $TMPDIR/machines
+parafile.sh $TMPDIR/machines > example1.pnm
+
+nmfe73 foce_parallel.ctl example1.res -parafile=example1.pnm -background -maxlim=1 > example1.log
+```
+
+
 ### NWChem
+
+NWChem applies theoretical techniques to predict the structure, properties, and reactivity of chemical and biological species ranging in size from tens to millions of atoms.
+
+You should load the NWChem module you wish to use once from a login node, as it will create a symlinked `.nwchemrc` in your home. 
+
+```
+module load python/2.7.12
+module load nwchem/6.8-47-gdf6c956/intel-2017
+
+# $NSLOTS will get the number of processes you asked for with -pe mpi.
+mpirun -np $NSLOTS -machinefile $TMPDIR/machines nwchem hpcvl_sample.nw
+```
+
+If your run terminates with an error saying
+```
+ARMCI supports block process mapping only
+```
+then you are probably trying to use round-robin MPI process placement, which ARMCI does not like. `gerun` uses round-robin for Intel MPI by default as it works better in most cases. Use `mpirun` instead of `gerun`:
+```
+mpirun -np $NSLOTS -machinefile $TMPDIR/machines nwchem input.nw
+```
+
+If you get an error complaining about `$NWCHEM_NWPW_LIBRARY` similar to this:
+```
+warning:::::::::::::: from_compile
+NWCHEM_NWPW_LIBRARY is: <
+/dev/shm/tmp.VB3DpmjULc/nwchem-6.6/src/nwpw/libraryps/>
+but file does not exist or you do not have access to it !
+------------------------------------------------------------------------
+nwpwlibfile: no nwpw library found 0
+```
+then your `~/.nwchemrc` symlink is likely pointing to a different version that you used previously. Deleting the symlink and loading the module you want to use will recreate it correctly. 
+
 
 ### Picard
 
