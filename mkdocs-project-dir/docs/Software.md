@@ -89,6 +89,7 @@ abaqus interactive cpus=$NSLOTS mp_mode=mpi job=$INPUT.$JOB_ID input=$INPUT \
        scratch=$ABAQUS_PARALLELSCRATCH $ABAQUS_ARGS
 ```
 
+
 ### BEAST
 
 Note that FigTree and Tracer are available as standalone modules. The addons DISSECT, MODEL_SELECTION, and SNAPP are installed for BEAST. 
@@ -104,6 +105,7 @@ beast -threads $OMP_NUM_THREADS ~/Scratch/BEAST/gopher.xml
 # tar up all contents of $TMPDIR back into your space
 tar zcvf $HOME/Scratch/BEAST/files_from_job_$JOB_ID.tar.gz $TMPDIR
 ```
+
 
 ### Bowtie
 
@@ -124,6 +126,7 @@ bowtie2 -x lambda_virus -U $BT2_HOME/example/reads/reads_1.fq -S eg1.sam
 tar zcvf $HOME/Scratch/Bowtie2_output/files_from_job_$JOB_ID.tgz $TMPDIR
 ```
 
+
 ### CASTEP
 
 ```
@@ -134,8 +137,11 @@ gerun castep.mpi input
 ```
 
 If you have access to the source code and wish to build your own copy, it has been suggested that compiling with these options (on Grace) gave a build that ran about 10% faster than the default compilation options:
-`make COMMS_ARCH=mpi SUBARCH=mpi FFT=mkl MATHLIBS=mkl10 BUILD=fast`
+```
+make COMMS_ARCH=mpi SUBARCH=mpi FFT=mkl MATHLIBS=mkl10 BUILD=fast
+```
 Do check for numerical accuracy with any optimisations you carry out.
+
 
 ### Cctools
 
@@ -160,13 +166,16 @@ That will create the cache in `/tmp/parrot.xxxxx` on the login nodes when run in
 export PARROT_CVMFS_ALIEN_CACHE=</path/to/cache>
 ```
 
+
 ### CFD-ACE
 
 ```
 module load cfd-ace/2018.0
 
-CFD-SOLVER -model 3Dstepchannel_060414.DTF -num $NSLOTS -wd `pwd` -hosts $TMPDIR/machines -rsh=ssh -decomp -metis -sim 1 -platformmpi -job
+CFD-SOLVER -model 3Dstepchannel_060414.DTF -num $NSLOTS -wd `pwd` \ 
+   -hosts $TMPDIR/machines -rsh=ssh -decomp -metis -sim 1 -platformmpi -job
 ```
+
 
 ### COMSOL
 
@@ -183,10 +192,12 @@ module load comsol/53a
 # $NHOSTS gets the number of nodes the job is running on and
 # $TMPDIR/machines is the machinefile that tells it which nodes.
 # These are automatically set up in a "-pe mpi" job environment.
-comsol -nn $NHOSTS -clustersimple batch -f $TMPDIR/machines -inputfile micromixer_batch.mph -outputfile micromixer_batch_output_${JOB_ID}.mph
+comsol -nn $NHOSTS -clustersimple batch -f $TMPDIR/machines -inputfile micromixer_batch.mph \ 
+       -outputfile micromixer_batch_output_${JOB_ID}.mph
 
 # On Myriad you need to specify the fabric:
-comsol batch -f $TMPDIR/machines -np $NSLOTS -mpifabrics shm:tcp -inputfile micromixer_batch.mph -outputfile micromixer_batch_output_${JOB_ID}.mph
+comsol batch -f $TMPDIR/machines -np $NSLOTS -mpifabrics shm:tcp \ 
+    -inputfile micromixer_batch.mph -outputfile micromixer_batch_output_${JOB_ID}.mph
 ```
 
 
@@ -211,11 +222,16 @@ The command `submitters` will then list the submitters available.
 You can then run `cp2k.submit` which will ask you questions in order to create a suitable jobscript.
 
 The `cp2k.submit` submitter takes up to 6 arguments, and any omitted will be asked for interactively:
-`cp2k.submit «input_file» «cores» «version» «maximum_run_time» «memory_per_core» «job_name»`
+```
+cp2k.submit «input_file» «cores» «version» «maximum_run_time» «memory_per_core» «job_name»
+```
 
 So, for example:
-`cp2k.submit water.inp 8 4.1 2:00:00 4G mywatermolecule`
+```
+cp2k.submit water.inp 8 4.1 2:00:00 4G mywatermolecule
+```
 would request a job running CP2K 4.1 with the input file `water.inp`, on 8 cores, with a maximum runtime of 2 hours, with 4 gigabytes of memory per core, and a job name of `mywatermolecule`. 
+
 
 ### CRYSTAL
 
@@ -235,10 +251,12 @@ cp ~/Scratch/Crystal17/test_cases/inputs/test00.d12 INPUT
 # processes to the amount you requested with -pe mpi.
 # The CRYSTAL module sets $CRYxx_EXEDIR and $VERSION environment variables.
 gerun $CRY17_EXEDIR/$VERSION/Pcrystal
-
+```
+```
 # Similarly, for Pproperties the command would be
 gerun $CRY17_EXEDIR/$VERSION/Pproperties
 ```
+
 
 ### FreeSurfer
 
@@ -252,6 +270,7 @@ export SUBJECTS_DIR=~/Scratch/PADDINGTON
 
 time recon-all -subjid 30432 -autorecon1 -cw256
 ```
+
 
 ### GAMESS
 
@@ -270,6 +289,7 @@ export $GAMESS_USERSCR=$TMPDIR
 rungms exam01.inp 00 $NSLOTS $(ppn)
 ```
 
+
 ### GATK
 
 Version 4 of GATK is BSD-licensed so does not require a group to control access to the software. 
@@ -279,11 +299,17 @@ Version 3 of GATK requires you to agree to the GATK license before we can add yo
 GATK 3 uses Java 1.7 (the system Java) so you do not need to load a Java module. GATK 4 uses 1.8 so you need to load `java/1.8.0_92` first.
 
 Load the version you want, then to run GATK you should either prefix the .jar you want to run with `$GATKPATH`:
-`java -Xmx2g -jar $GATKPATH/GenomeAnalysisTK.jar OPTION1=value1 OPTION2=value2...`
+```
+java -Xmx2g -jar $GATKPATH/GenomeAnalysisTK.jar OPTION1=value1 OPTION2=value2...
+```
 
 Or we provide wrappers, so you can run it one of these ways instead:
-`GenomeAnalysisTK OPTION1=value1 OPTION2=value2...`
-`gatk OPTION1=value1 OPTION2=value2...`
+```
+GenomeAnalysisTK OPTION1=value1 OPTION2=value2...
+```
+```
+gatk OPTION1=value1 OPTION2=value2...
+```
 
 
 ### Hammock
@@ -297,7 +323,7 @@ module load hammock/1.0.5
 do-hammock-install
 ```
 
-This will install Hammock 1.0.5 in your home, and edit settings.prop to use clustal-omega and hmmer from our modules and tell it to write temporary files in your Scratch directory (in the form `Hammock_temp_time`). 
+This will install Hammock 1.0.5 in your home, edit settings.prop to use clustal-omega and hmmer from our modules and tell it to write temporary files in your Scratch directory (in the form `Hammock_temp_time`). 
 
 ```
 # in your jobscript
@@ -308,6 +334,7 @@ module load hammock/1.0.5
 # directory and runs it. The module sets $HAMMOCKPATH for you. 
 # You must set the output directory to somewhere in Scratch with -d. 
 # Below makes a different outputdir per job so multiple runs don't overwrite files.
+
 cp $HAMMOCKPATH/../examples/MUSI/musi.fa .
 outputdir=~/Scratch/hammock-examples/musi_$JOB_ID
 mkdir -p $outputdir
