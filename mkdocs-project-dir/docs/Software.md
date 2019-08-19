@@ -64,6 +64,8 @@ The packages below have slightly complex commands needed to run them, or differe
 
 ### ABAQUS
 
+ABAQUS is a commercial software suite for finite element analysis and computer-aided engineering.
+
 You must be authorised by the Mech Eng Department before you can be added to the group controlling access to ABAQUS (legabq).
 
 A serial interactive analysis can be run on the compute nodes (via a `qrsh` session) like this:
@@ -92,6 +94,8 @@ abaqus interactive cpus=$NSLOTS mp_mode=mpi job=$INPUT.$JOB_ID input=$INPUT \
 
 ### BEAST
 
+BEAST is an application for Bayesian MCMC analysis of molecular sequences orientated towards rooted, time-measured phylogenies inferred using strict or relaxed molecular clock models.
+
 Note that FigTree and Tracer are available as standalone modules. The addons DISSECT, MODEL_SELECTION, and SNAPP are installed for BEAST. 
 
 ```
@@ -108,6 +112,8 @@ tar zcvf $HOME/Scratch/BEAST/files_from_job_$JOB_ID.tar.gz $TMPDIR
 
 
 ### Bowtie
+
+Bowtie 1 and 2 are tools for aligning sequencing reads to their reference sequences.
 
 Bowtie 1 and 2 are available. For reads longer than about 50 bp Bowtie 2 is generally faster, more sensitive, and uses less memory than Bowtie 1. For relatively short reads (e.g. less than 50 bp) Bowtie 1 is sometimes faster and/or more sensitive. For further differences, see [How is Bowtie 2 different from Bowtie 1?](http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml#how-is-bowtie-2-different-from-bowtie-1).
 
@@ -129,6 +135,8 @@ tar zcvf $HOME/Scratch/Bowtie2_output/files_from_job_$JOB_ID.tgz $TMPDIR
 
 ### CASTEP
 
+CASTEP is a full-featured materials modelling code based on a first-principles quantum mechanical description of electrons and nuclei.
+
 ```
 module load castep/17.21/intel-2017
 # Gerun is our mpirun wrapper which sets the machinefile and number of 
@@ -144,6 +152,8 @@ Do check for numerical accuracy with any optimisations you carry out.
 
 
 ### Cctools
+
+Provides the Parrot connector to CVMFS, the CernVM File System. 
 
 By default, the cctools module sets the following:
 ```
@@ -169,6 +179,10 @@ export PARROT_CVMFS_ALIEN_CACHE=</path/to/cache>
 
 ### CFD-ACE
 
+CFD-ACE+ is a commercial computational fluid dynamics solver developed by ESI Group. It solves the conservation equations of mass, momentum, energy, chemical species and other scalar transport equations using the finite volume method. These equations enable coupled simulations of fluid, thermal, chemical, biological, electrical and mechanical phenomena.
+
+The license is owned by the Department of Mechanical Engineering who must give permission for users to be added to the group `lgcfdace`.
+
 ```
 module load cfd-ace/2018.0
 
@@ -178,6 +192,8 @@ CFD-SOLVER -model 3Dstepchannel_060414.DTF -num $NSLOTS -wd `pwd` \
 
 
 ### COMSOL
+
+COMSOL Multiphysics is a cross-platform finite element analysis, solver and multiphysics simulation software.
 
 ```
 # Run a parallel COMSOL job
@@ -202,6 +218,8 @@ comsol batch -f $TMPDIR/machines -np $NSLOTS -mpifabrics shm:tcp \
 
 
 ### CP2K
+
+CP2K performs atomistic and molecular simulations.
 
 ```
 module unload compilers mpi
@@ -235,6 +253,8 @@ would request a job running CP2K 4.1 with the input file `water.inp`, on 8 cores
 
 ### CRYSTAL
 
+CRYSTAL is a general-purpose program for the study of crystalline solids. The CRYSTAL program computes the electronic structure of periodic systems within Hartree Fock, density functional or various hybrid approximations. 
+
 CRYSTAL is commercial software which is available free of charge to UK academics. You must obtain a license from Crystal Solutions: [How to get CRYSTAL - Academic UK license](http://www.crystalsolutions.eu/cat/crystal-cryscor/academic-uk). You need to create an account and then request to be upgraded to Academic UK. Access to CRYSTAL is enabled by being a member of the reserved application group `legcryst`. For proof of access we accept emails from CRYSTAL saying your account has been upgraded to "Academic UK", or a screenshot of your account page showing you have the full download available rather than just the demo version. 
 
 ```
@@ -260,6 +280,8 @@ gerun $CRY17_EXEDIR/$VERSION/Pproperties
 
 ### FreeSurfer
 
+FreeSurfer is a set of tools for analysis and visualization of structural and functional brain imaging data.
+
 Freesurfer can use threads to run on multiple cores in one node: request the number with `-pe smp` in the resource-request part of your jobscript.
 ```
 cd $TMPDIR
@@ -273,6 +295,8 @@ time recon-all -subjid 30432 -autorecon1 -cw256
 
 
 ### GAMESS
+
+The General Atomic and Molecular Electronic Structure System (GAMESS) is a general ab initio quantum chemistry package. 
 
 The GAMESS module should be loaded once from a login node before submitting a job - this creates the `~/Scratch/gamess` directory for you which is used as `USERSCR` to write some scratch files during the job. If you don't want to keep these files and would prefer them to be written to `$TMPDIR` instead, you can put `export $GAMESS_USERSCR=$TMPDIR` in your jobscript after the module load command.
 
@@ -291,6 +315,8 @@ rungms exam01.inp 00 $NSLOTS $(ppn)
 
 
 ### GATK
+
+The Genome Analysis Toolkit or GATK is a software package developed at the Broad Institute to analyze high-throughput sequencing data. 
 
 Version 4 of GATK is BSD-licensed so does not require a group to control access to the software. 
 
@@ -313,6 +339,8 @@ gatk OPTION1=value1 OPTION2=value2...
 
 
 ### Hammock
+
+Hammock is a tool for peptide sequence clustering. It is able to cluster extremely large amounts of short peptide sequences into groups sharing sequence motifs. Typical Hammock applications are NGS-based experiments using large combinatorial peptide libraries, e.g. Phage display. 
 
 Hammock has to be installed in your own space to function, so we provide a hammock module that contains the main dependencies and creates a quick-install alias:
 
@@ -345,6 +373,8 @@ java -jar $HAMMOCKPATH/Hammock.jar full -i musi.fa -d $outputdir
 
 ### HOPSPACK
 
+HOPSPACK (Hybrid Optimization Parallel Search PACKage) solves derivative-free optimization problems using an open source, C++ software framework.
+
 We have versions of HOPSPACK built using the GNU compiler and OpenMPI, and the Intel compiler and MPI. This example shows the GNU version. Serial and parallel versions are available, `HOPSPACK_main_mpi` and `HOPSPACK_main_serial`.
 
 ```
@@ -366,6 +396,8 @@ gerun HOPSPACK_main_mpi ~/Scratch/examples/1-var-bnds-only/example1_params.txt >
 ```
 
 ### IDL
+
+IDL is a complete environment and language for the analysis and visualisation of scientific and other technical data. It can be used for everything from quick interactive data exploration to building complex applications. 
 
 Single-threaded jobscript:
 ```
@@ -404,6 +436,8 @@ tar zcvf $HOME/Scratch/IDL_output/files_from_job_$JOB_ID.tgz $TMPDIR
 
 ### JAGS
 
+JAGS (Just Another Gibbs Sampler) is a program for analysis of Bayesian hierarchical models using Markov Chain Monte Carlo (MCMC) simulation not wholly unlike BUGS. 
+
 Use this to use JAGS in standalone command line mode:
 ```
 module unload compilers mpi
@@ -414,15 +448,66 @@ module load jags/4.2.0/gnu.4.9.2-openblas
 
 We have also added JAGS support to `r/recommended` using the `rjags` and `R2jags` R packages.
 
+
 ### LAMMPS
 
+LAMMPS is an open source parallel molecular dynamics code which exhibits good scaling in a wide range of environments. 
+
+The LAMMPS binaries are called `lmp_$cluster` and all have an `lmp_default` symlink which can be used.
+
+LAMMPS-8Dec15 and later were built with additional packages `kspace`, `replica`, `rigid`, and `class2`.
+
+The versions from `lammps-16Mar18-basic_install` onwards (not `lammps/16Mar18/intel-2017`) have most of the included packages built. There are also `userintel` and `gpu` versions from this point.
+
+We do not install the LAMMPS user packages as part of our central install, but you can build your own version with the ones that you want in your space.
+
+```
+module unload compilers mpi
+module load compilers/intel/2018
+module load mpi/intel/2018
+module load lammps/16Mar18/basic/intel-2018
+
+# Gerun is our mpirun wrapper which sets the machinefile and number of
+# processes to the amount you requested with -pe mpi.
+gerun $(which lmp_default) -in inputfile
+```
 
 
 ### MEME Suite
 
+MEME Suite: Motif-based sequence analysis tools. This install is for the command-line tools and connects to their website for further analysis. 
+
+```
+module unload compilers
+module unload mpi
+module load compilers/gnu/4.9.2
+module load mpi/openmpi/1.8.4/gnu-4.9.2
+module load perl/5.22.0
+module load python2/recommended
+module load ghostscript/9.16/gnu-4.9.2
+module load meme/4.10.1_4
+```
+
+
 ### miRDeep2
 
+Discovering known and novel miRNAs from deep sequencing data, miRDeep2 is a completely overhauled tool which discovers microRNA genes by analyzing sequenced RNAs. The tool reports known and hundreds of novel microRNAs with high accuracy in seven species representing the major animal clades. 
+
+```
+module load squid/1.9g
+module load randfold/2.0
+module load perl/5.22.0
+module load bowtie/1.1.2
+module load python/2.7.9
+module load viennarna/2.1.9
+module load mirdeep/2.0.0.7
+```
+
+
 ### MISO/misopy
+
+
+
 
 ### MOLPRO
 
