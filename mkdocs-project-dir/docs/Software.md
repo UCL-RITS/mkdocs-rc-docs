@@ -672,28 +672,263 @@ then your `~/.nwchemrc` symlink is likely pointing to a different version that y
 
 ### Picard
 
+Picard comprises Java-based command-line utilities that manipulate SAM files, and a Java API (SAM-JDK) for creating new programs that read and write SAM files. Both SAM text format and SAM binary (BAM) format are supported. 
+
+Picard requires a Java 1.8 module to be loaded.
+
+```
+module load java/1.8.0_92
+module load picard-tools/2.18.9
+```
+
+To run Picard you can prefix the .jar you want to run with `$PICARDPATH` and give the full command, or we have wrappers:
+```
+java -Xmx2g -jar $PICARDPATH/picard.jar PicardCommand TMP_DIR=$TMPDIR OPTION1=value1 OPTION2=value2...
+``` 
+The wrappers allow you to run commands like this - in this case our wrapper sets `TMP_DIR` for you as well: 
+```
+PicardCommand OPTION1=value1 OPTION2=value2...
+```
+
+Temporary files: by default, Picard writes temporary files into `/tmp` rather than into `$TMPDIR`. These are not cleaned up after your job ends, and means future runs can fail because `/tmp` is full (and requesting more tmpfs in your job doesn't make it larger). If you run Picard with the full `java -jar` command then give Picard the `TMP_DIR=$TMPDIR` option as our example above does to get it to write in the correct place. 
+
+
 ### Quantum Espresso
+
+Quantum Espresso is an integrated suite of Open-Source computer codes for electronic-structure calculations and materials modelling at the nanoscale. It is based on density-functional theory, plane waves, and pseudopotentials. 
+
+```
+module load xorg-utils
+module load quantum-espresso/6.1-impi/intel2017
+
+# Set the path here to where ever you keep your pseudopotentials.
+export ESPRESSO_PSEUDO=$HOME/qe-psp
+
+# Gerun is our mpirun wrapper which sets the machinefile and number of
+# processes to the amount you requested with -pe mpi.
+gerun pw.x -in input.in >output.out
+```
+
 
 ### Repast HPC 
 
+Repast for High Performance Computing (Repast HPC) is a next generation agent-based modelling system intended for large-scale distributed computing platforms. It implements the core Repast Simphony concepts (e.g. contexts and projections), modifying them to work in a parallel distributed environment. 
+
+```
+module unload compilers
+module unload mpi
+module load compilers/gnu/4.9.2
+module load hdf/5-1.8.15/gnu-4.9.2
+module load netcdf/4.3.3.1/gnu-4.9.2
+module load netcdf-fortran/4.4.1/gnu-4.9.2
+module load mpi/openmpi/1.8.4/gnu-4.9.2
+module load python/2.7.9
+module load boost/1_54_0/mpi/gnu-4.9.2
+module load netcdf-c++/4.2/gnu-4.9.2
+module load repast-hpc/2.1/gnu-4.9.2
+```
+
+The module sets the environment variables `$REPAST_HPC_INCLUDE`, `$REPAST_HPC_LIB_DIR` and `$REPAST_HPC_LIB`.
+
+
 ### ROOT
+
+ROOT provides a set of OO frameworks for handling, analysing, and visualising large amounts of data. Included are specialised storage methods, methods for histograming, curve fitting, function evaluation, minimization etc. ROOT includes a built-in CINT C++ interpreter. 
+
+```
+module unload compilers mpi
+module load compilers/gnu/4.9.2
+module load fftw/3.3.4/gnu-4.9.2
+module load gsl/1.16/gnu-4.9.2
+module load root/6.04.00/gnu-4.9.2
+
+# run root in batch mode
+root -b -q myMacro.C > myMacro.out
+```
+
 
 ### SAS
 
+SAS is a statistics package providing a wide range of tools for data management, analysis and presentation. 
+
+```
+cd $TMPDIR
+
+module load sas/9.4/64
+
+# copy all your input files into $TMPDIR
+cp ~/Scratch/sas_input/example1/* $TMPDIR
+
+sas example1.in
+
+# tar up all contents of $TMPDIR back into your space
+tar cvzf $HOME/Scratch/SAS_output/files_from_job_$JOB_ID.tgz $TMPDIR
+```
+
+
 ### StarCCM+
+
+StarCCM+ is a commercial CFD package that handles fluid flows, heat transfer, stress simulations, and other common applications of such. 
+
+Before running any StarCCM+ jobs on the clusters you must load the StarCCM+ module on a login node. This is so the module can set up two symbolic links in your home directory to directories created in your Scratch area so that user settings etc can be written by running jobs.
+
+```
+module load star-ccm+/13.06.012
+```
+
+Here is the jobscript example.
+
+```
+# Request one license per core - makes sure your job doesn't start 
+# running until sufficient licenses are free.
+#$ -l ccmpsuite=1
+
+module load star-ccm+/13.06.012
+
+starccm+ -np $NSLOTS -machinefile $TMPDIR/machines -rsh ssh -batch my_input.sim
+```
+
 
 ### StarCD
 
+StarCD is a commercial package for modelling and simulating combustion and engine dynamics. 
+
+You must request access to the group controlling StarCD access (legstarc) to use it. The license is owned by the Department of Mechanical Engineering who will need to approve your access request. 
+
+```
+# Request one license per core - makes sure your job doesn't start 
+# running until sufficient licenses are free.
+#$ -l starsuite=1
+
+module load star-cd/4.28.050
+
+# run star without its tracker process as this causes multicore jobs to die early
+star -notracker
+```
+
+StarCD uses IBM Platform MPI by default. You can also run StarCD simulations using Intel MPI by changing the command line to:
+```
+star -notracker -mpi=intel
+```
+Simulations run using Intel MPI may run faster than they do when using IBM Platform MPI. 
+
+
 ### Stata/MP
+
+Stata is a statistics, data management, and graphics system. Stata/MP is the version of the package that runs on multiple cores. 
+
+We have a sixteen user license of Stata/MP. Our license supports Stata running on up to four cores per job. 
+
+```
+# Select 4 OpenMP threads (the most possible)
+#$ -pe smp 4
+
+cd $TMPDIR
+module load stata/15
+
+# copy files to $TMPDIR
+cp myfile.do $TMPDIR
+
+stata-mp -b do myfile.do
+
+# tar up all contents of $TMPDIR back into your space
+tar zcvf $HOME/Scratch/Stata_output/files_from_job_$JOB_ID.tar.gz $TMPDIR
+```
+
 
 ### Torch
 
+Torch is a scientific computing framework with wide support for machine learning algorithms that puts GPUs first. 
+
+We provide a `torch-deps` module that contains the main Torch dependencies and creates a quick-install alias, `do-torch-install`. This uses Torch's installation script to git clone the current distribution and install LuaJIT, LuaRocks and Torch in `~/torch`. 
+
+```
+module unload compilers mpi
+module load torch-deps
+
+do-torch-install
+```
+
+You should load these same modules in your jobscript when using the version of torch this installs.
+
+
 ### Turbomole
+
+There are scripts you can use to generate Turbomole jobs for you:
+```
+/shared/ucl/apps/turbomole/turbomole-mpi.submit
+/shared/ucl/apps/turbomole/turbomole-smp.submit
+```
+They will ask you which version you want to use, how much memory, how many cores etc and set up and submit the job for you.
+
+Use the first for MPI jobs and the second for single-node shared memory threaded jobs.
+
 
 ### VarScan
 
+VarScan is a platform-independent mutation caller for targeted, exome, and whole-genome resequencing data generated on Illumina, SOLiD, Life/PGM, Roche/454, and similar instruments. 
+
+```
+module load java/1.8.0_45
+module load varscan/2.3.9
+```
+
+Then to run VarScan, you should either prefix the .jar you want to run with $VARSCANPATH:
+```
+java -Xmx2g -jar $VARSCANPATH/VarScan.v2.3.9.jar OPTION1=value1 OPTION2=value2...
+```
+Or we provide wrappers, so you can run it this way instead:
+```
+varscan OPTION1=value1 OPTION2=value2...
+```
+
+
 ### VASP
 
+The Vienna Ab initio Simulation Package (VASP) is a computer program for atomic scale materials modelling, e.g. electronic structure calculations and quantum-mechanical molecular dynamics, from first principles.
+
+VASP is licensed software. To gain access, you need to email us the name and email of the main VASP license holder (plus the license number if you have it). We will then ask VASP if we can add you, and on confirmation can do so. We will add you to the `legvasp` reserved application group, and remove you when VASP tell us you no longer have access.
+
+The VASP executables for current versions are named like this:
+* `vasp_gam` - optimised for gamma point calculations only
+* `vasp_std` - standard version
+* `vasp_ncl` - for non-collinear magnetic structure and/or spin-orbit coupling calculations 
+
+```
+module unload compilers mpi
+module load compilers/intel/2017/update1
+module load mpi/intel/2017/update1/intel
+
+# Gerun is our mpirun wrapper which sets the machinefile and number of
+# processes to the amount you requested with -pe mpi.
+gerun vasp_std > vasp_output.$JOB_ID
+```
+
+Note: although you can run VASP using the default Intel 2018 compiler this can lead to numerical errors in some types of simulation. In those cases we recommend switching to the specific compiler and MPI version used to build that install (mentioned at the end of the module name). We do this in the example above.
+
+Building your own VASP: You may also install your own copy of VASP in your home if you have access to the source, and we provide a [simple VASP individual install script](https://github.com/UCL-RITS/rcps-buildscripts/blob/master/vasp_individual_install) (tested with VASP 5.4.4, no patches). You need to download the VASP source code into your home directory and then you can run the script following the instructions at the top. 
+
+
 ### XMDS
+
+XMDS allows the fast and easy solution of sets of ordinary, partial and stochastic differential equations, using a variety of efficient numerical algorithms. 
+
+You will need to load the modules on a login node and run `xmds2-setup` to set up XMDS. 
+
+```
+module unload compilers
+module unload mpi
+module load compilers/gnu/4.9.2
+module load mpi/intel/2015/update3/gnu-4.9.2
+module load python2/recommended
+module load fftw/3.3.4-impi/gnu-4.9.2
+module load hdf/5-1.8.15/gnu-4.9.2
+module load xmds/2.2.2
+
+# run this on a login node to set up XMDS
+xmds2-setup
+```
+
+You can also build the current developmental version from SVN in your space by running `create-svn-xmds-inst`. Note: the SVN version on 28 Oct 2015 was failing unit test `test_nonlocal_access_multiple_components`. 
 
 
