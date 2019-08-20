@@ -195,10 +195,12 @@ CFD-SOLVER -model 3Dstepchannel_060414.DTF -num $NSLOTS -wd `pwd` \
 
 COMSOL Multiphysics is a cross-platform finite element analysis, solver and multiphysics simulation software.
 
+Electrical Engineering have a group license for version 52 and must give permission for users to be added to the group `legcomsl`. Chemical Engineering have a Departmental License for version 53 and members of that department may be added to the group `lgcomsol`. 
+
 ```
 # Run a parallel COMSOL job
 
-# Versions 52 and 52a have this module prerequisite
+# Versions 52 and 52a have this additional module prerequisite
 module load xulrunner/3.6.28/gnu-4.9.2
 
 # pick the version to load
@@ -853,6 +855,9 @@ You should load these same modules in your jobscript when using the version of t
 
 
 ### Turbomole
+
+Turbomole is an ab initio computational chemistry program that implements various quantum chemistry methods. 
+Turbomole has a Chemistry-wide license. Reserved application group `legtmole` for Chemistry users only.
 
 There are scripts you can use to generate Turbomole jobs for you:
 ```
