@@ -128,7 +128,69 @@ Launching with `matlab -nodesktop -nodisplay` will give you the MATLAB terminal.
 
 ## Submitting jobs using the Distributed Computing Server (DCS)
 
-## Submitting jobs from your workstation/laptop
+You must have loaded the MATLAB module once from a login node as described in [Setup](#setup) before you can submit any Matlab DCS jobs.
+
+MATLAB DCS jobs must be submitted from an interactive or scripted Matlab session which can be running on the cluster login nodes or on your own machine.
+
+MATLAB DCS jobs will only work inside a single node on our clusters. On Myriad this means a maximum of 36 workers can be used per job.
+
+### Importing the cluster profile
+
+You need to import the cluster profile into your MATLAB environment and set it as the default before you can submit DCS jobs. This only needs doing once. The imported profile will be saved in your MATLAB settings directory.
+
+Importing the profile can be done either by calling MATLAB functions or via the graphical interface. The profile is stored here (for 2018b): 
+```
+/shared/ucl/apps/Matlab/toolbox_local/Legion/R2018b/LegionGraceMyriadProfile_R2018b.settings
+```
+
+#### Import using MATLAB functions
+
+Run these functions from a MATLAB session:
+```
+profile_Legion = parallel.importProfile ('/shared/ucl/apps/Matlab/toolbox_local/Legion/R2018b/LegionGraceMyriadProfile_R2018b.settings');
+parallel.defaultClusterProfile ('LegionGraceMyriadProfileR2018b');
+```
+
+#### Import from MATLAB GUI
+
+To import using the graphical interface instead, do this.
+
+1. From the Home tab select the Parallel menu and click on the _Create and Manage Clusters..._ item.
+2. The Cluster Profile Manager window will open.
+![MATLAB Cluster Profile Manager screenshot](img/MATLAB_ClusterProfBefore.png)
+3. Select Import and in the _Import Profiles from file_ window navigate to the LegionGraceMyriadProfile_R2018b.settings file shown above and select Open.
+4. Select the resulting LegionGraceMyriadProfileR2018b profile and click _Set as Default_. The Cluster Profile Manager window should now look like this:
+![MATLAB Cluster Profile Manager screenshot after](img/MATLAB_ClusterProfAfter_R2018b.png)
+
+In both cases after you exit MATLAB your cluster profile is saved for future use.
+
+#### Environment variables required for job submission
+
+We have set up three Grid Engine environment variables to assist with job submission from within MATLAB. These are needed to pass in job resource parameters that aren't supported by the internal MATLAB job submission mechanism.
+* `SGE_CONTEXT`: a comma-separated list of variables treated as if added via the `-ac` option, eg. `exclusive`
+* `SGE_OPT`: comma-separated list of resources treated as if added via the `-l` option, eg. `h_rt=0:10:0,mem=1G,tmpfs=15G`
+* `SGE_PROJECT`: a project treated as if added via the `-P` option (not normally needed).
+
+There are two ways to set these:
+1. Before starting your MATLAB session, using the usual Bash method of exporting environment variables:
+```
+export SGE_CONTEXT=exclusive
+export SGE_OPT=h_rt=0:15:0,mem=2G,tmpfs=15G
+export SGE_PROJECT=<your project ID>
+```
+2. Inside your MATLAB session, using MATLAB's `setenv` function:
+```
+setenv ('SGE_CONTEXT', 'exclusive');
+setenv ('SGE_OPT', 'h_rt=0:15:0,mem=2G,tmpfs=15G'); 
+setenv ('SGE_PROJECT', '<your project ID>');
+```
+
+#### Submitting a simple DCS job
+
+#### An example DCS job with more than one input file
+
+
+## Submitting MATLAB jobs from your workstation/laptop
 
 
 ## Running MATLAB on GPUs
