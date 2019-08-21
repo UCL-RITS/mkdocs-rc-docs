@@ -457,11 +457,65 @@
     Submitting jobs using the Distributed Computing Server (DCS)
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importing-the-cluster-profile" title="Importing the cluster profile" class="md-nav__link">
+    Importing the cluster profile
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import-using-matlab-functions" title="Import using MATLAB functions" class="md-nav__link">
+    Import using MATLAB functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-from-matlab-gui" title="Import from MATLAB GUI" class="md-nav__link">
+    Import from MATLAB GUI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables-required-for-job-submission" title="Environment variables required for job submission" class="md-nav__link">
+    Environment variables required for job submission
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submitting-a-simple-dcs-job" title="Submitting a simple DCS job" class="md-nav__link">
+    Submitting a simple DCS job
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#an-example-dcs-job-with-more-than-one-input-file" title="An example DCS job with more than one input file" class="md-nav__link">
+    An example DCS job with more than one input file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#submitting-jobs-from-your-workstationlaptop" title="Submitting jobs from your workstation/laptop" class="md-nav__link">
-    Submitting jobs from your workstation/laptop
+  <a href="#submitting-matlab-jobs-from-your-workstationlaptop" title="Submitting MATLAB jobs from your workstation/laptop" class="md-nav__link">
+    Submitting MATLAB jobs from your workstation/laptop
   </a>
   
 </li>
@@ -1369,11 +1423,65 @@
     Submitting jobs using the Distributed Computing Server (DCS)
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importing-the-cluster-profile" title="Importing the cluster profile" class="md-nav__link">
+    Importing the cluster profile
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import-using-matlab-functions" title="Import using MATLAB functions" class="md-nav__link">
+    Import using MATLAB functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-from-matlab-gui" title="Import from MATLAB GUI" class="md-nav__link">
+    Import from MATLAB GUI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables-required-for-job-submission" title="Environment variables required for job submission" class="md-nav__link">
+    Environment variables required for job submission
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submitting-a-simple-dcs-job" title="Submitting a simple DCS job" class="md-nav__link">
+    Submitting a simple DCS job
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#an-example-dcs-job-with-more-than-one-input-file" title="An example DCS job with more than one input file" class="md-nav__link">
+    An example DCS job with more than one input file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#submitting-jobs-from-your-workstationlaptop" title="Submitting jobs from your workstation/laptop" class="md-nav__link">
-    Submitting jobs from your workstation/laptop
+  <a href="#submitting-matlab-jobs-from-your-workstationlaptop" title="Submitting MATLAB jobs from your workstation/laptop" class="md-nav__link">
+    Submitting MATLAB jobs from your workstation/laptop
   </a>
   
 </li>
@@ -1562,7 +1670,59 @@ Instead of using Unix input redirection like this:</p>
 <p>Launching with <code>matlab</code> will give you the full graphical user interface - you will need to have logged in to the cluster with X-forwarding on for this to work. </p>
 <p>Launching with <code>matlab -nodesktop -nodisplay</code> will give you the MATLAB terminal.</p>
 <h2 id="submitting-jobs-using-the-distributed-computing-server-dcs">Submitting jobs using the Distributed Computing Server (DCS)<a class="headerlink" href="#submitting-jobs-using-the-distributed-computing-server-dcs" title="Permanent link">§</a></h2>
-<h2 id="submitting-jobs-from-your-workstationlaptop">Submitting jobs from your workstation/laptop<a class="headerlink" href="#submitting-jobs-from-your-workstationlaptop" title="Permanent link">§</a></h2>
+<p>You must have loaded the MATLAB module once from a login node as described in <a href="#setup">Setup</a> before you can submit any Matlab DCS jobs.</p>
+<p>MATLAB DCS jobs must be submitted from an interactive or scripted Matlab session which can be running on the cluster login nodes or on your own machine.</p>
+<p>MATLAB DCS jobs will only work inside a single node on our clusters. On Myriad this means a maximum of 36 workers can be used per job.</p>
+<h3 id="importing-the-cluster-profile">Importing the cluster profile<a class="headerlink" href="#importing-the-cluster-profile" title="Permanent link">§</a></h3>
+<p>You need to import the cluster profile into your MATLAB environment and set it as the default before you can submit DCS jobs. This only needs doing once. The imported profile will be saved in your MATLAB settings directory.</p>
+<p>Importing the profile can be done either by calling MATLAB functions or via the graphical interface. The profile is stored here (for 2018b): </p>
+<div class="codehilite"><pre><span></span>/shared/ucl/apps/Matlab/toolbox_local/Legion/R2018b/LegionGraceMyriadProfile_R2018b.settings
+</pre></div>
+
+
+<h4 id="import-using-matlab-functions">Import using MATLAB functions<a class="headerlink" href="#import-using-matlab-functions" title="Permanent link">§</a></h4>
+<p>Run these functions from a MATLAB session:</p>
+<div class="codehilite"><pre><span></span>profile_Legion = parallel.importProfile (&#39;/shared/ucl/apps/Matlab/toolbox_local/Legion/R2018b/LegionGraceMyriadProfile_R2018b.settings&#39;);
+parallel.defaultClusterProfile (&#39;LegionGraceMyriadProfileR2018b&#39;);
+</pre></div>
+
+
+<h4 id="import-from-matlab-gui">Import from MATLAB GUI<a class="headerlink" href="#import-from-matlab-gui" title="Permanent link">§</a></h4>
+<p>To import using the graphical interface instead, do this.</p>
+<ol>
+<li>From the Home tab select the Parallel menu and click on the <em>Create and Manage Clusters...</em> item.</li>
+<li>The Cluster Profile Manager window will open.
+<img alt="MATLAB Cluster Profile Manager screenshot" src="img/MATLAB_ClusterProfBefore.png" /></li>
+<li>Select Import and in the <em>Import Profiles from file</em> window navigate to the LegionGraceMyriadProfile_R2018b.settings file shown above and select Open.</li>
+<li>Select the resulting LegionGraceMyriadProfileR2018b profile and click <em>Set as Default</em>. The Cluster Profile Manager window should now look like this:
+<img alt="MATLAB Cluster Profile Manager screenshot after" src="img/MATLAB_ClusterProfAfter_R2018b.png" /></li>
+</ol>
+<p>In both cases after you exit MATLAB your cluster profile is saved for future use.</p>
+<h4 id="environment-variables-required-for-job-submission">Environment variables required for job submission<a class="headerlink" href="#environment-variables-required-for-job-submission" title="Permanent link">§</a></h4>
+<p>We have set up three Grid Engine environment variables to assist with job submission from within MATLAB. These are needed to pass in job resource parameters that aren't supported by the internal MATLAB job submission mechanism.
+* <code>SGE_CONTEXT</code>: a comma-separated list of variables treated as if added via the <code>-ac</code> option, eg. <code>exclusive</code>
+* <code>SGE_OPT</code>: comma-separated list of resources treated as if added via the <code>-l</code> option, eg. <code>h_rt=0:10:0,mem=1G,tmpfs=15G</code>
+* <code>SGE_PROJECT</code>: a project treated as if added via the <code>-P</code> option (not normally needed).</p>
+<p>There are two ways to set these:
+1. Before starting your MATLAB session, using the usual Bash method of exporting environment variables:</p>
+<div class="codehilite"><pre><span></span>export SGE_CONTEXT=exclusive
+export SGE_OPT=h_rt=0:15:0,mem=2G,tmpfs=15G
+export SGE_PROJECT=&lt;your project ID&gt;
+</pre></div>
+
+
+<ol>
+<li>Inside your MATLAB session, using MATLAB's <code>setenv</code> function:</li>
+</ol>
+<div class="codehilite"><pre><span></span>setenv (&#39;SGE_CONTEXT&#39;, &#39;exclusive&#39;);
+setenv (&#39;SGE_OPT&#39;, &#39;h_rt=0:15:0,mem=2G,tmpfs=15G&#39;); 
+setenv (&#39;SGE_PROJECT&#39;, &#39;&lt;your project ID&gt;&#39;);
+</pre></div>
+
+
+<h4 id="submitting-a-simple-dcs-job">Submitting a simple DCS job<a class="headerlink" href="#submitting-a-simple-dcs-job" title="Permanent link">§</a></h4>
+<h4 id="an-example-dcs-job-with-more-than-one-input-file">An example DCS job with more than one input file<a class="headerlink" href="#an-example-dcs-job-with-more-than-one-input-file" title="Permanent link">§</a></h4>
+<h2 id="submitting-matlab-jobs-from-your-workstationlaptop">Submitting MATLAB jobs from your workstation/laptop<a class="headerlink" href="#submitting-matlab-jobs-from-your-workstationlaptop" title="Permanent link">§</a></h2>
 <h2 id="running-matlab-on-gpus">Running MATLAB on GPUs<a class="headerlink" href="#running-matlab-on-gpus" title="Permanent link">§</a></h2>
                 
                   
