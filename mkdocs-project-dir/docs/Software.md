@@ -515,11 +515,13 @@ MISO (Mixture of Isoforms) is a probabilistic framework that quantitates the exp
 
 misopy is available as part of the `python2/recommended` bundle. 
 
-MISO has an option to create and submit parallel jobs itself. If using this, you can copy miso_settings.txt as shown below and add the correct qsub options to the qsub command. 
+MISO can run multithreaded on one node, or can submit multiple independent single-core jobs at once using the `--use-cluster` option.
 
-Settings files can be used with the `--settings-filename=SETTINGS_FILENAME` option. You need to put your module unload and load commands in your .bashrc if using `cluster_command`, because you are no longer passing them in the script.
+If you want to use MISO's ability to create and submit jobs itself, you need a MISO settings file like the one shown below. You give your job options as arguments to the qsub command in the `cluster_command` line. 
 
-Example `miso_settings.txt`:
+Settings files can be used with the `--settings-filename=SETTINGS_FILENAME` option. You will also need to put your module unload and load commands in your .bashrc if using MISO's own job submission, because you are no longer including them in a jobscript.
+
+Example `miso_settings.txt`. Multithreaded jobs will use `num_processors`. `num_processors` is ignored if `--use-cluster` is specified:
 ```
 [data]
 filter_results = True
