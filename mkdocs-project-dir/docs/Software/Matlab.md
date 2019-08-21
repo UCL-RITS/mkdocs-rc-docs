@@ -155,12 +155,12 @@ parallel.defaultClusterProfile ('LegionGraceMyriadProfileR2018b');
 
 To import using the graphical interface instead, do this.
 
-1. From the Home tab select the Parallel menu and click on the _Create and Manage Clusters..._ item.
+1. From the Home tab select the Parallel menu and click _Create and Manage Clusters..._.
 2. The Cluster Profile Manager window will open.
-![MATLAB Cluster Profile Manager screenshot](img/MATLAB_ClusterProfBefore.png)
+![MATLAB Cluster Profile Manager screenshot](../img/MATLAB_ClusterProfBefore.png)
 3. Select Import and in the _Import Profiles from file_ window navigate to the LegionGraceMyriadProfile_R2018b.settings file shown above and select Open.
 4. Select the resulting LegionGraceMyriadProfileR2018b profile and click _Set as Default_. The Cluster Profile Manager window should now look like this:
-![MATLAB Cluster Profile Manager screenshot after](img/MATLAB_ClusterProfAfter_R2018b.png)
+![MATLAB Cluster Profile Manager screenshot after](../img/MATLAB_ClusterProfAfter_R2018b.png)
 
 In both cases after you exit MATLAB your cluster profile is saved for future use.
 
