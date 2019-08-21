@@ -164,7 +164,7 @@ To import using the graphical interface instead, do this.
 
 In both cases after you exit MATLAB your cluster profile is saved for future use.
 
-#### Environment variables required for job submission
+#### Environment variables needed for job submission
 
 We have set up three Grid Engine environment variables to assist with job submission from within MATLAB. These are needed to pass in job resource parameters that aren't supported by the internal MATLAB job submission mechanism.
 
@@ -188,9 +188,9 @@ setenv ('SGE_OPT', 'h_rt=0:15:0,mem=2G,tmpfs=15G');
 setenv ('SGE_PROJECT', '<your project ID>');
 ```
 
-#### Submitting a simple DCS job
+#### Example: a simple DCS job
 
-#### An example DCS job with more than one input file
+#### Example: a DCS job with more than one input file
 
 
 ## Submitting MATLAB jobs from your workstation/laptop
