@@ -167,18 +167,21 @@ In both cases after you exit MATLAB your cluster profile is saved for future use
 #### Environment variables required for job submission
 
 We have set up three Grid Engine environment variables to assist with job submission from within MATLAB. These are needed to pass in job resource parameters that aren't supported by the internal MATLAB job submission mechanism.
+
 * `SGE_CONTEXT`: a comma-separated list of variables treated as if added via the `-ac` option, eg. `exclusive`
 * `SGE_OPT`: comma-separated list of resources treated as if added via the `-l` option, eg. `h_rt=0:10:0,mem=1G,tmpfs=15G`
 * `SGE_PROJECT`: a project treated as if added via the `-P` option (not normally needed).
 
 There are two ways to set these:
-1. Before starting your MATLAB session, using the usual Bash method of exporting environment variables:
+
+1) Before starting your MATLAB session, using the usual Bash method of exporting environment variables:
 ```
 export SGE_CONTEXT=exclusive
 export SGE_OPT=h_rt=0:15:0,mem=2G,tmpfs=15G
 export SGE_PROJECT=<your project ID>
 ```
-2. Inside your MATLAB session, using MATLAB's `setenv` function:
+
+2) Inside your MATLAB session, using MATLAB's `setenv` function:
 ```
 setenv ('SGE_CONTEXT', 'exclusive');
 setenv ('SGE_OPT', 'h_rt=0:15:0,mem=2G,tmpfs=15G'); 
