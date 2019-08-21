@@ -1699,21 +1699,21 @@ parallel.defaultClusterProfile (&#39;LegionGraceMyriadProfileR2018b&#39;);
 </ol>
 <p>In both cases after you exit MATLAB your cluster profile is saved for future use.</p>
 <h4 id="environment-variables-required-for-job-submission">Environment variables required for job submission<a class="headerlink" href="#environment-variables-required-for-job-submission" title="Permanent link">§</a></h4>
-<p>We have set up three Grid Engine environment variables to assist with job submission from within MATLAB. These are needed to pass in job resource parameters that aren't supported by the internal MATLAB job submission mechanism.
-* <code>SGE_CONTEXT</code>: a comma-separated list of variables treated as if added via the <code>-ac</code> option, eg. <code>exclusive</code>
-* <code>SGE_OPT</code>: comma-separated list of resources treated as if added via the <code>-l</code> option, eg. <code>h_rt=0:10:0,mem=1G,tmpfs=15G</code>
-* <code>SGE_PROJECT</code>: a project treated as if added via the <code>-P</code> option (not normally needed).</p>
-<p>There are two ways to set these:
-1. Before starting your MATLAB session, using the usual Bash method of exporting environment variables:</p>
+<p>We have set up three Grid Engine environment variables to assist with job submission from within MATLAB. These are needed to pass in job resource parameters that aren't supported by the internal MATLAB job submission mechanism.</p>
+<ul>
+<li><code>SGE_CONTEXT</code>: a comma-separated list of variables treated as if added via the <code>-ac</code> option, eg. <code>exclusive</code></li>
+<li><code>SGE_OPT</code>: comma-separated list of resources treated as if added via the <code>-l</code> option, eg. <code>h_rt=0:10:0,mem=1G,tmpfs=15G</code></li>
+<li><code>SGE_PROJECT</code>: a project treated as if added via the <code>-P</code> option (not normally needed).</li>
+</ul>
+<p>There are two ways to set these:</p>
+<p>1) Before starting your MATLAB session, using the usual Bash method of exporting environment variables:</p>
 <div class="codehilite"><pre><span></span>export SGE_CONTEXT=exclusive
 export SGE_OPT=h_rt=0:15:0,mem=2G,tmpfs=15G
 export SGE_PROJECT=&lt;your project ID&gt;
 </pre></div>
 
 
-<ol>
-<li>Inside your MATLAB session, using MATLAB's <code>setenv</code> function:</li>
-</ol>
+<p>2) Inside your MATLAB session, using MATLAB's <code>setenv</code> function:</p>
 <div class="codehilite"><pre><span></span>setenv (&#39;SGE_CONTEXT&#39;, &#39;exclusive&#39;);
 setenv (&#39;SGE_OPT&#39;, &#39;h_rt=0:15:0,mem=2G,tmpfs=15G&#39;); 
 setenv (&#39;SGE_PROJECT&#39;, &#39;&lt;your project ID&gt;&#39;);
