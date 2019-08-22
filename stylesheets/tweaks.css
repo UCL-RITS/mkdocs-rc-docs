@@ -1,4 +1,10 @@
 
+/*
+ * The contrast on the search entries was too low, apparently.
+ * By default they're black with partial alpha; we set them
+ * all to plain black, which should help.
+ */
+
 .md-search-result__title {
     color: black;
 }
@@ -12,5 +18,7 @@
     color: black;
 }
 
-
+md-search-result__teaser {
+    color: black;
+}
 
