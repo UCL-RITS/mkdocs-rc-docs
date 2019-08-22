@@ -54,3 +54,5 @@ extra:
   social:
     - type: 'github'
       link: 'https://github.com/UCL-RITS'
+extra_css:
+      - 'stylesheets/tweaks.css'
