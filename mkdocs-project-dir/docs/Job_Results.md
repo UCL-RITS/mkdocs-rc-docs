@@ -6,6 +6,10 @@ After submitting your job you can use the command 'qstat' to view the status of 
 When writing up your job script you specifiy your working directory, within this working directory you can find your output(.o) and error(.e) files. These files will contain any possible error your jobs may have come across or any output that was excepted from your job.
 
 ## Grid engine mailing system
+The following options can be used to submit and monitor a job 
+###Qsub <br />
+####Qstat <br /> 
+###Qdel <br />
 
 ## Qsub emailing
 We also have a mailing system that can be implemented to send emails with reminders of the status of your job through qsub. When you use qsub to submit your job you can use the option `-m`. You can specify when you want an email sent to you by using the below options after `qsub -m`:
