@@ -190,7 +190,145 @@ setenv ('SGE_PROJECT', '<your project ID>');
 
 #### Example: a simple DCS job
 
+This submits a job from inside a MATLAB session running on a login node. You need to start MATLAB from a directory in Scratch - jobs will inherit this as their working directory.
+
+This is an example where you have only one MATLAB source file.
+
+1) Change to the directory in Scratch you want the job to run from and set the SGE environment variables.
+```
+cd ~/Scratch/Matlab_examples
+export SGE_OPT=h_rt=0:10:0,mem=1G,tmpfs=15G
+```
+
+2) Either start the MATLAB GUI:
+```
+matlab
+```
+or start a MATLAB terminal session:
+```
+matlab -nodesktop -nodisplay
+```
+
+3) Inside MATLAB, create a cluster object using the cluster profile:
+```
+c = parcluster ('LegionGraceMyriadProfileR2018b');
+```
+
+4) Use your cluster object to create a job object of the type you need. For this example the job is a parallel job with communication between MATLAB workers of type "Single Program Multiple Data":
+```
+myJob = createCommunicatingJob (c, 'Type', 'SPMD');
+```
+
+5) Set the number of workers:
+```
+num_workers = 36;
+```
+
+6) Tell the job the files needed to be made available to each worker - in this example there is only one file:
+```
+myJob.AttachedFiles = {'colsum.m'};
+```
+`colsum.m` contains the simple magic square example from the MATLAB manual "Parallel Computing Toolbox User's Guide". 
+
+7) Set the minimum and maximum number of workers for the job (we are asking for an exact number here by setting them the same):
+```
+myJob.NumWorkersRange = [num_workers, num_workers];
+```
+
+8) Create a MATLAB task to be executed as part of the job. Here it consists of executing the MATLAB function `colsum`. The other arguments say that the task returns one parameter and there are no input arguments to the `colsum` function:
+```
+task = createTask (myJob, @colsum, 1, {});
+```
+
+9) Submit the job:
+```
+submit (myJob);
+```
+Your job is now submitted to the scheduler and you can see its queue status in `qstat` as normal. If you were using the MATLAB GUI you can also monitor jobs by selecting _Monitor Jobs_ from the _Parallel_ menu on the _Home_ tab.
+
+10) When the job has completed get the results using:
+```
+results = fetchOutputs(myJob)
+```
+You can access the job log from MATLAB using:
+```
+logMess = getDebugLog (c, myJob);
+```
+
+
 #### Example: a DCS job with more than one input file
+
+This example has several input files. The job type is "MATLAB Pool". A "pool" job runs the specified task function with a MATLAB pool available to run the body of parfor loops or spmd blocks and is the default job type. This example was kindly supplied to assist in testing Matlab by colleagues from CoMPLEX. 
+
+The first part of creating the job is the same as the above example apart from the longer runtime and larger amount of memory per core: 
+
+1) ```
+cd ~/Scratch/Matlab_examples
+export SGE_OPT=h_rt=1:0:0,mem=2G,tmpfs=15G
+matlab
+```
+to launch the GUI or:
+```
+matlab -nodesktop -nodisplay
+```
+to start a terminal session. 
+```
+c = parcluster ('LegionGraceMyriadProfileR2018b');
+```
+
+2) Using our cluster object create a job object of type "Pool":
+```
+myJob2 = createCommunicatingJob (c, 'Type', 'Pool');
+```
+
+3) Set the number of workers and another variable used to by the example:
+```
+num_workers = 8;
+simulation_duration_ms = 1000;
+```
+
+4) Tell the job all the input files needed to be made available to each worker as a cell array:
+```
+myJob2.AttachedFiles = {
+'AssemblyFiniteDifferencesMatrix.m'
+'AssemblyFiniteDifferencesRightHandSide.m'
+'CellModelsComputeIonicCurrents.m'
+'CellModelsGetVoltage.m'
+'CellModelsInitialise.m'
+'CellModelsSetVoltage.m'
+'GetStimuliForTimeStep.m'
+'SubmitMonodomainJob.m'
+'RegressionTest.m'
+'RunAndVisualiseMonodomainSimulation.m'
+'SolveLinearSystem.m'
+'luo_rudy_1991_iionic.m'
+'luo_rudy_1991_time_deriv.m'};
+```
+
+5) Set the minimum and maximum number of workers for the job:
+```
+myJob2.NumWorkersRange = [num_workers, num_workers];
+```
+
+6) Create a MATLAB task to be executed as part of the job. For this example it will consist of executing the Matlab function `RunAndVisualiseMonodomainSimulation`. The rest of arguments indicate that the task returns three parameters and there are five input arguments to the function. These are passed as a cell array:
+```
+task = createTask (myJob2, @RunAndVisualiseMonodomainSimulation, 3, {5000, simulation_duration_ms, 1.4, 1.4, false});
+```
+7) Submit the job:
+```
+submit (myJob2);
+```
+
+As before use `fetchOutputs` to collect the results.
+
+If you closed your session, you can get your results by:
+```
+c = parcluster ('LegionGraceMyriadProfileR2018b'); # get a cluster object
+jobs = findJob(c) # gets a list of jobs submitted to that cluster
+job = jobs(3); # pick a particular job
+results = fetchOutputs(job)
+```
+You can get other information: `diary(job)` will give you the job diary, and `load(job)` will load the workspace. 
 
 
 ## Submitting MATLAB jobs from your workstation/laptop
