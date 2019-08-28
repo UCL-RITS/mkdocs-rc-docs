@@ -22,7 +22,6 @@ edit_uri: blob/master/mkdocs-project-dir/docs/
 # Colour options: red, pink, purple, deep purple, indigo, blue, light blue, cyan, teal, green, light green, lime, yellow, amber, orange, deep orange
 theme:
   name: 'material'
-  custom_dir: 'theme_overrides'
   language: 'en'
   palette:
     primary: 'deep purple'
