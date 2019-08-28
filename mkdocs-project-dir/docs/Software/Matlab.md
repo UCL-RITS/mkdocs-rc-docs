@@ -258,11 +258,11 @@ logMess = getDebugLog (c, myJob);
 
 #### Example: a DCS job with more than one input file
 
-This example has several input files. The job type is "MATLAB Pool". A "pool" job runs the specified task function with a MATLAB pool available to run the body of parfor loops or spmd blocks and is the default job type. This example was kindly supplied to assist in testing Matlab by colleagues from CoMPLEX. 
+This example has several input files. The job type is "MATLAB Pool". A "Pool" job runs the specified task function with a MATLAB pool available to run the body of parfor loops or spmd blocks and is the default job type. This example was kindly supplied to assist in testing MATLAB by colleagues from CoMPLEX. 
 
 The first part of creating the job is the same as the above example apart from the longer runtime and larger amount of memory per core: 
 
-1)  Change into a directory in Scratch, set the SGE variables and launch matlab:
+1)  Change into a directory in Scratch, set the SGE variables and launch MATLAB:
 ```
 cd ~/Scratch/Matlab_examples
 export SGE_OPT=h_rt=1:0:0,mem=2G,tmpfs=15G
@@ -282,7 +282,7 @@ c = parcluster ('LegionGraceMyriadProfileR2018b');
 myJob2 = createCommunicatingJob (c, 'Type', 'Pool');
 ```
 
-3) Set the number of workers and another variable used to by the example:
+3) Set the number of workers and another variable used by the example:
 ```
 num_workers = 8;
 simulation_duration_ms = 1000;
@@ -311,7 +311,7 @@ myJob2.AttachedFiles = {
 myJob2.NumWorkersRange = [num_workers, num_workers];
 ```
 
-6) Create a MATLAB task to be executed as part of the job. For this example it will consist of executing the Matlab function `RunAndVisualiseMonodomainSimulation`. The rest of arguments indicate that the task returns three parameters and there are five input arguments to the function. These are passed as a cell array:
+6) Create a MATLAB task to be executed as part of the job. For this example it will consist of executing the MATLAB function `RunAndVisualiseMonodomainSimulation`. The rest of the arguments indicate that the task returns three parameters and there are five input arguments to the function. These are passed as a cell array:
 ```
 task = createTask (myJob2, @RunAndVisualiseMonodomainSimulation, 3, {5000, simulation_duration_ms, 1.4, 1.4, false});
 ```
@@ -325,8 +325,8 @@ As before use `fetchOutputs` to collect the results.
 If you closed your session, you can get your results by:
 ```
 c = parcluster ('LegionGraceMyriadProfileR2018b'); # get a cluster object
-jobs = findJob(c) # gets a list of jobs submitted to that cluster
-job = jobs(3); # pick a particular job
+jobs = findJob(c)                                  # get a list of jobs submitted to that cluster
+job = jobs(3);                                     # pick a particular job
 results = fetchOutputs(job)
 ```
 You can get other information: `diary(job)` will give you the job diary, and `load(job)` will load the workspace. 
