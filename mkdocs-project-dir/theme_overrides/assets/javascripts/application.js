@@ -20,6 +20,11 @@
  * IN THE SOFTWARE.
  */
 
+/* 
+ * This version has been modified to enhance accessibility for the "Copy to
+ * clipboard" feature, which was raised as an issue in testing.
+ */
+
 import "../images/icons/bitbucket.svg"
 import "../images/icons/github.svg"
 import "../images/icons/gitlab.svg"
@@ -109,6 +114,7 @@ function initialize(config) { // eslint-disable-line func-style
         /* Create button with message container */
         const button = (
           <button class="md-clipboard" title={translate("clipboard.copy")}
+            aria-label={translate("clipboard.copy")}
             data-clipboard-target={`#${id} pre, #${id} code`}>
             <span class="md-clipboard__message"></span>
           </button>
