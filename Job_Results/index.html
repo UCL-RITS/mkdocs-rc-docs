@@ -284,8 +284,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#grid-engine-mailing-system" class="md-nav__link">
-    Grid engine mailing system
+  <a href="#grid-engine" class="md-nav__link">
+    Grid engine
   </a>
   
     <nav class="md-nav">
@@ -1323,8 +1323,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#grid-engine-mailing-system" class="md-nav__link">
-    Grid engine mailing system
+  <a href="#grid-engine" class="md-nav__link">
+    Grid engine
   </a>
   
     <nav class="md-nav">
@@ -1386,11 +1386,14 @@
 <p>After submitting your job you can use the command 'qstat' to view the status of the job you have submitted. Once you can no longer see your job on the qstat list this means your job has completed to view the jobs that have completed you can run 'jobhist'. There are various ways of monitoring the output of your job.</p>
 <h2 id="output-and-error-files">Output and error files<a class="headerlink" href="#output-and-error-files" title="Permanent link">§</a></h2>
 <p>When writing up your job script you specifiy your working directory, within this working directory you can find your output(.o) and error(.e) files. These files will contain any possible error your jobs may have come across or any output that was excepted from your job.</p>
-<h2 id="grid-engine-mailing-system">Grid engine mailing system<a class="headerlink" href="#grid-engine-mailing-system" title="Permanent link">§</a></h2>
+<h2 id="grid-engine">Grid engine<a class="headerlink" href="#grid-engine" title="Permanent link">§</a></h2>
 <p>The following options can be used to submit and monitor a job<br /></p>
 <h3 id="qsub">Qsub <br /><a class="headerlink" href="#qsub" title="Permanent link">§</a></h3>
+<p>This command submits your job to the batch queue</p>
 <h3 id="qstat">Qstat <br /><a class="headerlink" href="#qstat" title="Permanent link">§</a></h3>
+<p>This command shows that status oof your job</p>
 <h3 id="qdel">Qdel <br /><a class="headerlink" href="#qdel" title="Permanent link">§</a></h3>
+<p>This command deletes your job from the queue</p>
 <h2 id="qsub-emailing">Qsub emailing<a class="headerlink" href="#qsub-emailing" title="Permanent link">§</a></h2>
 <p>We also have a mailing system that can be implemented to send emails with reminders of the status of your job through qsub. When you use qsub to submit your job you can use the option <code>-m</code>. You can specify when you want an email sent to you by using the below options after <code>qsub -m</code>:
 <br /><br />
