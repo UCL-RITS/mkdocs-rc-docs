@@ -1791,76 +1791,77 @@ export SGE_OPT=h_rt=0:10:0,mem=1G,tmpfs=15G
 <h4 id="example-a-dcs-job-with-more-than-one-input-file">Example: a DCS job with more than one input file<a class="headerlink" href="#example-a-dcs-job-with-more-than-one-input-file" title="Permanent link">§</a></h4>
 <p>This example has several input files. The job type is "MATLAB Pool". A "pool" job runs the specified task function with a MATLAB pool available to run the body of parfor loops or spmd blocks and is the default job type. This example was kindly supplied to assist in testing Matlab by colleagues from CoMPLEX. </p>
 <p>The first part of creating the job is the same as the above example apart from the longer runtime and larger amount of memory per core: </p>
-<p>1) ```
-cd ~/Scratch/Matlab_examples
+<p>1)  Change into a directory in Scratch, set the SGE variables and launch matlab:</p>
+<div class="codehilite"><pre><span></span>cd ~/Scratch/Matlab_examples
 export SGE_OPT=h_rt=1:0:0,mem=2G,tmpfs=15G
-matlab</p>
-<div class="codehilite"><pre><span></span>to launch the GUI or:
+matlab
 </pre></div>
 
 
-<p>matlab -nodesktop -nodisplay</p>
-<div class="codehilite"><pre><span></span>to start a terminal session. 
+<p>to launch the GUI or:</p>
+<div class="codehilite"><pre><span></span>matlab -nodesktop -nodisplay
 </pre></div>
 
 
-<p>c = parcluster ('LegionGraceMyriadProfileR2018b');</p>
-<div class="codehilite"><pre><span></span>2) Using our cluster object create a job object of type &quot;Pool&quot;:
+<p>to start a terminal session. </p>
+<div class="codehilite"><pre><span></span>c = parcluster (&#39;LegionGraceMyriadProfileR2018b&#39;);
 </pre></div>
 
 
-<p>myJob2 = createCommunicatingJob (c, 'Type', 'Pool');</p>
-<div class="codehilite"><pre><span></span>3) Set the number of workers and another variable used to by the example:
+<p>2) Using our cluster object create a job object of type "Pool":</p>
+<div class="codehilite"><pre><span></span>myJob2 = createCommunicatingJob (c, &#39;Type&#39;, &#39;Pool&#39;);
 </pre></div>
 
 
-<p>num_workers = 8;
-simulation_duration_ms = 1000;</p>
-<div class="codehilite"><pre><span></span>4) Tell the job all the input files needed to be made available to each worker as a cell array:
+<p>3) Set the number of workers and another variable used to by the example:</p>
+<div class="codehilite"><pre><span></span>num_workers = 8;
+simulation_duration_ms = 1000;
 </pre></div>
 
 
-<p>myJob2.AttachedFiles = {
-'AssemblyFiniteDifferencesMatrix.m'
-'AssemblyFiniteDifferencesRightHandSide.m'
-'CellModelsComputeIonicCurrents.m'
-'CellModelsGetVoltage.m'
-'CellModelsInitialise.m'
-'CellModelsSetVoltage.m'
-'GetStimuliForTimeStep.m'
-'SubmitMonodomainJob.m'
-'RegressionTest.m'
-'RunAndVisualiseMonodomainSimulation.m'
-'SolveLinearSystem.m'
-'luo_rudy_1991_iionic.m'
-'luo_rudy_1991_time_deriv.m'};</p>
-<div class="codehilite"><pre><span></span>5) Set the minimum and maximum number of workers for the job:
+<p>4) Tell the job all the input files needed to be made available to each worker as a cell array:</p>
+<div class="codehilite"><pre><span></span>myJob2.AttachedFiles = {
+&#39;AssemblyFiniteDifferencesMatrix.m&#39;
+&#39;AssemblyFiniteDifferencesRightHandSide.m&#39;
+&#39;CellModelsComputeIonicCurrents.m&#39;
+&#39;CellModelsGetVoltage.m&#39;
+&#39;CellModelsInitialise.m&#39;
+&#39;CellModelsSetVoltage.m&#39;
+&#39;GetStimuliForTimeStep.m&#39;
+&#39;SubmitMonodomainJob.m&#39;
+&#39;RegressionTest.m&#39;
+&#39;RunAndVisualiseMonodomainSimulation.m&#39;
+&#39;SolveLinearSystem.m&#39;
+&#39;luo_rudy_1991_iionic.m&#39;
+&#39;luo_rudy_1991_time_deriv.m&#39;};
 </pre></div>
 
 
-<p>myJob2.NumWorkersRange = [num_workers, num_workers];</p>
-<div class="codehilite"><pre><span></span>6) Create a MATLAB task to be executed as part of the job. For this example it will consist of executing the Matlab function `RunAndVisualiseMonodomainSimulation`. The rest of arguments indicate that the task returns three parameters and there are five input arguments to the function. These are passed as a cell array:
+<p>5) Set the minimum and maximum number of workers for the job:</p>
+<div class="codehilite"><pre><span></span>myJob2.NumWorkersRange = [num_workers, num_workers];
 </pre></div>
 
 
-<p>task = createTask (myJob2, @RunAndVisualiseMonodomainSimulation, 3, {5000, simulation_duration_ms, 1.4, 1.4, false});</p>
-<div class="codehilite"><pre><span></span>7) Submit the job:
+<p>6) Create a MATLAB task to be executed as part of the job. For this example it will consist of executing the Matlab function <code>RunAndVisualiseMonodomainSimulation</code>. The rest of arguments indicate that the task returns three parameters and there are five input arguments to the function. These are passed as a cell array:</p>
+<div class="codehilite"><pre><span></span>task = createTask (myJob2, @RunAndVisualiseMonodomainSimulation, 3, {5000, simulation_duration_ms, 1.4, 1.4, false});
 </pre></div>
 
 
-<p>submit (myJob2);</p>
-<div class="codehilite"><pre><span></span>As before use `fetchOutputs` to collect the results.
-
-If you closed your session, you can get your results by:
+<p>7) Submit the job:</p>
+<div class="codehilite"><pre><span></span>submit (myJob2);
 </pre></div>
 
 
-<p>c = parcluster ('LegionGraceMyriadProfileR2018b'); # get a cluster object
+<p>As before use <code>fetchOutputs</code> to collect the results.</p>
+<p>If you closed your session, you can get your results by:</p>
+<div class="codehilite"><pre><span></span>c = parcluster (&#39;LegionGraceMyriadProfileR2018b&#39;); # get a cluster object
 jobs = findJob(c) # gets a list of jobs submitted to that cluster
 job = jobs(3); # pick a particular job
 results = fetchOutputs(job)
-<code>``
-You can get other information:</code>diary(job)<code>will give you the job diary, and</code>load(job)` will load the workspace. </p>
+</pre></div>
+
+
+<p>You can get other information: <code>diary(job)</code> will give you the job diary, and <code>load(job)</code> will load the workspace. </p>
 <h2 id="submitting-matlab-jobs-from-your-workstationlaptop">Submitting MATLAB jobs from your workstation/laptop<a class="headerlink" href="#submitting-matlab-jobs-from-your-workstationlaptop" title="Permanent link">§</a></h2>
 <h2 id="running-matlab-on-gpus">Running MATLAB on GPUs<a class="headerlink" href="#running-matlab-on-gpus" title="Permanent link">§</a></h2>
                 
