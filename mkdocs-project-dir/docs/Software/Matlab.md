@@ -262,7 +262,8 @@ This example has several input files. The job type is "MATLAB Pool". A "pool" jo
 
 The first part of creating the job is the same as the above example apart from the longer runtime and larger amount of memory per core: 
 
-1) ```
+1)  Change into a directory in Scratch, set the SGE variables and launch matlab:
+```
 cd ~/Scratch/Matlab_examples
 export SGE_OPT=h_rt=1:0:0,mem=2G,tmpfs=15G
 matlab
