@@ -1789,9 +1789,9 @@ export SGE_OPT=h_rt=0:10:0,mem=1G,tmpfs=15G
 
 
 <h4 id="example-a-dcs-job-with-more-than-one-input-file">Example: a DCS job with more than one input file<a class="headerlink" href="#example-a-dcs-job-with-more-than-one-input-file" title="Permanent link">§</a></h4>
-<p>This example has several input files. The job type is "MATLAB Pool". A "pool" job runs the specified task function with a MATLAB pool available to run the body of parfor loops or spmd blocks and is the default job type. This example was kindly supplied to assist in testing Matlab by colleagues from CoMPLEX. </p>
+<p>This example has several input files. The job type is "MATLAB Pool". A "Pool" job runs the specified task function with a MATLAB pool available to run the body of parfor loops or spmd blocks and is the default job type. This example was kindly supplied to assist in testing MATLAB by colleagues from CoMPLEX. </p>
 <p>The first part of creating the job is the same as the above example apart from the longer runtime and larger amount of memory per core: </p>
-<p>1)  Change into a directory in Scratch, set the SGE variables and launch matlab:</p>
+<p>1)  Change into a directory in Scratch, set the SGE variables and launch MATLAB:</p>
 <div class="codehilite"><pre><span></span>cd ~/Scratch/Matlab_examples
 export SGE_OPT=h_rt=1:0:0,mem=2G,tmpfs=15G
 matlab
@@ -1813,7 +1813,7 @@ matlab
 </pre></div>
 
 
-<p>3) Set the number of workers and another variable used to by the example:</p>
+<p>3) Set the number of workers and another variable used by the example:</p>
 <div class="codehilite"><pre><span></span>num_workers = 8;
 simulation_duration_ms = 1000;
 </pre></div>
@@ -1842,7 +1842,7 @@ simulation_duration_ms = 1000;
 </pre></div>
 
 
-<p>6) Create a MATLAB task to be executed as part of the job. For this example it will consist of executing the Matlab function <code>RunAndVisualiseMonodomainSimulation</code>. The rest of arguments indicate that the task returns three parameters and there are five input arguments to the function. These are passed as a cell array:</p>
+<p>6) Create a MATLAB task to be executed as part of the job. For this example it will consist of executing the MATLAB function <code>RunAndVisualiseMonodomainSimulation</code>. The rest of the arguments indicate that the task returns three parameters and there are five input arguments to the function. These are passed as a cell array:</p>
 <div class="codehilite"><pre><span></span>task = createTask (myJob2, @RunAndVisualiseMonodomainSimulation, 3, {5000, simulation_duration_ms, 1.4, 1.4, false});
 </pre></div>
 
@@ -1855,8 +1855,8 @@ simulation_duration_ms = 1000;
 <p>As before use <code>fetchOutputs</code> to collect the results.</p>
 <p>If you closed your session, you can get your results by:</p>
 <div class="codehilite"><pre><span></span>c = parcluster (&#39;LegionGraceMyriadProfileR2018b&#39;); # get a cluster object
-jobs = findJob(c) # gets a list of jobs submitted to that cluster
-job = jobs(3); # pick a particular job
+jobs = findJob(c)                                  # get a list of jobs submitted to that cluster
+job = jobs(3);                                     # pick a particular job
 results = fetchOutputs(job)
 </pre></div>
 
