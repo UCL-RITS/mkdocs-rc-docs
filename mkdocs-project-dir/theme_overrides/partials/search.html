@@ -19,6 +19,12 @@
   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
   IN THE SOFTWARE.
 -->
+{#-
+  This file overrides the default search partial to add accessibility labelling to the reset button
+  And also an alert role to the results count box
+  This will probably cause a problem at some point if the upstream search partial changes.
+  (A 'partial' in this context is a template fragment)
+-#}
 
 {% import "partials/language.html" as lang with context %}
 
@@ -34,14 +40,14 @@
           data-md-state="active" />
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon"
-          data-md-component="reset" tabindex="-1">
+          data-md-component="reset" tabindex="-1" aria-label="Reset search">
         &#xE5CD;<!-- close -->
       </button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
+          <div class="md-search-result__meta" role="alert">
             {{ lang.t("search.result.placeholder") }}
           </div>
           <ol class="md-search-result__list"></ol>
