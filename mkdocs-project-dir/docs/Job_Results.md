@@ -8,7 +8,7 @@ When writing up your job script you specifiy your working directory, within this
 ## Grid engine mailing system
 The following options can be used to submit and monitor a job<br />
 ###Qsub <br />
-####Qstat <br /> 
+###Qstat <br /> 
 ###Qdel <br />
 
 ## Qsub emailing
