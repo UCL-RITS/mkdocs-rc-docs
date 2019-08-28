@@ -19,6 +19,7 @@
   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
   IN THE SOFTWARE.
 -->
+<!-- Modified to indicate that expandable nav items are expandable -->
 
 <!-- Determine class according to level -->
 {% set class = "md-nav__item" %}
@@ -40,7 +41,7 @@
     {% endif %}
 
     <!-- Expand active pages -->
-    <label class="md-nav__link" for="{{ path }}">
+    <label class="md-nav__link" for="{{ path }}" aria-label="{{nav_item.title}} (click to expand)">
       {{ nav_item.title }}
     </label>
     <nav class="md-nav" data-md-component="collapsible"
