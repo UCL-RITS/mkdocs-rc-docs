@@ -505,6 +505,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#further-reading" class="md-nav__link">
+    Further reading
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -519,6 +526,40 @@
   <a href="#submitting-matlab-jobs-from-your-workstationlaptop" class="md-nav__link">
     Submitting MATLAB jobs from your workstation/laptop
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup_1" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submitting-a-job-to-the-cluster" class="md-nav__link">
+    Submitting a Job to the Cluster
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-your-results" class="md-nav__link">
+    Viewing your results
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1471,6 +1512,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#further-reading" class="md-nav__link">
+    Further reading
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1485,6 +1533,40 @@
   <a href="#submitting-matlab-jobs-from-your-workstationlaptop" class="md-nav__link">
     Submitting MATLAB jobs from your workstation/laptop
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup_1" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submitting-a-job-to-the-cluster" class="md-nav__link">
+    Submitting a Job to the Cluster
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-your-results" class="md-nav__link">
+    Viewing your results
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1862,7 +1944,50 @@ results = fetchOutputs(job)
 
 
 <p>You can get other information: <code>diary(job)</code> will give you the job diary, and <code>load(job)</code> will load the workspace. </p>
+<h4 id="further-reading">Further reading<a class="headerlink" href="#further-reading" title="Permanent link">§</a></h4>
+<p>There is a lot more information about using the MATLAB Distributed Computing Server in the MATLAB manual: <a href="https://uk.mathworks.com/help/distcomp/index.html">Parallel Computing Toolbox User’s Guide</a>.</p>
 <h2 id="submitting-matlab-jobs-from-your-workstationlaptop">Submitting MATLAB jobs from your workstation/laptop<a class="headerlink" href="#submitting-matlab-jobs-from-your-workstationlaptop" title="Permanent link">§</a></h2>
+<p>You can submit MATLAB jobs to Myriad and Legion from MATLAB sessions running on your own desktop workstation or laptop systems provided they are running the same version of MATLAB and your computer is within the UCL firewall. </p>
+<p>With MATLAB R2018b you can currently submit jobs to Myriad and Legion. Older versions (R2016b and R2018a) can be used to submit jobs to Legion only, if you still have an account. </p>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">§</a></h3>
+<ol>
+<li>You must already have an account on the clusters!</li>
+<li>Have MATLAB R2018b installed on your local workstation/laptop. The local version must match the version running jobs. MATLAB R2018b can be downloaded from the <a href="http://swdb.ucl.ac.uk/package/view/id/2?filter=Matlab">UCL Software Database</a>.</li>
+<li>Your local workstation/laptop installation of MATLAB must include the Parallel Computing toolbox. This is included in the UCL TAH MATLAB license and may be installed automatically.</li>
+<li>If your local workstation/laptop is not directly connected to the UCL network (at home for example), you need to have the <a href="https://www.ucl.ac.uk/isd/services/get-connected/remote-working-services/ucl-virtual-private-network-vpn">UCL VPN client</a> installed and running on it.</li>
+</ol>
+<h3 id="setup_1">Setup<a class="headerlink" href="#setup_1" title="Permanent link">§</a></h3>
+<p>1) On the cluster you are using (Myriad or Legion) create a directory to hold remotely submitted job details. For example:</p>
+<div class="codehilite"><pre><span></span>mkdir ~/Scratch/Matlab_remote_jobs
+</pre></div>
+
+
+<p>This directory needs to be in your Scratch directory as compute nodes need to be able to write to it. You should not use this directory for anything else.</p>
+<p>2) On your local workstation/laptop create a directory to hold information about jobs that have been submitted to the cluster. Again you should not use this directory for anything else.</p>
+<p>3) Download the <a href="../matlab_resources/Myriad_submit_R2018b.zip">support files for remote submission to Myriad and Legion for R2018b</a> or <a href="../matlab_resources/Legion_submit_R2018a.zip">support files for remote submission to Legion only for R2018a</a>. Make sure you download the correct one for your version of MATLAB!</p>
+<p>4) This step <strong>MUST</strong> be done while Matlab is shut down. Unzip the archive into MATLAB's local toolbox directory. Default locations for the local toolbox directory are:</p>
+<ul>
+<li>Linux
+The default local toolbox location is <code>/usr/local/MATLAB/R2018b/toolbox/local</code> for R2018b. Navigate to this directory and use <code>unzip -x archive_name</code>. </li>
+<li>Mac OS X
+The default local toolbox location is <code>/Applications/MATLAB_R2018b.app/toolbox/local</code> for R2018b. In order to view or change the contents of an application package, open <code>/Applications</code> in a Finder window. Then right-click the application and select "View Package Contents." Then navigate to the appropriate directory. Note: if you don't have access to <code>/Applications/MATLAB_R2018b.app/toolbox/local</code>, you can unzip the support files into <code>~/Documents/MATLAB/</code> instead. </li>
+<li>Windows
+The default local toolbox location is <code>C:\Program Files\MATLAB\R2018b\toolbox\local</code> for R2018b. Extract the archive here. You can unzip the support files into <code>Documents\MATLAB\</code> instead.</li>
+</ul>
+<p>5) Download the <a href="../matlab_resources/ParallelProfileMyriad.m.zip">parallelProfileMyriad function</a> or the <a href="../matlab_resources/ParallelProfileLegion.m.zip">parallelProfileLegion function</a> to your local workstation/laptop. It will need to be unzipped. These functions create a cluster profile for Myriad or Legion.</p>
+<p>6) Start MATLAB, navigate to where you saved the <code>parallelProfileMyriad.m</code> or <code>parallelProfileLegion.m</code> files and run the function by typing:</p>
+<div class="codehilite"><pre><span></span>parallelProfileMyriad
+</pre></div>
+
+
+<p>or:</p>
+<div class="codehilite"><pre><span></span>parallelProfileLegion
+</pre></div>
+
+
+<p>at your MATLAB prompt (in your MATLAB Command Window if running the MATLAB GUI) and answer the questions.</p>
+<h3 id="submitting-a-job-to-the-cluster">Submitting a Job to the Cluster<a class="headerlink" href="#submitting-a-job-to-the-cluster" title="Permanent link">§</a></h3>
+<h3 id="viewing-your-results">Viewing your results<a class="headerlink" href="#viewing-your-results" title="Permanent link">§</a></h3>
 <h2 id="running-matlab-on-gpus">Running MATLAB on GPUs<a class="headerlink" href="#running-matlab-on-gpus" title="Permanent link">§</a></h2>
                 
                   
