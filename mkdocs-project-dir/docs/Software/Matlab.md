@@ -331,8 +331,60 @@ results = fetchOutputs(job)
 ```
 You can get other information: `diary(job)` will give you the job diary, and `load(job)` will load the workspace. 
 
+#### Further reading
+
+There is a lot more information about using the MATLAB Distributed Computing Server in the MATLAB manual: [Parallel Computing Toolbox User’s Guide](https://uk.mathworks.com/help/distcomp/index.html).
+
 
 ## Submitting MATLAB jobs from your workstation/laptop
+
+You can submit MATLAB jobs to Myriad and Legion from MATLAB sessions running on your own desktop workstation or laptop systems provided they are running the same version of MATLAB and your computer is within the UCL firewall. 
+
+With MATLAB R2018b you can currently submit jobs to Myriad and Legion. Older versions (R2016b and R2018a) can be used to submit jobs to Legion only, if you still have an account. 
+
+### Prerequisites
+
+1. You must already have an account on the clusters!
+2. Have MATLAB R2018b installed on your local workstation/laptop. The local version must match the version running jobs. MATLAB R2018b can be downloaded from the [UCL Software Database](http://swdb.ucl.ac.uk/package/view/id/2?filter=Matlab).
+3. Your local workstation/laptop installation of MATLAB must include the Parallel Computing toolbox. This is included in the UCL TAH MATLAB license and may be installed automatically.
+4. If your local workstation/laptop is not directly connected to the UCL network (at home for example), you need to have the [UCL VPN client](https://www.ucl.ac.uk/isd/services/get-connected/remote-working-services/ucl-virtual-private-network-vpn) installed and running on it.
+
+### Setup
+
+1) On the cluster you are using (Myriad or Legion) create a directory to hold remotely submitted job details. For example:
+```
+mkdir ~/Scratch/Matlab_remote_jobs
+```
+This directory needs to be in your Scratch directory as compute nodes need to be able to write to it. You should not use this directory for anything else.
+
+2) On your local workstation/laptop create a directory to hold information about jobs that have been submitted to the cluster. Again you should not use this directory for anything else.
+
+3) Download the [support files for remote submission to Myriad and Legion for R2018b](matlab_resources/Myriad_submit_R2018b.zip) or [support files for remote submission to Legion only for R2018a](matlab_resources/Legion_submit_R2018a.zip). Make sure you download the correct one for your version of MATLAB!
+
+4) This step **MUST** be done while Matlab is shut down. Unzip the archive into MATLAB's local toolbox directory. Default locations for the local toolbox directory are:
+
+* Linux
+The default local toolbox location is `/usr/local/MATLAB/R2018b/toolbox/local` for R2018b. Navigate to this directory and use `unzip -x archive_name`. 
+* Mac OS X
+The default local toolbox location is `/Applications/MATLAB_R2018b.app/toolbox/local` for R2018b. In order to view or change the contents of an application package, open `/Applications` in a Finder window. Then right-click the application and select "View Package Contents." Then navigate to the appropriate directory. Note: if you don't have access to `/Applications/MATLAB_R2018b.app/toolbox/local`, you can unzip the support files into `~/Documents/MATLAB/` instead. 
+* Windows
+The default local toolbox location is `C:\Program Files\MATLAB\R2018b\toolbox\local` for R2018b. Extract the archive here. You can unzip the support files into `Documents\MATLAB\` instead.
+
+5) Download the [parallelProfileMyriad function](matlab_resources/ParallelProfileMyriad.m.zip) or the [parallelProfileLegion function](matlab_resources/ParallelProfileLegion.m.zip) to your local workstation/laptop. It will need to be unzipped. These functions create a cluster profile for Myriad or Legion.
+
+6) Start MATLAB, navigate to where you saved the `parallelProfileMyriad.m` or `parallelProfileLegion.m` files and run the function by typing:
+```
+parallelProfileMyriad
+```
+or:
+```
+parallelProfileLegion
+```
+at your MATLAB prompt (in your MATLAB Command Window if running the MATLAB GUI) and answer the questions.
+
+### Submitting a Job to the Cluster
+
+### Viewing your results
 
 
 ## Running MATLAB on GPUs
