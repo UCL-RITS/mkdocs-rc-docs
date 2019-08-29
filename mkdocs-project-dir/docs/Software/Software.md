@@ -286,13 +286,14 @@ FreeSurfer is a set of tools for analysis and visualization of structural and fu
 
 Freesurfer can use threads to run on multiple cores in one node: request the number with `-pe smp` in the resource-request part of your jobscript.
 ```
-cd $TMPDIR
+#$ -pe smp 4
 
 module load xorg-utils/X11R7.7
-module load freesurfer/5.3.0
-export SUBJECTS_DIR=~/Scratch/PADDINGTON
+module load freesurfer/6.0.0
+export SUBJECTS_DIR=~/Scratch/FreeSurfer_examples/subjects
 
-time recon-all -subjid 30432 -autorecon1 -cw256
+# -openmp $NSLOTS runs with the number of threads you requested
+recon-all -openmp $NSLOTS -i sample-001.nii.gz -s bert -all
 ```
 
 
