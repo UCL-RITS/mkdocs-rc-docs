@@ -538,15 +538,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#setup_1" class="md-nav__link">
-    Setup
+  <a href="#remote-setup" class="md-nav__link">
+    Remote setup
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#submitting-a-job-to-the-cluster" class="md-nav__link">
-    Submitting a Job to the Cluster
+    Submitting a job to the cluster
   </a>
   
 </li>
@@ -555,6 +555,19 @@
   <a href="#viewing-your-results" class="md-nav__link">
     Viewing your results
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#writing-intermediate-results" class="md-nav__link">
+    Writing intermediate results
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1545,15 +1558,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#setup_1" class="md-nav__link">
-    Setup
+  <a href="#remote-setup" class="md-nav__link">
+    Remote setup
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#submitting-a-job-to-the-cluster" class="md-nav__link">
-    Submitting a Job to the Cluster
+    Submitting a job to the cluster
   </a>
   
 </li>
@@ -1562,6 +1575,19 @@
   <a href="#viewing-your-results" class="md-nav__link">
     Viewing your results
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#writing-intermediate-results" class="md-nav__link">
+    Writing intermediate results
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1786,9 +1812,10 @@ parallel.defaultClusterProfile (&#39;LegionGraceMyriadProfileR2018b&#39;);
 <p>We have set up three Grid Engine environment variables to assist with job submission from within MATLAB. These are needed to pass in job resource parameters that aren't supported by the internal MATLAB job submission mechanism.</p>
 <ul>
 <li><code>SGE_CONTEXT</code>: a comma-separated list of variables treated as if added via the <code>-ac</code> option, eg. <code>exclusive</code></li>
-<li><code>SGE_OPT</code>: comma-separated list of resources treated as if added via the <code>-l</code> option, eg. <code>h_rt=0:10:0,mem=1G,tmpfs=15G</code></li>
+<li><code>SGE_OPT</code>: a comma-separated list of resources treated as if added via the <code>-l</code> option, eg. <code>h_rt=0:10:0,mem=1G,tmpfs=15G</code></li>
 <li><code>SGE_PROJECT</code>: a project treated as if added via the <code>-P</code> option (not normally needed).</li>
 </ul>
+<p><code>-ac exclusive</code> prevents anything else running on the same node as your job, even if you aren't using all the cores. This is no longer a necessary option for MATLAB jobs.</p>
 <p>There are two ways to set these:</p>
 <p>1) Before starting your MATLAB session, using the usual Bash method of exporting environment variables:</p>
 <div class="codehilite"><pre><span></span>export SGE_CONTEXT=exclusive
@@ -1956,7 +1983,7 @@ results = fetchOutputs(job)
 <li>Your local workstation/laptop installation of MATLAB must include the Parallel Computing toolbox. This is included in the UCL TAH MATLAB license and may be installed automatically.</li>
 <li>If your local workstation/laptop is not directly connected to the UCL network (at home for example), you need to have the <a href="https://www.ucl.ac.uk/isd/services/get-connected/remote-working-services/ucl-virtual-private-network-vpn">UCL VPN client</a> installed and running on it.</li>
 </ol>
-<h3 id="setup_1">Setup<a class="headerlink" href="#setup_1" title="Permanent link">§</a></h3>
+<h3 id="remote-setup">Remote setup<a class="headerlink" href="#remote-setup" title="Permanent link">§</a></h3>
 <p>1) On the cluster you are using (Myriad or Legion) create a directory to hold remotely submitted job details. For example:</p>
 <div class="codehilite"><pre><span></span>mkdir ~/Scratch/Matlab_remote_jobs
 </pre></div>
@@ -1967,11 +1994,11 @@ results = fetchOutputs(job)
 <p>3) Download the <a href="../matlab_resources/Myriad_submit_R2018b.zip">support files for remote submission to Myriad and Legion for R2018b</a> or <a href="../matlab_resources/Legion_submit_R2018a.zip">support files for remote submission to Legion only for R2018a</a>. Make sure you download the correct one for your version of MATLAB!</p>
 <p>4) This step <strong>MUST</strong> be done while Matlab is shut down. Unzip the archive into MATLAB's local toolbox directory. Default locations for the local toolbox directory are:</p>
 <ul>
-<li>Linux
+<li>Linux:
 The default local toolbox location is <code>/usr/local/MATLAB/R2018b/toolbox/local</code> for R2018b. Navigate to this directory and use <code>unzip -x archive_name</code>. </li>
-<li>Mac OS X
+<li>Mac OS X:
 The default local toolbox location is <code>/Applications/MATLAB_R2018b.app/toolbox/local</code> for R2018b. In order to view or change the contents of an application package, open <code>/Applications</code> in a Finder window. Then right-click the application and select "View Package Contents." Then navigate to the appropriate directory. Note: if you don't have access to <code>/Applications/MATLAB_R2018b.app/toolbox/local</code>, you can unzip the support files into <code>~/Documents/MATLAB/</code> instead. </li>
-<li>Windows
+<li>Windows:
 The default local toolbox location is <code>C:\Program Files\MATLAB\R2018b\toolbox\local</code> for R2018b. Extract the archive here. You can unzip the support files into <code>Documents\MATLAB\</code> instead.</li>
 </ul>
 <p>5) Download the <a href="../matlab_resources/ParallelProfileMyriad.m.zip">parallelProfileMyriad function</a> or the <a href="../matlab_resources/ParallelProfileLegion.m.zip">parallelProfileLegion function</a> to your local workstation/laptop. It will need to be unzipped. These functions create a cluster profile for Myriad or Legion.</p>
@@ -1986,8 +2013,38 @@ The default local toolbox location is <code>C:\Program Files\MATLAB\R2018b\toolb
 
 
 <p>at your MATLAB prompt (in your MATLAB Command Window if running the MATLAB GUI) and answer the questions.</p>
-<h3 id="submitting-a-job-to-the-cluster">Submitting a Job to the Cluster<a class="headerlink" href="#submitting-a-job-to-the-cluster" title="Permanent link">§</a></h3>
+<h3 id="submitting-a-job-to-the-cluster">Submitting a job to the cluster<a class="headerlink" href="#submitting-a-job-to-the-cluster" title="Permanent link">§</a></h3>
+<p>1) You need to set the <a href="#environment-variables-needed-for-job-submission">Grid Engine support environment variables</a> on your local computer.
+Eg. in your MATLAB session set:</p>
+<div class="codehilite"><pre><span></span>setenv (&#39;SGE_CONTEXT&#39;, &#39;exclusive&#39;);                # optional
+setenv (&#39;SGE_OPT&#39;, &#39;h_rt=0:15:0,mem=2G,tmpfs=15G&#39;); 
+setenv (&#39;SGE_PROJECT&#39;, &#39;&lt;your project ID&gt;&#39;);        # optional
+</pre></div>
+
+
+<p>2) In your MATLAB session create a cluster object using the cluster profile created by the <code>parallelProfile...</code> functions. For Myriad:</p>
+<div class="codehilite"><pre><span></span>c = parcluster (&#39;myriad_R2018b&#39;);
+</pre></div>
+
+
+<p>For Legion the profile is called <code>legion_R2018b</code>.</p>
+<p>3) You can now create and submit jobs in a similar way to that shown in the DCS examples above starting from step 4 in the <a href="#example-a-simple-dcs-job">simple DCS job example</a> or step 2 in the <a href="#example-a-dcs-job-with-more-than-one-input-file">DCS job with multiple input files example</a>.</p>
 <h3 id="viewing-your-results">Viewing your results<a class="headerlink" href="#viewing-your-results" title="Permanent link">§</a></h3>
+<p>After submitting your job remotely from your desktop, you can close MATLAB and come back later. To see your jobs:</p>
+<p>Click "Parallel &gt; Monitor jobs"</p>
+<p>This will bring up the job monitor where you can see the status of your jobs and whether they are finished. MATLAB numbers the jobs sequentially.</p>
+<p>Right-click on a job and choose "fetch outputs".</p>
+<p>This is what will be executed (for job4 on Myriad):</p>
+<div class="codehilite"><pre><span></span>myCluster = parcluster(&#39;myriad_R2018b&#39;);
+job4 = myCluster.findJob(&#39;ID&#39;,4);
+job4_output = fetchOutputs(job4);
+</pre></div>
+
+
+<p>The Workspace will show the available data and you can view your results. The data is fetched from the <code>Matlab_remote_jobs</code> directory you created on Myriad (or Legion) in <a href="#remote-setup">Remote setup</a> step 1, so that will also have files and directories in it called job1, job2 and so on.</p>
+<p>If you have already fetched the data, you can view the results straight away by selecting that job. If you need to reload everything, you can right-click on the job and the option will be to load variables instead. </p>
+<h4 id="writing-intermediate-results">Writing intermediate results<a class="headerlink" href="#writing-intermediate-results" title="Permanent link">§</a></h4>
+<p>If you want to explicitly write out intermediate results, you need to provide a full path to somewhere in Scratch otherwise MATLAB will try to write them in your home, which isn't writable by the compute nodes. </p>
 <h2 id="running-matlab-on-gpus">Running MATLAB on GPUs<a class="headerlink" href="#running-matlab-on-gpus" title="Permanent link">§</a></h2>
                 
                   
