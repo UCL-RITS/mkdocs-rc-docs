@@ -437,6 +437,8 @@ If you want to explicitly write out intermediate results, you need to provide a 
 
 ## Running MATLAB on GPUs
 
+This uses MATLAB's [Mandelbrot Set GPU example](https://uk.mathworks.com/help/distcomp/examples/illustrating-three-approaches-to-gpu-computing-the-mandelbrot-set.html).
+
 ```
 #!/bin/bash -l
 
