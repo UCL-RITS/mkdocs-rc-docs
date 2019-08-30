@@ -45,9 +45,9 @@ Here is an example jobscript which you would submit using the `qsub` command, af
 # Request 15 gigabytes of TMPDIR space (default is 10 GB)
 #$ -l tmpfs=15G
 
-# Request 12 threads (which will use 12 cores). 
-# On Myriad you could set the number of threads to a maximum of 36. 
-#$ -pe smp 12
+# Request a number of threads (which will use that number of cores). 
+# On Myriad you can set the number of threads to a maximum of 36. 
+#$ -pe smp 36
 
 # Request one MATLAB licence - makes sure your job doesn't start 
 # running until sufficient licenses are free.
@@ -455,6 +455,9 @@ This uses MATLAB's [Mandelbrot Set GPU example](https://uk.mathworks.com/help/di
 
 # Request 1 GPU
 #$ -l gpu=1
+
+# Request 1 CPU core. (Max on Myriad is 36)
+#$ -pe smp 1
 
 # Request one MATLAB licence - makes sure your job doesn't start 
 # running until sufficient licenses are free.
