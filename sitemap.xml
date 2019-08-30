@@ -56,6 +56,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>http://rits.github-pages.ucl.ac.uk/mkdocs-rc-docs/Software/Singularity/</loc>
+     <lastmod>2019-08-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://rits.github-pages.ucl.ac.uk/mkdocs-rc-docs/Software/Software/</loc>
      <lastmod>2019-08-30</lastmod>
      <changefreq>daily</changefreq>
