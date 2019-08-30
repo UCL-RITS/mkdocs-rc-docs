@@ -87,6 +87,11 @@ echo ""
 matlab -nosplash -nodesktop -nodisplay < myMatlabJob.m
 # Or if you did not copy your files:
 # matlab -nosplash -nodesktop -nodisplay < ~/Scratch/Matlab_examples/myMatlabJob.m
+
+# tar up all contents of $TMPDIR back into your space
+tar zcvf $HOME/Scratch/Matlab_examples/files_from_job_${JOB_ID}.tgz $TMPDIR
+
+# Make sure you have given enough time for the copy to complete!
 ```
 
 Alternative syntax:
@@ -431,5 +436,60 @@ If you want to explicitly write out intermediate results, you need to provide a 
 
 
 ## Running MATLAB on GPUs
+
+```
+#!/bin/bash -l
+
+# Batch script to run a GPU MATLAB job on Myriad.
+
+# Request 15 minutes of wallclock time (format hours:minutes:seconds).
+#$ -l h_rt=0:15:0
+
+# Request 2 gigabytes of RAM per core.
+#$ -l mem=2G
+
+# Request 15 gigabytes of TMPDIR space (default is 10 GB)
+#$ -l tmpfs=15G
+
+# Request 1 GPU
+#$ -l gpu=1
+
+# Request one MATLAB licence - makes sure your job doesn't start 
+# running until sufficient licenses are free.
+#$ -l matlab=1
+
+# Set the name of the job.
+#$ -N Matlab_GPU_Job1
+
+# Set the working directory to somewhere in your scratch space.
+# This is a necessary step as compute nodes cannot write to $HOME.
+# Replace "<your_UCL_id>" with your UCL user ID.
+# This directory must already exist.
+#$ -wd /home/<your_UCL_id>/Scratch/Matlab_examples
+
+# Your work should be done in $TMPDIR
+cd $TMPDIR
+
+# Optional: Copy your script and any other files into $TMPDIR.
+# If not, you must always refer to them using a full path.
+cp /home/ccaabaa/Software/Matlab/Mandelbrot_GPU.m $TMPDIR
+
+module unload compilers mpi
+module load compilers/gnu/4.9.2
+module load xorg-utils/X11R7.7
+module load matlab/full/r2018b/9.5
+module list
+
+# These echoes output what you are about to run
+echo ""
+echo "Running matlab -nosplash -nodisplay < Mandelbrot_GPU.m ..."
+echo ""
+matlab -nosplash -nodesktop -nodisplay < Mandelbrot_GPU.m
+
+# tar up all contents of $TMPDIR back into your space
+tar zcvf $HOME/Scratch/Matlab_examples/files_from_job_${JOB_ID}.tgz $TMPDIR
+
+# Make sure you have given enough time for the copy to complete!
+```
 
 
