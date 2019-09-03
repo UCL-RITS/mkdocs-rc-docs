@@ -1409,7 +1409,7 @@ qsub -ac allow=XYZ myscript.sh&lt; /br&gt;</p>
 <h3 id="qstat">Qstat <br /><a class="headerlink" href="#qstat" title="Permanent link">§</a></h3>
 <p>This command shows that status oof your job. When you run qstat with no options all of your jobs currently running will be displayed. By adding in the option <code>-f -j &lt;job-ID&gt;</code> you will get more detail on the specified job.</p>
 <h3 id="qdel">Qdel <br /><a class="headerlink" href="#qdel" title="Permanent link">§</a></h3>
-<p>This command deletes your job from the queue</p>
+<p>This command deletes your job from the queue. When deleting a job will need to run <code>qdel &lt;job-ID&gt;</code>, however <code>qdel '*'</code> can be used to delete all jobs. To delete a batch of jobs, creating a file with the list of job IDs that you would like to delete and placing it in the following commands will delete the following jobs: <code>cat &lt;filename&gt; | xargs qdel</code></p>
 <h2 id="qsub-emailing">Qsub emailing<a class="headerlink" href="#qsub-emailing" title="Permanent link">§</a></h2>
 <p>We also have a mailing system that can be implemented to send emails with reminders of the status of your job through qsub. When you use qsub to submit your job you can use the option <code>-m</code>. You can specify when you want an email sent to you by using the below options after <code>qsub -m</code>:
 <br /><br />
