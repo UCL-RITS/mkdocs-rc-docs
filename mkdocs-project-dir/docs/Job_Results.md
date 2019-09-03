@@ -8,7 +8,7 @@ When writing up your job script you specifiy your working directory, within this
 ## Grid engine
 The following options can be used to submit and monitor a job<br />
 ### Qsub <br />
-This command submits your job to the batch queue. You can also specify variables on your jacket in your qsub command which will overide what is in your job script.
+This command submits your job to the batch queue. You can also specify variables on your jacket in your qsub command which will overide what is in your job script. <br />
 qsub -N NewName myscript.sh <br />
 qsub -l h_rt=24:0:0 myscript.sh <br />
 qsub -hold_jid 12345 myscript.sh <br />
