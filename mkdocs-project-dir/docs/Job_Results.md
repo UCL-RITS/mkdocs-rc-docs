@@ -1,3 +1,8 @@
+---
+title: Where do my results go?
+layout: docs
+---
+
 # Where do my results go?
 
 After submitting your job you can use the command 'qstat' to view the status of the job you have submitted. Once you can no longer see your job on the qstat list this means your job has completed to view the jobs that have completed you can run 'jobhist'. There are various ways of monitoring the output of your job.
