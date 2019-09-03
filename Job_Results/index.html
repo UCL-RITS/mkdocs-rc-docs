@@ -1407,7 +1407,7 @@ qsub -l h_rt=24:0:0 myscript.sh&lt; /br&gt;
 qsub -hold_jid 12345 myscript.sh&lt; /br&gt;
 qsub -ac allow=XYZ myscript.sh&lt; /br&gt;</p>
 <h3 id="qstat">Qstat <br /><a class="headerlink" href="#qstat" title="Permanent link">§</a></h3>
-<p>This command shows that status oof your job. When you run qstat with no options all of your jobs currently running will be displayed. By adding in the option '-f -j <job-number>` you will get more detail on the specified job.</p>
+<p>This command shows that status oof your job. When you run qstat with no options all of your jobs currently running will be displayed. By adding in the option <code>-f -j &lt;job-ID&gt;</code> you will get more detail on the specified job.</p>
 <h3 id="qdel">Qdel <br /><a class="headerlink" href="#qdel" title="Permanent link">§</a></h3>
 <p>This command deletes your job from the queue</p>
 <h2 id="qsub-emailing">Qsub emailing<a class="headerlink" href="#qsub-emailing" title="Permanent link">§</a></h2>
