@@ -1402,10 +1402,10 @@
 <p>The following options can be used to submit and monitor a job<br /></p>
 <h3 id="qsub">Qsub <br /><a class="headerlink" href="#qsub" title="Permanent link">§</a></h3>
 <p>This command submits your job to the batch queue. You can also specify variables on your jacket in your qsub command which will overide what is in your job script.
-qsub -N NewName myscript.sh&lt; /br&gt;
-qsub -l h_rt=24:0:0 myscript.sh&lt; /br&gt;
-qsub -hold_jid 12345 myscript.sh&lt; /br&gt;
-qsub -ac allow=XYZ myscript.sh&lt; /br&gt;</p>
+qsub -N NewName myscript.sh <br />
+qsub -l h_rt=24:0:0 myscript.sh <br />
+qsub -hold_jid 12345 myscript.sh <br />
+qsub -ac allow=XYZ myscript.sh <br /></p>
 <h3 id="qstat">Qstat <br /><a class="headerlink" href="#qstat" title="Permanent link">§</a></h3>
 <p>This command shows that status oof your job. When you run qstat with no options all of your jobs currently running will be displayed. By adding in the option <code>-f -j &lt;job-ID&gt;</code> you will get more detail on the specified job.</p>
 <h3 id="qdel">Qdel <br /><a class="headerlink" href="#qdel" title="Permanent link">§</a></h3>
