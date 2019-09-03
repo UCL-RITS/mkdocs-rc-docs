@@ -9,10 +9,10 @@ When writing up your job script you specifiy your working directory, within this
 The following options can be used to submit and monitor a job<br />
 ### Qsub <br />
 This command submits your job to the batch queue. You can also specify variables on your jacket in your qsub command which will overide what is in your job script.
-qsub -N NewName myscript.sh< /br>
-qsub -l h_rt=24:0:0 myscript.sh< /br>
-qsub -hold_jid 12345 myscript.sh< /br>
-qsub -ac allow=XYZ myscript.sh< /br>
+qsub -N NewName myscript.sh <br />
+qsub -l h_rt=24:0:0 myscript.sh <br />
+qsub -hold_jid 12345 myscript.sh <br />
+qsub -ac allow=XYZ myscript.sh <br />
 
 ### Qstat <br /> 
 This command shows that status oof your job. When you run qstat with no options all of your jobs currently running will be displayed. By adding in the option `-f -j <job-ID>` you will get more detail on the specified job.
