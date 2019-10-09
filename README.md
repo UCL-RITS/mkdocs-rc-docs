@@ -15,9 +15,17 @@ When someone pushes to the repository:
    - The contents of `out` are then committed as an update to the `gh-pages` branch of this repo
    - and pushed back to Github using the deploy keys
 
-On the webserver, `cron` checks every ten minutes (+2, so 2,12,22,etc past the hour) using the `remote/cron_updates.sh` script whether there has been a new update to the `gh-pages` branch and if so, it pulls the updates down. The updates would have been handled by a CGI bash script, `remote/update_docs.cgi`, but this seemed a little rickety even for us.
+On the webserver, `cron` for `ccspwww` checks every ten minutes (+2, so 2,12,22,etc past the hour) using the `remote/cron_updates.sh` script whether there has been a new update to the `gh-pages` branch and if so, it pulls the updates down. The updates would have been handled by a CGI bash script, `remote/update_docs.cgi`, but this seemed a little rickety even for us.
 
 Docs on how to add pages and structure can be found at the MkDocs pages, at <http://www.mkdocs.org/user-guide/writing-your-docs/>.
+
+## Package List Updates
+
+In addition to the normal pages, the webserver has `cron` for `ccspwww` set up to run the `remote/pkg_list_updates.sh` script, which connects to our Myriad cluster. The ssh keys there are configured to automatically run scripts that dump the package lists as JSON (instead of starting a normal shell session), which the script writes to temporary files, before moving to the correct places if successful.
+
+## Support Scripts
+
+Note that neither of the update scripts in the `remote` directory are deployed or updated automatically. If you need to make changes to the live version, you will need to handle these yourself.
 
 ## Markdown Extensions
 
