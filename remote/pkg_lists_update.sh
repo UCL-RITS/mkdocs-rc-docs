@@ -13,6 +13,9 @@ echo "[$(date)] Getting python list..." >&2 \
 echo "[$(date)] Getting R list..." >&2 \
 	&& ssh -i ~/.ssh/id_rsa__list_r_packages myriad.rc.ucl.ac.uk >/tmp/r-packages.json \
 	&& mv -f /tmp/r-packages.json "${destination}"
+echo "[$(date)] Getting modules list..." >&2 \
+  && ssh -i ~/.ssh/id_rsa__list_module_packages myriad.rc.ucl.ac.uk >/tmp/module-packages.json \
+  && mv -f /tmp/module-packages.json "${destination}"
 
 echo "[$(date)] Update script finished." >&2
 
