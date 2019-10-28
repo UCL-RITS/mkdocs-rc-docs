@@ -21,8 +21,8 @@ For Python and R in particular, we also have `recommended` bundles that load the
 
 The lists of Python and R packages installed for those bundles are on separate pages:
 
-    - [Python packages](python-packages.md)
-    - [R packages](r-packages.md)
+ - [Python packages](python-packages.md)
+ - [R packages](r-packages.md)
 
 We'll sometimes include `/new` and `/old` versions of these bundles, if we've recently made a version switch or are intending to make one soon. We send out emails to the user lists about version changes, so if you use these bundles, you should look out for those.
 
