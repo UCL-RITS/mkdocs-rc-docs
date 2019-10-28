@@ -17,7 +17,7 @@ module load r/recommended
 
 The version of R provided with this bundle is currently ${version}.
 
-The following list was last updated at: _${generated}_.
+The following list was last updated at: ${generated}.
 
 <%
   x_packages.expand_package_list(uncat_pack)

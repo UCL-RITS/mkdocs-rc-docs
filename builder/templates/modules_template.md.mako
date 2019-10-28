@@ -11,7 +11,7 @@ The module files are organised by name, version, variant (where applicable) and,
 
 We try to install any application on all of our clusters, but sometimes licence restrictions prevent it -- if something seems to be missing, it may be because we are not able to provide it. Please contact us for more information if this is hindering your work.
 
-The lists below were last updated at: ${gen_time}
+The lists below were last updated at ${gen_time}.
 
 ## Bundles
 

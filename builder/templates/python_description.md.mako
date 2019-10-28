@@ -20,7 +20,7 @@ The version of Python 3 provided with this bundle is currently ${version}.
 
 Note that some packages we do not provide this way, because they have complicated non-Python dependencies. These are usually provided using the normal application modules system. This includes **TensorFlow**.
 
-The following list was last updated at: _${generated}_.
+The following list was last updated at ${generated}.
 
 <%
   x_packages.expand_package_list(uncat_pack)

@@ -5,6 +5,7 @@ import re
 import requests
 import mako
 import os
+import datetime
 from mako.template import Template
 from mako.lookup import TemplateLookup
 from mako.exceptions import RichTraceback
@@ -25,6 +26,14 @@ else:
     r_pack = requests.get(url_stem + "r-packages.json").json()
     p_pack = requests.get(url_stem + "python-packages.json").json()
     m_pack = requests.get(url_stem + "module-packages.json").json()
+
+def make_friendlier_datetime(s):
+    dt = datetime.strptime(s, "%Y-%m-%dT%H:%M:%S%z")
+    return dt.strftime("%H:%M:%S (%z) on %m %b %Y")
+
+r_pack["generated"] = make_friendlier_datetime(r_pack["generated"])
+p_pack["generated"] = make_friendlier_datetime(p_pack["generated"])
+m_pack["generated"] = make_friendlier_datetime(m_pack["generated"])
 
 
 # I *would* manage to pick a templating library that treats ## as a comment C_C
