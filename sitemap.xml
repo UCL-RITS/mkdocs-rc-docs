@@ -51,6 +51,21 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>http://rits.github-pages.ucl.ac.uk/mkdocs-rc-docs/Lists/module-packages/</loc>
+     <lastmod>2019-10-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://rits.github-pages.ucl.ac.uk/mkdocs-rc-docs/Lists/python-packages/</loc>
+     <lastmod>2019-10-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://rits.github-pages.ucl.ac.uk/mkdocs-rc-docs/Lists/r-packages/</loc>
+     <lastmod>2019-10-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://rits.github-pages.ucl.ac.uk/mkdocs-rc-docs/Software/Matlab/</loc>
      <lastmod>2019-10-28</lastmod>
      <changefreq>daily</changefreq>
