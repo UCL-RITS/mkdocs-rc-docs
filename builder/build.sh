@@ -21,6 +21,7 @@ cp -r ./* "$build_dir/sources/"
 echo "Generating package list pages..." >&2
 mkdir "$build_dir/sources/mkdocs-project-dir/lists"
 cd "$build_dir/sources/mkdocs-project-dir/lists"
+export MAKO_TEMPLATE_DIR="$build_dir/sources/builder/templates"
 python3 "$build_dir/sources/builder/convert_lists.py"
 
 # There only shouldn't be an out directory

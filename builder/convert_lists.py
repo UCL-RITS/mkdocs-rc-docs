@@ -4,6 +4,7 @@ import json
 import re
 import requests
 import mako
+import os
 from mako.template import Template
 from mako.lookup import TemplateLookup
 from mako.exceptions import RichTraceback
@@ -41,11 +42,11 @@ def guard_comments(s):
     s = re.sub("^([ \\t]*)(##+) ", "\\1${'\\2'} ", s, flags=re.MULTILINE)
     return s
 
-template_dirs = TemplateLookup(directories=["./",'./templates'], preprocessor=preprocs)
+template_dirs = TemplateLookup(directories=[os.environ['MAKO_TEMPLATE_DIR'],"./",'./templates'], preprocessor=preprocs)
 
-r_t = template_dirs.get_template(uri="/templates/r_description.md.mako")
-p_t = template_dirs.get_template(uri="/templates/python_description.md.mako")
-m_t = template_dirs.get_template(uri="/templates/modules_template.md.mako")
+r_t = template_dirs.get_template(uri="/r_description.md.mako")
+p_t = template_dirs.get_template(uri="/python_description.md.mako")
+m_t = template_dirs.get_template(uri="/modules_template.md.mako")
 
 # Exception code from: https://docs.makotemplates.org/en/latest/usage.html#handling-exceptions
 try:
