@@ -18,6 +18,11 @@ cp -r ./* "$build_dir/sources/"
 #source ./venv/bin/activate
 #pip install -r requirements.txt
 
+echo "Generating package list pages..." >&2
+mkdir "$build_dir/sources/mkdocs-project-dir/lists"
+cd "$build_dir/sources/mkdocs-project-dir/lists"
+python3 "$build_dir/convert_lists.py"
+
 # There only shouldn't be an out directory
 #  if this is the first build, or a local build
 echo "Building site..." >&2
