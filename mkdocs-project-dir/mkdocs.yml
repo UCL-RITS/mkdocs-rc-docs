@@ -1,7 +1,8 @@
 # Base
 site_name: UCL Research Computing Documentation
-#site_url: https://wiki.rc.ucl.ac.uk/docs/
-site_url: http://rits.github-pages.ucl.ac.uk/mkdocs-rc-docs/
+# This URL points to the GitHub-hosted copy, can be used in a pinch
+#site_url: http://rits.github-pages.ucl.ac.uk/mkdocs-rc-docs/
+site_url: https://www.rc.ucl.ac.uk/docs/
 site_author: UCL RCAS Team
 site_description: Documentation for the centrally provided Research Computing HPC services at UCL.
 
