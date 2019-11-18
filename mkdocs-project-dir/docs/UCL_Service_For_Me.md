@@ -19,8 +19,8 @@ Depending on the type of jobs you would like to run each cluster can have differ
     
 Each cluster has it's own specifications for the types of jobs that they run which is all dependable on list above. The cluster machines we have available are:
 
-- [Myriad]
-- [Grace]
-- [Legion]
-- [Thomas]
-- [Michael]
+- Myriad
+- Grace
+- Legion
+- Thomas
+- Michael
