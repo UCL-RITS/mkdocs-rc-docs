@@ -20,6 +20,8 @@ Depending on the type of jobs you would like to run each cluster can have differ
 Each cluster has it's own specifications for the types of jobs that they run which is all dependable on list above. The cluster machines we have available are:
 
 - Myriad
+Myriad is designed to be most suitable for serial work, including large numbers of serial jobs, and multi-threaded jobs (using e.g. OpenMP). It also includes a small number of GPUs for development or testing work. 
+
 - Grace
 - Legion
 - Thomas
