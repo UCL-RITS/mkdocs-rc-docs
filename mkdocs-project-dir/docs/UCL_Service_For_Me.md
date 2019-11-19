@@ -24,6 +24,9 @@ Each cluster has it's own specifications for the types of jobs that they run whi
 Myriad is designed to be most suitable for serial work, including large numbers of serial jobs, and multi-threaded jobs (using e.g. OpenMP). It also includes a small number of GPUs for development or testing work. 
 
 - Grace
+
+Grace is most suitable for multi-node jobs (using e.g. MPI). We recommend using Grace if you intend to use more than 36 cores per job.
+
 - Legion
 - Thomas
 - Michael
