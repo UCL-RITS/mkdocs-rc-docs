@@ -28,5 +28,8 @@ Myriad is designed to be most suitable for serial work, including large numbers 
 Grace is most suitable for multi-node jobs (using e.g. MPI). We recommend using Grace if you intend to use more than 36 cores per job.
 
 - Legion
+
+The Legion service is the older multipurpose cluster, including capability for serial jobs, multi-threaded jobs, and small multi-node jobs. It is currently being phased out, and we do not recommend Legion for new work.
+
 - Thomas
 - Michael
