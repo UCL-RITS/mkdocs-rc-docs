@@ -435,6 +435,24 @@ If you have already fetched the data, you can view the results straight away by 
 If you want to explicitly write out intermediate results, you need to provide a full path to somewhere in Scratch otherwise MATLAB will try to write them in your home, which isn't writable by the compute nodes. 
 
 
+### Troubleshooting remote jobs
+
+If you get a message like this when retrieving your outputs then something has gone wrong in your job:
+```
+Task with ID xxx returned 0 outputs but 1 were expected
+```
+You need to retrieve the debug log to find out what happened. Example:
+```
+myCluster = parcluster('myriad_R2018b');
+job4 = myCluster.findJob('ID',4);
+
+jobLog = getDebugLog (myCluster, job4);
+jobLog
+```
+There will be a lot of output. Look for lines related to errors happening in your own code.
+
+
+
 ## Running MATLAB on GPUs
 
 This uses MATLAB's [Mandelbrot Set GPU example](https://uk.mathworks.com/help/distcomp/examples/illustrating-three-approaches-to-gpu-computing-the-mandelbrot-set.html).
