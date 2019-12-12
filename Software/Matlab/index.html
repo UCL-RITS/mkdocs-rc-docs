@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.1">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -628,6 +628,13 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-remote-jobs" class="md-nav__link">
+    Troubleshooting remote jobs
+  </a>
   
 </li>
         
@@ -1663,6 +1670,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#troubleshooting-remote-jobs" class="md-nav__link">
+    Troubleshooting remote jobs
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2127,6 +2141,22 @@ job4_output = fetchOutputs(job4);
 <p>If you have already fetched the data, you can view the results straight away by selecting that job. If you need to reload everything, you can right-click on the job and the option will be to load variables instead. </p>
 <h4 id="writing-intermediate-results">Writing intermediate results<a class="headerlink" href="#writing-intermediate-results" title="Permanent link">§</a></h4>
 <p>If you want to explicitly write out intermediate results, you need to provide a full path to somewhere in Scratch otherwise MATLAB will try to write them in your home, which isn't writable by the compute nodes. </p>
+<h3 id="troubleshooting-remote-jobs">Troubleshooting remote jobs<a class="headerlink" href="#troubleshooting-remote-jobs" title="Permanent link">§</a></h3>
+<p>If you get a message like this when retrieving your outputs then something has gone wrong in your job:</p>
+<div class="codehilite"><pre><span></span>Task with ID xxx returned 0 outputs but 1 were expected
+</pre></div>
+
+
+<p>You need to retrieve the debug log to find out what happened. Example:</p>
+<div class="codehilite"><pre><span></span>myCluster = parcluster(&#39;myriad_R2018b&#39;);
+job4 = myCluster.findJob(&#39;ID&#39;,4);
+
+jobLog = getDebugLog (myCluster, job4);
+jobLog
+</pre></div>
+
+
+<p>There will be a lot of output. Look for lines related to errors happening in your own code.</p>
 <h2 id="running-matlab-on-gpus">Running MATLAB on GPUs<a class="headerlink" href="#running-matlab-on-gpus" title="Permanent link">§</a></h2>
 <p>This uses MATLAB's <a href="https://uk.mathworks.com/help/distcomp/examples/illustrating-three-approaches-to-gpu-computing-the-mandelbrot-set.html">Mandelbrot Set GPU example</a>.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -2243,6 +2273,7 @@ tar zcvf $HOME/Scratch/Matlab_examples/files_from_job_${JOB_ID}.tgz $TMPDIR
                 
                   
                 
+                
               
               
                 
@@ -2320,7 +2351,7 @@ tar zcvf $HOME/Scratch/Matlab_examples/files_from_job_${JOB_ID}.tgz $TMPDIR
       
     </div>
     
-      <script src="../../assets/javascripts/application.8e03edeb.js"></script>
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
