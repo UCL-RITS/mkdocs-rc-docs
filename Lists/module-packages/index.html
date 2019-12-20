@@ -1462,7 +1462,7 @@
 <p>Our clusters have a wide range of software installed, available by using the modules system.</p>
 <p>The module files are organised by name, version, variant (where applicable) and, if relevant, the compiler version used to build the software. If no compiler version is given, either no compiler was required, or only the base system compiler (<code>/usr/bin/gcc</code>) and libraries were used.</p>
 <p>We try to install any application on all of our clusters, but sometimes licence restrictions prevent it -- if something seems to be missing, it may be because we are not able to provide it. Please contact us for more information if this is hindering your work.</p>
-<p>The lists below were last updated at 15:31:19 (+0000) on 12 Dec 2019.</p>
+<p>The lists below were last updated at 15:31:29 (+0000) on 12 Dec 2019.</p>
 <h2 id="bundles">Bundles<a class="headerlink" href="#bundles" title="Permanent link">§</a></h2>
 <p>Some applications or tools depend on a lot of other modules, or have some awkward requirements. For these, we sometimes make a "bundle" module in this section, that loads all the dependencies.</p>
 <p>For Python and R in particular, we also have <code>recommended</code> bundles that load the module for a recent version of Python or R, along with a collection of packages for it that have been requested by users, and the modules those packages require.</p>
@@ -1704,6 +1704,10 @@
 <td align="left">Adds Ansys CFX/Fluent, EM etc to your environment</td>
 </tr>
 <tr>
+<td align="center"><code>ansys/2019.r3</code></td>
+<td align="left">Adds Ansys CFX/Fluent, EM etc to your environment</td>
+</tr>
+<tr>
 <td align="center"><code>ants/2.1.0</code></td>
 <td align="left">Adds ANTs 2.1.0 (Advanced Normalization Tools) to your environment. ANTs is popularly considered a state-of-the-art medical image registration and segmentation toolkit.</td>
 </tr>
@@ -1922,6 +1926,10 @@
 <tr>
 <td align="center"><code>crystal17/v1.0.1</code></td>
 <td align="left">Adds Crystal17 v1.0.1 to your environment.</td>
+</tr>
+<tr>
+<td align="center"><code>crystal17/v1.0.2/intel-2017</code></td>
+<td align="left">The CRYSTAL program computes the electronic structure of periodic systems within Hartree Fock, density functional or various hybrid approximations.</td>
 </tr>
 <tr>
 <td align="center"><code>cuba/4.2/gnu-4.9.2</code></td>
@@ -2497,7 +2505,7 @@
 </tr>
 <tr>
 <td align="center"><code>meep/1.11.0-ompi/gnu-4.9.2</code></td>
-<td align="left">Adds meep 1.11.0-ompi to your environment.</td>
+<td align="left">Adds meep 1.11.0-ompi to your environment. MEEP is a package for electromagnetics simulation via the finite-diffe    rence time-domain (FDTD) method.</td>
 </tr>
 <tr>
 <td align="center"><code>meme/4.10.1_4</code></td>
@@ -4012,6 +4020,10 @@
 <td align="left">Adds mpi4py 3.0.2 for Python 3.7 to your environment.</td>
 </tr>
 <tr>
+<td align="center"><code>mumps/5.2.1/intel-2018</code></td>
+<td align="left">Adds mumps 5.2.1 to your environment. Sequential version built with Intel and METIS.</td>
+</tr>
+<tr>
 <td align="center"><code>mysql-connector-python/2.0.4/python-3.5.2</code></td>
 <td align="left">Adds mysql-connector-python 2.0.4 to your environment. This is Oracle's python-only MySQL connector for Python3</td>
 </tr>
@@ -4821,10 +4833,6 @@
 </thead>
 <tbody>
 <tr>
-<td align="center"><code>ansys/2019.r3</code></td>
-<td align="left">Adds Ansys CFX/Fluent, EM etc to your environment</td>
-</tr>
-<tr>
 <td align="center"><code>compilers/gnu/7.3.0</code></td>
 <td align="left">The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages (libstdc++,...).</td>
 </tr>
@@ -4849,12 +4857,40 @@
 <td align="left">Base module for gcc 9.2.0 -- does not set the standard compiler environment variables. The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages (libstdc++,...).</td>
 </tr>
 <tr>
+<td align="center"><code>hdf/5-1.10.5/gnu-9.2.0</code></td>
+<td align="left">Adds hdf 5-1.10.5 to your environment. Serial version built with GNU.</td>
+</tr>
+<tr>
 <td align="center"><code>matlab/full/r2018a/9.4-prefdir-fix</code></td>
 <td align="left">Adds Matlab R2018a to your environment.</td>
 </tr>
 <tr>
+<td align="center"><code>med/4.0.0/gnu-9.2.0</code></td>
+<td align="left">Adds med 4.0.0 to your environment. Allows reading and writing of MED format files.</td>
+</tr>
+<tr>
 <td align="center"><code>mpi/openmpi/3.1.4/gnu-7.3.0</code></td>
 <td align="left">Adds openmpi 3.1.4 to your environment. The Open MPI Project is an open source Message Passing Interface implementation.</td>
+</tr>
+<tr>
+<td align="center"><code>mpi/openmpi/3.1.5/gnu-9.2.0</code></td>
+<td align="left">Adds openmpi 3.1.5 to your environment. The Open MPI Project is an open source Message Passing Interface implementation.</td>
+</tr>
+<tr>
+<td align="center"><code>mumps/5.2.1/gnu-9.2.0</code></td>
+<td align="left">Adds mumps 5.2.1 to your environment. Sequential (threaded) version built with GNU, OpenBLAS and METIS.</td>
+</tr>
+<tr>
+<td align="center"><code>openblas/0.3.7-native-threads/gnu-9.2.0</code></td>
+<td align="left">OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.</td>
+</tr>
+<tr>
+<td align="center"><code>openblas/0.3.7-openmp/gnu-9.2.0</code></td>
+<td align="left">OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.</td>
+</tr>
+<tr>
+<td align="center"><code>openblas/0.3.7-serial/gnu-9.2.0</code></td>
+<td align="left">OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.</td>
 </tr>
 </tbody>
 </table>
