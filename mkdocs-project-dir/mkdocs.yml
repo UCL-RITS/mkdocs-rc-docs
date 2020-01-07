@@ -49,6 +49,7 @@ markdown_extensions:
       #linenums: true
   - toc:
       permalink: §
+      permalink_title: 'Link to this section'
 
 # Customization
 extra:
