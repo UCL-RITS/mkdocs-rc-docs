@@ -9,7 +9,7 @@ Our clusters have a wide range of software installed, available by using the mod
 
 The module files are organised by name, version, variant (where applicable) and, if relevant, the compiler version used to build the software. If no compiler version is given, either no compiler was required, or only the base system compiler (`/usr/bin/gcc`) and libraries were used.
 
-When we install applications, we try to install them on all of our clusters, but sometimes licence restrictions prevent it — if something seems to be missing, it may be because we are not able to provide it. Please contact us for more information if this is hindering your work.
+When we install applications, we try to install them on all of our clusters, but sometimes licence restrictions prevent it. If something seems to be missing, it may be because we are not able to provide it. Please contact us for more information if this is hindering your work.
 
 The lists below were last updated at ${gen_time}, and are generated from the software installed on the [Myriad](../Systems/Myriad.md) cluster.
 
