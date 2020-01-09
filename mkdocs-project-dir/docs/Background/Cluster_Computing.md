@@ -83,7 +83,7 @@ on a short or long term basis are described on the
 
 ## Do I have to pay for any of this?
 
-The central UCL clusters are free at point of use for UCL researchers --
+The central UCL clusters are free at point of use for UCL researchers; 
 you don't pay for the compute time or storage you use.
 
 Other compute resources you may have to pay for.

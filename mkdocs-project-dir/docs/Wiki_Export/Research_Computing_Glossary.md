@@ -84,7 +84,7 @@ scripting language interpreter program to be used to interpret the commands, e.g
 
 ## Shebang
 
-"Shebang" is a common abbreviation for "hash-bang" -- the character sequence `#!` -- which is placed at
+"Shebang" is a common abbreviation for "hash-bang" — the character sequence `#!` — which is placed at
 the start of a [script](#script) to specify the
 interpreter that should be used. When the shebang is found in the
 first line of a script, the program loader reads the rest of the

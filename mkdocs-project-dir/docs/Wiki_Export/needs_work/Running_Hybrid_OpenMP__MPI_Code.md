@@ -5,7 +5,7 @@ layout: docs
 If you wish to submit a job that combines MPI and OpenMP parallelisation
 then you have a number of challenges you need to think about. 
 
-First of all, you may need to use an MPI library that is thread-safe -- that does not keep MPI state in shared memory between processor threads. 
+First of all, you may need to use an MPI library that is thread-safe - that does not keep MPI state in shared memory between processor threads. 
 Support for this in OpenMPI is still in development, and Intel MPI (the default on our systems) is recommended for this instead.
 
 This guide will give you are short walk-through of the process of
