@@ -794,8 +794,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#troubleshooting-unable-to-verify-membership-of-username-in-the-policyjsv-project" class="md-nav__link">
-    Troubleshooting: Unable to verify membership of username in the policyjsv project
+  <a href="#troubleshooting-unable-to-verify-membership-in-policyjsv-project" class="md-nav__link">
+    Troubleshooting: Unable to verify membership in policyjsv project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-unable-to-verify-membership-in-project-uninitialized-value" class="md-nav__link">
+    Troubleshooting: Unable to verify membership in project / Uninitialized value
   </a>
   
 </li>
@@ -814,8 +821,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#troubleshooting-unable-to-verify-sufficient-material-worth-to-submit-this-job" class="md-nav__link">
-    Troubleshooting: Unable to verify sufficient material worth to submit this job
+  <a href="#troubleshooting-unable-to-verify-sufficient-material-worth" class="md-nav__link">
+    Troubleshooting: Unable to verify sufficient material worth
   </a>
   
 </li>
@@ -1814,8 +1821,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#troubleshooting-unable-to-verify-membership-of-username-in-the-policyjsv-project" class="md-nav__link">
-    Troubleshooting: Unable to verify membership of username in the policyjsv project
+  <a href="#troubleshooting-unable-to-verify-membership-in-policyjsv-project" class="md-nav__link">
+    Troubleshooting: Unable to verify membership in policyjsv project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-unable-to-verify-membership-in-project-uninitialized-value" class="md-nav__link">
+    Troubleshooting: Unable to verify membership in project / Uninitialized value
   </a>
   
 </li>
@@ -1834,8 +1848,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#troubleshooting-unable-to-verify-sufficient-material-worth-to-submit-this-job" class="md-nav__link">
-    Troubleshooting: Unable to verify sufficient material worth to submit this job
+  <a href="#troubleshooting-unable-to-verify-sufficient-material-worth" class="md-nav__link">
+    Troubleshooting: Unable to verify sufficient material worth
   </a>
   
 </li>
@@ -1946,10 +1960,11 @@ for a passphrase depends on how long your local ssh agent keeps it.</p>
 use it. If you aren't sure what keys your agent can see, running
 <code>ssh-add -L</code> will show all the public parts of the keys it is aware of.</p>
 <h3 id="creating-an-ssh-key-in-windows">Creating an ssh key in Windows<a class="headerlink" href="#creating-an-ssh-key-in-windows" title="Permanent link">§</a></h3>
-<p>Have a look at <a href="https://www.howtoforge.com/ssh_key_based_logins_putty">Key-Based SSH Logins With PuTTY</a> which has
+<p>Have a look at <a href="https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/#create-new-public-and-private-keys">Key-Based SSH Logins With PuTTY</a> which has
 step-by-step instructions. You can choose whether to use Pageant or not
 to manage your key. You can again pick RSA, DSA, ECDSA etc <strong>but do not
-pick SSH-1</strong> as that is a very old and insecure key type.</p>
+pick SSH-1</strong> as that is a very old and insecure key type. The key must be at least 2048-bit.</p>
+<p>If you are using Windows 10, then you probably have OpenSSH installed and could instead run ssh-keygen in a terminal per the Linux instructions and use the ssh command to log in instead of PuTTY. </p>
 <h2 id="information-for-points-of-contact">Information for Points of Contact<a class="headerlink" href="#information-for-points-of-contact" title="Permanent link">§</a></h2>
 <p>Points of Contact have some tools they can use to manage users and
 allocations, documented at <a href="Points_of_Contact">Points of Contact</a>.</p>
@@ -2178,7 +2193,7 @@ walltime:</p>
 </pre></div>
 
 
-<h4 id="troubleshooting-unable-to-verify-membership-of-username-in-the-policyjsv-project">Troubleshooting: Unable to verify membership of username in the policyjsv project<a class="headerlink" href="#troubleshooting-unable-to-verify-membership-of-username-in-the-policyjsv-project" title="Permanent link">§</a></h4>
+<h4 id="troubleshooting-unable-to-verify-membership-in-policyjsv-project">Troubleshooting: Unable to verify membership in policyjsv project<a class="headerlink" href="#troubleshooting-unable-to-verify-membership-in-policyjsv-project" title="Permanent link">§</a></h4>
 <div class="codehilite"><pre><span></span>Unable to run job: Rejected by policyjsv
 Unable to verify membership of `&lt;username&gt;` in the policyjsv project
 </pre></div>
@@ -2186,6 +2201,20 @@ Unable to verify membership of `&lt;username&gt;` in the policyjsv proj
 
 <p>You asked for a Free job but didn't specify <code>#$ -A MyProject</code> in your
 jobscript.</p>
+<h4 id="troubleshooting-unable-to-verify-membership-in-project-uninitialized-value">Troubleshooting: Unable to verify membership in project / Uninitialized value<a class="headerlink" href="#troubleshooting-unable-to-verify-membership-in-project-uninitialized-value" title="Permanent link">§</a></h4>
+<div class="codehilite"><pre><span></span>Unable to run job: Rejected by policyjsv 
+Reason:Unable to verify sufficient material worth to submit this job: 
+Unable to verify membership of mmmxxxx in the UCL_Example project
+</pre></div>
+
+
+<p>This error from <code>qsub</code> can mean that you aren't in the project you are trying to submit to, but also happens when the Gold daemon is not running. </p>
+<div class="codehilite"><pre><span></span>Use of uninitialized value in print at /opt/gold/bin/mybalance line 60, &lt;GBALANCE&gt; line 1.
+Failed sending message: (Unable to connect to socket (Connection refused)).
+</pre></div>
+
+
+<p>If you also get this error from the <code>budgets</code> command, then the Gold daemon is definitely not running and you should contact rc-support.</p>
 <h3 id="gold-charging">Gold charging<a class="headerlink" href="#gold-charging" title="Permanent link">§</a></h3>
 <p>When you submit a job, it will reserve the total number of core hours
 that the job script is asking for. When the job ends, the Gold will move
@@ -2193,7 +2222,7 @@ from 'reserved' into charged. If the job doesn't run for the full time
 it asked for, the unused reserved portion will be refunded after the job
 ends. You cannot submit a job that you do not have the budget to
 run.</p>
-<h4 id="troubleshooting-unable-to-verify-sufficient-material-worth-to-submit-this-job">Troubleshooting: Unable to verify sufficient material worth to submit this job<a class="headerlink" href="#troubleshooting-unable-to-verify-sufficient-material-worth-to-submit-this-job" title="Permanent link">§</a></h4>
+<h4 id="troubleshooting-unable-to-verify-sufficient-material-worth">Troubleshooting: Unable to verify sufficient material worth<a class="headerlink" href="#troubleshooting-unable-to-verify-sufficient-material-worth" title="Permanent link">§</a></h4>
 <div class="codehilite"><pre><span></span>Unable to run job: Rejected by policyjsv
 Reason:Unable to verify sufficient material worth to submit this job:
 Insufficient balance to reserve job
