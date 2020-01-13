@@ -55,10 +55,12 @@ use it. If you aren't sure what keys your agent can see, running
 
 ### Creating an ssh key in Windows
 
-Have a look at [Key-Based SSH Logins With PuTTY](https://www.howtoforge.com/ssh_key_based_logins_putty) which has
+Have a look at [Key-Based SSH Logins With PuTTY](https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/#create-new-public-and-private-keys) which has
 step-by-step instructions. You can choose whether to use Pageant or not
 to manage your key. You can again pick RSA, DSA, ECDSA etc **but do not
-pick SSH-1** as that is a very old and insecure key type.
+pick SSH-1** as that is a very old and insecure key type. The key must be at least 2048-bit.
+
+If you are using Windows 10, then you probably have OpenSSH installed and could instead run ssh-keygen in a terminal per the Linux instructions and use the ssh command to log in instead of PuTTY.
 
 ## Information for Points of Contact
 
@@ -69,7 +71,7 @@ allocations, documented at [Points of Contact](Points_of_Contact "wikilink").
 
 You will be assigned a personal username and your SSH key pair will be
 used to log in. External users will have a username in the form
-`mmmxxxx` and UCL users will use their central username.
+`mmmxxxx` (where `xxxx` is a number) and UCL users will use their central username.
 
 You connect with ssh directly to:
 
@@ -293,7 +295,7 @@ walltime:
 #$ -A MyProject
 ```
 
-### Troubleshooting: Unable to verify membership of username in the policyjsv project
+#### Troubleshooting: Unable to verify membership in policyjsv project
 
 ```
 Unable to run job: Rejected by policyjsv
@@ -303,7 +305,24 @@ Unable to verify membership of `<username>` in the policyjsv project
 You asked for a Free job but didn't specify `#$ -A MyProject` in your
 jobscript.
 
-## Gold charging
+#### Troubleshooting: Unable to verify membership in project / Uninitialized value
+
+```
+Unable to run job: Rejected by policyjsv  
+Reason:Unable to verify sufficient material worth to submit this job:  
+Unable to verify membership of mmmxxxx in the UCL_Example project
+```
+
+This error from `qsub` can mean that you aren't in the project you are trying to submit to, but also happens when the Gold daemon is not running.           
+
+```
+Use of uninitialized value in print at /opt/gold/bin/mybalance line 60, <GBALANCE> line 1.
+Failed sending message: (Unable to connect to socket (Connection refused)).
+```
+
+If you also get this error from the `budgets` command, then the Gold daemon is definitely not running and you should contact rc-support.
+
+### Gold charging
 
 When you submit a job, it will reserve the total number of core hours
 that the job script is asking for. When the job ends, the Gold will move
@@ -312,7 +331,7 @@ it asked for, the unused reserved portion will be refunded after the job
 ends. You cannot submit a job that you do not have the budget to
 run.
 
-### Troubleshooting: Unable to verify sufficient material worth to submit this job
+#### Troubleshooting: Unable to verify sufficient material worth
 
 ```
 Unable to run job: Rejected by policyjsv
