@@ -680,6 +680,26 @@
     Useful utilities
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#queue-names" class="md-nav__link">
+    Queue names
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preventing-a-job-from-running-cross-cu" class="md-nav__link">
+    Preventing a job from running cross-CU
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1686,6 +1706,26 @@
     Useful utilities
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#queue-names" class="md-nav__link">
+    Queue names
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preventing-a-job-from-running-cross-cu" class="md-nav__link">
+    Preventing a job from running cross-CU
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1936,6 +1976,19 @@ help you find information about your jobs after they have run.</p>
 <p>These utilities live in GitHub at
 <a href="https://github.com/UCL-RITS/go-clustertools">https://github.com/UCL-RITS/go-clustertools</a> and
 <a href="https://github.com/UCL-RITS/rcps-cluster-scripts">https://github.com/UCL-RITS/rcps-cluster-scripts</a></p>
+<h3 id="queue-names">Queue names<a class="headerlink" href="#queue-names" title="Permanent link">§</a></h3>
+<p>On Michael, users do not submit directly to queues - the scheduler
+assigns your job to one based on the resources it requested. The queues
+have somewhat unorthodox names as they are only used internally, but
+this is what they mean:</p>
+<ul>
+<li>lucy: single-node job</li>
+<li>Schroeder: multi-node job</li>
+<li>Snoopy: cross-CU job, using superqueue (any multi-node job may end up
+    using this)</li>
+</ul>
+<h3 id="preventing-a-job-from-running-cross-cu">Preventing a job from running cross-CU<a class="headerlink" href="#preventing-a-job-from-running-cross-cu" title="Permanent link">§</a></h3>
+<p>If your job must run within a single CU, you can request the parallel environment as <code>-pe wss</code> instead of <code>-pe mpi</code> (<code>wss</code> standing for 'wants single switch'). This will increase your queue times. It is suggested you only do this for benchmarking or if performance is being greatly affected by running in the superqueue.</p>
 <h2 id="software">Software<a class="headerlink" href="#software" title="Permanent link">§</a></h2>
 <p>Michael mounts the <a href="Software">RC Systems software stack</a>.</p>
 <p>Have a look at <a href="Applications">Applications</a> for specific
@@ -1971,7 +2024,7 @@ these groups, the central group change will happen overnight. You can
 check your groups with the <code>groups</code> command.</p>
 <p>Please let us know your username when you ask to be added to a group.</p>
 <ul>
-<li><strong>CASTEP</strong>: You/your group leader need to have <a href="http://ccpforge.cse.rl.ac.uk/gf/project/castep/">signed up for a CASTEP license</a>.
+<li><strong>CASTEP</strong>: You/your group leader need to have <a href="http://www.castep.org/CASTEP/GettingCASTEP">signed up for a CASTEP license</a>.
     Send us an acceptance email, or we can ask them to verify you have a
     license. You will then be added to the reserved application group
     <code>lgcastep</code>. If you are a member of UKCP you are already covered by a
@@ -2040,7 +2093,7 @@ connection. Access to the superqueue for larger jobs must be applied
 for: contact the support address below for details.</p>
 <p>Some normal multi-node jobs will use the superqueue - this is to make it
 easier for larger jobs to be scheduled, as otherwise they can have very
-long waits if every CU is half full.</p>
+long waits if every CU is half full. To prevent this happening, please see <a href="#preventing-a-job-from-running-crosscu">Preventing a job from running cross-CU</a>.</p>
 <h2 id="budgets-and-allocations">Budgets and allocations<a class="headerlink" href="#budgets-and-allocations" title="Permanent link">§</a></h2>
 <p>We have enabled Gold for allocation management. Jobs that are run under
 a project budget have higher priority than free non-budgeted jobs. All
