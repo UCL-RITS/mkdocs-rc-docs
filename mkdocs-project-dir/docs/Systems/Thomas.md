@@ -130,22 +130,6 @@ These utilities live in GitHub at
 <https://github.com/UCL-RITS/go-clustertools> and
 <https://github.com/UCL-RITS/rcps-cluster-scripts>
 
-### Queue names
-
-On Thomas, users do not submit directly to queues - the scheduler
-assigns your job to one based on the resources it requested. The queues
-have somewhat unorthodox names as they are only used internally, but
-this is what they mean:
-
-  - Jerry: single-node job
-  - Tom: multi-node job
-  - Spike: cross-CU job, using superqueue (any multi-node job may end up
-    using this)
-
-### Preventing a job from running cross-CU
-
-If your job must run within a single CU, you can request the parallel environment as `-pe wss` instead of `-pe mpi` (`wss` standing for 'wants single switch'). This will increase your queue times. It is suggested you only do this for benchmarking or if performance is being greatly affected by running in the superqueue.
-
 ## Software
 
 Thomas mounts the [RC Systems software stack](Software).
@@ -256,7 +240,23 @@ for: contact the support address below for details.
 
 Some normal multi-node jobs will use the superqueue - this is to make it
 easier for larger jobs to be scheduled, as otherwise they can have very
-long waits if every CU is half full. To prevent this happening, please see [Preventing a job from running cross-CU](#preventing-a-job-from-running-cross-cu).
+long waits if every CU is half full.
+
+### Queue names
+
+On Thomas, users do not submit directly to queues - the scheduler
+assigns your job to one based on the resources it requested. The queues
+have somewhat unorthodox names as they are only used internally, but
+this is what they mean:
+
+  - Jerry: single-node job
+  - Tom: multi-node job
+  - Spike: cross-CU job, using superqueue (any multi-node job may end up
+    using this)
+
+### Preventing a job from running cross-CU
+
+If your job must run within a single CU, you can request the parallel environment as `-pe wss` instead of `-pe mpi` (`wss` standing for 'wants single switch'). This will increase your queue times. It is suggested you only do this for benchmarking or if performance is being greatly affected by running in the superqueue.
 
 [ back to top](#top "wikilink")
 
