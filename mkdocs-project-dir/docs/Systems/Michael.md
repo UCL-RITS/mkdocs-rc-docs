@@ -139,6 +139,22 @@ These utilities live in GitHub at
 <https://github.com/UCL-RITS/go-clustertools> and
 <https://github.com/UCL-RITS/rcps-cluster-scripts>
 
+### Queue names
+
+On Michael, users do not submit directly to queues - the scheduler
+assigns your job to one based on the resources it requested. The queues
+have somewhat unorthodox names as they are only used internally, but
+this is what they mean:
+
+  - lucy: single-node job
+  - Schroeder: multi-node job
+  - Snoopy: cross-CU job, using superqueue (any multi-node job may end up
+    using this)
+
+### Preventing a job from running cross-CU
+
+If your job must run within a single CU, you can request the parallel environment as `-pe wss` instead of `-pe mpi` (`wss` standing for 'wants single switch'). This will increase your queue times. It is suggested you only do this for benchmarking or if performance is being greatly affected by running in the superqueue.
+
 ## Software
 
 Michael mounts the [RC Systems software stack](Software).
@@ -186,7 +202,7 @@ check your groups with the `groups` command.
 
 Please let us know your username when you ask to be added to a group.
 
-  - **CASTEP**: You/your group leader need to have [signed up for a CASTEP license](http://ccpforge.cse.rl.ac.uk/gf/project/castep/).
+  - **CASTEP**: You/your group leader need to have [signed up for a CASTEP license](http://www.castep.org/CASTEP/GettingCASTEP).
     Send us an acceptance email, or we can ask them to verify you have a
     license. You will then be added to the reserved application group
     `lgcastep`. If you are a member of UKCP you are already covered by a
@@ -249,7 +265,7 @@ for: contact the support address below for details.
 
 Some normal multi-node jobs will use the superqueue - this is to make it
 easier for larger jobs to be scheduled, as otherwise they can have very
-long waits if every CU is half full.
+long waits if every CU is half full. To prevent this happening, please see [Preventing a job from running cross-CU](#preventing-a-job-from-running-crosscu).
 
 ## Budgets and allocations
 
