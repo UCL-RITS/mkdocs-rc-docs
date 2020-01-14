@@ -265,7 +265,7 @@ for: contact the support address below for details.
 
 Some normal multi-node jobs will use the superqueue - this is to make it
 easier for larger jobs to be scheduled, as otherwise they can have very
-long waits if every CU is half full. To prevent this happening, please see [Preventing a job from running cross-CU](#preventing-a-job-from-running-crosscu).
+long waits if every CU is half full. To prevent this happening, please see [Preventing a job from running cross-CU](#preventing-a-job-from-running-cross-cu).
 
 ## Budgets and allocations
 
