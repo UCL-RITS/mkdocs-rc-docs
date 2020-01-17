@@ -50,6 +50,14 @@ markdown_extensions:
   - toc:
       permalink: §
 
+# Plugins
+# Search is included by default but only if you don't add any others, so
+# we have to add it here
+plugins:
+  - search
+  - awesome-pages
+# https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
+
 # Customization
 extra:
   social:
