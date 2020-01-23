@@ -19,8 +19,8 @@ cp -r ./* "$build_dir/sources/"
 #pip install -r requirements.txt
 
 echo "Generating package list pages..." >&2
-mkdir "$build_dir/sources/mkdocs-project-dir/docs/Lists"
-cd "$build_dir/sources/mkdocs-project-dir/docs/Lists"
+mkdir "$build_dir/sources/mkdocs-project-dir/docs/Installed_Software_Lists"
+cd "$build_dir/sources/mkdocs-project-dir/docs/Installed_Software_Lists"
 export MAKO_TEMPLATE_DIR="$build_dir/sources/builder/templates"
 python3 "$build_dir/sources/builder/convert_lists.py"
 
