@@ -1,9 +1,7 @@
 ---
-title: Software
+title: "Other Software"
 layout: docs
 ---
-
-# Software
 
 We maintain a large software stack that is available across all our clusters (licenses permitting).
 
