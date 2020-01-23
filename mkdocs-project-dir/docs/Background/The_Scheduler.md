@@ -4,6 +4,20 @@ categories:
  - User Guide
 layout: docs
 ---
+
+!!! error
+    Article Removed Pending Rewrite
+
+<!--
+
+Much of this article is written in an accusatory tone that is likely to be unproductive and unhelpful.
+
+While the *information* presented in it may be useful, it needs a full rewrite to meet standards.
+
+-->
+
+<!--
+
 One of the biggest concerns users experience when running jobs in a
 scheduled environment is uncertainty over when jobs they have submitted
 will run. Scheduler policies are always complex, there are many other
@@ -111,3 +125,4 @@ The reason this is the case is as follows:
 Doing a naïve count of the number of slots in use will give a user the
 impression that the machine is under-used.
 
+-->
