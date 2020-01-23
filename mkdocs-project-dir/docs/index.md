@@ -16,16 +16,17 @@ service updates and account request and renewal support.
 
 General User Information:
 
- - [Getting an Account](Account_Services/)
- - [Guide for New Users](New_Users/)
- - [Guide for Experienced Users](Experienced_Users/)
- - [Planned Outages](Planned_Outages/)
+ - [Getting an Account](Account_Services)
+ - [Guide for New Users](New_Users)
+ - [Guide for Experienced Users](Experienced_Users)
+ - [Planned Outages](Planned_Outages)
 
 Clusters:
 
- - [Legion](Systems/Legion)
  - [Myriad](Systems/Myriad)
  - [Grace](Systems/Grace)
+ - [Kathleen](Systems/Kathleen)
+ - [Legion](Systems/Legion)
  - [Thomas](Systems/Thomas)
  - [Michael](Systems/Michael)
 
