@@ -66,6 +66,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://www.rc.ucl.ac.uk/docs/Other_Services/UCL_UK_e-Science_Certificates/</loc>
+     <lastmod>2020-01-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://www.rc.ucl.ac.uk/docs/Software_Guides/Matlab/</loc>
      <lastmod>2020-01-23</lastmod>
      <changefreq>daily</changefreq>
@@ -87,6 +92,11 @@
     </url>
     <url>
      <loc>https://www.rc.ucl.ac.uk/docs/Systems/Grace/</loc>
+     <lastmod>2020-01-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.rc.ucl.ac.uk/docs/Systems/Kathleen/</loc>
      <lastmod>2020-01-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -232,11 +242,6 @@
     </url>
     <url>
      <loc>https://www.rc.ucl.ac.uk/docs/Wiki_Export/Training/</loc>
-     <lastmod>2020-01-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://www.rc.ucl.ac.uk/docs/Wiki_Export/UCL_UK_e-Science_Certificates/</loc>
      <lastmod>2020-01-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
