@@ -35,6 +35,12 @@ The installation of MkDocs uses the Material theme and several Markdown extensio
  - [CodeHiLite](https://squidfunk.github.io/mkdocs-material/extensions/codehilite/) -- uses Pygments for syntax-highlighting instead of JavaScript
  - [Permalinks](https://squidfunk.github.io/mkdocs-material/extensions/permalinks/) -- inserts anchors for all headings
 
+## MkDocs Extensions
+
+The installation of MkDocs also has the following plugins installed:
+
+ - [awesome-pages](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin) -- Adds selective customisation of page index creation. Mostly for customising page order in the index
+
 ## Running the MkDocs Server Locally
 
 You can run a local MkDocs server on your own machine if you want to see how things look while you're working on them, rather than relying on them being pushed to the server and waiting for them to be rendered by the automatic pipeline.
@@ -44,7 +50,7 @@ To do this, create a virtualenv with MkDocs and the skin we use:
 ```
 $ python -m venv env
 $ source env/bin/activate
-$ pip install mkdocs mkdocs-material
+$ pip install -r requirements.txt 
 [...]
 Successfully installed Jinja2-2.10.1 Markdown-3.1.1 MarkupSafe-1.1.1 PyYAML-5.1.2 Pygments-2.4.2 click-7.0 htmlmin-0.1.12 jsmin-2.2.2 livereload-2.6.1 mkdocs-1.0.4 mkdocs-material-4.4.0 mkdocs-minify-plugin-0.2.1 pymdown-extensions-6.0 six-1.12.0 tornado-6.0.3
 
