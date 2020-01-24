@@ -75,7 +75,7 @@ For single core jobs you don't need to request a number of cores.  For hybrid co
 
 ##### Amount of RAM per core
 ```bash
-#$ -l mem=<amount of RAM in G or M>
+#$ -l mem=<integer amount of RAM in G or M>
 ```
 
 e.g. `#$ -l mem=4G` requests 4 gigabytes of RAM per core.
