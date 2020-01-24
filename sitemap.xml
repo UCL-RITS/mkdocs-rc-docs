@@ -56,6 +56,36 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://www.rc.ucl.ac.uk/docs/Clusters/Myriad/</loc>
+     <lastmod>2020-01-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.rc.ucl.ac.uk/docs/Clusters/Legion/</loc>
+     <lastmod>2020-01-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.rc.ucl.ac.uk/docs/Clusters/Grace/</loc>
+     <lastmod>2020-01-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.rc.ucl.ac.uk/docs/Clusters/Kathleen/</loc>
+     <lastmod>2020-01-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.rc.ucl.ac.uk/docs/Clusters/Thomas/</loc>
+     <lastmod>2020-01-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.rc.ucl.ac.uk/docs/Clusters/Michael/</loc>
+     <lastmod>2020-01-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://www.rc.ucl.ac.uk/docs/Installed_Software_Lists/module-packages/</loc>
      <lastmod>2020-01-24</lastmod>
      <changefreq>daily</changefreq>
@@ -67,6 +97,11 @@
     </url>
     <url>
      <loc>https://www.rc.ucl.ac.uk/docs/Installed_Software_Lists/r-packages/</loc>
+     <lastmod>2020-01-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.rc.ucl.ac.uk/docs/Other_Services/Aristotle/</loc>
      <lastmod>2020-01-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -87,41 +122,6 @@
     </url>
     <url>
      <loc>https://www.rc.ucl.ac.uk/docs/Software_Guides/Other_Software/</loc>
-     <lastmod>2020-01-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://www.rc.ucl.ac.uk/docs/Systems/Myriad/</loc>
-     <lastmod>2020-01-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://www.rc.ucl.ac.uk/docs/Systems/Legion/</loc>
-     <lastmod>2020-01-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://www.rc.ucl.ac.uk/docs/Systems/Grace/</loc>
-     <lastmod>2020-01-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://www.rc.ucl.ac.uk/docs/Systems/Kathleen/</loc>
-     <lastmod>2020-01-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://www.rc.ucl.ac.uk/docs/Systems/Thomas/</loc>
-     <lastmod>2020-01-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://www.rc.ucl.ac.uk/docs/Systems/Michael/</loc>
-     <lastmod>2020-01-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://www.rc.ucl.ac.uk/docs/Systems/Aristotle/</loc>
      <lastmod>2020-01-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
