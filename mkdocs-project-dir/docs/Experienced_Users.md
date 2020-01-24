@@ -17,7 +17,7 @@ layout: docs
 
 ## How do I get access?
 
-UCL services: Fill in the [Sign-up Form](Account_Services)
+UCL services: Fill in the [sign-up form](Account_Services)
 
 Tier 2 services: Contact your point of contact.
 
@@ -29,11 +29,11 @@ All connections are via SSH, and you use your UCL credentials to log in (externa
 
 |Service | General alias          | Direct login node addresses                                   |
 |--------|------------------------|---------------------------------------------------------------|
-|Grace   | `grace.rc.ucl.ac.uk`   | `login01.ext.grace.ucl.ac.uk login02.ext.grace.ucl.ac.uk`     |
-|Kathleen| `kathleen.rc.ucl.ac.uk`| `login01.kathleen.rc.ucl.ac.uk login02.kathleen.rc.ucl.ac.uk` |
-|Myriad  | `myriad.rc.ucl.ac.uk`  | `login12.myriad.rc.ucl.ac.uk login13.myriad.rc.ucl.ac.uk`     |
-|Thomas  | `thomas.rc.ucl.ac.uk`  | `login03.thomas.rc.ucl.ac.uk login04.thomas.rc.ucl.ac.uk`     |
-|Michael | `michael.rc.ucl.ac.uk` | `login10.michael.rc.ucl.ac.uk login11.michael.rc.ucl.ac.uk `  |
+|Grace   | `grace.rc.ucl.ac.uk`   | `login01.ext.grace.ucl.ac.uk` `login02.ext.grace.ucl.ac.uk`     |
+|Kathleen| `kathleen.rc.ucl.ac.uk`| `login01.kathleen.rc.ucl.ac.uk` `login02.kathleen.rc.ucl.ac.uk` |
+|Myriad  | `myriad.rc.ucl.ac.uk`  | `login12.myriad.rc.ucl.ac.uk` `login13.myriad.rc.ucl.ac.uk`     |
+|Thomas  | `thomas.rc.ucl.ac.uk`  | `login03.thomas.rc.ucl.ac.uk` `login04.thomas.rc.ucl.ac.uk`     |
+|Michael | `michael.rc.ucl.ac.uk` | `login10.michael.rc.ucl.ac.uk` `login11.michael.rc.ucl.ac.uk `  |
 
 Generally you should connect to the general alias as this is load-balanced across the available login nodes, however if you use `screen` or `tmux` you will want to use the direct hostname so that you can reconnect to your session.
 
@@ -142,3 +142,5 @@ gerun test.exe
 ```
 
 To launch it correctly.
+
+Job scripts can be submitted with `qsub`, jobs can be monitored with `qstat` and deleted with `qdel`.
