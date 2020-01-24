@@ -6,7 +6,7 @@ categories:
 
 # Purchasing in Myriad
 
-Researchers may purchase additional resources to be used as part of the [[Myriad]] High Performance Computing cluster if the free service does not meet their needs. These resources can be made available in one of two ways:
+Researchers may purchase additional resources to be used as part of the [Myriad](../Clusters/Myriad.md) High Performance Computing cluster if the free service does not meet their needs. These resources can be made available in one of two ways:
 
  - Nodes purchased by researchers can be converted into a quarterly allocation of “priority cycles” equivalent to the amount of computation provided by the nodes, but usable across the whole cluster. We calculate how much time exists on your nodes for three months, and every three months you receive an allocation of that much priority time to use however you want on Myriad (GPU/large memory nodes cost more to use, and give you more if you buy them). We recommend this route.
  - The purchaser may request to buy nodes to be reserved for their group or department, restricting usage to the owned nodes. There may be an additional cost implication to this option (price on application).
@@ -38,7 +38,7 @@ No. We have a framework agreement with the vendor which covers all hardware purc
 
 #### I know what hardware I need. Can you send me a quote?
 
-Even if you know what hardware you need, before we can send you a quote, we will need to agree on a detailed specification. Please email [mailto:rits@ucl.ac.uk rits@ucl.ac.uk] with the following information:
+Even if you know what hardware you need, before we can send you a quote, we will need to agree on a detailed specification. Please email [rits@ucl.ac.uk](mailto:rits@ucl.ac.uk) with the following information:
 
  - Budget holder: name and contact details
  - Type and number of nodes you’d like to purchase
