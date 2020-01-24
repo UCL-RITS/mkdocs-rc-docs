@@ -1813,7 +1813,7 @@
 
 <p>For single core jobs you don't need to request a number of cores.  For hybrid codes use the MPI example and set <code>OMP_NUM_THREADS</code> to control the number of threads per node.  <code>gerun</code> will launch the right number of processes in the right place if you use it.</p>
 <h5 id="amount-of-ram-per-core">Amount of RAM per core<a class="headerlink" href="#amount-of-ram-per-core" title="Permanent link">§</a></h5>
-<div class="codehilite"><pre><span></span><span class="c1">#$ -l mem=&lt;amount of RAM in G or M&gt;</span>
+<div class="codehilite"><pre><span></span><span class="c1">#$ -l mem=&lt;integer amount of RAM in G or M&gt;</span>
 </pre></div>
 
 
