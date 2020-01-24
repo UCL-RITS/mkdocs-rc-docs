@@ -49,8 +49,8 @@ Socrates first, [as with our main UCL clusters](Accessing Clusters from Outside 
 
 ## User Environment
 
-Aristotle runs Red Hat Enterprise Linux 7 and NFS mounts the [RCPS
-Software Stack](RCPS_Software.md). As this machine is intended
+Aristotle runs Red Hat Enterprise Linux 7 and NFS mounts the 
+[RCPS Software Stack](RCPS_Software.md). As this machine is intended
 for teaching, work has focused on getting specific applications required
 for specific courses to work and these are:
 
