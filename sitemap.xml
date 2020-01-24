@@ -26,11 +26,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://www.rc.ucl.ac.uk/docs/Paid-For_Resources/</loc>
-     <lastmod>2020-01-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://www.rc.ucl.ac.uk/docs/UCL_Service_For_Me/</loc>
      <lastmod>2020-01-24</lastmod>
      <changefreq>daily</changefreq>
@@ -107,6 +102,16 @@
     </url>
     <url>
      <loc>https://www.rc.ucl.ac.uk/docs/Other_Services/UCL_UK_e-Science_Certificates/</loc>
+     <lastmod>2020-01-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.rc.ucl.ac.uk/docs/Paid-For_Resources/How_to_Use/</loc>
+     <lastmod>2020-01-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.rc.ucl.ac.uk/docs/Paid-For_Resources/Purchasing_in_Myriad/</loc>
      <lastmod>2020-01-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
