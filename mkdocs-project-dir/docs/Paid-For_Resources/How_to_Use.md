@@ -1,5 +1,5 @@
 ---
-title: Paid-For Resources
+title: How to Use
 layout: docs
 ---
 
@@ -8,7 +8,7 @@ layout: docs
 Users with access to paid resources have some extra flags and a tool for
 monitoring their nodes.
 
-## Jobscript additions
+## Job Script Additions
 
 For a job to be eligible to run on your nodes, you will need to specify
 your project in your jobscript:
