@@ -36,21 +36,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://www.rc.ucl.ac.uk/docs/Background/Batch_Processing/</loc>
-     <lastmod>2020-01-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://www.rc.ucl.ac.uk/docs/Background/Cluster_Computing/</loc>
-     <lastmod>2020-01-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://www.rc.ucl.ac.uk/docs/Background/The_Scheduler/</loc>
-     <lastmod>2020-01-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://www.rc.ucl.ac.uk/docs/Clusters/Myriad/</loc>
      <lastmod>2020-01-24</lastmod>
      <changefreq>daily</changefreq>
@@ -262,6 +247,21 @@
     </url>
     <url>
      <loc>https://www.rc.ucl.ac.uk/docs/Wiki_Export/X-Forwarding/</loc>
+     <lastmod>2020-01-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.rc.ucl.ac.uk/docs/Wiki_Export/Background/Batch_Processing/</loc>
+     <lastmod>2020-01-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.rc.ucl.ac.uk/docs/Wiki_Export/Background/Cluster_Computing/</loc>
+     <lastmod>2020-01-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.rc.ucl.ac.uk/docs/Wiki_Export/Background/The_Scheduler/</loc>
      <lastmod>2020-01-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
