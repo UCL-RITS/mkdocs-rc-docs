@@ -46,3 +46,99 @@ All UCL services use the same software stack based upon RHEL 7.x with a standard
 UCL services use Grid Engine to manage jobs.  This install is somewhat customised and so scripts for non-UCL services *may not work*.
 
 We recommend that when launching MPI jobs you use our `gerun` parallel launcher which inherits settings from the job and launches the appropriate number of processes with the MPI implementation you have chosen.
+
+### Script sections
+
+#### Shebang
+
+It's important that you add the `-l` option to bash in the shebang so that login scripts are parsed and the environment modules environment is set up.
+
+```bash
+#!/bin/bash -l
+```
+
+#### Resources you can request
+
+##### Number of cores:
+
+For MPI:
+```bash
+#$ -pe mpi <number of cores>
+```
+
+For threads:
+```bash
+#$ -pe smp <number of cores>
+```
+
+For single core jobs you don't need to request a number of cores.  For hybrid codes use the MPI example and set `OMP_NUM_THREADS` to control the number of threads per node.  `gerun` will launch the right number of processes in the right place if you use it.
+
+##### Amount of RAM per core
+```bash
+#$ -l mem=<amount of RAM in G or M>
+```
+
+e.g. `#$ -l mem=4G` requests 4 gigabytes of RAM per core.
+
+##### Run time:
+```bash
+#$ -l h_rt=<hours:minutes:seconds>
+```
+
+e.g. `#$ -l h_rt=48:00:00` requests 48 hours.
+
+##### Working directory:
+
+Either a specific working directory:
+
+```bash
+#$ -wd /path/to/working/directory
+```
+
+or the directory the script was submitted from:
+
+```bash
+#$ -cwd
+```
+
+##### GPUs (Myriad only):
+
+```bash 
+#$ -l gpu=<number of GPUs>
+```
+
+##### Enable Hyperthreads (Kathleen only):
+
+```bash
+#$ -l threads=1
+```
+
+With Hyperthreads enabled you need to request twice as many cores and then control threads vs MPI ranks with `OMP_NUM_THREADS`.  E.g. 
+
+```bash
+#$ -pe mpi 160
+#$ -l threads=1
+export OMP_NUM_THEADS=2
+```
+
+Would use 80 cores, with two threads (on Hyperthreads) per core.
+
+##### Temporary local disk (every machine EXCEPT Kathleen):
+
+```bash
+#$ -l tmpdir=<size in G>
+```
+
+e.g. `#$ -l tmpdir=10G` requests 10 gigabytes of temporary local disk.
+
+#### The rest of the script:
+
+You need to load any module dependencies and the run the rest of your workflow.
+
+We suggest using `gerun` as your parallel launcher rather than calling `mpriun` directly as `gerun` abstracts away a lot of the complexity between different version of MPI.  E.g. if you have requested 160 cores on your `#$ -pe...` line and your MPI program is called `test.exe` it should be sufficient to do:
+
+```bash
+gerun test.exe
+```
+
+To launch it correctly.
