@@ -23,12 +23,12 @@ General User Information:
 
 Clusters:
 
- - [Myriad](Systems/Myriad)
- - [Grace](Systems/Grace)
- - [Kathleen](Systems/Kathleen)
- - [Legion](Systems/Legion)
- - [Thomas](Systems/Thomas)
- - [Michael](Systems/Michael)
+ - [Myriad](Clusters/Myriad)
+ - [Grace](Clusters/Grace)
+ - [Kathleen](Clusters/Kathleen)
+ - [Legion](Clusters/Legion)
+ - [Thomas](Clusters/Thomas)
+ - [Michael](Clusters/Michael)
 
 ## Email Support
 
