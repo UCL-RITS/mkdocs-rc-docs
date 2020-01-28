@@ -127,6 +127,20 @@ You can use the [UCL Virtual Private Network](http://www.ucl.ac.uk/isd/staff/net
 
 #### Linux / Unix / Mac OS X
 
+##### On the command line
+```
+ssh -o ProxyJump=socrates.ucl.ac.uk grace.rc.ucl.ac.uk
+scp -o ProxyJump=socrates.ucl.ac.uk my_file grace.rc.ucl.ac.uk:~/Scratch/
+```
+
+This tunnels through Socrates in order to get you to your destination - you'll be asked for your password twice, once for each machine. You can use this to log in or to copy files.
+
+You may also need to do this if you are trying to reach one cluster from another and there is a firewall in the way.
+
+##### Using a config file
+
+You can create a config which does this without you needing to type it every time.
+
 Inside your `~/.ssh` directory on your local machine, add the below to your `config` file (or create a file called `config` if you don't already have one).
 
 Generically, it should be of this form where `<name>` can be anything you want to call this entry.
@@ -141,10 +155,10 @@ This causes the commands you type in your client to be forwarded on over a secur
 
 Here are some examples - you can have as many of these as you need in your config file.
 ```
-Host legion
+Host myriad
    User ccxxxxx
-   HostName legion.rc.ucl.ac.uk
-   proxyCommand ssh -W legion.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
+   HostName myriad.rc.ucl.ac.uk
+   proxyCommand ssh -W myriad.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
 
 Host login05
    User ccxxxxx
@@ -157,7 +171,7 @@ Host aristotle
    proxyCommand ssh -W aristotle.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
 ```
 
-You can now just type `ssh legion` or `scp file1 aristotle:~` and you will go through Socrates. You'll be asked for login details twice since you're logging in to two machines, Socrates and your endpoint.  
+You can now just type `ssh myriad` or `scp file1 aristotle:~` and you will go through Socrates. You'll be asked for login details twice since you're logging in to two machines, Socrates and your endpoint.  
 
 #### Windows - WinSCP
 
@@ -177,6 +191,17 @@ You can use PuTTY for tunnelling when you just want a single-step login and not 
 
 
 ### Managing your quota
+
+After using `lquota` to see your total usage, you may wish to find what is using all your space.
+
+`du` is a command that gives you information about your disk usage. Useful options are:
+
+```
+du -ch <dir>
+du -h --max-depth=1
+```
+
+The first will give you a summary of the sizes of directory tree and subtrees inside the directory you specify, using human-readable sizes with a total at the bottom. The second will show you the totals for all top-level directories relative to where you are, plus the grand total. These can help you track down the locations of large amounts of data if you need to reduce your disk usage.
 
 
 ## How do I submit a job to the scheduler?
