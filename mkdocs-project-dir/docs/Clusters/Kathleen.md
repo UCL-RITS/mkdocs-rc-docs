@@ -29,7 +29,7 @@ in, eg. `uccaxxx`. When entering your password in PuTTY no characters or
 bulletpoints will show on screen - this is normal.
 
 If you are outside the UCL firewall you will need to follow the
-instructions for [accessing services from outside UCL](Accessing_RC_Systems.md).
+instructions for [Logging in from outside the UCL firewall](../../howto.md/#logging-in-from-outside-the-ucl-firewall).
 
 ### Logging in to a specific node
 
@@ -44,7 +44,7 @@ The main address will unpredictably direct you to either one of these (to balanc
 ## Copying data onto Kathleen
 
 You will need to use an SCP or SFTP client to copy data onto Kathleen.
-Please refer to the page on [Managing Data on RC Systems](Managing_Data.md).
+Please refer to the page on [How do I transfer data onto the system?](../../howto.md/#how-do-i-transfer-data-onto-the-system).
 
 ## Quotas
 
@@ -67,7 +67,7 @@ which will give you output similar to this:
 
 You can apply for quota increases using the form at [Additional Resource Requests](Additional_Resource_Requests.md).
 
-Here are some tips for [managing your quota](Managing_Data_on_RC_Systems#Managing_your_quota) and
+Here are some tips for [managing your quota](../../howto.md/#managing-your-quota) and
 finding where space is being used.
 
 ## Job sizes and durations
