@@ -91,8 +91,8 @@ variants, new letters are added.
 
 | Type  | Cores per node   | RAM per node | Nodes |
 | ----- | ---------------- | ------------ | ----- |
-| H,D,E | 36               | 192GB        | 48    |
-| I,B   | 36               | 1.5TB        | 2     |
+| H,D,E | 36               | 192GB        | 94    |
+| I,B   | 36               | 1.5TB        | 9     |
 | J     | 36 + 2 P100 GPUs | 192GB        | 2     |
 | F     | 36 + 2 V100 GPUs | 192GB        | 1     |
 
