@@ -1,8 +1,8 @@
 ---
-title: Terms and Conditions
+title: Terms and Conditions of Use
 layout: docs
 ---
-1.  All use of Research Computing Platforms is subject to the [UCL Computing Regulations](https://www.ucl.ac.uk/informationsecurity/policy/public-policy/Regulations_ISC_200912a).
+1.  All use of Research Computing Platforms is subject to the [UCL Computing Regulations](https://www.ucl.ac.uk/information-security/sites/information-security/files/regulations.pdf).
 2.  All users will be required to renew their account once per year.
     Users will receive a reminder one month prior to suspension of their
     Legion account sent to their Live@UCL e-mail address. Funding
