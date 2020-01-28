@@ -1612,6 +1612,17 @@ Please refer to the page on <a href="Managing_Data.md">Managing Data on RC Syste
 <h2 id="quotas">Quotas<a class="headerlink" href="#quotas" title="Permanent link">§</a></h2>
 <p>On Kathleen you have a single 250GB quota by default which covers your home and Scratch. </p>
 <p>This is a hard quota: once you reach it, you will no longer be able to write more data. Keep an eye on it, as this will cause jobs to fail if they cannot create their .o or .e files at the start, or their output files partway through.</p>
+<p>You can check your quota on Kathleen by running:</p>
+<div class="codehilite"><pre><span></span>lquota
+</pre></div>
+
+
+<p>which will give you output similar to this:</p>
+<div class="codehilite"><pre><span></span>     Storage        Used        Quota   % Used   Path
+      lustre  146.19 MiB   250.00 GiB       0%   /home/uccaxxx
+</pre></div>
+
+
 <p>You can apply for quota increases using the form at <a href="Additional_Resource_Requests.md">Additional Resource Requests</a>.</p>
 <p>Here are some tips for <a href="Managing_Data_on_RC_Systems#Managing_your_quota">managing your quota</a> and
 finding where space is being used.</p>
