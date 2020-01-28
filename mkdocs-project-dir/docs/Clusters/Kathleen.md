@@ -93,7 +93,7 @@ If you have a workload that requires longer jobs than this, you may be able to a
 
 ## Node types
 
-Kathleen's compute capability comprises roughly 191 diskless compute nodes each with two 20-core [Intel Xeon Gold 6248 2.5GHz](https://ark.intel.com/content/www/us/en/ark/products/192446/intel-xeon-gold-6248-processor-27-5m-cache-2-50-ghz.html) processors, 189 gigabytes of 2933MHz DDR4 RAM, and an Intel OmniPath network.
+Kathleen's compute capability comprises roughly 191 diskless compute nodes each with two 20-core [Intel Xeon Gold 6248 2.5GHz](https://ark.intel.com/content/www/us/en/ark/products/192446/intel-xeon-gold-6248-processor-27-5m-cache-2-50-ghz.html) processors, 192 gigabytes of 2933MHz DDR4 RAM, and an Intel OmniPath network.
 
 Two nodes identical to these serve as the login nodes.
 
