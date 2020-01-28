@@ -447,6 +447,26 @@
     Linux / Unix / Mac OS X
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on-the-command-line" class="md-nav__link">
+    On the command line
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-a-config-file" class="md-nav__link">
+    Using a config file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1797,6 +1817,26 @@
     Linux / Unix / Mac OS X
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on-the-command-line" class="md-nav__link">
+    On the command line
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-a-config-file" class="md-nav__link">
+    Using a config file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2033,6 +2073,16 @@ put file2
 <p>You can use the <a href="http://www.ucl.ac.uk/isd/staff/network/vpn">UCL Virtual Private Network</a> and scp direct to our systems or you can do some form of ssh tunnelling.</p>
 <h3 id="single-step-logins-using-tunnelling">Single-step logins using tunnelling<a class="headerlink" href="#single-step-logins-using-tunnelling" title="Permanent link">§</a></h3>
 <h4 id="linux-unix-mac-os-x_1">Linux / Unix / Mac OS X<a class="headerlink" href="#linux-unix-mac-os-x_1" title="Permanent link">§</a></h4>
+<h5 id="on-the-command-line">On the command line<a class="headerlink" href="#on-the-command-line" title="Permanent link">§</a></h5>
+<div class="codehilite"><pre><span></span>ssh -o ProxyJump=socrates.ucl.ac.uk grace.rc.ucl.ac.uk
+scp -o ProxyJump=socrates.ucl.ac.uk my_file grace.rc.ucl.ac.uk:~/Scratch/
+</pre></div>
+
+
+<p>This tunnels through Socrates in order to get you to your destination - you'll be asked for your password twice, once for each machine. You can use this to log in or to copy files.</p>
+<p>You may also need to do this if you are trying to reach one cluster from another and there is a firewall in the way.</p>
+<h5 id="using-a-config-file">Using a config file<a class="headerlink" href="#using-a-config-file" title="Permanent link">§</a></h5>
+<p>You can create a config which does this without you needing to type it every time.</p>
 <p>Inside your <code>~/.ssh</code> directory on your local machine, add the below to your <code>config</code> file (or create a file called <code>config</code> if you don't already have one).</p>
 <p>Generically, it should be of this form where <code>&lt;name&gt;</code> can be anything you want to call this entry.</p>
 <div class="codehilite"><pre><span></span>Host &lt;name&gt;
@@ -2044,10 +2094,10 @@ put file2
 
 <p>This causes the commands you type in your client to be forwarded on over a secure channel to the specified remote host.</p>
 <p>Here are some examples - you can have as many of these as you need in your config file.</p>
-<div class="codehilite"><pre><span></span>Host legion
+<div class="codehilite"><pre><span></span>Host myriad
    User ccxxxxx
-   HostName legion.rc.ucl.ac.uk
-   proxyCommand ssh -W legion.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
+   HostName myriad.rc.ucl.ac.uk
+   proxyCommand ssh -W myriad.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
 
 Host login05
    User ccxxxxx
@@ -2061,7 +2111,7 @@ Host aristotle
 </pre></div>
 
 
-<p>You can now just type <code>ssh legion</code> or <code>scp file1 aristotle:~</code> and you will go through Socrates. You'll be asked for login details twice since you're logging in to two machines, Socrates and your endpoint.  </p>
+<p>You can now just type <code>ssh myriad</code> or <code>scp file1 aristotle:~</code> and you will go through Socrates. You'll be asked for login details twice since you're logging in to two machines, Socrates and your endpoint.  </p>
 <h4 id="windows-winscp">Windows - WinSCP<a class="headerlink" href="#windows-winscp" title="Permanent link">§</a></h4>
 <p>WinSCP can also set up SSH tunnels.</p>
 <ol>
@@ -2076,6 +2126,14 @@ Host aristotle
 <h4 id="windows-putty">Windows - PuTTY<a class="headerlink" href="#windows-putty" title="Permanent link">§</a></h4>
 <p>You can use PuTTY for tunnelling when you just want a single-step login and not a file transfer.</p>
 <h3 id="managing-your-quota">Managing your quota<a class="headerlink" href="#managing-your-quota" title="Permanent link">§</a></h3>
+<p>After using <code>lquota</code> to see your total usage, you may wish to find what is using all your space.</p>
+<p><code>du</code> is a command that gives you information about your disk usage. Useful options are:</p>
+<div class="codehilite"><pre><span></span>du -ch &lt;dir&gt;
+du -h --max-depth=1
+</pre></div>
+
+
+<p>The first will give you a summary of the sizes of directory tree and subtrees inside the directory you specify, using human-readable sizes with a total at the bottom. The second will show you the totals for all top-level directories relative to where you are, plus the grand total. These can help you track down the locations of large amounts of data if you need to reduce your disk usage.</p>
 <h2 id="how-do-i-submit-a-job-to-the-scheduler">How do I submit a job to the scheduler?<a class="headerlink" href="#how-do-i-submit-a-job-to-the-scheduler" title="Permanent link">§</a></h2>
 <p>To submit a job to the scheduler you need to write a jobscript that contains the resources the job is asking for and the actual commands you want to run. This jobscript is then submitted using the <code>qsub</code> command.</p>
 <div class="codehilite"><pre><span></span>qsub myjobscript
