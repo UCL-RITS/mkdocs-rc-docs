@@ -52,6 +52,19 @@ On Kathleen you have a single 250GB quota by default which covers your home and 
 
 This is a hard quota: once you reach it, you will no longer be able to write more data. Keep an eye on it, as this will cause jobs to fail if they cannot create their .o or .e files at the start, or their output files partway through.
 
+You can check your quota on Kathleen by running:
+
+```
+lquota
+```
+
+which will give you output similar to this:
+
+```
+     Storage        Used        Quota   % Used   Path
+      lustre  146.19 MiB   250.00 GiB       0%   /home/uccaxxx
+```
+
 You can apply for quota increases using the form at [Additional Resource Requests](Additional_Resource_Requests.md).
 
 Here are some tips for [managing your quota](Managing_Data_on_RC_Systems#Managing_your_quota) and
