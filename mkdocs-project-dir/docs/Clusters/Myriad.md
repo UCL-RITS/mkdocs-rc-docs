@@ -43,7 +43,7 @@ The main address will redirect you on to either one of them.
 ## Copying data onto Myriad
 
 You will need to use an SCP or SFTP client to copy data onto Myriad.
-Please refer to the page on [How do I transfer data onto the system?](../../howto/#how-do-i-transfer-data-onto-the-system).
+Please refer to the page on [How do I transfer data onto the system?](../../howto/#how-do-i-transfer-data-onto-the-system)
 
 ## Quotas
 

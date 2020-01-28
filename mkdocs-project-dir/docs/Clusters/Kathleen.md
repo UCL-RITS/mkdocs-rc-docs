@@ -44,7 +44,7 @@ The main address will unpredictably direct you to either one of these (to balanc
 ## Copying data onto Kathleen
 
 You will need to use an SCP or SFTP client to copy data onto Kathleen.
-Please refer to the page on [How do I transfer data onto the system?](../../howto/#how-do-i-transfer-data-onto-the-system).
+Please refer to the page on [How do I transfer data onto the system?](../../howto/#how-do-i-transfer-data-onto-the-system)
 
 ## Quotas
 

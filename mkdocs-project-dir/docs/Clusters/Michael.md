@@ -141,9 +141,9 @@ These utilities live in GitHub at
 
 ## Software
 
-Michael mounts the [RC Systems software stack](Software).
+Michael mounts the [RC Systems software stack](../../Installed_Software_Lists/General_Software_Lists).
 
-Have a look at [Applications](Applications) for specific
+Have a look at [Software Guides](../../Software_Guides/Other_Software) for specific
 information on running some applications, including example scripts. The
 list there is not exhaustive.
 
