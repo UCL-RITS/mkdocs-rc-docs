@@ -1635,10 +1635,9 @@ files partway through.</p>
 
 
 <p>which will give you output similar to this:</p>
-<div class="codehilite"><pre><span></span>LUSTRE SCRATCH USAGE/QUOTA
- userid        quota        usage      percent       Filesystem
-uccaxxx        150GB          0GB        0.00% /home/uccaxxx
-uccaxxx       1024GB          0GB        0.00% /scratch/scratch/uccaxxx
+<div class="codehilite"><pre><span></span>     Storage        Used        Quota   % Used   Path
+        home  721.68 MiB   150.00 GiB       0%   /home/uccaxxx
+     scratch   52.09 MiB     1.00 TiB       0%   /scratch/scratch/uccaxxx
 </pre></div>
 
 
@@ -1667,8 +1666,9 @@ finding where space is being used.</p>
 <p><a href="Interactive_Jobs.md">Interactive jobs</a> run with <code>qrsh</code> have a
 maximum wallclock time of 2 hours.</p>
 <h2 id="node-types">Node types<a class="headerlink" href="#node-types" title="Permanent link">§</a></h2>
-<p>Myriad contains three node types: standard compute nodes, high memory
-nodes and GPU nodes.</p>
+<p>Myriad contains three main node types: standard compute nodes, high memory
+nodes and GPU nodes. As new nodes as added over time with slightly newer processor
+variants, new letters are added.</p>
 <table>
 <thead>
 <tr>
@@ -1680,35 +1680,48 @@ nodes and GPU nodes.</p>
 </thead>
 <tbody>
 <tr>
-<td>H</td>
+<td>H,D,E</td>
 <td>36</td>
 <td>192GB</td>
 <td>48</td>
 </tr>
 <tr>
-<td>I</td>
+<td>I,B</td>
 <td>36</td>
 <td>1.5TB</td>
 <td>2</td>
 </tr>
 <tr>
 <td>J</td>
-<td>36 + 2 GPUs</td>
+<td>36 + 2 P100 GPUs</td>
 <td>192GB</td>
 <td>2</td>
+</tr>
+<tr>
+<td>F</td>
+<td>36 + 2 V100 GPUs</td>
+<td>192GB</td>
+<td>1</td>
 </tr>
 </tbody>
 </table>
 <p>You can tell the type of a node by its name: type H nodes are named
 <code>node-h00a-001</code> etc.</p>
 <h2 id="gpus">GPUs<a class="headerlink" href="#gpus" title="Permanent link">§</a></h2>
-<p>Myriad has two GPU nodes, each with two nVidia Tesla P100s.</p>
+<p>Myriad has two types of GPU nodes, J and F. There are two J-types nodes each with two nVidia Tesla P100s.
+There is one F-type node, with two nVidia Tesla V100s.</p>
 <p>You can request one or two GPUs by adding them as a resource request to your jobscript: </p>
 <div class="codehilite"><pre><span></span># For 1 GPU
 #$ -l gpu=1
 
 # For 2 GPUs
 #$ -l gpu=2
+</pre></div>
+
+
+<p>This will give you either type of GPU. If you need to specify one over the other, add a request for that type of node to your jobscript:</p>
+<div class="codehilite"><pre><span></span># request a V100 node only
+#$ -ac allow=F
 </pre></div>
 
 
