@@ -63,10 +63,9 @@ lquota
 which will give you output similar to this:
 
 ```
-LUSTRE SCRATCH USAGE/QUOTA
- userid        quota        usage      percent       Filesystem
-uccaxxx        150GB          0GB        0.00% /home/uccaxxx
-uccaxxx       1024GB          0GB        0.00% /scratch/scratch/uccaxxx
+     Storage        Used        Quota   % Used   Path
+        home  721.68 MiB   150.00 GiB       0%   /home/uccaxxx
+     scratch   52.09 MiB     1.00 TiB       0%   /scratch/scratch/uccaxxx
 ```
 
 You can apply for quota increases using the form at [Additional Resource Requests](Additional_Resource_Requests.md).
@@ -86,21 +85,24 @@ maximum wallclock time of 2 hours.
 
 ## Node types
 
-Myriad contains three node types: standard compute nodes, high memory
-nodes and GPU nodes.
+Myriad contains three main node types: standard compute nodes, high memory
+nodes and GPU nodes. As new nodes as added over time with slightly newer processor
+variants, new letters are added.
 
-| Type | Cores per node | RAM per node | Nodes |
-| ---- | -------------- | ------------ | ----- |
-| H    | 36             | 192GB        | 48    |
-| I    | 36             | 1.5TB        | 2     |
-| J    | 36 + 2 GPUs    | 192GB        | 2     |
+| Type  | Cores per node   | RAM per node | Nodes |
+| ----- | ---------------- | ------------ | ----- |
+| H,D,E | 36               | 192GB        | 48    |
+| I,B   | 36               | 1.5TB        | 2     |
+| J     | 36 + 2 P100 GPUs | 192GB        | 2     |
+| F     | 36 + 2 V100 GPUs | 192GB        | 1     |
 
 You can tell the type of a node by its name: type H nodes are named
 `node-h00a-001` etc.
 
 ## GPUs
 
-Myriad has two GPU nodes, each with two nVidia Tesla P100s.
+Myriad has two types of GPU nodes, J and F. There are two J-types nodes each with two nVidia Tesla P100s.
+There is one F-type node, with two nVidia Tesla V100s.
 
 You can request one or two GPUs by adding them as a resource request to your jobscript: 
 
@@ -110,6 +112,13 @@ You can request one or two GPUs by adding them as a resource request to your job
 
 # For 2 GPUs
 #$ -l gpu=2
+```
+
+This will give you either type of GPU. If you need to specify one over the other, add a request for that type of node to your jobscript:
+
+```
+# request a V100 node only
+#$ -ac allow=F
 ```
 
 The [GPU nodes](GPU_Nodes.md) page has some sample code for running GPU jobs if you need a test example.
