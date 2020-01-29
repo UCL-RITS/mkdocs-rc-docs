@@ -27,7 +27,7 @@ in, eg. `uccaxxx`. When entering your password in PuTTY no characters or
 bulletpoints will show on screen - this is normal.
 
 If you are outside the UCL firewall you will need to follow the
-instructions for [Logging in from outside the UCL firewall](../../howto/#logging-in-from-outside-the-ucl-firewall).
+instructions for [Logging in from outside the UCL firewall](../../howto.md#logging-in-from-outside-the-ucl-firewall).
 
 ### Logging in to a specific node
 
@@ -43,7 +43,7 @@ The main address will unpredictably direct you to either one of these (to balanc
 ## Copying data onto Grace
 
 You will need to use an SCP or SFTP client to copy data onto Grace.
-Please refer to the page on [How do I transfer data onto the system?](../../howto/#how-do-i-transfer-data-onto-the-system)
+Please refer to the page on [How do I transfer data onto the system?](../../howto.md#how-do-i-transfer-data-onto-the-system)
 
 ## Quotas
 
