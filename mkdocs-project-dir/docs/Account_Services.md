@@ -24,6 +24,7 @@ Permanent members of staff do not need a sponsor and their accounts will be auto
 The online application form can be found here: 
 
 * [User account application form](https://signup.rc.ucl.ac.uk/computing/requests/new) (UCL login required via Shibboleth) 
+
 You will need a UCL user name and password. These are the same credentials used to access core services like Portico and HR systems. 
 
 ### Application process
