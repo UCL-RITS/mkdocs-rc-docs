@@ -21,7 +21,7 @@ If you are putting together a grant application and think that you may need to a
 
 #### Can you give me advice on what hardware to buy?
 
-Yes, we’d be happy to discuss this with you. Please contact [mailto:rits@ucl.ac.uk rits@ucl.ac.uk] 
+Yes, we’d be happy to discuss this with you. Please contact [rits@ucl.ac.uk](mailto:rits@ucl.ac.uk). Please note that this is not the same address used for support requests.
 
 #### What type of nodes can we purchase?
 We currently have three types of node in Myriad, which are well tested and work reliably. These are:
