@@ -21,7 +21,7 @@ Each cluster has it's own specifications for the types of jobs that they run whi
 
 - Myriad
 
-Myriad is designed to be most suitable for serial work, including large numbers of serial jobs, and multi-threaded jobs (using e.g. OpenMP). It also includes a small number of GPUs for development or testing work. See [Myriad](Clusters/Myriad.md).
+Myriad is designed to be most suitable for serial work, including large numbers of serial jobs, and multi-threaded jobs (using e.g. OpenMP). It also includes a small number of GPUs for development or testing work. It went into service in July 2018. See [Myriad](Clusters/Myriad.md).
 
 - Kathleen
  
@@ -37,7 +37,7 @@ The Legion service was an older multipurpose cluster, including capability for s
 
 - Thomas
 
-Thomas is the UK's Tier 2 Materials and Molecular Modelling Hub. It is accessible by members of partner institutions and relevant consortia, and is for materials and molecular modelling work only. It has separate access procedures from UCL's central clusters. Access is managed by a Point of Contact from the relevant institution or consortia, not by Research Computing. See [Thomas](Clusters/Thomas.md)
+Thomas is the UK's Tier 2 Materials and Molecular Modelling Hub. It is accessible by members of partner institutions and relevant consortia, and is for materials and molecular modelling work only. It has separate access procedures from UCL's central clusters. Access is managed by a Point of Contact from the relevant institution or consortia, not by Research Computing. See [Thomas](Clusters/Thomas.md).
 
 - Michael
 
