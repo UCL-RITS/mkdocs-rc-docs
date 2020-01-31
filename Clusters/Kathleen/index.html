@@ -1755,10 +1755,30 @@ finding where space is being used.</p>
 <p>Hyperthreading lets you use two virtual cores instead of one physical core - some programs can take advantage of this. </p>
 <p>If you do not ask for hyperthreading, your job only uses one thread per core as normal.</p>
 <div class="codehilite"><pre><span></span># request hyperthreading in this job
-#$ -l thr=1
+#$ -l threads=1
+
+# request the number of virtual cores
+#$ -pe mpi 160
+
+# set number of OpenMP threads being used per MPI process 
+export OMP_NUM_THREADS=2
 </pre></div>
 
 
+<p>This job would be using 80 physical cores, using 80 MPI processes each of which would create two threads (on Hyperthreads).</p>
+<div class="codehilite"><pre><span></span># request hyperthreading in this job
+#$ -l threads=1
+
+# request the number of virtual cores
+#$ -pe mpi 160
+
+# set number of OpenMP threads being used per MPI process
+# (a whole node&#39;s worth)
+export OMP_NUM_THREADS=80
+</pre></div>
+
+
+<p>This job would still be using 80 physical cores, but would use one MPI process per node which would create 80 threads on the node (on Hyperthreads).</p>
 <h2 id="diskless-nodes">Diskless nodes<a class="headerlink" href="#diskless-nodes" title="Permanent link">§</a></h2>
 <p>Kathleen nodes are diskless (have no local hard drives) - there is no <code>$TMPDIR</code> available on Kathleen, so you should not request <code>-l tmpfs=10G</code> in your jobscripts or your job will be rejected at submit time.</p>
 <p>If you need temporary space, you should use somewhere in your Scratch.</p>
