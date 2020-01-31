@@ -3,7 +3,7 @@ layout: docs
 ---
 
 !!! warning
-    This documentation is still being created. In the meanwhile, please use the  old pages at <https://wiki.rc.ucl.ac.uk>.
+    Converting and updating this documentation to the new system is still a work in progress, and pages may change content or organisation as we work on it. Please bear with us while we complete the move.
 
 
 # Research Computing Services
