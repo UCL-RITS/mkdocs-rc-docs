@@ -9,7 +9,7 @@ layout: docs
 
 ## Cluster access application
 
-We have a single application process for access to the majority of our clusters. Use of these services is subject to a common set of [terms and conditions](Terms_and_Conditions.md). All applications cover a Myriad account while access to other systems depends on the resources you apply for. 
+You fill in one application form for access to the majority of our clusters. Use of these services is subject to a common set of [terms and conditions](Terms_and_Conditions.md). All granted applications give you a Myriad account while access to other systems depends on what types of work you tell us you will be doing. 
 
 ### Account sponsors
 
@@ -29,24 +29,24 @@ You will need a UCL user name and password. These are the same credentials used 
 
 ### Application process
 
-The application process then runs as follows:
+The application process has these steps:
 
-1. Enter your UCL userid and password to access the application form.
+1. Enter your UCL username and password to access the application form.
 2. Complete the application form, reading the instructions carefully. Tip: Hover your mouse over text boxes for more information.
-3. Upon completion, your sponsor will receive an email asking for the application to be approved. If you do not require a sponsor, your account will be automatically approved.
-4. Your sponsor should click on the link in the email and approve the account.
-5. You will receive an email when your account is approved if you have a sponsor.
-6. You should receive an email once we have created your account. Please note that there may be a delay of up to one working day between an application being approved and it being created.
+3. When you successfully submit the form, your sponsor will be sent an email asking them to approve your application. If you do not require a sponsor, your application will be automatically approved.
+4. Your sponsor should click on the link in the email, log in and approve the account.
+5. You will then receive an email when your account is approved if you have a sponsor. (This does not mean your account has been created yet).
+6. You should receive an email once we have created your account. Please note that there may be a delay of up to one working day between an application being approved and your account being created.
 
 If your sponsor does not receive the email to approve your account, send them the link to your application directly (it will look like dashboard.rc.ucl.ac.uk/computing/requests/xxxx) and they will have a button at the top to approve it.
 
-Please note: most delays in the application process are caused by sponsors missing the approval mail. 
+Please note: most delays in the application process are caused by sponsors missing or not receiving the approval email, so check with your sponsor first if your application is stuck waiting for approval. Research Computing can only create your account after it is approved. 
 
 ## Accounts for visitors
 
-Applications for UCL visitors to use Research Computing services are welcomed. Please note that:
+UCL visitors are welcome to apply for accounts on Research Computing services. Please note that:
 
-1. Applicants must have a central UCL account. Queries about how to obtain a UCL account for visitors should be addressed, in the first instance, to your Departmental Administrator.
+1. Applicants must have a central UCL account. UCL Visitor accounts can be arranged by your Departmental Administrator, so you should speak to them first.
 2. Account applications should specify the UCL grant under which the work is being carried out, if possible, as well as an associated UCL group or researcher.
 3. Account applications may not be submitted on behalf of another except to cover accessibility requirements, as the account application process includes agreeing to relevant legal terms and conditions.
 
@@ -62,7 +62,7 @@ All accounts thus provided are subject to all other 'standard' T&C's relating to
 
 ## Charges for use of Research Computing services
 
-No direct charges are currently applicable for non-exceptional use of any Research Computing services in accordance with standard resource allocation policy as defined by the [CRAG](http://www.ucl.ac.uk/isd/about/governance/research-it/crag).
+Research Computing services are free at point of use by default. There are no direct charges for your usage under standard resource allocation policy as defined by the [CRAG](http://www.ucl.ac.uk/isd/about/governance/research-it/crag).
 
 Several methods are available to researchers who wish to gain access to additional resources, or obtain 'priority' use, including chargeable options. Details are available at [Additional Resources](Additional_Resources.md) and [Purchasing in Myriad](Paid-For_Resources/Purchasing_in_Myriad.md).
 
