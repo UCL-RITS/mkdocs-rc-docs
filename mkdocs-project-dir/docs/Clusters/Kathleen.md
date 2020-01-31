@@ -110,8 +110,30 @@ If you do not ask for hyperthreading, your job only uses one thread per core as 
 
 ```
 # request hyperthreading in this job
-#$ -l thr=1
+#$ -l threads=1
+
+# request the number of virtual cores
+#$ -pe mpi 160
+
+# set number of OpenMP threads being used per MPI process 
+export OMP_NUM_THREADS=2
 ```
+
+This job would be using 80 physical cores, using 80 MPI processes each of which would create two threads (on Hyperthreads).
+
+```
+# request hyperthreading in this job
+#$ -l threads=1
+
+# request the number of virtual cores
+#$ -pe mpi 160
+
+# set number of OpenMP threads being used per MPI process
+# (a whole node's worth)
+export OMP_NUM_THREADS=80
+```
+
+This job would still be using 80 physical cores, but would use one MPI process per node which would create 80 threads on the node (on Hyperthreads).
 
 ## Diskless nodes
 
