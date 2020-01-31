@@ -6,4 +6,4 @@ layout: docs
 
 Date                | Service | Reason
 --------------------|---------|-------
-10/01/20 -> 17/01/20|Myriad   | Storage upgrade to 3PB
+10/02/2020 -> 17/02/2020|Myriad   | Storage upgrade to 3PB
