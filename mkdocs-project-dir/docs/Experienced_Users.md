@@ -17,13 +17,13 @@ layout: docs
 
 ## How do I get access?
 
-UCL services: Fill in the [sign-up form](../Account_Services)
+UCL services: Fill in the [sign-up form](Account_Services.md)
 
 Tier 2 services: Contact your point of contact.
 
 ## How do I connect?
 
-All connections are via SSH, and you use your UCL credentials to log in (external users will should use the `mmmXXXX` account with the SSH key they have provided to their point of contact),  UCL services can only be connected to by users inside the UCL network which may mean using the institutional VPN or "bouncing" off another UCL machine when [accessing them from outside the UCL network](../howto#Logging-in-from-outside-the-UCL-firewall).  The Tier 2 services (Thomas and Michael) are externally accessible.
+All connections are via SSH, and you use your UCL credentials to log in (external users should use the `mmmXXXX` account with the SSH key they have provided to their point of contact). UCL services can only be connected to by users inside the UCL network which may mean using the institutional VPN or "bouncing" off another UCL machine when [accessing them from outside the UCL network](../howto#Logging-in-from-outside-the-UCL-firewall).  The Tier 2 services (Thomas and Michael) are externally accessible.
 
 ### Login hosts
 
@@ -45,13 +45,29 @@ All UCL services use the same software stack based upon RHEL 7.x with a standard
 
 UCL services use Grid Engine to manage jobs.  This install is somewhat customised and so scripts for non-UCL services *may not work*.
 
-We recommend that when launching MPI jobs you use our `gerun` parallel launcher which inherits settings from the job and launches the appropriate number of processes with the MPI implementation you have chosen.
+We recommend that when launching MPI jobs you use our `gerun` parallel launcher instead of `mpirun` as it inherits settings from the job and launches the appropriate number of processes with the MPI implementation you have chosen. It abstracts away a lot of the complexity between different version of MPI.
+
+```
+# using gerun
+gerun myMPIprogram
+
+# using mpirun when a machinefile is needed (eg Intel MPI)
+mpirun -np $NSLOTS -machinefile $PE_HOSTFILE myMPIprogram
+```
+
+`$NSLOTS` is an environment variable containing the value you gave to `-pe mpi` so you do not need to re-specify it.
+
+### Troubleshooting gerun
+
+If you need to see what `gerun` is doing because something is not working as expected, look at the error file for your job, default name `$JOBNAME.e$JOB_ID`. It will contain debug information from `gerun` about where it ran and the exact `mpirun` command it used. 
+
+You may need to use `mpirun` directly with different options if your program has sufficiently complex process placement requirements, or is using something like GlobalArrays and requires a different process layout than it is being given.
 
 ### Script sections
 
 #### Shebang
 
-It's important that you add the `-l` option to bash in the shebang so that login scripts are parsed and the environment modules environment is set up.
+It's important that you add the `-l` option to bash in the shebang so that login scripts are parsed and the environment modules environment is set up. `#!` must be the first two characters in the file, no previous white space.
 
 ```bash
 #!/bin/bash -l
@@ -59,7 +75,7 @@ It's important that you add the `-l` option to bash in the shebang so that login
 
 #### Resources you can request
 
-##### Number of cores:
+##### Number of cores
 
 For MPI:
 ```bash
@@ -80,14 +96,14 @@ For single core jobs you don't need to request a number of cores.  For hybrid co
 
 e.g. `#$ -l mem=4G` requests 4 gigabytes of RAM per core.
 
-##### Run time:
+##### Run time
 ```bash
 #$ -l h_rt=<hours:minutes:seconds>
 ```
 
 e.g. `#$ -l h_rt=48:00:00` requests 48 hours.
 
-##### Working directory:
+##### Working directory
 
 Either a specific working directory:
 
@@ -101,13 +117,13 @@ or the directory the script was submitted from:
 #$ -cwd
 ```
 
-##### GPUs (Myriad only):
+##### GPUs (Myriad only)
 
 ```bash 
 #$ -l gpu=<number of GPUs>
 ```
 
-##### Enable Hyperthreads (Kathleen only):
+##### Enable Hyperthreads (Kathleen only)
 
 ```bash
 #$ -l threads=1
@@ -118,12 +134,12 @@ With Hyperthreads enabled you need to request twice as many cores and then contr
 ```bash
 #$ -pe mpi 160
 #$ -l threads=1
-export OMP_NUM_THEADS=2
+export OMP_NUM_THREADS=2
 ```
 
 Would use 80 cores, with two threads (on Hyperthreads) per core.
 
-##### Temporary local disk (every machine EXCEPT Kathleen):
+##### Temporary local disk (every machine EXCEPT Kathleen)
 
 ```bash
 #$ -l tmpdir=<size in G>
@@ -131,16 +147,11 @@ Would use 80 cores, with two threads (on Hyperthreads) per core.
 
 e.g. `#$ -l tmpdir=10G` requests 10 gigabytes of temporary local disk.
 
-#### The rest of the script:
+#### The rest of the script
 
-You need to load any module dependencies and the run the rest of your workflow.
+You need to load any module dependencies, set up any custom environment variables or paths you need and then run the rest of your workflow.
 
-We suggest using `gerun` as your parallel launcher rather than calling `mpriun` directly as `gerun` abstracts away a lot of the complexity between different version of MPI.  E.g. if you have requested 160 cores on your `#$ -pe...` line and your MPI program is called `test.exe` it should be sufficient to do:
-
-```bash
-gerun test.exe
-```
-
-To launch it correctly.
+### Submitting your jobscript
 
 Job scripts can be submitted with `qsub`, jobs can be monitored with `qstat` and deleted with `qdel`.
+
