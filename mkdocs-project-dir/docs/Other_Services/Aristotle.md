@@ -19,6 +19,10 @@ and have a subset of the RCPS software stack available.
 The main aim of this service is to allow specific teaching courses to run
 that need to run Linux/UNIX applications, but it is available to all UCL users.
 
+!!! warning
+    Aristotle is made available but is provided with minimal staff time and no budget.
+    Any user may completely occupy the service and there is no system in place to prevent that.
+
 <!-- TODO: Linkify "RCPS software stack"? -->
 
 ## Access
