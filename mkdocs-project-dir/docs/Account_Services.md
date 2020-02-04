@@ -9,7 +9,7 @@ layout: docs
 
 ## Cluster access application
 
-You fill in one application form for access to the majority of our clusters. Use of these services is subject to a common set of [terms and conditions](Terms_and_Conditions.md). All granted applications give you a Myriad account while access to other systems depends on what types of work you tell us you will be doing. 
+There is a single online form for applying to the majority of our clusters. Use of these services is subject to a common set of [terms and conditions](Terms_and_Conditions.md). All granted applications give you a Myriad account while access to other systems depends on what types of work you tell us you will be doing. 
 
 ### Account sponsors
 
