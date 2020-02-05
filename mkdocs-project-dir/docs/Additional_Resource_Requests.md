@@ -36,7 +36,7 @@ Note that an application to the
 additional resources is only likely to be approved if the impact on
 other users is not deemed to be significant, or of long duration.
 
-  - [Additional resource request form](../CRAG_additional_resources_request_form.rtf)
+  - [Additional resource request form](CRAG_additional_resources_request_form.rtf)
 
 ## Request hosting of shared datasets
 
@@ -59,7 +59,7 @@ account will be by ssh key.
 To apply for a hosted dataset, please send this form to
 <rc-support@ucl.ac.uk>.
 
-  - [Hosted dataset request form](../hosted_dataset_request_form.rtf)
+  - [Hosted dataset request form](hosted_dataset_request_form.rtf)
 
 ## Purchase dedicated compute nodes within Legion or Myriad
 
