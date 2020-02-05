@@ -10,7 +10,7 @@ layout: docs
 
 We recognise that researchers may sometimes require a higher throughput
 of work than it is possible to achieve with free ‘fair share’ usage of
-[Myriad](../Clusters/Myriad.md), [Grace](../Clusters/Grace.md) and [Kathleen](../Clusters/Kathleen). 
+[Myriad](../Clusters/Myriad), [Grace](../Clusters/Grace) and [Kathleen](../Clusters/Kathleen). 
 There a couple of ways of obtaining additional Legion resource
 beyond this fair share:
 
