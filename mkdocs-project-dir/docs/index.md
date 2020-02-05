@@ -38,13 +38,13 @@ We will endeavour to answer queries on any aspect of computing related to your r
 
 ## How to...
 
- - [Connect to the Research Data Storage service](Connecting_to_Research_Data_Services.md)
- - [Report a problem with one of our computing platforms](Reporting_problems.md)
+ - [Connect to the Research Data Storage service](Connecting_to_Research_Data_Services)
+ - [Report a problem with one of our computing platforms](Reporting_problems)
  - [Access services from outside UCL](Accessing_RC_Systems.md#Accessing_services_from_outside_UCL)
- - [Apply for access to national GPU clusters](GPU_Clusters.md)
- - [Get more resources](Additional_Resource_Requests.md) (more storage, more compute time, longer run time, etc)
+ - [Apply for access to national GPU clusters](GPU_Clusters)
+ - [Get more resources](Additional_Resource_Requests) (more storage, more compute time, longer run time, etc)
 
 ## Training
 
-We infrequently provide a training course aimed at getting users up and running on one of our main clusters. Please see our [Training page](Training.md) for details.
+We infrequently provide a training course aimed at getting users up and running on one of our main clusters. Please see our [Training page](Training) for details.
 
