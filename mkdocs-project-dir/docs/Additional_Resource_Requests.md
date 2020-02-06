@@ -10,7 +10,7 @@ layout: docs
 
 We recognise that researchers may sometimes require a higher throughput
 of work than it is possible to achieve with free ‘fair share’ usage of
-[Myriad](../Clusters/Myriad), [Grace](../Clusters/Grace) and [Kathleen](../Clusters/Kathleen). 
+[Myriad](Clusters/Myriad.md), [Grace](Clusters/Grace.md) and [Kathleen](Clusters/Kathleen.md). 
 There a couple of ways of obtaining additional Legion resource
 beyond this fair share:
 
@@ -22,7 +22,7 @@ in collaboration with your supervisor or the project's principal
 investigator. This includes requests for increased storage quotas.
 
 The completed form should be sent to the Research Computing Platforms
-team at <rc-support@ucl.ac.uk>, for technical review. If successful,
+team at <mailto:rc-support@ucl.ac.uk>, for technical review. If successful,
 your case will be presented to the
 [CRAG](http://www.ucl.ac.uk/isd/about/governance/research-it/crag) for
 consideration at the next meeting of the Group. The
@@ -36,7 +36,7 @@ Note that an application to the
 additional resources is only likely to be approved if the impact on
 other users is not deemed to be significant, or of long duration.
 
-  - [Additional resource request form](CRAG_additional_resources_request_form.rtf)
+  - [Additional resource request form](Additional_Resource_Requests/CRAG_additional_resources_request_form.rtf)
 
 ## Request hosting of shared datasets
 
@@ -59,13 +59,13 @@ account will be by ssh key.
 To apply for a hosted dataset, please send this form to
 <rc-support@ucl.ac.uk>.
 
-  - [Hosted dataset request form](Hosted_dataset_request_form.rtf)
+  - [Hosted dataset request form](Additional_Resource_Requests/Hosted_dataset_request_form.rtf)
 
 ## Purchase dedicated compute nodes within Legion or Myriad
 
 There has previously been a programme allowing researchers to purchase
-compute nodes to be attached to the [Legion](../Clusters/Legion) cluster. This has been
-discontinued, as the [Myriad](../Clusters/Myriad) cluster replaces the Legion cluster for
+compute nodes to be attached to the [Legion](Clusters/Legion.md) cluster. This has been
+discontinued, as the [Myriad](Clusters/Myriad.md) cluster replaces the Legion cluster for
 the majority of users.
 
 There are plans to allow the purchase of nodes for Myriad in future but these have not yet been finalised.
