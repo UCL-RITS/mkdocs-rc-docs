@@ -9,7 +9,7 @@ within a single node rather than multi-node parallel jobs.
 
 ## Accounts
 
-Myriad accounts can be applied for via the [Research Computing sign up process](Accounts.md).
+Myriad accounts can be applied for via the [Research Computing sign up process](../Account_Services.md).
 
 As Myriad is our most general-purpose system, everyone who signs up for a Research Computing account is given access to Myriad.
 
@@ -27,7 +27,7 @@ in, eg. `uccaxxx`. When entering your password in PuTTY no characters or
 bulletpoints will show on screen - this is normal.
 
 If you are outside the UCL firewall you will need to follow the
-instructions for [Logging in from outside the UCL firewall](../../howto/#logging-in-from-outside-the-ucl-firewall).
+instructions for [Logging in from outside the UCL firewall](../howto.md#logging-in-from-outside-the-ucl-firewall).
 
 ### Logging in to a specific node
 
@@ -43,7 +43,7 @@ The main address will redirect you on to either one of them.
 ## Copying data onto Myriad
 
 You will need to use an SCP or SFTP client to copy data onto Myriad.
-Please refer to the page on [How do I transfer data onto the system?](../../howto/#how-do-i-transfer-data-onto-the-system)
+Please refer to the page on [How do I transfer data onto the system?](../howto.md#how-do-i-transfer-data-onto-the-system)
 
 ## Quotas
 
@@ -68,9 +68,9 @@ which will give you output similar to this:
      scratch   52.09 MiB     1.00 TiB       0%   /scratch/scratch/uccaxxx
 ```
 
-You can apply for quota increases using the form at [Additional Resource Requests](Additional_Resource_Requests.md).
+You can apply for quota increases using the form at [Additional Resource Requests](../Additional_Resource_Requests.md).
 
-Here are some tips for [managing your quota](../../howto/#managing-your-quota) and
+Here are some tips for [managing your quota](../howto.md#managing-your-quota) and
 finding where space is being used.
 
 ## Job sizes
@@ -80,7 +80,7 @@ finding where space is being used.
 | 1       | 72hrs         |
 | 2 to 36 | 48hrs         |
 
-[Interactive jobs](Interactive_Jobs.md) run with `qrsh` have a
+[Interactive jobs](../Advanced_Topics/Interactive_Jobs.md) run with `qrsh` have a
 maximum wallclock time of 2 hours.
 
 ## Node types
@@ -121,7 +121,7 @@ This will give you either type of GPU. If you need to specify one over the other
 #$ -ac allow=F
 ```
 
-The [GPU nodes](GPU_Nodes.md) page has some sample code for running GPU jobs if you need a test example.
+The [GPU nodes](../Advanced_Topics/GPU_Nodes.md) page has some sample code for running GPU jobs if you need a test example.
 
 ### Tensorflow
 

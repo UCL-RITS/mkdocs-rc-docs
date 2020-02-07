@@ -9,9 +9,9 @@ Grace is a compute cluster designed for extensively parallel, multi-node batch-p
 
 ## Accounts
 
-Grace accounts can be applied for via the [Research Computing sign up process](Accounts.md).
+Grace accounts can be applied for via the [Research Computing sign up process](../Account_Services.md).
 
-As Grace is intended for multi-node jobs, users who specify that they will need to use multi-node jobs (e.g. with [MPI](Glossary.md#MPI)) will be given access to Grace.
+As Grace is intended for multi-node jobs, users who specify that they will need to use multi-node jobs (e.g. with [MPI](../Appendices/Glossary.md#MPI)) will be given access to Grace.
 
 ## Logging in
 
@@ -27,7 +27,7 @@ in, eg. `uccaxxx`. When entering your password in PuTTY no characters or
 bulletpoints will show on screen - this is normal.
 
 If you are outside the UCL firewall you will need to follow the
-instructions for [Logging in from outside the UCL firewall](../../howto/#logging-in-from-outside-the-ucl-firewall).
+instructions for [Logging in from outside the UCL firewall](../howto.md#logging-in-from-outside-the-ucl-firewall).
 
 ### Logging in to a specific node
 
@@ -43,7 +43,7 @@ The main address will unpredictably direct you to either one of these (to balanc
 ## Copying data onto Grace
 
 You will need to use an SCP or SFTP client to copy data onto Grace.
-Please refer to the page on [How do I transfer data onto the system?](../../howto/#how-do-i-transfer-data-onto-the-system)
+Please refer to the page on [How do I transfer data onto the system?](../howto.md#how-do-i-transfer-data-onto-the-system)
 
 ## Quotas
 
@@ -67,7 +67,7 @@ For batch jobs:
 | 256-512 | 24h           |
 | >512    | 12h           |
 
-If you have a workload that requires longer jobs than this, you may be able to apply to our governance group for access to a longer queue. Applications will be expected to demonstrate that their work cannot be run using techniques like checkpointing that would allow their workload to be broken up into smaller parts. Please see the section on [Applying for special access](CRAG_Exceptions.md) for more details.
+If you have a workload that requires longer jobs than this, you may be able to apply to our governance group for access to a longer queue. Applications will be expected to demonstrate that their work cannot be run using techniques like checkpointing that would allow their workload to be broken up into smaller parts. Please see the section on [Additional Resource Requests](../Additional_Resource_Requests.md) for more details.
 
 ## Node types
 

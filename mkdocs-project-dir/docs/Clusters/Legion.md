@@ -22,7 +22,7 @@ in, eg. `uccaxxx`. When entering your password in PuTTY no characters or
 bulletpoints will show on screen - this is normal.
 
 If you are outside the UCL firewall you will need to follow the
-instructions for [Logging in from outside the UCL firewall](../../howto/#logging-in-from-outside-the-ucl-firewall).
+instructions for [Logging in from outside the UCL firewall](../howto.md#logging-in-from-outside-the-ucl-firewall).
 
 ### Logging in to a specific node
 
@@ -32,7 +32,7 @@ instructions for [Logging in from outside the UCL firewall](../../howto/#logging
 ## Copying data onto Legion
 
 You will need to use an SCP or SFTP client to copy data onto Legion.
-Please refer to the page on [How do I transfer data onto the system?](../../howto/#how-do-i-transfer-data-onto-the-system)
+Please refer to the page on [How do I transfer data onto the system?](../howto.md#how-do-i-transfer-data-onto-the-system)
 
 Due to a lack of available networking hardware to connect Legion to the rest of the UCL network, the connections to the login nodes can only get a theoretical maximum of 1 gigabit/second (128 megabytes/second). There is a single node which has a faster connection (10x), available by connecting to `transfer.legion.rc.ucl.ac.uk`. When transferring data from a source with a fast connection, like another cluster or a website, this address should be used in place of either the main Legion address or a specific login node address, to get the best transfer speed.
 
@@ -63,7 +63,7 @@ For batch jobs:
 
 Note that nodes owned by research groups have a job duration limit of 7 days for users **in those research groups**.
 
-If you have a workload that requires longer jobs than this, you may be able to apply to our governance group for access to a longer queue. Applications will be expected to demonstrate that their work cannot be run using techniques like checkpointing that would allow their workload to be broken up into smaller parts. Please see the section on [Applying for special access](CRAG_Exceptions.md) for more details.
+If you have a workload that requires longer jobs than this, you may be able to apply to our governance group for access to a longer queue. Applications will be expected to demonstrate that their work cannot be run using techniques like checkpointing that would allow their workload to be broken up into smaller parts. Please see the section on [Applying for Additional Resources](../Additional_Resource_Requests.md) for more details.
 
 ## Node types
 

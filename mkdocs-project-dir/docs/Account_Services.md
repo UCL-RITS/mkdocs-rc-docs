@@ -64,5 +64,5 @@ All accounts thus provided are subject to all other 'standard' T&C's relating to
 
 Research Computing services are free at point of use by default. There are no direct charges for your usage under standard resource allocation policy as defined by the [CRAG](http://www.ucl.ac.uk/isd/about/governance/research-it/crag).
 
-Several methods are available to researchers who wish to gain access to additional resources, or obtain 'priority' use, including chargeable options. Details are available at [Additional Resources](Additional_Resources.md) and [Purchasing in Myriad](Paid-For_Resources/Purchasing_in_Myriad.md).
+Several methods are available to researchers who wish to gain access to additional resources, or obtain 'priority' use, including chargeable options. Details are available at [Additional Resource_Requests](Additional_Resource_Requests.md) and [Purchasing in Myriad](Paid-For_Resources/Purchasing_in_Myriad.md).
 

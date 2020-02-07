@@ -11,7 +11,7 @@ layout: docs
 
 Aristotle is an interactive, Linux-based compute service for
 teaching, running on three nodes of the same specification as
-[Legion's U-type nodes](Legion.md#Hardware), each with 64 gigabytes
+[Legion's U-type nodes](../Clusters/Legion.md#Hardware), each with 64 gigabytes
 of RAM and 16 cores. The nodes run the Red Hat Enterprise Linux operating system
 ([RHEL 7](https://en.wikipedia.org/wiki/Red_Hat_Enterprise_Linux))
 and have a subset of the RCPS software stack available.

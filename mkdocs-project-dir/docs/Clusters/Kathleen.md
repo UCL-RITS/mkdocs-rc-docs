@@ -11,9 +11,9 @@ Kathleen is a compute cluster designed for extensively parallel, multi-node batc
 
 ## Accounts
 
-Kathleen accounts can be applied for via the [Research Computing sign up process](Accounts.md).
+Kathleen accounts can be applied for via the [Research Computing sign up process](../Account_Services.md).
 
-As Kathleen is intended for multi-node jobs, users who specify that they will need to use multi-node jobs (e.g. with [MPI](Glossary.md#MPI)) will be given access to Kathleen.
+As Kathleen is intended for multi-node jobs, users who specify that they will need to use multi-node jobs (e.g. with [MPI](../Appendices/Glossary.md#MPI)) will be given access to Kathleen.
 
 ## Logging in
 
@@ -29,7 +29,7 @@ in, eg. `uccaxxx`. When entering your password in PuTTY no characters or
 bulletpoints will show on screen - this is normal.
 
 If you are outside the UCL firewall you will need to follow the
-instructions for [Logging in from outside the UCL firewall](../../howto/#logging-in-from-outside-the-ucl-firewall).
+instructions for [Logging in from outside the UCL firewall](../howto.md#logging-in-from-outside-the-ucl-firewall).
 
 ### Logging in to a specific node
 
@@ -44,7 +44,7 @@ The main address will unpredictably direct you to either one of these (to balanc
 ## Copying data onto Kathleen
 
 You will need to use an SCP or SFTP client to copy data onto Kathleen.
-Please refer to the page on [How do I transfer data onto the system?](../../howto/#how-do-i-transfer-data-onto-the-system)
+Please refer to the page on [How do I transfer data onto the system?](../howto.md#how-do-i-transfer-data-onto-the-system)
 
 ## Quotas
 
@@ -65,9 +65,9 @@ which will give you output similar to this:
       lustre  146.19 MiB   250.00 GiB       0%   /home/uccaxxx
 ```
 
-You can apply for quota increases using the form at [Additional Resource Requests](Additional_Resource_Requests.md).
+You can apply for quota increases using the form at [Additional Resource Requests](../Additional_Resource_Requests.md).
 
-Here are some tips for [managing your quota](../../howto/#managing-your-quota) and
+Here are some tips for [managing your quota](../howto.md#managing-your-quota) and
 finding where space is being used.
 
 ## Job sizes and durations
@@ -89,7 +89,7 @@ For batch jobs:
 
 These are numbers of physical cores.
 
-If you have a workload that requires longer jobs than this, you may be able to apply to our governance group for access to a longer queue. Applications will be expected to demonstrate that their work cannot be run using techniques like checkpointing that would allow their workload to be broken up into smaller parts. Please see the section on [Applying for special access](CRAG_Exceptions.md) for more details.
+If you have a workload that requires longer jobs than this, you may be able to apply to our governance group for access to a longer queue. Applications will be expected to demonstrate that their work cannot be run using techniques like checkpointing that would allow their workload to be broken up into smaller parts. Please see the section on [Additional Resource Requests](../Additional_Resource_Requests.md) for more details.
 
 ## Node types
 
