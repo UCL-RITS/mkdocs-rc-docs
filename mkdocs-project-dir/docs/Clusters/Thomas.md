@@ -204,6 +204,8 @@ Please let us know your username when you ask to be added to a group.
     (tested with VASP 5.4.4, no patches). You need to download the VASP
     source code and then you can run the script following the
     instructions at the top.
+  - **Molpro**: Only UCL users are licensed to use our central copy and 
+    can request to be added to the `lgmolpro` reserved application group.
 
 ## Suggested job sizes
 
