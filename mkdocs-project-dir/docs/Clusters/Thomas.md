@@ -8,7 +8,7 @@ Materials and Molecular Modelling.
 ## Applying for an account
 
 Thomas accounts belong to you as an individual and are applied for
-through your own institution's [Point of Contact](https://mmmhub.ac.uk/2017/06/14/access/).
+through your own institution's [Point of Contact](https://mmmhub.ac.uk/thomas).
 You will need to supply an SSH public key, which is the only method used to log in.
 
 ## Creating an ssh key pair
