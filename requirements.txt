@@ -1,3 +1,4 @@
+markdown<3.2 # MkDocs-material has a version cap (2020-02-07) which is otherwise exceeded if unconstrained
 mkdocs
 mkdocs-material
 mkdocs-awesome-pages-plugin
