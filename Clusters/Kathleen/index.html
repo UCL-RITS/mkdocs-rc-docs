@@ -913,8 +913,8 @@
                 <h1 id="kathleen">Kathleen<a class="headerlink" href="#kathleen" title="Permanent link">§</a></h1>
 <p>Kathleen is a compute cluster designed for extensively parallel, multi-node batch-processing jobs, having high-bandwidth connections between each individual node. It is named after <a href="https://en.wikipedia.org/wiki/Kathleen_Lonsdale">Professor Dame Kathleen Lonsdale</a>, a pioneering chemist and activist, and was installed in December 2019. It went into service at the end of January 2020.</p>
 <h2 id="accounts">Accounts<a class="headerlink" href="#accounts" title="Permanent link">§</a></h2>
-<p>Kathleen accounts can be applied for via the <a href="Accounts.md">Research Computing sign up process</a>.</p>
-<p>As Kathleen is intended for multi-node jobs, users who specify that they will need to use multi-node jobs (e.g. with <a href="Glossary.md#MPI">MPI</a>) will be given access to Kathleen.</p>
+<p>Kathleen accounts can be applied for via the <a href="../../Account_Services/">Research Computing sign up process</a>.</p>
+<p>As Kathleen is intended for multi-node jobs, users who specify that they will need to use multi-node jobs (e.g. with <a href="../Appendices/Glossary.md#MPI">MPI</a>) will be given access to Kathleen.</p>
 <h2 id="logging-in">Logging in<a class="headerlink" href="#logging-in" title="Permanent link">§</a></h2>
 <p>Please use your UCL username and password to connect to Kathleen with an SSH client.</p>
 <div class="codehilite"><pre><span></span>ssh uccaxxx@kathleen.rc.ucl.ac.uk
@@ -937,6 +937,7 @@ instructions for <a href="../../howto/#logging-in-from-outside-the-ucl-firewall"
 <h2 id="copying-data-onto-kathleen">Copying data onto Kathleen<a class="headerlink" href="#copying-data-onto-kathleen" title="Permanent link">§</a></h2>
 <p>You will need to use an SCP or SFTP client to copy data onto Kathleen.
 Please refer to the page on <a href="../../howto/#how-do-i-transfer-data-onto-the-system">How do I transfer data onto the system?</a></p>
+<p>Note that firewalls mean you cannot connect directly from Grace to Kathleen so you need to use <a href="../../howto/#single-step-logins-using-tunnelling">tunnelling with the scp command</a>.</p>
 <h2 id="quotas">Quotas<a class="headerlink" href="#quotas" title="Permanent link">§</a></h2>
 <p>On Kathleen you have a single 250GB quota by default which covers your home and Scratch. </p>
 <p>This is a hard quota: once you reach it, you will no longer be able to write more data. Keep an eye on it, as this will cause jobs to fail if they cannot create their .o or .e files at the start, or their output files partway through.</p>
@@ -951,7 +952,7 @@ Please refer to the page on <a href="../../howto/#how-do-i-transfer-data-onto-th
 </pre></div>
 
 
-<p>You can apply for quota increases using the form at <a href="Additional_Resource_Requests.md">Additional Resource Requests</a>.</p>
+<p>You can apply for quota increases using the form at <a href="../../Additional_Resource_Requests/">Additional Resource Requests</a>.</p>
 <p>Here are some tips for <a href="../../howto/#managing-your-quota">managing your quota</a> and
 finding where space is being used.</p>
 <h2 id="job-sizes-and-durations">Job sizes and durations<a class="headerlink" href="#job-sizes-and-durations" title="Permanent link">§</a></h2>
@@ -998,7 +999,7 @@ finding where space is being used.</p>
 </tbody>
 </table>
 <p>These are numbers of physical cores.</p>
-<p>If you have a workload that requires longer jobs than this, you may be able to apply to our governance group for access to a longer queue. Applications will be expected to demonstrate that their work cannot be run using techniques like checkpointing that would allow their workload to be broken up into smaller parts. Please see the section on <a href="CRAG_Exceptions.md">Applying for special access</a> for more details.</p>
+<p>If you have a workload that requires longer jobs than this, you may be able to apply to our governance group for access to a longer queue. Applications will be expected to demonstrate that their work cannot be run using techniques like checkpointing that would allow their workload to be broken up into smaller parts. Please see the section on <a href="../../Additional_Resource_Requests/">Additional Resource Requests</a> for more details.</p>
 <h2 id="node-types">Node types<a class="headerlink" href="#node-types" title="Permanent link">§</a></h2>
 <p>Kathleen's compute capability comprises roughly 191 diskless compute nodes each with two 20-core <a href="https://ark.intel.com/content/www/us/en/ark/products/192446/intel-xeon-gold-6248-processor-27-5m-cache-2-50-ghz.html">Intel Xeon Gold 6248 2.5GHz</a> processors, 192 gigabytes of 2933MHz DDR4 RAM, and an Intel OmniPath network.</p>
 <p>Two nodes identical to these serve as the login nodes.</p>
