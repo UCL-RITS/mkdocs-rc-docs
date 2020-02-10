@@ -131,9 +131,9 @@ You can use the [UCL Virtual Private Network](http://www.ucl.ac.uk/isd/staff/net
 ```
 # Log in to Grace, jumping via Socrates
 ssh -o ProxyJump=socrates.ucl.ac.uk grace.rc.ucl.ac.uk
-'''
+```
 or
-'''
+```
 # Copy 'my_file' from the machine you are logged in to into your Scratch on Grace
 scp -o ProxyJump=socrates.ucl.ac.uk my_file grace.rc.ucl.ac.uk:~/Scratch/
 ```
