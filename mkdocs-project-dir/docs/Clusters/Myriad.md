@@ -101,7 +101,7 @@ You can tell the type of a node by its name: type H nodes are named
 
 ## GPUs
 
-Myriad has three types of GPU nodes, J, E and F. There are two J-types nodes each with two nVidia Tesla P100s.
+Myriad has three types of GPU nodes, J, E and F. There are two J-type nodes each with two nVidia Tesla P100s.
 There is one F-type and eight E-type nodes, each with two nVidia Tesla V100s. The CPUs are slightly different on these two.
 
 You can request one or two GPUs by adding them as a resource request to your jobscript: 
