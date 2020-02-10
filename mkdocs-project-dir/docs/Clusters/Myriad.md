@@ -91,18 +91,18 @@ variants, new letters are added.
 
 | Type  | Cores per node   | RAM per node | Nodes |
 | ----- | ---------------- | ------------ | ----- |
-| H,D,E | 36               | 192GB        | 94    |
+| H,D   | 36               | 192GB        | 86    |
 | I,B   | 36               | 1.5TB        | 9     |
 | J     | 36 + 2 P100 GPUs | 192GB        | 2     |
-| F     | 36 + 2 V100 GPUs | 192GB        | 1     |
+| E,F   | 36 + 2 V100 GPUs | 192GB        | 9     |
 
 You can tell the type of a node by its name: type H nodes are named
 `node-h00a-001` etc.
 
 ## GPUs
 
-Myriad has two types of GPU nodes, J and F. There are two J-types nodes each with two nVidia Tesla P100s.
-There is one F-type node, with two nVidia Tesla V100s.
+Myriad has three types of GPU nodes, J, E and F. There are two J-types nodes each with two nVidia Tesla P100s.
+There is one F-type and eight E-type nodes, each with two nVidia Tesla V100s. The CPUs are slightly different on these two.
 
 You can request one or two GPUs by adding them as a resource request to your jobscript: 
 
