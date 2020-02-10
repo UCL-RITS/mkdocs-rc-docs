@@ -118,7 +118,7 @@ This will give you either type of GPU. If you need to specify one over the other
 
 ```
 # request a V100 node only
-#$ -ac allow=F
+#$ -ac allow=EF
 ```
 
 The [GPU nodes](../Advanced_Topics/GPU_Nodes.md) page has some sample code for running GPU jobs if you need a test example.
