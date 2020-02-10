@@ -11,7 +11,7 @@ The module files are organised by name, version, variant (where applicable) and,
 
 When we install applications, we try to install them on all of our clusters, but sometimes licence restrictions prevent it. If something seems to be missing, it may be because we are not able to provide it. Please contact us for more information if this is hindering your work.
 
-The lists below were last updated at ${gen_time}, and are generated from the software installed on the [Myriad](../Systems/Myriad.md) cluster.
+The lists below were last updated at ${gen_time}, and are generated from the software installed on the [Myriad](../Clusters/Myriad.md) cluster.
 
 ## Bundles
 
