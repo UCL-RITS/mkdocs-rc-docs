@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#an-introduction-to-batch-processing" tabindex="1" class="md-skip">
+      <a href="#an-introduction-to-batch-processing" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -98,9 +98,9 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" class="md-header-nav__button md-logo">
+        <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" aria-label="UCL Research Computing Documentation" class="md-header-nav__button md-logo">
           
-            <img src="../../../img/portico.svg" width="24" height="24">
+            <img alt="logo" src="../../../img/portico.svg" width="24" height="24">
           
         </a>
       </div>
@@ -129,7 +129,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -192,7 +192,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" class="md-nav__button md-logo">
       
-        <img src="../../../img/portico.svg" width="48" height="48">
+        <img alt="logo" src="../../../img/portico.svg" width="48" height="48">
       
     </a>
     UCL Research Computing Documentation
@@ -839,34 +839,34 @@ for submitting jobs, one for checking the status of jobs and one for
 deleting jobs. On Sun Grid Engine, these are qsub, qstat and qdel.</p>
 <h4 id="qsub">qsub<a class="headerlink" href="#qsub" title="Permanent link">§</a></h4>
 <p>The qsub command submits your job to the batch queue. </p>
-<div class="codehilite"><pre><span></span>qsub myscript.sh
-</pre></div>
+<div class="codehilite"><pre><span></span><code>qsub myscript.sh
+</code></pre></div>
 
 
 <p>You can override the settings in your script by specifying them
 on the command-line, so for example if you want to change the name of
 the job for this one instance of the job you can submit your script
 with: </p>
-<div class="codehilite"><pre><span></span>qsub -N NewName myscript.sh
-</pre></div>
+<div class="codehilite"><pre><span></span><code>qsub -N NewName myscript.sh
+</code></pre></div>
 
 
 <p>Or if you want to increase the wall-clock time to 24 hours:</p>
-<div class="codehilite"><pre><span></span>qsub -l h_rt=24:0:0 myscript.sh
-</pre></div>
+<div class="codehilite"><pre><span></span><code>qsub -l h_rt=24:0:0 myscript.sh
+</code></pre></div>
 
 
 <p>You can submit jobs with dependencies by using the <code>-hold_jid</code>
 option. For example, the command below submits a job that won't run
 until job 12345 has finished: </p>
-<div class="codehilite"><pre><span></span>qsub -hold_jid 12345 myscript.sh
-</pre></div>
+<div class="codehilite"><pre><span></span><code>qsub -hold_jid 12345 myscript.sh
+</code></pre></div>
 
 
 <p>You may specify node type (see <a href="Resource_Allocation">Resource Allocation</a> section for more details)
 with the <code>-ac allow=</code> flags as below: </p>
-<div class="codehilite"><pre><span></span>qsub -ac allow=XYZ myscript.sh
-</pre></div>
+<div class="codehilite"><pre><span></span><code>qsub -ac allow=XYZ myscript.sh
+</code></pre></div>
 
 
 <p>The example above would restrict the job to running on the older
@@ -881,8 +881,8 @@ it with no options, it shows only your jobs (and no-one else’s). This
 makes it easier to keep track of your jobs. If you want to get more
 information on a particular job, note its job ID and then use the <code>-f</code> and
 <code>-j</code> flags to get full output about that job:</p>
-<div class="codehilite"><pre><span></span>`qstat -f -j 12345`
-</pre></div>
+<div class="codehilite"><pre><span></span><code>`qstat -f -j 12345`
+</code></pre></div>
 
 
 <p>If you see that your job is in <code>Eqw</code> state then an error occurred before
@@ -890,20 +890,20 @@ your job could begin. You can see a truncated version of the error in
 the output of <code>qstat -j</code> - this is often enough to tell what the problem
 is if it is a file or directory not found.</p>
 <p>You can get the full error with <code>qexplain</code>.</p>
-<div class="codehilite"><pre><span></span>qexplain 12345
-</pre></div>
+<div class="codehilite"><pre><span></span><code>qexplain 12345
+</code></pre></div>
 
 
 <h4 id="qdel">qdel<a class="headerlink" href="#qdel" title="Permanent link">§</a></h4>
 <p>The qdel command lets you delete a job from the queue. You need to
 provide qdel with a job ID like so: </p>
-<div class="codehilite"><pre><span></span>qdel 12345
-</pre></div>
+<div class="codehilite"><pre><span></span><code>qdel 12345
+</code></pre></div>
 
 
 <p>You can delete all your jobs with:</p>
-<div class="codehilite"><pre><span></span>qdel &#39;*&#39;
-</pre></div>
+<div class="codehilite"><pre><span></span><code>qdel &#39;*&#39;
+</code></pre></div>
 
 
 <h4 id="more-information">More Information<a class="headerlink" href="#more-information" title="Permanent link">§</a></h4>
@@ -975,16 +975,16 @@ contact us at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#99;&#45;&
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/UCL-RITS" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/UCL-RITS" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
   </div>
 
@@ -994,7 +994,7 @@ contact us at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#99;&#45;&
       
     </div>
     
-      <script src="../../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       

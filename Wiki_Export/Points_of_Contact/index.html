@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#displaying-user-information" tabindex="1" class="md-skip">
+      <a href="#displaying-user-information" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -98,9 +98,9 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" class="md-header-nav__button md-logo">
+        <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" aria-label="UCL Research Computing Documentation" class="md-header-nav__button md-logo">
           
-            <img src="../../img/portico.svg" width="24" height="24">
+            <img alt="logo" src="../../img/portico.svg" width="24" height="24">
           
         </a>
       </div>
@@ -129,7 +129,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -192,7 +192,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" class="md-nav__button md-logo">
       
-        <img src="../../img/portico.svg" width="48" height="48">
+        <img alt="logo" src="../../img/portico.svg" width="48" height="48">
       
     </a>
     UCL Research Computing Documentation
@@ -776,7 +776,7 @@ multiple tables. <code>--contacts</code> shows all points of contact - useful fo
 getting the IDs, and <code>--institutes</code> is the same. <code>--allusers</code> will show
 everyone's basic info. <code>--getmmm</code> will show the most recently used mmm
 username.</p>
-<div class="codehilite"><pre><span></span>thomas-show -h  
+<div class="codehilite"><pre><span></span><code>thomas-show -h  
 usage: thomas-show [-h] [--user username] [--contacts] [--institutes]  
                   [--allusers] [--getmmm]  
                   {recentusers,getusers,whois} ...
@@ -797,25 +797,25 @@ optional arguments:
  --institutes          Show all allowed values for institute  
  --allusers            Show all current users  
  --getmmm              Show the highest mmm username used
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="show-recent-users">Show recent users<a class="headerlink" href="#show-recent-users" title="Permanent link">§</a></h3>
 <p><code>thomas-show recentusers</code> or <code>michael-show recentusers</code> shows you the
 most recently-added N users, default 5.</p>
-<div class="codehilite"><pre><span></span>thomas-show recentusers -h  
+<div class="codehilite"><pre><span></span><code>thomas-show recentusers -h  
 usage: thomas-show recentusers [-h] [-n N]
 
 optional arguments:  
  -h, --help  show this help message and exit  
  -n N
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="show-users-with-a-given-project-institute-contact">Show users with a given project, institute, contact<a class="headerlink" href="#show-users-with-a-given-project-institute-contact" title="Permanent link">§</a></h3>
 <p><code>thomas-show getusers</code> or <code>michael-show getusers</code> will search for exact
 matches to the given project, institute, contact combination.</p>
-<div class="codehilite"><pre><span></span>thomas-show getusers -h  
+<div class="codehilite"><pre><span></span><code>thomas-show getusers -h  
 usage: thomas-show getusers [-h] [-p PROJECT] [-i INST_ID] [-c POC_ID]
 
 optional arguments:  
@@ -826,7 +826,7 @@ optional arguments:
                        Institute ID  
  -c POC_ID, --contact POC_ID  
                        Point of Contact ID
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="search-for-users-based-on-partial-information">Search for users based on partial information<a class="headerlink" href="#search-for-users-based-on-partial-information" title="Permanent link">§</a></h3>
@@ -834,7 +834,7 @@ optional arguments:
 partial matches to username, name, email fragments, including all of
 those in
 combination.</p>
-<div class="codehilite"><pre><span></span>thomas-show whois -h  
+<div class="codehilite"><pre><span></span><code>thomas-show whois -h  
 usage: thomas-show whois [-h] [-u USERNAME] [-e EMAIL] [-n GIVEN_NAME]  
                         [-s SURNAME]
 
@@ -848,7 +848,7 @@ optional arguments:
                        Given name of user contains  
  -s SURNAME, --surname SURNAME  
                        Surname of user contains
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="adding-user-information-and-new-projects">Adding user information and new projects<a class="headerlink" href="#adding-user-information-and-new-projects" title="Permanent link">§</a></h2>
@@ -860,7 +860,7 @@ denied.</p>
 to see the query generated without committing the changes to the
 database - double-check that the information you are adding is
 correct.</p>
-<div class="codehilite"><pre><span></span>thomas-add -h  
+<div class="codehilite"><pre><span></span><code>thomas-add -h  
 usage: thomas-add [-h] {user,project,projectuser,poc,institute} ...
 
 Add data to the Thomas database. Use [positional argument -h] for more help.
@@ -875,7 +875,7 @@ positional arguments:
 
 optional arguments:  
  -h, --help            show this help message and exit
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="add-a-new-user">Add a new user<a class="headerlink" href="#add-a-new-user" title="Permanent link">§</a></h2>
@@ -885,7 +885,7 @@ their account, but does email us with everything we need in order to
 create it. If you run this, you do not need to email us separately. The
 project specified must
 exist.</p>
-<div class="codehilite"><pre><span></span>thomas-add user -h  
+<div class="codehilite"><pre><span></span><code>thomas-add user -h  
 usage: thomas-add user [-h] -u USERNAME -n GIVEN_NAME [-s SURNAME] -e  
                       EMAIL_ADDRESS -k &quot;SSH_KEY&quot; -p PROJECT_ID -c POC_ID  
                       [--debug]
@@ -908,7 +908,7 @@ optional arguments:
                        Short ID of the user&#39;s Point of Contact  
  --verbose             Show SQL queries that are being submitted  
  --debug               Show SQL query submitted without committing the change
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="ssh-key-formats">SSH key formats<a class="headerlink" href="#ssh-key-formats" title="Permanent link">§</a></h3>
@@ -917,7 +917,7 @@ in the form <code>ssh-xxx keystartshere</code>. If someone has sent in a key whi
 has line breaks and header items, make it into this format by adding the
 key type to the start and removing the line breaks from the key body.</p>
 <p>This key:</p>
-<div class="codehilite"><pre><span></span>---- BEGIN SSH2 PUBLIC KEY ----  
+<div class="codehilite"><pre><span></span><code>---- BEGIN SSH2 PUBLIC KEY ----  
 Comment: &quot;comment goes here&quot;  
 AAAAB3NzaC1yc2EAAAABJQAAAQEAlLhFLr/4LGC3cM1xgRZVxfQ7JgoSvnVXly0K  
 7MNufZbUSUkKtVnBXAOIjtOYe7EPndyT/SAq1s9RGZ63qsaVc/05diLrgL0E0gW+  
@@ -926,12 +926,12 @@ AAAAB3NzaC1yc2EAAAABJQAAAQEAlLhFLr/4LGC3cM1xgRZVxfQ7JgoSvnVXly0K
 OeLKjOH4rSnAAOLcEqPmJhkLL8k6nQAAK3P/E1PeOaB2xD7NNPqfIsjhAJLZ+2wV  
 3eUZATx9vnmVF0YafOjvzcoK2GqUrhNAvi7k0f+ihh8twkfthj==  
 ---- END SSH2 PUBLIC KEY ----
-</pre></div>
+</code></pre></div>
 
 
 <p>should be converted into</p>
-<div class="codehilite"><pre><span></span>ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAlLhFLr/4LGC3cM1xgRZVxfQ7JgoSvnVXly0K7MNufZbUSUkKtVnBXAOIjtOYe7EPndyT/SAq1s9RGZ63qsaVc/05diLrgL0E0gW+9VptTmiUh7OSsXkoKQn1RiACfH7sbKi6H373bmB5/TyXNZ5C5KVmdXxO+laT8IdW7JdD/gwrBra9M9vAMfcxNYVCBcPQRhJ7vOeDZ+e30qapH4R/mfEyKorYxrvQerJWOeLKjOH4rSnAAOLcEqPmJhkLL8k6nQAAK3P/E1PeOaB2xD7NNPqfIsjhAJLZ+2wV3eUZATx9vnmVF0YafOjvzcoK2GqUrhNAvi7k0f+ihh8twkfthj==
-</pre></div>
+<div class="codehilite"><pre><span></span><code>ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAlLhFLr/4LGC3cM1xgRZVxfQ7JgoSvnVXly0K7MNufZbUSUkKtVnBXAOIjtOYe7EPndyT/SAq1s9RGZ63qsaVc/05diLrgL0E0gW+9VptTmiUh7OSsXkoKQn1RiACfH7sbKi6H373bmB5/TyXNZ5C5KVmdXxO+laT8IdW7JdD/gwrBra9M9vAMfcxNYVCBcPQRhJ7vOeDZ+e30qapH4R/mfEyKorYxrvQerJWOeLKjOH4rSnAAOLcEqPmJhkLL8k6nQAAK3P/E1PeOaB2xD7NNPqfIsjhAJLZ+2wV3eUZATx9vnmVF0YafOjvzcoK2GqUrhNAvi7k0f+ihh8twkfthj==
+</code></pre></div>
 
 
 <p>Other types of keys (dss etc) will say what they are in the first line,
@@ -946,7 +946,7 @@ has a user in it.</p>
 <p>A project ID should begin with your institute ID, followed by an
 underscore and a project
 name.</p>
-<div class="codehilite"><pre><span></span>thomas-add project -h  
+<div class="codehilite"><pre><span></span><code>thomas-add project -h  
 usage: thomas-add project [-h] -p PROJECT_ID -i INST_ID [--debug]
 
 optional arguments:  
@@ -956,7 +956,7 @@ optional arguments:
  -i INST_ID, --institute INST_ID  
                        Institute ID this project belongs to  
  --debug               Show SQL query submitted without committing the change
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="add-a-new-projectuser-pairing">Add a new project/user pairing<a class="headerlink" href="#add-a-new-projectuser-pairing" title="Permanent link">§</a></h2>
@@ -966,7 +966,7 @@ existing project also creates this relationship. After a new
 project-user relationship is added, a cron job will pick that up within
 15 minutes and create that project for that user in Gold, with no
 allocation.</p>
-<div class="codehilite"><pre><span></span>thomas-add projectuser -h  
+<div class="codehilite"><pre><span></span><code>thomas-add projectuser -h  
 usage: thomas-add projectuser [-h] -u USERNAME -p PROJECT_ID -c POC_ID  
                              [--debug]
 
@@ -979,7 +979,7 @@ optional arguments:
  -c POC_ID, --contact POC_ID  
                        An existing Point of Contact ID  
  --debug               Show SQL query submitted without committing the change
-</pre></div>
+</code></pre></div>
 
 
 <h1 id="gold-resource-allocation">Gold resource allocation<a class="headerlink" href="#gold-resource-allocation" title="Permanent link">§</a></h1>
@@ -997,7 +997,7 @@ add your preferred options.</p>
 <p>Here are some basic useful options and what they do. They can all be
 given more options for more specific
 searches.</p>
-<div class="codehilite"><pre><span></span>gusage -p project_name [-s start_time]  # Show the Gold usage per user in this project, in the given timeframe if specified.  
+<div class="codehilite"><pre><span></span><code>gusage -p project_name [-s start_time]  # Show the Gold usage per user in this project, in the given timeframe if specified.  
 gbalance                                # Show the balance for every project, split into total, reserved and available.  
 glsuser                                 # Shows all the users in Gold.  
 glsproject                              # Shows all the projects and which users are in them.  
@@ -1007,7 +1007,7 @@ gstatement                              # Produce
 # Less useful commands  
 glstxn                                  # Show all Gold transactions. Filter or it will take forever to run.  
 glsalloc                                # Show all the allocations.
-</pre></div>
+</code></pre></div>
 
 
 <p>These can be run by any user. The date format is YYYY-MM-DD.</p>
@@ -1019,8 +1019,8 @@ job ID each charge was associated with.</p>
 account into other project accounts. As before, we've put <code>-h</code> in the
 wrapper so it is always working in
 cpu-hours.</p>
-<div class="codehilite"><pre><span></span>gtransfer --fromProject xxx_allocation --toProject xxx_subproject cpu_hours
-</pre></div>
+<div class="codehilite"><pre><span></span><code>gtransfer --fromProject xxx_allocation --toProject xxx_subproject cpu_hours
+</code></pre></div>
 
 
 <p>You can also transfer in the opposite direction, from the subproject
@@ -1035,18 +1035,18 @@ active. By default, <code>gtransfer</code> will transfer from active allocations
 the order of earliest expiring first. To transfer from the new
 allocation only, you need to specify the allocation
 id.</p>
-<div class="codehilite"><pre><span></span>gtransfer -i allocation_ID --fromProject xxx_allocation --toProject xxx_subproject cpu_hours
-</pre></div>
+<div class="codehilite"><pre><span></span><code>gtransfer -i allocation_ID --fromProject xxx_allocation --toProject xxx_subproject cpu_hours
+</code></pre></div>
 
 
 <p><code>glsalloc</code> shows you all allocations that ever existed, and the first
 column is the
 id.</p>
-<div class="codehilite"><pre><span></span>Id  Account Projects              StartTime  EndTime    Amount     Deposited  Description      
+<div class="codehilite"><pre><span></span><code>Id  Account Projects              StartTime  EndTime    Amount     Deposited  Description      
 --- ------- --------------------- ---------- ---------- ---------- ---------- --------------   
 87  38      UKCP_allocation       2017-08-07 2017-11-05 212800.00 3712800.00  
 97  38      UKCP_allocation       2017-10-30 2018-02-04 3712800.00 3712800.00
-</pre></div>
+</code></pre></div>
                 
                   
                 
@@ -1109,16 +1109,16 @@ id.</p>
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/UCL-RITS" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/UCL-RITS" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
   </div>
 
@@ -1128,7 +1128,7 @@ id.</p>
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#general-use-of-environment-modules" tabindex="1" class="md-skip">
+      <a href="#general-use-of-environment-modules" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -98,9 +98,9 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" class="md-header-nav__button md-logo">
+        <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" aria-label="UCL Research Computing Documentation" class="md-header-nav__button md-logo">
           
-            <img src="../../img/portico.svg" width="24" height="24">
+            <img alt="logo" src="../../img/portico.svg" width="24" height="24">
           
         </a>
       </div>
@@ -129,7 +129,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -192,7 +192,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" class="md-nav__button md-logo">
       
-        <img src="../../img/portico.svg" width="48" height="48">
+        <img alt="logo" src="../../img/portico.svg" width="48" height="48">
       
     </a>
     UCL Research Computing Documentation
@@ -1386,7 +1386,7 @@
 <p>We have a default set of modules that everyone has loaded when they log in: these include the current default compiler and MPI, some utili
 ties to make your life easier and some text editors.</p>
 <h3 id="summary-of-module-commands">Summary of module commands<a class="headerlink" href="#summary-of-module-commands" title="Permanent link">§</a></h3>
-<div class="codehilite"><pre><span></span>module avail            # shows available modules
+<div class="codehilite"><pre><span></span><code>module avail            # shows available modules
 module whatis           # shows available modules with brief explanations
 module list             # shows your currently loaded modules
 
@@ -1396,28 +1396,28 @@ module purge            # unload all modules
 
 module show &lt;module&gt;    # Shows what the module requires and what it sets up
 module help &lt;module&gt;    # Shows a longer text description for the software
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="find-out-if-a-software-package-is-installed-and-load-it">Find out if a software package is installed and load it<a class="headerlink" href="#find-out-if-a-software-package-is-installed-and-load-it" title="Permanent link">§</a></h3>
 <p>Generically, the way you find out if a piece of software is installed is to run</p>
-<div class="codehilite"><pre><span></span>module avail packagename
-</pre></div>
+<div class="codehilite"><pre><span></span><code>module avail packagename
+</code></pre></div>
 
 
 <p>This gives you a list of all the modules we have that match the name you searched for. You can then type </p>
-<div class="codehilite"><pre><span></span>module show packagename
-</pre></div>
+<div class="codehilite"><pre><span></span><code>module show packagename
+</code></pre></div>
 
 
 <p>and it will show you the other software dependencies this module has: these have to be loaded first. It also shows where the software is installed and what environment variables it sets up.</p>
 <p>Once you have found the modules you want to load, it is good practice to refer to them using their full name, including the version. If you use the short form (<code>package</code> rather than <code>package/5.1.2/gnu-4.9.2</code>) then a matching module will be loaded, but if we install a different version, your jobs may begin using the new one and you would not know which version created your results. Different software versions may not be compatible or may have different default settings, so this is undesirable.</p>
 <p>You may need to unload current modules in order to load some requirements (eg different compiler, different MPI).</p>
 <p>This example switches from Intel compiler and MPI modules to GNU ones.</p>
-<div class="codehilite"><pre><span></span>module unload compilers mpi
+<div class="codehilite"><pre><span></span><code>module unload compilers mpi
 module load compilers/gnu/4.9.2
 module load mpi/openmpi/3.1.4/gnu-4.9.2
-</pre></div>
+</code></pre></div>
 
 
 <p>You can use the short name when unloading things because there is usually only one match in your current modules.</p>
@@ -1429,12 +1429,12 @@ module load mpi/openmpi/3.1.4/gnu-4.9.2
 <p>ABAQUS is a commercial software suite for finite element analysis and computer-aided engineering.</p>
 <p>You must be authorised by the Mech Eng Department before you can be added to the group controlling access to ABAQUS (legabq).</p>
 <p>A serial interactive analysis can be run on the compute nodes (via a <code>qrsh</code> session) like this:</p>
-<div class="codehilite"><pre><span></span>abaqus interactive job=myJobSerial input=myInputFile.inp
-</pre></div>
+<div class="codehilite"><pre><span></span><code>abaqus interactive job=myJobSerial input=myInputFile.inp
+</code></pre></div>
 
 
 <p>A parallel job can be run like this (fill in your own username):</p>
-<div class="codehilite"><pre><span></span>module load abaqus/2017
+<div class="codehilite"><pre><span></span><code>module load abaqus/2017
 
 INPUT_FILE=/home/&lt;username&gt;/ABAQUS/heattransfermanifold_cavity_parallel.inp
 ABAQUS_ARGS=
@@ -1448,13 +1448,13 @@ cp $INPUT_FILE .
 INPUT=$(basename $INPUT_FILE)
 abaqus interactive cpus=$NSLOTS mp_mode=mpi job=$INPUT.$JOB_ID input=$INPUT \
        scratch=$ABAQUS_PARALLELSCRATCH $ABAQUS_ARGS
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="beast">BEAST<a class="headerlink" href="#beast" title="Permanent link">§</a></h3>
 <p>BEAST is an application for Bayesian MCMC analysis of molecular sequences orientated towards rooted, time-measured phylogenies inferred using strict or relaxed molecular clock models.</p>
 <p>Note that FigTree and Tracer are available as standalone modules. The addons DISSECT, MODEL_SELECTION, and SNAPP are installed for BEAST. </p>
-<div class="codehilite"><pre><span></span>cd $TMPDIR
+<div class="codehilite"><pre><span></span><code>cd $TMPDIR
 
 module load java/1.8.0_45
 module load beast/2.3.0
@@ -1463,14 +1463,14 @@ beast -threads $OMP_NUM_THREADS ~/Scratch/BEAST/gopher.xml
 
 # tar up all contents of $TMPDIR back into your space
 tar zcvf $HOME/Scratch/BEAST/files_from_job_$JOB_ID.tar.gz $TMPDIR
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="bowtie">Bowtie<a class="headerlink" href="#bowtie" title="Permanent link">§</a></h3>
 <p>Bowtie 1 and 2 are tools for aligning sequencing reads to their reference sequences.</p>
 <p>Bowtie 1 and 2 are available. For reads longer than about 50 bp Bowtie 2 is generally faster, more sensitive, and uses less memory than Bowtie 1. For relatively short reads (e.g. less than 50 bp) Bowtie 1 is sometimes faster and/or more sensitive. For further differences, see <a href="http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml#how-is-bowtie-2-different-from-bowtie-1">How is Bowtie 2 different from Bowtie 1?</a>.</p>
 <p>Bowtie sets <code>$BT1_HOME</code> and Bowtie2 sets <code>$BT2_HOME</code>. You can have both modules loaded at once. </p>
-<div class="codehilite"><pre><span></span>cd $TMPDIR
+<div class="codehilite"><pre><span></span><code>cd $TMPDIR
 module load bowtie2/2.2.5
 
 # Run Bowtie2 example from getting started guide:
@@ -1480,61 +1480,61 @@ bowtie2 -x lambda_virus -U $BT2_HOME/example/reads/reads_1.fq -S eg1.sam
 
 # tar up all contents of $TMPDIR back into your space
 tar zcvf $HOME/Scratch/Bowtie2_output/files_from_job_$JOB_ID.tgz $TMPDIR
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="castep">CASTEP<a class="headerlink" href="#castep" title="Permanent link">§</a></h3>
 <p>CASTEP is a full-featured materials modelling code based on a first-principles quantum mechanical description of electrons and nuclei.</p>
-<div class="codehilite"><pre><span></span>module load castep/17.21/intel-2017
+<div class="codehilite"><pre><span></span><code>module load castep/17.21/intel-2017
 # Gerun is our mpirun wrapper which sets the machinefile and number of 
 # processes to the amount you requested with -pe mpi.
 gerun castep.mpi input
-</pre></div>
+</code></pre></div>
 
 
 <p>If you have access to the source code and wish to build your own copy, it has been suggested that compiling with these options (on Grace) gave a build that ran about 10% faster than the default compilation options:</p>
-<div class="codehilite"><pre><span></span>make COMMS_ARCH=mpi SUBARCH=mpi FFT=mkl MATHLIBS=mkl10 BUILD=fast
-</pre></div>
+<div class="codehilite"><pre><span></span><code>make COMMS_ARCH=mpi SUBARCH=mpi FFT=mkl MATHLIBS=mkl10 BUILD=fast
+</code></pre></div>
 
 
 <p>Do check for numerical accuracy with any optimisations you carry out.</p>
 <h3 id="cctools">Cctools<a class="headerlink" href="#cctools" title="Permanent link">§</a></h3>
 <p>Provides the Parrot connector to CVMFS, the CernVM File System. </p>
 <p>By default, the cctools module sets the following:</p>
-<div class="codehilite"><pre><span></span>export PARROT_CVMFS_REPO=&lt;default-repositories&gt; 
+<div class="codehilite"><pre><span></span><code>export PARROT_CVMFS_REPO=&lt;default-repositories&gt; 
 export PARROT_ALLOW_SWITCHING_CVMFS_REPOSITORIES=yes 
 export HTTP_PROXY=DIRECT;
 export PARROT_HTTP_PROXY=DIRECT;
-</pre></div>
+</code></pre></div>
 
 
 <p>Example usage - will list the contents of the repository then exit:</p>
-<div class="codehilite"><pre><span></span>module load cctools/7.0.11/gnu-4.9.2
+<div class="codehilite"><pre><span></span><code>module load cctools/7.0.11/gnu-4.9.2
 parrot_run bash
 ls /cvmfs/alice.cern.ch
 exit
-</pre></div>
+</code></pre></div>
 
 
 <p>That will create the cache in <code>/tmp/parrot.xxxxx</code> on the login nodes when run interactively. To use in a job, you will want to put the cache somewhere in your space that the compute nodes can access. You can set the cache to be in your Scratch, or to <code>$TMPDIR</code> on the nodes if it just needs to exist for the duration of that job.</p>
-<div class="codehilite"><pre><span></span>export PARROT_CVMFS_ALIEN_CACHE=&lt;/path/to/cache&gt;
-</pre></div>
+<div class="codehilite"><pre><span></span><code>export PARROT_CVMFS_ALIEN_CACHE=&lt;/path/to/cache&gt;
+</code></pre></div>
 
 
 <h3 id="cfd-ace">CFD-ACE<a class="headerlink" href="#cfd-ace" title="Permanent link">§</a></h3>
 <p>CFD-ACE+ is a commercial computational fluid dynamics solver developed by ESI Group. It solves the conservation equations of mass, momentum, energy, chemical species and other scalar transport equations using the finite volume method. These equations enable coupled simulations of fluid, thermal, chemical, biological, electrical and mechanical phenomena.</p>
 <p>The license is owned by the Department of Mechanical Engineering who must give permission for users to be added to the group <code>lgcfdace</code>.</p>
-<div class="codehilite"><pre><span></span>module load cfd-ace/2018.0
+<div class="codehilite"><pre><span></span><code>module load cfd-ace/2018.0
 
 CFD-SOLVER -model 3Dstepchannel_060414.DTF -num $NSLOTS -wd `pwd` \ 
    -hosts $TMPDIR/machines -rsh=ssh -decomp -metis -sim 1 -platformmpi -job
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="comsol">COMSOL<a class="headerlink" href="#comsol" title="Permanent link">§</a></h3>
 <p>COMSOL Multiphysics is a cross-platform finite element analysis, solver and multiphysics simulation software.</p>
 <p>Electrical Engineering have a group license for version 52 and must give permission for users to be added to the group <code>legcomsl</code>. Chemical Engineering have a Departmental License for version 53 and members of that department may be added to the group <code>lgcomsol</code>. </p>
-<div class="codehilite"><pre><span></span># Run a parallel COMSOL job
+<div class="codehilite"><pre><span></span><code># Run a parallel COMSOL job
 
 # Versions 52 and 52a have this additional module prerequisite
 module load xulrunner/3.6.28/gnu-4.9.2
@@ -1552,44 +1552,44 @@ comsol -nn $NHOSTS -clustersimple batch -f $TMPDIR/machines -inputfile micromixe
 # On Myriad you need to specify the fabric:
 comsol batch -f $TMPDIR/machines -np $NSLOTS -mpifabrics shm:tcp \ 
     -inputfile micromixer_batch.mph -outputfile micromixer_batch_output_${JOB_ID}.mph
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="cp2k">CP2K<a class="headerlink" href="#cp2k" title="Permanent link">§</a></h3>
 <p>CP2K performs atomistic and molecular simulations.</p>
-<div class="codehilite"><pre><span></span>module unload compilers mpi
+<div class="codehilite"><pre><span></span><code>module unload compilers mpi
 module load mpi/openmpi/3.0.0/gnu-4.9.2
 module load cp2k/5.1/ompi/gnu-4.9.2
 
 # Gerun is our mpirun wrapper which sets the machinefile and number of 
 # processes to the amount you requested with -pe mpi.
 gerun cp2k.popt &lt; input.in &gt; output.out
-</pre></div>
+</code></pre></div>
 
 
 <p>For CP2K 4.1 there is also a Chemistry department version with submission script generator. To access it:</p>
-<div class="codehilite"><pre><span></span>module load chemistry-modules
+<div class="codehilite"><pre><span></span><code>module load chemistry-modules
 module load submission-scripts
-</pre></div>
+</code></pre></div>
 
 
 <p>The command <code>submitters</code> will then list the submitters available.
 You can then run <code>cp2k.submit</code> which will ask you questions in order to create a suitable jobscript.</p>
 <p>The <code>cp2k.submit</code> submitter takes up to 6 arguments, and any omitted will be asked for interactively:</p>
-<div class="codehilite"><pre><span></span>cp2k.submit «input_file» «cores» «version» «maximum_run_time» «memory_per_core» «job_name»
-</pre></div>
+<div class="codehilite"><pre><span></span><code>cp2k.submit «input_file» «cores» «version» «maximum_run_time» «memory_per_core» «job_name»
+</code></pre></div>
 
 
 <p>So, for example:</p>
-<div class="codehilite"><pre><span></span>cp2k.submit water.inp 8 4.1 2:00:00 4G mywatermolecule
-</pre></div>
+<div class="codehilite"><pre><span></span><code>cp2k.submit water.inp 8 4.1 2:00:00 4G mywatermolecule
+</code></pre></div>
 
 
 <p>would request a job running CP2K 4.1 with the input file <code>water.inp</code>, on 8 cores, with a maximum runtime of 2 hours, with 4 gigabytes of memory per core, and a job name of <code>mywatermolecule</code>. </p>
 <h3 id="crystal">CRYSTAL<a class="headerlink" href="#crystal" title="Permanent link">§</a></h3>
 <p>CRYSTAL is a general-purpose program for the study of crystalline solids. The CRYSTAL program computes the electronic structure of periodic systems within Hartree Fock, density functional or various hybrid approximations. </p>
 <p>CRYSTAL is commercial software which is available free of charge to UK academics. You must obtain a license from Crystal Solutions: <a href="http://www.crystalsolutions.eu/cat/crystal-cryscor/academic-uk">How to get CRYSTAL - Academic UK license</a>. You need to create an account and then request to be upgraded to Academic UK. Access to CRYSTAL is enabled by being a member of the reserved application group <code>legcryst</code>. For proof of access we accept emails from CRYSTAL saying your account has been upgraded to "Academic UK", or a screenshot of your account page showing you have the full download available rather than just the demo version. </p>
-<div class="codehilite"><pre><span></span>module unload mpi
+<div class="codehilite"><pre><span></span><code>module unload mpi
 module load mpi/openmpi/2.1.2/intel-2017
 module load crystal17/v1.0.1
 
@@ -1602,18 +1602,18 @@ cp ~/Scratch/Crystal17/test_cases/inputs/test00.d12 INPUT
 # processes to the amount you requested with -pe mpi.
 # The CRYSTAL module sets $CRYxx_EXEDIR and $VERSION environment variables.
 gerun $CRY17_EXEDIR/$VERSION/Pcrystal
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite"><pre><span></span># Similarly, for Pproperties the command would be
+<div class="codehilite"><pre><span></span><code># Similarly, for Pproperties the command would be
 gerun $CRY17_EXEDIR/$VERSION/Pproperties
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="freesurfer">FreeSurfer<a class="headerlink" href="#freesurfer" title="Permanent link">§</a></h3>
 <p>FreeSurfer is a set of tools for analysis and visualization of structural and functional brain imaging data.</p>
 <p>Freesurfer can use threads to run on multiple cores in one node: request the number with <code>-pe smp</code> in the resource-request part of your jobscript.</p>
-<div class="codehilite"><pre><span></span>#$ -pe smp 4
+<div class="codehilite"><pre><span></span><code>#$ -pe smp 4
 
 module load xorg-utils/X11R7.7
 module load freesurfer/6.0.0
@@ -1621,13 +1621,13 @@ export SUBJECTS_DIR=~/Scratch/FreeSurfer_examples/subjects
 
 # -openmp $NSLOTS runs with the number of threads you requested
 recon-all -openmp $NSLOTS -i sample-001.nii.gz -s bert -all
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="gamess">GAMESS<a class="headerlink" href="#gamess" title="Permanent link">§</a></h3>
 <p>The General Atomic and Molecular Electronic Structure System (GAMESS) is a general ab initio quantum chemistry package. </p>
 <p>The GAMESS module should be loaded once from a login node before submitting a job - this creates the <code>~/Scratch/gamess</code> directory for you which is used as <code>USERSCR</code> to write some scratch files during the job. If you don't want to keep these files and would prefer them to be written to <code>$TMPDIR</code> instead, you can put <code>export $GAMESS_USERSCR=$TMPDIR</code> in your jobscript after the module load command.</p>
-<div class="codehilite"><pre><span></span>module unload compilers mpi
+<div class="codehilite"><pre><span></span><code>module unload compilers mpi
 module load compilers/intel/2015/update2
 module load mpi/intel/2015/update3/intel
 module load gamess/5Dec2014_R1/intel-2015-update2
@@ -1637,7 +1637,7 @@ module load gamess/5Dec2014_R1/intel-2015-update2
 export $GAMESS_USERSCR=$TMPDIR
 
 rungms exam01.inp 00 $NSLOTS $(ppn)
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="gatk">GATK<a class="headerlink" href="#gatk" title="Permanent link">§</a></h3>
@@ -1646,31 +1646,31 @@ rungms exam01.inp 00 $NSLOTS $(ppn)
 <p>Version 3 of GATK requires you to agree to the GATK license before we can add you to the <code>leggatk</code> group which gives you access: you can do this by downloading GATK 3 from <a href="https://software.broadinstitute.org/gatk/download/">The Broad Institute GATK download page</a>, reading the license, and telling us you agree to it. You may need to create a gatkforums account before you can download.</p>
 <p>GATK 3 uses Java 1.7 (the system Java) so you do not need to load a Java module. GATK 4 uses 1.8 so you need to load <code>java/1.8.0_92</code> first.</p>
 <p>Load the version you want, then to run GATK you should either prefix the .jar you want to run with <code>$GATKPATH</code>:</p>
-<div class="codehilite"><pre><span></span>java -Xmx2g -jar $GATKPATH/GenomeAnalysisTK.jar OPTION1=value1 OPTION2=value2...
-</pre></div>
+<div class="codehilite"><pre><span></span><code>java -Xmx2g -jar $GATKPATH/GenomeAnalysisTK.jar OPTION1=value1 OPTION2=value2...
+</code></pre></div>
 
 
 <p>Or we provide wrappers, so you can run it one of these ways instead:</p>
-<div class="codehilite"><pre><span></span>GenomeAnalysisTK OPTION1=value1 OPTION2=value2...
-</pre></div>
+<div class="codehilite"><pre><span></span><code>GenomeAnalysisTK OPTION1=value1 OPTION2=value2...
+</code></pre></div>
 
 
-<div class="codehilite"><pre><span></span>gatk OPTION1=value1 OPTION2=value2...
-</pre></div>
+<div class="codehilite"><pre><span></span><code>gatk OPTION1=value1 OPTION2=value2...
+</code></pre></div>
 
 
 <h3 id="hammock">Hammock<a class="headerlink" href="#hammock" title="Permanent link">§</a></h3>
 <p>Hammock is a tool for peptide sequence clustering. It is able to cluster extremely large amounts of short peptide sequences into groups sharing sequence motifs. Typical Hammock applications are NGS-based experiments using large combinatorial peptide libraries, e.g. Phage display. </p>
 <p>Hammock has to be installed in your own space to function, so we provide a hammock module that contains the main dependencies and creates a quick-install alias:</p>
-<div class="codehilite"><pre><span></span># on the login nodes
+<div class="codehilite"><pre><span></span><code># on the login nodes
 module unload compilers
 module load hammock/1.0.5
 do-hammock-install
-</pre></div>
+</code></pre></div>
 
 
 <p>This will install Hammock 1.0.5 in your home, edit settings.prop to use clustal-omega and hmmer from our modules and tell it to write temporary files in your Scratch directory (in the form <code>Hammock_temp_time</code>). </p>
-<div class="codehilite"><pre><span></span># in your jobscript
+<div class="codehilite"><pre><span></span><code># in your jobscript
 module unload compilers
 module load hammock/1.0.5
 
@@ -1685,13 +1685,13 @@ mkdir -p $outputdir
 echo &quot;Running java -jar $HAMMOCKPATH/Hammock.jar full -i musi.fa -d $outputdir&quot;
 
 java -jar $HAMMOCKPATH/Hammock.jar full -i musi.fa -d $outputdir
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="hopspack">HOPSPACK<a class="headerlink" href="#hopspack" title="Permanent link">§</a></h3>
 <p>HOPSPACK (Hybrid Optimization Parallel Search PACKage) solves derivative-free optimization problems using an open source, C++ software framework.</p>
 <p>We have versions of HOPSPACK built using the GNU compiler and OpenMPI, and the Intel compiler and MPI. This example shows the GNU version. Serial and parallel versions are available, <code>HOPSPACK_main_mpi</code> and <code>HOPSPACK_main_serial</code>.</p>
-<div class="codehilite"><pre><span></span>module unload compilers
+<div class="codehilite"><pre><span></span><code>module unload compilers
 module unload mpi
 module load compilers/gnu/4.9.2
 module load mpi/openmpi/1.8.4/gnu-4.9.2
@@ -1706,13 +1706,13 @@ export PATH=$PATH:~/Scratch/examples/1-var-bnds-only/
 # Gerun is our mpirun wrapper which sets the machinefile and number of
 # processes to the amount you requested with -pe mpi.
 gerun HOPSPACK_main_mpi ~/Scratch/examples/1-var-bnds-only/example1_params.txt &gt; example1_output.txt
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="idl">IDL<a class="headerlink" href="#idl" title="Permanent link">§</a></h3>
 <p>IDL is a complete environment and language for the analysis and visualisation of scientific and other technical data. It can be used for everything from quick interactive data exploration to building complex applications. </p>
 <p>Single-threaded jobscript:</p>
-<div class="codehilite"><pre><span></span>cd $TMPDIR
+<div class="codehilite"><pre><span></span><code>cd $TMPDIR
 
 module load idl/8.4.1
 
@@ -1724,11 +1724,11 @@ idl -queue -e @run1.pro
 
 # tar up all contents of $TMPDIR back into your space
 tar zcvf $HOME/Scratch/IDL_output/files_from_job_$JOB_ID.tgz $TMPDIR
-</pre></div>
+</code></pre></div>
 
 
 <p>Parallel jobscript:</p>
-<div class="codehilite"><pre><span></span>cd $TMPDIR
+<div class="codehilite"><pre><span></span><code>cd $TMPDIR
 
 module load idl/8.1
 
@@ -1743,17 +1743,17 @@ idl -queue -e @run2mp.pro
 
 # tar up all contents of $TMPDIR back into your space
 tar zcvf $HOME/Scratch/IDL_output/files_from_job_$JOB_ID.tgz $TMPDIR
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="jags">JAGS<a class="headerlink" href="#jags" title="Permanent link">§</a></h3>
 <p>JAGS (Just Another Gibbs Sampler) is a program for analysis of Bayesian hierarchical models using Markov Chain Monte Carlo (MCMC) simulation not wholly unlike BUGS. </p>
 <p>Use this to use JAGS in standalone command line mode:</p>
-<div class="codehilite"><pre><span></span>module unload compilers mpi
+<div class="codehilite"><pre><span></span><code>module unload compilers mpi
 module load compilers/gnu/4.9.2
 module load openblas/0.2.14/gnu-4.9.2
 module load jags/4.2.0/gnu.4.9.2-openblas
-</pre></div>
+</code></pre></div>
 
 
 <p>We have also added JAGS support to <code>r/recommended</code> using the <code>rjags</code> and <code>R2jags</code> R packages.</p>
@@ -1763,7 +1763,7 @@ module load jags/4.2.0/gnu.4.9.2-openblas
 <p>LAMMPS-8Dec15 and later were built with additional packages <code>kspace</code>, <code>replica</code>, <code>rigid</code>, and <code>class2</code>.</p>
 <p>The versions from <code>lammps-16Mar18-basic_install</code> onwards (not <code>lammps/16Mar18/intel-2017</code>) have most of the included packages built. There are also <code>userintel</code> and <code>gpu</code> versions from this point.</p>
 <p>We do not install the LAMMPS user packages as part of our central install, but you can build your own version with the ones that you want in your space.</p>
-<div class="codehilite"><pre><span></span>module unload compilers mpi
+<div class="codehilite"><pre><span></span><code>module unload compilers mpi
 module load compilers/intel/2018
 module load mpi/intel/2018
 module load lammps/16Mar18/basic/intel-2018
@@ -1771,12 +1771,12 @@ module load lammps/16Mar18/basic/intel-2018
 # Gerun is our mpirun wrapper which sets the machinefile and number of
 # processes to the amount you requested with -pe mpi.
 gerun $(which lmp_default) -in inputfile
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="meme-suite">MEME Suite<a class="headerlink" href="#meme-suite" title="Permanent link">§</a></h3>
 <p>MEME Suite: Motif-based sequence analysis tools. This install is for the command-line tools and connects to their website for further analysis. </p>
-<div class="codehilite"><pre><span></span>module unload compilers
+<div class="codehilite"><pre><span></span><code>module unload compilers
 module unload mpi
 module load compilers/gnu/4.9.2
 module load mpi/openmpi/1.8.4/gnu-4.9.2
@@ -1784,19 +1784,19 @@ module load perl/5.22.0
 module load python2/recommended
 module load ghostscript/9.16/gnu-4.9.2
 module load meme/4.10.1_4
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="mirdeep2">miRDeep2<a class="headerlink" href="#mirdeep2" title="Permanent link">§</a></h3>
 <p>Discovering known and novel miRNAs from deep sequencing data, miRDeep2 is a completely overhauled tool which discovers microRNA genes by analyzing sequenced RNAs. The tool reports known and hundreds of novel microRNAs with high accuracy in seven species representing the major animal clades. </p>
-<div class="codehilite"><pre><span></span>module load squid/1.9g
+<div class="codehilite"><pre><span></span><code>module load squid/1.9g
 module load randfold/2.0
 module load perl/5.22.0
 module load bowtie/1.1.2
 module load python/2.7.9
 module load viennarna/2.1.9
 module load mirdeep/2.0.0.7
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="misomisopy">MISO/misopy<a class="headerlink" href="#misomisopy" title="Permanent link">§</a></h3>
@@ -1806,7 +1806,7 @@ module load mirdeep/2.0.0.7
 <p>If you want to use MISO's ability to create and submit jobs itself, you need a MISO settings file like the one shown below. You give your job options as arguments to the qsub command in the <code>cluster_command</code> line. </p>
 <p>Settings files can be used with the <code>--settings-filename=SETTINGS_FILENAME</code> option. You will also need to put your module unload and load commands in your .bashrc if using MISO's own job submission, because you are no longer including them in a jobscript.</p>
 <p>Example <code>miso_settings.txt</code>. Multithreaded jobs will use <code>num_processors</code>. <code>num_processors</code> is ignored if <code>--use-cluster</code> is specified:</p>
-<div class="codehilite"><pre><span></span>[data]
+<div class="codehilite"><pre><span></span><code>[data]
 filter_results = True
 min_event_reads = 20
 
@@ -1819,14 +1819,14 @@ lag = 10
 num_iters = 5000
 num_chains = 6
 num_processors = 4
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="molpro">MOLPRO<a class="headerlink" href="#molpro" title="Permanent link">§</a></h3>
 <p>Molpro is a complete system of ab initio programs for molecular electronic structure calculations. </p>
 <p>Molpro 2015.1.3 was provided as binary only and supports communication over Ethernet and not Infiniband - use this one on single-node jobs primarily.</p>
 <p>Molpro 2015.1.5 was built from source with the Intel compilers and Intel MPI.</p>
-<div class="codehilite"><pre><span></span>module load molpro/2015.1.5/intel-2015-update2
+<div class="codehilite"><pre><span></span><code>module load molpro/2015.1.5/intel-2015-update2
 
 # Example files available in /shared/ucl/apps/molpro/2015.1.5/intel-2015-update2/molprop_2015_1_linux_x86_64_i8/examples/
 # You need to set the wavefunction directory to somewhere in Scratch with -W.
@@ -1836,28 +1836,28 @@ num_processors = 4
 echo &quot;Running molpro -n $NSLOTS -W $SGE_O_WORKDIR h2o_scf.com&quot;
 
 molpro -n $NSLOTS -W $SGE_O_WORKDIR h2o_scf.com
-</pre></div>
+</code></pre></div>
 
 
 <p>On Myriad, if you get this error, please use the binary 2015.1.3 install.</p>
-<div class="codehilite"><pre><span></span>libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
-</pre></div>
+<div class="codehilite"><pre><span></span><code>libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
+</code></pre></div>
 
 
 <h3 id="mrtrix">MRtrix<a class="headerlink" href="#mrtrix" title="Permanent link">§</a></h3>
 <p>MRtrix provides a set of tools to perform diffusion-weighted MRI white matter tractography in the presence of crossing fibres. </p>
-<div class="codehilite"><pre><span></span>module load python3/recommended
+<div class="codehilite"><pre><span></span><code>module load python3/recommended
 module load qt/4.8.6/gnu-4.9.2
 module load eigen/3.2.5/gnu-4.9.2
 module load fftw/3.3.6-pl2/gnu-4.9.2
 module load mrtrix/3.0rc3/gnu-4.9.2/nogui
-</pre></div>
+</code></pre></div>
 
 
 <p>You must load these modules once from a login node before submitting a job. It copies a <code>.mrtrix.conf</code> to your home directory the first time you run this module from a login node, which sets:</p>
-<div class="codehilite"><pre><span></span>  Analyse.LeftToRight: false
+<div class="codehilite"><pre><span></span><code>  Analyse.LeftToRight: false
   NumberOfThreads: 4
-</pre></div>
+</code></pre></div>
 
 
 <p>You need to alter <code>NumberOfThreads</code> to what you are using in your job script before you submit a job. </p>
@@ -1866,25 +1866,25 @@ module load mrtrix/3.0rc3/gnu-4.9.2/nogui
 <p>MuTect is a tool developed at the Broad Institute for the reliable and accurate identification of somatic point mutations in next generation sequencing data of cancer genomes. It is built on top of the GenomeAnalysisToolkit (GATK), which is also developed at the Broad Institute, so it uses the same command-line conventions and (almost all) the same input and output file formats. </p>
 <p>MuTect requires you to agree to the GATK license before we can add you to the <code>lgmutect</code> group which gives you access: you can do this by downloading MuTect from <a href="https://software.broadinstitute.org/cancer/cga/mutect">The Broad Institute CGA page</a>. You may need to create a gatkforums account before you can download.</p>
 <p>MuTect is currently not compatible with Java 1.8, so you need to use the system Java 1.7. Set up your modules as follows: </p>
-<div class="codehilite"><pre><span></span>module load mutect/1.1.7
-</pre></div>
+<div class="codehilite"><pre><span></span><code>module load mutect/1.1.7
+</code></pre></div>
 
 
 <p>Then to run MuTect, you should either prefix the .jar you want to run with <code>$MUTECTPATH</code>:</p>
-<div class="codehilite"><pre><span></span>java -Xmx2g -jar $MUTECTPATH/mutect-1.1.7.jar OPTION1=value1 OPTION2=value2...
-</pre></div>
+<div class="codehilite"><pre><span></span><code>java -Xmx2g -jar $MUTECTPATH/mutect-1.1.7.jar OPTION1=value1 OPTION2=value2...
+</code></pre></div>
 
 
 <p>Or we provide wrappers, so you can run it this way instead: </p>
-<div class="codehilite"><pre><span></span>mutect OPTION1=value1 OPTION2=value2...
-</pre></div>
+<div class="codehilite"><pre><span></span><code>mutect OPTION1=value1 OPTION2=value2...
+</code></pre></div>
 
 
 <h3 id="nonmem">NONMEM<a class="headerlink" href="#nonmem" title="Permanent link">§</a></h3>
 <p>NONMEM® is a nonlinear mixed effects modelling tool used in population pharmacokinetic / pharmacodynamic analysis. </p>
 <p>We have one build that uses the GNU compiler and ATLAS and an Intel build using MKL. Both use Intel MPI. </p>
 <p>This example uses the Intel build.</p>
-<div class="codehilite"><pre><span></span>jobDir=example1_parallel_$JOB_ID
+<div class="codehilite"><pre><span></span><code>jobDir=example1_parallel_$JOB_ID
 mkdir $jobDir
 
 # Copy control and datafiles to jobDir
@@ -1901,63 +1901,63 @@ module load nonmem/7.3.0/intel-2015-update2
 parafile.sh $TMPDIR/machines &gt; example1.pnm
 
 nmfe73 foce_parallel.ctl example1.res -parafile=example1.pnm -background -maxlim=1 &gt; example1.log
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="nwchem">NWChem<a class="headerlink" href="#nwchem" title="Permanent link">§</a></h3>
 <p>NWChem applies theoretical techniques to predict the structure, properties, and reactivity of chemical and biological species ranging in size from tens to millions of atoms.</p>
 <p>You should load the NWChem module you wish to use once from a login node, as it will create a symlinked <code>.nwchemrc</code> in your home. </p>
-<div class="codehilite"><pre><span></span>module load python/2.7.12
+<div class="codehilite"><pre><span></span><code>module load python/2.7.12
 module load nwchem/6.8-47-gdf6c956/intel-2017
 
 # $NSLOTS will get the number of processes you asked for with -pe mpi.
 mpirun -np $NSLOTS -machinefile $TMPDIR/machines nwchem hpcvl_sample.nw
-</pre></div>
+</code></pre></div>
 
 
 <p>If your run terminates with an error saying</p>
-<div class="codehilite"><pre><span></span>ARMCI supports block process mapping only
-</pre></div>
+<div class="codehilite"><pre><span></span><code>ARMCI supports block process mapping only
+</code></pre></div>
 
 
 <p>then you are probably trying to use round-robin MPI process placement, which ARMCI does not like. <code>gerun</code> uses round-robin for Intel MPI by default as it works better in most cases. Use <code>mpirun</code> instead of <code>gerun</code>:</p>
-<div class="codehilite"><pre><span></span>mpirun -np $NSLOTS -machinefile $TMPDIR/machines nwchem input.nw
-</pre></div>
+<div class="codehilite"><pre><span></span><code>mpirun -np $NSLOTS -machinefile $TMPDIR/machines nwchem input.nw
+</code></pre></div>
 
 
 <p>If you get an error complaining about <code>$NWCHEM_NWPW_LIBRARY</code> similar to this:</p>
-<div class="codehilite"><pre><span></span>warning:::::::::::::: from_compile
+<div class="codehilite"><pre><span></span><code>warning:::::::::::::: from_compile
 NWCHEM_NWPW_LIBRARY is: &lt;
 /dev/shm/tmp.VB3DpmjULc/nwchem-6.6/src/nwpw/libraryps/&gt;
 but file does not exist or you do not have access to it !
 ------------------------------------------------------------------------
 nwpwlibfile: no nwpw library found 0
-</pre></div>
+</code></pre></div>
 
 
 <p>then your <code>~/.nwchemrc</code> symlink is likely pointing to a different version that you used previously. Deleting the symlink and loading the module you want to use will recreate it correctly. </p>
 <h3 id="picard">Picard<a class="headerlink" href="#picard" title="Permanent link">§</a></h3>
 <p>Picard comprises Java-based command-line utilities that manipulate SAM files, and a Java API (SAM-JDK) for creating new programs that read and write SAM files. Both SAM text format and SAM binary (BAM) format are supported. </p>
 <p>Picard requires a Java 1.8 module to be loaded.</p>
-<div class="codehilite"><pre><span></span>module load java/1.8.0_92
+<div class="codehilite"><pre><span></span><code>module load java/1.8.0_92
 module load picard-tools/2.18.9
-</pre></div>
+</code></pre></div>
 
 
 <p>To run Picard you can prefix the .jar you want to run with <code>$PICARDPATH</code> and give the full command, or we have wrappers:</p>
-<div class="codehilite"><pre><span></span>java -Xmx2g -jar $PICARDPATH/picard.jar PicardCommand TMP_DIR=$TMPDIR OPTION1=value1 OPTION2=value2...
-</pre></div>
+<div class="codehilite"><pre><span></span><code>java -Xmx2g -jar $PICARDPATH/picard.jar PicardCommand TMP_DIR=$TMPDIR OPTION1=value1 OPTION2=value2...
+</code></pre></div>
 
 
 <p>The wrappers allow you to run commands like this - in this case our wrapper sets <code>TMP_DIR</code> for you as well: </p>
-<div class="codehilite"><pre><span></span>PicardCommand OPTION1=value1 OPTION2=value2...
-</pre></div>
+<div class="codehilite"><pre><span></span><code>PicardCommand OPTION1=value1 OPTION2=value2...
+</code></pre></div>
 
 
 <p>Temporary files: by default, Picard writes temporary files into <code>/tmp</code> rather than into <code>$TMPDIR</code>. These are not cleaned up after your job ends, and means future runs can fail because <code>/tmp</code> is full (and requesting more tmpfs in your job doesn't make it larger). If you run Picard with the full <code>java -jar</code> command then give Picard the <code>TMP_DIR=$TMPDIR</code> option as our example above does to get it to write in the correct place. </p>
 <h3 id="quantum-espresso">Quantum Espresso<a class="headerlink" href="#quantum-espresso" title="Permanent link">§</a></h3>
 <p>Quantum Espresso is an integrated suite of Open-Source computer codes for electronic-structure calculations and materials modelling at the nanoscale. It is based on density-functional theory, plane waves, and pseudopotentials. </p>
-<div class="codehilite"><pre><span></span>module load xorg-utils
+<div class="codehilite"><pre><span></span><code>module load xorg-utils
 module load quantum-espresso/6.1-impi/intel2017
 
 # Set the path here to where ever you keep your pseudopotentials.
@@ -1966,12 +1966,12 @@ export ESPRESSO_PSEUDO=$HOME/qe-psp
 # Gerun is our mpirun wrapper which sets the machinefile and number of
 # processes to the amount you requested with -pe mpi.
 gerun pw.x -in input.in &gt;output.out
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="repast-hpc">Repast HPC<a class="headerlink" href="#repast-hpc" title="Permanent link">§</a></h3>
 <p>Repast for High Performance Computing (Repast HPC) is a next generation agent-based modelling system intended for large-scale distributed computing platforms. It implements the core Repast Simphony concepts (e.g. contexts and projections), modifying them to work in a parallel distributed environment. </p>
-<div class="codehilite"><pre><span></span>module unload compilers
+<div class="codehilite"><pre><span></span><code>module unload compilers
 module unload mpi
 module load compilers/gnu/4.9.2
 module load hdf/5-1.8.15/gnu-4.9.2
@@ -1982,13 +1982,13 @@ module load python/2.7.9
 module load boost/1_54_0/mpi/gnu-4.9.2
 module load netcdf-c++/4.2/gnu-4.9.2
 module load repast-hpc/2.1/gnu-4.9.2
-</pre></div>
+</code></pre></div>
 
 
 <p>The module sets the environment variables <code>$REPAST_HPC_INCLUDE</code>, <code>$REPAST_HPC_LIB_DIR</code> and <code>$REPAST_HPC_LIB</code>.</p>
 <h3 id="root">ROOT<a class="headerlink" href="#root" title="Permanent link">§</a></h3>
 <p>ROOT provides a set of OO frameworks for handling, analysing, and visualising large amounts of data. Included are specialised storage methods, methods for histograming, curve fitting, function evaluation, minimization etc. ROOT includes a built-in CINT C++ interpreter. </p>
-<div class="codehilite"><pre><span></span>module unload compilers mpi
+<div class="codehilite"><pre><span></span><code>module unload compilers mpi
 module load compilers/gnu/4.9.2
 module load fftw/3.3.4/gnu-4.9.2
 module load gsl/1.16/gnu-4.9.2
@@ -1996,12 +1996,12 @@ module load root/6.04.00/gnu-4.9.2
 
 # run root in batch mode
 root -b -q myMacro.C &gt; myMacro.out
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="sas">SAS<a class="headerlink" href="#sas" title="Permanent link">§</a></h3>
 <p>SAS is a statistics package providing a wide range of tools for data management, analysis and presentation. </p>
-<div class="codehilite"><pre><span></span>cd $TMPDIR
+<div class="codehilite"><pre><span></span><code>cd $TMPDIR
 
 module load sas/9.4/64
 
@@ -2012,31 +2012,31 @@ sas example1.in
 
 # tar up all contents of $TMPDIR back into your space
 tar cvzf $HOME/Scratch/SAS_output/files_from_job_$JOB_ID.tgz $TMPDIR
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="starccm">StarCCM+<a class="headerlink" href="#starccm" title="Permanent link">§</a></h3>
 <p>StarCCM+ is a commercial CFD package that handles fluid flows, heat transfer, stress simulations, and other common applications of such. </p>
 <p>Before running any StarCCM+ jobs on the clusters you must load the StarCCM+ module on a login node. This is so the module can set up two symbolic links in your home directory to directories created in your Scratch area so that user settings etc can be written by running jobs.</p>
-<div class="codehilite"><pre><span></span>module load star-ccm+/13.06.012
-</pre></div>
+<div class="codehilite"><pre><span></span><code>module load star-ccm+/13.06.012
+</code></pre></div>
 
 
 <p>Here is the jobscript example.</p>
-<div class="codehilite"><pre><span></span># Request one license per core - makes sure your job doesn&#39;t start 
+<div class="codehilite"><pre><span></span><code># Request one license per core - makes sure your job doesn&#39;t start 
 # running until sufficient licenses are free.
 #$ -l ccmpsuite=1
 
 module load star-ccm+/13.06.012
 
 starccm+ -np $NSLOTS -machinefile $TMPDIR/machines -rsh ssh -batch my_input.sim
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="starcd">StarCD<a class="headerlink" href="#starcd" title="Permanent link">§</a></h3>
 <p>StarCD is a commercial package for modelling and simulating combustion and engine dynamics. </p>
 <p>You must request access to the group controlling StarCD access (legstarc) to use it. The license is owned by the Department of Mechanical Engineering who will need to approve your access request. </p>
-<div class="codehilite"><pre><span></span># Request one license per core - makes sure your job doesn&#39;t start 
+<div class="codehilite"><pre><span></span><code># Request one license per core - makes sure your job doesn&#39;t start 
 # running until sufficient licenses are free.
 #$ -l starsuite=1
 
@@ -2044,19 +2044,19 @@ module load star-cd/4.28.050
 
 # run star without its tracker process as this causes multicore jobs to die early
 star -notracker
-</pre></div>
+</code></pre></div>
 
 
 <p>StarCD uses IBM Platform MPI by default. You can also run StarCD simulations using Intel MPI by changing the command line to:</p>
-<div class="codehilite"><pre><span></span>star -notracker -mpi=intel
-</pre></div>
+<div class="codehilite"><pre><span></span><code>star -notracker -mpi=intel
+</code></pre></div>
 
 
 <p>Simulations run using Intel MPI may run faster than they do when using IBM Platform MPI. </p>
 <h3 id="statamp">Stata/MP<a class="headerlink" href="#statamp" title="Permanent link">§</a></h3>
 <p>Stata is a statistics, data management, and graphics system. Stata/MP is the version of the package that runs on multiple cores. </p>
 <p>We have a sixteen user license of Stata/MP. Our license supports Stata running on up to four cores per job. </p>
-<div class="codehilite"><pre><span></span># Select 4 OpenMP threads (the most possible)
+<div class="codehilite"><pre><span></span><code># Select 4 OpenMP threads (the most possible)
 #$ -pe smp 4
 
 cd $TMPDIR
@@ -2069,17 +2069,17 @@ stata-mp -b do myfile.do
 
 # tar up all contents of $TMPDIR back into your space
 tar zcvf $HOME/Scratch/Stata_output/files_from_job_$JOB_ID.tar.gz $TMPDIR
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="torch">Torch<a class="headerlink" href="#torch" title="Permanent link">§</a></h3>
 <p>Torch is a scientific computing framework with wide support for machine learning algorithms that puts GPUs first. </p>
 <p>We provide a <code>torch-deps</code> module that contains the main Torch dependencies and creates a quick-install alias, <code>do-torch-install</code>. This uses Torch's installation script to git clone the current distribution and install LuaJIT, LuaRocks and Torch in <code>~/torch</code>. </p>
-<div class="codehilite"><pre><span></span>module unload compilers mpi
+<div class="codehilite"><pre><span></span><code>module unload compilers mpi
 module load torch-deps
 
 do-torch-install
-</pre></div>
+</code></pre></div>
 
 
 <p>You should load these same modules in your jobscript when using the version of torch this installs.</p>
@@ -2087,28 +2087,28 @@ do-torch-install
 <p>Turbomole is an ab initio computational chemistry program that implements various quantum chemistry methods. 
 Turbomole has a Chemistry-wide license. Reserved application group <code>legtmole</code> for Chemistry users only.</p>
 <p>There are scripts you can use to generate Turbomole jobs for you:</p>
-<div class="codehilite"><pre><span></span>/shared/ucl/apps/turbomole/turbomole-mpi.submit
+<div class="codehilite"><pre><span></span><code>/shared/ucl/apps/turbomole/turbomole-mpi.submit
 /shared/ucl/apps/turbomole/turbomole-smp.submit
-</pre></div>
+</code></pre></div>
 
 
 <p>They will ask you which version you want to use, how much memory, how many cores etc and set up and submit the job for you.</p>
 <p>Use the first for MPI jobs and the second for single-node shared memory threaded jobs.</p>
 <h3 id="varscan">VarScan<a class="headerlink" href="#varscan" title="Permanent link">§</a></h3>
 <p>VarScan is a platform-independent mutation caller for targeted, exome, and whole-genome resequencing data generated on Illumina, SOLiD, Life/PGM, Roche/454, and similar instruments. </p>
-<div class="codehilite"><pre><span></span>module load java/1.8.0_45
+<div class="codehilite"><pre><span></span><code>module load java/1.8.0_45
 module load varscan/2.3.9
-</pre></div>
+</code></pre></div>
 
 
 <p>Then to run VarScan, you should either prefix the .jar you want to run with $VARSCANPATH:</p>
-<div class="codehilite"><pre><span></span>java -Xmx2g -jar $VARSCANPATH/VarScan.v2.3.9.jar OPTION1=value1 OPTION2=value2...
-</pre></div>
+<div class="codehilite"><pre><span></span><code>java -Xmx2g -jar $VARSCANPATH/VarScan.v2.3.9.jar OPTION1=value1 OPTION2=value2...
+</code></pre></div>
 
 
 <p>Or we provide wrappers, so you can run it this way instead:</p>
-<div class="codehilite"><pre><span></span>varscan OPTION1=value1 OPTION2=value2...
-</pre></div>
+<div class="codehilite"><pre><span></span><code>varscan OPTION1=value1 OPTION2=value2...
+</code></pre></div>
 
 
 <h3 id="vasp">VASP<a class="headerlink" href="#vasp" title="Permanent link">§</a></h3>
@@ -2118,14 +2118,14 @@ module load varscan/2.3.9
 * <code>vasp_gam</code> - optimised for gamma point calculations only
 * <code>vasp_std</code> - standard version
 * <code>vasp_ncl</code> - for non-collinear magnetic structure and/or spin-orbit coupling calculations </p>
-<div class="codehilite"><pre><span></span>module unload compilers mpi
+<div class="codehilite"><pre><span></span><code>module unload compilers mpi
 module load compilers/intel/2017/update1
 module load mpi/intel/2017/update1/intel
 
 # Gerun is our mpirun wrapper which sets the machinefile and number of
 # processes to the amount you requested with -pe mpi.
 gerun vasp_std &gt; vasp_output.$JOB_ID
-</pre></div>
+</code></pre></div>
 
 
 <p>Note: although you can run VASP using the default Intel 2018 compiler this can lead to numerical errors in some types of simulation. In those cases we recommend switching to the specific compiler and MPI version used to build that install (mentioned at the end of the module name). We do this in the example above.</p>
@@ -2133,7 +2133,7 @@ gerun vasp_std &gt; vasp_output.$JOB_ID
 <h3 id="xmds">XMDS<a class="headerlink" href="#xmds" title="Permanent link">§</a></h3>
 <p>XMDS allows the fast and easy solution of sets of ordinary, partial and stochastic differential equations, using a variety of efficient numerical algorithms. </p>
 <p>You will need to load the modules on a login node and run <code>xmds2-setup</code> to set up XMDS. </p>
-<div class="codehilite"><pre><span></span>module unload compilers
+<div class="codehilite"><pre><span></span><code>module unload compilers
 module unload mpi
 module load compilers/gnu/4.9.2
 module load mpi/intel/2015/update3/gnu-4.9.2
@@ -2144,7 +2144,7 @@ module load xmds/2.2.2
 
 # run this on a login node to set up XMDS
 xmds2-setup
-</pre></div>
+</code></pre></div>
 
 
 <p>You can also build the current developmental version from SVN in your space by running <code>create-svn-xmds-inst</code>. Note: the SVN version on 28 Oct 2015 was failing unit test <code>test_nonlocal_access_multiple_components</code>. </p>
@@ -2196,16 +2196,16 @@ xmds2-setup
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/UCL-RITS" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/UCL-RITS" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
   </div>
 
@@ -2215,7 +2215,7 @@ xmds2-setup
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#how-do-i" tabindex="1" class="md-skip">
+      <a href="#how-do-i" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -98,9 +98,9 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" class="md-header-nav__button md-logo">
+        <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" aria-label="UCL Research Computing Documentation" class="md-header-nav__button md-logo">
           
-            <img src="../img/portico.svg" width="24" height="24">
+            <img alt="logo" src="../img/portico.svg" width="24" height="24">
           
         </a>
       </div>
@@ -129,7 +129,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -192,7 +192,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" class="md-nav__button md-logo">
       
-        <img src="../img/portico.svg" width="48" height="48">
+        <img alt="logo" src="../img/portico.svg" width="48" height="48">
       
     </a>
     UCL Research Computing Documentation
@@ -1318,8 +1318,8 @@
 <p>Logging in is most straightforward if you are inside the UCL firewall. If you are logging in from home or other external networks then you first have to <a href="#logging-in-from-outside-the-ucl-firewall">get on to the UCL network</a>.</p>
 <h3 id="linux-unix-mac-os-x">Linux / Unix / Mac OS X<a class="headerlink" href="#linux-unix-mac-os-x" title="Permanent link">§</a></h3>
 <p>Use the terminal and type the below command to secure shell (ssh) into the machine you wish to access. Replace <code>&lt;your_UCL_user_id&gt;</code> with your central UCL username, and <code>&lt;system_name&gt;</code> with the name of the machine you want to log in to, eg. <code>legion</code>, <code>grace</code>, <code>aristotle</code>. </p>
-<div class="codehilite"><pre><span></span>ssh &lt;your_UCL_user_id&gt;@&lt;system_name&gt;.rc.ucl.ac.uk
-</pre></div>
+<div class="codehilite"><pre><span></span><code>ssh &lt;your_UCL_user_id&gt;@&lt;system_name&gt;.rc.ucl.ac.uk
+</code></pre></div>
 
 
 <h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">§</a></h3>
@@ -1345,43 +1345,43 @@
 <p>You can use the command-line utilities scp, sftp or rsync to copy your data about. You can also use a graphical client (Transmit, CyberDuck, FileZilla).</p>
 <h4 id="scp">scp<a class="headerlink" href="#scp" title="Permanent link">§</a></h4>
 <p>This will copy a data file from somewhere on your local machine to a specified location on the remote machine (Legion, Grace etc).</p>
-<div class="codehilite"><pre><span></span>scp &lt;local_data_file&gt; &lt;remote_user_id&gt;@&lt;remote_hostname&gt;:&lt;remote_path&gt;
-</pre></div>
+<div class="codehilite"><pre><span></span><code>scp &lt;local_data_file&gt; &lt;remote_user_id&gt;@&lt;remote_hostname&gt;:&lt;remote_path&gt;
+</code></pre></div>
 
 
-<div class="codehilite"><pre><span></span># Example: copy myfile from your local current directory into Scratch on Legion
+<div class="codehilite"><pre><span></span><code># Example: copy myfile from your local current directory into Scratch on Legion
 scp myfile ccxxxxx@legion.rc.ucl.ac.uk:~/Scratch/
-</pre></div>
+</code></pre></div>
 
 
 <p>This will do the reverse, copying from the remote machine to your local machine. (This is still run from your local machine).</p>
-<div class="codehilite"><pre><span></span>scp &lt;remote_user_id&gt;@&lt;remote_hostname&gt;:&lt;remote_path&gt;&lt;remote_data_file&gt; &lt;local_path&gt;
-</pre></div>
+<div class="codehilite"><pre><span></span><code>scp &lt;remote_user_id&gt;@&lt;remote_hostname&gt;:&lt;remote_path&gt;&lt;remote_data_file&gt; &lt;local_path&gt;
+</code></pre></div>
 
 
-<div class="codehilite"><pre><span></span># Example: copy myfile from Legion into the Backups directory in your local current directory
+<div class="codehilite"><pre><span></span><code># Example: copy myfile from Legion into the Backups directory in your local current directory
 scp ccxxxxx@legion.rc.ucl.ac.uk:~/Scratch/myfile Backups/
-</pre></div>
+</code></pre></div>
 
 
 <h4 id="sftp">sftp<a class="headerlink" href="#sftp" title="Permanent link">§</a></h4>
 <p>You can use sftp to log in to the remote machine, navigate through directories and use <code>put</code> and <code>get</code> to copy files from and to your local machine. <code>lcd</code> and <code>lls</code> are local equivalents of <code>cd</code> and <code>ls</code> so you can navigate through your local directories as you go. </p>
-<div class="codehilite"><pre><span></span>sftp &lt;remote_user_id&gt;@&lt;remote_hostname&gt;
+<div class="codehilite"><pre><span></span><code>sftp &lt;remote_user_id&gt;@&lt;remote_hostname&gt;
 cd &lt;remote_path&gt;
 get &lt;remote_file&gt;
 lcd &lt;local_path&gt;
 put &lt;local_file&gt;
-</pre></div>
+</code></pre></div>
 
 
-<div class="codehilite"><pre><span></span># Example: download a copy of file1 into your local current directory,
+<div class="codehilite"><pre><span></span><code># Example: download a copy of file1 into your local current directory,
 # change local directory and upload a copy of file2
 sftp ccxxxxx@legion.rc.ucl.ac.uk
 cd Scratch/files
 get file1
 lcd ../files_to_upload
 put file2
-</pre></div>
+</code></pre></div>
 
 
 <h4 id="rsync">rsync<a class="headerlink" href="#rsync" title="Permanent link">§</a></h4>
@@ -1402,9 +1402,9 @@ put file2
 <h3 id="single-step-logins-using-tunnelling">Single-step logins using tunnelling<a class="headerlink" href="#single-step-logins-using-tunnelling" title="Permanent link">§</a></h3>
 <h4 id="linux-unix-mac-os-x_1">Linux / Unix / Mac OS X<a class="headerlink" href="#linux-unix-mac-os-x_1" title="Permanent link">§</a></h4>
 <h5 id="on-the-command-line">On the command line<a class="headerlink" href="#on-the-command-line" title="Permanent link">§</a></h5>
-<div class="codehilite"><pre><span></span>ssh -o ProxyJump=socrates.ucl.ac.uk grace.rc.ucl.ac.uk
+<div class="codehilite"><pre><span></span><code>ssh -o ProxyJump=socrates.ucl.ac.uk grace.rc.ucl.ac.uk
 scp -o ProxyJump=socrates.ucl.ac.uk my_file grace.rc.ucl.ac.uk:~/Scratch/
-</pre></div>
+</code></pre></div>
 
 
 <p>This tunnels through Socrates in order to get you to your destination - you'll be asked for your password twice, once for each machine. You can use this to log in or to copy files.</p>
@@ -1413,16 +1413,16 @@ scp -o ProxyJump=socrates.ucl.ac.uk my_file grace.rc.ucl.ac.uk:~/Scratch/
 <p>You can create a config which does this without you needing to type it every time.</p>
 <p>Inside your <code>~/.ssh</code> directory on your local machine, add the below to your <code>config</code> file (or create a file called <code>config</code> if you don't already have one).</p>
 <p>Generically, it should be of this form where <code>&lt;name&gt;</code> can be anything you want to call this entry.</p>
-<div class="codehilite"><pre><span></span>Host &lt;name&gt;
+<div class="codehilite"><pre><span></span><code>Host &lt;name&gt;
    User &lt;remote_user_id&gt;
    HostName &lt;remote_hostname&gt;
    proxyCommand ssh -W &lt;remote_hostname&gt;:22 &lt;remote_user_id&gt;@socrates.ucl.ac.uk
-</pre></div>
+</code></pre></div>
 
 
 <p>This causes the commands you type in your client to be forwarded on over a secure channel to the specified remote host.</p>
 <p>Here are some examples - you can have as many of these as you need in your config file.</p>
-<div class="codehilite"><pre><span></span>Host myriad
+<div class="codehilite"><pre><span></span><code>Host myriad
    User ccxxxxx
    HostName myriad.rc.ucl.ac.uk
    proxyCommand ssh -W myriad.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
@@ -1436,7 +1436,7 @@ Host aristotle
    User ccxxxxx
    HostName aristotle.rc.ucl.ac.uk
    proxyCommand ssh -W aristotle.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
-</pre></div>
+</code></pre></div>
 
 
 <p>You can now just type <code>ssh myriad</code> or <code>scp file1 aristotle:~</code> and you will go through Socrates. You'll be asked for login details twice since you're logging in to two machines, Socrates and your endpoint.  </p>
@@ -1456,16 +1456,16 @@ Host aristotle
 <h3 id="managing-your-quota">Managing your quota<a class="headerlink" href="#managing-your-quota" title="Permanent link">§</a></h3>
 <p>After using <code>lquota</code> to see your total usage, you may wish to find what is using all your space.</p>
 <p><code>du</code> is a command that gives you information about your disk usage. Useful options are:</p>
-<div class="codehilite"><pre><span></span>du -ch &lt;dir&gt;
+<div class="codehilite"><pre><span></span><code>du -ch &lt;dir&gt;
 du -h --max-depth=1
-</pre></div>
+</code></pre></div>
 
 
 <p>The first will give you a summary of the sizes of directory tree and subtrees inside the directory you specify, using human-readable sizes with a total at the bottom. The second will show you the totals for all top-level directories relative to where you are, plus the grand total. These can help you track down the locations of large amounts of data if you need to reduce your disk usage.</p>
 <h2 id="how-do-i-submit-a-job-to-the-scheduler">How do I submit a job to the scheduler?<a class="headerlink" href="#how-do-i-submit-a-job-to-the-scheduler" title="Permanent link">§</a></h2>
 <p>To submit a job to the scheduler you need to write a jobscript that contains the resources the job is asking for and the actual commands you want to run. This jobscript is then submitted using the <code>qsub</code> command.</p>
-<div class="codehilite"><pre><span></span>qsub myjobscript
-</pre></div>
+<div class="codehilite"><pre><span></span><code>qsub myjobscript
+</code></pre></div>
 
 
 <p>It will be put in to the queue and will begin running on the compute nodes at some point later when it has been allocated resources.</p>
@@ -1473,31 +1473,31 @@ du -h --max-depth=1
 <p>The <code>#$</code> lines in your jobscript are options to qsub. It will take each line which has <code>#$</code> as the first two characters and use the contents beyond that as an option. </p>
 <p>You can also pass options directly to the qsub command and this will override the settings in your script. This can be useful if you are scripting your job submissions in more complicated ways.</p>
 <p>For example, if you want to change the name of the job for this one instance of the job you can submit your script with:</p>
-<div class="codehilite"><pre><span></span>qsub -N NewName myscript.sh
-</pre></div>
+<div class="codehilite"><pre><span></span><code>qsub -N NewName myscript.sh
+</code></pre></div>
 
 
 <p>Or if you want to increase the wall-clock time to 24 hours:</p>
-<div class="codehilite"><pre><span></span>qsub -l h_rt=24:0:0 myscript.sh
-</pre></div>
+<div class="codehilite"><pre><span></span><code>qsub -l h_rt=24:0:0 myscript.sh
+</code></pre></div>
 
 
 <p>You can submit jobs with dependencies by using the <code>-hold_jid</code> option. For example, the command below submits a job that won't run until job 12345 has finished:</p>
-<div class="codehilite"><pre><span></span>qsub -hold_jid 12345 myscript.sh
-</pre></div>
+<div class="codehilite"><pre><span></span><code>qsub -hold_jid 12345 myscript.sh
+</code></pre></div>
 
 
 <p>You may specify node type with the <code>-ac allow=</code> flags as below: </p>
-<div class="codehilite"><pre><span></span>qsub -ac allow=XYZ myscript.sh
-</pre></div>
+<div class="codehilite"><pre><span></span><code>qsub -ac allow=XYZ myscript.sh
+</code></pre></div>
 
 
 <p>That would restrict the job to running on nodes of type X, Y or Z (the older Legion nodes).</p>
 <p>Note that for debugging purposes, it helps us if you have these options inside your jobscript rather than passed in on the command line whenever possible. We (and you) can see the exact jobscript that was submitted for every job that ran but not what command line options you submitted it with.</p>
 <h3 id="checking-your-previous-jobscripts">Checking your previous jobscripts<a class="headerlink" href="#checking-your-previous-jobscripts" title="Permanent link">§</a></h3>
 <p>If you want to check what you submitted for a specific job ID, you can do it with the <code>scriptfor</code> utility.</p>
-<div class="codehilite"><pre><span></span>scriptfor 12345
-</pre></div>
+<div class="codehilite"><pre><span></span><code>scriptfor 12345
+</code></pre></div>
 
 
 <p>As mentioned above, this will not show any command line options you passed in.</p>
@@ -1505,19 +1505,19 @@ du -h --max-depth=1
 <h3 id="qstat">qstat<a class="headerlink" href="#qstat" title="Permanent link">§</a></h3>
 <p>The <code>qstat</code> command shows the status of your jobs. By default, if you run it with no options, it shows only your jobs (and no-one else’s). This makes it easier to keep track of your jobs. </p>
 <p>The output will look something like this:</p>
-<div class="codehilite"><pre><span></span>job-ID  prior   name       user         state submit/start at     queue                          slots ja-task-ID 
+<div class="codehilite"><pre><span></span><code>job-ID  prior   name       user         state submit/start at     queue                          slots ja-task-ID 
 -----------------------------------------------------------------------------------------------------------------
 123454 2.00685 DI_m3      ccxxxxx      Eqw   10/13/2017 15:29:11                                    12 
 123456 2.00685 DI_m3      ccxxxxx      r     10/13/2017 15:29:11 Yorick@node-x02e-006               24 
 123457 2.00398 DI_m2      ucappka      qw    10/12/2017 14:42:12                                    1 
-</pre></div>
+</code></pre></div>
 
 
 <p>This shows you the job ID, the numeric priority the scheduler has assigned to the job, the name you have given the job, your username, the state the job is in, the date and time it was submitted at (or started at, if it has begun), the head node of the job, the number of 'slots' it is taking up, and if it is an array job the last column shows the task ID.</p>
 <p>The queue name (<code>Yorick</code> here) is generally not useful. The head node name (<code>node-x02e-006</code>) is useful - the <code>node-x</code> part tells you this is an X-type node. </p>
 <p>If you want to get more information on a particular job, note its job ID and then use the -f and -j flags to get full output about that job. Most of this information is not very useful.</p>
-<div class="codehilite"><pre><span></span>qstat -f -j 12345
-</pre></div>
+<div class="codehilite"><pre><span></span><code>qstat -f -j 12345
+</code></pre></div>
 
 
 <h4 id="job-states">Job states<a class="headerlink" href="#job-states" title="Permanent link">§</a></h4>
@@ -1533,19 +1533,19 @@ du -h --max-depth=1
 <p>A job in <code>Eqw</code> will remain in that state until you delete it - you should first have a look at what the error was with <code>qexplain</code>.</p>
 <h3 id="qexplain">qexplain<a class="headerlink" href="#qexplain" title="Permanent link">§</a></h3>
 <p>This is a utility to show you the non-truncated error reported by your job. <code>qstat -j</code> will show you a truncated version near the bottom of the output.</p>
-<div class="codehilite"><pre><span></span>qexplain 123454
-</pre></div>
+<div class="codehilite"><pre><span></span><code>qexplain 123454
+</code></pre></div>
 
 
 <h3 id="qdel">qdel<a class="headerlink" href="#qdel" title="Permanent link">§</a></h3>
 <p>You use <code>qdel</code> to delete a job from the queue.</p>
-<div class="codehilite"><pre><span></span>qdel 123454
-</pre></div>
+<div class="codehilite"><pre><span></span><code>qdel 123454
+</code></pre></div>
 
 
 <p>You can delete all your jobs at once:</p>
-<div class="codehilite"><pre><span></span>qdel &#39;*&#39;
-</pre></div>
+<div class="codehilite"><pre><span></span><code>qdel &#39;*&#39;
+</code></pre></div>
 
 
 <h3 id="more-scheduler-commands">More scheduler commands<a class="headerlink" href="#more-scheduler-commands" title="Permanent link">§</a></h3>
@@ -1615,16 +1615,16 @@ du -h --max-depth=1
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/UCL-RITS" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/UCL-RITS" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
   </div>
 
@@ -1634,7 +1634,7 @@ du -h --max-depth=1
       
     </div>
     
-      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       

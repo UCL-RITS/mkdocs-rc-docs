@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#quick-start-guide-for-experienced-hpc-users" tabindex="1" class="md-skip">
+      <a href="#quick-start-guide-for-experienced-hpc-users" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -98,9 +98,9 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" class="md-header-nav__button md-logo">
+        <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" aria-label="UCL Research Computing Documentation" class="md-header-nav__button md-logo">
           
-            <img src="../img/portico.svg" width="24" height="24">
+            <img alt="logo" src="../img/portico.svg" width="24" height="24">
           
         </a>
       </div>
@@ -129,7 +129,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -192,7 +192,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" class="md-nav__button md-logo">
       
-        <img src="../img/portico.svg" width="48" height="48">
+        <img alt="logo" src="../img/portico.svg" width="48" height="48">
       
     </a>
     UCL Research Computing Documentation
@@ -1184,12 +1184,12 @@
 <h2 id="batch-system">Batch System<a class="headerlink" href="#batch-system" title="Permanent link">§</a></h2>
 <p>UCL services use Grid Engine to manage jobs.  This install is somewhat customised and so scripts for non-UCL services <em>may not work</em>.</p>
 <p>We recommend that when launching MPI jobs you use our <code>gerun</code> parallel launcher instead of <code>mpirun</code> as it inherits settings from the job and launches the appropriate number of processes with the MPI implementation you have chosen. It abstracts away a lot of the complexity between different version of MPI.</p>
-<div class="codehilite"><pre><span></span># using gerun
+<div class="codehilite"><pre><span></span><code># using gerun
 gerun myMPIprogram
 
 # using mpirun when a machinefile is needed (eg Intel MPI)
 mpirun -np $NSLOTS -machinefile $PE_HOSTFILE myMPIprogram
-</pre></div>
+</code></pre></div>
 
 
 <p><code>$NSLOTS</code> is an environment variable containing the value you gave to <code>-pe mpi</code> so you do not need to re-specify it.</p>
@@ -1199,67 +1199,67 @@ mpirun -np $NSLOTS -machinefile $PE_HOSTFILE myMPIprogram
 <h3 id="script-sections">Script sections<a class="headerlink" href="#script-sections" title="Permanent link">§</a></h3>
 <h4 id="shebang">Shebang<a class="headerlink" href="#shebang" title="Permanent link">§</a></h4>
 <p>It's important that you add the <code>-l</code> option to bash in the shebang so that login scripts are parsed and the environment modules environment is set up. <code>#!</code> must be the first two characters in the file, no previous white space.</p>
-<div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash -l</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
+</code></pre></div>
 
 
 <h4 id="resources-you-can-request">Resources you can request<a class="headerlink" href="#resources-you-can-request" title="Permanent link">§</a></h4>
 <h5 id="number-of-cores">Number of cores<a class="headerlink" href="#number-of-cores" title="Permanent link">§</a></h5>
 <p>For MPI:</p>
-<div class="codehilite"><pre><span></span><span class="c1">#$ -pe mpi &lt;number of cores&gt;</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="c1">#$ -pe mpi &lt;number of cores&gt;</span>
+</code></pre></div>
 
 
 <p>For threads:</p>
-<div class="codehilite"><pre><span></span><span class="c1">#$ -pe smp &lt;number of cores&gt;</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="c1">#$ -pe smp &lt;number of cores&gt;</span>
+</code></pre></div>
 
 
 <p>For single core jobs you don't need to request a number of cores.  For hybrid codes use the MPI example and set <code>OMP_NUM_THREADS</code> to control the number of threads per node.  <code>gerun</code> will launch the right number of processes in the right place if you use it.</p>
 <h5 id="amount-of-ram-per-core">Amount of RAM per core<a class="headerlink" href="#amount-of-ram-per-core" title="Permanent link">§</a></h5>
-<div class="codehilite"><pre><span></span><span class="c1">#$ -l mem=&lt;integer amount of RAM in G or M&gt;</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="c1">#$ -l mem=&lt;integer amount of RAM in G or M&gt;</span>
+</code></pre></div>
 
 
 <p>e.g. <code>#$ -l mem=4G</code> requests 4 gigabytes of RAM per core.</p>
 <h5 id="run-time">Run time<a class="headerlink" href="#run-time" title="Permanent link">§</a></h5>
-<div class="codehilite"><pre><span></span><span class="c1">#$ -l h_rt=&lt;hours:minutes:seconds&gt;</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="c1">#$ -l h_rt=&lt;hours:minutes:seconds&gt;</span>
+</code></pre></div>
 
 
 <p>e.g. <code>#$ -l h_rt=48:00:00</code> requests 48 hours.</p>
 <h5 id="working-directory">Working directory<a class="headerlink" href="#working-directory" title="Permanent link">§</a></h5>
 <p>Either a specific working directory:</p>
-<div class="codehilite"><pre><span></span><span class="c1">#$ -wd /path/to/working/directory</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="c1">#$ -wd /path/to/working/directory</span>
+</code></pre></div>
 
 
 <p>or the directory the script was submitted from:</p>
-<div class="codehilite"><pre><span></span><span class="c1">#$ -cwd</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="c1">#$ -cwd</span>
+</code></pre></div>
 
 
 <h5 id="gpus-myriad-only">GPUs (Myriad only)<a class="headerlink" href="#gpus-myriad-only" title="Permanent link">§</a></h5>
-<div class="codehilite"><pre><span></span><span class="c1">#$ -l gpu=&lt;number of GPUs&gt;</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="c1">#$ -l gpu=&lt;number of GPUs&gt;</span>
+</code></pre></div>
 
 
 <h5 id="enable-hyperthreads-kathleen-only">Enable Hyperthreads (Kathleen only)<a class="headerlink" href="#enable-hyperthreads-kathleen-only" title="Permanent link">§</a></h5>
-<div class="codehilite"><pre><span></span><span class="c1">#$ -l threads=1</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="c1">#$ -l threads=1</span>
+</code></pre></div>
 
 
 <p>With Hyperthreads enabled you need to request twice as many cores and then control threads vs MPI ranks with <code>OMP_NUM_THREADS</code>.  E.g. </p>
-<div class="codehilite"><pre><span></span><span class="c1">#$ -pe mpi 160</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">#$ -pe mpi 160</span>
 <span class="c1">#$ -l threads=1</span>
 <span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">2</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Would use 80 cores, with two threads (on Hyperthreads) per core.</p>
 <h5 id="temporary-local-disk-every-machine-except-kathleen">Temporary local disk (every machine EXCEPT Kathleen)<a class="headerlink" href="#temporary-local-disk-every-machine-except-kathleen" title="Permanent link">§</a></h5>
-<div class="codehilite"><pre><span></span><span class="c1">#$ -l tmpdir=&lt;size in G&gt;</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="c1">#$ -l tmpdir=&lt;size in G&gt;</span>
+</code></pre></div>
 
 
 <p>e.g. <code>#$ -l tmpdir=10G</code> requests 10 gigabytes of temporary local disk.</p>
@@ -1329,16 +1329,16 @@ mpirun -np $NSLOTS -machinefile $PE_HOSTFILE myMPIprogram
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/UCL-RITS" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/UCL-RITS" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
   </div>
 
@@ -1348,7 +1348,7 @@ mpirun -np $NSLOTS -machinefile $PE_HOSTFILE myMPIprogram
       
     </div>
     
-      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       

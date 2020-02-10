@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#compiling-your-code" tabindex="1" class="md-skip">
+      <a href="#compiling-your-code" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -98,9 +98,9 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" class="md-header-nav__button md-logo">
+        <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" aria-label="UCL Research Computing Documentation" class="md-header-nav__button md-logo">
           
-            <img src="../../img/portico.svg" width="24" height="24">
+            <img alt="logo" src="../../img/portico.svg" width="24" height="24">
           
         </a>
       </div>
@@ -129,7 +129,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -192,7 +192,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" class="md-nav__button md-logo">
       
-        <img src="../../img/portico.svg" width="48" height="48">
+        <img alt="logo" src="../../img/portico.svg" width="48" height="48">
       
     </a>
     UCL Research Computing Documentation
@@ -986,9 +986,9 @@ to install to your account. There might be binaries available, but they
 often won't work on our clusters because they were compiled for other
 machines with other library versions available. Use tar or unzip or
 similar depending on archive type to uncompress your source code.</p>
-<div class="codehilite"><pre><span></span>wget https://www.example.com/program.tar.gz
+<div class="codehilite"><pre><span></span><code>wget https://www.example.com/program.tar.gz
 tar -xvf program.tar.gz
-</pre></div>
+</code></pre></div>
 
 
 <p>You won't be able to use a package manager like yum, you'll need to
@@ -1009,10 +1009,10 @@ available. Most Open Source software tends to assume you're using GCC
 and OpenMPI (if it uses MPI) and is most tested with that combination,
 so if it doesn't specify you may want to begin there (do check what the
 newest modules available are):</p>
-<div class="codehilite"><pre><span></span>module unload compilers mpi mkl
+<div class="codehilite"><pre><span></span><code>module unload compilers mpi mkl
 module load compilers/gnu/4.9.2  
 module load mpi/openmpi/1.10.1/gnu-4.9.2
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="available-compilers">Available compilers<a class="headerlink" href="#available-compilers" title="Permanent link">§</a></h2>
@@ -1039,12 +1039,12 @@ will generate the Makefile for you and hopefully pick up sensible
 options through configuration. You can give it an install prefix to tell
 it where to install (or you can build it in place and not use make
 install at all).</p>
-<div class="codehilite"><pre><span></span>./configure --prefix=/home/username/place/you/want/to/install  
+<div class="codehilite"><pre><span></span><code>./configure --prefix=/home/username/place/you/want/to/install  
 make  
 # if it has a test suite, good idea to use it  
 make test   
 make install
-</pre></div>
+</code></pre></div>
 
 
 <p>If it has more configuration flags, you can use <code>./configure --help</code> to
@@ -1061,7 +1061,7 @@ are set to and change them, then repeatedly configure until everything
 is correct, generate the Makefile and quit. <code>cmake</code> is the commandline
 version. The process tends to go like
 this:</p>
-<div class="codehilite"><pre><span></span>ccmake CMakeLists.txt  
+<div class="codehilite"><pre><span></span><code>ccmake CMakeLists.txt  
 # press c to configure - will pick up some options  
 # press t to toggle advanced options  
 # keep making changes and configuring until no more errors or changes  
@@ -1070,7 +1070,7 @@ make
 # if it has a test suite, good idea to use it  
 make test   
 make install
-</pre></div>
+</code></pre></div>
 
 
 <p>If you need to rerun ccmake and reconfigure, remember to delete the
@@ -1081,8 +1081,8 @@ compiler or linker is actually being given when it fails.</p>
 <h3 id="make">Make<a class="headerlink" href="#make" title="Permanent link">§</a></h3>
 <p>Your code may just come with a Makefile and have no configure, in which
 case the generic way to compile it is as follows:</p>
-<div class="codehilite"><pre><span></span>make targetname
-</pre></div>
+<div class="codehilite"><pre><span></span><code>make targetname
+</code></pre></div>
 
 
 <p>There's usually a default target, which <code>make</code> on its own will use. If
@@ -1094,22 +1094,22 @@ defined).</p>
 the compiler modules, so you can see what they should be. Intel would be
 icc, icpc, ifort, for example. If it's a program that can be compiled
 using MPI and only has a variable for CC, then set that to mpicc.</p>
-<div class="codehilite"><pre><span></span>CC=gcc  
+<div class="codehilite"><pre><span></span><code>CC=gcc  
 CXX=g++  
 FC=gfortran  
 MPICC=mpicc  
 MPICXX=mpicxx  
 MPIF90=mpif90
-</pre></div>
+</code></pre></div>
 
 
 <p>CFLAGS and LDFLAGS are flags for the compiler and linker respectively,
 and there might be LIBS or INCLUDE as well. When linking a library with
 the name libfoo, use <code>-lfoo</code>.</p>
-<div class="codehilite"><pre><span></span>CFLAGS=&quot;-I/path/to/include&quot;  
+<div class="codehilite"><pre><span></span><code>CFLAGS=&quot;-I/path/to/include&quot;  
 LDFLAGS=&quot;-L/path/to/foo/lib -L/path/to/bar/lib&quot;  
 LDLIBS=&quot;-lfoo -lbar&quot;
-</pre></div>
+</code></pre></div>
 
 
 <p>Remember to <code>make clean</code> first if you are recompiling with new options!</p>
@@ -1126,22 +1126,22 @@ running on the XYZ nodes (or during a qrsh session on the same).</p>
 <h3 id="intel-compilers">Intel compilers<a class="headerlink" href="#intel-compilers" title="Permanent link">§</a></h3>
 <p>To tell the Intel compilers to build for SSE4.2 instructions and no AVX,
 add this to CFLAGS (and CXXFLAGS if relevant):</p>
-<div class="codehilite"><pre><span></span>CFLAGS=-axSSE4.2
-</pre></div>
+<div class="codehilite"><pre><span></span><code>CFLAGS=-axSSE4.2
+</code></pre></div>
 
 
 <p>(Also see <code>icc -help codegen</code>).</p>
 <h3 id="gnu-compilers">GNU compilers<a class="headerlink" href="#gnu-compilers" title="Permanent link">§</a></h3>
 <p>To tell GCC to build for SSE4.2 without AVX, add this to CFLAGS (and
 CXXFLAGS if relevant): </p>
-<div class="codehilite"><pre><span></span>CFLAGS=-march=nehalem
-</pre></div>
+<div class="codehilite"><pre><span></span><code>CFLAGS=-march=nehalem
+</code></pre></div>
 
 
 <h3 id="restrict-node-type">Restrict node type<a class="headerlink" href="#restrict-node-type" title="Permanent link">§</a></h3>
 <p>To restrict a job to newer nodes only, put this in your script:</p>
-<div class="codehilite"><pre><span></span>#$ -ac allow=LMNOPQSTU
-</pre></div>
+<div class="codehilite"><pre><span></span><code>#$ -ac allow=LMNOPQSTU
+</code></pre></div>
 
 
 <p>You can also compile one version without AVX and one with, so you can
@@ -1156,8 +1156,8 @@ test everything in there. Note that if your code builds multiple kernels
 and so can choose based on where it runs which instructions to use (like
 MKL) then this will find AVX instructions but they won't cause your code
 to segfault.</p>
-<div class="codehilite"><pre><span></span>find /home/username/path/ -perm /111 -type f | xargs /shared/ucl/apps/rcops_scripts/hasavx -q
-</pre></div>
+<div class="codehilite"><pre><span></span><code>find /home/username/path/ -perm /111 -type f | xargs /shared/ucl/apps/rcops_scripts/hasavx -q
+</code></pre></div>
 
 
 <h2 id="blas-and-lapack">BLAS and LAPACK<a class="headerlink" href="#blas-and-lapack" title="Permanent link">§</a></h2>
@@ -1181,8 +1181,8 @@ create. Replace username with your username and point to the directory
 your binary was built in (frequently <code>program/bin</code>). This adds it to the
 front of your PATH, so if you install a newer version of something, it
 will be found before the system one.</p>
-<div class="codehilite"><pre><span></span>export PATH=/home/username/location/of/software/binary:$PATH
-</pre></div>
+<div class="codehilite"><pre><span></span><code>export PATH=/home/username/location/of/software/binary:$PATH
+</code></pre></div>
 
 
 <p>If you built a library that you'll go on to compile other software with,
@@ -1192,8 +1192,8 @@ LD_LIBRARY_PATH and LIBRARY_PATH, and the include directory to CPATH
 pick your library up correctly without any further effort on your part.</p>
 <p>To make these changes to your .bashrc take effect in your current
 session:</p>
-<div class="codehilite"><pre><span></span>source ~/.bashrc
-</pre></div>
+<div class="codehilite"><pre><span></span><code>source ~/.bashrc
+</code></pre></div>
 
 
 <h2 id="python">Python<a class="headerlink" href="#python" title="Permanent link">§</a></h2>
@@ -1208,23 +1208,23 @@ you should have the GCC compiler module loaded however, to avoid the
 situation where you build a package with the Intel compiler and then try
 to run it with GCC, in which case it will be unable to find
 Intel-specific instructions.</p>
-<div class="codehilite"><pre><span></span>module unload compilers
+<div class="codehilite"><pre><span></span><code>module unload compilers
 module load compilers/gnu/4.9.2
-</pre></div>
+</code></pre></div>
 
 
 <p>If you get an error like this when trying to run something, recheck what
 compiler you used.</p>
-<div class="codehilite"><pre><span></span>undefined symbol: __intel_sse2_strrchr
-</pre></div>
+<div class="codehilite"><pre><span></span><code>undefined symbol: __intel_sse2_strrchr
+</code></pre></div>
 
 
 <h3 id="install-your-own-packages-in-the-same-virtualenv">Install your own packages in the same virtualenv<a class="headerlink" href="#install-your-own-packages-in-the-same-virtualenv" title="Permanent link">§</a></h3>
 <p>This will use our central virtualenv, which contains a number of
 packages already installed.</p>
-<div class="codehilite"><pre><span></span>pip install --user &lt;python2pkg&gt;  
+<div class="codehilite"><pre><span></span><code>pip install --user &lt;python2pkg&gt;  
 pip3 install --user &lt;python3pkg&gt;
-</pre></div>
+</code></pre></div>
 
 
 <p>These will install into <code>.python2local</code> or <code>.python3local</code> directories in your home directory, respectively.</p>
@@ -1239,9 +1239,9 @@ loaded).</p>
 <p>If you need different packages that are not compatible with the central
 installs, you can create a new virtualenv and only yours will be
 available.</p>
-<div class="codehilite"><pre><span></span>virtualenv &lt;DIR&gt; 
+<div class="codehilite"><pre><span></span><code>virtualenv &lt;DIR&gt; 
 source &lt;DIR&gt;/bin/activate
-</pre></div>
+</code></pre></div>
 
 
 <p>Your bash prompt will show you that a different virtualenv is active.</p>
@@ -1250,8 +1250,8 @@ source &lt;DIR&gt;/bin/activate
 as long as one of the python bundles is loaded, it will install into the
 same <code>.python2local</code> or <code>.python3local</code> as pip and you won't need to add
 any new paths to your environment.</p>
-<div class="codehilite"><pre><span></span>python setup.py install --user
-</pre></div>
+<div class="codehilite"><pre><span></span><code>python setup.py install --user
+</code></pre></div>
 
 
 <p>You can alternatively use <code>--prefix</code> in which case you will have to set
@@ -1260,7 +1260,7 @@ and PATH to include your install location. Some installs won't create
 the prefix directory for you, in which case create it first. This is
 useful if you want to keep this package entirely separate and only in
 your paths on demand.</p>
-<div class="codehilite"><pre><span></span>export PYTHONPATH=/home/username/your/path/lib/python2.7/site-packages:$PYTHONPATH  
+<div class="codehilite"><pre><span></span><code>export PYTHONPATH=/home/username/your/path/lib/python2.7/site-packages:$PYTHONPATH  
 # if necessary, create install path  
 mkdir -p home/username/your/path/lib/python2.7/site-packages  
 python setup.py install --prefix=/home/username/your/path
@@ -1268,7 +1268,7 @@ python setup.py install --prefix=/home/username/your/path
 # add these to your .bashrc or jobscript  
 export PYTHONPATH=/home/username/your/path/lib/python2.7/site-packages:$PYTHONPATH  
 export PATH=/home/username/your/path/bin:$PATH
-</pre></div>
+</code></pre></div>
 
 
 <p>Check that the PATH is where your Python executables were installed, and
@@ -1278,24 +1278,24 @@ you need to change or create the PYTHONPATH directory.</p>
 <p>If you have an executable python script giving the location of python
 like this, and it fails because that python doesn't exist in that
 location or isn't the one that has the additional packages installed:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#!/usr/bin/python2.6
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/usr/bin/python2.6
+</code></pre></div>
 </td></tr></table>
 
 <p>You should change it so it uses the first python found in your
 environment. </p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#!/usr/bin/env python 
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/usr/bin/env python 
+</code></pre></div>
 </td></tr></table>
 
 <h2 id="perl">Perl<a class="headerlink" href="#perl" title="Permanent link">§</a></h2>
 <p>Perl modules will freqently have a Makefile.PL (especially if you
 download the tar files from CPAN.org yourself). You can install manually
 as:</p>
-<div class="codehilite"><pre><span></span>perl Makefile.PL PREFIX=/home/username/your/perl/location
+<div class="codehilite"><pre><span></span><code>perl Makefile.PL PREFIX=/home/username/your/perl/location
 make
 make install
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="cpan">CPAN<a class="headerlink" href="#cpan" title="Permanent link">§</a></h3>
@@ -1307,12 +1307,12 @@ it to set them automatically.</p>
 <p>If it is automatically configured, you need to edit these lines in your
 <code>.cpan/CPAN/MyConfig.pm</code>, for example if you want it to be in a lib
 directory in your home (change username to your own username):</p>
-<div class="codehilite"><pre><span></span><span class="s">&#39;make_install_arg&#39;</span> <span class="o">=&gt;</span> <span class="sx">q[PREFIX=/home/username/lib]</span><span class="p">,</span>
+<div class="codehilite"><pre><span></span><code><span class="s">&#39;make_install_arg&#39;</span> <span class="o">=&gt;</span> <span class="sx">q[PREFIX=/home/username/lib]</span><span class="p">,</span>
  <span class="c1"># other lines in here  </span>
 <span class="s">&#39;makepl_arg&#39;</span> <span class="o">=&gt;</span> <span class="sx">q[PREFIX=/home/username/lib]</span><span class="p">,</span>
 <span class="s">&#39;mbuild_install_arg&#39;</span> <span class="o">=&gt;</span> <span class="sx">q[PREFIX=/home/username/lib]</span><span class="p">,</span>
 <span class="s">&#39;mbuildpl_arg&#39;</span> <span class="o">=&gt;</span> <span class="sx">q[--install_base /home/username/lib]</span><span class="p">,</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>It will download and build modules inside .cpan and install them where
@@ -1320,8 +1320,8 @@ you specified.</p>
 <h3 id="set-perl5lib-paths">Set PERL5LIB paths<a class="headerlink" href="#set-perl5lib-paths" title="Permanent link">§</a></h3>
 <p>If you install your own Perl or Perl modules, you will need to append
 them to your PERL5LIB:</p>
-<div class="codehilite"><pre><span></span>export PERL5LIB=/home/username/your/perl/location:$PERL5LIB
-</pre></div>
+<div class="codehilite"><pre><span></span><code>export PERL5LIB=/home/username/your/perl/location:$PERL5LIB
+</code></pre></div>
 
 
 <p>If you installed with CPAN, you may need to add several paths to this
@@ -1332,8 +1332,8 @@ based on the layout it creates inside your nominated Perl directory.</p>
 and get strange errors when trying to run a Perl script, particularly
 ones about
 warnings.pm:</p>
-<div class="codehilite"><pre><span></span>Search pattern not terminated at /shared/ucl/apps/perl/5.20.0/lib/5.20.0/warnings.pm line 1099
-</pre></div>
+<div class="codehilite"><pre><span></span><code>Search pattern not terminated at /shared/ucl/apps/perl/5.20.0/lib/5.20.0/warnings.pm line 1099
+</code></pre></div>
 
 
 <p>then you need to edit the script so that instead of beginning with
@@ -1425,16 +1425,16 @@ or if you need to report a problem with our software stack.</p>
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/UCL-RITS" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/UCL-RITS" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
   </div>
 
@@ -1444,7 +1444,7 @@ or if you need to report a problem with our software stack.</p>
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

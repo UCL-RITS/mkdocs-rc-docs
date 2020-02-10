@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#michael" tabindex="1" class="md-skip">
+      <a href="#michael" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -98,9 +98,9 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" class="md-header-nav__button md-logo">
+        <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" aria-label="UCL Research Computing Documentation" class="md-header-nav__button md-logo">
           
-            <img src="../../img/portico.svg" width="24" height="24">
+            <img alt="logo" src="../../img/portico.svg" width="24" height="24">
           
         </a>
       </div>
@@ -129,7 +129,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -192,7 +192,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" class="md-nav__button md-logo">
       
-        <img src="../../img/portico.svg" width="48" height="48">
+        <img alt="logo" src="../../img/portico.svg" width="48" height="48">
       
     </a>
     UCL Research Computing Documentation
@@ -1306,8 +1306,8 @@ must not share your private key with anyone else. You can copy it onto
 multiple machines belonging to you so you can log in from all of them
 (or you can have a separate pair for each machine).</p>
 <h3 id="creating-an-ssh-key-in-linuxunixmac-os-x">Creating an ssh key in Linux/Unix/Mac OS X<a class="headerlink" href="#creating-an-ssh-key-in-linuxunixmac-os-x" title="Permanent link">§</a></h3>
-<div class="codehilite"><pre><span></span>ssh-keygen -t rsa
-</pre></div>
+<div class="codehilite"><pre><span></span><code>ssh-keygen -t rsa
+</code></pre></div>
 
 
 <p>The defaults should give you a reasonable key. If you prefer to use
@@ -1340,8 +1340,8 @@ allocations, documented at <a href="Points_of_Contact" title="wikilink">Points o
 used to log in. External users will have a username in the form
 <code>mmmxxxx</code> (where <code>xxxx</code> is a number) and UCL users will use their central username.</p>
 <p>You connect with ssh directly to:</p>
-<div class="codehilite"><pre><span></span>michael.rc.ucl.ac.uk
-</pre></div>
+<div class="codehilite"><pre><span></span><code>michael.rc.ucl.ac.uk
+</code></pre></div>
 
 
 <h3 id="ssh-timeouts">SSH timeouts<a class="headerlink" href="#ssh-timeouts" title="Permanent link">§</a></h3>
@@ -1515,55 +1515,55 @@ jobs need to specify what project they belong to, whether they are paid
 or free.</p>
 <p>To see the name of your project(s) and how much allocation that budget
 has, run the command <code>budgets</code>.</p>
-<div class="codehilite"><pre><span></span>$ budgets  
+<div class="codehilite"><pre><span></span><code>$ budgets  
 Project      Machines Balance
 --------     -------- --------
 Faraday_Test ANY      22781.89
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="submitting-a-job-under-a-project">Submitting a job under a project<a class="headerlink" href="#submitting-a-job-under-a-project" title="Permanent link">§</a></h3>
 <p>To submit a paid job that will take Gold from a particular project
 budget, add this to your jobscript:</p>
-<div class="codehilite"><pre><span></span>#$ -P Gold
+<div class="codehilite"><pre><span></span><code>#$ -P Gold
 #$ -A MyProject
-</pre></div>
+</code></pre></div>
 
 
 <p>To submit a free job that will not use up any Gold, use this instead:</p>
-<div class="codehilite"><pre><span></span>#$ -P Free
+<div class="codehilite"><pre><span></span><code>#$ -P Free
 #$ -A MyProject
-</pre></div>
+</code></pre></div>
 
 
 <p>You can also submit testing jobs that will not use up any Gold, and will
 have higher priority than normal free jobs, but are limited to 2 nodes
 (48 cores) and 1 hour of
 walltime:</p>
-<div class="codehilite"><pre><span></span>#$ -P Test
+<div class="codehilite"><pre><span></span><code>#$ -P Test
 #$ -A MyProject
-</pre></div>
+</code></pre></div>
 
 
 <h4 id="troubleshooting-unable-to-verify-membership-in-policyjsv-project">Troubleshooting: Unable to verify membership in policyjsv project<a class="headerlink" href="#troubleshooting-unable-to-verify-membership-in-policyjsv-project" title="Permanent link">§</a></h4>
-<div class="codehilite"><pre><span></span>Unable to run job: Rejected by policyjsv
+<div class="codehilite"><pre><span></span><code>Unable to run job: Rejected by policyjsv
 Unable to verify membership of `&lt;username&gt;` in the policyjsv project
-</pre></div>
+</code></pre></div>
 
 
 <p>You asked for a Free job but didn't specify <code>#$ -A MyProject</code> in your
 jobscript.</p>
 <h4 id="troubleshooting-unable-to-verify-membership-in-project-uninitialized-value">Troubleshooting: Unable to verify membership in project / Uninitialized value<a class="headerlink" href="#troubleshooting-unable-to-verify-membership-in-project-uninitialized-value" title="Permanent link">§</a></h4>
-<div class="codehilite"><pre><span></span>Unable to run job: Rejected by policyjsv  
+<div class="codehilite"><pre><span></span><code>Unable to run job: Rejected by policyjsv  
 Reason:Unable to verify sufficient material worth to submit this job:  
 Unable to verify membership of mmmxxxx in the UCL_Example project
-</pre></div>
+</code></pre></div>
 
 
 <p>This error from <code>qsub</code> can mean that you aren't in the project you are trying to submit to, but also happens when the Gold daemon is not running.           </p>
-<div class="codehilite"><pre><span></span>Use of uninitialized value in print at /opt/gold/bin/mybalance line 60, &lt;GBALANCE&gt; line 1.
+<div class="codehilite"><pre><span></span><code>Use of uninitialized value in print at /opt/gold/bin/mybalance line 60, &lt;GBALANCE&gt; line 1.
 Failed sending message: (Unable to connect to socket (Connection refused)).
-</pre></div>
+</code></pre></div>
 
 
 <p>If you also get this error from the <code>budgets</code> command, then the Gold daemon is definitely not running and you should contact rc-support.</p>
@@ -1575,10 +1575,10 @@ it asked for, the unused reserved portion will be refunded after the job
 ends. You cannot submit a job that you do not have the budget to
 run.</p>
 <h4 id="troubleshooting-unable-to-verify-sufficient-material-worth">Troubleshooting: Unable to verify sufficient material worth<a class="headerlink" href="#troubleshooting-unable-to-verify-sufficient-material-worth" title="Permanent link">§</a></h4>
-<div class="codehilite"><pre><span></span>Unable to run job: Rejected by policyjsv
+<div class="codehilite"><pre><span></span><code>Unable to run job: Rejected by policyjsv
 Reason:Unable to verify sufficient material worth to submit this job:
 Insufficient balance to reserve job
-</pre></div>
+</code></pre></div>
 
 
 <p>This means you don't have enough Gold to cover the
@@ -1656,16 +1656,16 @@ the type of problem, and you should mention your username in the body.</p>
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/UCL-RITS" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/UCL-RITS" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
   </div>
 
@@ -1675,7 +1675,7 @@ the type of problem, and you should mention your username in the body.</p>
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

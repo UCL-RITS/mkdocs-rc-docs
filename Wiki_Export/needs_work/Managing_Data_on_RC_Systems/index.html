@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#managing-data-on-research-computing-systems" tabindex="1" class="md-skip">
+      <a href="#managing-data-on-research-computing-systems" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -98,9 +98,9 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" class="md-header-nav__button md-logo">
+        <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" aria-label="UCL Research Computing Documentation" class="md-header-nav__button md-logo">
           
-            <img src="../../../img/portico.svg" width="24" height="24">
+            <img alt="logo" src="../../../img/portico.svg" width="24" height="24">
           
         </a>
       </div>
@@ -129,7 +129,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -192,7 +192,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" class="md-nav__button md-logo">
       
-        <img src="../../../img/portico.svg" width="48" height="48">
+        <img alt="logo" src="../../../img/portico.svg" width="48" height="48">
       
     </a>
     UCL Research Computing Documentation
@@ -824,21 +824,21 @@ your own computer to a system.</p>
 <p>This will copy a data file from somewhere on your local machine to a
 specified location on the remote
 machine.</p>
-<div class="codehilite"><pre><span></span>scp &lt;local_data_file&gt; &lt;remote_user_id&gt;@&lt;remote_hostname&gt;:&lt;remote_path&gt;
-</pre></div>
+<div class="codehilite"><pre><span></span><code>scp &lt;local_data_file&gt; &lt;remote_user_id&gt;@&lt;remote_hostname&gt;:&lt;remote_path&gt;
+</code></pre></div>
 
 
 <p>This will do the reverse, copying from the remote machine to your local
 machine. (Run from your local
 machine).</p>
-<div class="codehilite"><pre><span></span>scp &lt;remote_user_id&gt;@&lt;remote_hostname&gt;:&lt;remote_path&gt;&lt;remote_data_file&gt; &lt;local_path&gt;
-</pre></div>
+<div class="codehilite"><pre><span></span><code>scp &lt;remote_user_id&gt;@&lt;remote_hostname&gt;:&lt;remote_path&gt;&lt;remote_data_file&gt; &lt;local_path&gt;
+</code></pre></div>
 
 
 <p>To copy a whole directory with all its contents, use the <code>-r</code>
 option:</p>
-<div class="codehilite"><pre><span></span>scp -r &lt;local_directory&gt; &lt;remote_user_id&gt;@&lt;remote_hostname&gt;:&lt;remote_path&gt;
-</pre></div>
+<div class="codehilite"><pre><span></span><code>scp -r &lt;local_directory&gt; &lt;remote_user_id&gt;@&lt;remote_hostname&gt;:&lt;remote_path&gt;
+</code></pre></div>
 
 
 <h3 id="sftp">sftp<a class="headerlink" href="#sftp" title="Permanent link">§</a></h3>
@@ -846,12 +846,12 @@ option:</p>
 directories and use put and get to copy files from and to your local
 machine. <code>lcd</code> and <code>lls</code> are local equivalents of <code>cd</code> and <code>ls</code> so you
 can navigate through your local directories as you go.</p>
-<div class="codehilite"><pre><span></span>sftp &lt;remote_user_id&gt;@&lt;remote_hostname&gt;  
+<div class="codehilite"><pre><span></span><code>sftp &lt;remote_user_id&gt;@&lt;remote_hostname&gt;  
 cd &lt;remote_path&gt;  
 get &lt;remote_file&gt;  
 lcd &lt;local_path&gt;  
 put &lt;local_file&gt;
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="rsync">rsync<a class="headerlink" href="#rsync" title="Permanent link">§</a></h3>
@@ -887,17 +887,17 @@ have one).</p>
 <p>Generically, it should be of this form where <name> can be anything you
 want to call this
 entry.</p>
-<div class="codehilite"><pre><span></span>Host &lt;name&gt;  
+<div class="codehilite"><pre><span></span><code>Host &lt;name&gt;  
    User &lt;your.username&gt;  
    HostName &lt;full.hostname&gt;  
    proxyCommand ssh -W &lt;full.hostname&gt;:22 &lt;your.username&gt;@socrates.ucl.ac.uk
-</pre></div>
+</code></pre></div>
 
 
 <p>Here are some examples - you can have as many of these as you need in
 your config
 file.</p>
-<div class="codehilite"><pre><span></span>Host legion  
+<div class="codehilite"><pre><span></span><code>Host legion  
    User &lt;your.username&gt;  
    HostName legion.rc.ucl.ac.uk  
    proxyCommand ssh -W legion.rc.ucl.ac.uk:22 &lt;your.username&gt;@socrates.ucl.ac.uk
@@ -911,7 +911,7 @@ Host aristotle
    User &lt;your.username&gt;  
    HostName aristotle.rc.ucl.ac.uk  
    proxyCommand ssh -W aristotle.rc.ucl.ac.uk:22 &lt;your.username&gt;@socrates.ucl.ac.uk
-</pre></div>
+</code></pre></div>
 
 
 <p>You can now just do <code>ssh legion</code> or <code>scp aristotle</code> and you will go
@@ -987,8 +987,8 @@ login nodes.</p>
 <p>Legion provides a dedicated transfer node with ten gigabit network
 connections to the UCL network and to Legion. To access this node, log
 in via scp, sftp or ssh to:</p>
-<div class="codehilite"><pre><span></span>login05.external.legion.ucl.ac.uk
-</pre></div>
+<div class="codehilite"><pre><span></span><code>login05.external.legion.ucl.ac.uk
+</code></pre></div>
 
 
 <p>Please note that you cannot submit or view the status of your compute
@@ -1109,8 +1109,8 @@ interfering with each other by running out of disk space. If this
 directive is omitted from job scripts, then a default of 10 Gigabytes
 per node will be allocated to the job. For example to request 15 GB
 include the following in the job script: </p>
-<div class="codehilite"><pre><span></span>#$ -l tmpfs=15G
-</pre></div>
+<div class="codehilite"><pre><span></span><code>#$ -l tmpfs=15G
+</code></pre></div>
 
 
 <p>The following diagram illustrates how these various levels of storage
@@ -1142,8 +1142,8 @@ only by you), and also copy the contents of the public key file
 <p>in the <code>~/.ssh</code> directory on your remote machine.</p>
 <p>If you haven't generated an SSH key pair before, simply run this command
 on Legion:</p>
-<div class="codehilite"><pre><span></span>ssh-keygen -t rsa
-</pre></div>
+<div class="codehilite"><pre><span></span><code>ssh-keygen -t rsa
+</code></pre></div>
 
 
 <p>pressing return when it asks for passphrase. This will generate
@@ -1171,8 +1171,8 @@ version of Windows.</p>
 <p>Having set up the SSH keys as described above, you can now use scp or
 sftp to do file transfer within a batch job. For instance, you could use
 an scp command like this: </p>
-<div class="codehilite"><pre><span></span>scp my_results &lt;my_remote_userid&gt;@&lt;my_remote_hostname&gt;:legion_files/my_results
-</pre></div>
+<div class="codehilite"><pre><span></span><code>scp my_results &lt;my_remote_userid&gt;@&lt;my_remote_hostname&gt;:legion_files/my_results
+</code></pre></div>
 
 
 <p>This will copy your Legion file <code>my_results</code> into a file of the
@@ -1183,8 +1183,8 @@ exist.</p>
 machine to Legion, but with one caviat - your <code>$HOME</code> directory in Legion
 is read-only, as viewed by the worker nodes! You must therefore copy
 your data to <code>$HOME/Scratch</code>:</p>
-<div class="codehilite"><pre><span></span>scp &lt;my_remote_userid&gt;@&lt;my_remote_hostname&gt;:legion_files/my_results $HOME/Scratch/my_results
-</pre></div>
+<div class="codehilite"><pre><span></span><code>scp &lt;my_remote_userid&gt;@&lt;my_remote_hostname&gt;:legion_files/my_results $HOME/Scratch/my_results
+</code></pre></div>
 
 
 <p>Either of these commands should be embedded in a simple job
@@ -1197,14 +1197,14 @@ the job): </p>
 4
 5
 6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash -l  </span>
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l  </span>
 <span class="c1">#$ -N Data_transfer  </span>
 <span class="c1">#$ -l h_rt=1:0:0  </span>
 <span class="c1">#$ -l mem=1G  </span>
 <span class="c1">#$ -P &lt;your_project_name&gt;  </span>
 <span class="c1">#$ -wd /home/&lt;your_user_id&gt;/Scratch  </span>
 &lt;scp_command&gt;
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>You can also use sftp to do a similar job, though in this case
@@ -1212,16 +1212,16 @@ the situation is complicated by the fact that sftp normally takes its
 commands interactively.</p>
 <p>To get round this, supply the sftp commands with a file called
 <code>sftp\_script</code> in your home directory, like this: </p>
-<div class="codehilite"><pre><span></span>cd legion_files  
+<div class="codehilite"><pre><span></span><code>cd legion_files  
 put my_results  
 exit
-</pre></div>
+</code></pre></div>
 
 
 <p>and then supply this script name to the sftp command using the
 -b option, like this:</p>
-<div class="codehilite"><pre><span></span>sftp -b sftp_script &lt;my_remote_userid&gt;@&lt;my_remote_hostname&gt;
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sftp -b sftp_script &lt;my_remote_userid&gt;@&lt;my_remote_hostname&gt;
+</code></pre></div>
 
 
 <p>This command will perform the same transfer as the first scp
@@ -1298,16 +1298,16 @@ storage area only accessible from the Legion transfer node, login05:
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/UCL-RITS" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/UCL-RITS" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
   </div>
 
@@ -1317,7 +1317,7 @@ storage area only accessible from the Legion transfer node, login05:
       
     </div>
     
-      <script src="../../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
