@@ -29,7 +29,7 @@ Kathleen is intended for multi-node jobs (using e.g. MPI) and went into service 
 
 - Grace
 
-Grace is intended for multi-node jobs (using e.g. MPI) and went into service in Dec 2015. We recommend using Grace if you intend to use more than 16 cores per job. Grace will run until around the first quarter of 2021. See [Grace](Clusters/Grace.md).
+Grace is intended for multi-node jobs (using e.g. MPI) and went into service in Dec 2015. We recommend using Grace if you intend to use more than 32 cores per job. Grace will run until around the first quarter of 2021. See [Grace](Clusters/Grace.md).
 
 - Legion
 
