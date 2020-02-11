@@ -546,6 +546,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#loading-and-unloading-modules" class="md-nav__link">
+    Loading and unloading modules
+  </a>
+  
+</li>
+      
       
       
       
@@ -891,6 +898,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#loading-and-unloading-modules" class="md-nav__link">
+    Loading and unloading modules
+  </a>
+  
+</li>
+      
       
       
       
@@ -1039,6 +1053,34 @@ export OMP_NUM_THREADS=80
 <h2 id="diskless-nodes">Diskless nodes<a class="headerlink" href="#diskless-nodes" title="Permanent link">§</a></h2>
 <p>Kathleen nodes are diskless (have no local hard drives) - there is no <code>$TMPDIR</code> available on Kathleen, so you should not request <code>-l tmpfs=10G</code> in your jobscripts or your job will be rejected at submit time.</p>
 <p>If you need temporary space, you should use somewhere in your Scratch.</p>
+<h2 id="loading-and-unloading-modules">Loading and unloading modules<a class="headerlink" href="#loading-and-unloading-modules" title="Permanent link">§</a></h2>
+<p>Kathleen has a newer version of <code>modulecmd</code> which tries to manage module dependencies automatically by loading or unloading prerequisites for you whenever possible.</p>
+<p>If you get an error like this:</p>
+<div class="codehilite"><pre><span></span><code>[uccaxxx@login01.kathleen ~]$ module unload compilers mpi
+Unloading compilers/intel/2018/update3
+  ERROR: compilers/intel/2018/update3 cannot be unloaded due to a prereq.
+    HINT: Might try &quot;module unload default-modules/2018&quot; first.
+
+Unloading mpi/intel/2018/update3/intel
+  ERROR: mpi/intel/2018/update3/intel cannot be unloaded due to a prereq.
+    HINT: Might try &quot;module unload default-modules/2018&quot; first.
+</code></pre></div>
+
+
+<p>You will need to unload <code>default-modules/2018</code> to swap compiler and MPI module, but that will leave you without <code>gerun</code> in your path. You can then do either of these things:</p>
+<div class="codehilite"><pre><span></span><code># load everything that was in default-modules except the compiler and mpi
+module unload default-modules/2018
+module load rcps-core/1.0.0
+module load whatever
+</code></pre></div>
+
+
+<p>or</p>
+<div class="codehilite"><pre><span></span><code># just reload gerun
+module unload default-modules/2018
+module load gerun
+module load whatever
+</code></pre></div>
                 
                   
                 
