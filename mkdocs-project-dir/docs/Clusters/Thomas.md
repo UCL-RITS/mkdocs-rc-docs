@@ -387,6 +387,26 @@ If you `qdel` a submitted Gold job, the reserved Gold will be made
 available again. This is done by a cron job that runs every 15 minutes,
 so you may not see it back instantly.
 
+## The Tier 2 SAFE
+
+SAFE is a service administration platform used by ARCHER and various of the Tier 2 sites. As a user, you can use it to do some management of your details and view your usage across all systems that send data to SAFE.
+
+### See your usage data in SAFE
+
+If you wish, you can claim your Thomas account as belonging to you in the Tier 2 SAFE. This lets you view some individual usage reports, and if you have other Tier 2 accounts that also use SAFE, you use the same login information.
+
+* You need to login at https://www.archer.ac.uk/tier2/ or create a new Tier2 SAFE account if you do not have one.
+    * If creating a new account, you will be asked to create a password - this is for the SAFE login only and has no link to your Thomas account.
+* On Thomas, run `hashclaim`. This will give you a link to claim your Thomas username's usage data.
+* Visit this link when logged in to SAFE and it will tell you this account has been added to your SAFE account, and username@Thomas will now be visible in the 'Login accounts' menu at the top.
+* Choosing that account will take you to a page where you can view your individual usage reports.
+
+If you do not claim your account, then SAFE only contains username/job usage information with no information about who owns that username. Points of Contact can use it to allocate Gold to your budgets.
+
+### Update your SSH key via SAFE
+
+SAFE also gives you a second mechanism for changing your SSH key - changing the key you have associated with your SAFE account will automatically create a request for us to add that key to your Thomas account. (We still need to act on it, so it won't update immediately).
+
 ## Support
 
 Email <rc-support@ucl.ac.uk> with any support queries. It will be helpful
