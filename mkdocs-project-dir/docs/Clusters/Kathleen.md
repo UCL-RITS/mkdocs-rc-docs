@@ -143,3 +143,36 @@ Kathleen nodes are diskless (have no local hard drives) - there is no `$TMPDIR` 
 
 If you need temporary space, you should use somewhere in your Scratch.
 
+## Loading and unloading modules
+
+Kathleen has a newer version of `modulecmd` which tries to manage module dependencies automatically by loading or unloading prerequisites for you whenever possible.
+
+If you get an error like this:
+
+```
+[uccaxxx@login01.kathleen ~]$ module unload compilers mpi
+Unloading compilers/intel/2018/update3
+  ERROR: compilers/intel/2018/update3 cannot be unloaded due to a prereq.
+    HINT: Might try "module unload default-modules/2018" first.
+
+Unloading mpi/intel/2018/update3/intel
+  ERROR: mpi/intel/2018/update3/intel cannot be unloaded due to a prereq.
+    HINT: Might try "module unload default-modules/2018" first.
+```
+
+You will need to unload `default-modules/2018` to swap compiler and MPI module, but that will leave you without `gerun` in your path. You can then do either of these things:
+
+```
+# load everything that was in default-modules except the compiler and mpi
+module unload default-modules/2018
+module load rcps-core/1.0.0
+module load whatever
+```
+or
+```
+# just reload gerun
+module unload default-modules/2018
+module load gerun
+module load whatever
+```
+
