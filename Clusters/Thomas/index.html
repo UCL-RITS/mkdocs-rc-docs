@@ -750,6 +750,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-tier-2-safe" class="md-nav__link">
+    The Tier 2 SAFE
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#see-your-usage-data-in-safe" class="md-nav__link">
+    See your usage data in SAFE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-your-ssh-key-via-safe" class="md-nav__link">
+    Update your SSH key via SAFE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#support" class="md-nav__link">
     Support
   </a>
@@ -1310,6 +1337,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-tier-2-safe" class="md-nav__link">
+    The Tier 2 SAFE
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#see-your-usage-data-in-safe" class="md-nav__link">
+    See your usage data in SAFE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-your-ssh-key-via-safe" class="md-nav__link">
+    Update your SSH key via SAFE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#support" class="md-nav__link">
     Support
   </a>
@@ -1680,6 +1734,22 @@ cover the whole cost of all the tasks at submit time.</p>
 <p>If you <code>qdel</code> a submitted Gold job, the reserved Gold will be made
 available again. This is done by a cron job that runs every 15 minutes,
 so you may not see it back instantly.</p>
+<h2 id="the-tier-2-safe">The Tier 2 SAFE<a class="headerlink" href="#the-tier-2-safe" title="Permanent link">§</a></h2>
+<p>SAFE is a service administration platform used by ARCHER and various of the Tier 2 sites. As a user, you can use it to do some management of your details and view your usage across all systems that send data to SAFE.</p>
+<h3 id="see-your-usage-data-in-safe">See your usage data in SAFE<a class="headerlink" href="#see-your-usage-data-in-safe" title="Permanent link">§</a></h3>
+<p>If you wish, you can claim your Thomas account as belonging to you in the Tier 2 SAFE. This lets you view some individual usage reports, and if you have other Tier 2 accounts that also use SAFE, you use the same login information.</p>
+<ul>
+<li>You need to login at https://www.archer.ac.uk/tier2/ or create a new Tier2 SAFE account if you do not have one.<ul>
+<li>If creating a new account, you will be asked to create a password - this is for the SAFE login only and has no link to your Thomas account.</li>
+</ul>
+</li>
+<li>On Thomas, run <code>hashclaim</code>. This will give you a link to claim your Thomas username's usage data.</li>
+<li>Visit this link when logged in to SAFE and it will tell you this account has been added to your SAFE account, and username@Thomas will now be visible in the 'Login accounts' menu at the top.</li>
+<li>Choosing that account will take you to a page where you can view your individual usage reports.</li>
+</ul>
+<p>If you do not claim your account, then SAFE only contains username/job usage information with no information about who owns that username. Points of Contact can use it to allocate Gold to your budgets.</p>
+<h3 id="update-your-ssh-key-via-safe">Update your SSH key via SAFE<a class="headerlink" href="#update-your-ssh-key-via-safe" title="Permanent link">§</a></h3>
+<p>SAFE also gives you a second mechanism for changing your SSH key - changing the key you have associated with your SAFE account will automatically create a request for us to add that key to your Thomas account. (We still need to act on it, so it won't update immediately).</p>
 <h2 id="support">Support<a class="headerlink" href="#support" title="Permanent link">§</a></h2>
 <p>Email <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#99;&#45;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#117;&#99;&#108;&#46;&#97;&#99;&#46;&#117;&#107;">&#114;&#99;&#45;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#117;&#99;&#108;&#46;&#97;&#99;&#46;&#117;&#107;</a> with any support queries. It will be helpful
 to include Thomas in the subject along with some descriptive text about
