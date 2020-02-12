@@ -13,7 +13,7 @@
         <meta name="description" content="Documentation for the centrally provided Research Computing HPC services at UCL.">
       
       
-        <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Wiki_Export/Example_Submission_Scripts/">
+        <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Example_Jobscripts/">
       
       
         <meta name="author" content="UCL RCAS Team">
@@ -37,18 +37,18 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../img/favicon.ico">
+      <link rel="shortcut icon" href="../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
-        <title>Example Submission Scripts</title>
+        <title>Example Jobscripts</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,15 +57,15 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
     
-    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
-      <link rel="stylesheet" href="../../stylesheets/tweaks.css">
+      <link rel="stylesheet" href="../stylesheets/tweaks.css">
     
     
       
@@ -100,7 +100,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" aria-label="UCL Research Computing Documentation" class="md-header-nav__button md-logo">
           
-            <img alt="logo" src="../../img/portico.svg" width="24" height="24">
+            <img alt="logo" src="../img/portico.svg" width="24" height="24">
           
         </a>
       </div>
@@ -115,7 +115,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Example Submission Scripts
+                Example Jobscripts
               
             </span>
           
@@ -192,7 +192,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" class="md-nav__button md-logo">
       
-        <img alt="logo" src="../../img/portico.svg" width="48" height="48">
+        <img alt="logo" src="../img/portico.svg" width="48" height="48">
       
     </a>
     UCL Research Computing Documentation
@@ -226,7 +226,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="Home" class="md-nav__link">
+    <a href=".." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -238,7 +238,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Account_Services/" title="Account Services" class="md-nav__link">
+    <a href="../Account_Services/" title="Account Services" class="md-nav__link">
       Account Services
     </a>
   </li>
@@ -250,7 +250,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Additional_Resource_Requests/" title="Additional Resource Requests" class="md-nav__link">
+    <a href="../Additional_Resource_Requests/" title="Additional Resource Requests" class="md-nav__link">
       Additional Resource Requests
     </a>
   </li>
@@ -262,7 +262,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Contact_Us/" title="Contact and Support" class="md-nav__link">
+    <a href="../Contact_Us/" title="Contact and Support" class="md-nav__link">
       Contact and Support
     </a>
   </li>
@@ -272,11 +272,122 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../Example_Jobscripts/" title="Example Jobscripts" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Example Jobscripts
+      </label>
+    
+    <a href="./" title="Example Jobscripts" class="md-nav__link md-nav__link--active">
       Example Jobscripts
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#service-differences" class="md-nav__link">
+    Service Differences
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-directories-and-output" class="md-nav__link">
+    Working Directories and Output
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note-about-projects" class="md-nav__link">
+    Note about Projects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serial-job-script-example" class="md-nav__link">
+    Serial Job Script Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-threaded-job-example" class="md-nav__link">
+    Multi-threaded Job Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mpi-job-script-example" class="md-nav__link">
+    MPI Job Script Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array-job-script-example" class="md-nav__link">
+    Array Job Script Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array-job-script-example-using-parameter-file" class="md-nav__link">
+    Array Job Script Example Using Parameter File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-array-job-using-local2scratch" class="md-nav__link">
+    Example Array Job Using Local2Scratch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array-job-script-with-a-stride" class="md-nav__link">
+    Array Job Script with a Stride
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpu-job-script-example" class="md-nav__link">
+    GPU Job Script Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-using-mpi-and-gpus" class="md-nav__link">
+    Job using MPI and GPUs
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -286,7 +397,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Experienced_Users/" title="Quick Start Guide for Experienced HPC Users" class="md-nav__link">
+    <a href="../Experienced_Users/" title="Quick Start Guide for Experienced HPC Users" class="md-nav__link">
       Quick Start Guide for Experienced HPC Users
     </a>
   </li>
@@ -298,7 +409,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Job_Results/" title="Where do my results go?" class="md-nav__link">
+    <a href="../Job_Results/" title="Where do my results go?" class="md-nav__link">
       Where do my results go?
     </a>
   </li>
@@ -310,7 +421,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../New_Users/" title="Guide for New Users" class="md-nav__link">
+    <a href="../New_Users/" title="Guide for New Users" class="md-nav__link">
       Guide for New Users
     </a>
   </li>
@@ -322,7 +433,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Planned_Outages/" title="Planned Outages" class="md-nav__link">
+    <a href="../Planned_Outages/" title="Planned Outages" class="md-nav__link">
       Planned Outages
     </a>
   </li>
@@ -334,7 +445,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Terms_and_Conditions/" title="Terms and Conditions" class="md-nav__link">
+    <a href="../Terms_and_Conditions/" title="Terms and Conditions" class="md-nav__link">
       Terms and Conditions
     </a>
   </li>
@@ -346,7 +457,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../UCL_Service_For_Me/" title="UCL Service For Me" class="md-nav__link">
+    <a href="../UCL_Service_For_Me/" title="UCL Service For Me" class="md-nav__link">
       UCL Service For Me
     </a>
   </li>
@@ -358,7 +469,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../howto/" title="How do I?" class="md-nav__link">
+    <a href="../howto/" title="How do I?" class="md-nav__link">
       How do I?
     </a>
   </li>
@@ -389,7 +500,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Background/Cluster_Computing/" title="Cluster Computing" class="md-nav__link">
+    <a href="../Background/Cluster_Computing/" title="Cluster Computing" class="md-nav__link">
       Cluster Computing
     </a>
   </li>
@@ -425,7 +536,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Clusters/Myriad/" title="Myriad" class="md-nav__link">
+    <a href="../Clusters/Myriad/" title="Myriad" class="md-nav__link">
       Myriad
     </a>
   </li>
@@ -437,7 +548,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Clusters/Legion/" title="Legion" class="md-nav__link">
+    <a href="../Clusters/Legion/" title="Legion" class="md-nav__link">
       Legion
     </a>
   </li>
@@ -449,7 +560,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Clusters/Grace/" title="Grace" class="md-nav__link">
+    <a href="../Clusters/Grace/" title="Grace" class="md-nav__link">
       Grace
     </a>
   </li>
@@ -461,7 +572,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Clusters/Kathleen/" title="Kathleen" class="md-nav__link">
+    <a href="../Clusters/Kathleen/" title="Kathleen" class="md-nav__link">
       Kathleen
     </a>
   </li>
@@ -473,7 +584,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Clusters/Thomas/" title="MMM Thomas" class="md-nav__link">
+    <a href="../Clusters/Thomas/" title="MMM Thomas" class="md-nav__link">
       MMM Thomas
     </a>
   </li>
@@ -485,7 +596,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Clusters/Michael/" title="MMM Michael" class="md-nav__link">
+    <a href="../Clusters/Michael/" title="MMM Michael" class="md-nav__link">
       MMM Michael
     </a>
   </li>
@@ -521,7 +632,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Installed_Software_Lists/module-packages/" title="General Software Lists" class="md-nav__link">
+    <a href="../Installed_Software_Lists/module-packages/" title="General Software Lists" class="md-nav__link">
       General Software Lists
     </a>
   </li>
@@ -533,7 +644,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Installed_Software_Lists/python-packages/" title="Python Packages" class="md-nav__link">
+    <a href="../Installed_Software_Lists/python-packages/" title="Python Packages" class="md-nav__link">
       Python Packages
     </a>
   </li>
@@ -545,7 +656,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Installed_Software_Lists/r-packages/" title="R Packages" class="md-nav__link">
+    <a href="../Installed_Software_Lists/r-packages/" title="R Packages" class="md-nav__link">
       R Packages
     </a>
   </li>
@@ -581,7 +692,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Other_Services/Aristotle/" title="Aristotle" class="md-nav__link">
+    <a href="../Other_Services/Aristotle/" title="Aristotle" class="md-nav__link">
       Aristotle
     </a>
   </li>
@@ -593,7 +704,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Other_Services/UCL_UK_e-Science_Certificates/" title="UCL UK e-Science Certificates" class="md-nav__link">
+    <a href="../Other_Services/UCL_UK_e-Science_Certificates/" title="UCL UK e-Science Certificates" class="md-nav__link">
       UCL UK e-Science Certificates
     </a>
   </li>
@@ -629,7 +740,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Paid-For_Resources/How_to_Use/" title="How to Use" class="md-nav__link">
+    <a href="../Paid-For_Resources/How_to_Use/" title="How to Use" class="md-nav__link">
       How to Use
     </a>
   </li>
@@ -641,7 +752,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Paid-For_Resources/Purchasing_in_Myriad/" title="Purchasing in Myriad" class="md-nav__link">
+    <a href="../Paid-For_Resources/Purchasing_in_Myriad/" title="Purchasing in Myriad" class="md-nav__link">
       Purchasing in Myriad
     </a>
   </li>
@@ -677,7 +788,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Software_Guides/Matlab/" title="MATLAB" class="md-nav__link">
+    <a href="../Software_Guides/Matlab/" title="MATLAB" class="md-nav__link">
       MATLAB
     </a>
   </li>
@@ -689,7 +800,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Software_Guides/Singularity/" title="Singularity" class="md-nav__link">
+    <a href="../Software_Guides/Singularity/" title="Singularity" class="md-nav__link">
       Singularity
     </a>
   </li>
@@ -701,7 +812,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Software_Guides/Other_Software/" title="Other Software" class="md-nav__link">
+    <a href="../Software_Guides/Other_Software/" title="Other Software" class="md-nav__link">
       Other Software
     </a>
   </li>
@@ -830,37 +941,29 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Wiki_Export/Example_Submission_Scripts.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Example_Jobscripts.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Example Submission Scripts</h1>
+                  <h1>Example Jobscripts</h1>
                 
                 <p>On this page we describe some basic example scripts to submit jobs to
-Legion or Grace.</p>
-<p>For a full description of data management policies, please refer to the
-<a href="Managing_Data_on_RC_Systems">data management section</a> of
-the user guide.</p>
+our clusters.</p>
 <p>After creating your script, submit it to the scheduler with:</p>
 <p><code>qsub my_script.sh</code></p>
 <h2 id="service-differences">Service Differences<a class="headerlink" href="#service-differences" title="Permanent link">§</a></h2>
-<p>These scripts are all applicable to
-<a href="RC_Systems#Legion">Legion</a>, <a href="RC_Systems#Grace">Grace</a>, <a href="RC_Systems#Myriad">Myriad</a>, <a href="Thomas">Thomas</a>, and <a href="Michael">Michael</a>,
-but node sizes (core count, memory, and temporary storage sizes) differ
-between the different machines, and Grace and Thomas are more suited to
-MPI and hybrid MPI/OpenMP jobs.</p>
+<p>These scripts are applicable to all our clusters, but node sizes (core count, memory, and temporary storage sizes) differ between machines, so please check those details on the cluster-specific pages.</p>
 <h2 id="working-directories-and-output">Working Directories and Output<a class="headerlink" href="#working-directories-and-output" title="Permanent link">§</a></h2>
-<p>The parallel filesystems we use to provide the home and scratch filesystems perform best when reading or writing single large files, and worst when operating on many different small files. To avoid causing problems, many of the scripts below are written to create all their files in the temporary TMPDIR storage, and compress and copy them to the scratch area at the end of the job.</p>
-<p>This can be a problem if your job is not finishing and you need to see the output, or if your job is crashing or failing to produce what you expected. Feel free to modify the scripts to read from or write to scratch directly, however, your performance will generally not be as good as writing to TMPDIR, and you may impact the general performance of the machine if you do this with many jobs simultaneously.</p>
+<p>The parallel filesystems we use to provide the home and scratch filesystems perform best when reading or writing single large files, and worst when operating on many different small files. To avoid causing problems, many of the scripts below are written to create all their files in the temporary <code>$TMPDIR</code> storage, and compress and copy them to the scratch area at the end of the job.</p>
+<p>This can be a problem if your job is not finishing and you need to see the output, or if your job is crashing or failing to produce what you expected. Feel free to modify the scripts to read from or write to Scratch directly, however, your performance will generally not be as good as writing to <code>$TMPDIR</code>, and you may impact the general performance of the machine if you do this with many jobs simultaneously. This is particularly the case with single-core jobs, because that core is guaranteed to be writing out data.</p>
 <p>Note that there is also the option of using the <code>Local2Scratch</code> process 
 (<a href="#Example Serial Job Using Local2Scratch">see below</a>), which takes place <em>after</em> the
 job has finished, in the clean-up step. This gives you the option of always
-getting the contents of TMPDIR back, at the cost of possibly getting incomplete
+getting the contents of <code>$TMPDIR</code> back, at the cost of possibly getting incomplete
 files and not having any control over where the files go.</p>
 <h2 id="note-about-projects">Note about Projects<a class="headerlink" href="#note-about-projects" title="Permanent link">§</a></h2>
 <p>Projects are a system used in the scheduler and the accounting system 
 to track budgets and access controls.</p>
-<p>The majority of users of UCL's internal clusters - Legion, Grace, and 
-Myriad - will not need to specify a project and will default to the AllUsers 
+<p>Most users of UCL's internal clusters will not need to specify a project and will default to the AllUsers 
 project. Users of the Thomas and Michael services should refer to the specific 
 pages for those machines, and the information they were given when they registered.</p>
 <p>To specify a project ID in a job script, use the <code>-P</code> object as below:</p>
@@ -869,11 +972,11 @@ pages for those machines, and the information they were given when they register
 
 
 <h2 id="serial-job-script-example">Serial Job Script Example<a class="headerlink" href="#serial-job-script-example" title="Permanent link">§</a></h2>
-<p>The most basic type of job a user can submit to the Legion cluster is a serial job. These jobs run on a single processor with a single thread. </p>
+<p>The most basic type of job a user can submit is a serial job. These jobs run on a single processor (core) with a single thread. </p>
 <p>Shown below is a simple job script that runs /bin/date (which prints the current date) on the compute node, and puts the output into the job's output file.</p>
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
 
-<span class="c1"># Batch script to run a serial job on Legion under SGE.</span>
+<span class="c1"># Batch script to run a serial job under SGE.</span>
 
 <span class="c1"># Request ten minutes of wallclock time (format hours:minutes:seconds).</span>
 <span class="c1">#$ -l h_rt=0:10:0</span>
@@ -889,7 +992,7 @@ pages for those machines, and the information they were given when they register
 
 <span class="c1"># Set the working directory to somewhere in your scratch space.  </span>
 <span class="c1">#  This is a necessary step as compute nodes cannot write to $HOME.</span>
-<span class="c1"># Replace &quot;&lt;your_UCL_id&gt;&quot; with your UCL user ID :)</span>
+<span class="c1"># Replace &quot;&lt;your_UCL_id&gt;&quot; with your UCL user ID.</span>
 <span class="c1">#$ -wd /home/&lt;your_UCL_id&gt;/Scratch/workspace</span>
 
 <span class="c1"># Your work should be done in $TMPDIR </span>
@@ -906,8 +1009,8 @@ tar -zcvf <span class="nv">$HOME</span>/Scratch/files_from_job_<span class="nv">
 
 
 <h2 id="multi-threaded-job-example">Multi-threaded Job Example<a class="headerlink" href="#multi-threaded-job-example" title="Permanent link">§</a></h2>
-<p>For programs that can use multiple threads, you can request multiple <a href="Glossary#Core">processor cores</a> using the <code>-pe smp &lt;number&gt;</code> option. One common method for using multiple threads in a program is OpenMP, and the <code>OMP_NUM_THREADS</code> environment variable is set automatically in a job of this type to tell OpenMP how many threads it should use. Most methods for running multi-threaded applications should correctly detect how many cores have been allocated, though (<em>via</em> a mechanism called <code>cgroups</code>).</p>
-<p>Note that this job script works directly in scratch instead of in the temporary TMPDIR storage.</p>
+<p>For programs that can use multiple threads, you can request multiple <a href="Glossary#Core">processor cores</a> using the <code>-pe smp &lt;number&gt;</code> option. One common method for using multiple threads in a program is OpenMP, and the <code>$OMP_NUM_THREADS</code> environment variable is set automatically in a job of this type to tell OpenMP how many threads it should use. Most methods for running multi-threaded applications should correctly detect how many cores have been allocated, though (<em>via</em> a mechanism called <code>cgroups</code>).</p>
+<p>Note that this job script works directly in scratch instead of in the temporary <code>$TMPDIR</code> storage.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -934,12 +1037,12 @@ tar -zcvf <span class="nv">$HOME</span>/Scratch/files_from_job_<span class="nv">
 24
 25</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/bin/bash -l
 
-# Batch script to run an OpenMP threaded job on Legion under SGE.
+# Batch script to run an OpenMP threaded job under SGE.
 
 # Request ten minutes of wallclock time (format hours:minutes:seconds).
 #$ -l h_rt=0:10:0
 
-# Request 1 gigabyte of RAM for each core/thread (must be an integer)
+# Request 1 gigabyte of RAM for each core/thread (must be an integer followed by M, G, or T)
 #$ -l mem=1G
 
 # Request 15 gigabyte of TMPDIR space (default is 10 GB)
@@ -952,7 +1055,7 @@ tar -zcvf <span class="nv">$HOME</span>/Scratch/files_from_job_<span class="nv">
 #$ -pe smp 16
 
 # Set the working directory to somewhere in your scratch space.
-# Replace &quot;&lt;your_UCL_id&gt;&quot; with your UCL user ID :)
+# Replace &quot;&lt;your_UCL_id&gt;&quot; with your UCL user ID
 #$ -wd /home/&lt;your_UCL_id&gt;/Scratch/output
 
 # 8. Run the application.
@@ -962,9 +1065,9 @@ $HOME/my_program/example
 
 <h2 id="mpi-job-script-example">MPI Job Script Example<a class="headerlink" href="#mpi-job-script-example" title="Permanent link">§</a></h2>
 <p>The default MPI implementation on our clusters is the Intel MPI stack. MPI programs don’t use a shared memory model so they can be run across multiple nodes.
-This script differs considerably from the serial and OpenMP jobs in that MPI programs need to be invoked by a program called gerun. This is a wrapper for mpirun and takes care of passing the number of processors and a file called a machine file.</p>
+This script differs considerably from the serial and OpenMP jobs in that MPI programs need to be invoked by a program called gerun. This is our wrapper for mpirun and takes care of passing the number of processors and a file called a machine file.</p>
 <p>'''Important''': If you wish to pass a file or stream of data to the standard input (stdin) of an MPI program, there are specific command-line options you need to use to control which MPI tasks are able to receive it. (<code>-s</code> for Intel MPI, <code>--stdin</code> for OpenMPI.) Please consult the help output of the <code>mpirun</code> command for further information. The <code>gerun</code> launcher does not automatically handle this.</p>
-<p>If you use OpenMPI, you need to make sure the Intel mpi modules are removed and the OpenMPI modules are loaded, either in your shell start-up files (e.g. <code>~/.bashrc</code>), or else in the script itself.</p>
+<p>If you use OpenMPI, you need to make sure the Intel MPI modules are removed and the OpenMPI modules are loaded, either in your jobscript or in your shell start-up files (e.g. `~/.bashrc).</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -996,7 +1099,7 @@ This script differs considerably from the serial and OpenMP jobs in that MPI pro
 # Request ten minutes of wallclock time (format hours:minutes:seconds).
 #$ -l h_rt=0:10:0
 
-# Request 1 gigabyte of RAM per process (must be an integer)
+# Request 1 gigabyte of RAM per process (must be an integer followed by M, G, or T)
 #$ -l mem=1G
 
 # Request 15 gigabyte of TMPDIR space per node (default is 10 GB)
@@ -1022,7 +1125,7 @@ gerun $HOME/src/science/simulate
 easier to submit them as an array job. Array jobs are similar to serial jobs
 except we use the <code>-t</code> option to get Sun Grid Engine to run 10,000 copies of
 this job numbered 1 to 10,000. Each job in this array will have the same job ID
-but a different task ID. The task ID is stored in the <code>SGE_TASK_ID</code> environment
+but a different task ID. The task ID is stored in the <code>$SGE_TASK_ID</code> environment
 variable in each task. All the usual SGE output files have the task ID
 appended. MPI jobs and parallel shared memory jobs can also be submitted as
 arrays.</p>
@@ -1059,7 +1162,7 @@ arrays.</p>
 # Request ten minutes of wallclock time (format hours:minutes:seconds).
 #$ -l h_rt=0:10:0
 
-# Request 1 gigabyte of RAM (must be an integer)
+# Request 1 gigabyte of RAM (must be an integer followed by M, G, or T)
 #$ -l mem=1G
 
 # Request 15 gigabyte of TMPDIR space (default is 10 GB)
@@ -1095,7 +1198,7 @@ echo &quot;$JOB_NAME $SGE_TASK_ID&quot;
 
 <p>Assuming that this file is stored in <code>~/Scratch/input/params.txt</code> (you can call
 this file anything you want) then the user can use awk/sed to get the
-appropriate variables out of the file as with the script below which stores
+appropriate variables out of the file. The script below does this and stores
 them in <code>$index</code>, <code>$variable1</code>, <code>$variable2</code> and <code>$variable3</code>.  So for example in task
 4, <code>$index = 0004</code>, <code>$variable1 = 1.112</code>, <code>$variable2 = 23</code> and <code>$variable3 = panda</code>.</p>
 <p>Since the parameter file can be generated automatically from a user's datasets,
@@ -1143,7 +1246,7 @@ thousands or tens of thousands of tasks.</p>
 # Request ten minutes of wallclock time (format hours:minutes:seconds).
 #$ -l h_rt=0:10:0
 
-# Request 1 gigabyte of RAM (must be an integer)
+# Request 1 gigabyte of RAM (must be an integer followed by M, G, or T)
 #$ -l mem=1G
 
 # Request 15 gigabyte of TMPDIR space (default is 10 GB)
@@ -1176,7 +1279,7 @@ echo &quot;$index&quot; &quot;$variable1&quot; &quot;$variable2&quot; &quot;$var
 </td></tr></table>
 
 <h2 id="example-array-job-using-local2scratch">Example Array Job Using Local2Scratch<a class="headerlink" href="#example-array-job-using-local2scratch" title="Permanent link">§</a></h2>
-<p>Users can automate the transfer of data from $TMPDIR to their scratch space by
+<p>Users can automate the transfer of data from <code>$TMPDIR</code> to their scratch space by
 adding the text <code>#Local2Scratch</code> to their script on a line alone as a special comment.
 During the clean-up phase of the job, a tool checks whether the script contains that
 text, and if so, files are transferred from <code>$TMPDIR</code> to a directory in scratch
@@ -1220,7 +1323,7 @@ with the structure <code>&lt;job id&gt;/&lt;job id&gt;.&lt;task id&gt;.&lt;queue
 # Request ten minutes of wallclock time (format hours:minutes:seconds).
 #$ -l h_rt=0:10:0
 
-# Request 1 gigabyte of RAM (must be an integer)
+# Request 1 gigabyte of RAM (must be an integer followed by M, G, or T)
 #$ -l mem=1G
 
 # Request 15 gigabyte of TMPDIR space (default is 10 GB)
@@ -1297,7 +1400,7 @@ hostname &gt; hostname.txt
 # Request ten minutes of wallclock time (format hours:minutes:seconds).
 #$ -l h_rt=0:10:0
 
-# Request 1 gigabyte of RAM (must be an integer)
+# Request 1 gigabyte of RAM (must be an integer followed by M, G, or T)
 #$ -l mem=1G
 
 # Request 15 gigabyte of TMPDIR space (default is 10 GB)
@@ -1375,7 +1478,7 @@ done
 37
 38</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/bin/bash -l
 
-# Batch script to run a GPU job on Legion under SGE.
+# Batch script to run a GPU job under SGE.
 
 # Request a number of GPU cards, in this case 2 (the maximum)
 #$ -l gpu=2
@@ -1383,7 +1486,7 @@ done
 # Request ten minutes of wallclock time (format hours:minutes:seconds).
 #$ -l h_rt=0:10:0
 
-# Request 1 gigabyte of RAM (must be an integer)
+# Request 1 gigabyte of RAM (must be an integer followed by M, G, or T)
 #$ -l mem=1G
 
 # Request 15 gigabyte of TMPDIR space (default is 10 GB)
@@ -1399,7 +1502,7 @@ done
 # Change into temporary directory to run work
 cd $TMPDIR
 
-# load the cuda module (in case you are running a CUDA program
+# load the cuda module (in case you are running a CUDA program)
 module unload compilers mpi
 module load compilers/gnu/4.9.2
 module load cuda/7.5.18/gnu-4.9.2
@@ -1486,7 +1589,7 @@ gerun myGPUapp
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../Connecting_to_Research_Data_Services/" title="Connecting to Research Data Services" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Contact_Us/" title="Contact and Support" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1495,19 +1598,19 @@ gerun myGPUapp
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Connecting to Research Data Services
+                Contact and Support
               </span>
             </div>
           </a>
         
         
-          <a href="../FAQ/" title="FAQ" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../Experienced_Users/" title="Quick Start Guide for Experienced HPC Users" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                FAQ
+                Quick Start Guide for Experienced HPC Users
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1534,7 +1637,7 @@ gerun myGPUapp
       </div>
       
   <div class="md-footer-social">
-    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
       <a href="https://github.com/UCL-RITS" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
@@ -1546,9 +1649,9 @@ gerun myGPUapp
       
     </div>
     
-      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
     
   </body>
