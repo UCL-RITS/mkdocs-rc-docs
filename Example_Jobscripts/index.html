@@ -973,7 +973,7 @@ pages for those machines, and the information they were given when they register
 
 <h2 id="serial-job-script-example">Serial Job Script Example<a class="headerlink" href="#serial-job-script-example" title="Permanent link">§</a></h2>
 <p>The most basic type of job a user can submit is a serial job. These jobs run on a single processor (core) with a single thread. </p>
-<p>Shown below is a simple job script that runs /bin/date (which prints the current date) on the compute node, and puts the output into the job's output file.</p>
+<p>Shown below is a simple job script that runs /bin/date (which prints the current date) on the compute node, and puts the output into a file.</p>
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
 
 <span class="c1"># Batch script to run a serial job under SGE.</span>
@@ -998,7 +998,7 @@ pages for those machines, and the information they were given when they register
 <span class="c1"># Your work should be done in $TMPDIR </span>
 <span class="nb">cd</span> <span class="nv">$TMPDIR</span>
 
-<span class="c1"># Run the application.</span>
+<span class="c1"># Run the application and put the output into a file called date.txt</span>
 /bin/date &gt; date.txt
 
 <span class="c1"># Preferably, tar-up (archive) all output files onto the shared scratch area</span>
