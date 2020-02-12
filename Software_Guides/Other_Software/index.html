@@ -1425,6 +1425,7 @@ module load mpi/openmpi/3.1.4/gnu-4.9.2
 <p>Once the module is loaded, you should have all the usual executables in your path, and can use its commands. You load modules in exactly the same way inside a jobscript.</p>
 <h2 id="notes-on-how-to-run-specific-packages">Notes on how to run specific packages<a class="headerlink" href="#notes-on-how-to-run-specific-packages" title="Permanent link">§</a></h2>
 <p>The packages below have slightly complex commands needed to run them, or different settings needed on our clusters. These are examples of what should be added to your jobscripts. Change the module load command to the version you want to load and check that the dependencies are the same.</p>
+<p>The top of a jobscript should contain your (resource requests) [../Experienced_Users.md#script-sections].</p>
 <h3 id="abaqus">ABAQUS<a class="headerlink" href="#abaqus" title="Permanent link">§</a></h3>
 <p>ABAQUS is a commercial software suite for finite element analysis and computer-aided engineering.</p>
 <p>You must be authorised by the Mech Eng Department before you can be added to the group controlling access to ABAQUS (legabq).</p>
