@@ -46,7 +46,7 @@ To specify a project ID in a job script, use the `-P` object as below:
 
 The most basic type of job a user can submit is a serial job. These jobs run on a single processor (core) with a single thread. 
 
-Shown below is a simple job script that runs /bin/date (which prints the current date) on the compute node, and puts the output into the job's output file.
+Shown below is a simple job script that runs /bin/date (which prints the current date) on the compute node, and puts the output into a file.
 
 ```bash
 #!/bin/bash -l
@@ -73,7 +73,7 @@ Shown below is a simple job script that runs /bin/date (which prints the current
 # Your work should be done in $TMPDIR 
 cd $TMPDIR
 
-# Run the application.
+# Run the application and put the output into a file called date.txt
 /bin/date > date.txt
 
 # Preferably, tar-up (archive) all output files onto the shared scratch area
