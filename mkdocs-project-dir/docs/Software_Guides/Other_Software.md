@@ -60,6 +60,8 @@ Once the module is loaded, you should have all the usual executables in your pat
 
 The packages below have slightly complex commands needed to run them, or different settings needed on our clusters. These are examples of what should be added to your jobscripts. Change the module load command to the version you want to load and check that the dependencies are the same.
 
+The top of a jobscript should contain your (resource requests) [../Experienced_Users.md#script-sections].
+
 ### ABAQUS
 
 ABAQUS is a commercial software suite for finite element analysis and computer-aided engineering.
