@@ -88,7 +88,7 @@ For programs that can use multiple threads, you can request multiple [processor 
 
 Note that this job script works directly in scratch instead of in the temporary `$TMPDIR` storage.
 
-```
+```bash
 #!/bin/bash -l
 
 # Batch script to run an OpenMP threaded job under SGE.
@@ -125,7 +125,7 @@ This script differs considerably from the serial and OpenMP jobs in that MPI pro
 
 If you use OpenMPI, you need to make sure the Intel MPI modules are removed and the OpenMPI modules are loaded, either in your jobscript or in your shell start-up files (e.g. `~/.bashrc).
 
-```
+```bash
 #!/bin/bash -l
 
 # Batch script to run an MPI parallel job under SGE with Intel MPI.
@@ -165,7 +165,7 @@ variable in each task. All the usual SGE output files have the task ID
 appended. MPI jobs and parallel shared memory jobs can also be submitted as
 arrays.
 
-```
+```bash
 #!/bin/bash -l
 
 # Batch script to run a serial array job under SGE.
@@ -219,7 +219,7 @@ Since the parameter file can be generated automatically from a user's datasets,
 this approach allows the simple automation, submission and management of
 thousands or tens of thousands of tasks.
 
-```
+```bash
 #!/bin/bash -l
 
 # Batch script to run an array job.
@@ -268,7 +268,7 @@ with the structure `<job id>/<job id>.<task id>.<queue>/`.
 
 The example below does this for a job array, but this works for any job type.
 
-```
+```bash
 #!/bin/bash -l
 
 # Batch script to run an array job under SGE and 
@@ -312,7 +312,7 @@ For example, a stride of 10 will give you these task IDs: 1, 11, 21...
 
 Your script can then have a loop that runs task IDs from `$SGE_TASK_ID` to `$SGE_TASK_ID + 9`, so each task is doing ten times as many runs as it was before.
 
-```
+```bash
 #!/bin/bash -l
 
 # Batch script to run an array job with strided task IDs under SGE.
@@ -361,7 +361,7 @@ To use NVIDIA GPUs with the CUDA libraries, you need to load the CUDA runtime li
 
 You also need to use the `-l gpu=<number>` option to request the GPUs from the scheduler.
 
-```
+```bash
 #!/bin/bash -l
 
 # Batch script to run a GPU job under SGE.
@@ -406,7 +406,7 @@ tar zcvf $HOME/Scratch/files_from_job_$JOB_ID.tar.gz $TMPDIR
 
 It is possible to run MPI programs that use GPUs but our clusters currently only support this within a single node. The script below shows how to run a program using 2 gpus and 12 cpus.
 
-```
+```bash
 #!/bin/bash -l
 
 # Request ten minutes of wallclock time (format hours:minutes:seconds).
