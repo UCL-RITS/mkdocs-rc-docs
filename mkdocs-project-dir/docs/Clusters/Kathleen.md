@@ -76,9 +76,9 @@ finding where space is being used.
 
 For interactive jobs:
 
-| Cores | Max. Duration |
-|:-----:|:-------------:|
-|  40   | 12h           |
+| Cores           | Max. Duration |
+|:---------------:|:-------------:|
+| 41-80 (2 nodes) | 2h            |
 
 For batch jobs:
 
