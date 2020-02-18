@@ -22,3 +22,25 @@
     color: black;
 }
 
+/* Normally Pygments (the code highlighter)
+ *  makes comments a pale grey, but that's not
+ *  good either, especially since they're 
+ *  syntactically important for job scripts.
+ */
+.codehilite .c1, 
+.codehilite .ch, 
+.codehilite .cs, 
+.md-typeset .highlight .c1, 
+.md-typeset .highlight .ch, 
+.md-typeset .highlight .cs {
+    color: rebeccapurple;
+}
+
+/*
+ * And Courier New is a little light-weight,
+ *  which also makes it hard to read.
+ *  These are some reasonably common monospaced fonts.
+ */
+code, kbd, pre {
+  font-family: Inconsolata,Source Code Pro,Menlo,Monaco,Ubuntu Mono,Consolas,Courier,Courier New,monospace;
+}
