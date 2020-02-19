@@ -918,14 +918,36 @@
 <p>The following commands can be used to submit and monitor a job.</p>
 <h3 id="qsub">Qsub<a class="headerlink" href="#qsub" title="Permanent link">§</a></h3>
 <p>This command submits your job to the batch queue. You can also use options on the command-line to override options you have put in your job script.</p>
-<div class="codehilite"><pre><span></span><code>qsub myscript.sh                 # Submit the script as-is
-qsub -N NewName myscript.sh      # Submit the script but change the job&#39;s name
-qsub -l h_rt=24:0:0 myscript.sh  # Submit the script but change the maximum run-time
-qsub -hold_jid 12345 myscript.sh # Submit the script but make it wait for job 12345 to finish
-qsub -ac allow=XYZ myscript.sh   # Submit the script but only let it run on node classes X, Y, and Z
-</code></pre></div>
-
-
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>qsub myscript.sh</code></td>
+<td>Submit the script as-is</td>
+</tr>
+<tr>
+<td align="left"><code>qsub -N NewName myscript.sh</code></td>
+<td>Submit the script but change the job's name</td>
+</tr>
+<tr>
+<td align="left"><code>qsub -l h_rt=24:0:0 myscript.sh</code></td>
+<td>Submit the script but change the maximum run-time</td>
+</tr>
+<tr>
+<td align="left"><code>qsub -hold_jid 12345 myscript.sh</code></td>
+<td>Submit the script but make it wait for job 12345 to finish</td>
+</tr>
+<tr>
+<td align="left"><code>qsub -ac allow=XYZ myscript.sh</code></td>
+<td>Submit the script but only let it run on node classes X, Y, and Z</td>
+</tr>
+</tbody>
+</table>
 <h3 id="qstat">Qstat<a class="headerlink" href="#qstat" title="Permanent link">§</a></h3>
 <p>This command shows the status of your jobs. When you run <code>qstat</code> with no options, all of your jobs currently running will be displayed. By adding in the option <code>-f -j &lt;job-ID&gt;</code> you will get more detail on the specified job.</p>
 <h3 id="qdel">Qdel<a class="headerlink" href="#qdel" title="Permanent link">§</a></h3>
