@@ -23,7 +23,7 @@ Tier 2 services: Contact your point of contact.
 
 ## How do I connect?
 
-All connections are via SSH, and you use your UCL credentials to log in (external users should use the `mmmXXXX` account with the SSH key they have provided to their point of contact). UCL services can only be connected to by users inside the UCL network which may mean using the institutional VPN or "bouncing" off another UCL machine when [accessing them from outside the UCL network](../howto#Logging-in-from-outside-the-UCL-firewall).  The Tier 2 services (Thomas and Michael) are externally accessible.
+All connections are via SSH, and you use your UCL credentials to log in (external users should use the `mmmXXXX` account with the SSH key they have provided to their point of contact). UCL services can only be connected to by users inside the UCL network which may mean using the institutional VPN or "bouncing" off another UCL machine when [accessing them from outside the UCL network](howto.md#Logging-in-from-outside-the-UCL-firewall).  The Tier 2 services (Thomas and Michael) are externally accessible.
 
 ### Login hosts
 
