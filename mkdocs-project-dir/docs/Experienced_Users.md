@@ -137,7 +137,7 @@ With Hyperthreads enabled you need to request twice as many cores and then contr
 export OMP_NUM_THREADS=2
 ```
 
-Would use 80 cores, with two threads (on Hyperthreads) per core.
+Would use 80 cores, with two threads (on Hyperthreads) per core. If you use `gerun` to launch your MPI process, it will take care of the division for you, but if you're using `mpirun` or `mpiexec` directly, you'll have to take care to use the correct number of MPI ranks per node yourself.
 
 ##### Temporary local disk (every machine EXCEPT Kathleen)
 
