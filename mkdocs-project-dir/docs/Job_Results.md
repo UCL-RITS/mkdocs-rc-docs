@@ -31,13 +31,14 @@ The following commands can be used to submit and monitor a job.
 
 This command submits your job to the batch queue. You can also use options on the command-line to override options you have put in your job script.
 
-```
-qsub myscript.sh                 # Submit the script as-is
-qsub -N NewName myscript.sh      # Submit the script but change the job's name
-qsub -l h_rt=24:0:0 myscript.sh  # Submit the script but change the maximum run-time
-qsub -hold_jid 12345 myscript.sh # Submit the script but make it wait for job 12345 to finish
-qsub -ac allow=XYZ myscript.sh   # Submit the script but only let it run on node classes X, Y, and Z
-```
+| Command | Action |
+|:--------|--------|
+| `qsub myscript.sh`                 | Submit the script as-is  |
+| `qsub -N NewName myscript.sh`      | Submit the script but change the job's name |
+| `qsub -l h_rt=24:0:0 myscript.sh`  | Submit the script but change the maximum run-time |
+| `qsub -hold_jid 12345 myscript.sh` | Submit the script but make it wait for job 12345 to finish |
+| `qsub -ac allow=XYZ myscript.sh`   | Submit the script but only let it run on node classes X, Y, and Z |
+
 
 ### Qstat 
 
