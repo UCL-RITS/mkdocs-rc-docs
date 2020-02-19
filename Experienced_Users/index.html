@@ -1268,7 +1268,7 @@ mpirun -np $NSLOTS -machinefile $PE_HOSTFILE myMPIprogram
 </code></pre></div>
 
 
-<p>Would use 80 cores, with two threads (on Hyperthreads) per core.</p>
+<p>Would use 80 cores, with two threads (on Hyperthreads) per core. If you use <code>gerun</code> to launch your MPI process, it will take care of the division for you, but if you're using <code>mpirun</code> or <code>mpiexec</code> directly, you'll have to take care to use the correct number of MPI ranks per node yourself.</p>
 <h5 id="temporary-local-disk-every-machine-except-kathleen">Temporary local disk (every machine EXCEPT Kathleen)<a class="headerlink" href="#temporary-local-disk-every-machine-except-kathleen" title="Permanent link">§</a></h5>
 <div class="codehilite"><pre><span></span><code><span class="c1">#$ -l tmpdir=&lt;size in G&gt;</span>
 </code></pre></div>
