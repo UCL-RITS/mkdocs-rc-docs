@@ -332,8 +332,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#grid-engine" class="md-nav__link">
-    Grid engine
+  <a href="#grid-engine-commands" class="md-nav__link">
+    Grid Engine commands
   </a>
   
     <nav class="md-nav">
@@ -341,21 +341,21 @@
         
           <li class="md-nav__item">
   <a href="#qsub" class="md-nav__link">
-    Qsub 
+    Qsub
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#qstat" class="md-nav__link">
-    Qstat 
+    Qstat
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#qdel" class="md-nav__link">
-    Qdel 
+    Qdel
   </a>
   
 </li>
@@ -819,8 +819,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#grid-engine" class="md-nav__link">
-    Grid engine
+  <a href="#grid-engine-commands" class="md-nav__link">
+    Grid Engine commands
   </a>
   
     <nav class="md-nav">
@@ -828,21 +828,21 @@
         
           <li class="md-nav__item">
   <a href="#qsub" class="md-nav__link">
-    Qsub 
+    Qsub
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#qstat" class="md-nav__link">
-    Qstat 
+    Qstat
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#qdel" class="md-nav__link">
-    Qdel 
+    Qdel
   </a>
   
 </li>
@@ -879,29 +879,65 @@
                 
                 
                 <h1 id="where-do-my-results-go">Where do my results go?<a class="headerlink" href="#where-do-my-results-go" title="Permanent link">§</a></h1>
-<p>After submitting your job you can use the command 'qstat' to view the status of the job you have submitted. Once you can no longer see your job on the qstat list this means your job has completed to view the jobs that have completed you can run 'jobhist'. There are various ways of monitoring the output of your job.</p>
+<p>After submitting your job, you can use the command <code>qstat</code> to view the status of all the jobs you have submitted. Once you can no longer see your job on the list, this means your job has completed. To view details on jobs that have completed, you can run <code>jobhist</code>. There are various ways of monitoring the output of your job.</p>
 <h2 id="output-and-error-files">Output and error files<a class="headerlink" href="#output-and-error-files" title="Permanent link">§</a></h2>
-<p>When writing up your job script you specifiy your working directory, within this working directory you can find your output(.o) and error(.e) files. These files will contain any possible error your jobs may have come across or any output that was excepted from your job.</p>
-<h2 id="grid-engine">Grid engine<a class="headerlink" href="#grid-engine" title="Permanent link">§</a></h2>
-<p>The following options can be used to submit and monitor a job<br /></p>
-<h3 id="qsub">Qsub <br /><a class="headerlink" href="#qsub" title="Permanent link">§</a></h3>
-<p>This command submits your job to the batch queue. You can also specify variables on your jacket in your qsub command which will overide what is in your job script. <br />
-qsub -N NewName myscript.sh <br />
-qsub -l h_rt=24:0:0 myscript.sh <br />
-qsub -hold_jid 12345 myscript.sh <br />
-qsub -ac allow=XYZ myscript.sh <br /></p>
-<h3 id="qstat">Qstat <br /><a class="headerlink" href="#qstat" title="Permanent link">§</a></h3>
-<p>This command shows that status oof your job. When you run qstat with no options all of your jobs currently running will be displayed. By adding in the option <code>-f -j &lt;job-ID&gt;</code> you will get more detail on the specified job.</p>
-<h3 id="qdel">Qdel <br /><a class="headerlink" href="#qdel" title="Permanent link">§</a></h3>
+<p>When writing your job script you can either tell it to start in the directory you submit it from (<code>-cwd</code>), or from a particular directory (<code>-wd &lt;dir&gt;</code>), or from your home directory (the default). When your job runs, it will create files in this directory for the job's output and errors:</p>
+<table>
+<thead>
+<tr>
+<th align="left">File Name</th>
+<th align="left">Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>myscript.sh</code></td>
+<td align="left">Your job script.</td>
+</tr>
+<tr>
+<td align="left"><code>myscript.sh.o12345</code></td>
+<td align="left">Output from the job. (<code>stdout</code>)</td>
+</tr>
+<tr>
+<td align="left"><code>myscript.sh.e12345</code></td>
+<td align="left">Errors, warnings, and other messages from the job that aren't mixed into the output. (<code>stderr</code>)</td>
+</tr>
+<tr>
+<td align="left"><code>myscript.sh.po12345</code></td>
+<td align="left">Output from the setup script run before a job. ("prolog")</td>
+</tr>
+<tr>
+<td align="left"><code>myscript.sh.pe12345</code></td>
+<td align="left">Output from the clean-up script run after a job. ("epilog")</td>
+</tr>
+</tbody>
+</table>
+<p>Normally there should be nothing in the <code>.po</code> and <code>.pe</code> files, and that's fine. If you change the name of the job in the queue, using the <code>-N</code> option, your output and error files will use that as the filename stem instead.</p>
+<p>Most programs will also produce <em>separate</em> output files, in a way that is particular to that program. Often these will be in the same directory, but that depends on the program and how you ran it.</p>
+<h2 id="grid-engine-commands">Grid Engine commands<a class="headerlink" href="#grid-engine-commands" title="Permanent link">§</a></h2>
+<p>The following commands can be used to submit and monitor a job.</p>
+<h3 id="qsub">Qsub<a class="headerlink" href="#qsub" title="Permanent link">§</a></h3>
+<p>This command submits your job to the batch queue. You can also use options on the command-line to override options you have put in your job script.</p>
+<div class="codehilite"><pre><span></span><code>qsub myscript.sh                 # Submit the script as-is
+qsub -N NewName myscript.sh      # Submit the script but change the job&#39;s name
+qsub -l h_rt=24:0:0 myscript.sh  # Submit the script but change the maximum run-time
+qsub -hold_jid 12345 myscript.sh # Submit the script but make it wait for job 12345 to finish
+qsub -ac allow=XYZ myscript.sh   # Submit the script but only let it run on node classes X, Y, and Z
+</code></pre></div>
+
+
+<h3 id="qstat">Qstat<a class="headerlink" href="#qstat" title="Permanent link">§</a></h3>
+<p>This command shows the status of your jobs. When you run <code>qstat</code> with no options, all of your jobs currently running will be displayed. By adding in the option <code>-f -j &lt;job-ID&gt;</code> you will get more detail on the specified job.</p>
+<h3 id="qdel">Qdel<a class="headerlink" href="#qdel" title="Permanent link">§</a></h3>
 <p>This command deletes your job from the queue. When deleting a job will need to run <code>qdel &lt;job-ID&gt;</code>, however <code>qdel '*'</code> can be used to delete all jobs. To delete a batch of jobs, creating a file with the list of job IDs that you would like to delete and placing it in the following commands will delete the following jobs: <code>cat &lt;filename&gt; | xargs qdel</code></p>
 <h2 id="qsub-emailing">Qsub emailing<a class="headerlink" href="#qsub-emailing" title="Permanent link">§</a></h2>
-<p>We also have a mailing system that can be implemented to send emails with reminders of the status of your job through qsub. When you use qsub to submit your job you can use the option <code>-m</code>. You can specify when you want an email sent to you by using the below options after <code>qsub -m</code>:
-<br /><br />
-b-Mail is sent at the beginning of the job. <br />
-e-Mail is sent at the end of the job. <br />
-a-Mail is sent when the job is aborted or rescheduled. <br />
-s-Mail is sent when the job is suspended. <br />
-n-No mail is sent. <br /></p>
+<p>We also have a mailing system that can be implemented to send emails with reminders of the status of your job through qsub. When you use qsub to submit your job you can use the option <code>-m</code>. You can specify when you want an email sent to you by using the below options after <code>qsub -m</code>:</p>
+<p>|---|---|
+| b | Mail is sent at the beginning of the job. |
+| e | Mail is sent at the end of the job. |
+| a | Mail is sent when the job is aborted or rescheduled. |
+| s | Mail is sent when the job is suspended. |
+| n | No mail is sent. (The default.) |</p>
                 
                   
                 
