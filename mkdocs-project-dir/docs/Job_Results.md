@@ -49,12 +49,19 @@ This command shows the status of your jobs. When you run `qstat` with no options
 This command deletes your job from the queue. When deleting a job will need to run `qdel <job-ID>`, however `qdel '*'` can be used to delete all jobs. To delete a batch of jobs, creating a file with the list of job IDs that you would like to delete and placing it in the following commands will delete the following jobs: `cat <filename> | xargs qdel`
 
 ## Qsub emailing
-We also have a mailing system that can be implemented to send emails with reminders of the status of your job through qsub. When you use qsub to submit your job you can use the option `-m`. You can specify when you want an email sent to you by using the below options after `qsub -m`:
+We also have a mailing system that can be implemented to send emails with reminders of the status of your job through `qsub`. In your jobscript, or when you use `qsub` to submit your job, you can use the option `-m`. You can specify when you want an email sent to you by using the below options after `qsub -m`:
 
+|   |   |
 |---|---|
-| b | Mail is sent at the beginning of the job. |
-| e | Mail is sent at the end of the job. |
-| a | Mail is sent when the job is aborted or rescheduled. |
-| s | Mail is sent when the job is suspended. |
-| n | No mail is sent. (The default.) |
+| `b` | Mail is sent at the beginning of the job. |
+| `e` | Mail is sent at the end of the job. |
+| `a` | Mail is sent when the job is aborted or rescheduled. |
+| `s` | Mail is sent when the job is suspended. |
+| `n` | No mail is sent. (The default.) |
+
+You can use more than one of these options by separating them with a comma, for example, adding the following to your job script would mean you get an email when the job begins and when it ends:
+
+```
+#$ -m b,e
+```
 
