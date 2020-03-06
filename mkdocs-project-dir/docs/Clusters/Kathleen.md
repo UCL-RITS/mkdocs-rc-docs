@@ -156,7 +156,18 @@ Unloading mpi/intel/2018/update3/intel
     HINT: Might try "module unload default-modules/2018" first.
 ```
 
-You will need to unload `default-modules/2018` to swap compiler and MPI module, but that will leave you without `gerun` in your path. You can then do either of these things:
+You can use the `-f` option to force the module change. It will carry it out and warn you about modules it thinks are dependent.
+
+```
+[uccaxxx@login01.kathleen ~]$ module unload -f compilers mpi
+Unloading compilers/intel/2018/update3
+  WARNING: Dependent default-modules/2018 is loaded
+
+Unloading mpi/intel/2018/update3/intel
+  WARNING: Dependent default-modules/2018 is loaded
+```
+
+Otherwise you will need to unload `default-modules/2018` to swap compiler and MPI module, but that will leave you without `gerun` in your path. You can then do either of these things:
 
 ```
 # load everything that was in default-modules except the compiler and mpi
