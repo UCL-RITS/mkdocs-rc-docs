@@ -83,15 +83,15 @@ anything more should be submitted as a job.
 ### Full user guide
 
 Thomas has the same user environment as RC Support's other clusters, so
-the [User guide](User_Guide) is relevant and is a
+the [User guide](../index.md) is relevant and is a
 good starting point for further information about how the environment
 works. Any variations that Thomas has should be listed on this page.
 
 ### Submitting a job
 
-Create a [jobscript](Example_Submission_Scripts) for
-non-interactive use and submit it using
-[qsub](Batch_Processing). Jobscripts must begin `#!/bin/bash -l` 
+Create a [jobscript](../Example_Jobscripts.md) for
+non-interactive use and 
+[submit your jobscript using qsub](../howto.md#how-do-i-submit-a-job-to-the-scheduler). Jobscripts must begin `#!/bin/bash -l` 
 in order to run as a login shell and get your login environment and
 modules.
 
