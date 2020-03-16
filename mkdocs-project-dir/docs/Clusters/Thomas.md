@@ -97,7 +97,7 @@ modules.
 
 A job on Thomas must also specify what type of job it is (Gold, Free,
 Test) and the project it is being submitted for. 
-(See [Budgets and allocations](Budgets_and_allocations) below.)
+(See [Budgets and allocations](#budgets-and-allocations) below.)
 
 #### Memory requests
 
