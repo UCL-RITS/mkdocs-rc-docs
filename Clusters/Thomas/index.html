@@ -1490,13 +1490,13 @@ non-resource-intensive software tests can be run on the login nodes, but
 anything more should be submitted as a job.</p>
 <h3 id="full-user-guide">Full user guide<a class="headerlink" href="#full-user-guide" title="Permanent link">§</a></h3>
 <p>Thomas has the same user environment as RC Support's other clusters, so
-the <a href="User_Guide">User guide</a> is relevant and is a
+the <a href="../..">User guide</a> is relevant and is a
 good starting point for further information about how the environment
 works. Any variations that Thomas has should be listed on this page.</p>
 <h3 id="submitting-a-job">Submitting a job<a class="headerlink" href="#submitting-a-job" title="Permanent link">§</a></h3>
-<p>Create a <a href="Example_Submission_Scripts">jobscript</a> for
-non-interactive use and submit it using
-<a href="Batch_Processing">qsub</a>. Jobscripts must begin <code>#!/bin/bash -l</code> 
+<p>Create a <a href="../../Example_Jobscripts/">jobscript</a> for
+non-interactive use and 
+<a href="../../howto/#how-do-i-submit-a-job-to-the-scheduler">submit your jobscript using qsub</a>. Jobscripts must begin <code>#!/bin/bash -l</code> 
 in order to run as a login shell and get your login environment and
 modules.</p>
 <p>A job on Thomas must also specify what type of job it is (Gold, Free,
