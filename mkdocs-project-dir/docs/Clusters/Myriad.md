@@ -121,7 +121,7 @@ This will give you either type of GPU. If you need to specify one over the other
 #$ -ac allow=EF
 ```
 
-The [GPU nodes](../Advanced_Topics/GPU_Nodes.md) page has some sample code for running GPU jobs if you need a test example.
+The [GPU nodes](../Supplementary/GPU_Nodes.md) page has some sample code for running GPU jobs if you need a test example.
 
 ### Tensorflow
 
