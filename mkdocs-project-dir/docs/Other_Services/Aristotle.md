@@ -51,7 +51,7 @@ If you are outside the UCL firewall, you will need to [connect to Socrates first
 ## User Environment
 
 Aristotle runs Red Hat Enterprise Linux 7 and NFS mounts the 
-[RCPS Software Stack](../Installed_Software_Lists/module-packages). As this machine is intended
+[RCPS Software Stack](../../Installed_Software_Lists/module-packages). As this machine is intended
 for teaching, work has focused on getting specific applications required
 for specific courses to work and these are:
 
