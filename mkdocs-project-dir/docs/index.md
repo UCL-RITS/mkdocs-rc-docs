@@ -46,5 +46,5 @@ We will endeavour to answer queries on any aspect of computing related to your r
 
 ## Training
 
-We infrequently provide a training course aimed at getting users up and running on one of our main clusters. Please see our [Training page](Training) for details.
+We have an online Moodle course "Introduction to the Unix Shell" and infrequently provide a training course aimed at getting users up and running on one of our main clusters. Please see our [Research IT Training page](https://www.ucl.ac.uk/isd/services/research-it/research-it-training) for details.
 
