@@ -845,6 +845,33 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#gromacs" class="md-nav__link">
+    GROMACS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passing-in-options-to-gromacs-non-interactively" class="md-nav__link">
+    Passing in options to GROMACS non-interactively
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkpoint-and-restart" class="md-nav__link">
+    Checkpoint and restart
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#hammock" class="md-nav__link">
     Hammock
   </a>
@@ -1181,6 +1208,33 @@
   <a href="#gatk" class="md-nav__link">
     GATK
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gromacs" class="md-nav__link">
+    GROMACS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passing-in-options-to-gromacs-non-interactively" class="md-nav__link">
+    Passing in options to GROMACS non-interactively
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkpoint-and-restart" class="md-nav__link">
+    Checkpoint and restart
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1669,6 +1723,58 @@ rungms exam01.inp 00 $NSLOTS $(ppn)
 
 
 <div class="codehilite"><pre><span></span><code>gatk OPTION1=value1 OPTION2=value2...
+</code></pre></div>
+
+
+<h3 id="gromacs">GROMACS<a class="headerlink" href="#gromacs" title="Permanent link">§</a></h3>
+<p>We have many versions of GROMACS installed, some built with Plumed. The module name will indicate this.</p>
+<p>Which executable you should run depends on the problem you wish to solve. For both single and double precision version builds, serial binaries and an MPI binary for mdrun (<code>mdrun_mpi</code> for newer versions, <code>gmx_mpi</code> for Plumed and some older versions) are provided. Double precision binaries have a <code>_d</code> suffix (so <code>gmx_d</code>, <code>mdrun_mpi_d</code>, <code>gmx_mpi_d</code> etc). </p>
+<div class="codehilite"><pre><span></span><code># Example for gromacs/2019.3/intel-2018
+module unload compilers mpi
+module load compilers/intel/2018/update3
+module load mpi/intel/2018/update3/intel
+module load gromacs/2019.3/intel-2018
+
+# Run GROMACS - replace with mdrun command line suitable for your job!
+
+gerun mdrun_mpi -v -stepout 10000
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code># Plumed example for gromacs/2019.3/plumed/intel-2018
+module unload compilers mpi
+module load compilers/intel/2018/update3 
+module load mpi/intel/2018/update3/intel 
+module load libmatheval 
+module load flex 
+module load plumed/2.5.2/intel-2018
+module load gromacs/2019.3/plumed/intel-2018
+
+# Run GROMACS - replace with mdrun command line suitable for your job!
+
+gerun gmx_mpi -v -stepout 10000
+</code></pre></div>
+
+
+<h4 id="passing-in-options-to-gromacs-non-interactively">Passing in options to GROMACS non-interactively<a class="headerlink" href="#passing-in-options-to-gromacs-non-interactively" title="Permanent link">§</a></h4>
+<p>Some GROMACS executables like <code>trjconv</code> normally take interactive input. You can't do this in a jobscript, so you need to pass in the input you would normally type in. There are several ways of doing this, mentioned at <a href="http://www.gromacs.org/Documentation/How-tos/Using_Commands_in_Scripts">GROMACS Documentation - Using Commands in Scripts</a>. The simplest is to echo the input in and keep your gmx options as they would normally be. If the inputs you would normally type were 3 and 3, then you can do this:</p>
+<div class="codehilite"><pre><span></span><code>echo 3 3 | gmx whatevercommand -options
+</code></pre></div>
+
+
+<h4 id="checkpoint-and-restart">Checkpoint and restart<a class="headerlink" href="#checkpoint-and-restart" title="Permanent link">§</a></h4>
+<p>GROMACS has built-in checkpoint and restart ability, so you can use this if your runs will not complete in the maximum 48hr wallclock time.</p>
+<p>Have a look at the GROMACS manual for full details, as there are more options than mentioned here.</p>
+<p>You can tell GROMACS to write a checkpoint file when it is approaching the maximum wallclock time available, and then exit.</p>
+<p>In this case, we had asked for 48hrs wallclock. This tells GROMACS to start from the last checkpoint if there is one, and write a new checkpoint just before it reaches 47 hrs runtime.</p>
+<div class="codehilite"><pre><span></span><code>gerun mdrun_mpi -cpi -maxh 47 &lt;options&gt;
+</code></pre></div>
+
+
+<p>The next job you submit with the same script will carry on from the checkpoint the last job wrote. You could use job dependencies to submit two identical jobs at the same time and have one dependent on the other, so it won't start until the first finishes - have a look at <code>man qsub</code> for the <code>-hold_jid</code> option.</p>
+<p>You can also write checkpoints at given intervals:</p>
+<div class="codehilite"><pre><span></span><code># Write checkpoints every 120 mins, start from checkpoint if there is one.
+gerun mdrun_mpi -cpi -cpt 120 &lt;options&gt;
 </code></pre></div>
 
 
