@@ -341,6 +341,73 @@ gatk OPTION1=value1 OPTION2=value2...
 ```
 
 
+### GROMACS
+
+We have many versions of GROMACS installed, some built with Plumed. The module name will indicate this.
+
+Which executable you should run depends on the problem you wish to solve. For both single and double precision version builds, serial binaries and an MPI binary for mdrun (`mdrun_mpi` for newer versions, `gmx_mpi` for Plumed and some older versions) are provided. Double precision binaries have a `_d` suffix (so `gmx_d`, `mdrun_mpi_d`, `gmx_mpi_d` etc). 
+
+
+
+```
+# Example for gromacs/2019.3/intel-2018
+module unload compilers mpi
+module load compilers/intel/2018/update3
+module load mpi/intel/2018/update3/intel
+module load gromacs/2019.3/intel-2018
+
+# Run GROMACS - replace with mdrun command line suitable for your job!
+
+gerun mdrun_mpi -v -stepout 10000
+```
+
+```
+# Plumed example for gromacs/2019.3/plumed/intel-2018
+module unload compilers mpi
+module load compilers/intel/2018/update3 
+module load mpi/intel/2018/update3/intel 
+module load libmatheval 
+module load flex 
+module load plumed/2.5.2/intel-2018
+module load gromacs/2019.3/plumed/intel-2018
+
+# Run GROMACS - replace with mdrun command line suitable for your job!
+
+gerun gmx_mpi -v -stepout 10000
+```
+
+#### Passing in options to GROMACS non-interactively
+
+Some GROMACS executables like `trjconv` normally take interactive input. You can't do this in a jobscript, so you need to pass in the input you would normally type in. There are several ways of doing this, mentioned at [GROMACS Documentation - Using Commands in Scripts](http://www.gromacs.org/Documentation/How-tos/Using_Commands_in_Scripts). The simplest is to echo the input in and keep your gmx options as they would normally be. If the inputs you would normally type were 3 and 3, then you can do this:
+
+```
+echo 3 3 | gmx whatevercommand -options
+```
+
+#### Checkpoint and restart
+
+GROMACS has built-in checkpoint and restart ability, so you can use this if your runs will not complete in the maximum 48hr wallclock time.
+
+Have a look at the GROMACS manual for full details, as there are more options than mentioned here.
+
+You can tell GROMACS to write a checkpoint file when it is approaching the maximum wallclock time available, and then exit.
+
+In this case, we had asked for 48hrs wallclock. This tells GROMACS to start from the last checkpoint if there is one, and write a new checkpoint just before it reaches 47 hrs runtime.
+
+```
+gerun mdrun_mpi -cpi -maxh 47 <options>
+```
+
+The next job you submit with the same script will carry on from the checkpoint the last job wrote. You could use job dependencies to submit two identical jobs at the same time and have one dependent on the other, so it won't start until the first finishes - have a look at `man qsub` for the `-hold_jid` option.
+
+You can also write checkpoints at given intervals:
+
+```
+# Write checkpoints every 120 mins, start from checkpoint if there is one.
+gerun mdrun_mpi -cpi -cpt 120 <options>
+```
+
+
 ### Hammock
 
 Hammock is a tool for peptide sequence clustering. It is able to cluster extremely large amounts of short peptide sequences into groups sharing sequence motifs. Typical Hammock applications are NGS-based experiments using large combinatorial peptide libraries, e.g. Phage display. 
