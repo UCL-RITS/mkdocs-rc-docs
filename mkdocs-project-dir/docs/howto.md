@@ -36,6 +36,14 @@ You will then be asked to enter your username and password. Only enter your user
 
 You will need to either use the [UCL Virtual Private Network](http://www.ucl.ac.uk/isd/staff/network/vpn) or ssh in to UCL's gateway `socrates.ucl.ac.uk` first. From Socrates you can then ssh in to our systems by typing `ssh <your_UCL_user_id>@<system_name>.rc.ucl.ac.uk`. 
 
+Note: the default shell (what you are typing commands into) on Socrates is `csh` rather than `bash` and so your default prompt will look different and use a `%` rather than a `$` as the dividing character.:
+
+```
+25 % ls
+html.pub/
+26 %
+```
+
 **Advanced:** If you find you need to go via Socrates often, you can set up this jump automatically, see [Single-step logins using tunnelling](#single-step-logins-using-tunnelling)
 
 
