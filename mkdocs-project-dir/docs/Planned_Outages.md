@@ -14,7 +14,7 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Reason
 --------------------|---------|-------
-20 Mar 2020 -> 30 Mar 2020 | Myriad | Sync data; switch to new storage
+20 Mar 2020 -> 30 Mar 2020 | Myriad | Sync data; switch to new storage. (Important: new metadata servers). Begins midday. Full outage, no access.
 16 Mar 2020 -> 23 Mar 2020 | Michael | Firmware upgrades to bridge old and new networks
 2 Mar 2020 -> 9 Mar 2020 | Michael | Installation of phase 2 hardware, network bridging
 10/Feb/2020 -> 17/Feb/2020 | Myriad   | Storage upgrade to 3PB
