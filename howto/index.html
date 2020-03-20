@@ -1345,6 +1345,13 @@
 <p>You will then be asked to enter your username and password. Only enter your username, not <code>@legion.rc.ucl.ac.uk</code>. The password field will remain entirely blank when you type in to it - it does not show placeholders to indicate you have typed something. </p>
 <h3 id="logging-in-from-outside-the-ucl-firewall">Logging in from outside the UCL firewall<a class="headerlink" href="#logging-in-from-outside-the-ucl-firewall" title="Permanent link">§</a></h3>
 <p>You will need to either use the <a href="http://www.ucl.ac.uk/isd/staff/network/vpn">UCL Virtual Private Network</a> or ssh in to UCL's gateway <code>socrates.ucl.ac.uk</code> first. From Socrates you can then ssh in to our systems by typing <code>ssh &lt;your_UCL_user_id&gt;@&lt;system_name&gt;.rc.ucl.ac.uk</code>. </p>
+<p>Note: the default shell (what you are typing commands into) on Socrates is <code>csh</code> rather than <code>bash</code> and so your default prompt will look different and use a <code>%</code> rather than a <code>$</code> as the dividing character.:</p>
+<div class="codehilite"><pre><span></span><code>25 % ls
+html.pub/
+26 %
+</code></pre></div>
+
+
 <p><strong>Advanced:</strong> If you find you need to go via Socrates often, you can set up this jump automatically, see <a href="#single-step-logins-using-tunnelling">Single-step logins using tunnelling</a></p>
 <h3 id="login-problems">Login problems<a class="headerlink" href="#login-problems" title="Permanent link">§</a></h3>
 <p>If you experience difficulties with your login, please make sure that you are typing your UCL user ID and your password correctly. If you have recently updated your password, it takes some hours to propagate to all UCL systems.</p>
