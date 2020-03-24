@@ -698,6 +698,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#disk-quotas" class="md-nav__link">
+    Disk quotas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#budgets-and-allocations" class="md-nav__link">
     Budgets and allocations
   </a>
@@ -1208,6 +1215,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#disk-quotas" class="md-nav__link">
+    Disk quotas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#budgets-and-allocations" class="md-nav__link">
     Budgets and allocations
   </a>
@@ -1520,6 +1534,16 @@ this is what they mean:</p>
 </ul>
 <h3 id="preventing-a-job-from-running-cross-cu">Preventing a job from running cross-CU<a class="headerlink" href="#preventing-a-job-from-running-cross-cu" title="Permanent link">§</a></h3>
 <p>If your job must run within a single CU, you can request the parallel environment as <code>-pe wss</code> instead of <code>-pe mpi</code> (<code>wss</code> standing for 'wants single switch'). This will increase your queue times. It is suggested you only do this for benchmarking or if performance is being greatly affected by running in the superqueue.</p>
+<p><a href="#top" title="wikilink"> back to top</a></p>
+<h2 id="disk-quotas">Disk quotas<a class="headerlink" href="#disk-quotas" title="Permanent link">§</a></h2>
+<p>You have one per-user quota, with a default amount of 250GB - this is the total across home and Scratch.</p>
+<ul>
+<li><code>lquota</code> shows you your quota and total usage (twice).</li>
+<li><code>request_quota</code> is how you request a quota increase.</li>
+</ul>
+<p>If you go over quota, you will no longer be able to create new files and your jobs will fail as they cannot write.</p>
+<p>Quota increases may be granted without further approval, depending on size and how full the filesystem is. Otherwise they may need to go to the Thomas User Group for approval.</p>
+<p><a href="#top" title="wikilink"> back to top</a></p>
 <h2 id="budgets-and-allocations">Budgets and allocations<a class="headerlink" href="#budgets-and-allocations" title="Permanent link">§</a></h2>
 <p>We have enabled Gold for allocation management. Jobs that are run under
 a project budget have higher priority than free non-budgeted jobs. All
