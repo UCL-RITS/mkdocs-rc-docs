@@ -262,6 +262,21 @@ If your job must run within a single CU, you can request the parallel environmen
 
 [ back to top](#top "wikilink")
 
+
+## Disk quotas
+
+Quotas were enabled on Thomas on 29 May 2019. You have one per-user quota, with a default amount of 250GB - this is the total across home and Scratch.
+
+  - `lquota` shows you your quota and total usage (twice).
+  - `request_quota` is how you request a quota increase.
+
+If you go over quota, you will no longer be able to create new files and your jobs will fail as they cannot write.
+
+Quota increases may be granted without further approval, depending on size and how full the filesystem is. Otherwise they may need to go to the Thomas User Group for approval.
+
+[ back to top](#top "wikilink")
+
+
 ## Budgets and allocations
 
 We have enabled Gold for allocation management. Jobs that are run under
