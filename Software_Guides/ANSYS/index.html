@@ -761,6 +761,19 @@
     Example multi-node MPI ANSYS/CFX jobscript
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-cfx-with-mpi-on-myriad" class="md-nav__link">
+    Running CFX with MPI on Myriad
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -883,6 +896,19 @@
   <a href="#example-multi-node-mpi-ansyscfx-jobscript" class="md-nav__link">
     Example multi-node MPI ANSYS/CFX jobscript
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-cfx-with-mpi-on-myriad" class="md-nav__link">
+    Running CFX with MPI on Myriad
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1193,6 +1219,8 @@ simplest form of qsub command can be used to submit the job eg:</p>
 
 
 <p>Output files will be saved in the job's working directory.</p>
+<h4 id="running-cfx-with-mpi-on-myriad">Running CFX with MPI on Myriad<a class="headerlink" href="#running-cfx-with-mpi-on-myriad" title="Permanent link">§</a></h4>
+<p>The default supplied Intel MPI doesn't work on Myriad. Instead you need to use the supplied IBM MPI. This can be done by adding: <code>-start-method "IBM MPI Distributed Parallel"</code> to the <code>cfx5solve</code> command.</p>
 <h2 id="ansysfluent">ANSYS/Fluent<a class="headerlink" href="#ansysfluent" title="Permanent link">§</a></h2>
 <p>Fluent handles its own parallelisation, so a number of
 complex options need to be passed in job scripts to make it run
