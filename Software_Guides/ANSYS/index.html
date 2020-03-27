@@ -42,7 +42,7 @@
     
     
       
-        <title>ANSYS Software</title>
+        <title>ANSYS</title>
       
     
     
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#ansys-software" tabindex="0" class="md-skip">
+      <a href="#ansys" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -115,7 +115,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                ANSYS Software
+                ANSYS
               
             </span>
           
@@ -724,11 +724,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        ANSYS Software
+        ANSYS
       </label>
     
-    <a href="./" title="ANSYS Software" class="md-nav__link md-nav__link--active">
-      ANSYS Software
+    <a href="./" title="ANSYS" class="md-nav__link md-nav__link--active">
+      ANSYS
     </a>
     
       
@@ -742,50 +742,24 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ansyscfx-job-submission" class="md-nav__link">
-    ANSYS/CFX Job Submission
+  <a href="#ansyscfx" class="md-nav__link">
+    ANSYS/CFX
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#single-node-run" class="md-nav__link">
-    Single node run
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-multi-threaded-ansyscfx-runscript" class="md-nav__link">
-    Example Multi-threaded ANSYS/CFX Runscript
+  <a href="#example-single-node-multi-threaded-ansyscfx-jobscript" class="md-nav__link">
+    Example single node multi-threaded ANSYS/CFX jobscript
   </a>
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
-  <a href="#multi-node-run" class="md-nav__link">
-    Multi node run
+  <a href="#example-multi-node-mpi-ansyscfx-jobscript" class="md-nav__link">
+    Example multi-node MPI ANSYS/CFX jobscript
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-multi-nodempi-ansyscfx-runscript" class="md-nav__link">
-    Example Multi-node/MPI ANSYS/CFX Runscript
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -891,50 +865,24 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ansyscfx-job-submission" class="md-nav__link">
-    ANSYS/CFX Job Submission
+  <a href="#ansyscfx" class="md-nav__link">
+    ANSYS/CFX
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#single-node-run" class="md-nav__link">
-    Single node run
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-multi-threaded-ansyscfx-runscript" class="md-nav__link">
-    Example Multi-threaded ANSYS/CFX Runscript
+  <a href="#example-single-node-multi-threaded-ansyscfx-jobscript" class="md-nav__link">
+    Example single node multi-threaded ANSYS/CFX jobscript
   </a>
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
-  <a href="#multi-node-run" class="md-nav__link">
-    Multi node run
+  <a href="#example-multi-node-mpi-ansyscfx-jobscript" class="md-nav__link">
+    Example multi-node MPI ANSYS/CFX jobscript
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-multi-nodempi-ansyscfx-runscript" class="md-nav__link">
-    Example Multi-node/MPI ANSYS/CFX Runscript
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1022,12 +970,18 @@
                   <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Software_Guides/ANSYS.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="ansys-software">ANSYS Software<a class="headerlink" href="#ansys-software" title="Permanent link">§</a></h1>
-<p>UCL has licenses for ANSYS/CFX and ANSYS/Fluent, and we try to keep the copies on our clusters up-to-date.</p>
-<p>Before either application can be run, the user needs to go though a
+                <h1 id="ansys">ANSYS<a class="headerlink" href="#ansys" title="Permanent link">§</a></h1>
+<p>ANSYS/CFX and ANSYS/Fluent are commercial fluid dynamics packages. </p>
+<p>ANSYS/CFX and ANSYS/Fluent version 17.2, 18.0, 19.1 and later are available. The ANSYS Electromagnetics Suite (AnsysEM) is available from version 19.1 onwards. ANSYS Mechanical is available from 2019.r3 onwards.</p>
+<p>Before these applications can be run, the user needs to go though a
 number of set up steps. These are detailed here.</p>
-<p>The ANSYS module needs to be loaded by issuing the command:</p>
-<div class="codehilite"><pre><span></span><code>module load ansys/14.5.7
+<p>To see the versions available, type</p>
+<div class="codehilite"><pre><span></span><code>module avail ansys
+</code></pre></div>
+
+
+<p>The desired ANSYS module needs to be loaded by issuing a command like:</p>
+<div class="codehilite"><pre><span></span><code>module load ansys/19.1
 </code></pre></div>
 
 
@@ -1038,32 +992,21 @@ node: </p>
 </code></pre></div>
 
 
-<p>Running this script is required regardless of whether you are
-running ANSYS/CFX or ANSYS/Fluent.</p>
-<p>ANSYS/CFX and ANSYS/Fluent are intended to be run primarily within batch
+<p>Running this script is required regardless of which ANSYS application you are running..</p>
+<p>The ANSYS applications are intended to be run primarily within batch
 jobs however you may run short (less than 5 minutes execution time)
 interactive tests on the Login Nodes and longer (up to two hours) on the
 User Test Nodes. Interactive work can be done using the ANSYS
 interactive tools provided you have X-windows functionality enabled
-though your ssh connection. See our <a href="User_Guide">User Guide</a>
+though your ssh connection. See our User Guide
 for more information about enabling
 X-windows functionality and the User Test nodes.</p>
-<p>Our current licence allows up to ten ANSYS/CFX and ANSYS/Fluent jobs
-running at one time using no more than 64 cores in addition to cores on
-each job's head node.</p>
-<h2 id="ansyscfx-job-submission">ANSYS/CFX Job Submission<a class="headerlink" href="#ansyscfx-job-submission" title="Permanent link">§</a></h2>
-<p>On Legion, there are a limited number of licenses (10 jobs, additional
-64 cores) available for running CFX and Fluent jobs and in order to make
-sure that jobs only run if there are licenses available, it is necessary
-for users to request ANSYS licenses with their jobs, by adding "-ac
-app=cfx" to their job submission.</p>
-<p>In addition, because CFX handles its own parallelisation, a number of
-complex options need to be passed in job scripts to make it run
-correctly.</p>
-<h3 id="single-node-run">Single node run<a class="headerlink" href="#single-node-run" title="Permanent link">§</a></h3>
-<p>Here is an example runscript for running cfx5solve multi-threaded on a
-given <code>.def</code> file including comments.</p>
-<h5 id="example-multi-threaded-ansyscfx-runscript">Example Multi-threaded ANSYS/CFX Runscript<a class="headerlink" href="#example-multi-threaded-ansyscfx-runscript" title="Permanent link">§</a></h5>
+<p>UCL's campus-wide license covers 125 instances with 512 HPC licenses (for parallel jobs) available for running CFX, Fluent and AnsysEM jobs and in order to make sure that jobs only run if there are licenses available, it is necessary for users to request ANSYS licenses with their jobs, by adding <code>-ac app=cfx</code> to their job submission.</p>
+<h2 id="ansyscfx">ANSYS/CFX<a class="headerlink" href="#ansyscfx" title="Permanent link">§</a></h2>
+<p>CFX handles its own parallelisation, so a number of complex options need to be passed in job scripts to make it run correctly.</p>
+<h3 id="example-single-node-multi-threaded-ansyscfx-jobscript">Example single node multi-threaded ANSYS/CFX jobscript<a class="headerlink" href="#example-single-node-multi-threaded-ansyscfx-jobscript" title="Permanent link">§</a></h3>
+<p>Here is an example runscript for running <code>cfx5solve</code> multi-threaded on a
+given <code>.def</code> file.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -1103,75 +1046,58 @@ given <code>.def</code> file including comments.</p>
 37
 38
 39
-40
-41
-42
-43</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/bin/bash -l
+40</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/bin/bash -l
 
-# ANSYS 14.5.7: Batch script to run cfx5solve on the StaticMixer.def example 
-# file, single node multi-threaded (4 threads),
+# ANSYS 19.1: Batch script to run cfx5solve on the StaticMixer.def example 
+# file, single node multi-threaded (12 threads),
 
-# 1. Force bash as the executing shell.
+# Force bash as the executing shell.
 
 #$ -S /bin/bash
 
-# 2. Request 15 munutes of wallclock time (format hours:minutes:seconds).
+# Request 15 munutes of wallclock time (format hours:minutes:seconds).
 #$ -l h_rt=0:15:0
 
-# 3. Request 1 gigabyte of RAM.
+# Request 1 gigabyte of RAM per core.
 #$ -l mem=1G
 
-# 4. Set the name of the job.
-#$ -N StaticMixer_thread_4
+# Set the name of the job.
+#$ -N StaticMixer_thread_12
 
-# 5. Select 4 threads.
-#$ -l thr=4
+# Select 12 threads.
+#$ -pe smp 12
 
-# 6. Select the project that this job will run under.
-#$ -P &lt;your project name&gt;
-
-# 7. Request ANSYS licences 
+# Request ANSYS licences 
 #$ -ac app=cfx
 
-# 8. Set the working directory to somewhere in your scratch space. In this
-# case the subdirectory cfxtests-14.5.7
-#$ -wd /home/&lt;your userid&gt;/Scratch/cfxtests-14.5.7
+# Set the working directory to somewhere in your scratch space. In this
+# case the subdirectory cfxtests-19.1
+#$ -wd /home/&lt;your_UCL_id&gt;/Scratch/cfxtests-19.1
 
-# 9. Load the ANSYS module to set up your environment
+# Load the ANSYS module to set up your environment
 
-module load ansys/14.5.7
+module load ansys/19.1
 
-# 10. Copy the .def file into the working (current) directory
+# Copy the .def file into the working (current) directory
 
 cp /home/&lt;your userid&gt;/cfx_examples/StaticMixer.def .
 
-# 11. Run cfx5solve - Note: -max-elapsed-time needs to be set to the same
+# Run cfx5solve - Note: -max-elapsed-time needs to be set to the same
 # time as defined by 2 above.
 
 cfx5solve -max-elapsed-time &quot;15 [min]&quot; -def StaticMixer.def -par-local -partition $OMP_NUM_THREADS
 </code></pre></div>
 </td></tr></table>
 
-<p>This runscript is available on Legion in the file:</p>
-<div class="codehilite"><pre><span></span><code>/shared/ucl/apps/ansys/14.5.7/ucl/share/run-StaticMixer-thr.sh
-</code></pre></div>
-
-
-<p>Please copy if you wish and edit it to suit your jobs. You will
-need to change the <code>-P &lt;your_project_name&gt;</code> and <code>-wd /home/&lt;your_UCL_id&gt;/Scratch/cfxtests-14.5.7</code> SGE directives and may need
-to change the memory, wallclock time, number of threads and job name
-directives as well. Replace the <code>.def</code> file in 10 and 11 by your one and
-modify the <code>-max-elapsed-time</code> value if needed. The simplest form of
-qsub command can be used to submit the job eg: </p>
-<div class="codehilite"><pre><span></span><code>qsub run-StaticMixer-thr.sh
+<p>You will need to change the <code>-wd /home/&lt;your_UCL_id&gt;/Scratch/cfxtests-19.1</code> location and may need to change the memory, wallclock time, number of threads and job name directives as well. Replace the .def file with your one and modify the -max-elapsed-time value if needed. The simplest form of qsub command can be used to submit the job eg:</p>
+<div class="codehilite"><pre><span></span><code>qsub run-StaticMixer-thr.sh
 </code></pre></div>
 
 
 <p>Output files will be saved in the job's working directory.</p>
-<h3 id="multi-node-run">Multi node run<a class="headerlink" href="#multi-node-run" title="Permanent link">§</a></h3>
+<h3 id="example-multi-node-mpi-ansyscfx-jobscript">Example multi-node MPI ANSYS/CFX jobscript<a class="headerlink" href="#example-multi-node-mpi-ansyscfx-jobscript" title="Permanent link">§</a></h3>
 <p>Here is an example runscript for running cfx5solve on more than one node
-(using MPI) on a given .def file including comments.</p>
-<h5 id="example-multi-nodempi-ansyscfx-runscript">Example Multi-node/MPI ANSYS/CFX Runscript<a class="headerlink" href="#example-multi-nodempi-ansyscfx-runscript" title="Permanent link">§</a></h5>
+(using MPI) on a given .def file.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -1588,6 +1514,9 @@ echo $CFX_NODES
 ansys195 -dis -b -p aa_r -machines $CFX_NODES &lt; steady_state_input_file.dat
 </code></pre></div>
 </td></tr></table>
+
+<p>If you have access to Grace, this test input and jobscript are available at <code>/home/ccaabaa/Software/ANSYS/steady_state_input_file.dat</code> and <code>/home/ccaabaa/Software/ANSYS/ansys-mech-ex.sh</code>
+`</p>
                 
                   
                 
