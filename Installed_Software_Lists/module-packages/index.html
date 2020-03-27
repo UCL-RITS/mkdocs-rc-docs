@@ -886,7 +886,7 @@
 <p>Our clusters have a wide range of software installed, available by using the modules system.</p>
 <p>The module files are organised by name, version, variant (where applicable) and, if relevant, the compiler version used to build the software. If no compiler version is given, either no compiler was required, or only the base system compiler (<code>/usr/bin/gcc</code>) and libraries were used.</p>
 <p>When we install applications, we try to install them on all of our clusters, but sometimes licence restrictions prevent it. If something seems to be missing, it may be because we are not able to provide it. Please contact us for more information if this is hindering your work.</p>
-<p>The lists below were last updated at 15:31:22 (+0000) on 03 Mar 2020, and are generated from the software installed on the <a href="../../Clusters/Myriad/">Myriad</a> cluster.</p>
+<p>The lists below were last updated at 15:31:28 (+0000) on 03 Mar 2020, and are generated from the software installed on the <a href="../../Clusters/Myriad/">Myriad</a> cluster.</p>
 <h2 id="bundles">Bundles<a class="headerlink" href="#bundles" title="Permanent link">§</a></h2>
 <p>Some applications or tools depend on a lot of other modules, or have some awkward requirements. For these, we sometimes make a "bundle" module in this section, that loads all the dependencies.</p>
 <p>For Python and R in particular, we also have <code>recommended</code> bundles that load the module for a recent version of Python or R, along with a collection of packages for it that have been requested by users, and the modules those packages require.</p>
@@ -1844,6 +1844,10 @@
 <td align="left">Adds Knitro solver 12.0.0 to your environment.</td>
 </tr>
 <tr>
+<td align="center"><code>lammps/3Mar20/plumed-colvars/intel-2018</code></td>
+<td align="left">Adds LAMMPS 3Mar20 to your environment. LAMMPS is a GPL molecular dynamics code which shows exceptional scaling on a wide variety of machines. Binary is lmp_mpi or lmp_default. This version was built with packages kspace, manybody, molecule, rigid, lib-linalg, user-colvars and user-plumed.</td>
+</tr>
+<tr>
 <td align="center"><code>lammps/7Aug19/basic/intel-2018</code></td>
 <td align="left">Adds LAMMPS 7Aug19 to your environment. Binary is lmp_default.</td>
 </tr>
@@ -2482,6 +2486,10 @@
 <tr>
 <td align="center"><code>samblaster/0.1.24/gnu-4.9.2</code></td>
 <td align="left">samblaster is a program for marking duplicates in read-id grouped paired-end SAM files.</td>
+</tr>
+<tr>
+<td align="center"><code>samsrf/5.84/matlab.r2019b</code></td>
+<td align="left">Adds the SamSrf Matlab toolbox to your environment</td>
 </tr>
 <tr>
 <td align="center"><code>samtools/0.1.19</code></td>
