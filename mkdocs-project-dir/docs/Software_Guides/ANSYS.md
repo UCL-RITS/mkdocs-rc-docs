@@ -1,18 +1,26 @@
 ---
-title: ANSYS Software
+title: ANSYS
 layout: docs
 ---
-# ANSYS Software
 
-UCL has licenses for ANSYS/CFX and ANSYS/Fluent, and we try to keep the copies on our clusters up-to-date.
+# ANSYS
 
-Before either application can be run, the user needs to go though a
+ANSYS/CFX and ANSYS/Fluent are commercial fluid dynamics packages. 
+
+ANSYS/CFX and ANSYS/Fluent version 17.2, 18.0, 19.1 and later are available. The ANSYS Electromagnetics Suite (AnsysEM) is available from version 19.1 onwards. ANSYS Mechanical is available from 2019.r3 onwards.
+
+Before these applications can be run, the user needs to go though a
 number of set up steps. These are detailed here.
 
-The ANSYS module needs to be loaded by issuing the command:
+To see the versions available, type
+```
+module avail ansys
+```
+
+The desired ANSYS module needs to be loaded by issuing a command like:
 
 ```
-module load ansys/14.5.7
+module load ansys/19.1
 ```
 
 The first time this is done, users should run the shell script
@@ -23,112 +31,81 @@ node:
 setup_cfx.sh
 ```
 
-Running this script is required regardless of whether you are
-running ANSYS/CFX or ANSYS/Fluent.
+Running this script is required regardless of which ANSYS application you are running..
 
-ANSYS/CFX and ANSYS/Fluent are intended to be run primarily within batch
+The ANSYS applications are intended to be run primarily within batch
 jobs however you may run short (less than 5 minutes execution time)
 interactive tests on the Login Nodes and longer (up to two hours) on the
 User Test Nodes. Interactive work can be done using the ANSYS
 interactive tools provided you have X-windows functionality enabled
-though your ssh connection. See our [User Guide](User_Guide)
+though your ssh connection. See our User Guide
 for more information about enabling
 X-windows functionality and the User Test nodes.
 
-Our current licence allows up to ten ANSYS/CFX and ANSYS/Fluent jobs
-running at one time using no more than 64 cores in addition to cores on
-each job's head node.
+UCL's campus-wide license covers 125 instances with 512 HPC licenses (for parallel jobs) available for running CFX, Fluent and AnsysEM jobs and in order to make sure that jobs only run if there are licenses available, it is necessary for users to request ANSYS licenses with their jobs, by adding `-ac app=cfx` to their job submission.
 
-## ANSYS/CFX Job Submission
+## ANSYS/CFX
 
-On Legion, there are a limited number of licenses (10 jobs, additional
-64 cores) available for running CFX and Fluent jobs and in order to make
-sure that jobs only run if there are licenses available, it is necessary
-for users to request ANSYS licenses with their jobs, by adding "-ac
-app=cfx" to their job submission.
+CFX handles its own parallelisation, so a number of complex options need to be passed in job scripts to make it run correctly.
 
-In addition, because CFX handles its own parallelisation, a number of
-complex options need to be passed in job scripts to make it run
-correctly.
+### Example single node multi-threaded ANSYS/CFX jobscript
 
-### Single node run
+Here is an example runscript for running `cfx5solve` multi-threaded on a
+given `.def` file.
 
-Here is an example runscript for running cfx5solve multi-threaded on a
-given `.def` file including comments.
-
-##### Example Multi-threaded ANSYS/CFX Runscript
 
 ```
 #!/bin/bash -l
 
-# ANSYS 14.5.7: Batch script to run cfx5solve on the StaticMixer.def example 
-# file, single node multi-threaded (4 threads),
+# ANSYS 19.1: Batch script to run cfx5solve on the StaticMixer.def example 
+# file, single node multi-threaded (12 threads),
 
-# 1. Force bash as the executing shell.
+# Force bash as the executing shell.
 
 #$ -S /bin/bash
 
-# 2. Request 15 munutes of wallclock time (format hours:minutes:seconds).
+# Request 15 munutes of wallclock time (format hours:minutes:seconds).
 #$ -l h_rt=0:15:0
 
-# 3. Request 1 gigabyte of RAM.
+# Request 1 gigabyte of RAM per core.
 #$ -l mem=1G
 
-# 4. Set the name of the job.
-#$ -N StaticMixer_thread_4
+# Set the name of the job.
+#$ -N StaticMixer_thread_12
 
-# 5. Select 4 threads.
-#$ -l thr=4
+# Select 12 threads.
+#$ -pe smp 12
 
-# 6. Select the project that this job will run under.
-#$ -P <your project name>
-
-# 7. Request ANSYS licences 
+# Request ANSYS licences 
 #$ -ac app=cfx
 
-# 8. Set the working directory to somewhere in your scratch space. In this
-# case the subdirectory cfxtests-14.5.7
-#$ -wd /home/<your userid>/Scratch/cfxtests-14.5.7
+# Set the working directory to somewhere in your scratch space. In this
+# case the subdirectory cfxtests-19.1
+#$ -wd /home/<your_UCL_id>/Scratch/cfxtests-19.1
 
-# 9. Load the ANSYS module to set up your environment
+# Load the ANSYS module to set up your environment
 
-module load ansys/14.5.7
+module load ansys/19.1
 
-# 10. Copy the .def file into the working (current) directory
+# Copy the .def file into the working (current) directory
 
 cp /home/<your userid>/cfx_examples/StaticMixer.def .
 
-# 11. Run cfx5solve - Note: -max-elapsed-time needs to be set to the same
+# Run cfx5solve - Note: -max-elapsed-time needs to be set to the same
 # time as defined by 2 above.
 
 cfx5solve -max-elapsed-time "15 [min]" -def StaticMixer.def -par-local -partition $OMP_NUM_THREADS
 ```
-
-This runscript is available on Legion in the file:
-
+You will need to change the `-wd /home/<your_UCL_id>/Scratch/cfxtests-19.1` location and may need to change the memory, wallclock time, number of threads and job name directives as well. Replace the .def file with your one and modify the -max-elapsed-time value if needed. The simplest form of qsub command can be used to submit the job eg:
 ```
-/shared/ucl/apps/ansys/14.5.7/ucl/share/run-StaticMixer-thr.sh
+qsub run-StaticMixer-thr.sh
 ```
-
-Please copy if you wish and edit it to suit your jobs. You will
-need to change the `-P <your_project_name>` and `-wd /home/<your_UCL_id>/Scratch/cfxtests-14.5.7` SGE directives and may need
-to change the memory, wallclock time, number of threads and job name
-directives as well. Replace the `.def` file in 10 and 11 by your one and
-modify the `-max-elapsed-time` value if needed. The simplest form of
-qsub command can be used to submit the job eg: 
-
-```
-qsub run-StaticMixer-thr.sh
-```
-
 Output files will be saved in the job's working directory.
 
-### Multi node run
+### Example multi-node MPI ANSYS/CFX jobscript
 
 Here is an example runscript for running cfx5solve on more than one node
-(using MPI) on a given .def file including comments.
-
-##### Example Multi-node/MPI ANSYS/CFX Runscript
+(using MPI) on a given .def file.
 
 ```
 #!/bin/bash -l
@@ -398,3 +375,6 @@ echo $CFX_NODES
 
 ansys195 -dis -b -p aa_r -machines $CFX_NODES < steady_state_input_file.dat
 ```
+
+If you have access to Grace, this test input and jobscript are available at `/home/ccaabaa/Software/ANSYS/steady_state_input_file.dat` and `/home/ccaabaa/Software/ANSYS/ansys-mech-ex.sh`
+`
