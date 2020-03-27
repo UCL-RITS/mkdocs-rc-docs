@@ -164,6 +164,10 @@ qsub run-StaticMixer-par.sh
 
 Output files will be saved in the job's working directory.
 
+#### Running CFX with MPI on Myriad
+
+The default supplied Intel MPI doesn't work on Myriad. Instead you need to use the supplied IBM MPI. This can be done by adding: `-start-method "IBM MPI Distributed Parallel"` to the `cfx5solve` command.
+
 
 ## ANSYS/Fluent
 
