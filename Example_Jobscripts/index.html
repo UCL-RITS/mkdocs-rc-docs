@@ -318,6 +318,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#serial-job-script-example" class="md-nav__link">
     Serial Job Script Example
   </a>
@@ -863,6 +870,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#serial-job-script-example" class="md-nav__link">
     Serial Job Script Example
   </a>
@@ -971,6 +985,9 @@ pages for those machines, and the information they were given when they register
 </code></pre></div>
 
 
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">§</a></h2>
+<p>The lines starting with <code>#$ -l</code> are where you are requesting resources like wallclock time (how long your job is allowed to run), memory, and possibly tmpfs (local hard disk space on the node, if it has one).</p>
+<p>If you have no notion of how much you should request for any of these, have a look at <a href="../howto/#how-do-i-estimate-what-resources-to-request-in-my-jobscript">How do I estimate what resources to request in my jobscript?</a></p>
 <h2 id="serial-job-script-example">Serial Job Script Example<a class="headerlink" href="#serial-job-script-example" title="Permanent link">§</a></h2>
 <p>The most basic type of job a user can submit is a serial job. These jobs run on a single processor (core) with a single thread. </p>
 <p>Shown below is a simple job script that runs /bin/date (which prints the current date) on the compute node, and puts the output into a file.</p>
