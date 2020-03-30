@@ -104,6 +104,10 @@
      <lastmod>2020-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
+     <loc>https://www.rc.ucl.ac.uk/docs/Software_Guides/ANSYS/</loc>
+     <lastmod>2020-03-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://www.rc.ucl.ac.uk/docs/Software_Guides/Matlab/</loc>
      <lastmod>2020-03-30</lastmod>
      <changefreq>daily</changefreq>
@@ -113,10 +117,6 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://www.rc.ucl.ac.uk/docs/Software_Guides/Other_Software/</loc>
-     <lastmod>2020-03-30</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://www.rc.ucl.ac.uk/docs/Software_Guides/ANSYS/</loc>
      <lastmod>2020-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
