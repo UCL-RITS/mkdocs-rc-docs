@@ -13,7 +13,7 @@
         <meta name="description" content="Documentation for the centrally provided Research Computing HPC services at UCL.">
       
       
-        <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Supplementary/GPU_Nodes/">
+        <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Supplementary/Points_of_Contact/">
       
       
         <meta name="author" content="UCL RCAS Team">
@@ -42,7 +42,7 @@
     
     
       
-        <title>GPU nodes</title>
+        <title>MMM Points of Contact</title>
       
     
     
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#gpu-nodes" tabindex="0" class="md-skip">
+      <a href="#displaying-user-information" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -115,7 +115,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                GPU nodes
+                MMM Points of Contact
               
             </span>
           
@@ -745,64 +745,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#node-types" class="md-nav__link">
-    Node Types
+  <a href="#show-recent-users" class="md-nav__link">
+    Show recent users
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#available-modules" class="md-nav__link">
-    Available modules
+  <a href="#show-users-with-a-given-project-institute-contact" class="md-nav__link">
+    Show users with a given project, institute, contact
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sample-cuda-code" class="md-nav__link">
-    Sample CUDA code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sample-jobscripts" class="md-nav__link">
-    Sample jobscripts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-the-sample-code" class="md-nav__link">
-    Running the sample code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#building-your-own-code" class="md-nav__link">
-    Building your own code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tensorflow" class="md-nav__link">
-    Tensorflow
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-mpi-and-gpus" class="md-nav__link">
-    Using MPI and GPUs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#looking-for-more-gpus" class="md-nav__link">
-    Looking for more GPUs?
+  <a href="#search-for-users-based-on-partial-information" class="md-nav__link">
+    Search for users based on partial information
   </a>
   
 </li>
@@ -823,129 +781,293 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Supplementary/GPU_Nodes.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Supplementary/Points_of_Contact.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="gpu-nodes">GPU Nodes<a class="headerlink" href="#gpu-nodes" title="Permanent link">§</a></h1>
-<h2 id="node-types">Node Types<a class="headerlink" href="#node-types" title="Permanent link">§</a></h2>
-<p>You can view the hardware specifications for <a href="../../Clusters/Myriad/">GPU node types in Myriad</a>.</p>
-<p>There are several types of GPU nodes available in Myriad.</p>
-<h2 id="available-modules">Available modules<a class="headerlink" href="#available-modules" title="Permanent link">§</a></h2>
-<p>You can see the available CUDA modules by typing</p>
-<div class="codehilite"><pre><span></span><code>`module avail cuda`
+                <p>This page contains tools and information for the nominated Points of
+Contact.</p>
+<p>Other system-specific information is at <a href="../../Clusters/Thomas/">Thomas</a> or
+<a href="../../Clusters/Michael/">Michael</a>.</p>
+<p>These commands can all be run as <code>thomas-command</code> or <code>michael-command</code>:
+they run the same thing and the different names are for convenience.</p>
+<h2 id="displaying-user-information">Displaying user information<a class="headerlink" href="#displaying-user-information" title="Permanent link">§</a></h2>
+<p><code>thomas-show</code> or <code>michael-show</code> is a tool that enables you to find a lot
+of information about users. Access to the database is given to points of
+contact individually, contact rc-support@ucl.ac.uk if you try to use
+this and get an access denied.</p>
+<p>At the top level, <code>--user</code> shows all information for one user, in
+multiple tables. <code>--contacts</code> shows all points of contact - useful for
+getting the IDs, and <code>--institutes</code> is the same. <code>--allusers</code> will show
+everyone's basic info. <code>--getmmm</code> will show the most recently used mmm
+username.</p>
+<div class="codehilite"><pre><span></span><code>thomas-show -h  
+usage: thomas-show [-h] [--user username] [--contacts] [--institutes]  
+                  [--allusers] [--getmmm]  
+                  {recentusers,getusers,whois} ...
+
+Show data from the Thomas database. Use [positional argument -h] for more  
+help.
+
+positional arguments:  
+ {recentusers,getusers,whois}  
+   recentusers         Show the n newest users (5 by default)  
+   getusers            Show all users with this project, institute, contact  
+   whois               Search for users matching the given requirements
+
+optional arguments:  
+ -h, --help            show this help message and exit  
+ --user username       Show all current info for this user  
+ --contacts            Show all allowed values for contact  
+ --institutes          Show all allowed values for institute  
+ --allusers            Show all current users  
+ --getmmm              Show the highest mmm username used
 </code></pre></div>
 
 
-<h2 id="sample-cuda-code">Sample CUDA code<a class="headerlink" href="#sample-cuda-code" title="Permanent link">§</a></h2>
-<p>There are samples in some CUDA install locations, e.g. </p>
-<div class="codehilite"><pre><span></span><code>/shared/ucl/apps/cuda/7.5.18/gnu-4.9.2/samples
-/shared/ucl/apps/cuda/8.0.61/gnu-4.9.2/samples
+<h3 id="show-recent-users">Show recent users<a class="headerlink" href="#show-recent-users" title="Permanent link">§</a></h3>
+<p><code>thomas-show recentusers</code> or <code>michael-show recentusers</code> shows you the
+most recently-added N users, default 5.</p>
+<div class="codehilite"><pre><span></span><code>thomas-show recentusers -h  
+usage: thomas-show recentusers [-h] [-n N]
+
+optional arguments:  
+ -h, --help  show this help message and exit  
+ -n N
 </code></pre></div>
 
 
-<p>which are further documented <a href="http://docs.nvidia.com/cuda/cuda-samples/index.html">by NVIDIA here</a>. In general,
-you should look at their CUDA docs: <a href="http://docs.nvidia.com/cuda/">http://docs.nvidia.com/cuda/</a></p>
-<h2 id="sample-jobscripts">Sample jobscripts<a class="headerlink" href="#sample-jobscripts" title="Permanent link">§</a></h2>
-<p>You can see <a href="../../Example_Jobscripts/#gpu-job-script-example">sample jobscripts here</a>.</p>
-<p>Use this in your script to request up to 2 GPUs. </p>
-<div class="codehilite"><pre><span></span><code>`#$ -l gpu=2`
+<h3 id="show-users-with-a-given-project-institute-contact">Show users with a given project, institute, contact<a class="headerlink" href="#show-users-with-a-given-project-institute-contact" title="Permanent link">§</a></h3>
+<p><code>thomas-show getusers</code> or <code>michael-show getusers</code> will search for exact
+matches to the given project, institute, contact combination.</p>
+<div class="codehilite"><pre><span></span><code>thomas-show getusers -h  
+usage: thomas-show getusers [-h] [-p PROJECT] [-i INST_ID] [-c POC_ID]
+
+optional arguments:  
+ -h, --help            show this help message and exit  
+ -p PROJECT, --project PROJECT  
+                       Project name  
+ -i INST_ID, --institute INST_ID  
+                       Institute ID  
+ -c POC_ID, --contact POC_ID  
+                       Point of Contact ID
 </code></pre></div>
 
 
-<p>Load GCC and the relevant CUDA module. </p>
-<div class="codehilite"><pre><span></span><code>module unload compilers mpi
-module load compilers/gnu/4.9.2
-module load cuda/7.5.18/gnu-4.9.2
+<h3 id="search-for-users-based-on-partial-information">Search for users based on partial information<a class="headerlink" href="#search-for-users-based-on-partial-information" title="Permanent link">§</a></h3>
+<p><code>thomas-show whois</code> or <code>michael-show whois</code> can be used to search for
+partial matches to username, name, email fragments, including all of
+those in
+combination.</p>
+<div class="codehilite"><pre><span></span><code>thomas-show whois -h  
+usage: thomas-show whois [-h] [-u USERNAME] [-e EMAIL] [-n GIVEN_NAME]  
+                        [-s SURNAME]
+
+optional arguments:  
+ -h, --help            show this help message and exit  
+ -u USERNAME, --user USERNAME  
+                       UCL username of user contains  
+ -e EMAIL, --email EMAIL  
+                       Email address of user contains  
+ -n GIVEN_NAME, --name GIVEN_NAME  
+                       Given name of user contains  
+ -s SURNAME, --surname SURNAME  
+                       Surname of user contains
 </code></pre></div>
 
 
-<h2 id="running-the-sample-code">Running the sample code<a class="headerlink" href="#running-the-sample-code" title="Permanent link">§</a></h2>
-<p>To get started, here's how you would compile one of the CUDA
-samples and run it in an interactive session on a GPU node.</p>
-<p>You can compile CUDA code on the login nodes like this (which do not have GPUs) if
-they do not require all the CUDA libraries to be present at compile time. If they do, you'll
-get an error saying it cannot link the CUDA libraries, and <code>ERROR: CUDA could not be found on your system</code>  and you will need tro do your compiling on the GPU node as well.</p>
-<p>1. Load the cuda module </p>
-<div class="codehilite"><pre><span></span><code>`module unload compilers mpi`  
-`module load compilers/gnu/4.9.2`  
-`module load cuda/7.5.18/gnu-4.9.2`
+<h2 id="adding-user-information-and-new-projects">Adding user information and new projects<a class="headerlink" href="#adding-user-information-and-new-projects" title="Permanent link">§</a></h2>
+<p><code>thomas-add</code> or <code>michael-add</code> will add information to the database.
+Access to the database is given to points of contact individually,
+contact rc-support@ucl.ac.uk if you try to use this and get an access
+denied.</p>
+<p>Please note that all options have a <code>--debug</code> flag that will allow you
+to see the query generated without committing the changes to the
+database - double-check that the information you are adding is
+correct.</p>
+<div class="codehilite"><pre><span></span><code>thomas-add -h  
+usage: thomas-add [-h] {user,project,projectuser,poc,institute} ...
+
+Add data to the Thomas database. Use [positional argument -h] for more help.
+
+positional arguments:  
+ {user,project,projectuser,poc,institute}  
+   user                Adding a new user with their initial project  
+   project             Adding a new project  
+   projectuser         Adding a new user-project-contact relationship  
+   poc                 Adding a new Point of Contact  
+   institute           Adding a new institute/consortium
+
+optional arguments:  
+ -h, --help            show this help message and exit
 </code></pre></div>
 
 
-<p>2. Copy the samples directory to somewhere in your home (or to Scratch
-if you're building on the GPU node or are going to want a job to write
-anything in the same directory).</p>
-<div class="codehilite"><pre><span></span><code>cp -r /shared/ucl/apps/cuda/7.5.18/gnu-4.9.2/NVIDIA_CUDA-7.5_Samples/ ~/cuda
+<h2 id="add-a-new-user">Add a new user<a class="headerlink" href="#add-a-new-user" title="Permanent link">§</a></h2>
+<p><code>thomas-add user</code> or <code>michael-add user</code> allows you to add a new user,
+with their initial project and point of contact. This does not create
+their account, but does email us with everything we need in order to
+create it. If you run this, you do not need to email us separately. The
+project specified must exist.</p>
+<p>The user will be allocated the next free <code>mmmxxxx</code> username - you should only specify username yourself if they are an existing UCL user.</p>
+<p>You can get your <code>poc_id</code> by looking at <code>thomas-show --contacts</code>.</p>
+<div class="codehilite"><pre><span></span><code>thomas-add user -h  
+usage: thomas-add user [-h] -u USERNAME -n GIVEN_NAME [-s SURNAME] -e  
+                      EMAIL_ADDRESS -k &quot;SSH_KEY&quot; -p PROJECT_ID -c POC_ID  
+                      [--debug]
+
+optional arguments:  
+ -h, --help            show this help message and exit  
+ -u USERNAME, --user USERNAME  
+                       UCL username of user  
+ -n GIVEN_NAME, --name GIVEN_NAME  
+                       Given name of user  
+ -s SURNAME, --surname SURNAME  
+                       Surname of user (optional)  
+ -e EMAIL_ADDRESS, --email EMAIL_ADDRESS  
+                       Institutional email address of user  
+ -k &quot;SSH_KEY&quot;, --key &quot;SSH_KEY&quot;  
+                       User&#39;s public ssh key (quotes necessary)  
+ -p PROJECT_ID, --project PROJECT_ID  
+                       Initial project the user belongs to  
+ -c POC_ID, --contact POC_ID  
+                       Short ID of the user&#39;s Point of Contact  
+ --verbose             Show SQL queries that are being submitted  
+ --debug               Show SQL query submitted without committing the change
 </code></pre></div>
 
 
-<p>3. Choose an example: eigenvalues in this case, and build using the
-provided makefile - if you have a look at it you can see it is using
-nvcc and g++. </p>
-<div class="codehilite"><pre><span></span><code>cd NVIDIA_CUDA-7.5_Samples/6_Advanced/eigenvalues/
-make
+<h3 id="ssh-key-formats">SSH key formats<a class="headerlink" href="#ssh-key-formats" title="Permanent link">§</a></h3>
+<p>It will verify the provided ssh key by default. Note that it has to be
+in the form <code>ssh-xxx keystartshere</code>. If someone has sent in a key which
+has line breaks and header items, make it into this format by adding the
+key type to the start and removing the line breaks from the key body.</p>
+<p>This key:</p>
+<div class="codehilite"><pre><span></span><code>---- BEGIN SSH2 PUBLIC KEY ----  
+Comment: &quot;comment goes here&quot;  
+AAAAB3NzaC1yc2EAAAABJQAAAQEAlLhFLr/4LGC3cM1xgRZVxfQ7JgoSvnVXly0K  
+7MNufZbUSUkKtVnBXAOIjtOYe7EPndyT/SAq1s9RGZ63qsaVc/05diLrgL0E0gW+  
+9VptTmiUh7OSsXkoKQn1RiACfH7sbKi6H373bmB5/TyXNZ5C5KVmdXxO+laT8IdW  
+7JdD/gwrBra9M9vAMfcxNYVCBcPQRhJ7vOeDZ+e30qapH4R/mfEyKorYxrvQerJW  
+OeLKjOH4rSnAAOLcEqPmJhkLL8k6nQAAK3P/E1PeOaB2xD7NNPqfIsjhAJLZ+2wV  
+3eUZATx9vnmVF0YafOjvzcoK2GqUrhNAvi7k0f+ihh8twkfthj==  
+---- END SSH2 PUBLIC KEY ----
 </code></pre></div>
 
 
-<p>4. Request an interactive job with a GPU and wait to be
-given access to the node. You will see your prompt change to indicate
-that you are on a different node than the login node once your qrsh
-request has been scheduled, and you can then continue. Load the cuda
-module on the node and run the program. </p>
-<div class="codehilite"><pre><span></span><code>qrsh -l mem=1G,h_rt=0:30:0,gpu=1 -now no
-
-# wait for interactive job to start
-
-module unload compilers mpi
-module load compilers/gnu/4.9.2
-module load cuda/7.5.18
-cd ~/cuda/NVIDIA_CUDA-7.5_Samples/6_Advanced/eigenvalues/
-./eigenvalues
+<p>should be converted into</p>
+<div class="codehilite"><pre><span></span><code>ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAlLhFLr/4LGC3cM1xgRZVxfQ7JgoSvnVXly0K7MNufZbUSUkKtVnBXAOIjtOYe7EPndyT/SAq1s9RGZ63qsaVc/05diLrgL0E0gW+9VptTmiUh7OSsXkoKQn1RiACfH7sbKi6H373bmB5/TyXNZ5C5KVmdXxO+laT8IdW7JdD/gwrBra9M9vAMfcxNYVCBcPQRhJ7vOeDZ+e30qapH4R/mfEyKorYxrvQerJWOeLKjOH4rSnAAOLcEqPmJhkLL8k6nQAAK3P/E1PeOaB2xD7NNPqfIsjhAJLZ+2wV3eUZATx9vnmVF0YafOjvzcoK2GqUrhNAvi7k0f+ihh8twkfthj==
 </code></pre></div>
 
 
-<p>5. Your output should look something like this: </p>
-<div class="codehilite"><pre><span></span><code>Starting eigenvalues  
-GPU Device 0: &quot;Tesla M2070&quot; with compute capability 2.0
+<p>Other types of keys (dss etc) will say what they are in the first line,
+and you should change the <code>ssh-rsa</code> appropriately. The guide linked at
+<a href="https://wiki.rc.ucl.ac.uk/wiki/Thomas#Creating_an_ssh_key_in_Windows">Creating an ssh key in
+Windows</a>
+also shows where users can get the second format out of PuTTY.</p>
+<h2 id="add-a-new-project">Add a new project<a class="headerlink" href="#add-a-new-project" title="Permanent link">§</a></h2>
+<p><code>thomas-add project</code> or <code>michael-add project</code> will create a new project,
+associated with an institution. It will not show in Gold until it also
+has a user in it.</p>
+<p>A project ID should begin with your institute ID, followed by an
+underscore and a project name.</p>
+<div class="codehilite"><pre><span></span><code>thomas-add project -h  
+usage: thomas-add project [-h] -p PROJECT_ID -i INST_ID [--debug]
 
-Matrix size: 2048 x 2048   
-Precision: 0.000010  
-Iterations to be timed: 100  
-Result filename: &#39;eigenvalues.dat&#39;  
-Gerschgorin interval: -2.894310 / 2.923303  
-Average time step 1: 26.739325 ms  
-Average time step 2, one intervals: 9.031162 ms  
-Average time step 2, mult intervals: 0.004330 ms  
-Average time TOTAL: 35.806992 ms  
-Test Succeeded!
+optional arguments:  
+ -h, --help            show this help message and exit  
+ -p PROJECT_ID, --project PROJECT_ID  
+                       A new unique project ID  
+ -i INST_ID, --institute INST_ID  
+                       Institute ID this project belongs to  
+ --debug               Show SQL query submitted without committing the change
 </code></pre></div>
 
 
-<h2 id="building-your-own-code">Building your own code<a class="headerlink" href="#building-your-own-code" title="Permanent link">§</a></h2>
-<p>As above, if the code you are trying to compile needs to link against
-libcuda, it must also be built on a GPU node because only the GPU nodes
-have the correct libraries.</p>
-<p>The NVIDIA examples don't require this, but things like Tensorflow do.</p>
-<h2 id="tensorflow">Tensorflow<a class="headerlink" href="#tensorflow" title="Permanent link">§</a></h2>
-<p>Tensorflow is installed: type <code>module avail tensorflow</code> to see the
-available versions.</p>
-<p>Modules to load for the non-MKL GPU version: </p>
-<div class="codehilite"><pre><span></span><code>module unload compilers mpi  
-module load compilers/gnu/4.9.2  
-module load python3/3.7
-module load cuda/10.0.130/gnu-4.9.2  
-module load cudnn/7.4.2.24/cuda-10.0
-module load tensorflow/2.0.0/gpu-py37
+<h2 id="add-a-new-projectuser-pairing">Add a new project/user pairing<a class="headerlink" href="#add-a-new-projectuser-pairing" title="Permanent link">§</a></h2>
+<p><code>thomas-add projectuser</code> or <code>michael-add projectuser</code> will add an
+existing user to an existing project. Creating a new user for an
+existing project also creates this relationship. After a new
+project-user relationship is added, a cron job will pick that up within
+15 minutes and create that project for that user in Gold, with no
+allocation.</p>
+<div class="codehilite"><pre><span></span><code>thomas-add projectuser -h  
+usage: thomas-add projectuser [-h] -u USERNAME -p PROJECT_ID -c POC_ID  
+                             [--debug]
+
+optional arguments:  
+ -h, --help            show this help message and exit  
+ -u USERNAME, --user USERNAME  
+                       An existing UCL username  
+ -p PROJECT_ID, --project PROJECT_ID  
+                       An existing project ID  
+ -c POC_ID, --contact POC_ID  
+                       An existing Point of Contact ID  
+ --debug               Show SQL query submitted without committing the change
 </code></pre></div>
 
 
-<h2 id="using-mpi-and-gpus">Using MPI and GPUs<a class="headerlink" href="#using-mpi-and-gpus" title="Permanent link">§</a></h2>
-<p>It is possible to run MPI programs that use GPUs but only within a
-single node, so you can request up to 2 GPUs and 36 cores on Myriad.</p>
-<h2 id="looking-for-more-gpus">Looking for more GPUs?<a class="headerlink" href="#looking-for-more-gpus" title="Permanent link">§</a></h2>
-<ul>
-<li><a href="../GPU_Clusters/">GPU clusters available to UCL users</a>.</li>
-</ul>
+<h1 id="gold-resource-allocation">Gold resource allocation<a class="headerlink" href="#gold-resource-allocation" title="Permanent link">§</a></h1>
+<p>We are currently using Gold to manage allocations on Thomas and Michael.
+There is one Gold database, so all the projects exist on both, but they
+are only active on specific clusters.</p>
+<h2 id="reporting-from-gold">Reporting from Gold<a class="headerlink" href="#reporting-from-gold" title="Permanent link">§</a></h2>
+<p>There are wrapper scripts for a number of Gold commands (these exist in
+the <code>userscripts</code> module, loaded by default).</p>
+<p>These are all set to report in cpu-hours with the <code>-h</code> flag, as that is
+our main unit. If you wish to change anything about the wrappers, they
+live in <code>/shared/ucl/apps/cluster-scripts/</code> so you can take a copy and
+add your preferred options.</p>
+<p>They all have a <code>--man</code> option to see the man pages for that command.</p>
+<p>Here are some basic useful options and what they do. They can all be
+given more options for more specific
+searches.</p>
+<div class="codehilite"><pre><span></span><code>gusage -p project_name [-s start_time]  # Show the Gold usage per user in this project, in the given timeframe if specified.  
+gbalance                                # Show the balance for every project, split into total, reserved and available.  
+glsuser                                 # Shows all the users in Gold.  
+glsproject                              # Shows all the projects and which users are in them.  
+glsres                                  # Show all the current reservatioms, inc user and project. The Name column is the SGE job ID.  
+gstatement                              # Produce a reporting statement showing beginning and end balances, credits and debits.
+
+# Less useful commands  
+glstxn                                  # Show all Gold transactions. Filter or it will take forever to run.  
+glsalloc                                # Show all the allocations.
+</code></pre></div>
+
+
+<p>These can be run by any user. The date format is YYYY-MM-DD.</p>
+<p>Eg. <code>gstatement -p PROJECT -s 2017-08-01</code> will show all credits and
+debits for the given project since the given date, saying which user and
+job ID each charge was associated with.</p>
+<h2 id="transferring-gold">Transferring Gold<a class="headerlink" href="#transferring-gold" title="Permanent link">§</a></h2>
+<p>As the point of contact, you can transfer Gold from your allocation
+account into other project accounts. As before, we've put <code>-h</code> in the
+wrapper so it is always working in cpu-hours.</p>
+<div class="codehilite"><pre><span></span><code>gtransfer --fromProject xxx_allocation --toProject xxx_subproject cpu_hours
+</code></pre></div>
+
+
+<p>You can also transfer in the opposite direction, from the subproject
+back into your allocation account.</p>
+<p>Note that you are able to transfer your allocation into another
+institute's projects, but you cannot transfer it back again - only the
+other institute's point of contact (or rc-support) can give it back, so
+be careful which project you specify.</p>
+<h3 id="when-two-allocations-are-active">When two allocations are active<a class="headerlink" href="#when-two-allocations-are-active" title="Permanent link">§</a></h3>
+<p>There is now an overlap period of a week when two allocations can be
+active. By default, <code>gtransfer</code> will transfer from active allocations in
+the order of earliest expiring first. To transfer from the new
+allocation only, you need to specify the allocation id.</p>
+<div class="codehilite"><pre><span></span><code>gtransfer -i allocation_ID --fromProject xxx_allocation --toProject xxx_subproject cpu_hours
+</code></pre></div>
+
+
+<p><code>glsalloc -p xxx_allocation</code> shows you all allocations that ever existed for your institute, 
+and the first column is the id.</p>
+<div class="codehilite"><pre><span></span><code>Id  Account Projects              StartTime  EndTime    Amount     Deposited  Description      
+--- ------- --------------------- ---------- ---------- ---------- ---------- --------------   
+87  38      UKCP_allocation       2017-08-07 2017-11-05 212800.00 3712800.00  
+97  38      UKCP_allocation       2017-10-30 2018-02-04 3712800.00 3712800.00
+</code></pre></div>
                 
                   
                 
@@ -967,7 +1089,7 @@ single node, so you can request up to 2 GPUs and 36 cores on Myriad.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../GPU_Clusters/" title="GPU clusters" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../GPU_Nodes/" title="GPU nodes" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -976,19 +1098,19 @@ single node, so you can request up to 2 GPUs and 36 cores on Myriad.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                GPU clusters
+                GPU nodes
               </span>
             </div>
           </a>
         
         
-          <a href="../Points_of_Contact/" title="MMM Points of Contact" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../Wiki_Export/Acknowledging_RC_Systems/" title="Acknowledging the Use of RC Systems" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                MMM Points of Contact
+                Acknowledging the Use of RC Systems
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
