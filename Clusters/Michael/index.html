@@ -1604,7 +1604,7 @@ easier for larger jobs to be scheduled, as otherwise they can have very
 long waits if every CU is half full.  </p>
 <h2 id="2020-michael-expansion">2020 Michael expansion<a class="headerlink" href="#2020-michael-expansion" title="Permanent link">§</a></h2>
 <p>At the end of March 2020, Michael was expanded to include a new set of nodes. The old Michael nodes are the K-type nodes, while the new ones are the A-type nodes. The node name will look like <code>node-a14a-001</code> or <code>node-k10a-001</code>.</p>
-<p>The Michael expansion consists of 206 compute nodes each with two 20-core Intel Xeon Gold 6248 2.5GHz processors, 192 gigabytes of 2933MHz DDR4 RAM, 1TB disk, and an Intel OmniPath network. Expansion nodes have two Hyperthreads available.</p>
+<p>The Michael expansion consists of 208 compute nodes each with two 20-core Intel Xeon Gold 6248 2.5GHz processors, 192 gigabytes of 2933MHz DDR4 RAM, 1TB disk, and an Intel OmniPath network. Expansion nodes have two Hyperthreads available.</p>
 <p>These are arranged in two 32-node CUs (a and b) and four 36-node CUs (c to f). Jobs are restricted to running either within a CU (all nodes connected to the same switch) or across CUs using only the bottom third of nodes attached to each switch. This approximates 1:1 blocking on a cluster that does not have it.</p>
 <h2 id="maximum-job-resources-on-michael-expansion">Maximum job resources on Michael expansion<a class="headerlink" href="#maximum-job-resources-on-michael-expansion" title="Permanent link">§</a></h2>
 <p>Please consider that Michael's A-type nodes have 40 physical cores - 2 nodes is 80 cores. Jobs do not share nodes, so although asking for 41 cores is possible, it means you are wasting the other 39 cores on your second node!</p>
