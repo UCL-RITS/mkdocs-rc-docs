@@ -256,7 +256,7 @@ long waits if every CU is half full.
 
 At the end of March 2020, Michael was expanded to include a new set of nodes. The old Michael nodes are the K-type nodes, while the new ones are the A-type nodes. The node name will look like `node-a14a-001` or `node-k10a-001`.
 
-The Michael expansion consists of 206 compute nodes each with two 20-core Intel Xeon Gold 6248 2.5GHz processors, 192 gigabytes of 2933MHz DDR4 RAM, 1TB disk, and an Intel OmniPath network. Expansion nodes have two Hyperthreads available.
+The Michael expansion consists of 208 compute nodes each with two 20-core Intel Xeon Gold 6248 2.5GHz processors, 192 gigabytes of 2933MHz DDR4 RAM, 1TB disk, and an Intel OmniPath network. Expansion nodes have two Hyperthreads available.
 
 These are arranged in two 32-node CUs (a and b) and four 36-node CUs (c to f). Jobs are restricted to running either within a CU (all nodes connected to the same switch) or across CUs using only the bottom third of nodes attached to each switch. This approximates 1:1 blocking on a cluster that does not have it.
 
