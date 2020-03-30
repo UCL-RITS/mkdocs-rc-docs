@@ -664,15 +664,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#suggested-job-sizes" class="md-nav__link">
-    Suggested job sizes
+  <a href="#suggested-job-sizes-on-original-michael" class="md-nav__link">
+    Suggested job sizes on original Michael
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#maximum-job-resources" class="md-nav__link">
-    Maximum job resources
+  <a href="#maximum-job-resources-on-original-michael" class="md-nav__link">
+    Maximum job resources on original Michael
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2020-michael-expansion" class="md-nav__link">
+    2020 Michael expansion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maximum-job-resources-on-michael-expansion" class="md-nav__link">
+    Maximum job resources on Michael expansion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyperthreading" class="md-nav__link">
+    Hyperthreading
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-node-types" class="md-nav__link">
+    Choosing node types
   </a>
   
     <nav class="md-nav">
@@ -746,6 +774,13 @@
   
     <nav class="md-nav">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gold-costs-of-a-type-nodes" class="md-nav__link">
+    Gold costs of A-type nodes
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#troubleshooting-unable-to-verify-sufficient-material-worth" class="md-nav__link">
@@ -1193,15 +1228,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#suggested-job-sizes" class="md-nav__link">
-    Suggested job sizes
+  <a href="#suggested-job-sizes-on-original-michael" class="md-nav__link">
+    Suggested job sizes on original Michael
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#maximum-job-resources" class="md-nav__link">
-    Maximum job resources
+  <a href="#maximum-job-resources-on-original-michael" class="md-nav__link">
+    Maximum job resources on original Michael
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2020-michael-expansion" class="md-nav__link">
+    2020 Michael expansion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maximum-job-resources-on-michael-expansion" class="md-nav__link">
+    Maximum job resources on Michael expansion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyperthreading" class="md-nav__link">
+    Hyperthreading
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-node-types" class="md-nav__link">
+    Choosing node types
   </a>
   
     <nav class="md-nav">
@@ -1275,6 +1338,13 @@
   
     <nav class="md-nav">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gold-costs-of-a-type-nodes" class="md-nav__link">
+    Gold costs of A-type nodes
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#troubleshooting-unable-to-verify-sufficient-material-worth" class="md-nav__link">
@@ -1391,7 +1461,7 @@ non-resource-intensive software tests can be run on the login nodes, but
 anything more should be submitted as a job.</p>
 <h2 id="full-user-guide">Full user guide<a class="headerlink" href="#full-user-guide" title="Permanent link">§</a></h2>
 <p>Michael has the same user environment as RC Support's other clusters, so
-the <a href="User Guide">User Guide</a> is relevant and is a
+the <a href="../..">User guide</a> is relevant and is a
 good starting point for further information about how the environment
 works. Any variations that Michael has should be listed on this page.</p>
 <h2 id="submitting-a-job">Submitting a job<a class="headerlink" href="#submitting-a-job" title="Permanent link">§</a></h2>
@@ -1490,12 +1560,11 @@ check your groups with the <code>groups</code> command.</p>
 <li><strong>Molpro</strong>: Only UCL users are licensed to use our central copy and
     can request to be added to the <code>lgmolpro</code> reserved application group.</li>
 </ul>
-<h2 id="suggested-job-sizes">Suggested job sizes<a class="headerlink" href="#suggested-job-sizes" title="Permanent link">§</a></h2>
-<p>The target job sizes for Michael are 48-120 cores (2-5 nodes). Jobs
+<h2 id="suggested-job-sizes-on-original-michael">Suggested job sizes on original Michael<a class="headerlink" href="#suggested-job-sizes-on-original-michael" title="Permanent link">§</a></h2>
+<p>The target job sizes for original Michael K-type nodes are 48-120 cores (2-5 nodes). Jobs
 larger than this may have a longer queue time and are better suited to
-ARCHER, and single node jobs may be more suited to your local
-facilities.</p>
-<h2 id="maximum-job-resources">Maximum job resources<a class="headerlink" href="#maximum-job-resources" title="Permanent link">§</a></h2>
+ARCHER, and single node jobs may be more suited to your local facilities.</p>
+<h2 id="maximum-job-resources-on-original-michael">Maximum job resources on original Michael<a class="headerlink" href="#maximum-job-resources-on-original-michael" title="Permanent link">§</a></h2>
 <table>
 <thead>
 <tr>
@@ -1516,7 +1585,7 @@ facilities.</p>
 </table>
 <p>On Michael, interactive sessions using qrsh have the same wallclock
 limit as other jobs.</p>
-<p>Nodes in Michael are 24 cores, 128GB RAM. The default maximum jobsize is
+<p>The K-type nodes in Michael are 24 cores, 128GB RAM. The default maximum jobsize is
 864 cores, to remain within the 36-node 1:1 nonblocking interconnect
 zones.</p>
 <p>Jobs on Michael <strong>do not share nodes</strong>. This means that if you request
@@ -1533,6 +1602,71 @@ for: contact the support address below for details.</p>
 <p>Some normal multi-node jobs will use the superqueue - this is to make it
 easier for larger jobs to be scheduled, as otherwise they can have very
 long waits if every CU is half full.  </p>
+<h2 id="2020-michael-expansion">2020 Michael expansion<a class="headerlink" href="#2020-michael-expansion" title="Permanent link">§</a></h2>
+<p>At the end of March 2020, Michael was expanded to include a new set of nodes. The old Michael nodes are the K-type nodes, while the new ones are the A-type nodes. The node name will look like <code>node-a14a-001</code> or <code>node-k10a-001</code>.</p>
+<p>The Michael expansion consists of 206 diskless compute nodes each with two 20-core Intel Xeon Gold 6248 2.5GHz processors, 192 gigabytes of 2933MHz DDR4 RAM, and an Intel OmniPath network. Expansion nodes have two Hyperthreads available.</p>
+<p>These are arranged in two 32-node CUs (a and b) and four 36-node CUs (c to f). Jobs are restricted to running either within a CU (all nodes connected to the same switch) or across CUs using only the bottom third of nodes attached to each switch. This approximates 1:1 blocking on a cluster that does not have it.</p>
+<h2 id="maximum-job-resources-on-michael-expansion">Maximum job resources on Michael expansion<a class="headerlink" href="#maximum-job-resources-on-michael-expansion" title="Permanent link">§</a></h2>
+<p>Please consider that Michael's A-type nodes have 40 physical cores - 2 nodes is 80 cores. Jobs do not share nodes, so although asking for 41 cores is possible, it means you are wasting the other 39 cores on your second node!</p>
+<table>
+<thead>
+<tr>
+<th align="center">Cores</th>
+<th align="center">Max. Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">2800</td>
+<td align="center">48h</td>
+</tr>
+</tbody>
+</table>
+<p>These are numbers of physical cores: multiply by two for virtual cores with hyperthreads.</p>
+<h2 id="hyperthreading">Hyperthreading<a class="headerlink" href="#hyperthreading" title="Permanent link">§</a></h2>
+<p>The A-type nodes have hyperthreading enabled and you can choose on a per-job basis whether you want to use it.</p>
+<p>Hyperthreading lets you use two virtual cores instead of one physical core - some programs can take advantage of this.</p>
+<p>If you do not ask for hyperthreading, your job only uses one thread per core as normal.</p>
+<div class="codehilite"><pre><span></span><code># request hyperthreading in this job
+#$ -l threads=1
+
+# request the number of virtual cores
+#$ -pe mpi 160
+
+# set number of OpenMP threads being used per MPI process
+export OMP_NUM_THREADS=2
+</code></pre></div>
+
+
+<p>This job would be using 80 physical cores, using 80 MPI processes each of which would create two threads (on Hyperthreads).</p>
+<div class="codehilite"><pre><span></span><code># request hyperthreading in this job
+#$ -l threads=1
+
+# request the number of virtual cores
+#$ -pe mpi 160
+
+# set number of OpenMP threads being used per MPI process
+# (a whole node&#39;s worth)
+export OMP_NUM_THREADS=80
+</code></pre></div>
+
+
+<p>This job would still be using 80 physical cores, but would use one MPI process per node which would create 80 threads on the node (on Hyperthreads).</p>
+<h2 id="choosing-node-types">Choosing node types<a class="headerlink" href="#choosing-node-types" title="Permanent link">§</a></h2>
+<p>Given the difference in core count on the original and expansion Michael nodes, we strongly suggest you always specify which type of node you intend your job to run on, to avoid unintentionally wasting cores if your total number does not cleanly fit on that node size.</p>
+<p>The old nodes are K-type while the new nodes with hyperthreading are A-type. Jobs never run across a mix of node types - it will be all K nodes or all A nodes.</p>
+<p>To specify node type in your jobscript, add either:</p>
+<div class="codehilite"><pre><span></span><code># run on original 24-core nodes
+#$ -ac allow=K
+</code></pre></div>
+
+
+<p>or</p>
+<div class="codehilite"><pre><span></span><code># run on expansion 40-core hyperthread-enabled nodes
+#$ -ac allow=A
+</code></pre></div>
+
+
 <h3 id="queue-names">Queue names<a class="headerlink" href="#queue-names" title="Permanent link">§</a></h3>
 <p>On Michael, users do not submit directly to queues - the scheduler
 assigns your job to one based on the resources it requested. The queues
@@ -1622,6 +1756,8 @@ from 'reserved' into charged. If the job doesn't run for the full time
 it asked for, the unused reserved portion will be refunded after the job
 ends. You cannot submit a job that you do not have the budget to
 run.</p>
+<h4 id="gold-costs-of-a-type-nodes">Gold costs of A-type nodes<a class="headerlink" href="#gold-costs-of-a-type-nodes" title="Permanent link">§</a></h4>
+<p>The A-type nodes have twice the peak theoretical performance of the K-type nodes. A 24-core job lasting an hour costs 24 Gold on the K-type nodes. A 40-physical-core job lasting one hour costs 80 Gold on the A-type nodes. An 80-virtual-core job on the A-type nodes also costs 80 Gold.</p>
 <h4 id="troubleshooting-unable-to-verify-sufficient-material-worth">Troubleshooting: Unable to verify sufficient material worth<a class="headerlink" href="#troubleshooting-unable-to-verify-sufficient-material-worth" title="Permanent link">§</a></h4>
 <div class="codehilite"><pre><span></span><code>Unable to run job: Rejected by policyjsv
 Reason:Unable to verify sufficient material worth to submit this job:
