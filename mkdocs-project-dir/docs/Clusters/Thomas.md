@@ -55,7 +55,7 @@ If you are using Windows 10, then you probably have OpenSSH installed and could 
 ## Information for Points of Contact
 
 Points of Contact have some tools they can use to manage users and
-allocations, documented at [Points of Contact](Points_of_Contact).
+allocations, documented at [MMM Points of Contact](../Clusters/Points_of_Contact.md).
 
 ## Logging in
 
