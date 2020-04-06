@@ -413,9 +413,9 @@ Exceed is available on Desktop@UCL machines and downloadable from the [UCL softw
 1. Load Exceed. You can find it under Start > All Programs > Applications O-P > Open Text Exceed 14 > Exceed
 2. Open PuTTY (Applications O-P > PuTTY)
 3. In PuTTY, set up the connection with the host machine as usual:
-   * Host name: `myriad.rc.ucl.ac.uk` (for example)
-   * Port: `22`
-   * Connection type: `SSH`
+    * Host name: `myriad.rc.ucl.ac.uk` (for example)
+    * Port: `22`
+    * Connection type: `SSH`
 4. Then, from the Category menu, select Connection > SSH > X11 for 'Options controlling SSH X11 forwarding'
    Make sure the box marked 'Enable X11 forwarding' is checked.
 5. Return to the session menu and save these settings with a new identifiable name for reuse in future.
