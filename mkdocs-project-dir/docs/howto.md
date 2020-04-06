@@ -416,8 +416,8 @@ Exceed is available on Desktop@UCL machines and downloadable from the [UCL softw
     * Host name: `myriad.rc.ucl.ac.uk` (for example)
     * Port: `22`
     * Connection type: `SSH`
-4. Then, from the Category menu, select Connection > SSH > X11 for 'Options controlling SSH X11 forwarding'
-   Make sure the box marked 'Enable X11 forwarding' is checked.
+4. Then, from the Category menu, select Connection > SSH > X11 for 'Options controlling SSH X11 forwarding'.
+    * Make sure the box marked 'Enable X11 forwarding' is checked.
 5. Return to the session menu and save these settings with a new identifiable name for reuse in future.
 6. Click 'Open' and login to the host as usual
 7. To test that X-forwarding is working, try running `nedit` which is a text editor in our default modules.
