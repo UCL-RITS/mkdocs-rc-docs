@@ -660,6 +660,53 @@
     How do I run a graphical program?
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#x-forwarding-on-linux" class="md-nav__link">
+    X-forwarding on Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#x-forwarding-on-mac-os-x" class="md-nav__link">
+    X-forwarding on Mac OS X
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#x-forwarding-on-windows" class="md-nav__link">
+    X-forwarding on Windows
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exceed-on-desktopucl" class="md-nav__link">
+    Exceed on Desktop@UCL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-xming" class="md-nav__link">
+    Installing Xming
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -1341,6 +1388,53 @@
     How do I run a graphical program?
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#x-forwarding-on-linux" class="md-nav__link">
+    X-forwarding on Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#x-forwarding-on-mac-os-x" class="md-nav__link">
+    X-forwarding on Mac OS X
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#x-forwarding-on-windows" class="md-nav__link">
+    X-forwarding on Windows
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exceed-on-desktopucl" class="md-nav__link">
+    Exceed on Desktop@UCL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-xming" class="md-nav__link">
+    Installing Xming
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -1647,6 +1741,53 @@ Nodes for job 1234:
 <p>Remember that memory requests in your jobscript are always per core, so check the total you are requesting is sensible - if you increase it too much you may end up with a job that cannot be submitted.</p>
 <p>You can also look at <a href="#nodesforjob">nodesforjob</a> while a job is running to see a snapshot of the memory, swap and load on the nodes your job is running on.</p>
 <h2 id="how-do-i-run-a-graphical-program">How do I run a graphical program?<a class="headerlink" href="#how-do-i-run-a-graphical-program" title="Permanent link">§</a></h2>
+<p>To run a graphical program on the cluster and be able to view the user interface on your own local computer, you will need to have an X-Windows Server installed on your local computer and use X-forwarding.</p>
+<h3 id="x-forwarding-on-linux">X-forwarding on Linux<a class="headerlink" href="#x-forwarding-on-linux" title="Permanent link">§</a></h3>
+<p>Desktop Linux operating systems already have X-Windows installed, so you just need to ssh in with the correct flags.</p>
+<p>You need to make sure you use either the <code>-X</code> or <code>-Y</code> (look at <code>man ssh</code> for details) flags on all ssh commands you run to establish a connection to the cluster.</p>
+<p>For example, connecting from outside of UCL:</p>
+<div class="codehilite"><pre><span></span><code>ssh -X &lt;your_UCL_user_id&gt;@socrates.ucl.ac.uk
+</code></pre></div>
+
+
+<p>and then</p>
+<div class="codehilite"><pre><span></span><code>ssh -X &lt;your_UCL_user_id&gt;@myriad.rc.ucl.ac.uk
+</code></pre></div>
+
+
+<h3 id="x-forwarding-on-mac-os-x">X-forwarding on Mac OS X<a class="headerlink" href="#x-forwarding-on-mac-os-x" title="Permanent link">§</a></h3>
+<p>You will need to install XQuartz to provide an X-Window System for Mac OS X. (Previously known as X11.app).</p>
+<p>You can then follow the Linux instructions using Terminal.app.</p>
+<h3 id="x-forwarding-on-windows">X-forwarding on Windows<a class="headerlink" href="#x-forwarding-on-windows" title="Permanent link">§</a></h3>
+<p>You will need:</p>
+<ul>
+<li>An SSH client; e.g., PuTTY</li>
+<li>An X server program; e.g., Exceed, Xming</li>
+</ul>
+<p>Exceed is available on Desktop@UCL machines and downloadable from the <a href="http://swdb.ucl.ac.uk">UCL software database</a>. Xming is open source (and mentioned here without testing).</p>
+<h4 id="exceed-on-desktopucl">Exceed on Desktop@UCL<a class="headerlink" href="#exceed-on-desktopucl" title="Permanent link">§</a></h4>
+<ol>
+<li>Load Exceed. You can find it under Start &gt; All Programs &gt; Applications O-P &gt; Open Text Exceed 14 &gt; Exceed</li>
+<li>Open PuTTY (Applications O-P &gt; PuTTY)</li>
+<li>In PuTTY, set up the connection with the host machine as usual:</li>
+<li>Host name: <code>myriad.rc.ucl.ac.uk</code> (for example)</li>
+<li>Port: <code>22</code></li>
+<li>Connection type: <code>SSH</code></li>
+<li>Then, from the Category menu, select Connection &gt; SSH &gt; X11 for 'Options controlling SSH X11 forwarding'
+   Make sure the box marked 'Enable X11 forwarding' is checked.</li>
+<li>Return to the session menu and save these settings with a new identifiable name for reuse in future.</li>
+<li>Click 'Open' and login to the host as usual</li>
+<li>To test that X-forwarding is working, try running <code>nedit</code> which is a text editor in our default modules.</li>
+</ol>
+<p>If <code>nedit</code> works, you have successfully enabled X-forwarding for graphical applications.</p>
+<h4 id="installing-xming">Installing Xming<a class="headerlink" href="#installing-xming" title="Permanent link">§</a></h4>
+<p>Xming is a popular open source X server for Windows. These are instructions for using it alongside PuTTY. Other SSH clients and X servers are available. We cannot verify how well it may be working.</p>
+<ol>
+<li>Install both PuTTY and Xming if you have not done so already. During Xming installation, choose not to install an SSH client.</li>
+<li>Open Xming - the Xming icon should appear on the task bar.</li>
+<li>Open PuTTY</li>
+<li>Set up PuTTY as shown in the Exceed section.</li>
+</ol>
                 
                   
                 
