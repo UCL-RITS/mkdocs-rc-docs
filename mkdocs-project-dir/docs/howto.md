@@ -375,3 +375,61 @@ You can also look at [nodesforjob](#nodesforjob) while a job is running to see a
 
 
 ## How do I run a graphical program?
+
+To run a graphical program on the cluster and be able to view the user interface on your own local computer, you will need to have an X-Windows Server installed on your local computer and use X-forwarding.
+
+### X-forwarding on Linux
+
+Desktop Linux operating systems already have X-Windows installed, so you just need to ssh in with the correct flags.
+
+You need to make sure you use either the `-X` or `-Y` (look at `man ssh` for details) flags on all ssh commands you run to establish a connection to the cluster.
+
+For example, connecting from outside of UCL:
+```
+ssh -X <your_UCL_user_id>@socrates.ucl.ac.uk
+```
+and then
+```
+ssh -X <your_UCL_user_id>@myriad.rc.ucl.ac.uk
+```
+
+### X-forwarding on Mac OS X
+
+You will need to install XQuartz to provide an X-Window System for Mac OS X. (Previously known as X11.app).
+
+You can then follow the Linux instructions using Terminal.app.
+
+### X-forwarding on Windows
+
+You will need:
+
+* An SSH client; e.g., PuTTY
+* An X server program; e.g., Exceed, Xming
+
+Exceed is available on Desktop@UCL machines and downloadable from the [UCL software database](http://swdb.ucl.ac.uk). Xming is open source (and mentioned here without testing).
+
+#### Exceed on Desktop@UCL
+
+1. Load Exceed. You can find it under Start > All Programs > Applications O-P > Open Text Exceed 14 > Exceed
+2. Open PuTTY (Applications O-P > PuTTY)
+3. In PuTTY, set up the connection with the host machine as usual:
+   * Host name: `myriad.rc.ucl.ac.uk` (for example)
+   * Port: `22`
+   * Connection type: `SSH`
+4. Then, from the Category menu, select Connection > SSH > X11 for 'Options controlling SSH X11 forwarding'
+   Make sure the box marked 'Enable X11 forwarding' is checked.
+5. Return to the session menu and save these settings with a new identifiable name for reuse in future.
+6. Click 'Open' and login to the host as usual
+7. To test that X-forwarding is working, try running `nedit` which is a text editor in our default modules.
+
+If `nedit` works, you have successfully enabled X-forwarding for graphical applications.
+
+#### Installing Xming
+
+Xming is a popular open source X server for Windows. These are instructions for using it alongside PuTTY. Other SSH clients and X servers are available. We cannot verify how well it may be working.
+
+1. Install both PuTTY and Xming if you have not done so already. During Xming installation, choose not to install an SSH client.
+2. Open Xming - the Xming icon should appear on the task bar.
+3. Open PuTTY
+4. Set up PuTTY as shown in the Exceed section.
+
