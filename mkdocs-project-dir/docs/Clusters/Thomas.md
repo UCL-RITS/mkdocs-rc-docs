@@ -288,7 +288,7 @@ To see the name of your project(s) and how much allocation that budget
 has, run the command `budgets`.
 
 ```
-budgets`  
+budgets  
 Project  Machines Balance   
 -------- -------- --------  
 UCL_Test ANY      22781.89
@@ -427,6 +427,15 @@ SAFE also gives you a second mechanism for changing your SSH key - changing the 
 Email <rc-support@ucl.ac.uk> with any support queries. It will be helpful
 to include Thomas in the subject along with some descriptive text about
 the type of problem, and you should mention your username in the body.
+
+## Notional costs
+
+EPSRC contributed to the hardware, so there are two numbers to use for notional costs:
+
+* Cost per core hour excluding hardware (to be charged on EPSRC grants): 0.6 pence / core hour
+* Cost per core hour including hardware cost (to be charged on non-EPSRC grants): 1.5 pence / core hour
+
+Non-grant-funded projects should use the second figure.
 
 ## Acknowledging the use of Thomas in publications
 
