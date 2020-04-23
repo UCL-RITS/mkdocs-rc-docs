@@ -11,11 +11,8 @@ There are two nationally-accessible EPSRC Tier 2 HPC centres with GPUs.
 Access is generally managed through calls to an EPSRC Resource
 Allocation Panel
 
-  - [Autumn 2017 Tier 2 RAP call](https://www.epsrc.ac.uk/funding/calls/tier2openaccess/)
-  - [Spring 2018 Tier 2 RAP call](https://www.epsrc.ac.uk/funding/calls/resourceallocationpanel-rap-openaccesstotier2-spring2018/)
-  - [Autumn 2018 Tier 2 RAP call](https://epsrc.ukri.org/funding/calls/rapopenaccesstier2autumn2018/):
-    technical assessment deadline 25 Sept at 16:00, closes 9 Oct at
-    16:00.
+  - [Tier 2 RAP calls](https://epsrc.ukri.org/funding/calls/tier2hpcservices/)
+  - [Filterable page for all open EPSRC calls](https://epsrc.ukri.org/funding/calls/)
 
 There may also be pump-priming/proof of concept access available.
 

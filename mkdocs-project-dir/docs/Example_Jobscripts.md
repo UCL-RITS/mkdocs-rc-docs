@@ -42,6 +42,13 @@ To specify a project ID in a job script, use the `-P` object as below:
 #$ -P <your_project_id>
 ```
 
+## Resources
+
+The lines starting with `#$ -l` are where you are requesting resources like wallclock time (how long your job is allowed to run), memory, and possibly tmpfs (local hard disk space on the node, if it has one).
+
+If you have no notion of how much you should request for any of these, have a look at [How do I estimate what resources to request in my jobscript?](howto.md#how-do-i-estimate-what-resources-to-request-in-my-jobscript)
+
+
 ## Serial Job Script Example
 
 The most basic type of job a user can submit is a serial job. These jobs run on a single processor (core) with a single thread. 

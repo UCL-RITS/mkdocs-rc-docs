@@ -34,7 +34,21 @@ You will then be asked to enter your username and password. Only enter your user
 
 ### Logging in from outside the UCL firewall
 
-You will need to either use the [UCL Virtual Private Network](http://www.ucl.ac.uk/isd/staff/network/vpn) or ssh in to UCL's gateway `socrates.ucl.ac.uk` first. From Socrates you can then ssh in to our systems by typing `ssh <your_UCL_user_id>@<system_name>.rc.ucl.ac.uk`. 
+You will need to either use the [UCL Virtual Private Network](http://www.ucl.ac.uk/isd/staff/network/vpn) or ssh in to UCL's gateway `socrates.ucl.ac.uk` first. From Socrates you can then ssh in to our systems. 
+
+```
+ssh <your_UCL_user_id>@socrates.ucl.ac.uk
+ssh <your_UCL_user_id>@<system_name>.rc.ucl.ac.uk
+```
+
+
+Note: the default shell (what you are typing commands into) on Socrates is `csh` rather than `bash` and so your default prompt will look different and use a `%` rather than a `$` as the dividing character:
+
+```
+25 % ls
+html.pub/
+26 %
+```
 
 **Advanced:** If you find you need to go via Socrates often, you can set up this jump automatically, see [Single-step logins using tunnelling](#single-step-logins-using-tunnelling)
 
@@ -323,6 +337,99 @@ Have a look at `man qstat` and note the commands shown in the `SEE ALSO` section
 
 ### nodesforjob
 
-This is a utility that shows you the current 
+This is a utility that shows you the current percentage load, memory used and swap used on the nodes your job is running on. If your job is sharing the node with other people's jobs, it will show you the total resources in use, not just those used by your job. This is a snapshot of the current time and resource usage may change over the course of your job. Bear in mind that memory use in particular can increase over time as your job runs.
+
+If a cluster has hyperthreading enabled and you aren't using it, full load will show as 50% and not 100% - this is normal and not a problem.
+
+For a parallel job, very low (or zero) usage of any of the nodes suggests your job is either not capable of running over multiple nodes, or not partitioning its work effectively - you may be asking for more cores than it can use, or asking for a number of cores that doesn't fit well into the node sizes, leaving many idle.
+
+```
+[uccacxx@login02 ~]$ nodesforjob 1234
+Nodes for job 1234:
+  Primary:
+    node-r99a-238:  103.1 % load, 12.9 % memory used, 0.1% swap used
+  Secondaries:
+    node-r99a-206:  1.7 % load, 1.6 % memory used, 0.1% swap used
+    node-r99a-238:  103.1 % load, 12.9 % memory used, 0.1% swap used
+    node-r99a-292:  103.1 % load, 12.9 % memory used, 0.1% swap used
+    node-r99a-651:  1.6 % load, 3.2 % memory used, 0.1% swap used
+```
+The above example shows a multi-node job, so all the usage belongs to this job itself. It is running on four nodes, and node-r99a-238 is the head node (the one that launched the job) and shows up in both Primary and Secondaries. The load is very unbalanced - it is using two nodes flat out, and two are mostly doing nothing. Memory use is low. Swap use is essentially zero.
+
+
+## How do I estimate what resources to request in my jobscript?
+
+It can be difficult to know where to start when estimating the resources your job will need. One way you can find out what resources your jobs need is to submit one job which requests far more than you think necessary, and gather data on what it actually uses. If you aren't sure what 'far more' entails, request the maximum wallclock time and job size that will fit on one node, and reduce this after you have some idea.
+
+Run your program as:
+```
+ /usr/bin/time --verbose myprogram myargs
+```
+where `myprogram myargs` is however you normally run your program, with whatever options you pass to it.
+
+When your job finishes, you will get output about the resources it used and how long it took - the relevant one for memory is `maxrss` (maximum resident set size) which roughly tells you the largest amount of memory it used.
+
+Remember that memory requests in your jobscript are always per core, so check the total you are requesting is sensible - if you increase it too much you may end up with a job that cannot be submitted.
+
+You can also look at [nodesforjob](#nodesforjob) while a job is running to see a snapshot of the memory, swap and load on the nodes your job is running on.
+
 
 ## How do I run a graphical program?
+
+To run a graphical program on the cluster and be able to view the user interface on your own local computer, you will need to have an X-Windows Server installed on your local computer and use X-forwarding.
+
+### X-forwarding on Linux
+
+Desktop Linux operating systems already have X-Windows installed, so you just need to ssh in with the correct flags.
+
+You need to make sure you use either the `-X` or `-Y` (look at `man ssh` for details) flags on all ssh commands you run to establish a connection to the cluster.
+
+For example, connecting from outside of UCL:
+```
+ssh -X <your_UCL_user_id>@socrates.ucl.ac.uk
+```
+and then
+```
+ssh -X <your_UCL_user_id>@myriad.rc.ucl.ac.uk
+```
+
+### X-forwarding on Mac OS X
+
+You will need to install XQuartz to provide an X-Window System for Mac OS X. (Previously known as X11.app).
+
+You can then follow the Linux instructions using Terminal.app.
+
+### X-forwarding on Windows
+
+You will need:
+
+* An SSH client; e.g., PuTTY
+* An X server program; e.g., Exceed, Xming
+
+Exceed is available on Desktop@UCL machines and downloadable from the [UCL software database](http://swdb.ucl.ac.uk). Xming is open source (and mentioned here without testing).
+
+#### Exceed on Desktop@UCL
+
+1. Load Exceed. You can find it under Start > All Programs > Applications O-P > Open Text Exceed 14 > Exceed
+2. Open PuTTY (Applications O-P > PuTTY)
+3. In PuTTY, set up the connection with the host machine as usual:
+    * Host name: `myriad.rc.ucl.ac.uk` (for example)
+    * Port: `22`
+    * Connection type: `SSH`
+4. Then, from the Category menu, select Connection > SSH > X11 for 'Options controlling SSH X11 forwarding'.
+    * Make sure the box marked 'Enable X11 forwarding' is checked.
+5. Return to the session menu and save these settings with a new identifiable name for reuse in future.
+6. Click 'Open' and login to the host as usual
+7. To test that X-forwarding is working, try running `nedit` which is a text editor in our default modules.
+
+If `nedit` works, you have successfully enabled X-forwarding for graphical applications.
+
+#### Installing Xming
+
+Xming is a popular open source X server for Windows. These are instructions for using it alongside PuTTY. Other SSH clients and X servers are available. We cannot verify how well it may be working.
+
+1. Install both PuTTY and Xming if you have not done so already. During Xming installation, choose not to install an SSH client.
+2. Open Xming - the Xming icon should appear on the task bar.
+3. Open PuTTY
+4. Set up PuTTY as shown in the Exceed section.
+

@@ -55,7 +55,7 @@ If you are using Windows 10, then you probably have OpenSSH installed and could 
 ## Information for Points of Contact
 
 Points of Contact have some tools they can use to manage users and
-allocations, documented at [Points of Contact](Points_of_Contact).
+allocations, documented at [MMM Points of Contact](../Supplementary/Points_of_Contact.md).
 
 ## Logging in
 
@@ -83,21 +83,21 @@ anything more should be submitted as a job.
 ### Full user guide
 
 Thomas has the same user environment as RC Support's other clusters, so
-the [User guide](User_Guide) is relevant and is a
+the [User guide](../index.md) is relevant and is a
 good starting point for further information about how the environment
 works. Any variations that Thomas has should be listed on this page.
 
 ### Submitting a job
 
-Create a [jobscript](Example_Submission_Scripts) for
-non-interactive use and submit it using
-[qsub](Batch_Processing). Jobscripts must begin `#!/bin/bash -l` 
+Create a [jobscript](../Example_Jobscripts.md) for
+non-interactive use and 
+[submit your jobscript using qsub](../howto.md#how-do-i-submit-a-job-to-the-scheduler). Jobscripts must begin `#!/bin/bash -l` 
 in order to run as a login shell and get your login environment and
 modules.
 
 A job on Thomas must also specify what type of job it is (Gold, Free,
 Test) and the project it is being submitted for. 
-(See [Budgets and allocations](Budgets_and_allocations) below.)
+(See [Budgets and allocations](#budgets-and-allocations) below.)
 
 #### Memory requests
 
@@ -262,6 +262,21 @@ If your job must run within a single CU, you can request the parallel environmen
 
 [ back to top](#top "wikilink")
 
+
+## Disk quotas
+
+Quotas were enabled on Thomas on 29 May 2019. You have one per-user quota, with a default amount of 250GB - this is the total across home and Scratch.
+
+  - `lquota` shows you your quota and total usage (twice).
+  - `request_quota` is how you request a quota increase.
+
+If you go over quota, you will no longer be able to create new files and your jobs will fail as they cannot write.
+
+Quota increases may be granted without further approval, depending on size and how full the filesystem is. Otherwise they may need to go to the Thomas User Group for approval.
+
+[ back to top](#top "wikilink")
+
+
 ## Budgets and allocations
 
 We have enabled Gold for allocation management. Jobs that are run under
@@ -273,7 +288,7 @@ To see the name of your project(s) and how much allocation that budget
 has, run the command `budgets`.
 
 ```
-budgets`  
+budgets  
 Project  Machines Balance   
 -------- -------- --------  
 UCL_Test ANY      22781.89
@@ -412,6 +427,15 @@ SAFE also gives you a second mechanism for changing your SSH key - changing the 
 Email <rc-support@ucl.ac.uk> with any support queries. It will be helpful
 to include Thomas in the subject along with some descriptive text about
 the type of problem, and you should mention your username in the body.
+
+## Notional costs
+
+EPSRC contributed to the hardware, so there are two numbers to use for notional costs:
+
+* Cost per core hour excluding hardware (to be charged on EPSRC grants): 0.6 pence / core hour
+* Cost per core hour including hardware cost (to be charged on non-EPSRC grants): 1.5 pence / core hour
+
+Non-grant-funded projects should use the second figure.
 
 ## Acknowledging the use of Thomas in publications
 

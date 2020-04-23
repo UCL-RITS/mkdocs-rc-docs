@@ -65,7 +65,7 @@ If you are using Windows 10, then you probably have OpenSSH installed and could 
 ## Information for Points of Contact
 
 Points of Contact have some tools they can use to manage users and
-allocations, documented at [Points of Contact](Points_of_Contact "wikilink").
+allocations, documented at [MMM Points of Contact](../Supplementary/Points_of_Contact.md).
 
 ## Logging in
 
@@ -93,7 +93,7 @@ anything more should be submitted as a job.
 ## Full user guide
 
 Michael has the same user environment as RC Support's other clusters, so
-the [User Guide](User Guide) is relevant and is a
+the [User guide](../index.md) is relevant and is a
 good starting point for further information about how the environment
 works. Any variations that Michael has should be listed on this page.
 
@@ -215,14 +215,13 @@ Please let us know your username when you ask to be added to a group.
   - **Molpro**: Only UCL users are licensed to use our central copy and
     can request to be added to the `lgmolpro` reserved application group.
 
-## Suggested job sizes
+## Suggested job sizes on original Michael
 
-The target job sizes for Michael are 48-120 cores (2-5 nodes). Jobs
+The target job sizes for original Michael K-type nodes are 48-120 cores (2-5 nodes). Jobs
 larger than this may have a longer queue time and are better suited to
-ARCHER, and single node jobs may be more suited to your local
-facilities.
+ARCHER, and single node jobs may be more suited to your local facilities.
 
-## Maximum job resources
+## Maximum job resources on original Michael
 
 | Cores | Max wallclock |
 | ----- | ------------- |
@@ -232,7 +231,7 @@ facilities.
 On Michael, interactive sessions using qrsh have the same wallclock
 limit as other jobs.
 
-Nodes in Michael are 24 cores, 128GB RAM. The default maximum jobsize is
+The K-type nodes in Michael are 24 cores, 128GB RAM. The default maximum jobsize is
 864 cores, to remain within the 36-node 1:1 nonblocking interconnect
 zones.
 
@@ -253,6 +252,78 @@ Some normal multi-node jobs will use the superqueue - this is to make it
 easier for larger jobs to be scheduled, as otherwise they can have very
 long waits if every CU is half full.  
 
+## 2020 Michael expansion
+
+At the end of March 2020, Michael was expanded to include a new set of nodes. The old Michael nodes are the K-type nodes, while the new ones are the A-type nodes. The node name will look like `node-a14a-001` or `node-k10a-001`.
+
+The Michael expansion consists of 208 compute nodes each with two 20-core Intel Xeon Gold 6248 2.5GHz processors, 192 gigabytes of 2933MHz DDR4 RAM, 1TB disk, and an Intel OmniPath network. Expansion nodes have two Hyperthreads available.
+
+These are arranged in two 32-node CUs (a and b) and four 36-node CUs (c to f). Jobs are restricted to running either within a CU (all nodes connected to the same switch) or across CUs using only the bottom third of nodes attached to each switch. This approximates 1:1 blocking on a cluster that does not have it.
+
+## Maximum job resources on Michael expansion
+
+Please consider that Michael's A-type nodes have 40 physical cores - 2 nodes is 80 cores. Jobs do not share nodes, so although asking for 41 cores is possible, it means you are wasting the other 39 cores on your second node!
+
+| Cores    | Max. Duration |
+|:--------:|:-------------:|
+| 2800     | 48h           |
+
+These are numbers of physical cores: multiply by two for virtual cores with hyperthreads.
+
+## Hyperthreading
+
+The A-type nodes have hyperthreading enabled and you can choose on a per-job basis whether you want to use it.
+
+Hyperthreading lets you use two virtual cores instead of one physical core - some programs can take advantage of this.
+
+If you do not ask for hyperthreading, your job only uses one thread per core as normal.
+
+```
+# request hyperthreading in this job
+#$ -l threads=1
+
+# request the number of virtual cores
+#$ -pe mpi 160
+
+# set number of OpenMP threads being used per MPI process
+export OMP_NUM_THREADS=2
+```
+
+This job would be using 80 physical cores, using 80 MPI processes each of which would create two threads (on Hyperthreads).
+
+```
+# request hyperthreading in this job
+#$ -l threads=1
+
+# request the number of virtual cores
+#$ -pe mpi 160
+
+# set number of OpenMP threads being used per MPI process
+# (a whole node's worth)
+export OMP_NUM_THREADS=80
+```
+
+This job would still be using 80 physical cores, but would use one MPI process per node which would create 80 threads on the node (on Hyperthreads).
+
+
+## Choosing node types
+
+Given the difference in core count on the original and expansion Michael nodes, we strongly suggest you always specify which type of node you intend your job to run on, to avoid unintentionally wasting cores if your total number does not cleanly fit on that node size.
+
+The old nodes are K-type while the new nodes with hyperthreading are A-type. Jobs never run across a mix of node types - it will be all K nodes or all A nodes.
+
+To specify node type in your jobscript, add either:
+```
+# run on original 24-core nodes
+#$ -ac allow=K
+```
+or
+```
+# run on expansion 40-core hyperthread-enabled nodes
+#$ -ac allow=A
+```
+
+
 ### Queue names
 
 On Michael, users do not submit directly to queues - the scheduler
@@ -268,6 +339,22 @@ this is what they mean:
 ### Preventing a job from running cross-CU
 
 If your job must run within a single CU, you can request the parallel environment as `-pe wss` instead of `-pe mpi` (`wss` standing for 'wants single switch'). This will increase your queue times. It is suggested you only do this for benchmarking or if performance is being greatly affected by running in the superqueue.
+
+[ back to top](#top "wikilink")
+
+
+## Disk quotas
+
+You have one per-user quota, with a default amount of 250GB - this is the total across home and Scratch.
+
+  - `lquota` shows you your quota and total usage (twice).
+  - `request_quota` is how you request a quota increase.
+
+If you go over quota, you will no longer be able to create new files and your jobs will fail as they cannot write.
+
+Quota increases may be granted without further approval, depending on size and how full the filesystem is. Otherwise they may need to go to the Thomas User Group for approval.
+
+[ back to top](#top "wikilink")
 
 
 ## Budgets and allocations
@@ -349,6 +436,10 @@ from 'reserved' into charged. If the job doesn't run for the full time
 it asked for, the unused reserved portion will be refunded after the job
 ends. You cannot submit a job that you do not have the budget to
 run.
+
+#### Gold costs of A-type nodes
+
+The A-type nodes have twice the peak theoretical performance of the K-type nodes. A 24-core job lasting an hour costs 24 Gold on the K-type nodes. A 40-physical-core job lasting one hour costs 80 Gold on the A-type nodes. An 80-virtual-core job on the A-type nodes also costs 80 Gold.
 
 #### Troubleshooting: Unable to verify sufficient material worth
 

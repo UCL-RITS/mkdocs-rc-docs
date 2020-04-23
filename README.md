@@ -19,6 +19,16 @@ On the webserver, `cron` for `ccspwww` checks every ten minutes (+2, so 2,12,22,
 
 Docs on how to add pages and structure can be found at the MkDocs pages, at <http://www.mkdocs.org/user-guide/writing-your-docs/>.
 
+### Best linking practice
+
+Links to our other pages should be to the .md file when possible: this allows Travis-CI to warn about broken links. Eg. a link like `[Access services from outside UCL](../howto.md#logging-in-from-outside-the-ucl-firewall)` will be checkable.
+
+### Hiding pages from the sidebar
+
+Directories can be made non-indexable so don't automatically show in the sidebar if you create a `.pages` file inside them that contains `hide: true`. Files inside them can be linked from elsewhere as usual.
+
+Documentation at <https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin>
+
 ## Package List Updates
 
 In addition to the normal pages, the webserver has `cron` for `ccspwww` set up to run the `remote/pkg_list_updates.sh` script, which connects to our Myriad cluster. The ssh keys there are configured to automatically run scripts that dump the package lists as JSON (instead of starting a normal shell session), which the script writes to temporary files, before moving to the correct places if successful.

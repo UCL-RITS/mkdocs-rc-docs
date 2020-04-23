@@ -23,8 +23,6 @@ that need to run Linux/UNIX applications, but it is available to all UCL users.
     Aristotle is made available but is provided with minimal staff time and no budget.
     Any user may completely occupy the service and there is no system in place to prevent that.
 
-<!-- TODO: Linkify "RCPS software stack"? -->
-
 ## Access
 
 Anyone with a UCL userid and within the UCL institutional firewall can
@@ -48,13 +46,12 @@ If you experience difficulties with your login, please make sure that
 you are typing your UCL user ID and your password correctly. If you
 still cannot get access, please contact us at [rc-support@ucl.ac.uk](mailto:rc-support@ucl.ac.uk).
 
-If you are outside the UCL firewall, you will need to connect to
-Socrates first, [as with our main UCL clusters](Accessing Clusters from Outside UCL).
+If you are outside the UCL firewall, you will need to [connect to Socrates first](../howto.md#logging-in-from-outside-the-ucl-firewall) and then SSH in to Aristotle from there.
 
 ## User Environment
 
 Aristotle runs Red Hat Enterprise Linux 7 and NFS mounts the 
-[RCPS Software Stack](RCPS_Software.md). As this machine is intended
+[RCPS Software Stack](../../Installed_Software_Lists/module-packages). As this machine is intended
 for teaching, work has focused on getting specific applications required
 for specific courses to work and these are:
 
@@ -64,6 +61,5 @@ for specific courses to work and these are:
   - Fortran compilers (of which there are a large variety)
 
 Packages are available through modules and users should consult the
-relevant [modules documentation](Modules).
+relevant [modules documentation](../Software_Guides/Other_Software.md).
 
-<!-- TODO: Link above doesn't seem to correspond to a page -->

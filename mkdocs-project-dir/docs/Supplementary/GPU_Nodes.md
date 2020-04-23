@@ -7,28 +7,9 @@ layout: docs
 
 ## Node Types
 
-You can view the hardware specifications for GPU node types on the [RC Systems Platforms Overview](RC_Systems.md) page.
+You can view the hardware specifications for [GPU node types in Myriad](../Clusters/Myriad.md).
 
-There are GPU nodes available in Legion and Myriad.
-
-### Legion Type P GPU node
-
-There is one NVIDIA K40c GPU node in Legion. To use this, you need to
-specify this in your jobscript or [interactive qrsh request](Interactive_Jobs.md) (remove the `#$` for qrsh): 
-
-```
-#$ -l gpu=1
-```
-
-### Myriad Type J GPU nodes
-
-Myriad has two GPU nodes each with two NVIDIA Tesla P100s. To use them,
-you need to request one or two GPUs in your jobscript or [interactive
-qrsh request](Interactive Jobs) (remove the `#$` for qrsh):
-
-```
-#$ -l gpu=2
-```
+There are several types of GPU nodes available in Myriad.
 
 ## Available modules
 
@@ -40,7 +21,7 @@ You can see the available CUDA modules by typing
 
 ## Sample CUDA code
 
-There are samples in the CUDA install locations, e.g. 
+There are samples in some CUDA install locations, e.g. 
 
 ```
 /shared/ucl/apps/cuda/7.5.18/gnu-4.9.2/samples
@@ -52,7 +33,7 @@ you should look at their CUDA docs: <http://docs.nvidia.com/cuda/>
 
 ## Sample jobscripts
 
-You can see [sample jobscripts here](Example Scripts).
+You can see [sample jobscripts here](../Example_Jobscripts.md#gpu-job-script-example).
 
 Use this in your script to request up to 2 GPUs. 
 
@@ -70,8 +51,12 @@ module load cuda/7.5.18/gnu-4.9.2
 
 ## Running the sample code
 
-To get started, here's how you would compile and run one of the cuda
-samples interactively on a user test node using a GPU.
+To get started, here's how you would compile one of the CUDA
+samples and run it in an interactive session on a GPU node.
+
+You can compile CUDA code on the login nodes like this (which do not have GPUs) if
+they do not require all the CUDA libraries to be present at compile time. If they do, you'll
+get an error saying it cannot link the CUDA libraries, and `ERROR: CUDA could not be found on your system`  and you will need tro do your compiling on the GPU node as well.
 
 1\. Load the cuda module 
 
@@ -106,6 +91,9 @@ module on the node and run the program.
 
 ```
 qrsh -l mem=1G,h_rt=0:30:0,gpu=1 -now no
+
+# wait for interactive job to start
+
 module unload compilers mpi
 module load compilers/gnu/4.9.2
 module load cuda/7.5.18
@@ -133,9 +121,9 @@ Test Succeeded!
 
 ## Building your own code
 
-Please note: if the code you are trying to compile needs to link
-libcuda, it must also be built on a GPU node because only the GPU node
-has the correct libraries.
+As above, if the code you are trying to compile needs to link against
+libcuda, it must also be built on a GPU node because only the GPU nodes
+have the correct libraries.
 
 The NVIDIA examples don't require this, but things like Tensorflow do.
 
@@ -149,19 +137,18 @@ Modules to load for the non-MKL GPU version:
 ```
 module unload compilers mpi  
 module load compilers/gnu/4.9.2  
-module load python3/recommended  
-module load cuda/8.0.61-patch2/gnu-4.9.2  
-module load cudnn/6.0/cuda-8.0  
-module load tensorflow/1.4.1/gpu
+module load python3/3.7
+module load cuda/10.0.130/gnu-4.9.2  
+module load cudnn/7.4.2.24/cuda-10.0
+module load tensorflow/2.0.0/gpu-py37
 ```
 
 ## Using MPI and GPUs
 
 It is possible to run MPI programs that use GPUs but only within a
-single node, so you can request 1 GPU and 12 processor cores on Legion, or up to 2
-GPUs and 36 cores on Myriad.
+single node, so you can request up to 2 GPUs and 36 cores on Myriad.
 
 ## Looking for more GPUs?
 
-  - [GPU clusters available to UCL users](GPU_clusters).
+  - [GPU clusters available to UCL users](GPU_Clusters.md).
 
