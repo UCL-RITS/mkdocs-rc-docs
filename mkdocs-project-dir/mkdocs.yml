@@ -27,8 +27,9 @@ theme:
   palette:
     primary: 'deep purple'
     accent: 'deep purple'
-  logo: 'img/portico.svg'
   font: false
+  icon: 
+    logo: 'img/portico.svg'
 #Boo GDPR
 #  font:
 #    text: 'Roboto'
@@ -61,7 +62,7 @@ plugins:
 # Customization
 extra:
   social:
-    - type: 'github'
+    - icon: 'github'
       link: 'https://github.com/UCL-RITS'
 extra_css:
       - 'stylesheets/tweaks.css'
