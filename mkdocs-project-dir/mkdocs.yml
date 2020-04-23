@@ -29,6 +29,8 @@ theme:
     accent: 'deep purple'
   font: false
   logo: 'img/portico.svg'
+  features:
+    - instant
 #Boo GDPR
 #  font:
 #    text: 'Roboto'
