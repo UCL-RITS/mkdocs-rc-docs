@@ -46,5 +46,5 @@ We will endeavour to answer queries on any aspect of computing related to your r
 
 ## Training
 
-We infrequently provide a training course aimed at getting users up and running on one of our main clusters. Please see our [Training page](Training) for details.
+Due to the on-going COVID-19 pandemic, training courses have been suspended indefinitely.
 
