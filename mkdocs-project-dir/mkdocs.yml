@@ -31,6 +31,8 @@ theme:
   logo: 'img/portico.svg'
   features:
     - instant
+  icon:
+    repo: fontawesome/brands/github
 #Boo GDPR
 #  font:
 #    text: 'Roboto'
