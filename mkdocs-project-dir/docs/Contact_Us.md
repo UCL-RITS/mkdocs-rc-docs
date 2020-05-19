@@ -29,23 +29,6 @@ Research IT Services holds drop-in sessions roughly every two weeks which at lea
 
 If you have a particularly complex problem, it may be useful to email the support address, <rc-support@ucl.ac.uk>, beforehand so that the person attending can prepare.
 
-## Contacts
-
-The members of the Research Computing Services Group are:
-
-|     |        |
-|:----|:-------|
-| Dr Owain Kenway | Acting Head of Research Computing |
-| Brian Alston    | Research Computing Analyst |
-| Dr Ian Kirker   | Research Computing Analyst |
-| Heather Kelly   | Research Computing Analyst |
-
-as well as our dedicated system administrators.
-
-Please note that all support related questions or comments should be
-directed to the team email address <rc-support@ucl.ac.uk> in the first
-instance.
-
 ## Location
 
 The Research Computing Team are located at:
