@@ -1,7 +1,7 @@
 <%namespace name="x_packages" file="x_packages.mako"/>
 <%
-  m_pack = m["package_groups"]
-  gen_time = m["generated"]
+  m_pack = p["package_groups"]
+  gen_time = p["generated"]
 %>
 # General Software Lists
 
