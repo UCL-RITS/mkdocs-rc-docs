@@ -22,6 +22,8 @@ Others have a lot of data to process, or need to simulate a lot of things at onc
 
 Often these kinds of work are either impossible or would take far too long to do on a desktop or laptop computer, as well as making the computer unavailable to do everyday tasks like writing documents or reading papers.
 
+By running the programs on the computers in a cluster, researchers can use many powerful computers at once, without locking up their own one.
+
 ## How do I use it?
 
 Most people use something like the following workflow:
