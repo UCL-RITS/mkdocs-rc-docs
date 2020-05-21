@@ -17,7 +17,7 @@
         <meta name="author" content="UCL RCAS Team">
       
       <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.0">
     
     
       
@@ -25,9 +25,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4b9ffd7b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.18ac144a.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.b79bcd20.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.616af814.min.css">
       
       
         
@@ -52,7 +52,8 @@
   
     
     
-    <body dir="ltr" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
   
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -394,6 +395,20 @@
         <li class="md-nav__item">
   <a href="#what-is-a-cluster" class="md-nav__link">
     What is a cluster?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-would-i-want-to-use-one" class="md-nav__link">
+    Why would I want to use one?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-use-it" class="md-nav__link">
+    How do I use it?
   </a>
   
 </li>
@@ -808,6 +823,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#why-would-i-want-to-use-one" class="md-nav__link">
+    Why would I want to use one?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-use-it" class="md-nav__link">
+    How do I use it?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -830,7 +859,30 @@
                 
                 <h1 id="cluster-computing">Cluster Computing<a class="headerlink" href="#cluster-computing" title="Permanent link">§</a></h1>
 <h2 id="what-is-a-cluster">What is a cluster?<a class="headerlink" href="#what-is-a-cluster" title="Permanent link">§</a></h2>
-<p>A cluster is a number of computers/servers (generally referred to as 'nodes') connected together so they appear to be one machine. A user shouldn't usually need to care exactly where on the cluster their work is running.</p>
+<p>In this context, a cluster is a collection of computers (often referred to as "nodes"). 
+They're networked together with some shared storage and a scheduling system that lets people 
+run programs on them without having to enter commands "live".</p>
+<h2 id="why-would-i-want-to-use-one">Why would I want to use one?<a class="headerlink" href="#why-would-i-want-to-use-one" title="Permanent link">§</a></h2>
+<p>Some researchers have programs that require a lot of compute power, like simulating weather patterns or the quantum behaviour of molecules.</p>
+<p>Others have a lot of data to process, or need to simulate a lot of things at once, like simulating the spread of disease or assembling parts of DNA into a genome.</p>
+<p>Often these kinds of work are either impossible or would take far too long to do on a desktop or laptop computer, as well as making the computer unavailable to do everyday tasks like writing documents or reading papers.</p>
+<h2 id="how-do-i-use-it">How do I use it?<a class="headerlink" href="#how-do-i-use-it" title="Permanent link">§</a></h2>
+<p>Most people use something like the following workflow:</p>
+<ul>
+<li>connect to the cluster's "login nodes"</li>
+<li>create a script of commands to run programs</li>
+<li>submit the script to the scheduler</li>
+<li>wait for the scheduler to find available "compute nodes" and run the script</li>
+<li>look at the results in the files the script created</li>
+</ul>
+<p>Most people connect using a program called a Secure Shell Client ("ssh client" for short), but some
+programs, like Matlab and Comsol, run on your own computer and can be set up to send work to the cluster automatically. 
+That can be a little tricky to get working, though.</p>
+<p>The ssh client gives you a command prompt when you can enter text commands, but you can also tell it to 
+pass graphical windows through the network connection, using a system called X-Forwarding.
+This can be useful for visualising your data without transferring all the files back, but the network
+ connection makes it a bit slower to use than running it on your own computer.
+You'll need an X server on your own computer to use this: check <a href="Wiki_Export/X-Forwarding.md">our page on X-Forwarding</a> for details.</p>
                 
                   
                 
@@ -916,15 +968,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.a0c4167b.min.js"></script>
-      <script src="../../assets/javascripts/bundle.fb26dd1d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5f27aba8.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: ["instant"],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.37585f48.min.js"
+            worker: "../../assets/javascripts/worker/search.27c6a5e6.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
