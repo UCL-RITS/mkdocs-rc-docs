@@ -1583,7 +1583,7 @@ Sometimes it will give you a direct command you can run to remove that specific 
 with <code>vi</code>, use <code>pico</code> - it has the command shortcuts shown at the bottom, where <code>^O</code> means 
 press <code>Ctrl</code> and then the letter <code>o</code>.</p>
 <div class="codehilite"><pre><span></span><code># to open the file for editing in pico
-pico ~/ssh/known_hosts
+pico ~/.ssh/known_hosts
 </code></pre></div>
 
 
@@ -1597,7 +1597,8 @@ Are you sure you want to continue connecting (yes/no)?
 
 <p>Typing <code>yes</code> will allow you to continue logging in.</p>
 <p><strong>PuTTY</strong> will display a warning and you can choose to continue or not.</p>
-<p><strong>WinSCP</strong> will say <code>Server's host key does not match the one that WinSCP has in cache.</code>, and you will have the option to update the key.</p>
+<p><strong>WinSCP</strong> will say <code>Server's host key does not match the one that WinSCP has in cache.</code> 
+and you will have the option to update the key.</p>
 <h2 id="how-do-i-transfer-data-onto-the-system">How do I transfer data onto the system?<a class="headerlink" href="#how-do-i-transfer-data-onto-the-system" title="Permanent link">§</a></h2>
 <p>You can transfer data to and from our systems using any program capable of using the Secure Copy (SCP) protocol. This uses the same SSH system as you use to log in to a command line session, but then transfers data over it. This means that if you can use SSH to connect to a system, you can usually use SCP to transfer files to it. </p>
 <h3 id="copying-files-using-linux-or-mac-os-x">Copying files using Linux or Mac OS X<a class="headerlink" href="#copying-files-using-linux-or-mac-os-x" title="Permanent link">§</a></h3>
