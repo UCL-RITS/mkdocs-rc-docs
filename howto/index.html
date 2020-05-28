@@ -17,7 +17,7 @@
         <meta name="author" content="UCL RCAS Team">
       
       <link rel="shortcut icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.2">
     
     
       
@@ -25,9 +25,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.71dfd922.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.a2408e81.min.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/palette.616af814.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a46bcfb3.min.css">
       
       
         
@@ -399,6 +399,19 @@
   <a href="#login-problems" class="md-nav__link">
     Login problems
   </a>
+  
+    <nav class="md-nav" aria-label="Login problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remote-host-identification-has-changed" class="md-nav__link">
+    Remote host identification has changed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1177,6 +1190,19 @@
     Login problems
   </a>
   
+    <nav class="md-nav" aria-label="Login problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remote-host-identification-has-changed" class="md-nav__link">
+    Remote host identification has changed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1513,7 +1539,58 @@ html.pub/
 <p>If you experience difficulties with your login, please make sure that you are typing your UCL user ID and your password correctly. If you have recently updated your password, it takes some hours to propagate to all UCL systems.</p>
 <p>If you still cannot get access but can access other UCL services like Socrates, please contact us on rc-support@ucl.ac.uk. Your account may have expired, or you may have gone over quota.</p>
 <p>If you cannot access anything, please see UCL MyAccount - you may need to request a password reset from the Service Desk. </p>
-<p>If you get a host key error message, you will need to delete old host keys. <em>TODO: details</em></p>
+<p>If you get a host key error message, you will need to delete old host keys.</p>
+<h4 id="remote-host-identification-has-changed">Remote host identification has changed<a class="headerlink" href="#remote-host-identification-has-changed" title="Permanent link">§</a></h4>
+<p>When you log in via SSH, it keeps a record of the host key for the server you logged in to in 
+your <code>.ssh/known_hosts</code> file in your home directory, on the machine you are logging in from. 
+This helps make sure you are connecting directly to the server you think you are, but can cause 
+warnings to show up if the host key on that machine has genuinely changed (usually because of an 
+update or reinstall).</p>
+<p>The error message looks like this if you are using OpenSSH in a terminal:</p>
+<div class="codehilite"><pre><span></span><code>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:7FTryal3mIhWr9CqM3EPPeXsfezNk8Mm8HPCCAGXiIA.
+Please contact your system administrator.
+Add correct host key in /Users/uccaxxx/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /Users/uccaxxx/.ssh/known_hosts:11
+ECDSA host key for myriad.rc.ucl.ac.uk has changed and you have requested strict checking.
+Host key verification failed.
+Killed by signal 1.
+</code></pre></div>
+
+
+<p>This tells you that the old key is in line 11 of your <code>known_hosts</code> file. 
+Sometimes it will give you a direct command you can run to remove that specific key:</p>
+<div class="codehilite"><pre><span></span><code>ssh-keygen -R myriad.rc.ucl.ac.uk
+</code></pre></div>
+
+
+<p>or you can manually delete line 11 yourself in a text editor.</p>
+<p>If you are logging in via Socrates, you will need to remove the old key there too. On Socrates, 
+<code>pico</code> and <code>vi</code> are available text editors. If you are not already familiar 
+with <code>vi</code>, use <code>pico</code> - it has the command shortcuts shown at the bottom, where <code>^O</code> means 
+press <code>Ctrl</code> and then the letter <code>o</code>.</p>
+<div class="codehilite"><pre><span></span><code># to open the file for editing in pico
+pico ~/ssh/known_hosts
+</code></pre></div>
+
+
+<p>Once you have removed the old host key you will be able to ssh in again. The first time 
+you log in to an unknown server you will get a message like this:</p>
+<div class="codehilite"><pre><span></span><code>The authenticity of host &#39;myriad.rc.ucl.ac.uk can&#39;t be established.
+ECDSA key fingerprint is SHA256:7FTryal3mIhWr9CqM3EPPeXsfezNk8Mm8HPCCAGXiIA.
+Are you sure you want to continue connecting (yes/no)?
+</code></pre></div>
+
+
+<p>Typing <code>yes</code> will allow you to continue logging in.</p>
+<p><strong>PuTTY</strong> will display a warning and you can choose to continue or not.</p>
+<p><strong>WinSCP</strong> will say <code>Server's host key does not match the one that WinSCP has in cache.</code>, and you will have the option to update the key.</p>
 <h2 id="how-do-i-transfer-data-onto-the-system">How do I transfer data onto the system?<a class="headerlink" href="#how-do-i-transfer-data-onto-the-system" title="Permanent link">§</a></h2>
 <p>You can transfer data to and from our systems using any program capable of using the Secure Copy (SCP) protocol. This uses the same SSH system as you use to log in to a command line session, but then transfers data over it. This means that if you can use SSH to connect to a system, you can usually use SCP to transfer files to it. </p>
 <h3 id="copying-files-using-linux-or-mac-os-x">Copying files using Linux or Mac OS X<a class="headerlink" href="#copying-files-using-linux-or-mac-os-x" title="Permanent link">§</a></h3>
