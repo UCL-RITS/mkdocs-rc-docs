@@ -108,7 +108,7 @@ with `vi`, use `pico` - it has the command shortcuts shown at the bottom, where 
 press `Ctrl` and then the letter `o`.
 ```
 # to open the file for editing in pico
-pico ~/ssh/known_hosts
+pico ~/.ssh/known_hosts
 ```
 Once you have removed the old host key you will be able to ssh in again. The first time 
 you log in to an unknown server you will get a message like this:
@@ -121,7 +121,8 @@ Typing `yes` will allow you to continue logging in.
 
 **PuTTY** will display a warning and you can choose to continue or not.
 
-**WinSCP** will say `Server's host key does not match the one that WinSCP has in cache.`, and you will have the option to update the key.
+**WinSCP** will say `Server's host key does not match the one that WinSCP has in cache.` 
+and you will have the option to update the key.
 
 
 ## How do I transfer data onto the system?
