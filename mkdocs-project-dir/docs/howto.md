@@ -61,7 +61,60 @@ If you still cannot get access but can access other UCL services like Socrates, 
 
 If you cannot access anything, please see UCL MyAccount - you may need to request a password reset from the Service Desk. 
 
-If you get a host key error message, you will need to delete old host keys. *TODO: details*
+If you get a host key error message, you will need to delete old host keys.
+
+#### Remote host identification has changed
+
+When you log in via SSH, it keeps a record of the host key for the server you logged in to in 
+your `.ssh/known_hosts` file in your home directory, on the machine you are logging in from. 
+This helps make sure you are connecting directly to the server you think you are, but can cause 
+warnings to show up if the host key on that machine has genuinely changed (usually because of an 
+update or reinstall).
+
+The error message looks like this if you are using OpenSSH in a terminal:
+```
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:7FTryal3mIhWr9CqM3EPPeXsfezNk8Mm8HPCCAGXiIA.
+Please contact your system administrator.
+Add correct host key in /Users/uccaxxx/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /Users/uccaxxx/.ssh/known_hosts:11
+ECDSA host key for myriad.rc.ucl.ac.uk has changed and you have requested strict checking.
+Host key verification failed.
+Killed by signal 1.
+```
+This tells you that the old key is in line 11 of your `known_hosts` file. 
+Sometimes it will give you a direct command you can run to remove that specific key:
+```
+ssh-keygen -R myriad.rc.ucl.ac.uk
+``` 
+or you can manually delete line 11 yourself in a text editor.
+
+If you are logging in via Socrates, you will need to remove the old key there too. On Socrates, 
+`pico` and `vi` are available text editors. If you are not already familiar 
+with `vi`, use `pico` - it has the command shortcuts shown at the bottom, where `^O` means 
+press `Ctrl` and then the letter `o`.
+```
+# to open the file for editing in pico
+pico ~/ssh/known_hosts
+```
+Once you have removed the old host key you will be able to ssh in again. The first time 
+you log in to an unknown server you will get a message like this:
+```
+The authenticity of host 'myriad.rc.ucl.ac.uk can't be established.
+ECDSA key fingerprint is SHA256:7FTryal3mIhWr9CqM3EPPeXsfezNk8Mm8HPCCAGXiIA.
+Are you sure you want to continue connecting (yes/no)?
+```
+Typing `yes` will allow you to continue logging in.
+
+**PuTTY** will display a warning and you can choose to continue or not.
+
+**WinSCP** will say `Server's host key does not match the one that WinSCP has in cache.`, and you will have the option to update the key.
 
 
 ## How do I transfer data onto the system?
