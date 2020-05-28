@@ -71,6 +71,13 @@ This helps make sure you are connecting directly to the server you think you are
 warnings to show up if the host key on that machine has genuinely changed (usually because of an 
 update or reinstall).
 
+Check the host key warning against our current keys:
+```
+# Myriad
+ECDSA key fingerprint is SHA256:7FTryal3mIhWr9CqM3EPPeXsfezNk8Mm8HPCCAGXiIA
+RSA key fingerprint is 29:a7:45:04:83:86:ec:95:fa:25:dc:7a:f4:93:78:c1
+```
+
 The error message looks like this if you are using OpenSSH in a terminal:
 ```
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
