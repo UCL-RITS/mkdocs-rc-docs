@@ -61,7 +61,7 @@ If you still cannot get access but can access other UCL services like Socrates, 
 
 If you cannot access anything, please see UCL MyAccount - you may need to request a password reset from the Service Desk. 
 
-If you get a host key error message, you will need to delete old host keys.
+If you get a host key error message, you will need to delete old host keys - continue reading!
 
 #### Remote host identification has changed
 
