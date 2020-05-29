@@ -59,9 +59,9 @@ We also have a mailing system that can be implemented to send emails with remind
 | `s` | Mail is sent when the job is suspended. |
 | `n` | No mail is sent. (The default.) |
 
-You can use more than one of these options by separating them with a comma, for example, adding the following to your job script would mean you get an email when the job begins and when it ends:
+You can use more than one of these options by putting them together after the `-m` option; for example, adding the following to your job script would mean you get an email when the job begins and when it ends:
 
 ```
-#$ -m b,e
+#$ -m be
 ```
 
