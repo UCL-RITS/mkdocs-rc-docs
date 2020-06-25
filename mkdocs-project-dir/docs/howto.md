@@ -410,7 +410,41 @@ Nodes for job 1234:
     node-r99a-292:  103.1 % load, 12.9 % memory used, 0.1% swap used
     node-r99a-651:  1.6 % load, 3.2 % memory used, 0.1% swap used
 ```
-The above example shows a multi-node job, so all the usage belongs to this job itself. It is running on four nodes, and node-r99a-238 is the head node (the one that launched the job) and shows up in both Primary and Secondaries. The load is very unbalanced - it is using two nodes flat out, and two are mostly doing nothing. Memory use is low. Swap use is essentially zero.
+The above example shows a multi-node job, so all the usage belongs to this job itself. It is 
+running on four nodes, and node-r99a-238 is the head node (the one that launched the job) and 
+shows up in both Primary and Secondaries. The load is very unbalanced - it is using two nodes 
+flat out, and two are mostly doing nothing. Memory use is low. Swap use is essentially zero.
+
+### jobhist
+
+Once a job ends, it no longer shows up in `qstat`. To see information about your finished jobs - 
+when they started, when they ended, what node they ran on - type `jobhist`.
+
+```
+[uccacxx@login02 ~]$ jobhist
+        FSTIME        |       FETIME        |   HOSTNAME    |  OWNER  | JOB NUMBER | TASK NUMBER | EXIT STATUS |   JOB NAME    
+----------------------+---------------------+---------------+---------+------------+-------------+-------------+---------------
+  2020-06-17 16:31:12 | 2020-06-17 16:34:19 | node-h00a-010 | uccacxx |    3854822 |           0 |           0 | m_job   
+  2020-06-17 16:56:50 | 2020-06-17 16:56:52 | node-d00a-023 | uccacxx |    3854836 |           0 |           1 | k_job  
+  2020-06-17 17:21:12 | 2020-06-17 17:21:46 | node-d00a-012 | uccacxx |    3854859 |           0 |           0 | k_job
+```
+
+`FSTIME` - when the job started running on the node
+`FETIME` - when the job ended
+`HOSTNAME` - the head node of the job (if it ran on multiple nodes, it only lists the first)
+`TASK NUMBER` - if it was an array job, it will have a different number here for each task
+
+This shows jobs that finished in the last 24 hours by default. You can search for longer as well:
+```
+jobhist --hours=200
+```
+
+If a job ended and didn't create the files you expect, check the start and end times to see whether 
+it ran out of wallclock time. 
+
+If a job only ran for seconds and didn't produce the expected output, there was probably something 
+wrong in your script - check the `.o` and `.e` files in the directory you submitted the job from 
+for errors.
 
 
 ## How do I estimate what resources to request in my jobscript?
@@ -430,9 +464,37 @@ Remember that memory requests in your jobscript are always per core, so check th
 You can also look at [nodesforjob](#nodesforjob) while a job is running to see a snapshot of the memory, swap and load on the nodes your job is running on.
 
 
+## How can I see what types of node a cluster has?
+
+As well as looking at the cluster-specific page in this documentation for more details (for example 
+[Myriad](Clusters/Myriad.md)), you can run `nodetypes`, which will give you basic information about 
+the nodes that exist in that cluster.
+
+```
+[uccacxx@login12 ~]$ nodetypes
+Unknown node type: util02
+Unknown node type: util05
+    2 type * nodes: 36 cores, 188.4G RAM
+    7 type B nodes: 36 cores,   1.5T RAM
+   66 type D nodes: 36 cores, 188.4G RAM
+    9 type E nodes: 36 cores, 188.4G RAM
+    1 type F nodes: 36 cores, 188.4G RAM
+    3 type H nodes: 36 cores, 172.7G RAM
+   53 type H nodes: 36 cores, 188.4G RAM
+    3 type I nodes: 36 cores,   1.5T RAM
+    2 type J nodes: 36 cores, 188.4G RAM
+```
+
+This shows how many of each letter-labelled nodetype the cluster has, then the number of cores 
+and amount of memory the node is reporting it has. It also shows the cluster has some utility 
+nodes - those are part of the infrastructure. The `*` nodes are the login nodes.
+
+
 ## How do I run a graphical program?
 
-To run a graphical program on the cluster and be able to view the user interface on your own local computer, you will need to have an X-Windows Server installed on your local computer and use X-forwarding.
+To run a graphical program on the cluster and be able to view the user interface on your own 
+local computer, you will need to have an X-Windows Server installed on your local computer and 
+use X-forwarding.
 
 ### X-forwarding on Linux
 
