@@ -17,7 +17,7 @@
         <meta name="author" content="UCL RCAS Team">
       
       <link rel="shortcut icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.3">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.6e35a1a6.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.fe0cca5b.min.css">
       
         <link rel="stylesheet" href="../assets/stylesheets/palette.a46bcfb3.min.css">
       
@@ -626,6 +626,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#jobhist" class="md-nav__link">
+    jobhist
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -634,6 +641,13 @@
         <li class="md-nav__item">
   <a href="#how-do-i-estimate-what-resources-to-request-in-my-jobscript" class="md-nav__link">
     How do I estimate what resources to request in my jobscript?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-see-what-types-of-node-a-cluster-has" class="md-nav__link">
+    How can I see what types of node a cluster has?
   </a>
   
 </li>
@@ -1416,6 +1430,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#jobhist" class="md-nav__link">
+    jobhist
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1424,6 +1445,13 @@
         <li class="md-nav__item">
   <a href="#how-do-i-estimate-what-resources-to-request-in-my-jobscript" class="md-nav__link">
     How do I estimate what resources to request in my jobscript?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-see-what-types-of-node-a-cluster-has" class="md-nav__link">
+    How can I see what types of node a cluster has?
   </a>
   
 </li>
@@ -1827,7 +1855,36 @@ Nodes for job 1234:
 </code></pre></div>
 
 
-<p>The above example shows a multi-node job, so all the usage belongs to this job itself. It is running on four nodes, and node-r99a-238 is the head node (the one that launched the job) and shows up in both Primary and Secondaries. The load is very unbalanced - it is using two nodes flat out, and two are mostly doing nothing. Memory use is low. Swap use is essentially zero.</p>
+<p>The above example shows a multi-node job, so all the usage belongs to this job itself. It is 
+running on four nodes, and node-r99a-238 is the head node (the one that launched the job) and 
+shows up in both Primary and Secondaries. The load is very unbalanced - it is using two nodes 
+flat out, and two are mostly doing nothing. Memory use is low. Swap use is essentially zero.</p>
+<h3 id="jobhist">jobhist<a class="headerlink" href="#jobhist" title="Permanent link">§</a></h3>
+<p>Once a job ends, it no longer shows up in <code>qstat</code>. To see information about your finished jobs - 
+when they started, when they ended, what node they ran on - type <code>jobhist</code>.</p>
+<div class="codehilite"><pre><span></span><code>[uccacxx@login02 ~]$ jobhist
+        FSTIME        |       FETIME        |   HOSTNAME    |  OWNER  | JOB NUMBER | TASK NUMBER | EXIT STATUS |   JOB NAME    
+----------------------+---------------------+---------------+---------+------------+-------------+-------------+---------------
+  2020-06-17 16:31:12 | 2020-06-17 16:34:19 | node-h00a-010 | uccacxx |    3854822 |           0 |           0 | m_job   
+  2020-06-17 16:56:50 | 2020-06-17 16:56:52 | node-d00a-023 | uccacxx |    3854836 |           0 |           1 | k_job  
+  2020-06-17 17:21:12 | 2020-06-17 17:21:46 | node-d00a-012 | uccacxx |    3854859 |           0 |           0 | k_job
+</code></pre></div>
+
+
+<p><code>FSTIME</code> - when the job started running on the node
+<code>FETIME</code> - when the job ended
+<code>HOSTNAME</code> - the head node of the job (if it ran on multiple nodes, it only lists the first)
+<code>TASK NUMBER</code> - if it was an array job, it will have a different number here for each task</p>
+<p>This shows jobs that finished in the last 24 hours by default. You can search for longer as well:</p>
+<div class="codehilite"><pre><span></span><code>jobhist --hours=200
+</code></pre></div>
+
+
+<p>If a job ended and didn't create the files you expect, check the start and end times to see whether 
+it ran out of wallclock time. </p>
+<p>If a job only ran for seconds and didn't produce the expected output, there was probably something 
+wrong in your script - check the <code>.o</code> and <code>.e</code> files in the directory you submitted the job from 
+for errors.</p>
 <h2 id="how-do-i-estimate-what-resources-to-request-in-my-jobscript">How do I estimate what resources to request in my jobscript?<a class="headerlink" href="#how-do-i-estimate-what-resources-to-request-in-my-jobscript" title="Permanent link">§</a></h2>
 <p>It can be difficult to know where to start when estimating the resources your job will need. One way you can find out what resources your jobs need is to submit one job which requests far more than you think necessary, and gather data on what it actually uses. If you aren't sure what 'far more' entails, request the maximum wallclock time and job size that will fit on one node, and reduce this after you have some idea.</p>
 <p>Run your program as:</p>
@@ -1839,8 +1896,32 @@ Nodes for job 1234:
 <p>When your job finishes, you will get output about the resources it used and how long it took - the relevant one for memory is <code>maxrss</code> (maximum resident set size) which roughly tells you the largest amount of memory it used.</p>
 <p>Remember that memory requests in your jobscript are always per core, so check the total you are requesting is sensible - if you increase it too much you may end up with a job that cannot be submitted.</p>
 <p>You can also look at <a href="#nodesforjob">nodesforjob</a> while a job is running to see a snapshot of the memory, swap and load on the nodes your job is running on.</p>
+<h2 id="how-can-i-see-what-types-of-node-a-cluster-has">How can I see what types of node a cluster has?<a class="headerlink" href="#how-can-i-see-what-types-of-node-a-cluster-has" title="Permanent link">§</a></h2>
+<p>As well as looking at the cluster-specific page in this documentation for more details (for example 
+<a href="../Clusters/Myriad/">Myriad</a>), you can run <code>nodetypes</code>, which will give you basic information about 
+the nodes that exist in that cluster.</p>
+<div class="codehilite"><pre><span></span><code>[uccacxx@login12 ~]$ nodetypes
+Unknown node type: util02
+Unknown node type: util05
+    2 type * nodes: 36 cores, 188.4G RAM
+    7 type B nodes: 36 cores,   1.5T RAM
+   66 type D nodes: 36 cores, 188.4G RAM
+    9 type E nodes: 36 cores, 188.4G RAM
+    1 type F nodes: 36 cores, 188.4G RAM
+    3 type H nodes: 36 cores, 172.7G RAM
+   53 type H nodes: 36 cores, 188.4G RAM
+    3 type I nodes: 36 cores,   1.5T RAM
+    2 type J nodes: 36 cores, 188.4G RAM
+</code></pre></div>
+
+
+<p>This shows how many of each letter-labelled nodetype the cluster has, then the number of cores 
+and amount of memory the node is reporting it has. It also shows the cluster has some utility 
+nodes - those are part of the infrastructure. The <code>*</code> nodes are the login nodes.</p>
 <h2 id="how-do-i-run-a-graphical-program">How do I run a graphical program?<a class="headerlink" href="#how-do-i-run-a-graphical-program" title="Permanent link">§</a></h2>
-<p>To run a graphical program on the cluster and be able to view the user interface on your own local computer, you will need to have an X-Windows Server installed on your local computer and use X-forwarding.</p>
+<p>To run a graphical program on the cluster and be able to view the user interface on your own 
+local computer, you will need to have an X-Windows Server installed on your local computer and 
+use X-forwarding.</p>
 <h3 id="x-forwarding-on-linux">X-forwarding on Linux<a class="headerlink" href="#x-forwarding-on-linux" title="Permanent link">§</a></h3>
 <p>Desktop Linux operating systems already have X-Windows installed, so you just need to ssh in with the correct flags.</p>
 <p>You need to make sure you use either the <code>-X</code> or <code>-Y</code> (look at <code>man ssh</code> for details) flags on all ssh commands you run to establish a connection to the cluster.</p>
@@ -1975,14 +2056,14 @@ Nodes for job 1234:
     </div>
     
       <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../assets/javascripts/bundle.a14cc5fd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../assets/javascripts/bundle.4a5ba8d6.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "..",
           features: ["instant"],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.7a2ea5ba.min.js"
+            worker: "../assets/javascripts/worker/search.9b3611bd.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
