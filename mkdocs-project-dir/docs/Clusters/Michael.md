@@ -99,9 +99,9 @@ works. Any variations that Michael has should be listed on this page.
 
 ## Submitting a job
 
-Create a [job script](Example_Submission_Scripts) for
+Create a [job script](../Wiki_Export/Example_Submission_Scripts) for
 non-interactive use and submit it using
-[qsub](Batch_Processing). Jobscripts must begin `#!/bin/bash
+[qsub](../Wiki_Export/Background/Batch_Processing). Jobscripts must begin `#!/bin/bash
 -l` in order to run as a login shell and get your login environment and
 modules.
 
