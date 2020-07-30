@@ -1451,13 +1451,13 @@ multiple machines belonging to you so you can log in from all of them
 
 
 <p>The defaults should give you a reasonable key. If you prefer to use
-ECDSA or ED25519 instead, and longer keys, you can. You can also tell it
+ed25519 instead, and/or longer keys, you can. You can also tell it
 to create one with a different name, so it doesn't overwrite any
 existing key.</p>
 <ul>
-<li>We strongly suggest you not use DSA as OpenSSH 7.0 has deprecated it
-    and does not use it by default on client or server. Michael
-    currently accepts them but that may change.</li>
+<li>Do not use DSA as OpenSSH 7.0 has deprecated it
+    and does not use it by default on client or server. 
+    We no longer accept DSA keys.</li>
 </ul>
 <p>You will be asked to add a passphrase for your key. A blank passphrase
 is not recommended; if you use one please make sure that no one else
@@ -1469,8 +1469,9 @@ use it. If you aren't sure what keys your agent can see, running
 <h3 id="creating-an-ssh-key-in-windows">Creating an ssh key in Windows<a class="headerlink" href="#creating-an-ssh-key-in-windows" title="Permanent link">§</a></h3>
 <p>Have a look at <a href="https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/#create-new-public-and-private-keys">Key-Based SSH Logins With PuTTY</a> which has
 step-by-step instructions. You can choose whether to use Pageant or not
-to manage your key. You can again pick RSA, DSA, ECDSA etc <strong>but do not
-pick SSH-1</strong> as that is a very old and insecure key type. The key must be at least 2048-bit.</p>
+to manage your key. You can again pick RSA, ED25519, ECDSA etc <strong>but do not
+pick SSH-1</strong> as that is a very old and insecure key type. As above, DSA is no 
+longer accepted. The key must be at least 2048-bit.</p>
 <p>If you are using Windows 10, then you probably have OpenSSH installed and could instead run ssh-keygen in a terminal per the Linux instructions and use the ssh command to log in instead of PuTTY.</p>
 <h2 id="information-for-points-of-contact">Information for Points of Contact<a class="headerlink" href="#information-for-points-of-contact" title="Permanent link">§</a></h2>
 <p>Points of Contact have some tools they can use to manage users and
@@ -1497,11 +1498,10 @@ the <a href="../..">User guide</a> is relevant and is a
 good starting point for further information about how the environment
 works. Any variations that Michael has should be listed on this page.</p>
 <h2 id="submitting-a-job">Submitting a job<a class="headerlink" href="#submitting-a-job" title="Permanent link">§</a></h2>
-<p>Create a <a href="Example_Submission_Scripts">job script</a> for
-non-interactive use and submit it using
-<a href="Batch_Processing">qsub</a>. Jobscripts must begin <code>#!/bin/bash
--l</code> in order to run as a login shell and get your login environment and
-modules.</p>
+<p>Create a <a href="../../Example_Jobscripts/">job script</a> for
+non-interactive use and <a href="../../howto/#how-do-i-submit-a-job-to-the-scheduler">submit your jobscript using qsub</a>. 
+Jobscripts must begin <code>#!/bin/bash -l</code> in order to run as a login shell
+ and get your login environment and modules.</p>
 <p>A job on Michael must also specify what type of job it is (Gold, Free,
 Test) and the project it is being submitted for. (See <a href="#Budgets_and_allocations">Budgets and allocations</a> below).</p>
 <h3 id="memory-requests">Memory requests<a class="headerlink" href="#memory-requests" title="Permanent link">§</a></h3>
@@ -1510,7 +1510,7 @@ If you ask for 128G RAM and 24 cores, that will run on 24 nodes using
 only one core per node. This allows you to have sparse process placement
 when you do actually need that much RAM per process.</p>
 <h2 id="monitoring-a-job">Monitoring a job<a class="headerlink" href="#monitoring-a-job" title="Permanent link">§</a></h2>
-<p>In addition to <a href="Batch_Processing">qstat</a>, <code>nodesforjob
+<p>In addition to <a href="../../howto/#how-do-i-monitor-a-job">qstat</a>, <code>nodesforjob
 $JOB_ID</code> can be useful to see what proportion of cpu/memory/swap is
 being used on the nodes a certain job is running on.</p>
 <p><code>qexplain $JOB_ID</code> will show you the full error for a job that is in
