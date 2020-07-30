@@ -26,13 +26,13 @@ ssh-keygen -t rsa
 ```
 
 The defaults should give you a reasonable key. If you prefer to use
-ECDSA or ED25519 instead, and longer keys, you can. You can also tell it
+ed25519 instead, and/or longer keys, you can. You can also tell it
 to create one with a different name, so it doesn't overwrite any
 existing key.
 
-  - We strongly suggest you not use DSA as OpenSSH 7.0 has deprecated it
-    and does not use it by default on client or server. Thomas currently
-    accepts them but that may change.
+  - Do not use DSA as OpenSSH 7.0 has deprecated it
+    and does not use it by default on client or server. 
+    We no longer accept DSA keys.
 
 You will be asked to add a passphrase for your key. A blank passphrase
 is not recommended; if you use one please make sure that no one else
@@ -47,8 +47,9 @@ use it. If you aren't sure what keys your agent can see, running
 
 Have a look at [Key-Based SSH Logins With PuTTY](https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/#create-new-public-and-private-keys) which has
 step-by-step instructions. You can choose whether to use Pageant or not
-to manage your key. You can again pick RSA, DSA, ECDSA etc **but do not
-pick SSH-1** as that is a very old and insecure key type. The key must be at least 2048-bit.
+to manage your key. You can again pick RSA, ED25519, ECDSA etc **but do not
+pick SSH-1** as that is a very old and insecure key type. As above, DSA is no 
+longer accepted. The key must be at least 2048-bit.
 
 If you are using Windows 10, then you probably have OpenSSH installed and could instead run ssh-keygen in a terminal per the Linux instructions and use the ssh command to log in instead of PuTTY. 
 
@@ -91,9 +92,9 @@ works. Any variations that Thomas has should be listed on this page.
 
 Create a [jobscript](../Example_Jobscripts.md) for
 non-interactive use and 
-[submit your jobscript using qsub](../howto.md#how-do-i-submit-a-job-to-the-scheduler). Jobscripts must begin `#!/bin/bash -l` 
-in order to run as a login shell and get your login environment and
-modules.
+[submit your jobscript using qsub](../howto.md#how-do-i-submit-a-job-to-the-scheduler). 
+Jobscripts must begin `#!/bin/bash -l` in order to run as a login shell 
+and get your login environment and modules.
 
 A job on Thomas must also specify what type of job it is (Gold, Free,
 Test) and the project it is being submitted for. 
@@ -108,7 +109,7 @@ when you do actually need that much RAM per process.
 
 ### Monitoring a job
 
-In addition to [qstat](Batch_Processing), `nodesforjob
+In addition to [qstat](../howto.md#how-do-i-monitor-a-job), `nodesforjob
 $JOB_ID` can be useful to see what proportion of cpu/memory/swap is
 being used on the nodes a certain job is running on.
 
