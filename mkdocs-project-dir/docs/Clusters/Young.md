@@ -150,6 +150,37 @@ Access to software is managed through the use of modules.
 Access to licensed software may vary based on your host institution and
 project.
 
+### Loading and unloading modules
+
+Young has a newer version of `modulecmd` which tries to manage module
+dependencies automatically by loading or unloading prerequisites for you 
+whenever possible.
+
+If you get an error like this:
+
+```
+[uccaxxx@login01 ~]$ module unload compilers mpi
+Unloading compilers/intel/2018/update3
+  ERROR: compilers/intel/2018/update3 cannot be unloaded due to a prereq.
+    HINT: Might try "module unload default-modules/2018" first.
+
+Unloading mpi/intel/2018/update3/intel
+  ERROR: mpi/intel/2018/update3/intel cannot be unloaded due to a prereq.
+    HINT: Might try "module unload default-modules/2018" first.
+```
+
+You can use the `-f` option to force the module change. It will carry it out 
+and warn you about modules it thinks are dependent.
+
+```
+[uccaxxx@login01 ~]$ module unload -f compilers mpi
+Unloading compilers/intel/2018/update3
+  WARNING: Dependent default-modules/2018 is loaded
+
+Unloading mpi/intel/2018/update3/intel
+  WARNING: Dependent default-modules/2018 is loaded
+```
+
 ### Requesting software installs
 
 To request software installs, email us at the [support address below](#Support) or open an issue on our
