@@ -17,7 +17,7 @@
         <meta name="author" content="UCL RCAS Team">
       
       <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.3">
     
     
       
@@ -25,9 +25,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.25b81cc6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.947af8d5.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.80a78273.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
       
       
         
@@ -1734,7 +1734,7 @@ export OMP_NUM_THREADS=80
 process per node which would create 80 threads on the node (on Hyperthreads).</p>
 <h2 id="diskless-nodes">Diskless nodes<a class="headerlink" href="#diskless-nodes" title="Permanent link">§</a></h2>
 <p>Young nodes are diskless (have no local hard drives) - there is no <code>$TMPDIR</code> 
-available on Kathleen, so you should not request <code>-l tmpfs=10G</code> in your 
+available, so you should not request <code>-l tmpfs=10G</code> in your 
 jobscripts or your job will be rejected at submit time.</p>
 <p>If you need temporary space, you should use somewhere in your Scratch.</p>
 <h2 id="disk-quotas">Disk quotas<a class="headerlink" href="#disk-quotas" title="Permanent link">§</a></h2>
@@ -1941,15 +1941,15 @@ the type of problem, and you should mention your username in the body.</p>
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.592d4e23.min.js"></script>
-      <script src="../../assets/javascripts/bundle.806ca5c4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.c3dc8c49.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f9edbbd5.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: ["instant"],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.01088dc6.min.js"
+            worker: "../../assets/javascripts/worker/search.8e2cddea.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
