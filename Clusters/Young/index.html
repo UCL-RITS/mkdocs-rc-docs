@@ -687,6 +687,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#node-types" class="md-nav__link">
+    Node types
+  </a>
+  
+    <nav class="md-nav" aria-label="Node types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#restricting-to-one-node-type" class="md-nav__link">
+    Restricting to one node type
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyperthreading" class="md-nav__link">
+    Hyperthreading
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diskless-nodes" class="md-nav__link">
+    Diskless nodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#disk-quotas" class="md-nav__link">
     Disk quotas
   </a>
@@ -1269,6 +1303,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#node-types" class="md-nav__link">
+    Node types
+  </a>
+  
+    <nav class="md-nav" aria-label="Node types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#restricting-to-one-node-type" class="md-nav__link">
+    Restricting to one node type
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyperthreading" class="md-nav__link">
+    Hyperthreading
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diskless-nodes" class="md-nav__link">
+    Diskless nodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#disk-quotas" class="md-nav__link">
     Disk quotas
   </a>
@@ -1562,6 +1630,8 @@ facilities.</p>
 </tr>
 </tbody>
 </table>
+<p>These are numbers of physical cores: multiply by two for virtual cores 
+with <a href="#hyperthreading">hyperthreads</a>.</p>
 <p>On Young, interactive sessions using qrsh have the same wallclock limit
 as other jobs.</p>
 <p>Jobs on Young <strong>do not share nodes</strong>. This means that if you request
@@ -1581,6 +1651,92 @@ long waits if every CU is half full.</p>
 <h3 id="preventing-a-job-from-running-cross-cu">Preventing a job from running cross-CU<a class="headerlink" href="#preventing-a-job-from-running-cross-cu" title="Permanent link">§</a></h3>
 <p>If your job must run within a single CU, you can request the parallel environment as <code>-pe wss</code> instead of <code>-pe mpi</code> (<code>wss</code> standing for 'wants single switch'). This will increase your queue times. It is suggested you only do this for benchmarking or if performance is being greatly affected by running in the superqueue.</p>
 <p><a href="#top" title="wikilink"> back to top</a></p>
+<h2 id="node-types">Node types<a class="headerlink" href="#node-types" title="Permanent link">§</a></h2>
+<p>Young has three types of node: standard nodes, big memory nodes, and really 
+big memory nodes. Note those last have only 36 cores per node, not 40.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Cores per node</th>
+<th>RAM per node</th>
+<th>tmpfs</th>
+<th>Nodes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C</td>
+<td>40</td>
+<td>192G</td>
+<td>None</td>
+<td>576</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>40</td>
+<td>1.5T</td>
+<td>None</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>36</td>
+<td>3.0T</td>
+<td>None</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>These are numbers of physical cores: multiply by two for virtual cores with
+hyperthreading. </p>
+<h3 id="restricting-to-one-node-type">Restricting to one node type<a class="headerlink" href="#restricting-to-one-node-type" title="Permanent link">§</a></h3>
+<p>The scheduler will schedule your job on the relevant nodetype 
+based on the resources you request, but if you really need to specify 
+the nodetype yourself, use:</p>
+<div class="codehilite"><pre><span></span><code># Only run on Z-type nodes
+#$ -ac allow=Z
+</code></pre></div>
+
+
+<h2 id="hyperthreading">Hyperthreading<a class="headerlink" href="#hyperthreading" title="Permanent link">§</a></h2>
+<p>Young has hyperthreading enabled and you can choose on a per-job basis 
+whether you want to use it.</p>
+<p>Hyperthreading lets you use two virtual cores instead of one physical 
+core - some programs can take advantage of this.</p>
+<p>If you do not ask for hyperthreading, your job only uses one thread per core as normal.</p>
+<div class="codehilite"><pre><span></span><code># request hyperthreading in this job
+#$ -l threads=1
+
+# request the number of virtual cores
+#$ -pe mpi 160
+
+# set number of OpenMP threads being used per MPI process
+export OMP_NUM_THREADS=2
+</code></pre></div>
+
+
+<p>This job would be using 80 physical cores, using 80 MPI processes each of 
+which would create two threads (on Hyperthreads).</p>
+<div class="codehilite"><pre><span></span><code># request hyperthreading in this job
+#$ -l threads=1
+
+# request the number of virtual cores
+#$ -pe mpi 160
+
+# set number of OpenMP threads being used per MPI process
+# (a whole node&#39;s worth)
+export OMP_NUM_THREADS=80
+</code></pre></div>
+
+
+<p>This job would still be using 80 physical cores, but would use one MPI 
+process per node which would create 80 threads on the node (on Hyperthreads).</p>
+<h2 id="diskless-nodes">Diskless nodes<a class="headerlink" href="#diskless-nodes" title="Permanent link">§</a></h2>
+<p>Young nodes are diskless (have no local hard drives) - there is no <code>$TMPDIR</code> 
+available on Kathleen, so you should not request <code>-l tmpfs=10G</code> in your 
+jobscripts or your job will be rejected at submit time.</p>
+<p>If you need temporary space, you should use somewhere in your Scratch.</p>
 <h2 id="disk-quotas">Disk quotas<a class="headerlink" href="#disk-quotas" title="Permanent link">§</a></h2>
 <p>You have one per-user quota, with a default amount of 250GB - this is the total across home and Scratch.</p>
 <ul>
@@ -1610,8 +1766,11 @@ eg. Imperial_pilot. These will be deactivated after the pilot and no
 longer show up.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>1 Gold unit is 1 hour of using 1 processor core.</p>
+<p>1 Gold unit is 1 hour of using 1 virtual processor core (= 0.5 physical core).</p>
 </div>
+<p>Since Young has <a href="#hyperthreading">hyperthreading</a>, a job asking for 40 
+physical cores and one asking for 80 virtual cores with hyperthreading 
+on both cost the same amount: 80 Gold.</p>
 <h3 id="subprojects">Subprojects<a class="headerlink" href="#subprojects" title="Permanent link">§</a></h3>
 <p>You might be in a subproject that does not itself have an allocation,
 but instead takes allocation from a different project:</p>
