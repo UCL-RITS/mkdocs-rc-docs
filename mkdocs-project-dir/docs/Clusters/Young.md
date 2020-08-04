@@ -321,7 +321,7 @@ process per node which would create 80 threads on the node (on Hyperthreads).
 ## Diskless nodes
 
 Young nodes are diskless (have no local hard drives) - there is no `$TMPDIR` 
-available on Kathleen, so you should not request `-l tmpfs=10G` in your 
+available, so you should not request `-l tmpfs=10G` in your 
 jobscripts or your job will be rejected at submit time.
 
 If you need temporary space, you should use somewhere in your Scratch.
