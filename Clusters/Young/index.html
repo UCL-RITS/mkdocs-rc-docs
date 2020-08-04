@@ -627,6 +627,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#loading-and-unloading-modules" class="md-nav__link">
+    Loading and unloading modules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#requesting-software-installs" class="md-nav__link">
     Requesting software installs
   </a>
@@ -1243,6 +1250,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#loading-and-unloading-modules" class="md-nav__link">
+    Loading and unloading modules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#requesting-software-installs" class="md-nav__link">
     Requesting software installs
   </a>
@@ -1557,6 +1571,33 @@ list there is not exhaustive. </p>
 </ul>
 <p>Access to licensed software may vary based on your host institution and
 project.</p>
+<h3 id="loading-and-unloading-modules">Loading and unloading modules<a class="headerlink" href="#loading-and-unloading-modules" title="Permanent link">§</a></h3>
+<p>Young has a newer version of <code>modulecmd</code> which tries to manage module
+dependencies automatically by loading or unloading prerequisites for you 
+whenever possible.</p>
+<p>If you get an error like this:</p>
+<div class="codehilite"><pre><span></span><code>[uccaxxx@login01 ~]$ module unload compilers mpi
+Unloading compilers/intel/2018/update3
+  ERROR: compilers/intel/2018/update3 cannot be unloaded due to a prereq.
+    HINT: Might try &quot;module unload default-modules/2018&quot; first.
+
+Unloading mpi/intel/2018/update3/intel
+  ERROR: mpi/intel/2018/update3/intel cannot be unloaded due to a prereq.
+    HINT: Might try &quot;module unload default-modules/2018&quot; first.
+</code></pre></div>
+
+
+<p>You can use the <code>-f</code> option to force the module change. It will carry it out 
+and warn you about modules it thinks are dependent.</p>
+<div class="codehilite"><pre><span></span><code>[uccaxxx@login01 ~]$ module unload -f compilers mpi
+Unloading compilers/intel/2018/update3
+  WARNING: Dependent default-modules/2018 is loaded
+
+Unloading mpi/intel/2018/update3/intel
+  WARNING: Dependent default-modules/2018 is loaded
+</code></pre></div>
+
+
 <h3 id="requesting-software-installs">Requesting software installs<a class="headerlink" href="#requesting-software-installs" title="Permanent link">§</a></h3>
 <p>To request software installs, email us at the <a href="#Support">support address below</a> or open an issue on our
 <a href="https://github.com/UCL-RITS/rcps-buildscripts/issues">GitHub</a>. You can
