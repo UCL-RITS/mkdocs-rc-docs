@@ -224,6 +224,9 @@ facilities.
 | ----- | ------------- |
 | 5120   | 48hrs         |
 
+These are numbers of physical cores: multiply by two for virtual cores 
+with [hyperthreads](#hyperthreading).
+
 On Young, interactive sessions using qrsh have the same wallclock limit
 as other jobs.
 
@@ -250,6 +253,78 @@ long waits if every CU is half full.
 If your job must run within a single CU, you can request the parallel environment as `-pe wss` instead of `-pe mpi` (`wss` standing for 'wants single switch'). This will increase your queue times. It is suggested you only do this for benchmarking or if performance is being greatly affected by running in the superqueue.
 
 [ back to top](#top "wikilink")
+
+## Node types
+
+Young has three types of node: standard nodes, big memory nodes, and really 
+big memory nodes. Note those last have only 36 cores per node, not 40.
+
+| Type  | Cores per node | RAM per node | tmpfs | Nodes |
+| ----- | -------------- | ------------ | ----- | ----- |
+| C     | 40             | 192G         | None  | 576   |
+| Y     | 40             | 1.5T         | None  | 3     |
+| Z     | 36             | 3.0T         | None  | 3     |
+
+These are numbers of physical cores: multiply by two for virtual cores with
+hyperthreading. 
+
+### Restricting to one node type
+
+The scheduler will schedule your job on the relevant nodetype 
+based on the resources you request, but if you really need to specify 
+the nodetype yourself, use:
+
+```
+# Only run on Z-type nodes
+#$ -ac allow=Z
+```
+
+## Hyperthreading
+
+Young has hyperthreading enabled and you can choose on a per-job basis 
+whether you want to use it.
+
+Hyperthreading lets you use two virtual cores instead of one physical 
+core - some programs can take advantage of this.
+
+If you do not ask for hyperthreading, your job only uses one thread per core as normal.
+
+```
+# request hyperthreading in this job
+#$ -l threads=1
+
+# request the number of virtual cores
+#$ -pe mpi 160
+
+# set number of OpenMP threads being used per MPI process
+export OMP_NUM_THREADS=2
+```
+
+This job would be using 80 physical cores, using 80 MPI processes each of 
+which would create two threads (on Hyperthreads).
+
+```
+# request hyperthreading in this job
+#$ -l threads=1
+
+# request the number of virtual cores
+#$ -pe mpi 160
+
+# set number of OpenMP threads being used per MPI process
+# (a whole node's worth)
+export OMP_NUM_THREADS=80
+```
+
+This job would still be using 80 physical cores, but would use one MPI 
+process per node which would create 80 threads on the node (on Hyperthreads).
+
+## Diskless nodes
+
+Young nodes are diskless (have no local hard drives) - there is no `$TMPDIR` 
+available on Kathleen, so you should not request `-l tmpfs=10G` in your 
+jobscripts or your job will be rejected at submit time.
+
+If you need temporary space, you should use somewhere in your Scratch.
 
 
 ## Disk quotas
@@ -290,7 +365,11 @@ eg. Imperial\_pilot. These will be deactivated after the pilot and no
 longer show up.
 
 !!! info
-    1 Gold unit is 1 hour of using 1 processor core.
+    1 Gold unit is 1 hour of using 1 virtual processor core (= 0.5 physical core).
+
+Since Young has [hyperthreading](#hyperthreading), a job asking for 40 
+physical cores and one asking for 80 virtual cores with hyperthreading 
+on both cost the same amount: 80 Gold.
 
 
 ### Subprojects
