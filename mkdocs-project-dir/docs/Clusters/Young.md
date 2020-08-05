@@ -108,7 +108,7 @@ If you ask for 192GB RAM and 40 cores, that may run on 40 nodes using
 only one core per node. This allows you to have sparse process placement
 when you do actually need that much RAM per process.
 
-Young also has high memory nodes, where a job like this may run.
+Young also has [high memory nodes](#node-types), where a job like this may run.
 
 ### Monitoring a job
 
