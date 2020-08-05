@@ -328,13 +328,8 @@ or
 
 On Michael, users do not submit directly to queues - the scheduler
 assigns your job to one based on the resources it requested. The queues
-have somewhat unorthodox names as they are only used internally, but
-this is what they mean:
-
-  - lucy: single-node job
-  - Schroeder: multi-node job
-  - Snoopy: cross-CU job, using superqueue (any multi-node job may end up
-    using this)
+have somewhat unorthodox names as they are only used internally, and do
+not directly map to particular job types.
 
 ### Preventing a job from running cross-CU
 
