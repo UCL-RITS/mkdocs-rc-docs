@@ -5,15 +5,16 @@ layout: docs
 This page contains tools and information for the nominated Points of
 Contact.
 
-Other system-specific information is at [Thomas](../Clusters/Thomas.md) or
-[Michael](../Clusters/Michael.md).
+Other system-specific information is at [Thomas](../Clusters/Thomas.md),
+[Michael](../Clusters/Michael.md) or [Young](../Clusters/Young.md).
 
-These commands can all be run as `thomas-command` or `michael-command`:
+These commands can all be run as `thomas-command` or `michael-command`
+or `young-command`:
 they run the same thing and the different names are for convenience.
 
 ## Displaying user information
 
-`thomas-show` or `michael-show` is a tool that enables you to find a lot
+`thomas-show`, `michael-show` or `young-show` is a tool that enables you to find a lot
 of information about users. Access to the database is given to points of
 contact individually, contact rc-support@ucl.ac.uk if you try to use
 this and get an access denied.
@@ -50,7 +51,7 @@ optional arguments:
 
 ### Show recent users
 
-`thomas-show recentusers` or `michael-show recentusers` shows you the
+`thomas-show recentusers` shows you the
 most recently-added N users, default 5.
 
 ```
@@ -64,7 +65,7 @@ optional arguments:
 
 ### Show users with a given project, institute, contact
 
-`thomas-show getusers` or `michael-show getusers` will search for exact
+`thomas-show getusers` or will search for exact
 matches to the given project, institute, contact combination.
 
 ```
@@ -83,10 +84,9 @@ optional arguments:
 
 ### Search for users based on partial information
 
-`thomas-show whois` or `michael-show whois` can be used to search for
+`thomas-show whois` can be used to search for
 partial matches to username, name, email fragments, including all of
-those in
-combination.
+those in combination.
 
 ```
 thomas-show whois -h  
@@ -107,7 +107,7 @@ optional arguments:
 
 ## Adding user information and new projects
 
-`thomas-add` or `michael-add` will add information to the database.
+`thomas-add` will add information to the database.
 Access to the database is given to points of contact individually,
 contact rc-support@ucl.ac.uk if you try to use this and get an access
 denied.
@@ -137,13 +137,16 @@ optional arguments:
 
 ## Add a new user
 
-`thomas-add user` or `michael-add user` allows you to add a new user,
+`thomas-add user` or allows you to add a new user,
 with their initial project and point of contact. This does not create
 their account, but does email us with everything we need in order to
 create it. If you run this, you do not need to email us separately. The
 project specified must exist.
 
-The user will be allocated the next free `mmmxxxx` username - you should only specify username yourself if they are an existing UCL user.
+The user will be allocated the next free `mmmxxxx` username - you should 
+only specify username yourself if they are an existing UCL user, or on
+Young if they previously had a Thomas or Michael account you should give
+them the same username.
 
 You can get your `poc_id` by looking at `thomas-show --contacts`.
 
@@ -207,7 +210,7 @@ also shows where users can get the second format out of PuTTY.
 
 ## Add a new project
 
-`thomas-add project` or `michael-add project` will create a new project,
+`thomas-add project` or will create a new project,
 associated with an institution. It will not show in Gold until it also
 has a user in it.
 
@@ -229,7 +232,7 @@ optional arguments:
 
 ## Add a new project/user pairing
 
-`thomas-add projectuser` or `michael-add projectuser` will add an
+`thomas-add projectuser` will add an
 existing user to an existing project. Creating a new user for an
 existing project also creates this relationship. After a new
 project-user relationship is added, a cron job will pick that up within
@@ -255,9 +258,9 @@ optional arguments:
 
 # Gold resource allocation
 
-We are currently using Gold to manage allocations on Thomas and Michael.
-There is one Gold database, so all the projects exist on both, but they
-are only active on specific clusters.
+We are currently using Gold to manage allocations.
+Thomas and Michael share one Gold database, so all the projects exist on both, 
+but they are only active on the correct cluster. Young has its own database.
 
 ## Reporting from Gold
 
