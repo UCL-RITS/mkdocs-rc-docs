@@ -155,3 +155,7 @@ You need to load any module dependencies, set up any custom environment variable
 
 Job scripts can be submitted with `qsub`, jobs can be monitored with `qstat` and deleted with `qdel`.
 
+
+### Interactive jobs
+
+If you need to run an interactive job, possibly with X forwarding, you can do so using `qrsh`.  Please see our page on [interactive jobs](Interactive_Jobs.md) for more details.
