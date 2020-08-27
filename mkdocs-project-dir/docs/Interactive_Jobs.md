@@ -31,7 +31,7 @@ within an MPI environment, 512MB RAM per process, for a period of two
 hours (the maximum allowed for interactive sessions).
 
 All job types we support on the system are supported via an interactive
-session (see our [examples section](Legion_Scripts "wikilink")).
+session (see our [examples section](Example_Jobscripts.md)).
 Likewise, all qsub options are supported like regular job submission
 with the difference that with qrsh they must be given at the command
 line, and not with any job script (or via -@).
@@ -39,14 +39,14 @@ line, and not with any job script (or via -@).
 In addition the `-now` option is useful when a cluster is busy. 
 By default qrsh and qlogin jobs will run on the next scheduling
 cycle or give up. The `-now no` option tells it to keep waiting
-until it gets scheduled. Pressing Ctrl+C (i.e. the control key
+until it gets scheduled. Pressing Ctrl+C (i.e. the control key
 and the C key at the same time) will safely cancel the request
 if it doesn't seem to be able to get you a session.
 
 ## Interactive X sessions
 
 You can get an interactive X session from the head node of the job back
-to the login  node. The way to do this is to run the qrsh command in the
+to the login node. The way to do this is to run the `qrsh` command in the
 following generic fashion:
 
 ```
@@ -57,8 +57,8 @@ Where `<command>` is either a command to launch an X terminal like
 Xterm or Mrxvt or a GUI application like XMGrace or GaussView.
 
 To make effective use of the X forwarding you will need to have logged
-in to the login node with ssh -X or some equivalent method.   Here is an
-example of how you can get a X terminal session with the qrsh command: 
+in to the login node with ssh -X or some equivalent method. Here is an
+example of how you can get a X terminal session with the qrsh command:
 
 ```
 qrsh -l mem=512M,h_rt=0:30:0 \
@@ -75,7 +75,7 @@ ssh <hostname> <command> [args]
 ```
 
 Where `<hostname>` can be obtained by inspecting the file
-$TMPDIR/machines.
+`$TMPDIR/machines`.
 
 ## GPU test nodes
 
