@@ -926,19 +926,19 @@ tests/analysis are available. It typically takes the form:</p>
 within an MPI environment, 512MB RAM per process, for a period of two
 hours (the maximum allowed for interactive sessions).</p>
 <p>All job types we support on the system are supported via an interactive
-session (see our <a href="Legion_Scripts" title="wikilink">examples section</a>).
+session (see our <a href="../Example_Jobscripts/">examples section</a>).
 Likewise, all qsub options are supported like regular job submission
 with the difference that with qrsh they must be given at the command
 line, and not with any job script (or via -@).</p>
 <p>In addition the <code>-now</code> option is useful when a cluster is busy. 
 By default qrsh and qlogin jobs will run on the next scheduling
 cycle or give up. The <code>-now no</code> option tells it to keep waiting
-until it gets scheduled. Pressing Ctrl+C (i.e. the control key
+until it gets scheduled. Pressing Ctrl+C (i.e. the control key
 and the C key at the same time) will safely cancel the request
 if it doesn't seem to be able to get you a session.</p>
 <h2 id="interactive-x-sessions">Interactive X sessions<a class="headerlink" href="#interactive-x-sessions" title="Permanent link">§</a></h2>
 <p>You can get an interactive X session from the head node of the job back
-to the login  node. The way to do this is to run the qrsh command in the
+to the login node. The way to do this is to run the <code>qrsh</code> command in the
 following generic fashion:</p>
 <div class="codehilite"><pre><span></span><code>qrsh &lt;options&gt; &lt;command&gt; &lt;arguments to &lt;command&gt;&gt;
 </code></pre></div>
@@ -947,8 +947,8 @@ following generic fashion:</p>
 <p>Where <code>&lt;command&gt;</code> is either a command to launch an X terminal like
 Xterm or Mrxvt or a GUI application like XMGrace or GaussView.</p>
 <p>To make effective use of the X forwarding you will need to have logged
-in to the login node with ssh -X or some equivalent method.   Here is an
-example of how you can get a X terminal session with the qrsh command: </p>
+in to the login node with ssh -X or some equivalent method. Here is an
+example of how you can get a X terminal session with the qrsh command:</p>
 <div class="codehilite"><pre><span></span><code>qrsh -l mem=512M,h_rt=0:30:0 \
    /shared/ucl/apps/mrxvt/0.5.4/bin/mrxvt -title &#39;User Test Node&#39;
 </code></pre></div>
@@ -962,7 +962,7 @@ not the headnode, you can use a standard <code>ssh</code> command: </p>
 
 
 <p>Where <code>&lt;hostname&gt;</code> can be obtained by inspecting the file
-$TMPDIR/machines.</p>
+<code>$TMPDIR/machines</code>.</p>
 <h2 id="gpu-test-nodes">GPU test nodes<a class="headerlink" href="#gpu-test-nodes" title="Permanent link">§</a></h2>
 <p>You can also run GPU jobs interactively simply by adding the <code>-l gpu=1</code>
 or <code>-l gpu=2</code> options to the qrsh command as normal.</p>
