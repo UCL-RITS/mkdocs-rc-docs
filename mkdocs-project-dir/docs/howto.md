@@ -446,6 +446,9 @@ If a job only ran for seconds and didn't produce the expected output, there was 
 wrong in your script - check the `.o` and `.e` files in the directory you submitted the job from 
 for errors.
 
+## How do I run interactive jobs?
+
+Sometimes you need to run interactive programs, sometimes with a GUI. This can be achieved through `qrsh`.  We have a detailed guide to running [interactive jobs](Interactive_Jobs.md).
 
 ## How do I estimate what resources to request in my jobscript?
 
