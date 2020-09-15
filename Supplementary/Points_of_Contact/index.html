@@ -917,6 +917,7 @@ Add data to the Thomas database. Use [positional argument -h] for mor
 
 positional arguments:  
  {user,project,projectuser,poc,institute}  
+   csv                 Add all users from the provided CSV file
    user                Adding a new user with their initial project  
    project             Adding a new project  
    projectuser         Adding a new user-project-contact relationship  
@@ -928,7 +929,7 @@ optional arguments:
 </code></pre></div>
 
 
-<h2 id="add-a-new-user">Add a new user<a class="headerlink" href="#add-a-new-user" title="Permanent link">§</a></h2>
+<h3 id="add-a-new-user">Add a new user<a class="headerlink" href="#add-a-new-user" title="Permanent link">§</a></h3>
 <p><code>thomas-add user</code> or allows you to add a new user,
 with their initial project and point of contact. This does not create
 their account, but does email us with everything we need in order to
@@ -965,7 +966,7 @@ optional arguments:
 </code></pre></div>
 
 
-<h3 id="ssh-key-formats">SSH key formats<a class="headerlink" href="#ssh-key-formats" title="Permanent link">§</a></h3>
+<h4 id="ssh-key-formats">SSH key formats<a class="headerlink" href="#ssh-key-formats" title="Permanent link">§</a></h4>
 <p>It will verify the provided ssh key by default. Note that it has to be
 in the form <code>ssh-xxx keystartshere</code>. If someone has sent in a key which
 has line breaks and header items, make it into this format by adding the
@@ -988,12 +989,31 @@ OeLKjOH4rSnAAOLcEqPmJhkLL8k6nQAAK3P/E1PeOaB2xD7NNPqfIsjhAJLZ+2wV
 </code></pre></div>
 
 
-<p>Other types of keys (dss etc) will say what they are in the first line,
+<p>Other types of keys (ed25519 etc) will say what they are in the first line,
 and you should change the <code>ssh-rsa</code> appropriately. The guide linked at
 <a href="https://wiki.rc.ucl.ac.uk/wiki/Thomas#Creating_an_ssh_key_in_Windows">Creating an ssh key in
 Windows</a>
 also shows where users can get the second format out of PuTTY.</p>
-<h2 id="add-a-new-project">Add a new project<a class="headerlink" href="#add-a-new-project" title="Permanent link">§</a></h2>
+<h3 id="add-new-users-in-bulk-from-a-csv-file">Add new users in bulk from a CSV file<a class="headerlink" href="#add-new-users-in-bulk-from-a-csv-file" title="Permanent link">§</a></h3>
+<p><code>young-add csv</code> allows you to add users in bulk using a CSV file of specific format 
+and headers. </p>
+<p>The CSV is comma-separated with a header line of </p>
+<div class="codehilite"><pre><span></span><code>email,given_name,surname,username,project_ID,ssh_key
+</code></pre></div>
+
+
+<p>You can leave username empty for it to allocate them a new username, but if 
+they have an existing mmm username you should fill it in. 
+It may be useful to <a href="#show-users-with-a-given-project-institute-contact">show users with a given institute</a> on Thomas if you are migrating users from one service to another.</p>
+<p>You can <a href="../MMM_Hub_Files/young.csv">download a CSV template here</a>. Replace the
+example data.</p>
+<p><code>young-add csv</code> will try to automatically get your Point of Contact ID based on
+your username. If it can't, or if you have more than one, it will give you a 
+list to choose from. (All users in one CSV upload will be added using the
+same Point of Contact ID). </p>
+<p>The project you are adding the user to must already exist.</p>
+<p>The SSH key must be formatted as shown in <a href="#ssh_key_formats">SSH key formats</a>.</p>
+<h3 id="add-a-new-project">Add a new project<a class="headerlink" href="#add-a-new-project" title="Permanent link">§</a></h3>
 <p><code>thomas-add project</code> or will create a new project,
 associated with an institution. It will not show in Gold until it also
 has a user in it.</p>
@@ -1012,7 +1032,7 @@ optional arguments:
 </code></pre></div>
 
 
-<h2 id="add-a-new-projectuser-pairing">Add a new project/user pairing<a class="headerlink" href="#add-a-new-projectuser-pairing" title="Permanent link">§</a></h2>
+<h3 id="add-a-new-projectuser-pairing">Add a new project/user pairing<a class="headerlink" href="#add-a-new-projectuser-pairing" title="Permanent link">§</a></h3>
 <p><code>thomas-add projectuser</code> will add an
 existing user to an existing project. Creating a new user for an
 existing project also creates this relationship. After a new
