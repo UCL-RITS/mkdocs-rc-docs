@@ -125,6 +125,7 @@ Add data to the Thomas database. Use [positional argument -h] for mor
 
 positional arguments:  
  {user,project,projectuser,poc,institute}  
+   csv                 Add all users from the provided CSV file
    user                Adding a new user with their initial project  
    project             Adding a new project  
    projectuser         Adding a new user-project-contact relationship  
@@ -135,7 +136,7 @@ optional arguments:
  -h, --help            show this help message and exit
 ```
 
-## Add a new user
+### Add a new user
 
 `thomas-add user` or allows you to add a new user,
 with their initial project and point of contact. This does not create
@@ -176,7 +177,7 @@ optional arguments:
  --debug               Show SQL query submitted without committing the change
 ```
 
-### SSH key formats
+#### SSH key formats
 
 It will verify the provided ssh key by default. Note that it has to be
 in the form `ssh-xxx keystartshere`. If someone has sent in a key which
@@ -202,13 +203,39 @@ should be converted into
 ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAlLhFLr/4LGC3cM1xgRZVxfQ7JgoSvnVXly0K7MNufZbUSUkKtVnBXAOIjtOYe7EPndyT/SAq1s9RGZ63qsaVc/05diLrgL0E0gW+9VptTmiUh7OSsXkoKQn1RiACfH7sbKi6H373bmB5/TyXNZ5C5KVmdXxO+laT8IdW7JdD/gwrBra9M9vAMfcxNYVCBcPQRhJ7vOeDZ+e30qapH4R/mfEyKorYxrvQerJWOeLKjOH4rSnAAOLcEqPmJhkLL8k6nQAAK3P/E1PeOaB2xD7NNPqfIsjhAJLZ+2wV3eUZATx9vnmVF0YafOjvzcoK2GqUrhNAvi7k0f+ihh8twkfthj==
 ```
 
-Other types of keys (dss etc) will say what they are in the first line,
+Other types of keys (ed25519 etc) will say what they are in the first line,
 and you should change the `ssh-rsa` appropriately. The guide linked at
 [Creating an ssh key in
 Windows](https://wiki.rc.ucl.ac.uk/wiki/Thomas#Creating_an_ssh_key_in_Windows)
 also shows where users can get the second format out of PuTTY.
 
-## Add a new project
+### Add new users in bulk from a CSV file
+
+`young-add csv` allows you to add users in bulk using a CSV file of specific format 
+and headers. 
+
+The CSV is comma-separated with a header line of 
+```
+email,given_name,surname,username,project_ID,ssh_key
+```
+You can leave username empty for it to allocate them a new username, but if 
+they have an existing mmm username you should fill it in. 
+It may be useful to [show users with a given institute](#show-users-with-a-given-project-institute-contact) on Thomas if you are migrating users from one service to another.
+
+You can [download a CSV template here](MMM_Hub_Files/young.csv). Replace the
+example data.
+
+`young-add csv` will try to automatically get your Point of Contact ID based on
+your username. If it can't, or if you have more than one, it will give you a 
+list to choose from. (All users in one CSV upload will be added using the
+same Point of Contact ID). 
+
+The project you are adding the user to must already exist.
+
+The SSH key must be formatted as shown in [SSH key formats](#ssh_key_formats).
+
+
+### Add a new project
 
 `thomas-add project` or will create a new project,
 associated with an institution. It will not show in Gold until it also
@@ -230,7 +257,7 @@ optional arguments:
  --debug               Show SQL query submitted without committing the change
 ```
 
-## Add a new project/user pairing
+### Add a new project/user pairing
 
 `thomas-add projectuser` will add an
 existing user to an existing project. Creating a new user for an
