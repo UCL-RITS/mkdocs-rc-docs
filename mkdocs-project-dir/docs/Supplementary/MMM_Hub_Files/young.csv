@@ -1,0 +1,5 @@
+email,given_name,surname,username,project_ID,ssh_key
+mmm0002@example.com,RITS,_Test,mmm0002,Test_allocation,ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAbI4e+Ch3+juHvBHZK6LauSbu6DAUaAZo0SG+Vuh+Fx
+mmm0003@example.com,RITS,_Test,mmm0003,Test_allocation,ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAbI4e+Ch3+juHvBHZK6LauSbu6DAUaAZo0SG+Vuh+Fx
+test@example.com,Test,User,,Test_allocation,ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAbI4e+Ch3+juHvBHZK6LauSbu6DAUaAZo0SG+Vuh+Fx
+
