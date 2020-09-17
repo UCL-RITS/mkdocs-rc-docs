@@ -96,12 +96,12 @@ You can see which machine you are logged into by the bash prompt.
 So for example, if on `ejp-gateway02` then do:
 
 ```console
-[ccaathj@ad.ucl.ac.uk@ejp-gateway02 ~]$ scp -r ~/.ssh ejp-gateway01:
+[ccaaxxx@ad.ucl.ac.uk@ejp-gateway02 ~]$ scp -r ~/.ssh ejp-gateway01:
 
 Password:
 known_hosts 100% 196 87.1KB/s 00:00
 authorized_keys 100% 0 0.0KB/s 00:00
-[ccaathj@ad.ucl.ac.uk@ejp-gateway02 ~]$
+[ccaaxxx@ad.ucl.ac.uk@ejp-gateway02 ~]$
 ```
 
 and similarly if on `ejp-gateway01` do `scp -r ~/.ssh ejp-gateway02:`
