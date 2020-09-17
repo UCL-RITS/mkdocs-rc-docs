@@ -93,7 +93,7 @@ Because the `/home` filesystem is not shared across the jump boxes, you need to 
 
 You can see which machine you are logged into by the bash prompt.
 
-So for example, if on ejp-gateway01 then do:
+So for example, if on `ejp-gateway02` then do:
 
 ```console
 [ccaathj@ad.ucl.ac.uk@ejp-gateway02 ~]$ scp -r ~/.ssh ejp-gateway01:
@@ -104,5 +104,5 @@ authorized_keys 100% 0 0.0KB/s 00:00
 [ccaathj@ad.ucl.ac.uk@ejp-gateway02 ~]$
 ```
 
-and similarly if on `ejp-gateway02` do `scp -r ~/.ssh ejp-gateway02:`
+and similarly if on `ejp-gateway01` do `scp -r ~/.ssh ejp-gateway02:`
 
