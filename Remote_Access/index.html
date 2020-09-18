@@ -1032,7 +1032,10 @@ Host aristotle
 <p>The jump boxes have extremely limited file storage space, intentionally, and should not be used for storing files - if you need to transfer files you should use the two-step process above.  This storage should only be used for SSH configuration files.</p>
 <p>This storage is not mirrored across the jump boxes which means if you write a file to your home directory, you will not be able to read it if you are allocated to another jump box next time you log in.</p>
 <h2 id="key-management">Key management<a class="headerlink" href="#key-management" title="Permanent link">§</a></h2>
-<p>!!! If you use SSH keys you absolutely <strong>MUST NOT STORE UNENCRYPTED PRIVATE KEYS ON THIS OR ANY OTHER MULTI-USER COMPUTER</strong>.  We will be running regular scans of the filesystem to identify and then block unencrypted public keys across our services.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+</div>
+<p>If you use SSH keys you absolutely <strong>MUST NOT STORE UNENCRYPTED PRIVATE KEYS ON THIS OR ANY OTHER MULTI-USER COMPUTER</strong>.  We will be running regular scans of the filesystem to identify and then block unencrypted public keys across our services.</p>
 <p>There are currently two servers in the pool, <code>ejp-gateway01</code> and <code>ejp-gateway02</code>. </p>
 <p>Because the <code>/home</code> filesystem is not shared across the jump boxes, you need to sync SSH configuration files like <code>~/.ssh/authorized_keys</code> across all the available jump boxes so that the change takes effect whichever jump box you are allocated to.</p>
 <p>You can see which machine you are logged into by the bash prompt.</p>
