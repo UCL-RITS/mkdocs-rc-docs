@@ -40,7 +40,7 @@ or
 scp -o ProxyJump=ssh.rc.ucl.ac.uk my_file grace.rc.ucl.ac.uk:~/Scratch/
 ```
 
-This tunnels through Socrates in order to get you to your destination - you'll be asked for your password twice, once for each machine. You can use this to log in or to copy files.
+This tunnels through the jump box service in order to get you to your destination - you'll be asked for your password twice, once for each machine. You can use this to log in or to copy files.
 
 You may also need to do this if you are trying to reach one cluster from another and there is a firewall in the way.
 
