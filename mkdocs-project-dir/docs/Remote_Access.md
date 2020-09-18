@@ -2,6 +2,11 @@
 title: Remote Access to Research Computing Resources
 layout: docs
 ---
+
+!!! warning
+    This document describes a service that is being trialled and is not available for general users yet.  Until it goes into service please continue to use Socrates for remote access.
+
+
 # Remote Access to Research Computing Resources
 
 UCL's Research Computing services are accessible from inside the UCL firewall.  If you wish to connect from outside, you need to either connect through a VPN or use SSH to log in to a machine accessible from outside and use that to "jump" through into the UCL network.
