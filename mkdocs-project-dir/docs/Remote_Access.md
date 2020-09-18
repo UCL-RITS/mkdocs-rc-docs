@@ -31,7 +31,7 @@ You can configure your ssh client to automatically connect via these jump boxes 
 
 ##### On the command line
 ```
-# Log in to Grace, jumping via Socrates
+# Log in to Grace, jumping via jump box
 ssh -o ProxyJump=ssh.rc.ucl.ac.uk grace.rc.ucl.ac.uk
 ```
 or
