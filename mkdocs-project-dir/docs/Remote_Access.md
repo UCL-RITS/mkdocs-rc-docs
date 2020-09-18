@@ -4,7 +4,7 @@ layout: docs
 ---
 
 !!! warning
-    This document describes a service that is being trialled and is not available for general users yet.  Until it goes into service please continue to use Socrates for remote access.
+    This document describes a service that is being trialled and is not available for general use yet. Until it goes into service please continue to use Socrates for remote access.
 
 
 # Remote Access to Research Computing Resources
