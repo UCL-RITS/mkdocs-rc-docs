@@ -90,7 +90,7 @@ This storage is not mirrored across the jump boxes which means if you write a fi
 
 ## Key management
 
-If you use SSH keys you absolutely **MUST NOT STORE UNENCRYPTED PRIVATE KEYS ON THIS OR ANY OTHER MULTI-USER COMPUTER**.  We will be running regular scans of the filesystem to identify and then block unencrypted public keys across our services.
+!!! If you use SSH keys you absolutely **MUST NOT STORE UNENCRYPTED PRIVATE KEYS ON THIS OR ANY OTHER MULTI-USER COMPUTER**.  We will be running regular scans of the filesystem to identify and then block unencrypted public keys across our services.
 
 There are currently two servers in the pool, `ejp-gateway01` and `ejp-gateway02`. 
 
