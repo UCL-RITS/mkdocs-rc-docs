@@ -234,6 +234,9 @@ The project you are adding the user to must already exist.
 
 The SSH key must be formatted as shown in [SSH key formats](#ssh_key_formats).
 
+If you check your CSV file on the cluster with `cat -v` and it shows that it is 
+beginning with `M-oM-;M-?` and ending with `^M` you probably need to run 
+`dos2unix` on it first.
 
 ### Add a new project
 
