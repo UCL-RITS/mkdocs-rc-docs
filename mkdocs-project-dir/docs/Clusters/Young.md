@@ -509,4 +509,33 @@ Email <rc-support@ucl.ac.uk> with any support queries. It will be helpful
 to include Young in the subject along with some descriptive text about
 the type of problem, and you should mention your username in the body.
 
+## Acknowledging the use of Young in publications
+
+All work arising from this facility should be properly acknowledged in
+presentations and papers with the following text:
+
+"We are grateful to the UK Materials and Molecular Modelling Hub for
+computational resources, which is partially funded by EPSRC
+(EP/P020194/1 and EP/T022213/1)"
+
+### MCC
+
+When publishing work that benefited from resources allocated by the MCC:
+please include the following acknowledgment:
+
+"Via our membership of the UK's HEC Materials Chemistry Consortium,
+which is funded by EPSRC (EP/L000202), this work used the UK Materials
+and Molecular Modelling Hub for computational resources, MMM Hub, which
+is partially funded by EPSRC (EP/P020194 and EP/T022213)"
+
+### UKCP
+
+When publishing work that benefited from
+[resources allocated by UKCP](http://www.ukcp.ac.uk/pmwiki.php/UKCP/Acknowledgement),
+please include:
+
+"We are grateful for computational support from the UK Materials and
+Molecular Modelling Hub, which is partially funded by EPSRC
+(EP/P020194 and EP/T022213), for which access was obtained via the UKCP 
+consortium and funded by EPSRC grant ref EP/P022561/1"
 
