@@ -5,18 +5,6 @@ categories:
 layout: docs
 ---
 
-<!--- ================================================================== --->
-<!---  @file   Account_Services.md                                       --->
-<!---  @brief                                                            --->
-<!---                                                                    --->
-<!---  @details                                                          --->
-<!---                                                                    --->
-<!---  @author(s)                                                        --->
-<!---  @contributor(s) e.kotsialos@ucl.ac.uk                             --->
-<!---  Copyright (c) 2020, UCL:ISD:RITS, RCAS                            --->
-<!---                                                                    --->
-<!--- ================================================================== --->
-
 # Account Services
 
 ## Cluster access application
@@ -29,9 +17,9 @@ depends on what types of work you tell us you will be doing.
 
 ### Account sponsors
 
-If you are a Student or Postdoctoral Researcher, your application must be
-approved by a permanent member of staff (normally your Supervisor, or your PM,
-or your PI). This will be automatically determined when you begin your
+If you are a student or postdoctoral researcher, your application must be
+approved by a permanent member of staff (normally your supervisor or PI).
+This will be automatically determined when you begin your
 application, and when you submit it, an email will be sent to this person asking
 them to approve the application before the account can be created.
 
@@ -47,12 +35,8 @@ The online application form can be found here:
 * [User account application form](https://signup.rc.ucl.ac.uk/computing/requests/new)
   (UCL login required via Shibboleth)
 
-<!--- TODO: (them): is this still valid? --->
-
 You will need a UCL user name and password. These are the same credentials used
 to access core services like Portico and HR systems.
-
-<!--- TODO: (them): perhaps links for Portico and "HR systems"? --->
 
 ### Application process
 
@@ -86,7 +70,7 @@ missing or not receiving the approval email, so check with your sponsor first if
 your application is stuck waiting for approval. Research Computing can only
 create your account after it is approved.
 
-## Accounts for Visitors
+## Accounts for visitors
 
 UCL visitors are welcome to apply for accounts on Research Computing Services.
 Please note that:
@@ -101,7 +85,7 @@ Please note that:
    cover accessibility requirements, as the account application process includes
    agreeing to relevant legal terms and conditions.
 
-## Accounts for Honorary Staff
+## Accounts for Honorary staff
 
 UCL Staff Members may nominate Honorary members (named individuals) to be
 provided with access to Research Computing services where this is beneficial to
@@ -111,10 +95,6 @@ Nomination should be made via the
 [CRAG](http://www.ucl.ac.uk/isd/about/governance/research-it/crag), explaining
 the benefit arising to UCL.
 
-<!--- TODO: (them): CRAG seems to have no page of its own:             --->
-<!--- it redirects me to a head UCL page, which wants me to login anew --->
-<!--- CRAG is mentioned several times below                            --->
-
 Proposals will be reviewed by the
 [CRAG](http://www.ucl.ac.uk/isd/about/governance/research-it/crag) at their
 monthly meeting and on a case by case basis.
@@ -122,9 +102,9 @@ monthly meeting and on a case by case basis.
 All accounts thus provided are subject to all other 'standard' T&C's relating to
 their use of Research Computing Services.
 
-## Charges for use of Research Computing Services
+## Charges for use of Research Computing services
 
-Research Computing Services are free at point of use by default. There are no
+Research Computing services are free at point of use by default. There are no
 direct charges for your usage under standard resource allocation policy as
 defined by the
 [CRAG](http://www.ucl.ac.uk/isd/about/governance/research-it/crag).

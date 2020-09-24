@@ -1,17 +1,5 @@
 # Research Computing Documentation Repo
 
-<!--- ================================================================== --->
-<!---  @file   README.md                                                 --->
-<!---  @brief                                                            --->
-<!---                                                                    --->
-<!---  @details                                                          --->
-<!---                                                                    --->
-<!---  @author(s)                                                        --->
-<!---  @contributor(s) e.kotsialos@ucl.ac.uk                             --->
-<!---  Copyright (c) 2020, UCL:ISD:RITS, RCAS                            --->
-<!---                                                                    --->
-<!--- ================================================================== --->
-
 This is a test to try generating our Research Computing documentation with [MkDocs](https://www.mkdocs.org/).
 
 ## How It Works

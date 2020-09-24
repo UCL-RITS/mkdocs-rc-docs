@@ -2,18 +2,6 @@
 layout: docs
 ---
 
-<!--- ================================================================== --->
-<!---  @file   index.md                                                  --->
-<!---  @brief                                                            --->
-<!---                                                                    --->
-<!---  @details                                                          --->
-<!---                                                                    --->
-<!---  @author(s)                                                        --->
-<!---  @contributor(s) e.kotsialos@ucl.ac.uk                             --->
-<!---  Copyright (c) 2020, UCL:ISD:RITS, RCAS                            --->
-<!---                                                                    --->
-<!--- ================================================================== --->
-
 !!! warning
     Converting and updating this documentation to the new system is still a work
     in progress, and pages may change content or organisation as we work on it.
@@ -21,7 +9,7 @@ layout: docs
 
 # Research Computing Services
 
-This documentation is maintained by the Research Computing Team for the purpose
+This documentation is maintained by the Research Computing team for the purpose
 of sharing information about our services, including user guides,
 service updates and account request and renewal support.
 
