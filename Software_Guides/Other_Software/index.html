@@ -1101,6 +1101,19 @@
     StarCCM+
   </a>
   
+    <nav class="md-nav" aria-label="StarCCM+">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hfi-error" class="md-nav__link">
+    hfi error
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1478,6 +1491,19 @@
   <a href="#starccm" class="md-nav__link">
     StarCCM+
   </a>
+  
+    <nav class="md-nav" aria-label="StarCCM+">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hfi-error" class="md-nav__link">
+    hfi error
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2243,8 +2269,12 @@ tar cvzf $HOME/Scratch/SAS_output/files_from_job_$JOB_ID.tgz $TMPDIR
 
 
 <h3 id="starccm">StarCCM+<a class="headerlink" href="#starccm" title="Permanent link">§</a></h3>
-<p>StarCCM+ is a commercial CFD package that handles fluid flows, heat transfer, stress simulations, and other common applications of such. </p>
-<p>Before running any StarCCM+ jobs on the clusters you must load the StarCCM+ module on a login node. This is so the module can set up two symbolic links in your home directory to directories created in your Scratch area so that user settings etc can be written by running jobs.</p>
+<p>StarCCM+ is a commercial CFD package that handles fluid flows, heat transfer, 
+stress simulations, and other common applications of such. </p>
+<p>Before running any StarCCM+ jobs on the clusters you must load the StarCCM+ 
+module on a login node. This is so the module can set up two symbolic links 
+in your home directory to directories created in your Scratch area so that user 
+settings etc can be written by running jobs.</p>
 <div class="codehilite"><pre><span></span><code>module load star-ccm+/13.06.012
 </code></pre></div>
 
@@ -2260,6 +2290,16 @@ starccm+ -np $NSLOTS -machinefile $TMPDIR/machines -rsh ssh -batch my_input.sim
 </code></pre></div>
 
 
+<h4 id="hfi-error">hfi error<a class="headerlink" href="#hfi-error" title="Permanent link">§</a></h4>
+<p>If you get an error like this:</p>
+<div class="codehilite"><pre><span></span><code>hfi_wait_for_device: The /dev/hfi1_0 device failed to appear after 15.0 seconds: Connection timed out
+</code></pre></div>
+
+
+<p>then you need to add <code>-fabric ibv</code> to your options as shown in the example script.</p>
+<p>It is trying to use an OmniPath device on a cluster that has InfiniBand, so the 
+fabric needs to be changed. If you have this left over in jobscripts from Grace,
+you need to remove it on Kathleen.</p>
 <h3 id="starcd">StarCD<a class="headerlink" href="#starcd" title="Permanent link">§</a></h3>
 <p>StarCD is a commercial package for modelling and simulating combustion and engine dynamics. </p>
 <p>You must request access to the group controlling StarCD access (legstarc) to use it. The license is owned by the Department of Mechanical Engineering who will need to approve your access request. </p>
