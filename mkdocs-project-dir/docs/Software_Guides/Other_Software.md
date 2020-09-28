@@ -840,9 +840,13 @@ tar cvzf $HOME/Scratch/SAS_output/files_from_job_$JOB_ID.tgz $TMPDIR
 
 ### StarCCM+
 
-StarCCM+ is a commercial CFD package that handles fluid flows, heat transfer, stress simulations, and other common applications of such. 
+StarCCM+ is a commercial CFD package that handles fluid flows, heat transfer, 
+stress simulations, and other common applications of such. 
 
-Before running any StarCCM+ jobs on the clusters you must load the StarCCM+ module on a login node. This is so the module can set up two symbolic links in your home directory to directories created in your Scratch area so that user settings etc can be written by running jobs.
+Before running any StarCCM+ jobs on the clusters you must load the StarCCM+ 
+module on a login node. This is so the module can set up two symbolic links 
+in your home directory to directories created in your Scratch area so that user 
+settings etc can be written by running jobs.
 
 ```
 module load star-ccm+/13.06.012
@@ -860,6 +864,18 @@ module load star-ccm+/13.06.012
 starccm+ -np $NSLOTS -machinefile $TMPDIR/machines -rsh ssh -batch my_input.sim
 ```
 
+#### hfi error
+
+If you get an error like this:
+
+```
+hfi_wait_for_device: The /dev/hfi1_0 device failed to appear after 15.0 seconds: Connection timed out
+```
+then you need to add `-fabric ibv` to your options as shown in the example script.
+
+It is trying to use an OmniPath device on a cluster that has InfiniBand, so the 
+fabric needs to be changed. If you have this left over in jobscripts from Grace,
+you need to remove it on Kathleen.
 
 ### StarCD
 
