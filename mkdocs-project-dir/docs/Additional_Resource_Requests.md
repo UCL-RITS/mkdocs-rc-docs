@@ -10,7 +10,7 @@ layout: docs
 
 We recognise that researchers may sometimes require a higher throughput
 of work than it is possible to achieve with free ‘fair share’ usage of
-[Myriad](Clusters/Myriad.md), [Grace](Clusters/Grace.md) and [Kathleen](Clusters/Kathleen.md). 
+[Myriad](Clusters/Myriad.md), [Grace](Clusters/Grace.md) and [Kathleen](Clusters/Kathleen.md).
 There a couple of ways of obtaining additional Legion resource
 beyond this fair share:
 
@@ -61,17 +61,11 @@ To apply for a hosted dataset, please send this form to
 
   - [Hosted dataset request form](Additional_Resource_Requests/Hosted_dataset_request_form.rtf)
 
-## Purchase dedicated compute nodes within Legion or Myriad
+## Purchase dedicated compute nodes or priority cycles on Myriad
 
-There has previously been a programme allowing researchers to purchase
-compute nodes to be attached to the [Legion](Clusters/Legion.md) cluster. This has been
-discontinued, as the [Myriad](Clusters/Myriad.md) cluster replaces the Legion cluster for
-the majority of users.
-
-There are plans to allow the purchase of nodes for Myriad in future but these have not yet been finalised.
+Researchers may purchase additional resources to be used as part of the [Myriad](Clusters/Myriad.md) High Performance Computing cluster if the free service does not meet their needs. See Paid-for resources: [Purchasing in Myriad](Paid-For_Resources/Purchasing_in_Myriad.md) for details.
 
 ## Further information
 
 For further advice or information on future hardware options, please
 contact <rits@ucl.ac.uk>.
-
