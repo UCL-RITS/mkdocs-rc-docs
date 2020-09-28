@@ -21,3 +21,22 @@ Date                | Service | Status | Reason
 2 Mar 2020 -> 9 Mar 2020 | Michael | Completed | Installation of phase 2 hardware, network bridging
 10 Feb 2020 -> 17 Feb 2020 | Myriad | Cancelled | Storage upgrade to 3PB
 
+## Grace status
+
+As of 2 Sept:
+
+"As you will be aware, we have not yet been able to return Grace to service after the hack. 
+Most recently, we've run into some challenging issues with the aging infiniband network 
+that we are still working our way through, hampered somewhat by issues getting to Slough 
+under the current regime.
+
+We would advise all users migrate to using Kathleen (as Grace was due to be retired in 
+January 2021 anyway). To aid in this we've set up the login nodes such that it read-only 
+mounts the home and scratch file-systems so that you can retrieve your files.
+
+As usual please send any queries to rc-support@ucl.ac.uk"
+
+Since Grace has read-only access, you cannot edit or delete data. You also cannot submit jobs.
+If you had a Grace account, you already have a Kathleen account. Grace might not run any more
+jobs before it is retired.
+
