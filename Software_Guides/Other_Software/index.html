@@ -1074,6 +1074,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#orca" class="md-nav__link">
+    ORCA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#picard" class="md-nav__link">
     Picard
   </a>
@@ -1460,6 +1467,13 @@
           <li class="md-nav__item">
   <a href="#nwchem" class="md-nav__link">
     NWChem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orca" class="md-nav__link">
+    ORCA
   </a>
   
 </li>
@@ -2201,6 +2215,21 @@ nwpwlibfile: no nwpw library found 0
 
 
 <p>then your <code>~/.nwchemrc</code> symlink is likely pointing to a different version that you used previously. Deleting the symlink and loading the module you want to use will recreate it correctly. </p>
+<h3 id="orca">ORCA<a class="headerlink" href="#orca" title="Permanent link">§</a></h3>
+<p>ORCA is an ab initio, DFT, and semi-empirical SCF-MO package.</p>
+<div class="codehilite"><pre><span></span><code>module unload compilers 
+module unload mpi
+module load compilers/gnu/4.9.2
+module load mpi/openmpi/3.1.4/gnu-4.9.2
+module load orca/4.2.1-bindist/gnu-4.9.2
+
+orca input.inp &gt; output.out
+</code></pre></div>
+
+
+<p>If you want to run ORCA in parallel using MPI, the jobscript will be the same but you will
+need to add the <code>!PAL</code> keyword to your input file to tell it how many processes to use. (You
+do not use <code>mpirun</code> or <code>gerun</code> with ORCA).</p>
 <h3 id="picard">Picard<a class="headerlink" href="#picard" title="Permanent link">§</a></h3>
 <p>Picard comprises Java-based command-line utilities that manipulate SAM files, and a Java API (SAM-JDK) for creating new programs that read and write SAM files. Both SAM text format and SAM binary (BAM) format are supported. </p>
 <p>Picard requires a Java 1.8 module to be loaded.</p>
