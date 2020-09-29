@@ -742,6 +742,25 @@ nwpwlibfile: no nwpw library found 0
 then your `~/.nwchemrc` symlink is likely pointing to a different version that you used previously. Deleting the symlink and loading the module you want to use will recreate it correctly. 
 
 
+### ORCA
+
+ORCA is an ab initio, DFT, and semi-empirical SCF-MO package.
+
+```
+module unload compilers 
+module unload mpi
+module load compilers/gnu/4.9.2
+module load mpi/openmpi/3.1.4/gnu-4.9.2
+module load orca/4.2.1-bindist/gnu-4.9.2
+
+orca input.inp > output.out
+```
+
+If you want to run ORCA in parallel using MPI, the jobscript will be the same but you will
+need to add the `!PAL` keyword to your input file to tell it how many processes to use. (You
+do not use `mpirun` or `gerun` with ORCA).
+
+
 ### Picard
 
 Picard comprises Java-based command-line utilities that manipulate SAM files, and a Java API (SAM-JDK) for creating new programs that read and write SAM files. Both SAM text format and SAM binary (BAM) format are supported. 
