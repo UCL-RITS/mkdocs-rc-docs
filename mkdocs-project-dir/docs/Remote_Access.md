@@ -31,13 +31,13 @@ You can configure your ssh client to automatically connect via these jump boxes 
 
 ##### On the command line
 ```
-# Log in to Grace, jumping via jump box
-ssh -o ProxyJump=ssh.rc.ucl.ac.uk grace.rc.ucl.ac.uk
+# Log in to Kathleen, jumping via jump box
+ssh -o ProxyJump=ssh.rc.ucl.ac.uk kathleen.rc.ucl.ac.uk
 ```
 or
 ```
-# Copy 'my_file' from the machine you are logged in to into your Scratch on Grace
-scp -o ProxyJump=ssh.rc.ucl.ac.uk my_file grace.rc.ucl.ac.uk:~/Scratch/
+# Copy 'my_file' from the machine you are logged in to into your Scratch on Kathleen
+scp -o ProxyJump=ssh.rc.ucl.ac.uk my_file kathleen.rc.ucl.ac.uk:~/Scratch/
 ```
 
 This tunnels through the jump box service in order to get you to your destination - you'll be asked for your password twice, once for each machine. You can use this to log in or to copy files.
@@ -65,7 +65,7 @@ Here are some examples - you can have as many of these as you need in your confi
 Host myriad
    User ccxxxxx
    HostName myriad.rc.ucl.ac.uk
-   proxyCommand ssh -W myriad.rc.ucl.ac.uk:22 ccxxxxx@ssh.rcucl.ac.uk
+   proxyCommand ssh -W myriad.rc.ucl.ac.uk:22 ccxxxxx@ssh.rc.ucl.ac.uk
 
 Host login05
    User ccxxxxx
@@ -78,7 +78,7 @@ Host aristotle
    proxyCommand ssh -W aristotle.rc.ucl.ac.uk:22 ccxxxxx@ssh.rc.ucl.ac.uk
 ```
 
-You can now just type `ssh myriad` or `scp file1 aristotle:~` and you will go through Socrates. You'll be asked for login details twice since you're logging in to two machines, Socrates and your endpoint.  
+You can now just type `ssh myriad` or `scp file1 aristotle:~` and you will go through the jump box. You'll be asked for login details twice since you're logging in to two machines, the jump box and your endpoint.  
 
 
 ## File storage
@@ -91,7 +91,7 @@ This storage is not mirrored across the jump boxes which means if you write a fi
 ## Key management
 
 !!! warning
-   If you use SSH keys you absolutely **MUST NOT STORE UNENCRYPTED PRIVATE KEYS ON THIS OR ANY OTHER MULTI-USER COMPUTER**.  We will be running regular scans of the filesystem to identify and then block unencrypted public keys across our services.
+   If you use SSH keys you absolutely **MUST NOT STORE UNENCRYPTED PRIVATE KEYS ON THIS OR ANY OTHER MULTI-USER COMPUTER**.  We will be running regular scans of the filesystem to identify and then block unencrypted key pairs across our services.
 
 There are currently two servers in the pool, `ejp-gateway01` and `ejp-gateway02`. 
 
