@@ -1054,14 +1054,14 @@
 <h3 id="single-step-logins-using-tunnelling">Single-step logins using tunnelling<a class="headerlink" href="#single-step-logins-using-tunnelling" title="Permanent link">§</a></h3>
 <h4 id="linux-unix-mac-os-x">Linux / Unix / Mac OS X<a class="headerlink" href="#linux-unix-mac-os-x" title="Permanent link">§</a></h4>
 <h5 id="on-the-command-line">On the command line<a class="headerlink" href="#on-the-command-line" title="Permanent link">§</a></h5>
-<div class="codehilite"><pre><span></span><code># Log in to Grace, jumping via jump box
-ssh -o ProxyJump=ssh.rc.ucl.ac.uk grace.rc.ucl.ac.uk
+<div class="codehilite"><pre><span></span><code># Log in to Kathleen, jumping via jump box
+ssh -o ProxyJump=ssh.rc.ucl.ac.uk kathleen.rc.ucl.ac.uk
 </code></pre></div>
 
 
 <p>or</p>
-<div class="codehilite"><pre><span></span><code># Copy &#39;my_file&#39; from the machine you are logged in to into your Scratch on Grace
-scp -o ProxyJump=ssh.rc.ucl.ac.uk my_file grace.rc.ucl.ac.uk:~/Scratch/
+<div class="codehilite"><pre><span></span><code># Copy &#39;my_file&#39; from the machine you are logged in to into your Scratch on Kathleen
+scp -o ProxyJump=ssh.rc.ucl.ac.uk my_file kathleen.rc.ucl.ac.uk:~/Scratch/
 </code></pre></div>
 
 
@@ -1083,7 +1083,7 @@ scp -o ProxyJump=ssh.rc.ucl.ac.uk my_file grace.rc.ucl.ac.uk:~/Scratch/
 <div class="codehilite"><pre><span></span><code>Host myriad
    User ccxxxxx
    HostName myriad.rc.ucl.ac.uk
-   proxyCommand ssh -W myriad.rc.ucl.ac.uk:22 ccxxxxx@ssh.rcucl.ac.uk
+   proxyCommand ssh -W myriad.rc.ucl.ac.uk:22 ccxxxxx@ssh.rc.ucl.ac.uk
 
 Host login05
    User ccxxxxx
@@ -1097,7 +1097,7 @@ Host aristotle
 </code></pre></div>
 
 
-<p>You can now just type <code>ssh myriad</code> or <code>scp file1 aristotle:~</code> and you will go through Socrates. You'll be asked for login details twice since you're logging in to two machines, Socrates and your endpoint.  </p>
+<p>You can now just type <code>ssh myriad</code> or <code>scp file1 aristotle:~</code> and you will go through the jump box. You'll be asked for login details twice since you're logging in to two machines, the jump box and your endpoint.  </p>
 <h2 id="file-storage">File storage<a class="headerlink" href="#file-storage" title="Permanent link">§</a></h2>
 <p>The jump boxes have extremely limited file storage space, intentionally, and should not be used for storing files - if you need to transfer files you should use the two-step process above.  This storage should only be used for SSH configuration files.</p>
 <p>This storage is not mirrored across the jump boxes which means if you write a file to your home directory, you will not be able to read it if you are allocated to another jump box next time you log in.</p>
@@ -1105,7 +1105,7 @@ Host aristotle
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 </div>
-<p>If you use SSH keys you absolutely <strong>MUST NOT STORE UNENCRYPTED PRIVATE KEYS ON THIS OR ANY OTHER MULTI-USER COMPUTER</strong>.  We will be running regular scans of the filesystem to identify and then block unencrypted public keys across our services.</p>
+<p>If you use SSH keys you absolutely <strong>MUST NOT STORE UNENCRYPTED PRIVATE KEYS ON THIS OR ANY OTHER MULTI-USER COMPUTER</strong>.  We will be running regular scans of the filesystem to identify and then block unencrypted key pairs across our services.</p>
 <p>There are currently two servers in the pool, <code>ejp-gateway01</code> and <code>ejp-gateway02</code>. </p>
 <p>Because the <code>/home</code> filesystem is not shared across the jump boxes, you need to sync SSH configuration files like <code>~/.ssh/authorized_keys</code> across all the available jump boxes so that the change takes effect whichever jump box you are allocated to.</p>
 <p>You can see which machine you are logged into by the bash prompt.</p>
