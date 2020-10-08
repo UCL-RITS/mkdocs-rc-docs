@@ -53,6 +53,7 @@ markdown_extensions:
       #linenums: true
   - toc:
       permalink: §
+  - footnotes
 
 # Plugins
 # Search is included by default but only if you don't add any others, so
