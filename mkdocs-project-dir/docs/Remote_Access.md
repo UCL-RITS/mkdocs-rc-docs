@@ -9,9 +9,8 @@ UCL's Research Computing services are accessible from inside the UCL firewall.  
 
 <!-- Previously the recommended host for doing this was Socrates. Due to the degree to which this service is overloaded due to the prevailing pandemic increasing its use, ISD has built a new set of "jump" boxes which are designed to be fast, scalable and secure for access to Research Computing services. -->
 
-The Socrates system is currently used as a "jump box"[^jump] for Research Computing services, as well as serving several other university needs. Due to the increased load this is under in recent months, it will soon[^1] be replaced with a dedicated group of machines.
+The Socrates system is currently used as a "jump box" for Research Computing services, as well as serving several other university needs. Due to the increased load this is under in recent months, it will soon[^1] be replaced with a dedicated group of machines.
 
-[^jump]: A server you connect to only to connect to other servers.
 [^1]: Expected late October/early-mid November 2020.
 
 ## Connecting to the jump boxes
