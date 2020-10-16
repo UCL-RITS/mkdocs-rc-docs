@@ -1270,56 +1270,56 @@ mpirun -np $NSLOTS -machinefile $PE_HOSTFILE myMPIprogram
 <h3 id="script-sections">Script sections<a class="headerlink" href="#script-sections" title="Permanent link">§</a></h3>
 <h4 id="shebang">Shebang<a class="headerlink" href="#shebang" title="Permanent link">§</a></h4>
 <p>It's important that you add the <code>-l</code> option to bash in the shebang so that login scripts are parsed and the environment modules environment is set up. <code>#!</code> must be the first two characters in the file, no previous white space.</p>
-<div class="bash codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
 </code></pre></div>
 
 <h4 id="resources-you-can-request">Resources you can request<a class="headerlink" href="#resources-you-can-request" title="Permanent link">§</a></h4>
 <h5 id="number-of-cores">Number of cores<a class="headerlink" href="#number-of-cores" title="Permanent link">§</a></h5>
 <p>For MPI:</p>
-<div class="bash codehilite"><pre><span></span><code><span class="c1">#$ -pe mpi &lt;number of cores&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">#$ -pe mpi &lt;number of cores&gt;</span>
 </code></pre></div>
 
 <p>For threads:</p>
-<div class="bash codehilite"><pre><span></span><code><span class="c1">#$ -pe smp &lt;number of cores&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">#$ -pe smp &lt;number of cores&gt;</span>
 </code></pre></div>
 
 <p>For single core jobs you don't need to request a number of cores.  For hybrid codes use the MPI example and set <code>OMP_NUM_THREADS</code> to control the number of threads per node.  <code>gerun</code> will launch the right number of processes in the right place if you use it.</p>
 <h5 id="amount-of-ram-per-core">Amount of RAM per core<a class="headerlink" href="#amount-of-ram-per-core" title="Permanent link">§</a></h5>
-<div class="bash codehilite"><pre><span></span><code><span class="c1">#$ -l mem=&lt;integer amount of RAM in G or M&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">#$ -l mem=&lt;integer amount of RAM in G or M&gt;</span>
 </code></pre></div>
 
 <p>e.g. <code>#$ -l mem=4G</code> requests 4 gigabytes of RAM per core.</p>
 <h5 id="run-time">Run time<a class="headerlink" href="#run-time" title="Permanent link">§</a></h5>
-<div class="bash codehilite"><pre><span></span><code><span class="c1">#$ -l h_rt=&lt;hours:minutes:seconds&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">#$ -l h_rt=&lt;hours:minutes:seconds&gt;</span>
 </code></pre></div>
 
 <p>e.g. <code>#$ -l h_rt=48:00:00</code> requests 48 hours.</p>
 <h5 id="working-directory">Working directory<a class="headerlink" href="#working-directory" title="Permanent link">§</a></h5>
 <p>Either a specific working directory:</p>
-<div class="bash codehilite"><pre><span></span><code><span class="c1">#$ -wd /path/to/working/directory</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">#$ -wd /path/to/working/directory</span>
 </code></pre></div>
 
 <p>or the directory the script was submitted from:</p>
-<div class="bash codehilite"><pre><span></span><code><span class="c1">#$ -cwd</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">#$ -cwd</span>
 </code></pre></div>
 
 <h5 id="gpus-myriad-only">GPUs (Myriad only)<a class="headerlink" href="#gpus-myriad-only" title="Permanent link">§</a></h5>
-<div class="bash codehilite"><pre><span></span><code><span class="c1">#$ -l gpu=&lt;number of GPUs&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">#$ -l gpu=&lt;number of GPUs&gt;</span>
 </code></pre></div>
 
 <h5 id="enable-hyperthreads-kathleen-only">Enable Hyperthreads (Kathleen only)<a class="headerlink" href="#enable-hyperthreads-kathleen-only" title="Permanent link">§</a></h5>
-<div class="bash codehilite"><pre><span></span><code><span class="c1">#$ -l threads=1</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">#$ -l threads=1</span>
 </code></pre></div>
 
 <p>With Hyperthreads enabled you need to request twice as many cores and then control threads vs MPI ranks with <code>OMP_NUM_THREADS</code>.  E.g. </p>
-<div class="bash codehilite"><pre><span></span><code><span class="c1">#$ -pe mpi 160</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">#$ -pe mpi 160</span>
 <span class="c1">#$ -l threads=1</span>
 <span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">2</span>
 </code></pre></div>
 
 <p>Would use 80 cores, with two threads (on Hyperthreads) per core. If you use <code>gerun</code> to launch your MPI process, it will take care of the division for you, but if you're using <code>mpirun</code> or <code>mpiexec</code> directly, you'll have to take care to use the correct number of MPI ranks per node yourself.</p>
 <h5 id="temporary-local-disk-every-machine-except-kathleen">Temporary local disk (every machine EXCEPT Kathleen)<a class="headerlink" href="#temporary-local-disk-every-machine-except-kathleen" title="Permanent link">§</a></h5>
-<div class="bash codehilite"><pre><span></span><code><span class="c1">#$ -l tmpdir=&lt;size in G&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">#$ -l tmpdir=&lt;size in G&gt;</span>
 </code></pre></div>
 
 <p>e.g. <code>#$ -l tmpdir=10G</code> requests 10 gigabytes of temporary local disk.</p>

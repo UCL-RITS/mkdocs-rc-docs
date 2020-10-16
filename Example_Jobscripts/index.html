@@ -1036,7 +1036,7 @@ pages for those machines, and the information they were given when they register
 <h2 id="serial-job-script-example">Serial Job Script Example<a class="headerlink" href="#serial-job-script-example" title="Permanent link">§</a></h2>
 <p>The most basic type of job a user can submit is a serial job. These jobs run on a single processor (core) with a single thread. </p>
 <p>Shown below is a simple job script that runs /bin/date (which prints the current date) on the compute node, and puts the output into a file.</p>
-<div class="bash codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
 
 <span class="c1"># Batch script to run a serial job under SGE.</span>
 
@@ -1072,7 +1072,7 @@ tar -zcvf <span class="nv">$HOME</span>/Scratch/files_from_job_<span class="nv">
 <h2 id="multi-threaded-job-example">Multi-threaded Job Example<a class="headerlink" href="#multi-threaded-job-example" title="Permanent link">§</a></h2>
 <p>For programs that can use multiple threads, you can request multiple <a href="Glossary#Core">processor cores</a> using the <code>-pe smp &lt;number&gt;</code> option. One common method for using multiple threads in a program is OpenMP, and the <code>$OMP_NUM_THREADS</code> environment variable is set automatically in a job of this type to tell OpenMP how many threads it should use. Most methods for running multi-threaded applications should correctly detect how many cores have been allocated, though (<em>via</em> a mechanism called <code>cgroups</code>).</p>
 <p>Note that this job script works directly in scratch instead of in the temporary <code>$TMPDIR</code> storage.</p>
-<div class="bash codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
 
 <span class="c1"># Batch script to run an OpenMP threaded job under SGE.</span>
 
@@ -1104,7 +1104,7 @@ tar -zcvf <span class="nv">$HOME</span>/Scratch/files_from_job_<span class="nv">
 This script differs considerably from the serial and OpenMP jobs in that MPI programs need to be invoked by a program called gerun. This is our wrapper for mpirun and takes care of passing the number of processors and a file called a machine file.</p>
 <p>'''Important''': If you wish to pass a file or stream of data to the standard input (stdin) of an MPI program, there are specific command-line options you need to use to control which MPI tasks are able to receive it. (<code>-s</code> for Intel MPI, <code>--stdin</code> for OpenMPI.) Please consult the help output of the <code>mpirun</code> command for further information. The <code>gerun</code> launcher does not automatically handle this.</p>
 <p>If you use OpenMPI, you need to make sure the Intel MPI modules are removed and the OpenMPI modules are loaded, either in your jobscript or in your shell start-up files (e.g. `~/.bashrc).</p>
-<div class="bash codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
 
 <span class="c1"># Batch script to run an MPI parallel job under SGE with Intel MPI.</span>
 
@@ -1140,7 +1140,7 @@ but a different task ID. The task ID is stored in the <code>$SGE_TASK_ID</code> 
 variable in each task. All the usual SGE output files have the task ID
 appended. MPI jobs and parallel shared memory jobs can also be submitted as
 arrays.</p>
-<div class="bash codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
 
 <span class="c1"># Batch script to run a serial array job under SGE.</span>
 
@@ -1187,7 +1187,7 @@ them in <code>$index</code>, <code>$variable1</code>, <code>$variable2</code> an
 <p>Since the parameter file can be generated automatically from a user's datasets,
 this approach allows the simple automation, submission and management of
 thousands or tens of thousands of tasks.</p>
-<div class="bash codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
 
 <span class="c1"># Batch script to run an array job.</span>
 
@@ -1232,7 +1232,7 @@ During the clean-up phase of the job, a tool checks whether the script contains 
 text, and if so, files are transferred from <code>$TMPDIR</code> to a directory in scratch
 with the structure <code>&lt;job id&gt;/&lt;job id&gt;.&lt;task id&gt;.&lt;queue&gt;/</code>.</p>
 <p>The example below does this for a job array, but this works for any job type.</p>
-<div class="bash codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
 
 <span class="c1"># Batch script to run an array job under SGE and </span>
 <span class="c1">#  transfer the output to Scratch from local.</span>
@@ -1270,7 +1270,7 @@ hostname &gt; hostname.txt
 <p>Using a stride will allow you to leave your input files numbered as before, and each array task will run N inputs.</p>
 <p>For example, a stride of 10 will give you these task IDs: 1, 11, 21...</p>
 <p>Your script can then have a loop that runs task IDs from <code>$SGE_TASK_ID</code> to <code>$SGE_TASK_ID + 9</code>, so each task is doing ten times as many runs as it was before.</p>
-<div class="bash codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
 
 <span class="c1"># Batch script to run an array job with strided task IDs under SGE.</span>
 
@@ -1315,7 +1315,7 @@ hostname &gt; hostname.txt
 <h2 id="gpu-job-script-example">GPU Job Script Example<a class="headerlink" href="#gpu-job-script-example" title="Permanent link">§</a></h2>
 <p>To use NVIDIA GPUs with the CUDA libraries, you need to load the CUDA runtime libraries module or else set up the environment yourself. The script below shows what you'll need to unload and load the appropriate modules.</p>
 <p>You also need to use the <code>-l gpu=&lt;number&gt;</code> option to request the GPUs from the scheduler.</p>
-<div class="bash codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
 
 <span class="c1"># Batch script to run a GPU job under SGE.</span>
 
@@ -1357,7 +1357,7 @@ tar zcvf <span class="nv">$HOME</span>/Scratch/files_from_job_<span class="nv">$
 
 <h2 id="job-using-mpi-and-gpus">Job using MPI and GPUs<a class="headerlink" href="#job-using-mpi-and-gpus" title="Permanent link">§</a></h2>
 <p>It is possible to run MPI programs that use GPUs but our clusters currently only support this within a single node. The script below shows how to run a program using 2 gpus and 12 cpus.</p>
-<div class="bash codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
 
 <span class="c1"># Request ten minutes of wallclock time (format hours:minutes:seconds).</span>
 <span class="c1">#$ -l h_rt=0:10:0</span>

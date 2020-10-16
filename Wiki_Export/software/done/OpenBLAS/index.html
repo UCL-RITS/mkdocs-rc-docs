@@ -842,11 +842,11 @@ warning:</p>
 
 <p>Then tell OpenBLAS to use only one thread by adding this to your
 jobscript (this overrides <code>$OMP_NUM_THREADS</code> for OpenBLAS):</p>
-<div class="bash codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">OPENBLAS_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
+<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">OPENBLAS_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
 </code></pre></div>
 
 <p>If it is your code, you can also set it with the function </p>
-<div class="C codehilite"><pre><span></span><code><span class="kt">void</span> <span class="nf">openblas_set_num_threads</span><span class="p">(</span><span class="kt">int</span> <span class="n">num_threads</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="nf">openblas_set_num_threads</span><span class="p">(</span><span class="kt">int</span> <span class="n">num_threads</span><span class="p">);</span>
 </code></pre></div>
                 
                   
