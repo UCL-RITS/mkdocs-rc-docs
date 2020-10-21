@@ -15,7 +15,7 @@
         <meta name="author" content="UCL RCAS Team">
       
       <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
     
     
       
@@ -23,10 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.38780c08.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f72e892.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
         
           
           
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#displaying-user-information" class="md-skip">
+        <a href="#user-management-tools" class="md-skip">
           Skip to content
         </a>
       
@@ -72,7 +72,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" class="md-header-nav__button md-logo" aria-label="UCL Research Computing Documentation">
       
@@ -156,7 +158,9 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="https://www.rc.ucl.ac.uk/docs/" title="UCL Research Computing Documentation" class="md-nav__button md-logo" aria-label="UCL Research Computing Documentation">
       
@@ -781,23 +785,110 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#displaying-user-information" class="md-nav__link">
+    Displaying user information
+  </a>
+  
+    <nav class="md-nav" aria-label="Displaying user information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#show-recent-users" class="md-nav__link">
     Show recent users
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#show-users-with-a-given-project-institute-contact" class="md-nav__link">
     Show users with a given project, institute, contact
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#search-for-users-based-on-partial-information" class="md-nav__link">
     Search for users based on partial information
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-user-information-and-new-projects" class="md-nav__link">
+    Adding user information and new projects
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding user information and new projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-a-new-user" class="md-nav__link">
+    Add a new user
+  </a>
+  
+    <nav class="md-nav" aria-label="Add a new user">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssh-key-formats" class="md-nav__link">
+    SSH key formats
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-new-users-in-bulk-from-a-csv-file" class="md-nav__link">
+    Add new users in bulk from a CSV file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-a-new-project" class="md-nav__link">
+    Add a new project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-a-new-projectuser-pairing" class="md-nav__link">
+    Add a new project/user pairing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deactivating-information" class="md-nav__link">
+    Deactivating information
+  </a>
+  
+    <nav class="md-nav" aria-label="Deactivating information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deactivate-a-projectuser" class="md-nav__link">
+    Deactivate a projectuser
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -818,7 +909,8 @@
                   </a>
                 
                 
-                <p>This page contains tools and information for the nominated Points of
+                <h1 id="user-management-tools">User management tools<a class="headerlink" href="#user-management-tools" title="Permanent link">§</a></h1>
+<p>This page contains tools and information for the nominated Points of
 Contact.</p>
 <p>Other system-specific information is at <a href="../../Clusters/Thomas/">Thomas</a>,
 <a href="../../Clusters/Michael/">Michael</a> or <a href="../../Clusters/Young/">Young</a>.</p>
@@ -1055,6 +1147,27 @@ optional arguments:
  --debug               Show SQL query submitted without committing the change
 </code></pre></div>
 
+<h2 id="deactivating-information">Deactivating information<a class="headerlink" href="#deactivating-information" title="Permanent link">§</a></h2>
+<p>This tool is only partly functional at present. It allows you to deactivate 
+(not delete) some entities that may no longer exist or may have been created
+in error.</p>
+<h3 id="deactivate-a-projectuser">Deactivate a projectuser<a class="headerlink" href="#deactivate-a-projectuser" title="Permanent link">§</a></h3>
+<p>Use this when the user should no longer be a member of the given project. It
+does not deactivate the user account, just their membership in this project.
+You can confirm the change by looking at <code>young-show --user</code> - it will say 
+'deactivated' rather than 'active' next to their listing for this project.</p>
+<div class="codehilite"><pre><span></span><code>young-deactivate projectuser -h
+usage: thomas_deactivate.py projectuser [-h] -u USERNAME -p PROJECT [--debug]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -u USERNAME, --user USERNAME
+                        An existing UCL username
+  -p PROJECT, --project PROJECT
+                        An existing project ID
+  --debug               Show SQL query submitted without committing the change
+</code></pre></div>
+
 <h1 id="gold-resource-allocation">Gold resource allocation<a class="headerlink" href="#gold-resource-allocation" title="Permanent link">§</a></h1>
 <p>We are currently using Gold to manage allocations.
 Thomas and Michael share one Gold database, so all the projects exist on both, 
@@ -1199,8 +1312,8 @@ and the first column is the id.</p>
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
-      <script src="../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
