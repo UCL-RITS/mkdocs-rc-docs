@@ -308,7 +308,7 @@ usage: thomas_deactivate.py projectuser [-h] -u USERNAME -p PROJECT [--debug]
 optional arguments:
   -h, --help            show this help message and exit
   -u USERNAME, --user USERNAME
-                        An existing UCL username
+                        An existing username
   -p PROJECT, --project PROJECT
                         An existing project ID
   --debug               Show SQL query submitted without committing the change
