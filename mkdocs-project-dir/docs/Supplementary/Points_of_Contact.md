@@ -2,6 +2,9 @@
 title: MMM Points of Contact
 layout: docs
 ---
+
+# User management tools
+
 This page contains tools and information for the nominated Points of
 Contact.
 
@@ -283,6 +286,32 @@ optional arguments:
  -c POC_ID, --contact POC_ID  
                        An existing Point of Contact ID  
  --debug               Show SQL query submitted without committing the change
+```
+
+## Deactivating information
+
+This tool is only partly functional at present. It allows you to deactivate 
+(not delete) some entities that may no longer exist or may have been created
+in error.
+
+### Deactivate a projectuser
+
+Use this when the user should no longer be a member of the given project. It
+does not deactivate the user account, just their membership in this project.
+You can confirm the change by looking at `young-show --user` - it will say 
+'deactivated' rather than 'active' next to their listing for this project.
+
+```
+young-deactivate projectuser -h
+usage: thomas_deactivate.py projectuser [-h] -u USERNAME -p PROJECT [--debug]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -u USERNAME, --user USERNAME
+                        An existing UCL username
+  -p PROJECT, --project PROJECT
+                        An existing project ID
+  --debug               Show SQL query submitted without committing the change
 ```
 
 
