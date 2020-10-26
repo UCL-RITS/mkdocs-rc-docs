@@ -7,7 +7,7 @@ categories: missing-info
 
 Grace is a compute cluster designed for extensively parallel, multi-node batch-processing jobs, having high-bandwidth connections between each individual node.
 
-!!! Out of Service
+!!! important "Out of Service"
     The Grace cluster is currently unavailable for running jobs. A login node is available for access to data.
     We do not currently have an estimate as to when Grace will return to service.
 
