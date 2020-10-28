@@ -509,6 +509,7 @@ qstat -f -j 12345
 * `dr`: this job is being deleted
 
 <!--- dRr  --->
+<!--- hqw  --->
 
 Many jobs cycling between `Rq` and `Rr` generally means there is a dodgy compute
 node which is failing pre-job checks, but is free so everything tries to run
