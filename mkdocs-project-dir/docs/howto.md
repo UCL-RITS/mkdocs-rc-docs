@@ -59,6 +59,7 @@ have typed something.
 
 You will need to either use the
 [UCL Virtual Private Network](http://www.ucl.ac.uk/isd/staff/network/vpn),
+<!--- page not found  --->
 or ssh in to UCL's gateway `socrates.ucl.ac.uk` first.
 From Socrates you can then ssh in to our systems.
 
@@ -66,7 +67,6 @@ From Socrates you can then ssh in to our systems.
 ssh <your_UCL_user_id>@socrates.ucl.ac.uk
 ssh <your_UCL_user_id>@<system_name>.rc.ucl.ac.uk
 ```
-
 
 Note: the default shell (what you are typing commands into) on Socrates is `csh`
 rather than `bash` and so your default prompt will look different and use a `%`
