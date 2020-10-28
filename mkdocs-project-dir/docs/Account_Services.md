@@ -44,19 +44,19 @@ The application process has these steps:
 
 1. Enter your UCL username and password to access the application form.
 
-2. Complete the application form, reading the instructions carefully. Tip: hover
+* Complete the application form, reading the instructions carefully. Tip: hover
    your mouse over text boxes for more information.
 
-3. When you successfully submit the form, your sponsor will be sent an email message
+* When you successfully submit the form, your sponsor will be sent an email message
    asking them to approve your application. If you do not require a sponsor,
    your application will be automatically approved.
 
-4. Your sponsor should click on the link in the email, log in and approve the account.
+* Your sponsor should click on the link in the email, log in and approve the account.
 
-5. You will then receive an email when your account is approved, if you have a
+* You will then receive an email when your account is approved, if you have a
    sponsor. (This does not mean your account has been created yet).
 
-6. You should receive an email once we have created your account. Please note
+* You should receive an email once we have created your account. Please note
    that there may be a delay of up to one working day between an application
    being approved and your account being created.
 
@@ -78,10 +78,10 @@ Please note that:
 1. Applicants must have a central UCL account. UCL Visitor accounts can be
    arranged by your Departmental Administrator, so you should speak to them
    first.
-2. Account applications should specify the UCL grant under which the work is
+* Account applications should specify the UCL grant under which the work is
    being carried out, if possible, as well as an associated UCL Group or
    Researcher.
-3. Account applications may not be submitted on behalf of another, except to
+* Account applications may not be submitted on behalf of another, except to
    cover accessibility requirements, as the account application process includes
    agreeing to relevant legal terms and conditions.
 

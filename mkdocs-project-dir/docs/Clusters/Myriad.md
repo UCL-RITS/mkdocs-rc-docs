@@ -2,6 +2,7 @@
 title: Myriad
 layout: cluster
 ---
+
 # Myriad
 
 Myriad is designed for high I/O, high throughput jobs that will run
@@ -9,9 +10,11 @@ within a single node rather than multi-node parallel jobs.
 
 ## Accounts
 
-Myriad accounts can be applied for via the [Research Computing sign up process](../Account_Services.md).
+Myriad accounts can be applied for via the
+[Research Computing sign up process](../Account_Services.md).
 
-As Myriad is our most general-purpose system, everyone who signs up for a Research Computing account is given access to Myriad.
+As Myriad is our most general-purpose system, everyone who signs up for a
+Research Computing account is given access to Myriad.
 
 ## Logging in
 
@@ -54,11 +57,11 @@ to write more data. Keep an eye on them, as this will cause jobs to fail
 if they cannot create their .o or .e files at the start, or their output
 files partway through.
 
-You can check both quotas on Myriad by running: 
+You can check both quotas on Myriad by running:
 
 ```
 lquota
-``` 
+```
 
 which will give you output similar to this:
 
@@ -68,7 +71,8 @@ which will give you output similar to this:
      scratch   52.09 MiB     1.00 TiB       0%   /scratch/scratch/uccaxxx
 ```
 
-You can apply for quota increases using the form at [Additional Resource Requests](../Additional_Resource_Requests.md).
+You can apply for quota increases using the form at
+[Additional Resource Requests](../Additional_Resource_Requests.md).
 
 Here are some tips for [managing your quota](../howto.md#managing-your-quota) and
 finding where space is being used.
@@ -96,15 +100,36 @@ variants, new letters are added.
 | J     | 36 + 2 P100 GPUs | 192GB        | 2     |
 | E,F   | 36 + 2 V100 GPUs | 192GB        | 9     |
 
+<!--- [ucaseko@login12.myriad ~]$ nodetypes    --->
+<!---     3 type * nodes: 36 cores, 188.4G RAM --->
+<!---     7 type B nodes: 36 cores,   1.5T RAM --->
+<!---     1 type D nodes: 36 cores, 172.7G RAM --->
+<!---    65 type D nodes: 36 cores, 188.4G RAM --->
+<!---     9 type E nodes: 36 cores, 188.4G RAM --->
+<!---     1 type F nodes: 36 cores, 188.4G RAM --->
+<!---     3 type H nodes: 36 cores, 172.7G RAM --->
+<!---    53 type H nodes: 36 cores, 188.4G RAM --->
+<!---     3 type I nodes: 36 cores,   1.5T RAM --->
+<!---     2 type J nodes: 36 cores, 188.4G RAM --->
+
 You can tell the type of a node by its name: type H nodes are named
 `node-h00a-001` etc.
 
+<!--- perhaps more details here as per naming conventions ...  --->
+<!--- from github, but we had no access  --->
+<!--- https://github.com/UCL-RITS/dcs-research-platforms/wiki/New-node-naming-scheme  --->
+<!--- and in #rc-ops onwards --->
+<!--- https://ucl-rits.slack.com/archives/C52E4SZ1R/p1602233411221800?thread_ts=1602229743.215000&cid=C52E4SZ1R  --->
+
 ## GPUs
 
-Myriad has three types of GPU nodes, J, E and F. There are two J-type nodes each with two nVidia Tesla P100s.
-There is one F-type and eight E-type nodes, each with two nVidia Tesla V100s. The CPUs are slightly different on these two.
+Myriad has three types of GPU nodes, J, E and F. There are two J-type nodes each
+with two nVidia Tesla P100s. There is one F-type and eight E-type nodes, each
+with two nVidia Tesla V100s. The CPUs are slightly different on these two.
+<!--- [ucaseko@login12.myriad ~]$ nodetypes   as above differ slightly --->
 
-You can request one or two GPUs by adding them as a resource request to your jobscript: 
+You can request one or two GPUs by adding them as a resource request to your
+jobscript:
 
 ```
 # For 1 GPU
@@ -114,21 +139,23 @@ You can request one or two GPUs by adding them as a resource request to your job
 #$ -l gpu=2
 ```
 
-This will give you either type of GPU. If you need to specify one over the other, add a request for that type of node to your jobscript:
+This will give you either type of GPU. If you need to specify one over the
+other, add a request for that type of node to your jobscript:
 
 ```
 # request a V100 node only
 #$ -ac allow=EF
 ```
 
-The [GPU nodes](../Supplementary/GPU_Nodes.md) page has some sample code for running GPU jobs if you need a test example.
+The [GPU nodes](../Supplementary/GPU_Nodes.md) page has some sample code for
+running GPU jobs if you need a test example.
 
 ### Tensorflow
 
 Tensorflow is installed: type `module avail tensorflow` to see the
 available versions.
 
-Modules to load for the non-MKL GPU version: 
+Modules to load for the non-MKL GPU version:
 
 ```
 module unload compilers mpi
@@ -138,4 +165,10 @@ module load cuda/8.0.61-patch2/gnu-4.9.2
 module load cudnn/6.0/cuda-8.0
 module load tensorflow/1.4.1/gpu
 ```
+
+<!--- I get   --->
+<!--- [ucaseko@login12.myriad ~]$ module load python3/recommended --->
+<!--- [ucaseko@login12.myriad ~]$ module load tensorflow/1.4.1/gpu --->
+<!--- tensorflow/1.4.1/gpu(19):ERROR:151: Module 'tensorflow/1.4.1/gpu' depends on one of the module(s) 'python/3.6.3' --->
+<!--- tensorflow/1.4.1/gpu(19):ERROR:102: Tcl command execution failed: prereq python/3.6.3 --->
 
