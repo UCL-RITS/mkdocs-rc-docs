@@ -15,7 +15,7 @@
         <meta name="author" content="UCL RCAS Team">
       
       <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.2">
     
     
       
@@ -23,10 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.19190aaf.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.24b84193.min.css">
         
           
           
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#no-sudo" class="md-skip">
+        <a href="#installing-software" class="md-skip">
           Skip to content
         </a>
       
@@ -757,6 +757,8 @@
     
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         Installing Software
@@ -770,6 +772,8 @@
       
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -786,52 +790,112 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    Python
+  <a href="#download-source-code" class="md-nav__link">
+    Download source code
   </a>
   
-    <nav class="md-nav" aria-label="Python">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-modules" class="md-nav__link">
+    Set up modules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blas-and-lapack" class="md-nav__link">
+    BLAS and LAPACK
+  </a>
+  
+    <nav class="md-nav" aria-label="BLAS and LAPACK">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#load-the-gnu-compiler" class="md-nav__link">
-    Load the GNU compiler
+  <a href="#mkl" class="md-nav__link">
+    MKL
+  </a>
+  
+    <nav class="md-nav" aria-label="MKL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#easy-linking-of-mkl" class="md-nav__link">
+    Easy linking of MKL
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#install-your-own-packages-in-the-same-virtualenv" class="md-nav__link">
-    Install your own packages in the same virtualenv
+  <a href="#intel-mkl-link-line-advisor" class="md-nav__link">
+    Intel MKL link line advisor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openblas" class="md-nav__link">
+    OpenBLAS
+  </a>
+  
+    <nav class="md-nav" aria-label="OpenBLAS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linking-openblas" class="md-nav__link">
+    Linking OpenBLAS
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-your-own-virtualenv" class="md-nav__link">
-    Using your own virtualenv
+  <a href="#troubleshooting-openmp-loop-warning" class="md-nav__link">
+    Troubleshooting: OpenMP loop warning
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atlas" class="md-nav__link">
+    ATLAS
+  </a>
+  
+    <nav class="md-nav" aria-label="ATLAS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-linking-atlas" class="md-nav__link">
+    Dynamic linking ATLAS
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#installing-via-setuppy" class="md-nav__link">
-    Installing via setup.py
+  <a href="#static-linking-atlas" class="md-nav__link">
+    Static linking ATLAS
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#troubleshooting-remove-your-pip-cache" class="md-nav__link">
-    Troubleshooting: remove your pip cache
+  <a href="#troubleshooting-libgfortran-or-lifcore-cannot-be-found" class="md-nav__link">
+    Troubleshooting: libgfortran or lifcore cannot be found
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#troubleshooting-python-script-executable-paths" class="md-nav__link">
-    Troubleshooting: Python script executable paths
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
@@ -866,6 +930,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -881,52 +947,112 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    Python
+  <a href="#download-source-code" class="md-nav__link">
+    Download source code
   </a>
   
-    <nav class="md-nav" aria-label="Python">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-modules" class="md-nav__link">
+    Set up modules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blas-and-lapack" class="md-nav__link">
+    BLAS and LAPACK
+  </a>
+  
+    <nav class="md-nav" aria-label="BLAS and LAPACK">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#load-the-gnu-compiler" class="md-nav__link">
-    Load the GNU compiler
+  <a href="#mkl" class="md-nav__link">
+    MKL
+  </a>
+  
+    <nav class="md-nav" aria-label="MKL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#easy-linking-of-mkl" class="md-nav__link">
+    Easy linking of MKL
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#install-your-own-packages-in-the-same-virtualenv" class="md-nav__link">
-    Install your own packages in the same virtualenv
+  <a href="#intel-mkl-link-line-advisor" class="md-nav__link">
+    Intel MKL link line advisor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openblas" class="md-nav__link">
+    OpenBLAS
+  </a>
+  
+    <nav class="md-nav" aria-label="OpenBLAS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linking-openblas" class="md-nav__link">
+    Linking OpenBLAS
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-your-own-virtualenv" class="md-nav__link">
-    Using your own virtualenv
+  <a href="#troubleshooting-openmp-loop-warning" class="md-nav__link">
+    Troubleshooting: OpenMP loop warning
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atlas" class="md-nav__link">
+    ATLAS
+  </a>
+  
+    <nav class="md-nav" aria-label="ATLAS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-linking-atlas" class="md-nav__link">
+    Dynamic linking ATLAS
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#installing-via-setuppy" class="md-nav__link">
-    Installing via setup.py
+  <a href="#static-linking-atlas" class="md-nav__link">
+    Static linking ATLAS
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#troubleshooting-remove-your-pip-cache" class="md-nav__link">
-    Troubleshooting: remove your pip cache
+  <a href="#troubleshooting-libgfortran-or-lifcore-cannot-be-found" class="md-nav__link">
+    Troubleshooting: libgfortran or lifcore cannot be found
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#troubleshooting-python-script-executable-paths" class="md-nav__link">
-    Troubleshooting: Python script executable paths
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
@@ -952,9 +1078,8 @@
                   </a>
                 
                 
-                  <h1>Installing Software</h1>
-                
-                <p>If you want to request that software be installed centrally, you can email us at 
+                <h1 id="installing-software">Installing software<a class="headerlink" href="#installing-software" title="Permanent link">§</a></h1>
+<p>If you want to request that software be installed centrally, you can email us at 
 rc-support@ucl.ac.uk or open a <a href="https://github.com/UCL-RITS/rcps-buildscripts/issues">GitHub issue in our buildscripts repository</a>. 
 That is also where you can see all the software requests we are currently working on, 
 and the progress on them. If something has already been requested, feel free to add a 
@@ -966,6 +1091,142 @@ installing packages for languages such as Python or Perl as well as compiling so
 <h2 id="no-sudo">No sudo!<a class="headerlink" href="#no-sudo" title="Permanent link">§</a></h2>
 <p>You cannot install anything using <code>sudo</code> (and neither can we!). If the instructions tell you to do that, read further to see if they also have instructions for installing in user space, or for doing an install from source if they are RPMs.</p>
 <p>Alternatively, just leave off the <code>sudo</code> from the command they tell you to run and look for an alternative way to give it an install location if it tries to install somewhere that isn't in your space (examples for some common build systems are below).</p>
+<h2 id="download-source-code">Download source code<a class="headerlink" href="#download-source-code" title="Permanent link">§</a></h2>
+<p>Use wget or curl to download the source code for the software you want to install 
+to your account on the cluster. You can use <code>tar</code> to extract source archives named 
+like <code>tar.gz</code> or <code>.tgz</code> or <code>.tar.bz2</code> among others and <code>unzip</code> for <code>.zip</code> files. 
+<code>xz --decompress</code> will expand <code>.xz</code> files.</p>
+<div class="codehilite"><pre><span></span><code>wget https://www.example.com/program.tar.gz
+tar -xvf program.tar.gz
+</code></pre></div>
+
+<p>You will not be able to use a package manager like <code>yum</code>, and will need to follow 
+the manual installation instructions for a user-space install (not using <code>sudo</code>).</p>
+<h2 id="set-up-modules">Set up modules<a class="headerlink" href="#set-up-modules" title="Permanent link">§</a></h2>
+<p>Before you start compiling, you need to make sure you have the right compilers, 
+libraries and other tools available for your software. If you haven't changed 
+anything, you will have the default modules loaded.</p>
+<p>Check what the instructions for your software tell you about compiling it. If the 
+website doesn't say much, the source code will hopefully have a README or INSTALL file.</p>
+<p>You may want to use a different compiler - the default is the Intel compiler.</p>
+<p><code>module avail compilers</code> will show you all the compiler modules available. Most 
+Open Source software tends to assume you're using GCC and OpenMPI (if it uses MPI) 
+and is most tested with that combination, so if it doesn't tell you otherwise  you 
+may want to begin there (do check what the newest modules available are - the below 
+is correct at time of writing):</p>
+<div class="codehilite"><pre><span></span><code># unload your current compiler and mpi modules
+module unload compilers mpi
+# load the GNU compiler and OpenMPI
+module load compilers/gnu/4.9.2
+module load mpi/openmpi/4.0.3/gnu-4.9.2
+</code></pre></div>
+
+<h2 id="blas-and-lapack">BLAS and LAPACK<a class="headerlink" href="#blas-and-lapack" title="Permanent link">§</a></h2>
+<p>BLAS and LAPACK are provided as part of MKL, OpenBLAS or ATLAS. There are several 
+different OpenBLAS and ATLAS modules on for different compilers. MKL is available 
+in the Intel compiler module.</p>
+<p>Your code may try to link <code>-lblas -llapack</code>: this isn't the right way to use BLAS 
+and LAPACK with MKL or ATLAS (though our OpenBLAS now has symlinks that mean this 
+will work).</p>
+<h3 id="mkl">MKL<a class="headerlink" href="#mkl" title="Permanent link">§</a></h3>
+<p>When you have an Intel compiler module loaded, typing </p>
+<div class="codehilite"><pre><span></span><code>echo $MKLROOT
+</code></pre></div>
+
+<p>will show you that MKL is available.</p>
+<h4 id="easy-linking-of-mkl">Easy linking of MKL<a class="headerlink" href="#easy-linking-of-mkl" title="Permanent link">§</a></h4>
+<p>If you can, try to use <code>-mkl</code> as a compiler flag - if that works, it should get 
+all the correct libraries linked in the right order. Some build systems do not 
+work with this however and need explicit linking.</p>
+<h4 id="intel-mkl-link-line-advisor">Intel MKL link line advisor<a class="headerlink" href="#intel-mkl-link-line-advisor" title="Permanent link">§</a></h4>
+<p>It can be complicated to get the correct link line for MKL, so Intel has provided 
+a tool which will give you the link line with the libraries in the right order.</p>
+<ul>
+<li>https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor</li>
+</ul>
+<p>Pick the version of MKL you are using (for the Intel 2018 compiler it should be 
+Intel(R) MKL 2018.0), and these options:</p>
+<ul>
+<li>OS: Linux</li>
+<li>Pick your compiler. BLAS and LAPACK are Fortran95 interfaces, to select them pick a Fortran compiler.</li>
+<li>Architecture: Intel(R) 64</li>
+<li>You can choose what type of linking you prefer. Dynamic linking means the libraries are linked at runtime and use the .so library, while static means they are linked at compile time and use the .a library. The Single Dynamic Library for later MKL versions will mean MKL will do clever things to work out which parts of it you are using.</li>
+<li>Interface layer: 64-bit integer</li>
+<li>Threading layer: You probably want sequential threading in most cases.</li>
+<li>Select additional libraries (ScaLAPACK) if required.</li>
+<li>Select Intel MPI if required.</li>
+<li>Select 'Link with Intel MKL libraries explicitly' </li>
+</ul>
+<p>You'll get something like this:</p>
+<div class="codehilite"><pre><span></span><code>${MKLROOT}/lib/intel64/libmkl_blas95_ilp64.a ${MKLROOT}/lib/intel64/libmkl_lapack95_ilp64.a -L${MKLROOT}/lib/intel64 -lmkl_scalapack_ilp64 -lmkl_intel_ilp64 -lmkl_sequential -lmkl_core -lmkl_blacs_intelmpi_ilp64 -lpthread -lm -ldl
+</code></pre></div>
+
+<p>and compiler options:</p>
+<div class="codehilite"><pre><span></span><code>-i8 -I${MKLROOT}/include/intel64/ilp64 -I${MKLROOT}/include
+</code></pre></div>
+
+<p>It is a good idea to double check the library locations given by the tool are 
+correct: do an <code>ls ${MKLROOT}/lib/intel64</code> and make sure the directory exists 
+and contains the libraries. In the past there have been slight path differences 
+between tool and install for some versions.</p>
+<h3 id="openblas">OpenBLAS<a class="headerlink" href="#openblas" title="Permanent link">§</a></h3>
+<p>We have native threads, OpenMP and serial versions of OpenBLAS. </p>
+<h4 id="linking-openblas">Linking OpenBLAS<a class="headerlink" href="#linking-openblas" title="Permanent link">§</a></h4>
+<p>Our OpenBLAS modules now contain symlinks for <code>libblas</code> and <code>liblapack</code> that both 
+point to <code>libopenblas</code>. This means that the default <code>-lblas -llapack</code> will in fact work.</p>
+<p>This is how you would normally link OpenBLAS:</p>
+<div class="codehilite"><pre><span></span><code>-L${OPENBLASROOT}/lib -lopenblas
+</code></pre></div>
+
+<p>If code you are compiling requires separate entries for BLAS and LAPACK, set them 
+both to <code>-lopenblas</code>.</p>
+<h4 id="troubleshooting-openmp-loop-warning">Troubleshooting: OpenMP loop warning<a class="headerlink" href="#troubleshooting-openmp-loop-warning" title="Permanent link">§</a></h4>
+<p>If you are running a threaded program and get this warning:</p>
+<div class="codehilite"><pre><span></span><code>OpenBLAS Warning : Detect OpenMP Loop and this application may hang. Please rebuild the library with USE_OPENMP=1 option.
+</code></pre></div>
+
+<p>Then tell OpenBLAS to use only one thread by adding the below to your jobscript 
+(this overrides <code>$OMP_NUM_THREADS</code> for OpenBLAS only):</p>
+<div class="codehilite"><pre><span></span><code>export OPENBLAS_NUM_THREADS=1
+</code></pre></div>
+
+<p>If it is your own code, you can also set it in the code with the function</p>
+<div class="codehilite"><pre><span></span><code>void openblas_set_num_threads(int num_threads);
+</code></pre></div>
+
+<p>You can avoid this error by compiling with one of the <code>native-threads</code> or <code>serial</code> 
+OpenBLAS modules instead of the <code>openmp</code> one.</p>
+<h3 id="atlas">ATLAS<a class="headerlink" href="#atlas" title="Permanent link">§</a></h3>
+<p>We would generally recommend using OpenBLAS instead at present, but we do have 
+ATLAS modules.</p>
+<h4 id="dynamic-linking-atlas">Dynamic linking ATLAS<a class="headerlink" href="#dynamic-linking-atlas" title="Permanent link">§</a></h4>
+<p>There is one combined library each for serial and threaded ATLAS (in most 
+circumstances you probably want the serial version).</p>
+<p>Serial:</p>
+<div class="codehilite"><pre><span></span><code>-L${ATLASROOT}/lib -lsatlas
+</code></pre></div>
+
+<p>Threaded:</p>
+<div class="codehilite"><pre><span></span><code>-L${ATLASROOT}/lib -ltatlas
+</code></pre></div>
+
+<h4 id="static-linking-atlas">Static linking ATLAS<a class="headerlink" href="#static-linking-atlas" title="Permanent link">§</a></h4>
+<p>There are multiple libraries to link.</p>
+<p>Serial:</p>
+<div class="codehilite"><pre><span></span><code>-L${ATLASROOT}/lib -llapack -lf77blas -lcblas -latlas
+</code></pre></div>
+
+<p>Threaded:</p>
+<div class="codehilite"><pre><span></span><code>-L${ATLASROOT}/lib -llapack -lptf77blas -lptcblas -latlas
+</code></pre></div>
+
+<h4 id="troubleshooting-libgfortran-or-lifcore-cannot-be-found">Troubleshooting: libgfortran or lifcore cannot be found<a class="headerlink" href="#troubleshooting-libgfortran-or-lifcore-cannot-be-found" title="Permanent link">§</a></h4>
+<p>If you get a runtime error saying that <code>libgfortran.so</code> cannot be found, 
+you need to add <code>-lgfortran</code> to your link line.</p>
+<p>The Intel equivalent is <code>-lifcore</code>.</p>
+<p>You can do a module show on the compiler module you are using to see where 
+the Fortran libraries are located if you need to give a full path to them.</p>
+<h1 id="installing-additional-packages-for-an-existing-scripting-language">Installing additional packages for an existing scripting language<a class="headerlink" href="#installing-additional-packages-for-an-existing-scripting-language" title="Permanent link">§</a></h1>
 <h2 id="python">Python<a class="headerlink" href="#python" title="Permanent link">§</a></h2>
 <p>There are <code>python2/recommended</code> and <code>python3/recommended</code> module bundles you will see if you type 
 <code>module avail python</code>. These use a virtualenv, have a lot of Python packages installed already, 
@@ -1002,14 +1263,32 @@ pip3 install --user &lt;python3pkg&gt;
 <p>If you need different packages that are not compatible with the centrally installed versions (eg. 
 what you are trying to install depends on a different version of something we have already installed)
 then you can create a new virtualenv and only packages you are installing yourself will be in it.</p>
-<div class="codehilite"><pre><span></span><code># create the new virtualenv, with any name you want
+<p>In this case, you do not want our virtualenv with our packages to also be active.
+We have two types of Python modules. If you type <code>module avail python</code> there are 
+"bundles" which are named like <code>python3/3.7</code> - these include our virtualenv and
+packages. Then there are the base modules for just python itself, like <code>python/3.7.4</code>. </p>
+<p>When using your own virtualenv, you want to load one of the base python modules.</p>
+<div class="codehilite"><pre><span></span><code># load a base python module (you will always need to do this)
+module load python/3.7.4
+# create the new virtualenv, with any name you want
 virtualenv &lt;DIR&gt;
 # activate it
 source &lt;DIR&gt;/bin/activate
 </code></pre></div>
 
-<p>You only need to create it the first time.</p>
-<p>Your bash prompt will change to show you that a different virtualenv is active.</p>
+<p>Your bash prompt will change to show you that a different virtualenv is active.
+(This one is called <code>venv</code>).</p>
+<div class="codehilite"><pre><span></span><code>(venv) [uccacxx@login03 ~]$ 
+</code></pre></div>
+
+<p><code>deactivate</code> will deactivate your virtualenv and your prompt will return to normal.</p>
+<p>You only need to create the virtualenv the first time. </p>
+<h4 id="error-while-loading-shared-libraries">Error while loading shared libraries<a class="headerlink" href="#error-while-loading-shared-libraries" title="Permanent link">§</a></h4>
+<p>You will always need to load the base python module before activating your
+virtualenv or you will get an error like this:</p>
+<div class="codehilite"><pre><span></span><code>python3: error while loading shared libraries: libpython3.7m.so.1.0: cannot open shared object file: No such file or directory
+</code></pre></div>
+
 <h3 id="installing-via-setuppy">Installing via setup.py<a class="headerlink" href="#installing-via-setuppy" title="Permanent link">§</a></h3>
 <p>If you need to install by downloading a package and using <code>setup.py</code>, you can use the <code>--user</code> 
 flag and as long as one of our python module bundles are loaded, it will install into the same 
@@ -1129,8 +1408,8 @@ in your environment instead, which will be the one from the Python module you've
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
-      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c1ccee15.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
