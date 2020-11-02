@@ -3,6 +3,8 @@ title: Installing Software
 layout: docs
 ---
 
+# Installing software
+
 If you want to request that software be installed centrally, you can email us at 
 rc-support@ucl.ac.uk or open a [GitHub issue in our buildscripts repository](https://github.com/UCL-RITS/rcps-buildscripts/issues). 
 That is also where you can see all the software requests we are currently working on, 
@@ -21,6 +23,184 @@ You cannot install anything using `sudo` (and neither can we!). If the instructi
 
 Alternatively, just leave off the `sudo` from the command they tell you to run and look for an alternative way to give it an install location if it tries to install somewhere that isn't in your space (examples for some common build systems are below).
 
+## Download source code
+
+Use wget or curl to download the source code for the software you want to install 
+to your account on the cluster. You can use `tar` to extract source archives named 
+like `tar.gz` or `.tgz` or `.tar.bz2` among others and `unzip` for `.zip` files. 
+`xz --decompress` will expand `.xz` files.
+
+```
+wget https://www.example.com/program.tar.gz
+tar -xvf program.tar.gz
+```
+You will not be able to use a package manager like `yum`, and will need to follow 
+the manual installation instructions for a user-space install (not using `sudo`).
+
+## Set up modules
+
+Before you start compiling, you need to make sure you have the right compilers, 
+libraries and other tools available for your software. If you haven't changed 
+anything, you will have the default modules loaded.
+
+Check what the instructions for your software tell you about compiling it. If the 
+website doesn't say much, the source code will hopefully have a README or INSTALL file.
+
+You may want to use a different compiler - the default is the Intel compiler.
+
+`module avail compilers` will show you all the compiler modules available. Most 
+Open Source software tends to assume you're using GCC and OpenMPI (if it uses MPI) 
+and is most tested with that combination, so if it doesn't tell you otherwise  you 
+may want to begin there (do check what the newest modules available are - the below 
+is correct at time of writing):
+
+```
+# unload your current compiler and mpi modules
+module unload compilers mpi
+# load the GNU compiler and OpenMPI
+module load compilers/gnu/4.9.2
+module load mpi/openmpi/4.0.3/gnu-4.9.2
+```
+
+## BLAS and LAPACK
+
+BLAS and LAPACK are provided as part of MKL, OpenBLAS or ATLAS. There are several 
+different OpenBLAS and ATLAS modules on for different compilers. MKL is available 
+in the Intel compiler module.
+
+Your code may try to link `-lblas -llapack`: this isn't the right way to use BLAS 
+and LAPACK with MKL or ATLAS (though our OpenBLAS now has symlinks that mean this 
+will work).
+
+### MKL
+
+When you have an Intel compiler module loaded, typing 
+```
+echo $MKLROOT
+```
+will show you that MKL is available.
+
+#### Easy linking of MKL
+
+If you can, try to use `-mkl` as a compiler flag - if that works, it should get 
+all the correct libraries linked in the right order. Some build systems do not 
+work with this however and need explicit linking.
+
+#### Intel MKL link line advisor
+
+It can be complicated to get the correct link line for MKL, so Intel has provided 
+a tool which will give you the link line with the libraries in the right order.
+
+* https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor
+
+Pick the version of MKL you are using (for the Intel 2018 compiler it should be 
+Intel(R) MKL 2018.0), and these options:
+
+* OS: Linux
+* Pick your compiler. BLAS and LAPACK are Fortran95 interfaces, to select them pick a Fortran compiler.
+* Architecture: Intel(R) 64
+* You can choose what type of linking you prefer. Dynamic linking means the libraries are linked at runtime and use the .so library, while static means they are linked at compile time and use the .a library. The Single Dynamic Library for later MKL versions will mean MKL will do clever things to work out which parts of it you are using.
+* Interface layer: 64-bit integer
+* Threading layer: You probably want sequential threading in most cases.
+* Select additional libraries (ScaLAPACK) if required.
+* Select Intel MPI if required.
+* Select 'Link with Intel MKL libraries explicitly' 
+
+You'll get something like this:
+```
+${MKLROOT}/lib/intel64/libmkl_blas95_ilp64.a ${MKLROOT}/lib/intel64/libmkl_lapack95_ilp64.a -L${MKLROOT}/lib/intel64 -lmkl_scalapack_ilp64 -lmkl_intel_ilp64 -lmkl_sequential -lmkl_core -lmkl_blacs_intelmpi_ilp64 -lpthread -lm -ldl
+```
+and compiler options:
+```
+-i8 -I${MKLROOT}/include/intel64/ilp64 -I${MKLROOT}/include
+```
+
+It is a good idea to double check the library locations given by the tool are 
+correct: do an `ls ${MKLROOT}/lib/intel64` and make sure the directory exists 
+and contains the libraries. In the past there have been slight path differences 
+between tool and install for some versions.
+
+### OpenBLAS
+
+We have native threads, OpenMP and serial versions of OpenBLAS. 
+
+#### Linking OpenBLAS
+
+Our OpenBLAS modules now contain symlinks for `libblas` and `liblapack` that both 
+point to `libopenblas`. This means that the default `-lblas -llapack` will in fact work.
+
+This is how you would normally link OpenBLAS:
+```
+-L${OPENBLASROOT}/lib -lopenblas
+```
+If code you are compiling requires separate entries for BLAS and LAPACK, set them 
+both to `-lopenblas`.
+
+#### Troubleshooting: OpenMP loop warning
+
+If you are running a threaded program and get this warning:
+```
+OpenBLAS Warning : Detect OpenMP Loop and this application may hang. Please rebuild the library with USE_OPENMP=1 option.
+```
+Then tell OpenBLAS to use only one thread by adding the below to your jobscript 
+(this overrides `$OMP_NUM_THREADS` for OpenBLAS only):
+```
+export OPENBLAS_NUM_THREADS=1
+```
+If it is your own code, you can also set it in the code with the function
+```
+void openblas_set_num_threads(int num_threads);
+```
+
+You can avoid this error by compiling with one of the `native-threads` or `serial` 
+OpenBLAS modules instead of the `openmp` one.
+
+### ATLAS
+
+We would generally recommend using OpenBLAS instead at present, but we do have 
+ATLAS modules.
+
+#### Dynamic linking ATLAS
+
+There is one combined library each for serial and threaded ATLAS (in most 
+circumstances you probably want the serial version).
+
+Serial:
+```
+-L${ATLASROOT}/lib -lsatlas
+```
+
+Threaded:
+```
+-L${ATLASROOT}/lib -ltatlas
+```
+
+#### Static linking ATLAS
+
+There are multiple libraries to link.
+
+Serial:
+```
+-L${ATLASROOT}/lib -llapack -lf77blas -lcblas -latlas
+```
+
+Threaded:
+```
+-L${ATLASROOT}/lib -llapack -lptf77blas -lptcblas -latlas
+```
+
+#### Troubleshooting: libgfortran or lifcore cannot be found
+
+If you get a runtime error saying that `libgfortran.so` cannot be found, 
+you need to add `-lgfortran` to your link line.
+
+The Intel equivalent is `-lifcore`.
+
+You can do a module show on the compiler module you are using to see where 
+the Fortran libraries are located if you need to give a full path to them.
+
+
+# Installing additional packages for an existing scripting language
 
 ## Python
 
@@ -69,15 +249,39 @@ If your own installed Python packages get into a mess, you can delete (or rename
 If you need different packages that are not compatible with the centrally installed versions (eg. 
 what you are trying to install depends on a different version of something we have already installed)
 then you can create a new virtualenv and only packages you are installing yourself will be in it.
+
+In this case, you do not want our virtualenv with our packages to also be active.
+We have two types of Python modules. If you type `module avail python` there are 
+"bundles" which are named like `python3/3.7` - these include our virtualenv and
+packages. Then there are the base modules for just python itself, like `python/3.7.4`. 
+
+When using your own virtualenv, you want to load one of the base python modules.
+
 ```
+# load a base python module (you will always need to do this)
+module load python/3.7.4
 # create the new virtualenv, with any name you want
 virtualenv <DIR>
 # activate it
 source <DIR>/bin/activate
 ```
-You only need to create it the first time.
-
 Your bash prompt will change to show you that a different virtualenv is active.
+(This one is called `venv`).
+```
+(venv) [uccacxx@login03 ~]$ 
+```
+
+`deactivate` will deactivate your virtualenv and your prompt will return to normal.
+
+You only need to create the virtualenv the first time. 
+
+#### Error while loading shared libraries
+
+You will always need to load the base python module before activating your
+virtualenv or you will get an error like this:
+```
+python3: error while loading shared libraries: libpython3.7m.so.1.0: cannot open shared object file: No such file or directory
+```
 
 ### Installing via setup.py
 
