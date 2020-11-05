@@ -17,6 +17,12 @@ ECDSA key fingerprint is SHA256:rCKAb0yOWXK8+GClKy/pdbwrUbrGMvFkMciZLVcbaTA
 RSA key fingerprint is 5a:cf:95:a2:e4:05:8a:36:46:dc:65:0a:f2:8b:ab:e1
 ```
 
+## Young
+```
+ECDSA key fingerprint is SHA256:3zwMU9C8d9rgmYJ9qDElo15NnWyF2I4xy2X/VIAmFdo
+RSA key fingerprint is 06:17:f3:f2:0c:3e:0d:df:1d:04:fb:53:dc:77:60:56
+```
+
 ## Thomas
 ```
 ECDSA key fingerprint is SHA256:r48udIRDfBEIJG+jiIJFs/56ZayaKUdusFd+JQ3jsO4
