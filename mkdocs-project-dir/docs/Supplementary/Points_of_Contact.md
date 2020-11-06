@@ -3,7 +3,7 @@ title: MMM Points of Contact
 layout: docs
 ---
 
-# User management tools
+## User management tools
 
 This page contains tools and information for the nominated Points of
 Contact.
@@ -15,7 +15,7 @@ These commands can all be run as `thomas-command` or `michael-command`
 or `young-command`:
 they run the same thing and the different names are for convenience.
 
-## Displaying user information
+### Displaying user information
 
 `thomas-show`, `michael-show` or `young-show` is a tool that enables you to find a lot
 of information about users. Access to the database is given to points of
@@ -52,7 +52,7 @@ optional arguments:
  --getmmm              Show the highest mmm username used
 ```
 
-### Show recent users
+#### Show recent users
 
 `thomas-show recentusers` shows you the
 most recently-added N users, default 5.
@@ -66,7 +66,7 @@ optional arguments:
  -n N
 ```
 
-### Show users with a given project, institute, contact
+#### Show users with a given project, institute, contact
 
 `thomas-show getusers` or will search for exact
 matches to the given project, institute, contact combination.
@@ -85,7 +85,7 @@ optional arguments:
                        Point of Contact ID
 ```
 
-### Search for users based on partial information
+#### Search for users based on partial information
 
 `thomas-show whois` can be used to search for
 partial matches to username, name, email fragments, including all of
@@ -108,7 +108,7 @@ optional arguments:
                        Surname of user contains
 ```
 
-## Adding user information and new projects
+### Adding user information and new projects
 
 `thomas-add` will add information to the database.
 Access to the database is given to points of contact individually,
@@ -139,7 +139,7 @@ optional arguments:
  -h, --help            show this help message and exit
 ```
 
-### Add a new user
+#### Add a new user
 
 `thomas-add user` or allows you to add a new user,
 with their initial project and point of contact. This does not create
@@ -180,7 +180,7 @@ optional arguments:
  --debug               Show SQL query submitted without committing the change
 ```
 
-#### SSH key formats
+##### SSH key formats
 
 It will verify the provided ssh key by default. Note that it has to be
 in the form `ssh-xxx keystartshere`. If someone has sent in a key which
@@ -212,7 +212,7 @@ and you should change the `ssh-rsa` appropriately. The guide linked at
 Windows](https://wiki.rc.ucl.ac.uk/wiki/Thomas#Creating_an_ssh_key_in_Windows)
 also shows where users can get the second format out of PuTTY.
 
-### Add new users in bulk from a CSV file
+#### Add new users in bulk from a CSV file
 
 `young-add csv` allows you to add users in bulk using a CSV file of specific format 
 and headers. 
@@ -241,7 +241,7 @@ If you check your CSV file on the cluster with `cat -v` and it shows that it is
 beginning with `M-oM-;M-?` and ending with `^M` you probably need to run 
 `dos2unix` on it first.
 
-### Add a new project
+#### Add a new project
 
 `thomas-add project` or will create a new project,
 associated with an institution. It will not show in Gold until it also
@@ -263,7 +263,7 @@ optional arguments:
  --debug               Show SQL query submitted without committing the change
 ```
 
-### Add a new project/user pairing
+#### Add a new project/user pairing
 
 `thomas-add projectuser` will add an
 existing user to an existing project. Creating a new user for an
@@ -288,13 +288,13 @@ optional arguments:
  --debug               Show SQL query submitted without committing the change
 ```
 
-## Deactivating information
+### Deactivating information
 
 This tool is only partly functional at present. It allows you to deactivate 
 (not delete) some entities that may no longer exist or may have been created
 in error.
 
-### Deactivate a projectuser
+#### Deactivate a projectuser
 
 Use this when the user should no longer be a member of the given project. It
 does not deactivate the user account, just their membership in this project.
@@ -315,13 +315,13 @@ optional arguments:
 ```
 
 
-# Gold resource allocation
+## Gold resource allocation
 
 We are currently using Gold to manage allocations.
 Thomas and Michael share one Gold database, so all the projects exist on both, 
 but they are only active on the correct cluster. Young has its own database.
 
-## Reporting from Gold
+### Reporting from Gold
 
 There are wrapper scripts for a number of Gold commands (these exist in
 the `userscripts` module, loaded by default).
@@ -356,7 +356,7 @@ Eg. `gstatement -p PROJECT -s 2017-08-01` will show all credits and
 debits for the given project since the given date, saying which user and
 job ID each charge was associated with.
 
-## Transferring Gold
+### Transferring Gold
 
 As the point of contact, you can transfer Gold from your allocation
 account into other project accounts. As before, we've put `-h` in the
@@ -374,7 +374,7 @@ institute's projects, but you cannot transfer it back again - only the
 other institute's point of contact (or rc-support) can give it back, so
 be careful which project you specify.
 
-### When two allocations are active
+#### When two allocations are active
 
 There is now an overlap period of a week when two allocations can be
 active. By default, `gtransfer` will transfer from active allocations in
