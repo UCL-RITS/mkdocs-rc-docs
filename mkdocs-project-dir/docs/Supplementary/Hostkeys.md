@@ -19,6 +19,7 @@ RSA key fingerprint is 5a:cf:95:a2:e4:05:8a:36:46:dc:65:0a:f2:8b:ab:e1
 
 ## Young
 ```
+ED25519 key fingerprint MD5 is 92:6d:97:46:eb:8d:0a:4b:8a:65:cb:0d:65:79:bb:7f
 ECDSA key fingerprint is SHA256:3zwMU9C8d9rgmYJ9qDElo15NnWyF2I4xy2X/VIAmFdo
 RSA key fingerprint is 06:17:f3:f2:0c:3e:0d:df:1d:04:fb:53:dc:77:60:56
 ```
