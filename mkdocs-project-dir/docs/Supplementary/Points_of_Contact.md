@@ -68,7 +68,7 @@ optional arguments:
 
 #### Show users with a given project, institute, contact
 
-`thomas-show getusers` or will search for exact
+`thomas-show getusers` will search for exact
 matches to the given project, institute, contact combination.
 
 ```
@@ -141,7 +141,7 @@ optional arguments:
 
 #### Add a new user
 
-`thomas-add user` or allows you to add a new user,
+`thomas-add user` allows you to add a new user,
 with their initial project and point of contact. This does not create
 their account, but does email us with everything we need in order to
 create it. If you run this, you do not need to email us separately. The
@@ -243,7 +243,7 @@ beginning with `M-oM-;M-?` and ending with `^M` you probably need to run
 
 #### Add a new project
 
-`thomas-add project` or will create a new project,
+`thomas-add project` will create a new project,
 associated with an institution. It will not show in Gold until it also
 has a user in it.
 
