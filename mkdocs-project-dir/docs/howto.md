@@ -33,9 +33,6 @@ You will need to create an entry for the host you are connecting to with the set
 
 In newer versions of PuTTY, it looks like this.
 
-*TODO: new putty*
- <!--- Win 10 PuTTY looks same  --->
-
 You will then be asked to enter your username and password. Only enter your username, not `@<system_name>.rc.ucl.ac.uk`. The password field will remain entirely blank when you type in to it - it does not show placeholders to indicate you have typed something. 
 
 ### Logging in from outside the UCL firewall
