@@ -193,7 +193,7 @@ WinSCP is a graphical client that you can use for `scp` or `sftp`.
 
 As when logging in, when you are outside the UCL firewall you will need a method to connect inside it before you copy files. (You do not want to be copying files on to Socrates and then on to our systems - this is slow, unnecessary, and it means you need space available on Socrates too).
 
-You can use the [UCL Virtual Private Network](http://www.ucl.ac.uk/isd/staff/network/vpn) and scp direct to our systems or you can do some form of ssh tunnelling.
+You can use the [UCL Virtual Private Network](https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn/) and scp direct to our systems or you can do some form of ssh tunnelling.
 
 
 ### Single-step logins using tunnelling
