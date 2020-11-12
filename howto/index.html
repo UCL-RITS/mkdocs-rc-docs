@@ -1556,9 +1556,7 @@
 <h2 id="how-do-i-log-in">How do I log in?<a class="headerlink" href="#how-do-i-log-in" title="Permanent link">§</a></h2>
 <p>Logging in is most straightforward if you are inside the UCL firewall. If you are logging in from home or other external networks then you first have to <a href="#logging-in-from-outside-the-ucl-firewall">get on to the UCL network</a>.</p>
 <h3 id="linux-unix-mac-os-x">Linux / Unix / Mac OS X<a class="headerlink" href="#linux-unix-mac-os-x" title="Permanent link">§</a></h3>
-<p>Use the terminal and type the below command to secure shell (ssh) into the machine you wish to access. Replace <code>&lt;your_UCL_user_id&gt;</code> with your central UCL username, and <code>&lt;system_name&gt;</code> with the name of the machine you want to log in to, eg. <code>legion</code>, <code>grace</code>, <code>aristotle</code>. </p>
-<!--- myriad, kathleen, thomas, michael, young  --->
-
+<p>Use the terminal and type the below command to secure shell (ssh) into the machine you wish to access. Replace <code>&lt;your_UCL_user_id&gt;</code> with your central UCL username, and <code>&lt;system_name&gt;</code> with the name of the machine you want to log in to, eg. <code>myriad</code>, <code>kathleen</code>, <code>aristotle</code>. </p>
 <div class="codehilite"><pre><span></span><code>ssh &lt;your_UCL_user_id&gt;@&lt;system_name&gt;.rc.ucl.ac.uk
 </code></pre></div>
 
@@ -1572,13 +1570,9 @@
 <p><em>TODO: new putty</em>
  <!--- Win 10 PuTTY looks same  --->
 </p>
-<p>You will then be asked to enter your username and password. Only enter your username, not <code>@legion.rc.ucl.ac.uk</code>. The password field will remain entirely blank when you type in to it - it does not show placeholders to indicate you have typed something. </p>
-<!---          @<system_name>.rc.ucl.ac.uk  --->
-
+<p>You will then be asked to enter your username and password. Only enter your username, not <code>@&lt;system_name&gt;.rc.ucl.ac.uk</code>. The password field will remain entirely blank when you type in to it - it does not show placeholders to indicate you have typed something. </p>
 <h3 id="logging-in-from-outside-the-ucl-firewall">Logging in from outside the UCL firewall<a class="headerlink" href="#logging-in-from-outside-the-ucl-firewall" title="Permanent link">§</a></h3>
-<p>You will need to either use the <a href="http://www.ucl.ac.uk/isd/staff/network/vpn">UCL Virtual Private Network</a> or ssh in to UCL's gateway <code>socrates.ucl.ac.uk</code> first. From Socrates you can then ssh in to our systems. </p>
-<!--- page http://www.ucl.ac.uk/isd/staff/network not found  --->
-
+<p>You will need to either use the <a href="https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn/">UCL Virtual Private Network</a> or ssh in to UCL's gateway <code>socrates.ucl.ac.uk</code> first. From Socrates you can then ssh in to our systems. </p>
 <div class="codehilite"><pre><span></span><code>ssh &lt;your_UCL_user_id&gt;@socrates.ucl.ac.uk
 ssh &lt;your_UCL_user_id&gt;@&lt;system_name&gt;.rc.ucl.ac.uk
 </code></pre></div>
@@ -1593,9 +1587,7 @@ html.pub/
 <h3 id="login-problems">Login problems<a class="headerlink" href="#login-problems" title="Permanent link">§</a></h3>
 <p>If you experience difficulties with your login, please make sure that you are typing your UCL user ID and your password correctly. If you have recently updated your password, it takes some hours to propagate to all UCL systems.</p>
 <p>If you still cannot get access but can access other UCL services like Socrates, please contact us on rc-support@ucl.ac.uk. Your account may have expired, or you may have gone over quota.</p>
-<p>If you cannot access anything, please see UCL MyAccount - you may need to request a password reset from the Service Desk. </p>
-<!--- links for UCL MyAccount, Service Desk ?  --->
-
+<p>If you cannot access anything, please see UCL MyAccount - you may need to request a password reset from the <a href="https://www.ucl.ac.uk/isd/help-support">Service Desk</a>. </p>
 <p>If you get a host key error message, you will need to delete old host keys - continue reading!</p>
 <h4 id="remote-host-identification-has-changed">Remote host identification has changed<a class="headerlink" href="#remote-host-identification-has-changed" title="Permanent link">§</a></h4>
 <p>When you log in via SSH, it keeps a record of the host key for the server you logged in to in 
@@ -1703,15 +1695,13 @@ put file2
 <h3 id="single-step-logins-using-tunnelling">Single-step logins using tunnelling<a class="headerlink" href="#single-step-logins-using-tunnelling" title="Permanent link">§</a></h3>
 <h4 id="linux-unix-mac-os-x_1">Linux / Unix / Mac OS X<a class="headerlink" href="#linux-unix-mac-os-x_1" title="Permanent link">§</a></h4>
 <h5 id="on-the-command-line">On the command line<a class="headerlink" href="#on-the-command-line" title="Permanent link">§</a></h5>
-<!--- change Grace with e.g. Myriad in lines below --->
-
-<div class="codehilite"><pre><span></span><code># Log in to Grace, jumping via Socrates
-ssh -o ProxyJump=socrates.ucl.ac.uk grace.rc.ucl.ac.uk
+<div class="codehilite"><pre><span></span><code># Log in to Myriad, jumping via Socrates
+ssh -o ProxyJump=socrates.ucl.ac.uk myriad.rc.ucl.ac.uk
 </code></pre></div>
 
 <p>or</p>
 <div class="codehilite"><pre><span></span><code># Copy &#39;my_file&#39; from the machine you are logged in to into your Scratch on Grace
-scp -o ProxyJump=socrates.ucl.ac.uk my_file grace.rc.ucl.ac.uk:~/Scratch/
+scp -o ProxyJump=socrates.ucl.ac.uk my_file myriad.rc.ucl.ac.uk:~/Scratch/
 </code></pre></div>
 
 <p>This tunnels through Socrates in order to get you to your destination - you'll be asked for your password twice, once for each machine. You can use this to log in or to copy files.</p>
@@ -1912,12 +1902,10 @@ the nodes that exist in that cluster.</p>
 <div class="codehilite"><pre><span></span><code>[uccacxx@login12 ~]$ nodetypes
     3 type * nodes: 36 cores, 188.4G RAM
     7 type B nodes: 36 cores,   1.5T RAM
-    1 type D nodes: 36 cores, 172.7G RAM
-   65 type D nodes: 36 cores, 188.4G RAM
+   66 type D nodes: 36 cores, 188.4G RAM
     9 type E nodes: 36 cores, 188.4G RAM
     1 type F nodes: 36 cores, 188.4G RAM
-    3 type H nodes: 36 cores, 172.7G RAM
-   52 type H nodes: 36 cores, 188.4G RAM
+   55 type H nodes: 36 cores, 188.4G RAM
     3 type I nodes: 36 cores,   1.5T RAM
     2 type J nodes: 36 cores, 188.4G RAM
 </code></pre></div>
@@ -1953,9 +1941,6 @@ use X-forwarding.</p>
 <h4 id="exceed-on-desktopucl">Exceed on Desktop@UCL<a class="headerlink" href="#exceed-on-desktopucl" title="Permanent link">§</a></h4>
 <ol>
 <li>Load Exceed. You can find it under Start &gt; All Programs &gt; Applications O-P &gt; Open Text Exceed 14 &gt; Exceed</li>
-</ol>
-<!--- mine has OpenText Exceed 15 x64  --->
-<ol>
 <li>Open PuTTY (Applications O-P &gt; PuTTY)</li>
 <li>In PuTTY, set up the connection with the host machine as usual:<ul>
 <li>Host name: <code>myriad.rc.ucl.ac.uk</code> (for example)</li>
