@@ -13,8 +13,7 @@ Logging in is most straightforward if you are inside the UCL firewall. If you ar
 
 ### Linux / Unix / Mac OS X
 
-Use the terminal and type the below command to secure shell (ssh) into the machine you wish to access. Replace `<your_UCL_user_id>` with your central UCL username, and `<system_name>` with the name of the machine you want to log in to, eg. `legion`, `grace`, `aristotle`. 
-<!--- myriad, kathleen, thomas, michael, young  --->
+Use the terminal and type the below command to secure shell (ssh) into the machine you wish to access. Replace `<your_UCL_user_id>` with your central UCL username, and `<system_name>` with the name of the machine you want to log in to, eg. `myriad`, `kathleen`, `aristotle`. 
 
 ```
 ssh <your_UCL_user_id>@<system_name>.rc.ucl.ac.uk
@@ -37,13 +36,11 @@ In newer versions of PuTTY, it looks like this.
 *TODO: new putty*
  <!--- Win 10 PuTTY looks same  --->
 
-You will then be asked to enter your username and password. Only enter your username, not `@legion.rc.ucl.ac.uk`. The password field will remain entirely blank when you type in to it - it does not show placeholders to indicate you have typed something. 
-<!---          @<system_name>.rc.ucl.ac.uk  --->
+You will then be asked to enter your username and password. Only enter your username, not `@<system_name>.rc.ucl.ac.uk`. The password field will remain entirely blank when you type in to it - it does not show placeholders to indicate you have typed something. 
 
 ### Logging in from outside the UCL firewall
 
-You will need to either use the [UCL Virtual Private Network](http://www.ucl.ac.uk/isd/staff/network/vpn) or ssh in to UCL's gateway `socrates.ucl.ac.uk` first. From Socrates you can then ssh in to our systems. 
-<!--- page http://www.ucl.ac.uk/isd/staff/network not found  --->
+You will need to either use the [UCL Virtual Private Network](https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn/) or ssh in to UCL's gateway `socrates.ucl.ac.uk` first. From Socrates you can then ssh in to our systems. 
 
 ```
 ssh <your_UCL_user_id>@socrates.ucl.ac.uk
@@ -68,8 +65,7 @@ If you experience difficulties with your login, please make sure that you are ty
 
 If you still cannot get access but can access other UCL services like Socrates, please contact us on rc-support@ucl.ac.uk. Your account may have expired, or you may have gone over quota.
 
-If you cannot access anything, please see UCL MyAccount - you may need to request a password reset from the Service Desk. 
-<!--- links for UCL MyAccount, Service Desk ?  --->
+If you cannot access anything, please see UCL MyAccount - you may need to request a password reset from the [Service Desk](https://www.ucl.ac.uk/isd/help-support). 
 
 If you get a host key error message, you will need to delete old host keys - continue reading!
 
@@ -208,15 +204,15 @@ You can use the [UCL Virtual Private Network](http://www.ucl.ac.uk/isd/staff/net
 #### Linux / Unix / Mac OS X
 
 ##### On the command line
-<!--- change Grace with e.g. Myriad in lines below --->
+
 ```
-# Log in to Grace, jumping via Socrates
-ssh -o ProxyJump=socrates.ucl.ac.uk grace.rc.ucl.ac.uk
+# Log in to Myriad, jumping via Socrates
+ssh -o ProxyJump=socrates.ucl.ac.uk myriad.rc.ucl.ac.uk
 ```
 or
 ```
 # Copy 'my_file' from the machine you are logged in to into your Scratch on Grace
-scp -o ProxyJump=socrates.ucl.ac.uk my_file grace.rc.ucl.ac.uk:~/Scratch/
+scp -o ProxyJump=socrates.ucl.ac.uk my_file myriad.rc.ucl.ac.uk:~/Scratch/
 ```
 
 This tunnels through Socrates in order to get you to your destination - you'll be asked for your password twice, once for each machine. You can use this to log in or to copy files.
@@ -492,12 +488,10 @@ the nodes that exist in that cluster.
 [uccacxx@login12 ~]$ nodetypes
     3 type * nodes: 36 cores, 188.4G RAM
     7 type B nodes: 36 cores,   1.5T RAM
-    1 type D nodes: 36 cores, 172.7G RAM
-   65 type D nodes: 36 cores, 188.4G RAM
+   66 type D nodes: 36 cores, 188.4G RAM
     9 type E nodes: 36 cores, 188.4G RAM
     1 type F nodes: 36 cores, 188.4G RAM
-    3 type H nodes: 36 cores, 172.7G RAM
-   52 type H nodes: 36 cores, 188.4G RAM
+   55 type H nodes: 36 cores, 188.4G RAM
     3 type I nodes: 36 cores,   1.5T RAM
     2 type J nodes: 36 cores, 188.4G RAM
 ```
@@ -546,7 +540,6 @@ Exceed is available on Desktop@UCL machines and downloadable from the [UCL softw
 #### Exceed on Desktop@UCL
 
 1. Load Exceed. You can find it under Start > All Programs > Applications O-P > Open Text Exceed 14 > Exceed
-<!--- mine has OpenText Exceed 15 x64  --->
 2. Open PuTTY (Applications O-P > PuTTY)
 3. In PuTTY, set up the connection with the host machine as usual:
     * Host name: `myriad.rc.ucl.ac.uk` (for example)
