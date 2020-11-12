@@ -1,3 +1,8 @@
+---
+title: How To
+layout: docs
+---
+
 # How do I?
 
 I have an account, now:
@@ -9,6 +14,7 @@ Logging in is most straightforward if you are inside the UCL firewall. If you ar
 ### Linux / Unix / Mac OS X
 
 Use the terminal and type the below command to secure shell (ssh) into the machine you wish to access. Replace `<your_UCL_user_id>` with your central UCL username, and `<system_name>` with the name of the machine you want to log in to, eg. `legion`, `grace`, `aristotle`. 
+<!--- myriad, kathleen, thomas, michael, young  --->
 
 ```
 ssh <your_UCL_user_id>@<system_name>.rc.ucl.ac.uk
@@ -29,12 +35,15 @@ You will need to create an entry for the host you are connecting to with the set
 In newer versions of PuTTY, it looks like this.
 
 *TODO: new putty*
+ <!--- Win 10 PuTTY looks same  --->
 
 You will then be asked to enter your username and password. Only enter your username, not `@legion.rc.ucl.ac.uk`. The password field will remain entirely blank when you type in to it - it does not show placeholders to indicate you have typed something. 
+<!---          @<system_name>.rc.ucl.ac.uk  --->
 
 ### Logging in from outside the UCL firewall
 
 You will need to either use the [UCL Virtual Private Network](http://www.ucl.ac.uk/isd/staff/network/vpn) or ssh in to UCL's gateway `socrates.ucl.ac.uk` first. From Socrates you can then ssh in to our systems. 
+<!--- page http://www.ucl.ac.uk/isd/staff/network not found  --->
 
 ```
 ssh <your_UCL_user_id>@socrates.ucl.ac.uk
@@ -60,6 +69,7 @@ If you experience difficulties with your login, please make sure that you are ty
 If you still cannot get access but can access other UCL services like Socrates, please contact us on rc-support@ucl.ac.uk. Your account may have expired, or you may have gone over quota.
 
 If you cannot access anything, please see UCL MyAccount - you may need to request a password reset from the Service Desk. 
+<!--- links for UCL MyAccount, Service Desk ?  --->
 
 If you get a host key error message, you will need to delete old host keys - continue reading!
 
@@ -152,7 +162,7 @@ scp ccxxxxx@legion.rc.ucl.ac.uk:~/Scratch/myfile Backups/
 
 #### sftp
 
-You can use sftp to log in to the remote machine, navigate through directories and use `put` and `get` to copy files from and to your local machine. `lcd` and `lls` are local equivalents of `cd` and `ls` so you can navigate through your local directories as you go. 
+You can use `sftp` to log in to the remote machine, navigate through directories and use `put` and `get` to copy files from and to your local machine. `lcd` and `lls` are local equivalents of `cd` and `ls` so you can navigate through your local directories as you go. 
 
 ```
 sftp <remote_user_id>@<remote_hostname>
@@ -173,11 +183,11 @@ put file2
 
 #### rsync
 
-Rsync is used to remotely synchronise directories, so can be used to only copy files which have changed. Have a look at `man rsync` as there are many options. 
+`rsync` is used to remotely synchronise directories, so can be used to only copy files which have changed. Have a look at `man rsync` as there are many options. 
 
 ### Copying files using Windows and WinSCP
 
-WinSCP is a graphical client that you can use for scp or sftp.
+WinSCP is a graphical client that you can use for `scp` or `sftp`.
 
  1. The login/create new session screen will open if this is the first time you are using WinSCP.
  2. You can choose SFTP or SCP as the file protocol. If you have an unstable connection with one, you may wish to try the other. SCP is probably generally better.
@@ -198,6 +208,7 @@ You can use the [UCL Virtual Private Network](http://www.ucl.ac.uk/isd/staff/net
 #### Linux / Unix / Mac OS X
 
 ##### On the command line
+<!--- change Grace with e.g. Myriad in lines below --->
 ```
 # Log in to Grace, jumping via Socrates
 ssh -o ProxyJump=socrates.ucl.ac.uk grace.rc.ucl.ac.uk
@@ -214,11 +225,11 @@ You may also need to do this if you are trying to reach one cluster from another
 
 ##### Using a config file
 
-You can create a config which does this without you needing to type it every time.
+You can create a config file which does this without you needing to type it every time.
 
 Inside your `~/.ssh` directory on your local machine, add the below to your `config` file (or create a file called `config` if you don't already have one).
 
-Generically, it should be of this form where `<name>` can be anything you want to call this entry.
+Generally, it should be of this form where `<name>` can be anything you want to call this entry.
 
 ```
 Host <name>
@@ -245,6 +256,7 @@ Host aristotle
    HostName aristotle.rc.ucl.ac.uk
    proxyCommand ssh -W aristotle.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
 ```
+<!--- replace legion example above with something else  --->
 
 You can now just type `ssh myriad` or `scp file1 aristotle:~` and you will go through Socrates. You'll be asked for login details twice since you're logging in to two machines, Socrates and your endpoint.  
 
@@ -315,6 +327,7 @@ You may specify node type with the `-ac allow=` flags as below:
 qsub -ac allow=XYZ myscript.sh
 ```
 That would restrict the job to running on nodes of type X, Y or Z (the older Legion nodes).
+<!--- provide an alternate example, e.g., using Myriad's or Kathleen's nodes  --->
 
 Note that for debugging purposes, it helps us if you have these options inside your jobscript rather than passed in on the command line whenever possible. We (and you) can see the exact jobscript that was submitted for every job that ran but not what command line options you submitted it with.
 
@@ -359,6 +372,8 @@ qstat -f -j 12345
  `Eqw`: there was an error in this jobscript. This will not run.
  `t`: this job is being transferred
  `dr`: this job is being deleted
+<!--- dRr  --->
+<!--- hqw  --->
 
 Many jobs cycling between `Rq` and `Rr` generally means there is a dodgy compute node which is failing pre-job checks, but is free so everything tries to run there. In this case, let us know and we will investigate. 
 
@@ -475,15 +490,14 @@ the nodes that exist in that cluster.
 
 ```
 [uccacxx@login12 ~]$ nodetypes
-Unknown node type: util02
-Unknown node type: util05
-    2 type * nodes: 36 cores, 188.4G RAM
+    3 type * nodes: 36 cores, 188.4G RAM
     7 type B nodes: 36 cores,   1.5T RAM
-   66 type D nodes: 36 cores, 188.4G RAM
+    1 type D nodes: 36 cores, 172.7G RAM
+   65 type D nodes: 36 cores, 188.4G RAM
     9 type E nodes: 36 cores, 188.4G RAM
     1 type F nodes: 36 cores, 188.4G RAM
     3 type H nodes: 36 cores, 172.7G RAM
-   53 type H nodes: 36 cores, 188.4G RAM
+   52 type H nodes: 36 cores, 188.4G RAM
     3 type I nodes: 36 cores,   1.5T RAM
     2 type J nodes: 36 cores, 188.4G RAM
 ```
@@ -532,6 +546,7 @@ Exceed is available on Desktop@UCL machines and downloadable from the [UCL softw
 #### Exceed on Desktop@UCL
 
 1. Load Exceed. You can find it under Start > All Programs > Applications O-P > Open Text Exceed 14 > Exceed
+<!--- mine has OpenText Exceed 15 x64  --->
 2. Open PuTTY (Applications O-P > PuTTY)
 3. In PuTTY, set up the connection with the host machine as usual:
     * Host name: `myriad.rc.ucl.ac.uk` (for example)
