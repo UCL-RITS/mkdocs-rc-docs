@@ -20,7 +20,7 @@
     
     
       
-        <title>How do I? - UCL Research Computing Documentation</title>
+        <title>How To - UCL Research Computing Documentation</title>
       
     
     
@@ -93,7 +93,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              How do I?
+              How To
             
           </span>
         </div>
@@ -357,12 +357,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        How do I?
+        How To
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      How do I?
+      How To
     </a>
     
       
@@ -1557,6 +1557,8 @@
 <p>Logging in is most straightforward if you are inside the UCL firewall. If you are logging in from home or other external networks then you first have to <a href="#logging-in-from-outside-the-ucl-firewall">get on to the UCL network</a>.</p>
 <h3 id="linux-unix-mac-os-x">Linux / Unix / Mac OS X<a class="headerlink" href="#linux-unix-mac-os-x" title="Permanent link">§</a></h3>
 <p>Use the terminal and type the below command to secure shell (ssh) into the machine you wish to access. Replace <code>&lt;your_UCL_user_id&gt;</code> with your central UCL username, and <code>&lt;system_name&gt;</code> with the name of the machine you want to log in to, eg. <code>legion</code>, <code>grace</code>, <code>aristotle</code>. </p>
+<!--- myriad, kathleen, thomas, michael, young  --->
+
 <div class="codehilite"><pre><span></span><code>ssh &lt;your_UCL_user_id&gt;@&lt;system_name&gt;.rc.ucl.ac.uk
 </code></pre></div>
 
@@ -1567,10 +1569,16 @@
 <p>You will need to create an entry for the host you are connecting to with the settings below. If you want to save your settings, give them an easily-identifiable name in the "Saved Sessions" box and press "Save". Then you can select it and "Load" next time you use PuTTY. </p>
 <p><img alt="PuTTY screenshot" src="../img/putty_gui.png" /></p>
 <p>In newer versions of PuTTY, it looks like this.</p>
-<p><em>TODO: new putty</em></p>
+<p><em>TODO: new putty</em>
+ <!--- Win 10 PuTTY looks same  --->
+</p>
 <p>You will then be asked to enter your username and password. Only enter your username, not <code>@legion.rc.ucl.ac.uk</code>. The password field will remain entirely blank when you type in to it - it does not show placeholders to indicate you have typed something. </p>
+<!---          @<system_name>.rc.ucl.ac.uk  --->
+
 <h3 id="logging-in-from-outside-the-ucl-firewall">Logging in from outside the UCL firewall<a class="headerlink" href="#logging-in-from-outside-the-ucl-firewall" title="Permanent link">§</a></h3>
 <p>You will need to either use the <a href="http://www.ucl.ac.uk/isd/staff/network/vpn">UCL Virtual Private Network</a> or ssh in to UCL's gateway <code>socrates.ucl.ac.uk</code> first. From Socrates you can then ssh in to our systems. </p>
+<!--- page http://www.ucl.ac.uk/isd/staff/network not found  --->
+
 <div class="codehilite"><pre><span></span><code>ssh &lt;your_UCL_user_id&gt;@socrates.ucl.ac.uk
 ssh &lt;your_UCL_user_id&gt;@&lt;system_name&gt;.rc.ucl.ac.uk
 </code></pre></div>
@@ -1586,6 +1594,8 @@ html.pub/
 <p>If you experience difficulties with your login, please make sure that you are typing your UCL user ID and your password correctly. If you have recently updated your password, it takes some hours to propagate to all UCL systems.</p>
 <p>If you still cannot get access but can access other UCL services like Socrates, please contact us on rc-support@ucl.ac.uk. Your account may have expired, or you may have gone over quota.</p>
 <p>If you cannot access anything, please see UCL MyAccount - you may need to request a password reset from the Service Desk. </p>
+<!--- links for UCL MyAccount, Service Desk ?  --->
+
 <p>If you get a host key error message, you will need to delete old host keys - continue reading!</p>
 <h4 id="remote-host-identification-has-changed">Remote host identification has changed<a class="headerlink" href="#remote-host-identification-has-changed" title="Permanent link">§</a></h4>
 <p>When you log in via SSH, it keeps a record of the host key for the server you logged in to in 
@@ -1658,7 +1668,7 @@ scp ccxxxxx@legion.rc.ucl.ac.uk:~/Scratch/myfile Backups/
 </code></pre></div>
 
 <h4 id="sftp">sftp<a class="headerlink" href="#sftp" title="Permanent link">§</a></h4>
-<p>You can use sftp to log in to the remote machine, navigate through directories and use <code>put</code> and <code>get</code> to copy files from and to your local machine. <code>lcd</code> and <code>lls</code> are local equivalents of <code>cd</code> and <code>ls</code> so you can navigate through your local directories as you go. </p>
+<p>You can use <code>sftp</code> to log in to the remote machine, navigate through directories and use <code>put</code> and <code>get</code> to copy files from and to your local machine. <code>lcd</code> and <code>lls</code> are local equivalents of <code>cd</code> and <code>ls</code> so you can navigate through your local directories as you go. </p>
 <div class="codehilite"><pre><span></span><code>sftp &lt;remote_user_id&gt;@&lt;remote_hostname&gt;
 cd &lt;remote_path&gt;
 get &lt;remote_file&gt;
@@ -1676,9 +1686,9 @@ put file2
 </code></pre></div>
 
 <h4 id="rsync">rsync<a class="headerlink" href="#rsync" title="Permanent link">§</a></h4>
-<p>Rsync is used to remotely synchronise directories, so can be used to only copy files which have changed. Have a look at <code>man rsync</code> as there are many options. </p>
+<p><code>rsync</code> is used to remotely synchronise directories, so can be used to only copy files which have changed. Have a look at <code>man rsync</code> as there are many options. </p>
 <h3 id="copying-files-using-windows-and-winscp">Copying files using Windows and WinSCP<a class="headerlink" href="#copying-files-using-windows-and-winscp" title="Permanent link">§</a></h3>
-<p>WinSCP is a graphical client that you can use for scp or sftp.</p>
+<p>WinSCP is a graphical client that you can use for <code>scp</code> or <code>sftp</code>.</p>
 <ol>
 <li>The login/create new session screen will open if this is the first time you are using WinSCP.</li>
 <li>You can choose SFTP or SCP as the file protocol. If you have an unstable connection with one, you may wish to try the other. SCP is probably generally better.</li>
@@ -1693,6 +1703,8 @@ put file2
 <h3 id="single-step-logins-using-tunnelling">Single-step logins using tunnelling<a class="headerlink" href="#single-step-logins-using-tunnelling" title="Permanent link">§</a></h3>
 <h4 id="linux-unix-mac-os-x_1">Linux / Unix / Mac OS X<a class="headerlink" href="#linux-unix-mac-os-x_1" title="Permanent link">§</a></h4>
 <h5 id="on-the-command-line">On the command line<a class="headerlink" href="#on-the-command-line" title="Permanent link">§</a></h5>
+<!--- change Grace with e.g. Myriad in lines below --->
+
 <div class="codehilite"><pre><span></span><code># Log in to Grace, jumping via Socrates
 ssh -o ProxyJump=socrates.ucl.ac.uk grace.rc.ucl.ac.uk
 </code></pre></div>
@@ -1705,9 +1717,9 @@ scp -o ProxyJump=socrates.ucl.ac.uk my_file grace.rc.ucl.ac.uk:~/Scratch/
 <p>This tunnels through Socrates in order to get you to your destination - you'll be asked for your password twice, once for each machine. You can use this to log in or to copy files.</p>
 <p>You may also need to do this if you are trying to reach one cluster from another and there is a firewall in the way.</p>
 <h5 id="using-a-config-file">Using a config file<a class="headerlink" href="#using-a-config-file" title="Permanent link">§</a></h5>
-<p>You can create a config which does this without you needing to type it every time.</p>
+<p>You can create a config file which does this without you needing to type it every time.</p>
 <p>Inside your <code>~/.ssh</code> directory on your local machine, add the below to your <code>config</code> file (or create a file called <code>config</code> if you don't already have one).</p>
-<p>Generically, it should be of this form where <code>&lt;name&gt;</code> can be anything you want to call this entry.</p>
+<p>Generally, it should be of this form where <code>&lt;name&gt;</code> can be anything you want to call this entry.</p>
 <div class="codehilite"><pre><span></span><code>Host &lt;name&gt;
    User &lt;remote_user_id&gt;
    HostName &lt;remote_hostname&gt;
@@ -1731,6 +1743,8 @@ Host aristotle
    HostName aristotle.rc.ucl.ac.uk
    proxyCommand ssh -W aristotle.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
 </code></pre></div>
+
+<!--- replace legion example above with something else  --->
 
 <p>You can now just type <code>ssh myriad</code> or <code>scp file1 aristotle:~</code> and you will go through Socrates. You'll be asked for login details twice since you're logging in to two machines, Socrates and your endpoint.  </p>
 <h4 id="windows-winscp">Windows - WinSCP<a class="headerlink" href="#windows-winscp" title="Permanent link">§</a></h4>
@@ -1780,6 +1794,8 @@ du -h --max-depth=1
 </code></pre></div>
 
 <p>That would restrict the job to running on nodes of type X, Y or Z (the older Legion nodes).</p>
+<!--- provide an alternate example, e.g., using Myriad's or Kathleen's nodes  --->
+
 <p>Note that for debugging purposes, it helps us if you have these options inside your jobscript rather than passed in on the command line whenever possible. We (and you) can see the exact jobscript that was submitted for every job that ran but not what command line options you submitted it with.</p>
 <h3 id="checking-your-previous-jobscripts">Checking your previous jobscripts<a class="headerlink" href="#checking-your-previous-jobscripts" title="Permanent link">§</a></h3>
 <p>If you want to check what you submitted for a specific job ID, you can do it with the <code>scriptfor</code> utility.</p>
@@ -1812,6 +1828,9 @@ du -h --max-depth=1
  <code>Eqw</code>: there was an error in this jobscript. This will not run.
  <code>t</code>: this job is being transferred
  <code>dr</code>: this job is being deleted</p>
+<!--- dRr  --->
+<!--- hqw  --->
+
 <p>Many jobs cycling between <code>Rq</code> and <code>Rr</code> generally means there is a dodgy compute node which is failing pre-job checks, but is free so everything tries to run there. In this case, let us know and we will investigate. </p>
 <p>If a job stays in <code>t</code> or <code>dr</code> state for a long time, the node it was on is likely to be unresponsive - again let us know and we'll investigate.</p>
 <p>A job in <code>Eqw</code> will remain in that state until you delete it - you should first have a look at what the error was with <code>qexplain</code>.</p>
@@ -1891,15 +1910,14 @@ for errors.</p>
 <a href="../Clusters/Myriad/">Myriad</a>), you can run <code>nodetypes</code>, which will give you basic information about 
 the nodes that exist in that cluster.</p>
 <div class="codehilite"><pre><span></span><code>[uccacxx@login12 ~]$ nodetypes
-Unknown node type: util02
-Unknown node type: util05
-    2 type * nodes: 36 cores, 188.4G RAM
+    3 type * nodes: 36 cores, 188.4G RAM
     7 type B nodes: 36 cores,   1.5T RAM
-   66 type D nodes: 36 cores, 188.4G RAM
+    1 type D nodes: 36 cores, 172.7G RAM
+   65 type D nodes: 36 cores, 188.4G RAM
     9 type E nodes: 36 cores, 188.4G RAM
     1 type F nodes: 36 cores, 188.4G RAM
     3 type H nodes: 36 cores, 172.7G RAM
-   53 type H nodes: 36 cores, 188.4G RAM
+   52 type H nodes: 36 cores, 188.4G RAM
     3 type I nodes: 36 cores,   1.5T RAM
     2 type J nodes: 36 cores, 188.4G RAM
 </code></pre></div>
@@ -1935,6 +1953,9 @@ use X-forwarding.</p>
 <h4 id="exceed-on-desktopucl">Exceed on Desktop@UCL<a class="headerlink" href="#exceed-on-desktopucl" title="Permanent link">§</a></h4>
 <ol>
 <li>Load Exceed. You can find it under Start &gt; All Programs &gt; Applications O-P &gt; Open Text Exceed 14 &gt; Exceed</li>
+</ol>
+<!--- mine has OpenText Exceed 15 x64  --->
+<ol>
 <li>Open PuTTY (Applications O-P &gt; PuTTY)</li>
 <li>In PuTTY, set up the connection with the host machine as usual:<ul>
 <li>Host name: <code>myriad.rc.ucl.ac.uk</code> (for example)</li>
@@ -1959,6 +1980,8 @@ use X-forwarding.</p>
 <li>Open PuTTY</li>
 <li>Set up PuTTY as shown in the Exceed section.</li>
 </ol>
+                
+                  
                 
               
               
