@@ -42,7 +42,6 @@ ssh <your_UCL_user_id>@socrates.ucl.ac.uk
 ssh <your_UCL_user_id>@<system_name>.rc.ucl.ac.uk
 ```
 
-
 Note: the default shell (what you are typing commands into) on Socrates is `csh` rather than `bash` and so your default prompt will look different and use a `%` rather than a `$` as the dividing character:
 
 ```
