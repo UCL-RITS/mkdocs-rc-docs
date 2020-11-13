@@ -473,8 +473,8 @@ qstat -f -j 12345
 * `Rr`: this job was rescheduled but is now running on a new node
 * `Eqw`: there was an error in this jobscript. This will not run.
 * `t`: this job is being transferred
-* `dr`: this job is being deleted
-* `h`: held (usually by the user)
+* `d`: this job is being deleted
+* `h`: this job has had a hold applied to it and will not run until it is removed (see `man qhold`)
 
 Those state specifiers can be combined; for example, `dRr`, `hqw`, `hRq`, etc.
 
