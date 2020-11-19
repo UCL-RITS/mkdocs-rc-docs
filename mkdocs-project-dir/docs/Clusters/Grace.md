@@ -7,9 +7,12 @@ categories: missing-info
 
 Grace is a compute cluster designed for extensively parallel, multi-node batch-processing jobs, having high-bandwidth connections between each individual node.
 
-!!! important "Out of Service"
-    The Grace cluster is currently unavailable for running jobs. A login node is available for access to data.
-    We do not currently have an estimate as to when Grace will return to service.
+!!! important "Returned to service"
+    The Grace cluster has been returned to service on 19 Nov 2020. It had
+    previously been unavailable for running jobs since May with a login node 
+    available for access to data.
+    No new user accounts will be created on Grace as it will be retired in Jan 2021.
+    Kathleen is the replacement.
 
 ## Accounts
 
