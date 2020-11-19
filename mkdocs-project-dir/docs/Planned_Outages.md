@@ -23,7 +23,9 @@ Date                | Service | Status | Reason
 
 ## Grace status
 
-As of 2 Sept:
+Returned to service 19 Nov 2020!
+
+Here is the explanation for the long downtime. As of 2 Sept:
 
 "As you will be aware, we have not yet been able to return Grace to service after the hack. 
 Most recently, we've run into some challenging issues with the aging infiniband network 
