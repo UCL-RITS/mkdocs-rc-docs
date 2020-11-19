@@ -5,6 +5,12 @@ layout: docs
 
 These are the current hostkey fingerprints for our clusters.
 
+### Grace
+```
+ECSDA key fingerprint is SHA256:axzJ6VlK+1kOwjRSDB5+2YpXIzsdcB/CSErL2sDJDuk
+ED25519 key fingerprint is SHA256:waqBYWAb+g1lwUGWz8ku4M48McIBWGCdpMoU8l8j6tU
+```
+
 ## Myriad
 ```
 ECDSA key fingerprint is SHA256:7FTryal3mIhWr9CqM3EPPeXsfezNk8Mm8HPCCAGXiIA
