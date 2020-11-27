@@ -714,12 +714,25 @@ NWChem applies theoretical techniques to predict the structure, properties, and 
 You should load the NWChem module you wish to use once from a login node, as it will create a symlinked `.nwchemrc` in your home. 
 
 ```
+module unload compilers mpi
+module load compilers/intel/2017/update4
+module load mpi/intel/2017/update3/intel
 module load python/2.7.12
 module load nwchem/6.8-47-gdf6c956/intel-2017
 
 # $NSLOTS will get the number of processes you asked for with -pe mpi.
 mpirun -np $NSLOTS -machinefile $TMPDIR/machines nwchem hpcvl_sample.nw
 ```
+
+#### NWChem troubleshooting
+
+If you get errors like this
+```
+{    0,    3}:  On entry to PDSTEDC parameter number   10 had an illegal value
+```
+then you are coming across an error in Intel MKL 2018, and should make sure you change 
+to the Intel 2017 compiler module as shown above. (MKL versions are bundled with the 
+corresponding Intel compiler modules).
 
 If your run terminates with an error saying
 ```
