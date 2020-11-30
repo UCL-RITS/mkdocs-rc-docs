@@ -1010,10 +1010,14 @@ our clusters.</p>
 <p>After creating your script, submit it to the scheduler with:</p>
 <p><code>qsub my_script.sh</code></p>
 <h2 id="service-differences">Service Differences<a class="headerlink" href="#service-differences" title="Permanent link">§</a></h2>
-<p>These scripts are applicable to all our clusters, but node sizes (core count, memory, and temporary storage sizes) differ between machines, so please check those details on the cluster-specific pages.</p>
+<p>These scripts are applicable to all our clusters, but node sizes (core count, memory, and temporary storage sizes) differ between machines, so please check those details on the cluster-specific pages.
+Some clusters are diskless and have no temporary space that can be requested.</p>
 <h2 id="working-directories-and-output">Working Directories and Output<a class="headerlink" href="#working-directories-and-output" title="Permanent link">§</a></h2>
 <p>The parallel filesystems we use to provide the home and scratch filesystems perform best when reading or writing single large files, and worst when operating on many different small files. To avoid causing problems, many of the scripts below are written to create all their files in the temporary <code>$TMPDIR</code> storage, and compress and copy them to the scratch area at the end of the job.</p>
 <p>This can be a problem if your job is not finishing and you need to see the output, or if your job is crashing or failing to produce what you expected. Feel free to modify the scripts to read from or write to Scratch directly, however, your performance will generally not be as good as writing to <code>$TMPDIR</code>, and you may impact the general performance of the machine if you do this with many jobs simultaneously. This is particularly the case with single-core jobs, because that core is guaranteed to be writing out data.</p>
+<p>Please be aware that some clusters are diskless (eg Kathleen) and have no <code>$TMPDIR</code> available 
+for use - in those you must remove the request for <code>tmpfs</code> in your script. Check the 
+cluster-specific pages.</p>
 <p>Note that there is also the option of using the <code>Local2Scratch</code> process 
 (<a href="#Example Serial Job Using Local2Scratch">see below</a>), which takes place <em>after</em> the
 job has finished, in the clean-up step. This gives you the option of always
@@ -1030,7 +1034,9 @@ pages for those machines, and the information they were given when they register
 </code></pre></div>
 
 <h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">§</a></h2>
-<p>The lines starting with <code>#$ -l</code> are where you are requesting resources like wallclock time (how long your job is allowed to run), memory, and possibly tmpfs (local hard disk space on the node, if it has one).</p>
+<p>The lines starting with <code>#$ -l</code> are where you are requesting resources like wallclock 
+time (how long your job is allowed to run), memory, and possibly tmpfs (local hard 
+disk space on the node, if it is not diskless).</p>
 <p>If you have no notion of how much you should request for any of these, have a look at <a href="../howto/#how-do-i-estimate-what-resources-to-request-in-my-jobscript">How do I estimate what resources to request in my jobscript?</a></p>
 <h2 id="serial-job-script-example">Serial Job Script Example<a class="headerlink" href="#serial-job-script-example" title="Permanent link">§</a></h2>
 <p>The most basic type of job a user can submit is a serial job. These jobs run on a single processor (core) with a single thread. </p>
@@ -1045,7 +1051,7 @@ pages for those machines, and the information they were given when they register
 <span class="c1"># Request 1 gigabyte of RAM (must be an integer followed by M, G, or T)</span>
 <span class="c1">#$ -l mem=1G</span>
 
-<span class="c1"># Request 15 gigabyte of TMPDIR space (default is 10 GB)</span>
+<span class="c1"># Request 15 gigabyte of TMPDIR space (default is 10 GB - remove if cluster is diskless)</span>
 <span class="c1">#$ -l tmpfs=15G</span>
 
 <span class="c1"># Set the name of the job.</span>
@@ -1078,10 +1084,11 @@ tar -zcvf <span class="nv">$HOME</span>/Scratch/files_from_job_<span class="nv">
 <span class="c1"># Request ten minutes of wallclock time (format hours:minutes:seconds).</span>
 <span class="c1">#$ -l h_rt=0:10:0</span>
 
-<span class="c1"># Request 1 gigabyte of RAM for each core/thread (must be an integer followed by M, G, or T)</span>
+<span class="c1"># Request 1 gigabyte of RAM for each core/thread </span>
+<span class="c1"># (must be an integer followed by M, G, or T)</span>
 <span class="c1">#$ -l mem=1G</span>
 
-<span class="c1"># Request 15 gigabyte of TMPDIR space (default is 10 GB)</span>
+<span class="c1"># Request 15 gigabyte of TMPDIR space (default is 10 GB - remove if cluster is diskless)</span>
 <span class="c1">#$ -l tmpfs=15G</span>
 
 <span class="c1"># Set the name of the job.</span>
@@ -1102,7 +1109,8 @@ tar -zcvf <span class="nv">$HOME</span>/Scratch/files_from_job_<span class="nv">
 <p>The default MPI implementation on our clusters is the Intel MPI stack. MPI programs don’t use a shared memory model so they can be run across multiple nodes.
 This script differs considerably from the serial and OpenMP jobs in that MPI programs need to be invoked by a program called gerun. This is our wrapper for mpirun and takes care of passing the number of processors and a file called a machine file.</p>
 <p>'''Important''': If you wish to pass a file or stream of data to the standard input (stdin) of an MPI program, there are specific command-line options you need to use to control which MPI tasks are able to receive it. (<code>-s</code> for Intel MPI, <code>--stdin</code> for OpenMPI.) Please consult the help output of the <code>mpirun</code> command for further information. The <code>gerun</code> launcher does not automatically handle this.</p>
-<p>If you use OpenMPI, you need to make sure the Intel MPI modules are removed and the OpenMPI modules are loaded, either in your jobscript or in your shell start-up files (e.g. `~/.bashrc).</p>
+<p>If you use OpenMPI, you need to make sure the Intel MPI modules are removed and the OpenMPI 
+modules are loaded, either in your jobscript or in your shell start-up files (e.g. <code>~/.bashrc</code>).</p>
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
 
 <span class="c1"># Batch script to run an MPI parallel job under SGE with Intel MPI.</span>
@@ -1113,7 +1121,8 @@ This script differs considerably from the serial and OpenMP jobs in that MPI pro
 <span class="c1"># Request 1 gigabyte of RAM per process (must be an integer followed by M, G, or T)</span>
 <span class="c1">#$ -l mem=1G</span>
 
-<span class="c1"># Request 15 gigabyte of TMPDIR space per node (default is 10 GB)</span>
+<span class="c1"># Request 15 gigabyte of TMPDIR space per node </span>
+<span class="c1"># (default is 10 GB - remove if cluster is diskless)</span>
 <span class="c1">#$ -l tmpfs=15G</span>
 
 <span class="c1"># Set the name of the job.</span>
@@ -1149,7 +1158,7 @@ arrays.</p>
 <span class="c1"># Request 1 gigabyte of RAM (must be an integer followed by M, G, or T)</span>
 <span class="c1">#$ -l mem=1G</span>
 
-<span class="c1"># Request 15 gigabyte of TMPDIR space (default is 10 GB)</span>
+<span class="c1"># Request 15 gigabyte of TMPDIR space (default is 10 GB - remove if cluster is diskless)</span>
 <span class="c1">#$ -l tmpfs=15G</span>
 
 <span class="c1"># Set up the job array.  In this instance we have requested 10000 tasks</span>
@@ -1196,7 +1205,7 @@ thousands or tens of thousands of tasks.</p>
 <span class="c1"># Request 1 gigabyte of RAM (must be an integer followed by M, G, or T)</span>
 <span class="c1">#$ -l mem=1G</span>
 
-<span class="c1"># Request 15 gigabyte of TMPDIR space (default is 10 GB)</span>
+<span class="c1"># Request 15 gigabyte of TMPDIR space (default is 10 GB - remove if cluster is diskless)</span>
 <span class="c1">#$ -l tmpfs=15G</span>
 
 <span class="c1"># Set up the job array.  In this instance we have requested 1000 tasks</span>
@@ -1242,7 +1251,7 @@ with the structure <code>&lt;job id&gt;/&lt;job id&gt;.&lt;task id&gt;.&lt;queue
 <span class="c1"># Request 1 gigabyte of RAM (must be an integer followed by M, G, or T)</span>
 <span class="c1">#$ -l mem=1G</span>
 
-<span class="c1"># Request 15 gigabyte of TMPDIR space (default is 10 GB)</span>
+<span class="c1"># Request 15 gigabyte of TMPDIR space (default is 10 GB - remove if cluster is diskless)</span>
 <span class="c1">#$ -l tmpfs=15G</span>
 
 <span class="c1"># Set up the job array.  In this instance we have requested 10000 tasks</span>
@@ -1279,7 +1288,7 @@ hostname &gt; hostname.txt
 <span class="c1"># Request 1 gigabyte of RAM (must be an integer followed by M, G, or T)</span>
 <span class="c1">#$ -l mem=1G</span>
 
-<span class="c1"># Request 15 gigabyte of TMPDIR space (default is 10 GB)</span>
+<span class="c1"># Request 15 gigabyte of TMPDIR space (default is 10 GB - remove if cluster is diskless)</span>
 <span class="c1">#$ -l tmpfs=15G</span>
 
 <span class="c1"># Set up the job array.  In this instance we have requested task IDs</span>
