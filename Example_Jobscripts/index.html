@@ -344,6 +344,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#hybrid-mpi-plus-openmp-jobscript-example" class="md-nav__link">
+    Hybrid MPI plus OpenMP jobscript example
+  </a>
+  
+    <nav class="md-nav" aria-label="Hybrid MPI plus OpenMP jobscript example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-number-of-threads" class="md-nav__link">
+    Setting number of threads
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#gpu-job-script-example" class="md-nav__link">
     GPU Job Script Example
   </a>
@@ -973,6 +993,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#hybrid-mpi-plus-openmp-jobscript-example" class="md-nav__link">
+    Hybrid MPI plus OpenMP jobscript example
+  </a>
+  
+    <nav class="md-nav" aria-label="Hybrid MPI plus OpenMP jobscript example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-number-of-threads" class="md-nav__link">
+    Setting number of threads
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#gpu-job-script-example" class="md-nav__link">
     GPU Job Script Example
   </a>
@@ -1108,7 +1148,7 @@ tar -zcvf <span class="nv">$HOME</span>/Scratch/files_from_job_<span class="nv">
 <h2 id="mpi-job-script-example">MPI Job Script Example<a class="headerlink" href="#mpi-job-script-example" title="Permanent link">§</a></h2>
 <p>The default MPI implementation on our clusters is the Intel MPI stack. MPI programs don’t use a shared memory model so they can be run across multiple nodes.
 This script differs considerably from the serial and OpenMP jobs in that MPI programs need to be invoked by a program called gerun. This is our wrapper for mpirun and takes care of passing the number of processors and a file called a machine file.</p>
-<p>'''Important''': If you wish to pass a file or stream of data to the standard input (stdin) of an MPI program, there are specific command-line options you need to use to control which MPI tasks are able to receive it. (<code>-s</code> for Intel MPI, <code>--stdin</code> for OpenMPI.) Please consult the help output of the <code>mpirun</code> command for further information. The <code>gerun</code> launcher does not automatically handle this.</p>
+<p><strong><em>Important</em></strong>: If you wish to pass a file or stream of data to the standard input (stdin) of an MPI program, there are specific command-line options you need to use to control which MPI tasks are able to receive it. (<code>-s</code> for Intel MPI, <code>--stdin</code> for OpenMPI.) Please consult the help output of the <code>mpirun</code> command for further information. The <code>gerun</code> launcher does not automatically handle this.</p>
 <p>If you use OpenMPI, you need to make sure the Intel MPI modules are removed and the OpenMPI 
 modules are loaded, either in your jobscript or in your shell start-up files (e.g. <code>~/.bashrc</code>).</p>
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
@@ -1318,6 +1358,63 @@ hostname &gt; hostname.txt
     <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$JOB_NAME</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="nv">$SGE_TASK_ID</span><span class="s2">&quot;</span> <span class="s2">&quot;input.</span><span class="nv">$i</span><span class="s2">&quot;</span>
   <span class="k">fi</span>
 <span class="k">done</span>
+</code></pre></div>
+
+<h2 id="hybrid-mpi-plus-openmp-jobscript-example">Hybrid MPI plus OpenMP jobscript example<a class="headerlink" href="#hybrid-mpi-plus-openmp-jobscript-example" title="Permanent link">§</a></h2>
+<p>This is a type of job where you have a small number of MPI processes, and each
+one of those launches a number of threads. One common form of this is to have
+only one MPI process per node which handles communication between nodes, and 
+the work on each node is done in a shared memory style by threads.</p>
+<p>When requesting resources for this type of job, what you are asking the scheduler
+for is the physical number of cores and amount of memory per core that you need.
+Whether you end up running MPI processes or threads on that core is up to your code.
+(The <code>-pe mpi xx</code> request is telling it you want an MPI parallel environment and 
+xx number of cores, not that you want xx MPI processes - this can be confusing).</p>
+<h3 id="setting-number-of-threads">Setting number of threads<a class="headerlink" href="#setting-number-of-threads" title="Permanent link">§</a></h3>
+<p>You can either set <code>$OMP_NUM_THREADS</code> for the number of OpenMP threads yourself, 
+or allow it to be worked out automatically by setting it to <code>OMP_NUM_THREADS=$(ppn)</code>. 
+That is a helper script on our clusters which will set <code>$OMP_NUM_THREADS</code> to 
+<code>$NSLOTS/$NHOSTS</code>, so you will use threads within a node and MPI between nodes 
+and don't need to know in advance what size of node you are running on. Gerun 
+will then run <code>$NSLOTS/$OMP_NUM_THREADS</code> processes, round-robin allocated (if 
+supported by the MPI).</p>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
+
+<span class="c1"># Batch script to run a hybrid parallel job under SGE.</span>
+
+<span class="c1"># Request ten minutes of wallclock time (format hours:minutes:seconds).</span>
+<span class="c1">#$ -l h_rt=0:10:0</span>
+
+<span class="c1"># Request 1 gigabyte of RAM per core (must be an integer)</span>
+<span class="c1">#$ -l mem=1G</span>
+
+<span class="c1"># Request 15 gigabytes of TMPDIR space per node (default is 10 GB - remove if cluster is diskless)</span>
+<span class="c1">#$ -l tmpfs=15G</span>
+
+<span class="c1"># Set the name of the job.</span>
+<span class="c1">#$ -N MadIntelHybrid</span>
+
+<span class="c1"># Select the MPI parallel environment and 80 cores.</span>
+<span class="c1">#$ -pe mpi 80</span>
+
+<span class="c1"># Set the working directory to somewhere in your scratch space. </span>
+<span class="c1"># This directory musgt exist.</span>
+<span class="c1">#$ -wd /home/&lt;your_UCL_id/scratch/output/</span>
+
+<span class="c1"># Automatically set threads using ppn. On a cluster with 40 cores</span>
+<span class="c1"># per node this will be 80/2 = 40 threads.</span>
+<span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="k">$(</span>ppn<span class="k">)</span>
+
+<span class="c1"># Run our MPI job with the default modules. Gerun is a wrapper script for mpirun. </span>
+gerun <span class="nv">$HOME</span>/src/madscience/madhybrid
+</code></pre></div>
+
+<p>If you want to specify a specific number of OMP threads yourself, you would alter 
+the relevant lines above to this:</p>
+<div class="codehilite"><pre><span></span><code># Request 80 cores and run 4 MPI processes per 40-core node, each spawning 10 threads
+#$ -pe mpi 80
+export OMP_NUM_THREADS=10
+gerun your_binary
 </code></pre></div>
 
 <h2 id="gpu-job-script-example">GPU Job Script Example<a class="headerlink" href="#gpu-job-script-example" title="Permanent link">§</a></h2>
