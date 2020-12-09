@@ -14,6 +14,15 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+08 Jan 2020 -> 11 Jan 2020 | Kathleen | Planned | Electrical work in datacentre.
+08 Jan 2020 -> 11 Jan 2020 | MMM Michael | Planned | Electrical work in datacentre.
+08 Jan 2020 -> 11 Jan 2020 | MMM Young | Planned | Electrical work in datacentre.
+
+
+## Previous Outages
+
+Date                | Service | Status | Reason 
+--------------------|---------|--------|--------
 02 Jul 2020 -> 09 Jul 2020 | Michael | Rollback | Lustre software upgrade to fix bug. Full outage, no access. Upgrade was unusable, downgrading to previous.
 01 May 2020 -> 11 May 2020 | Myriad | Completed | Storage upgrade.
 20 Mar 2020 -> 30 Mar 2020 | Myriad | Stopped, Postponed | Issues found with new storage during outage. Myriad returned to service 24th. Sync data; switch to new storage. (Important: new metadata servers). Begins midday. Full outage, no access.
