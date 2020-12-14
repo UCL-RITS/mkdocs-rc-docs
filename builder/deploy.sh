@@ -79,7 +79,7 @@ if [[ "${CI:-false}" != "false" ]]; then
 
         current_branch="$GITHUB_REF"
         # Not sure about this one, might break if tags get involved --v
-        current_branch="${current_branch#refs/head/}"
+        current_branch="${current_branch#refs/heads/}"
         :
     else
         # ... Then I don't know where we are. Still a CI system, but not one we know about? (Bamboo????)
