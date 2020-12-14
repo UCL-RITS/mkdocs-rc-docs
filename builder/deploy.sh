@@ -116,7 +116,7 @@ fi
 
 # Save some useful information from the repo itself
 REPO="$(git config remote.origin.url)"
-SSH_REPO="${REPO/https:\/\/github.com\//git@github.com:}"
+#SSH_REPO="${REPO/https:\/\/github.com\//git@github.com:}" # unused for now
 SHA="$(git rev-parse --verify HEAD)"
 
 # Clone the existing gh-pages (or equivalent) for this repo into out/
@@ -153,7 +153,8 @@ git commit -m "Deploy to GitHub Pages: ${SHA}"
     decrypt_travis_ssh_key
 
 # Now that we're all set up, we can push.
-git push "$SSH_REPO" "$deploy_target_branch"
+# Not sure about using origin here, but it should work for now.
+git push origin "$deploy_target_branch"
 
 # Clean up our ssh-agent process
 [[ "$ci_system" == "travis" ]] && \
