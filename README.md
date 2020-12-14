@@ -10,7 +10,7 @@ so on.
 
 When someone pushes to the repository:
 
-- Travis runs the `./builder/deploy.sh` script, which:
+- GitHub Actions runs the `./builder/deploy.sh` script, which:
   - checks out the `gh-pages` branch to a directory called `out`
   - deletes the contents of that directory
     - then runs the `./builder/build.sh` script
@@ -31,7 +31,7 @@ Docs on how to add pages and structure can be found at the MkDocs pages, at
 ### Best linking practice
 
 Links to our other pages should be to the `.md` file when possible: this allows
-Travis-CI to warn about broken links. Eg. a link like
+the build process to warn about broken links. Eg. a link like
 `[Access services from outside UCL](../howto.md#logging-in-from-outside-the-ucl-firewall)`
 will be checkable.
 
