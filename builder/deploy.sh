@@ -153,8 +153,7 @@ git commit -m "Deploy to GitHub Pages: ${SHA}"
     decrypt_travis_ssh_key
 
 # Now that we're all set up, we can push.
-# Not sure about using origin here, but it should work for now.
-git push origin "$deploy_target_branch"
+git push "${REPO/github.com/${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com}" "$deploy_target_branch"
 
 # Clean up our ssh-agent process
 [[ "$ci_system" == "travis" ]] && \
