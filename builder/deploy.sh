@@ -93,6 +93,7 @@ else
 fi
 
 # We only deploy if this was triggered by an update to the mainline.
+printf "event type: %s, want: %s\ncurrent repo: %s, want %s\ncurrent branch: %s, want %s\nactive ci system: %s, want %s\n" "$event_type" "push" "$current_repo" "$mainline_repo" "$current_branch" "$mainline_branch" "$active_ci_system" "$ci_system"
 if [[ "$event_type" == "push" ]] && \
     [[ "$current_repo" == "$mainline_repo" ]] && \
     [[ "$current_branch" == "$mainline_branch" ]] && \
