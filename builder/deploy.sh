@@ -77,7 +77,7 @@ if [[ "${CI:-false}" != "false" ]]; then
 
         current_repo="$GITHUB_REPOSITORY"
 
-        current_branch="$GITHUB_REFS"
+        current_branch="$GITHUB_REF"
         # Not sure about this one, might break if tags get involved --v
         current_branch="${current_branch#refs/head/}"
         :
