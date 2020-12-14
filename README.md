@@ -1,6 +1,6 @@
 # Research Computing Documentation Repo
 
-This is a test to try generating our Research Computing documentation with [MkDocs](https://www.mkdocs.org/).
+This repository houses the source and build method for the [Research Computing documentation](https://www.rc.ucl.ac.uk) with [MkDocs](https://www.mkdocs.org/).
 
 ## How It Works
 
