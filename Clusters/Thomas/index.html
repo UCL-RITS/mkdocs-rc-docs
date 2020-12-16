@@ -684,6 +684,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#node-types" class="md-nav__link">
+    Node types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#disk-quotas" class="md-nav__link">
     Disk quotas
   </a>
@@ -1336,6 +1343,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#node-types" class="md-nav__link">
+    Node types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#disk-quotas" class="md-nav__link">
     Disk quotas
   </a>
@@ -1710,6 +1724,33 @@ not directly map to particular job types.</p>
 <h3 id="preventing-a-job-from-running-cross-cu">Preventing a job from running cross-CU<a class="headerlink" href="#preventing-a-job-from-running-cross-cu" title="Permanent link">§</a></h3>
 <p>If your job must run within a single CU, you can request the parallel environment as <code>-pe wss</code> instead of <code>-pe mpi</code> (<code>wss</code> standing for 'wants single switch'). This will increase your queue times. It is suggested you only do this for benchmarking or if performance is being greatly affected by running in the superqueue.</p>
 <p><a href="#top" title="wikilink"> back to top</a></p>
+<h2 id="node-types">Node types<a class="headerlink" href="#node-types" title="Permanent link">§</a></h2>
+<p>Thomas has one type of node.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Cores per node</th>
+<th>RAM per node</th>
+<th>tmpfs</th>
+<th>Nodes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>K</td>
+<td>24</td>
+<td>128G</td>
+<td>100G</td>
+<td>705</td>
+</tr>
+</tbody>
+</table>
+<p>Here are the processors each node type has:
+* K: Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz</p>
+<p>(If you ever need to check this, you can include <code>cat /proc/cpuinfo</code> in your jobscript so 
+you get it in your job's .o file for the exact node your job ran on. You will get an entry
+for every core).</p>
 <h2 id="disk-quotas">Disk quotas<a class="headerlink" href="#disk-quotas" title="Permanent link">§</a></h2>
 <p>Quotas were enabled on Thomas on 29 May 2019. You have one per-user quota, with a default amount of 250GB - this is the total across home and Scratch.</p>
 <ul>
