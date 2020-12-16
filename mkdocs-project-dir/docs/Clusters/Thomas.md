@@ -267,7 +267,8 @@ Thomas has one type of node.
 | K     | 24             | 128G         | 100G  | 705   |
 
 Here are the processors each node type has:
-* K: Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz
+
+  -  K: Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz
 
 (If you ever need to check this, you can include `cat /proc/cpuinfo` in your jobscript so 
 you get it in your job's .o file for the exact node your job ran on. You will get an entry

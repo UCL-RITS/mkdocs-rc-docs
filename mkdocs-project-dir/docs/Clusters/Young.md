@@ -300,9 +300,10 @@ These are numbers of physical cores: multiply by two for virtual cores with
 hyperthreading. 
 
 Here are the processors each node type has:
-* C: Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz 
-* Y: Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz
-* Z: Intel(R) Xeon(R) Gold 6240M CPU @ 2.60GHz
+
+  - C: Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz 
+  - Y: Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz
+  - Z: Intel(R) Xeon(R) Gold 6240M CPU @ 2.60GHz
 
 (If you ever need to check this, you can include `cat /proc/cpuinfo` in your jobscript so 
 you get it in your job's .o file for the exact node your job ran on. You will get an entry
