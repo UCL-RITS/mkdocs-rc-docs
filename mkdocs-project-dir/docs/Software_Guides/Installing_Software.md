@@ -3,7 +3,7 @@ title: Installing Software
 layout: docs
 ---
 
-# Installing software
+## Installing software
 
 If you want to request that software be installed centrally, you can email us at 
 rc-support@ucl.ac.uk or open a [GitHub issue in our buildscripts repository](https://github.com/UCL-RITS/rcps-buildscripts/issues). 
@@ -17,13 +17,13 @@ built and installed all our central software stack.
 You can install software yourself in your space on the cluster. Below are some tips for 
 installing packages for languages such as Python or Perl as well as compiling software.
 
-## No sudo!
+### No sudo!
 
 You cannot install anything using `sudo` (and neither can we!). If the instructions tell you to do that, read further to see if they also have instructions for installing in user space, or for doing an install from source if they are RPMs.
 
 Alternatively, just leave off the `sudo` from the command they tell you to run and look for an alternative way to give it an install location if it tries to install somewhere that isn't in your space (examples for some common build systems are below).
 
-## Download source code
+### Download source code
 
 Use wget or curl to download the source code for the software you want to install 
 to your account on the cluster. You can use `tar` to extract source archives named 
@@ -37,7 +37,7 @@ tar -xvf program.tar.gz
 You will not be able to use a package manager like `yum`, and will need to follow 
 the manual installation instructions for a user-space install (not using `sudo`).
 
-## Set up modules
+### Set up modules
 
 Before you start compiling, you need to make sure you have the right compilers, 
 libraries and other tools available for your software. If you haven't changed 
@@ -62,7 +62,7 @@ module load compilers/gnu/4.9.2
 module load mpi/openmpi/4.0.3/gnu-4.9.2
 ```
 
-## BLAS and LAPACK
+### BLAS and LAPACK
 
 BLAS and LAPACK are provided as part of MKL, OpenBLAS or ATLAS. There are several 
 different OpenBLAS and ATLAS modules on for different compilers. MKL is available 
@@ -72,7 +72,7 @@ Your code may try to link `-lblas -llapack`: this isn't the right way to use BLA
 and LAPACK with MKL or ATLAS (though our OpenBLAS now has symlinks that mean this 
 will work).
 
-### MKL
+#### MKL
 
 When you have an Intel compiler module loaded, typing 
 ```
@@ -80,13 +80,13 @@ echo $MKLROOT
 ```
 will show you that MKL is available.
 
-#### Easy linking of MKL
+##### Easy linking of MKL
 
 If you can, try to use `-mkl` as a compiler flag - if that works, it should get 
 all the correct libraries linked in the right order. Some build systems do not 
 work with this however and need explicit linking.
 
-#### Intel MKL link line advisor
+##### Intel MKL link line advisor
 
 It can be complicated to get the correct link line for MKL, so Intel has provided 
 a tool which will give you the link line with the libraries in the right order.
@@ -120,11 +120,11 @@ correct: do an `ls ${MKLROOT}/lib/intel64` and make sure the directory exists
 and contains the libraries. In the past there have been slight path differences 
 between tool and install for some versions.
 
-### OpenBLAS
+#### OpenBLAS
 
 We have native threads, OpenMP and serial versions of OpenBLAS. 
 
-#### Linking OpenBLAS
+##### Linking OpenBLAS
 
 Our OpenBLAS modules now contain symlinks for `libblas` and `liblapack` that both 
 point to `libopenblas`. This means that the default `-lblas -llapack` will in fact work.
@@ -136,7 +136,7 @@ This is how you would normally link OpenBLAS:
 If code you are compiling requires separate entries for BLAS and LAPACK, set them 
 both to `-lopenblas`.
 
-#### Troubleshooting: OpenMP loop warning
+##### Troubleshooting: OpenMP loop warning
 
 If you are running a threaded program and get this warning:
 ```
@@ -155,12 +155,12 @@ void openblas_set_num_threads(int num_threads);
 You can avoid this error by compiling with one of the `native-threads` or `serial` 
 OpenBLAS modules instead of the `openmp` one.
 
-### ATLAS
+#### ATLAS
 
 We would generally recommend using OpenBLAS instead at present, but we do have 
 ATLAS modules.
 
-#### Dynamic linking ATLAS
+##### Dynamic linking ATLAS
 
 There is one combined library each for serial and threaded ATLAS (in most 
 circumstances you probably want the serial version).
@@ -175,7 +175,7 @@ Threaded:
 -L${ATLASROOT}/lib -ltatlas
 ```
 
-#### Static linking ATLAS
+##### Static linking ATLAS
 
 There are multiple libraries to link.
 
@@ -189,7 +189,7 @@ Threaded:
 -L${ATLASROOT}/lib -llapack -lptf77blas -lptcblas -latlas
 ```
 
-#### Troubleshooting: libgfortran or lifcore cannot be found
+##### Troubleshooting: libgfortran or lifcore cannot be found
 
 If you get a runtime error saying that `libgfortran.so` cannot be found, 
 you need to add `-lgfortran` to your link line.
@@ -200,16 +200,16 @@ You can do a module show on the compiler module you are using to see where
 the Fortran libraries are located if you need to give a full path to them.
 
 
-# Installing additional packages for an existing scripting language
+## Installing additional packages for an existing scripting language
 
-## Python
+### Python
 
 There are `python2/recommended` and `python3/recommended` module bundles you will see if you type 
 `module avail python`. These use a virtualenv, have a lot of Python packages installed already, 
 like numpy and scipy (see [the Python package list](../Installed_Software_Lists/python-packages.md)) 
 and have `pip` set up for you.
 
-### Load the GNU compiler
+#### Load the GNU compiler
 
 Our Python installs were built with GCC. You can run them without problems with the default Intel
 compilers loaded because it also depends on the `gcc-libs/4.9.2` module. However, when you are 
@@ -229,7 +229,7 @@ If you get an error like this when trying to run something, you built a package 
 undefined symbol: __intel_sse2_strrchr
 ```
 
-### Install your own packages in the same virtualenv
+#### Install your own packages in the same virtualenv
 
 This will use our central virtualenv and the packages we have already installed.
 
@@ -244,7 +244,7 @@ These will install into `.python2local` or `.python3local` in your home director
 If your own installed Python packages get into a mess, you can delete (or rename) the whole 
 `.python3local` and start again.
 
-### Using your own virtualenv
+#### Using your own virtualenv
 
 If you need different packages that are not compatible with the centrally installed versions (eg. 
 what you are trying to install depends on a different version of something we have already installed)
@@ -275,7 +275,7 @@ Your bash prompt will change to show you that a different virtualenv is active.
 
 You only need to create the virtualenv the first time. 
 
-#### Error while loading shared libraries
+##### Error while loading shared libraries
 
 You will always need to load the base python module before activating your
 virtualenv or you will get an error like this:
@@ -283,7 +283,7 @@ virtualenv or you will get an error like this:
 python3: error while loading shared libraries: libpython3.7m.so.1.0: cannot open shared object file: No such file or directory
 ```
 
-### Installing via setup.py
+#### Installing via setup.py
 
 If you need to install by downloading a package and using `setup.py`, you can use the `--user` 
 flag and as long as one of our python module bundles are loaded, it will install into the same 
@@ -320,7 +320,7 @@ are putting your location at the front of the existing contents of the path. If 
 them out, then only your package location will be found and nothing else.
 
 
-### Troubleshooting: remove your pip cache
+#### Troubleshooting: remove your pip cache
 
 If you built something and it went wrong, and are trying to reinstall it with `pip` and keep 
 getting errors that you think you should have fixed, you may still be using a previous cached version. 
@@ -328,7 +328,7 @@ The cache is in `.cache/pip` in your home directory, and you can delete it.
 
 You can prevent caching entirely by installing using `pip3 install --user --no-cache-dir <python3pkg>`
 
-### Troubleshooting: Python script executable paths
+#### Troubleshooting: Python script executable paths
 
 If you have an executable Python script (eg. something you run using `pyutility` and not 
 `python pyutility.py`) that begins like this: 
