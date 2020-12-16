@@ -1770,10 +1770,12 @@ big memory nodes. Note those last have only 36 cores per node, not 40.</p>
 </table>
 <p>These are numbers of physical cores: multiply by two for virtual cores with
 hyperthreading. </p>
-<p>Here are the processors each node type has:
-* C: Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz 
-* Y: Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz
-* Z: Intel(R) Xeon(R) Gold 6240M CPU @ 2.60GHz</p>
+<p>Here are the processors each node type has:</p>
+<ul>
+<li>C: Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz </li>
+<li>Y: Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz</li>
+<li>Z: Intel(R) Xeon(R) Gold 6240M CPU @ 2.60GHz</li>
+</ul>
 <p>(If you ever need to check this, you can include <code>cat /proc/cpuinfo</code> in your jobscript so 
 you get it in your job's .o file for the exact node your job ran on. You will get an entry
 for every core).</p>
