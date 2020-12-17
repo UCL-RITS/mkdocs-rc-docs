@@ -89,15 +89,24 @@ Myriad contains three main node types: standard compute nodes, high memory
 nodes and GPU nodes. As new nodes as added over time with slightly newer processor
 variants, new letters are added.
 
-| Type  | Cores per node   | RAM per node | Nodes |
-| ----- | ---------------- | ------------ | ----- |
-| H,D   | 36               | 192GB        | 86    |
-| I,B   | 36               | 1.5TB        | 9     |
-| J     | 36 + 2 P100 GPUs | 192GB        | 2     |
-| E,F   | 36 + 2 V100 GPUs | 192GB        | 9     |
+| Type  | Cores per node   | RAM per node | tmpfs | Nodes |
+| ----- | ---------------- | ------------ | ----- | ----- |
+| H,D   | 36               | 192GB        | 1500G | 86    |
+| I,B   | 36               | 1.5TB        | 1500G | 9     |
+| J     | 36 + 2 P100 GPUs | 192GB        | 1500G | 2     |
+| E,F   | 36 + 2 V100 GPUs | 192GB        | 1500G | 9     |
 
 You can tell the type of a node by its name: type H nodes are named
 `node-h00a-001` etc.
+
+Here are the processors each node type has:
+
+  - F, H, I, J: Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz
+  - B, D, E: Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
+
+(If you ever need to check this, you can include `cat /proc/cpuinfo` in your jobscript so
+you get it in your job's .o file for the exact node your job ran on. You will get an entry
+for every core).
 
 ## GPUs
 
