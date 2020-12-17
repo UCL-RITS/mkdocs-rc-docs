@@ -1056,6 +1056,7 @@ variants, new letters are added.</p>
 <th>Type</th>
 <th>Cores per node</th>
 <th>RAM per node</th>
+<th>tmpfs</th>
 <th>Nodes</th>
 </tr>
 </thead>
@@ -1064,30 +1065,42 @@ variants, new letters are added.</p>
 <td>H,D</td>
 <td>36</td>
 <td>192GB</td>
+<td>1500G</td>
 <td>86</td>
 </tr>
 <tr>
 <td>I,B</td>
 <td>36</td>
 <td>1.5TB</td>
+<td>1500G</td>
 <td>9</td>
 </tr>
 <tr>
 <td>J</td>
 <td>36 + 2 P100 GPUs</td>
 <td>192GB</td>
+<td>1500G</td>
 <td>2</td>
 </tr>
 <tr>
 <td>E,F</td>
 <td>36 + 2 V100 GPUs</td>
 <td>192GB</td>
+<td>1500G</td>
 <td>9</td>
 </tr>
 </tbody>
 </table>
 <p>You can tell the type of a node by its name: type H nodes are named
 <code>node-h00a-001</code> etc.</p>
+<p>Here are the processors each node type has:</p>
+<ul>
+<li>F, H, I, J: Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz</li>
+<li>B, D, E: Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz</li>
+</ul>
+<p>(If you ever need to check this, you can include <code>cat /proc/cpuinfo</code> in your jobscript so
+you get it in your job's .o file for the exact node your job ran on. You will get an entry
+for every core).</p>
 <h2 id="gpus">GPUs<a class="headerlink" href="#gpus" title="Permanent link">§</a></h2>
 <p>Myriad has three types of GPU nodes, J, E and F. There are two J-type nodes each with two nVidia Tesla P100s.
 There is one F-type and eight E-type nodes, each with two nVidia Tesla V100s. The CPUs are slightly different on these two.</p>
