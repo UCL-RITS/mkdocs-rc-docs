@@ -25,6 +25,7 @@ theme:
   name: 'material'
   language: 'en'
   palette:
+    scheme: 'preference' # Respect user light-mode vs dark-mode preference
     primary: 'deep purple'
     accent: 'deep purple'
   font: false

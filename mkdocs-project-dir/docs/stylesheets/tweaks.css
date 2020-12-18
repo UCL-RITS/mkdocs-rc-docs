@@ -13,7 +13,7 @@
     color: black;
 }
 
-// Number of search results box
+/* Number of search results box */
 .md-search-result__meta {
     color: black;
 }
@@ -21,6 +21,26 @@
 .md-search-result__teaser {
     color: black;
 }
+
+/* BUT if we want to support dark mode and respect the user
+ * preference for it, we need to pick white or black depending.
+ */
+
+@media (prefers-color-scheme: dark) {
+    .md-search-result__title      { color: white; }
+    .md-search-result__link:hover { color: white; }
+    .md-search-result__meta       { color: white; }
+    .md-search-result__teaser     { color: white; }
+}
+
+@media (prefers-color-scheme: light) {
+    .md-search-result__title      { color: black; }
+    .md-search-result__link:hover { color: black; }
+    .md-search-result__meta       { color: black; }
+    .md-search-result__teaser     { color: black; }
+}
+
+
 
 /* Normally Pygments (the code highlighter)
  *  makes comments a pale grey, but that's not
