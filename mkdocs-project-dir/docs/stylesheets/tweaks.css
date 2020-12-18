@@ -3,6 +3,8 @@
  * The contrast on the search entries was too low, apparently.
  * By default they're black with partial alpha; we set them
  * all to plain black, which should help.
+ *
+ * See below for switching for dark-mode.
  */
 
 .md-search-result__title {
@@ -22,26 +24,6 @@
     color: black;
 }
 
-/* BUT if we want to support dark mode and respect the user
- * preference for it, we need to pick white or black depending.
- */
-
-@media (prefers-color-scheme: dark) {
-    .md-search-result__title      { color: white; }
-    .md-search-result__link:hover { color: white; }
-    .md-search-result__meta       { color: white; }
-    .md-search-result__teaser     { color: white; }
-}
-
-@media (prefers-color-scheme: light) {
-    .md-search-result__title      { color: black; }
-    .md-search-result__link:hover { color: black; }
-    .md-search-result__meta       { color: black; }
-    .md-search-result__teaser     { color: black; }
-}
-
-
-
 /* Normally Pygments (the code highlighter)
  *  makes comments a pale grey, but that's not
  *  good either, especially since they're 
@@ -54,6 +36,30 @@
 .md-typeset .highlight .ch, 
 .md-typeset .highlight .cs {
     color: rebeccapurple;
+}
+
+/* If we want to support dark mode and respect the user
+ * preference for it, we need to pick white or black depending,
+ * and rebeccapurple is a little too dark for dark-mode.
+ *
+ * I think we only need the dark-mode switch, if the defaults
+ * will apply in light-mode.
+ */
+
+@media (prefers-color-scheme: dark) {
+    .md-search-result__title      { color: white; }
+    .md-search-result__link:hover { color: white; }
+    .md-search-result__meta       { color: white; }
+    .md-search-result__teaser     { color: white; }
+
+    .codehilite .c1, 
+    .codehilite .ch, 
+    .codehilite .cs, 
+    .md-typeset .highlight .c1, 
+    .md-typeset .highlight .ch, 
+    .md-typeset .highlight .cs {
+        color: mediumorchid;
+    }
 }
 
 /*
