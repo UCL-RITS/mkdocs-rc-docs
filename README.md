@@ -17,7 +17,8 @@ When someone pushes to the repository:
       - which uses `mkdocs` to build the documentation in the `out` directory.
   - The contents of `out` are then committed as an update to the `gh-pages`
     branch of this repo
-  - and pushed back to Github using the deploy keys
+  - and pushed back to Github using the automatic GitHub Actions OAuth token
+    for credentials
 
 On the webserver, `cron` for `ccspwww` checks every ten minutes (+2, so
 2,12,22,etc past the hour) using the `remote/cron_updates.sh` script whether
