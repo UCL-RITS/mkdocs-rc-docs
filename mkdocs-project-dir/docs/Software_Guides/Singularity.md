@@ -16,6 +16,9 @@ The bindpath specifies what directories are made available inside the container 
 Replace `uccaxxx` with your own username.
 
 ```
+# Create a .singularity directory in your Scratch
+mkdir /home/uccaxxx/Scratch/.singularity
+
 # Set all the Singularity cache dirs to Scratch
 export SINGULARITY_CACHEDIR=/home/uccaxxx/Scratch/.singularity/
 export SINGULARITY_TMPDIR=/home/uccaxxx/Scratch/.singularity/tmp
