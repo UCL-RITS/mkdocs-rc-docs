@@ -46,7 +46,9 @@ The main address will unpredictably direct you to either one of these (to balanc
 You will need to use an SCP or SFTP client to copy data onto Kathleen.
 Please refer to the page on [How do I transfer data onto the system?](../howto.md#how-do-i-transfer-data-onto-the-system)
 
-Note that firewalls mean you cannot connect directly from Grace to Kathleen so you need to use [tunnelling with the scp command](../howto.md#single-step-logins-using-tunnelling).
+Note that firewalls mean you can connect directly from Grace to Kathleen but 
+not from Kathleen to Grace, so to pull data from the Kathleen end you need to 
+use [tunnelling with the scp command](../howto.md#single-step-logins-using-tunnelling).
 
 ## Quotas
 

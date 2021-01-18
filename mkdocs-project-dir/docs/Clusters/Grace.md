@@ -47,10 +47,14 @@ ssh uccaxxx@login02.ext.grace.ucl.ac.uk
 
 The main address will unpredictably direct you to either one of these (to balance load), so if you need multiple sessions on one, this lets you do that.
 
-## Copying data onto Grace
+## Copying data onto and off Grace
 
 You will need to use an SCP or SFTP client to copy data onto Grace.
 Please refer to the page on [How do I transfer data onto the system?](../howto.md#how-do-i-transfer-data-onto-the-system)
+
+Note that firewalls mean you can connect directly from Grace to Kathleen but 
+not from Kathleen to Grace, so to pull data from the Kathleen end you need to 
+use [tunnelling with the scp command](../howto.md#single-step-logins-using-tunnelling).
 
 ## Quotas
 
