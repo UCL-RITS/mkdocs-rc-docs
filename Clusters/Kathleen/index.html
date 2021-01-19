@@ -1112,9 +1112,9 @@ instructions for <a href="../../howto/#logging-in-from-outside-the-ucl-firewall"
 <h2 id="copying-data-onto-kathleen">Copying data onto Kathleen<a class="headerlink" href="#copying-data-onto-kathleen" title="Permanent link">§</a></h2>
 <p>You will need to use an SCP or SFTP client to copy data onto Kathleen.
 Please refer to the page on <a href="../../howto/#how-do-i-transfer-data-onto-the-system">How do I transfer data onto the system?</a></p>
-<p>Note that firewalls mean you can connect directly from Grace to Kathleen but 
-not from Kathleen to Grace, so to pull data from the Kathleen end you need to 
-use <a href="../../howto/#single-step-logins-using-tunnelling">tunnelling with the scp command</a>.</p>
+<p>You can connect directly in both directions between Grace and Kathleen.</p>
+<p>If you find you cannot connect directly from one cluster to another, this is 
+generally because of firewalls in between and so you need to use <a href="../../howto/#single-step-logins-using-tunnelling">tunnelling with the scp command</a>.</p>
 <h2 id="quotas">Quotas<a class="headerlink" href="#quotas" title="Permanent link">§</a></h2>
 <p>On Kathleen you have a single 250GB quota by default which covers your home and Scratch. </p>
 <p>This is a hard quota: once you reach it, you will no longer be able to write more data. Keep an eye on it, as this will cause jobs to fail if they cannot create their .o or .e files at the start, or their output files partway through.</p>
