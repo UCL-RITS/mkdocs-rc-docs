@@ -13,7 +13,7 @@ Materials and Molecular Modelling.
       one month so you can retrieve data.
     - **Friday 5 March 2021**: Queues will be drained. Any jobs left will never run. 
     - **Thursday 1 April 2021**: Access to the login nodes will be removed and 
-      all data will be deleted..
+      all data will be deleted.
 
 
 ## Applying for an account
