@@ -5,6 +5,17 @@ layout: cluster
 Thomas is the UK National Tier 2 High Performance Computing Hub in
 Materials and Molecular Modelling.
 
+!!! important "Thomas end of life"
+    The Thomas cluster is being retired. Notable dates are:
+     
+    - **Monday 1 March 2021**: Job submission will be switched off this morning. Jobs 
+      already in the queue may still run. Access to the login nodes will remain for 
+      one month so you can retrieve data.
+    - **Friday 5 March 2021**: Queues will be drained. Any jobs left will never run. 
+    - **Thursday 1 April 2021**: Access to the login nodes will be removed and 
+      all data will be deleted..
+
+
 ## Applying for an account
 
 Thomas accounts belong to you as an individual and are applied for
