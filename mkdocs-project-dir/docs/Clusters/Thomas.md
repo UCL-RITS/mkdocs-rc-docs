@@ -432,7 +432,7 @@ SAFE is a service administration platform used by ARCHER and various of the Tier
 
 If you wish, you can claim your Thomas account as belonging to you in the Tier 2 SAFE. This lets you view some individual usage reports, and if you have other Tier 2 accounts that also use SAFE, you use the same login information.
 
-* You need to login at https://www.archer.ac.uk/tier2/ or create a new Tier2 SAFE account if you do not have one.
+* You need to login at https://safe.epcc.ed.ac.uk or create a new Tier2 SAFE account if you do not have one.
     * If creating a new account, you will be asked to create a password - this is for the SAFE login only and has no link to your Thomas account.
 * On Thomas, run `hashclaim`. This will give you a link to claim your Thomas username's usage data.
 * Visit this link when logged in to SAFE and it will tell you this account has been added to your SAFE account, and username@Thomas will now be visible in the 'Login accounts' menu at the top.
