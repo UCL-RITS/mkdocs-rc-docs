@@ -13,20 +13,18 @@ The cache directories should be set to somewhere in your space so they don't fil
 
 The bindpath specifies what directories are made available inside the container - only your home is bound by default so you need to add Scratch.
 
-Replace `uccaxxx` with your own username.
-
 ```
 # Create a .singularity directory in your Scratch
 mkdir /home/uccaxxx/Scratch/.singularity
 
 # Set all the Singularity cache dirs to Scratch
-export SINGULARITY_CACHEDIR=/home/uccaxxx/Scratch/.singularity/
-export SINGULARITY_TMPDIR=/home/uccaxxx/Scratch/.singularity/tmp
-export SINGULARITY_LOCALCACHEDIR=/home/uccaxxx/Scratch/.singularity/localcache
-export SINGULARITY_PULLFOLDER=/home/uccaxxx/Scratch/.singularity/pull
+export SINGULARITY_CACHEDIR=$HOME/Scratch/.singularity/
+export SINGULARITY_TMPDIR=$SINGULARITY_CACHEDIR/tmp
+export SINGULARITY_LOCALCACHEDIR=$SINGULARITY_CACHEDIR/localcache
+export SINGULARITY_PULLFOLDER=$SINGULARITY_CACHEDIR/pull
 
 # Bind your Scratch directory so it is accessible from inside the container
-export SINGULARITY_BINDPATH=/scratch/scratch/uccaxxx
+export SINGULARITY_BINDPATH=/scratch/scratch/$USER
 ```
 
 Different subdirectories are being set for each cache so you can tell which files came from where.
