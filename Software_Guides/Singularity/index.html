@@ -931,7 +931,7 @@
 <p>The cache directories should be set to somewhere in your space so they don't fill up <code>/tmp</code> on the login nodes.</p>
 <p>The bindpath specifies what directories are made available inside the container - only your home is bound by default so you need to add Scratch.</p>
 <div class="codehilite"><pre><span></span><code># Create a .singularity directory in your Scratch
-mkdir /home/uccaxxx/Scratch/.singularity
+mkdir $HOME/Scratch/.singularity
 
 # Set all the Singularity cache dirs to Scratch
 export SINGULARITY_CACHEDIR=$HOME/Scratch/.singularity/
