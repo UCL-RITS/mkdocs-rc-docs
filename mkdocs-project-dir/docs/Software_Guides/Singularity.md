@@ -15,7 +15,7 @@ The bindpath specifies what directories are made available inside the container 
 
 ```
 # Create a .singularity directory in your Scratch
-mkdir /home/uccaxxx/Scratch/.singularity
+mkdir $HOME/Scratch/.singularity
 
 # Set all the Singularity cache dirs to Scratch
 export SINGULARITY_CACHEDIR=$HOME/Scratch/.singularity/
