@@ -25,7 +25,6 @@ theme:
   name: 'material'
   language: 'en'
   palette:
-    scheme: 'preference'
     primary: 'deep purple'
     accent: 'deep purple'
   font: false
