@@ -17,20 +17,20 @@ service updates and account request and renewal support.
 
 General User Information:
 
-- [Getting an Account](Account_Services)
-- [Guide for New Users](New_Users)
-- [Guide for Experienced Users](Experienced_Users)
-- [Planned Outages](Planned_Outages)
+- [Getting an Account](Account_Services.md)
+- [Guide for New Users](New_Users.md)
+- [Guide for Experienced Users](Experienced_Users.md)
+- [Planned Outages](Planned_Outages.md)
 
 Clusters:
 
-- [Myriad](Clusters/Myriad)
-- [Grace](Clusters/Grace)
-- [Kathleen](Clusters/Kathleen)
-- [Legion](Clusters/Legion)
-- [Thomas](Clusters/Thomas)
-- [Young](Clusters/Young)
-- [Michael](Clusters/Michael)
+- [Myriad](Clusters/Myriad.md)
+- [Grace](Clusters/Grace.md)
+- [Kathleen](Clusters/Kathleen.md)
+- [Legion](Clusters/Legion.md)
+- [Thomas](Clusters/Thomas.md)
+- [Young](Clusters/Young.md)
+- [Michael](Clusters/Michael.md)
 
 ## Email Support
 
