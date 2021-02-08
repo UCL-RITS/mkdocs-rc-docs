@@ -27,7 +27,6 @@ Clusters:
 - [Myriad](Clusters/Myriad.md)
 - [Grace](Clusters/Grace.md)
 - [Kathleen](Clusters/Kathleen.md)
-- [Legion](Clusters/Legion.md)
 - [Thomas](Clusters/Thomas.md)
 - [Young](Clusters/Young.md)
 - [Michael](Clusters/Michael.md)
