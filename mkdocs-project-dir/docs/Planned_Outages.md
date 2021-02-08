@@ -14,15 +14,15 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-08 Jan 2020 -> 11 Jan 2020 | Kathleen | Planned | Electrical work in datacentre.
-08 Jan 2020 -> 11 Jan 2020 | MMM Michael | Planned | Electrical work in datacentre.
-08 Jan 2020 -> 11 Jan 2020 | MMM Young | Planned | Electrical work in datacentre.
-
+09 Feb 2021 8-1pm   | Young   | Planned | Gold and job submission outage while we migrate our database server.
 
 ## Previous Outages
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+08 Jan 2021 -> 12 Jan 2021 | Kathleen | Completed | Electrical work in datacentre. Logins delayed until Tues morning while tests completed.
+08 Jan 2021 -> 12 Jan 2021 | MMM Michael | Completed | Electrical work in datacentre. Logins delayed until Tues morning while tests completed.
+08 Jan 2021 -> 12 Jan 2021 | MMM Young | Completed | Electrical work in datacentre. Logins delayed until Tues morning while tests completed.
 02 Jul 2020 -> 09 Jul 2020 | Michael | Rollback | Lustre software upgrade to fix bug. Full outage, no access. Upgrade was unusable, downgrading to previous.
 01 May 2020 -> 11 May 2020 | Myriad | Completed | Storage upgrade.
 20 Mar 2020 -> 30 Mar 2020 | Myriad | Stopped, Postponed | Issues found with new storage during outage. Myriad returned to service 24th. Sync data; switch to new storage. (Important: new metadata servers). Begins midday. Full outage, no access.
@@ -30,24 +30,18 @@ Date                | Service | Status | Reason
 2 Mar 2020 -> 9 Mar 2020 | Michael | Completed | Installation of phase 2 hardware, network bridging
 10 Feb 2020 -> 17 Feb 2020 | Myriad | Cancelled | Storage upgrade to 3PB
 
-## Grace status
+## Retirements
 
-Returned to service 19 Nov 2020!
+These clusters are being retired. Notable dates are below.
 
-Here is the explanation for the long downtime. As of 2 Sept:
+Grace:
 
-"As you will be aware, we have not yet been able to return Grace to service after the hack. 
-Most recently, we've run into some challenging issues with the aging infiniband network 
-that we are still working our way through, hampered somewhat by issues getting to Slough 
-under the current regime.
+- 1st February 2021: Job submission will be switched off. Jobs still in the queue will run. Access to the login nodes will remain for three months so you can recover your data.
+- 3rd May 2021: Access to the login nodes will be removed and all data will be deleted.
 
-We would advise all users migrate to using Kathleen (as Grace was due to be retired in 
-January 2021 anyway). To aid in this we've set up the login nodes such that it read-only 
-mounts the home and scratch file-systems so that you can retrieve your files.
+Thomas:
 
-As usual please send any queries to rc-support@ucl.ac.uk"
-
-Since Grace has read-only access, you cannot edit or delete data. You also cannot submit jobs.
-If you had a Grace account, you already have a Kathleen account. Grace might not run any more
-jobs before it is retired.
+- Monday 1 March 2021: Job submission will be switched off this morning. Jobs already in the queue may still run. Access to the login nodes will remain for one month so you can retrieve data.
+- Friday 5 March 2021: Queues will be drained. Any jobs left will never run.
+- Thursday 1 April 2021: Access to the login nodes will be removed and all data will be deleted.
 

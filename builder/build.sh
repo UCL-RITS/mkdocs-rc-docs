@@ -22,7 +22,23 @@ echo "Generating package list pages..." >&2
 mkdir "$build_dir/sources/mkdocs-project-dir/docs/Installed_Software_Lists"
 cd "$build_dir/sources/mkdocs-project-dir/docs/Installed_Software_Lists"
 export MAKO_TEMPLATE_DIR="$build_dir/sources/builder/templates"
-python3 "$build_dir/sources/builder/convert_lists.py"
+
+# Sometimes connecting to the webserver to grab the lists times out.
+# If this happens, it might be useful to try and grab some diagnostic
+#  info and see if we can work out a future solution.
+if ! python3 "$build_dir/sources/builder/convert_lists.py"; then
+    echo "Getting network configuration info for diagnostics..." >&2
+    set -v
+    ip addr all
+    route
+    ping -c 1 1.1.1.1
+    ping -c 1 www.rc.ucl.ac.uk
+    curl -I www.rc.ucl.ac.uk
+    curl -I https://www.rc.ucl.ac.uk
+    set +v
+    false # and then make the script fail
+fi
+
 
 # There only shouldn't be an out directory
 #  if this is the first build, or a local build

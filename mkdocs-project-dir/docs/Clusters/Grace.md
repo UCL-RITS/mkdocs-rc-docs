@@ -7,11 +7,15 @@ categories: missing-info
 
 Grace is a compute cluster designed for extensively parallel, multi-node batch-processing jobs, having high-bandwidth connections between each individual node.
 
-!!! important "Returned to service"
-    The Grace cluster has been returned to service on 19 Nov 2020. It had
-    previously been unavailable for running jobs since May with a login node 
-    available for access to data.
-    No new user accounts will be created on Grace as it will be retired in Jan 2021.
+!!! important "Grace end of life"
+    The Grace cluster is being retired. Notable dates are:
+
+    - **1st February 2021**: Job submission will be switched off. Jobs still in the queue 
+      will run. Access to the login nodes will remain for three months so you can recover your data.
+    - **3rd May 2021**: Access to the login nodes will be removed and all data will be deleted.
+
+    No new user accounts will be created on Grace.
+
     Kathleen is the replacement.
 
 ## Accounts
@@ -47,10 +51,15 @@ ssh uccaxxx@login02.ext.grace.ucl.ac.uk
 
 The main address will unpredictably direct you to either one of these (to balance load), so if you need multiple sessions on one, this lets you do that.
 
-## Copying data onto Grace
+## Copying data onto and off Grace
 
 You will need to use an SCP or SFTP client to copy data onto Grace.
 Please refer to the page on [How do I transfer data onto the system?](../howto.md#how-do-i-transfer-data-onto-the-system)
+
+You can connect directly in both directions between Grace and Kathleen.
+
+If you find you cannot connect directly from one cluster to another, this is 
+generally because of firewalls in between and so you need to use [tunnelling with the scp command](../howto.md#single-step-logins-using-tunnelling).
 
 ## Quotas
 

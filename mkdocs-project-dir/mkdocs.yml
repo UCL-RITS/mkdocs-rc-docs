@@ -47,11 +47,17 @@ theme:
 # NB: omitting linenums: setting means they get added when there's a shebang
 # Even if it's a secret shebang -- shebangs with no forward-slash count are removed
 # See also: https://python-markdown.github.io/extensions/code_hilite/#usage
+# It's not 100% clear to me what Mkdocs-Material's plan is on CodeHiLite vs pymdownx.highlight
+# but since the linenumbers seem janky either way (not lining up, appearing weirdly) I'm going
+# to add settings that will disable them for both, along with turning off guessing for both.
 markdown_extensions:
   - admonition
   - codehilite:
       guess_lang: false
-      #linenums: true
+      linenums: false
+  - pymdownx.highlight:
+      guess_lang: false
+      linenums: false
   - toc:
       permalink: §
   - footnotes

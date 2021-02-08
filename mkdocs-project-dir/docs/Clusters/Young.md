@@ -9,7 +9,7 @@ Young went into pilot on 3 Aug 2020.
 ## Applying for an account
 
 Young accounts belong to you as an individual and are applied for
-through your own institution's [Point of Contact](https://mmmhub.ac.uk/thomas).
+through your own institution's [Point of Contact](https://mmmhub.ac.uk/young).
 You will need to supply an SSH public key, which is the only method used to log in.
 
 ## Creating an ssh key pair
