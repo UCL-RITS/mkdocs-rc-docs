@@ -55,7 +55,9 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
       
   
     
@@ -1323,13 +1325,7 @@ your data to <code>$HOME/Scratch</code>:</p>
 script like the one in the example below, which should be submitted
 using qsub (remember to supply your correct consortium and project for
 the job): </p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l  </span>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l  </span>
 <span class="c1">#$ -N Data_transfer  </span>
 <span class="c1">#$ -l h_rt=1:0:0  </span>
 <span class="c1">#$ -l mem=1G  </span>
@@ -1337,7 +1333,7 @@ the job): </p>
 <span class="c1">#$ -wd /home/&lt;your_user_id&gt;/Scratch  </span>
 &lt;scp_command&gt;
 </code></pre></div>
-</td></tr></table>
+
 <p>You can also use sftp to do a similar job, though in this case
 the situation is complicated by the fact that sftp normally takes its
 commands interactively.</p>

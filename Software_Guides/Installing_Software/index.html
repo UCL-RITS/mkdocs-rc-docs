@@ -55,7 +55,9 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
       
   
     
@@ -1593,15 +1595,14 @@ The cache is in <code>.cache/pip</code> in your home directory, and you can dele
 <h4 id="troubleshooting-python-script-executable-paths">Troubleshooting: Python script executable paths<a class="headerlink" href="#troubleshooting-python-script-executable-paths" title="Permanent link">§</a></h4>
 <p>If you have an executable Python script (eg. something you run using <code>pyutility</code> and not 
 <code>python pyutility.py</code>) that begins like this: </p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/usr/bin/python2.6
+<div class="codehilite"><pre><span></span><code>#!/usr/bin/python2.6
 </code></pre></div>
-</td></tr></table>
+
 <p>and fails because that Python doesn't exist in that location or isn't the one that has the 
 additional packages installed, then you should change it so it uses the first Python found 
 in your environment instead, which will be the one from the Python module you've loaded.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="ch">#!/usr/bin/env python</span>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/usr/bin/env python</span>
 </code></pre></div>
-</td></tr></table>
                 
                   
                 

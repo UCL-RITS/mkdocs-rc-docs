@@ -55,7 +55,9 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
       
   
     
@@ -943,36 +945,7 @@ of node you are running on. GERun will then run <code>$NSLOTS/$OMP_NUM_THREADS</
 processes, round-robin allocated (if supported by the MPI). </p>
 <p>Therefore, if you want to use 24 cores on the type X nodes, with one MPI process per node and 12 threads per process you would request the example below.</p>
 <p>Note that if you are using multiple nodes and <code>ppn</code>, you get exclusive access to those nodes, so if you ask for 2.5 nodes-worth of cores you will end up with more threads on the last node than you thought you had.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/bin/bash -l
+<div class="codehilite"><pre><span></span><code>#!/bin/bash -l
 
 # Batch script to run a hybrid parallel job under SGE with Intel MPI.
 
@@ -1003,7 +976,7 @@ export OMP_NUM_THREADS=$(ppn)
 
 gerun $HOME/src/madscience/madhybrid
 </code></pre></div>
-</td></tr></table>
+
 <p>If you want to specify a specific number of OMP threads, you would alter the relevant lines above to this:</p>
 <div class="codehilite"><pre><span></span><code># Run 12 MPI processes, each spawning 2 threads
 #$ -pe mpi 24

@@ -55,7 +55,9 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
       
   
     
@@ -1402,14 +1404,14 @@ you need to change or create the PYTHONPATH directory.</p>
 <p>If you have an executable python script giving the location of python
 like this, and it fails because that python doesn't exist in that
 location or isn't the one that has the additional packages installed:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/usr/bin/python2.6
+<div class="codehilite"><pre><span></span><code>#!/usr/bin/python2.6
 </code></pre></div>
-</td></tr></table>
+
 <p>You should change it so it uses the first python found in your
 environment. </p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/usr/bin/env python 
+<div class="codehilite"><pre><span></span><code>#!/usr/bin/env python 
 </code></pre></div>
-</td></tr></table>
+
 <h2 id="perl">Perl<a class="headerlink" href="#perl" title="Permanent link">§</a></h2>
 <p>Perl modules will freqently have a Makefile.PL (especially if you
 download the tar files from CPAN.org yourself). You can install manually

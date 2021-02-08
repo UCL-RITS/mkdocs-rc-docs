@@ -55,7 +55,9 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
       
   
     
@@ -1125,46 +1127,7 @@ X-windows functionality and the User Test nodes.</p>
 <h3 id="example-single-node-multi-threaded-ansyscfx-jobscript">Example single node multi-threaded ANSYS/CFX jobscript<a class="headerlink" href="#example-single-node-multi-threaded-ansyscfx-jobscript" title="Permanent link">§</a></h3>
 <p>Here is an example runscript for running <code>cfx5solve</code> multi-threaded on a
 given <code>.def</code> file.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/bin/bash -l
+<div class="codehilite"><pre><span></span><code>#!/bin/bash -l
 
 # ANSYS 19.1: Batch script to run cfx5solve on the StaticMixer.def example 
 # file, single node multi-threaded (12 threads),
@@ -1205,7 +1168,7 @@ cp /home/&lt;your userid&gt;/cfx_examples/StaticMixer.def .
 
 cfx5solve -max-elapsed-time &quot;15 [min]&quot; -def StaticMixer.def -par-local -partition $OMP_NUM_THREADS
 </code></pre></div>
-</td></tr></table>
+
 <p>You will need to change the <code>-wd /home/&lt;your_UCL_id&gt;/Scratch/cfxtests-19.1</code> location and may need to change the memory, wallclock time, number of threads and job name directives as well. Replace the .def file with your one and modify the -max-elapsed-time value if needed. The simplest form of qsub command can be used to submit the job eg:</p>
 <div class="codehilite"><pre><span></span><code>qsub run-StaticMixer-thr.sh
 </code></pre></div>
@@ -1214,47 +1177,7 @@ cfx5solve -max-elapsed-time &quot;15 [min]&quot; -def StaticMixer.def -par-local
 <h3 id="example-multi-node-mpi-ansyscfx-jobscript">Example multi-node MPI ANSYS/CFX jobscript<a class="headerlink" href="#example-multi-node-mpi-ansyscfx-jobscript" title="Permanent link">§</a></h3>
 <p>Here is an example runscript for running cfx5solve on more than one node
 (using MPI) on a given .def file.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/bin/bash -l
+<div class="codehilite"><pre><span></span><code>#!/bin/bash -l
 
 # ANSYS 19.1: Batch script to run cfx5solve on the StaticMixer.def example 
 # file, distributed parallel (36 cores).
@@ -1296,7 +1219,7 @@ export CFX_NODES=$(cfxnodes $TMPDIR/machines)
 
 cfx5solve -max-elapsed-time &quot;60 [min]&quot; -def StaticMixer.def -par-dist $CFX_NODES
 </code></pre></div>
-</td></tr></table>
+
 <p>Please copy if you wish and edit it to suit your jobs. You will
 need to change the <code>-wd /home/&lt;your_UCL_userid&gt;/Scratch/cfxtests-19.1</code> location and may need
 to change the memory, wallclock time, number of MPI processors
@@ -1318,40 +1241,7 @@ correctly.</p>
 <p>The .in file mentioned in the scripts below is a <a href="https://www.cfd-online.com/Wiki/Fluent_FAQ#Journal_File_and_Text_User_Interface_.28TUI.29_Related">Fluent journal file</a>, giving it the list of commands to carry out in batch mode.</p>
 <h3 id="example-serial-ansysfluent-jobscript">Example serial ANSYS/Fluent jobscript<a class="headerlink" href="#example-serial-ansysfluent-jobscript" title="Permanent link">§</a></h3>
 <p>Here is an example jobscript for running Fluent in serial mode (1 core).</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/bin/bash -l
+<div class="codehilite"><pre><span></span><code>#!/bin/bash -l
 
 # ANSYS 19.1: Batch script to run ANSYS/fluent in serial mode 
 # (1 core). 
@@ -1386,7 +1276,7 @@ cp &lt;path to your input files&gt;/test-1.in .
 
 fluent 2d -g &lt; test-1.in
 </code></pre></div>
-</td></tr></table>
+
 <p>Please copy if you wish and edit it to suit your jobs. You will need to
 change the <code>-wd /home/&lt;your_UCL_id&gt;/Scratch/fluent-tests-19.1</code> 
 location and may
@@ -1400,47 +1290,7 @@ simplest form of qsub command can be used to submit the job eg:</p>
 <h3 id="example-parallel-mpi-ansysfluent-jobscript">Example parallel (MPI) ANSYS/Fluent jobscript<a class="headerlink" href="#example-parallel-mpi-ansysfluent-jobscript" title="Permanent link">§</a></h3>
 <p>Here is an example runscript for running Fluent in parallel potentially
 across more than one node.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/bin/bash -l
+<div class="codehilite"><pre><span></span><code>#!/bin/bash -l
 
 # ANSYS 19.1: Batch script to run ANSYS/fluent distributed parallel 
 # (32 cores). 
@@ -1482,7 +1332,7 @@ cp &lt;path to your input files&gt;/test-1.in .
 
 fluent 3ddp -t$NSLOTS -mpi=ibmmpi -cnf=$TMPDIR/machines -g &lt; test-1.in
 </code></pre></div>
-</td></tr></table>
+
 <p>Please copy if you wish and edit it to suit your jobs. You will
 need to change the <code>-wd /home/&lt;your_UCL_id&gt;/Scratch/fluent-tests-19.1</code> location and may
 need to change the memory, wallclock time, number of MPI processors
@@ -1497,52 +1347,7 @@ be used to submit the job eg: </p>
 <p>If you are getting licensing errors when trying to run a parallel job and you have an older version's <code>~/.ansys/v161/licensing/license.preferences.xml</code> file, delete it. It does not work with the newer license server. (This applies to all older versions, not just <code>v161</code>).</p>
 <p>Fluent 14 required <code>-mpi=pcmpi -pinfiniband</code> in the parallel options: if you have older scripts remember to remove this.</p>
 <h2 id="ansys-mechanical">ANSYS Mechanical<a class="headerlink" href="#ansys-mechanical" title="Permanent link">§</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/bin/bash -l
+<div class="codehilite"><pre><span></span><code>#!/bin/bash -l
 
 # ANSYS 2019.R3: Batch script to run ANSYS Mechanical solver
 # file, distributed parallel (32 cores).
@@ -1589,7 +1394,7 @@ echo $CFX_NODES
 
 ansys195 -dis -b -p aa_r -machines $CFX_NODES &lt; steady_state_input_file.dat
 </code></pre></div>
-</td></tr></table>
+
 <p>If you have access to Grace, this test input and jobscript are available at <code>/home/ccaabaa/Software/ANSYS/steady_state_input_file.dat</code> and <code>/home/ccaabaa/Software/ANSYS/ansys-mech-ex.sh</code></p>
                 
                   

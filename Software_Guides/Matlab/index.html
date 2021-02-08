@@ -55,7 +55,9 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
       
   
     
@@ -1281,66 +1283,7 @@ module load matlab/full/r2018b/9.5
 <p>This is the simplest way to start using MATLAB on the cluster.</p>
 <p>You will need a .m file containing the MATLAB commands you want to carry out.</p>
 <p>Here is an example jobscript which you would submit using the <code>qsub</code> command, after you have loaded the MATLAB module once on a login node as mentioned in <a href="#setup">Setup</a>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/bin/bash -l
+<div class="codehilite"><pre><span></span><code>#!/bin/bash -l
 
 # Batch script to run a multi-threaded MATLAB job under SGE.
 
@@ -1401,7 +1344,7 @@ tar zcvf $HOME/Scratch/Matlab_examples/files_from_job_${JOB_ID}.tgz $TMPDIR
 
 # Make sure you have given enough time for the copy to complete!
 </code></pre></div>
-</td></tr></table>
+
 <p>Alternative syntax:
 Instead of using Unix input redirection like this:</p>
 <div class="codehilite"><pre><span></span><code>matlab -nosplash -nodesktop -nodisplay &lt; $Matlab_infile
@@ -1675,61 +1618,7 @@ jobLog
 <p>There will be a lot of output. Look for lines related to errors happening in your own code.</p>
 <h2 id="running-matlab-on-gpus">Running MATLAB on GPUs<a class="headerlink" href="#running-matlab-on-gpus" title="Permanent link">§</a></h2>
 <p>This uses MATLAB's <a href="https://uk.mathworks.com/help/distcomp/examples/illustrating-three-approaches-to-gpu-computing-the-mandelbrot-set.html">Mandelbrot Set GPU example</a>.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/bin/bash -l
+<div class="codehilite"><pre><span></span><code>#!/bin/bash -l
 
 # Batch script to run a GPU MATLAB job on Myriad.
 
@@ -1785,7 +1674,6 @@ tar zcvf $HOME/Scratch/Matlab_examples/files_from_job_${JOB_ID}.tgz $TMPDIR
 
 # Make sure you have given enough time for the copy to complete!
 </code></pre></div>
-</td></tr></table>
                 
                   
                 

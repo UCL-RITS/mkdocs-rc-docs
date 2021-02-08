@@ -55,7 +55,9 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
       
   
     
@@ -948,26 +950,7 @@ See <a href="Resource Allocation">Resource Allocation</a> for more information a
 <h2 id="submission-scripts">Submission scripts<a class="headerlink" href="#submission-scripts" title="Permanent link">§</a></h2>
 <p>Jobs submitted to the scheduler (with "qsub") are shell scripts with
 directives preceded by <code>#$</code>.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/bin/bash -l
+<div class="codehilite"><pre><span></span><code>#!/bin/bash -l
 
 # Request ten minutes of wallclock time (format hours:minutes:seconds).
 #$ -l h_rt=0:10:0
@@ -988,7 +971,7 @@ directives preceded by <code>#$</code>.</p>
 # Set the working directory to somewhere in your scratch space.
 #$ -wd /home/&lt;your_UCL_id&gt;/Scratch/output
 </code></pre></div>
-</td></tr></table>
+
 <p>You can then follow these directives with the commands your script would
 execute. Legion supports a wide variety of job types and we would
 strongly recommend you study the <a href="Example_Scripts">example scripts</a>.</p>
@@ -1003,17 +986,13 @@ same options you would include in your job submission script, so:</p>
 </code></pre></div>
 
 <p>Is functionally equivalent to: </p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#$ -S /bin/bash</span>
 <span class="c1">#$ -pe mpi 8</span>
 <span class="c1">#$ -l mem=512M</span>
 <span class="c1">#$ -l h_rt=2:0:0</span>
 </code></pre></div>
-</td></tr></table>
+
 <p>Except, of course, that the result of qrsh is an interactive
 shell. For more details, see the <a href="Interactive Jobs">Interactive Jobs</a> page.</p>
 <h1 id="more-information">More information<a class="headerlink" href="#more-information" title="Permanent link">§</a></h1>

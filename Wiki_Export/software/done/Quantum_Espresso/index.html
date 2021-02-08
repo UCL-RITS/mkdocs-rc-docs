@@ -55,7 +55,9 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
       
   
     
@@ -890,42 +892,7 @@ the script from the same directory as your Quantum Espresso input files,
 and change the input and output file names if necessary. You'll also
 need to change the project name to your project (and take out the \&lt;>
 brackets).</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/bin/bash -l
+<div class="codehilite"><pre><span></span><code>#!/bin/bash -l
 
 # 1. Force bash as the executing shell.
 #$ -S /bin/bash
@@ -962,7 +929,6 @@ export ESPRESSO_PSEUDO=$HOME/qe-psp
 
 gerun pw.x -in input.in &gt;output.out
 </code></pre></div>
-</td></tr></table>
                 
                   
                 

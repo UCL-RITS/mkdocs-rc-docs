@@ -55,7 +55,9 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
       
   
     
@@ -909,58 +911,7 @@ for example:</p>
 directly to the cluster and will do this by default. For other programs
 you will need a job script. Here is an example job script for version 5 to
 submit a batch job to the cluster:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/bin/bash -l
+<div class="codehilite"><pre><span></span><code>#!/bin/bash -l
 
 # Batch script to run FSL 5 example jobs on Legion 
 
@@ -1013,7 +964,7 @@ tar zcvf $HOME/Scratch/FSL/files_from_job_$JOB_ID $TMPDIR
 
 # Make sure you have given enough time for the copy to complete!
 </code></pre></div>
-</td></tr></table>
+
 <p>This is available on Legion in: </p>
 <div class="codehilite"><pre><span></span><code>/shared/ucl/apps/FSL/5.0.1/run-fsl.sh
 </code></pre></div>

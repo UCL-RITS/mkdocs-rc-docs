@@ -55,7 +55,9 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
       
   
     
@@ -1028,49 +1030,7 @@ correctly.</p>
 <p>Here is an example runscript for running cfx5solve multi-threaded on a
 given <code>.def</code> file including comments.</p>
 <h5 id="example-multi-threaded-ansyscfx-runscript">Example Multi-threaded ANSYS/CFX Runscript<a class="headerlink" href="#example-multi-threaded-ansyscfx-runscript" title="Permanent link">§</a></h5>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/bin/bash -l
+<div class="codehilite"><pre><span></span><code>#!/bin/bash -l
 
 # ANSYS 14.5.7: Batch script to run cfx5solve on the StaticMixer.def example 
 # file, single node multi-threaded (4 threads),
@@ -1114,7 +1074,7 @@ cp /home/&lt;your userid&gt;/cfx_examples/StaticMixer.def .
 
 cfx5solve -max-elapsed-time &quot;15 [min]&quot; -def StaticMixer.def -par-local -partition $OMP_NUM_THREADS
 </code></pre></div>
-</td></tr></table>
+
 <p>This runscript is available on Legion in the file:</p>
 <div class="codehilite"><pre><span></span><code>/shared/ucl/apps/ansys/14.5.7/ucl/share/run-StaticMixer-thr.sh
 </code></pre></div>
@@ -1133,54 +1093,7 @@ qsub command can be used to submit the job eg: </p>
 <p>Here is an example runscript for running cfx5solve on more than one node
 (using MPI) on a given .def file including comments.</p>
 <h5 id="example-multi-nodempi-ansyscfx-runscript">Example Multi-node/MPI ANSYS/CFX Runscript<a class="headerlink" href="#example-multi-nodempi-ansyscfx-runscript" title="Permanent link">§</a></h5>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/bin/bash -l
+<div class="codehilite"><pre><span></span><code>#!/bin/bash -l
 
 # ANSYS 14.5.7: Batch script to run cfx5solve on the StaticMixer.def example 
 # file, distributed parallel (36 cores),
@@ -1229,7 +1142,7 @@ export MPI_IC_ORDER=PSM
 
 cfx5solve -max-elapsed-time &quot;60 [min]&quot; -def StaticMixer.def -start-method &quot;Platform MPI Distributed Parallel&quot; -par-dist $CFX_NODES
 </code></pre></div>
-</td></tr></table>
+
 <p>This runscript is available on Legion in the file:</p>
 <div class="codehilite"><pre><span></span><code>/shared/ucl/apps/ansys/14.5.7/ucl/share/run-StaticMixer-par.sh
 </code></pre></div>
@@ -1257,43 +1170,7 @@ correctly.</p>
 <p>Here is an example runscript for running Fluent in serial mode (1 core)
 with comments.</p>
 <h5 id="example-serial-ansysfluent-runscript">Example Serial ANSYS/Fluent Runscript<a class="headerlink" href="#example-serial-ansysfluent-runscript" title="Permanent link">§</a></h5>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/bin/bash -l
+<div class="codehilite"><pre><span></span><code>#!/bin/bash -l
 
 # ANSYS 14.5.7: Batch script to run ANSYS/fluent in serial mode 
 # (1 core). 
@@ -1331,7 +1208,7 @@ cp &lt;path to your input files&gt;/test-1.in .
 
 fluent 2d -g &lt; test-1.in
 </code></pre></div>
-</td></tr></table>
+
 <p>This runscript is available on Legion in the file:</p>
 <div class="codehilite"><pre><span></span><code>/shared/ucl/apps/ansys/14.5.7/ucl/share/run-ANSYS-fluent-ser.sh
 </code></pre></div>
@@ -1349,47 +1226,7 @@ simplest form of qsub command can be used to submit the job eg:</p>
 <p>Here is an example runscript for running Fluent in parallel potentially
 across more than one node.</p>
 <h5 id="example-parallel-mpi-ansysfluent-runscript">Example Parallel (MPI) ANSYS/Fluent Runscript<a class="headerlink" href="#example-parallel-mpi-ansysfluent-runscript" title="Permanent link">§</a></h5>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#!/bin/bash -l
+<div class="codehilite"><pre><span></span><code>#!/bin/bash -l
 
 # ANSYS 14.5.7: Batch script to run ANSYS/fluent distributed parallel 
 # (8 cores). 
@@ -1431,7 +1268,7 @@ cp &lt;path to your input files&gt;/test-1.in .
 
 fluent 3d -t$NSLOTS -mpi=pcmpi -pinfiniband -cnf=$TMPDIR/machines -g &lt; test-1.in
 </code></pre></div>
-</td></tr></table>
+
 <p>This runscript is available on Legion in the file:</p>
 <div class="codehilite"><pre><span></span><code>/shared/ucl/apps/ansys/14.5.7/ucl/share/run-ANSYS-fluent-par.sh
 </code></pre></div>
