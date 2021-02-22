@@ -14,12 +14,13 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-09 Feb 2021 8-1pm   | Young   | Planned | Gold and job submission outage while we migrate our database server.
+23 Feb 2021 8-9:30am | Young | Planned | Gold and job submission expected to be unavailable for two 10-min periods while network switches upgraded.
 
 ## Previous Outages
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+09 Feb 2021 8-1pm   | Young   | Completed | Gold and job submission outage while we migrate our database server.
 08 Jan 2021 -> 12 Jan 2021 | Kathleen | Completed | Electrical work in datacentre. Logins delayed until Tues morning while tests completed.
 08 Jan 2021 -> 12 Jan 2021 | MMM Michael | Completed | Electrical work in datacentre. Logins delayed until Tues morning while tests completed.
 08 Jan 2021 -> 12 Jan 2021 | MMM Young | Completed | Electrical work in datacentre. Logins delayed until Tues morning while tests completed.
