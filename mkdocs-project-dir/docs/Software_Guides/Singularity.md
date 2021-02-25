@@ -3,6 +3,8 @@ title: Singularity
 layout: docs
 ---
 
+# Using Singularity on Our Clusters
+
 Singularity is installed on all our clusters. You can use containers you have downloaded in your space.
 
 Run `singularity --version` to see which version we currently have installed. 
