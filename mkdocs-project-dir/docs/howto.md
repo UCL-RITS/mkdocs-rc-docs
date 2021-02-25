@@ -364,13 +364,13 @@ qstat -f -j 12345
 
 #### Job states
 
- `qw`: queueing, waiting
- `r`: running
- `Rq`: a pre-job check on a node failed and this job was put back in the queue
- `Rr`: this job was rescheduled but is now running on a new node
- `Eqw`: there was an error in this jobscript. This will not run.
- `t`: this job is being transferred
- `dr`: this job is being deleted
+- `qw`: queueing, waiting
+-  `r`: running
+-  `Rq`: a pre-job check on a node failed and this job was put back in the queue
+-  `Rr`: this job was rescheduled but is now running on a new node
+-  `Eqw`: there was an error in this jobscript. This will not run.
+-  `t`: this job is being transferred
+-  `dr`: this job is being deleted
 <!--- dRr  --->
 <!--- hqw  --->
 
