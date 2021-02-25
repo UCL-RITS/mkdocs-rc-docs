@@ -119,6 +119,15 @@ Typing `yes` will allow you to continue logging in.
 **WinSCP** will say `Server's host key does not match the one that WinSCP has in cache.` 
 and you will have the option to update the key.
 
+#### Mac OS X connection failures
+
+If you are on Mac OS X and getting many ssh connection failures and broken pipe messages
+when trying to log in, try adding an ssh timeout to your ssh command:
+```
+ssh -o ConnectTimeout=10 <your_UCL_user_id>@myriad.rc.ucl.ac.uk
+```
+This has particularly been a problem with Mac OS X Big Sur when using the VPN.
+
 
 ## How do I transfer data onto the system?
 
