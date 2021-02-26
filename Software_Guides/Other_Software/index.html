@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Software_Guides/Other_Software/">
       
       <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.3">
     
     
       
@@ -1838,6 +1838,23 @@ gerun $CRY17_EXEDIR/$VERSION/Pcrystal
 gerun $CRY17_EXEDIR/$VERSION/Pproperties
 </code></pre></div>
 
+<p>For CRYSTAL 17 v1.0.2, the modules and path are slightly different and you would do this instead:</p>
+<div class="codehilite"><pre><span></span><code>module unload -f compilers mpi
+module load compilers/intel/2017/update4
+module load mpi/openmpi/2.1.2/intel-2017
+module load crystal17/v1.0.2/intel-2017
+
+# Create a directory for this job and copy the input file into it.
+mkdir test00
+cd test00
+cp ~/Scratch/Crystal17/test_cases/inputs/test00.d12 INPUT
+
+# Gerun is our mpirun wrapper which sets the machinefile and number of
+# processes to the amount you requested with -pe mpi.
+# The CRYSTAL module sets $CRYxx_EXEDIR and $VERSION environment variables.
+gerun $CRY17_EXEDIR/Pcrystal
+</code></pre></div>
+
 <h3 id="freesurfer">FreeSurfer<a class="headerlink" href="#freesurfer" title="Permanent link">§</a></h3>
 <p>FreeSurfer is a set of tools for analysis and visualization of structural and functional brain imaging data.</p>
 <p>Freesurfer can use threads to run on multiple cores in one node: request the number with <code>-pe smp</code> in the resource-request part of your jobscript.</p>
@@ -2501,10 +2518,10 @@ xmds2-setup
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.f5903571.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.3981fc68.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ca5457b8.min.js"></script>
       
     
   </body>
