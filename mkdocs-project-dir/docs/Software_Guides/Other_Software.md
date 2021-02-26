@@ -279,6 +279,23 @@ gerun $CRY17_EXEDIR/$VERSION/Pcrystal
 gerun $CRY17_EXEDIR/$VERSION/Pproperties
 ```
 
+For CRYSTAL 17 v1.0.2, the modules and path are slightly different and you would do this instead:
+```
+module unload -f compilers mpi
+module load compilers/intel/2017/update4
+module load mpi/openmpi/2.1.2/intel-2017
+module load crystal17/v1.0.2/intel-2017
+
+# Create a directory for this job and copy the input file into it.
+mkdir test00
+cd test00
+cp ~/Scratch/Crystal17/test_cases/inputs/test00.d12 INPUT
+
+# Gerun is our mpirun wrapper which sets the machinefile and number of
+# processes to the amount you requested with -pe mpi.
+# The CRYSTAL module sets $CRYxx_EXEDIR and $VERSION environment variables.
+gerun $CRY17_EXEDIR/Pcrystal
+```
 
 ### FreeSurfer
 
