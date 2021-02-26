@@ -1021,6 +1021,7 @@ The VASP executables for current versions are named like this:
 module unload compilers mpi
 module load compilers/intel/2017/update1
 module load mpi/intel/2017/update1/intel
+module load vasp/5.4.4-18apr2017/intel-2017-update1
 
 # Gerun is our mpirun wrapper which sets the machinefile and number of
 # processes to the amount you requested with -pe mpi.
