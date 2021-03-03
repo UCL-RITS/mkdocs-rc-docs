@@ -144,6 +144,17 @@ module load castep/17.21/intel-2017
 gerun castep.mpi input
 ```
 
+CASTEP 19 has different pre-reqs:
+```
+module unload -f compilers mpi
+module load compilers/intel/2019/update4
+module load mpi/intel/2019/update4/intel
+module load castep/19.1.1/intel-2019
+# Gerun is our mpirun wrapper which sets the machinefile and number of 
+# processes to the amount you requested with -pe mpi.
+gerun castep.mpi input
+```
+
 If you have access to the source code and wish to build your own copy, it has been suggested that compiling with these options (on Grace) gave a build that ran about 10% faster than the default compilation options:
 ```
 make COMMS_ARCH=mpi SUBARCH=mpi FFT=mkl MATHLIBS=mkl10 BUILD=fast
