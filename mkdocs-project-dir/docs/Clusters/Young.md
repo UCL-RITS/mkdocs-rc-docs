@@ -290,14 +290,19 @@ If your job must run within a single CU, you can request the parallel environmen
 Young has three types of node: standard nodes, big memory nodes, and really 
 big memory nodes. Note those last have only 36 cores per node, not 40.
 
-| Type  | Cores per node | RAM per node | tmpfs | Nodes |
-| ----- | -------------- | ------------ | ----- | ----- |
-| C     | 40             | 192G         | None  | 576   |
-| Y     | 40             | 1.5T         | None  | 3     |
-| Z     | 36             | 3.0T         | None  | 3     |
+| Type  | Cores per node | RAM per node | tmpfs | Nodes | Memory request necessary |
+| ----- | -------------- | ------------ | ----- | ----- | ------------------------ |
+| C     | 40             | 192G         | None  | 576   | Any |
+| Y     | 40             | 1.5T         | None  | 3     | mpi: mem >=19G, smp: >186G total |
+| Z     | 36             | 3.0T         | None  | 3     | mpi: mem >=42G, smp: >1530G total |
 
 These are numbers of physical cores: multiply by two for virtual cores with
 hyperthreading. 
+
+The 'memory request necessary' column shows what memory requests a job needs to 
+make to be eligible for that node type. For MPI jobs it looks at the memory per 
+slot requested. For SMP jobs they will go on the node that their total memory 
+request (slots * mem) fits on.
 
 Here are the processors each node type has:
 
