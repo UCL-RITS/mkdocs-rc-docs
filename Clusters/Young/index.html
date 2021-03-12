@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Clusters/Young/">
       
       <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.5">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1655a90d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.77f3fd56.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.7fa14f5b.min.css">
@@ -1813,6 +1813,7 @@ big memory nodes. Note those last have only 36 cores per node, not 40.</p>
 <th>RAM per node</th>
 <th>tmpfs</th>
 <th>Nodes</th>
+<th>Memory request necessary</th>
 </tr>
 </thead>
 <tbody>
@@ -1822,6 +1823,7 @@ big memory nodes. Note those last have only 36 cores per node, not 40.</p>
 <td>192G</td>
 <td>None</td>
 <td>576</td>
+<td>Any</td>
 </tr>
 <tr>
 <td>Y</td>
@@ -1829,6 +1831,7 @@ big memory nodes. Note those last have only 36 cores per node, not 40.</p>
 <td>1.5T</td>
 <td>None</td>
 <td>3</td>
+<td>mpi: mem &gt;=19G, smp: &gt;186G total</td>
 </tr>
 <tr>
 <td>Z</td>
@@ -1836,11 +1839,16 @@ big memory nodes. Note those last have only 36 cores per node, not 40.</p>
 <td>3.0T</td>
 <td>None</td>
 <td>3</td>
+<td>mpi: mem &gt;=42G, smp: &gt;1530G total</td>
 </tr>
 </tbody>
 </table>
 <p>These are numbers of physical cores: multiply by two for virtual cores with
 hyperthreading. </p>
+<p>The 'memory request necessary' column shows what memory requests a job needs to 
+make to be eligible for that node type. For MPI jobs it looks at the memory per 
+slot requested. For SMP jobs they will go on the node that their total memory 
+request (slots * mem) fits on.</p>
 <p>Here are the processors each node type has:</p>
 <ul>
 <li>C: Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz </li>
@@ -2087,6 +2095,7 @@ consortium and funded by EPSRC grant ref EP/P022561/1"</p>
         <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs
         </a>
+        
       </div>
       
   <div class="md-footer-social">
@@ -2113,7 +2122,7 @@ consortium and funded by EPSRC grant ref EP/P022561/1"</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.ca5457b8.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5cf3e710.min.js"></script>
       
     
   </body>
