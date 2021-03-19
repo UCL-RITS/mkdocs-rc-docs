@@ -139,6 +139,11 @@ export OMP_NUM_THREADS=2
 
 Would use 80 cores, with two threads (on Hyperthreads) per core. If you use `gerun` to launch your MPI process, it will take care of the division for you, but if you're using `mpirun` or `mpiexec` directly, you'll have to take care to use the correct number of MPI ranks per node yourself.
 
+Note that memory requests are now per virtual core with hyperthreading enabled. 
+If you asked for `#$ -l mem=4G`on a node with 80 virtual cores and 192G RAM then 
+you are requiring 320G RAM in total which will not fit on that node and so you 
+would be given a sparse process layout across more nodes to meet this requirement.
+
 ##### Temporary local disk (every machine EXCEPT Kathleen)
 
 ```bash

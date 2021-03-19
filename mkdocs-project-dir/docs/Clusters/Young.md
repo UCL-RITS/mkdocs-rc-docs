@@ -342,6 +342,9 @@ If you do not ask for hyperthreading, your job only uses one thread per core as 
 # request the number of virtual cores
 #$ -pe mpi 160
 
+# request 2G RAM per virtual core
+#$ -l mem=2G
+
 # set number of OpenMP threads being used per MPI process
 export OMP_NUM_THREADS=2
 ```
@@ -349,12 +352,20 @@ export OMP_NUM_THREADS=2
 This job would be using 80 physical cores, using 80 MPI processes each of 
 which would create two threads (on Hyperthreads).
 
+Note that memory requests are now per virtual core with hyperthreading enabled. 
+If you asked for `#$ -l mem=4G`on a node with 80 virtual cores and 192G RAM then 
+you are requiring 320G RAM in total which will not fit on that node and so you 
+would be given a sparse process layout across more nodes to meet this requirement.
+
 ```
 # request hyperthreading in this job
 #$ -l threads=1
 
 # request the number of virtual cores
 #$ -pe mpi 160
+
+# request 2G RAM per virtual core
+#$ -l mem=2G
 
 # set number of OpenMP threads being used per MPI process
 # (a whole node's worth)
