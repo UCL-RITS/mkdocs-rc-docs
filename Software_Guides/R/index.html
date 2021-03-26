@@ -855,11 +855,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-your-own-local-r-packages" class="md-nav__link">
-    Using your own local R packages
+  <a href="#using-your-own-r-packages" class="md-nav__link">
+    Using your own R packages
   </a>
   
-    <nav class="md-nav" aria-label="Using your own local R packages">
+    <nav class="md-nav" aria-label="Using your own R packages">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -990,11 +990,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-your-own-local-r-packages" class="md-nav__link">
-    Using your own local R packages
+  <a href="#using-your-own-r-packages" class="md-nav__link">
+    Using your own R packages
   </a>
   
-    <nav class="md-nav" aria-label="Using your own local R packages">
+    <nav class="md-nav" aria-label="Using your own R packages">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1277,7 +1277,9 @@ mpi.quit()
 </code></pre></div>
 
 <p>This example is based on <a href="https://www.sharcnet.ca/help/index.php/Using_R_and_MPI">SHARCNET's Using R and MPI</a>.</p>
-<h2 id="using-your-own-local-r-packages">Using your own local R packages<a class="headerlink" href="#using-your-own-local-r-packages" title="Permanent link">§</a></h2>
+<h2 id="using-your-own-r-packages">Using your own R packages<a class="headerlink" href="#using-your-own-r-packages" title="Permanent link">§</a></h2>
+<p>If we do not have R packages installed centrally that you wish to use, you can 
+install them in your space on the cluster and tell R where to find them.</p>
 <p>First you need to tell R where to install your local package to and where to look for local packages, using the R library path.</p>
 <h3 id="set-your-r-library-path">Set your R library path<a class="headerlink" href="#set-your-r-library-path" title="Permanent link">§</a></h3>
 <p>There are several ways to modify your R library path so you can pick up local packages that you have installed in your own space.</p>
@@ -1285,12 +1287,16 @@ mpi.quit()
 <div class="codehilite"><pre><span></span><code>export R_LIBS=/your/local/R/library/path:$R_LIBS
 </code></pre></div>
 
-<p>Setting that in your terminal will let you install them from inside R and should be put in your jobscript (or your <code>.bashrc</code>) when you submit a job using those libraries. This appends your directory to <code>$R_LIBS</code> rather than overwriting it so the system libraries can still be found.</p>
+<p>This is a colon-separated list of directories that R will search through. </p>
+<p>Setting that in your terminal will let you install to that path from inside R and 
+should also be put in your jobscript (or your <code>.bashrc</code>) when you submit a job 
+using those libraries. This appends your directory to the existing value of 
+<code>$R_LIBS</code> rather than overwriting it so the centrally-installed libraries can still be found.</p>
 <p>You can also change the library path for a session from within R:</p>
 <div class="codehilite"><pre><span></span><code>.libPaths(c(&#39;~/MyRlibs&#39;,.libPaths()))
 </code></pre></div>
 
-<p>This puts your local directory at the beginning of R's search path, and means that <code>install.packages()</code> will automatically put packages there and the <code>library()</code> function will find libraries in your local directory.</p>
+<p>This puts your directory at the beginning of R's search path, and means that <code>install.packages()</code> will automatically put packages there and the <code>library()</code> function will find libraries in your local directory.</p>
 <h3 id="install-an-r-package">Install an R package<a class="headerlink" href="#install-an-r-package" title="Permanent link">§</a></h3>
 <p>To install, after setting your library path:</p>
 <p>From inside R, you can do</p>
