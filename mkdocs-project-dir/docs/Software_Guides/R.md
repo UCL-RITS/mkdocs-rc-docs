@@ -264,7 +264,10 @@ mpi.quit()
 ```
 This example is based on [SHARCNET's Using R and MPI](https://www.sharcnet.ca/help/index.php/Using_R_and_MPI).
 
-## Using your own local R packages
+## Using your own R packages
+
+If we do not have R packages installed centrally that you wish to use, you can 
+install them in your space on the cluster and tell R where to find them.
 
 First you need to tell R where to install your local package to and where to look for local packages, using the R library path.
 
@@ -277,14 +280,19 @@ The easiest way is to add them to the `R_LIBS` environment variable (insert the 
 export R_LIBS=/your/local/R/library/path:$R_LIBS
 ```
 
-Setting that in your terminal will let you install them from inside R and should be put in your jobscript (or your `.bashrc`) when you submit a job using those libraries. This appends your directory to `$R_LIBS` rather than overwriting it so the system libraries can still be found.
+This is a colon-separated list of directories that R will search through. 
+
+Setting that in your terminal will let you install to that path from inside R and 
+should also be put in your jobscript (or your `.bashrc`) when you submit a job 
+using those libraries. This appends your directory to the existing value of 
+`$R_LIBS` rather than overwriting it so the centrally-installed libraries can still be found.
 
 You can also change the library path for a session from within R:
 ```
 .libPaths(c('~/MyRlibs',.libPaths()))
 ```
 
-This puts your local directory at the beginning of R's search path, and means that `install.packages()` will automatically put packages there and the `library()` function will find libraries in your local directory.
+This puts your directory at the beginning of R's search path, and means that `install.packages()` will automatically put packages there and the `library()` function will find libraries in your local directory.
 
 ### Install an R package
 
