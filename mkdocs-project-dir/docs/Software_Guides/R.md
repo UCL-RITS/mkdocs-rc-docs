@@ -269,11 +269,11 @@ This example is based on [SHARCNET's Using R and MPI](https://www.sharcnet.ca/he
 If we do not have R packages installed centrally that you wish to use, you can 
 install them in your space on the cluster and tell R where to find them.
 
-First you need to tell R where to install your local package to and where to look for local packages, using the R library path.
+First you need to tell R where to install your package to and where to look for user-installed packages, using the R library path.
 
 ### Set your R library path
 
-There are several ways to modify your R library path so you can pick up local packages that you have installed in your own space.
+There are several ways to modify your R library path so you can pick up packages that you have installed in your own space.
 
 The easiest way is to add them to the `R_LIBS` environment variable (insert the correct path):
 ```
