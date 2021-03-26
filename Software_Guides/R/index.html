@@ -1280,9 +1280,9 @@ mpi.quit()
 <h2 id="using-your-own-r-packages">Using your own R packages<a class="headerlink" href="#using-your-own-r-packages" title="Permanent link">§</a></h2>
 <p>If we do not have R packages installed centrally that you wish to use, you can 
 install them in your space on the cluster and tell R where to find them.</p>
-<p>First you need to tell R where to install your local package to and where to look for local packages, using the R library path.</p>
+<p>First you need to tell R where to install your package to and where to look for user-installed packages, using the R library path.</p>
 <h3 id="set-your-r-library-path">Set your R library path<a class="headerlink" href="#set-your-r-library-path" title="Permanent link">§</a></h3>
-<p>There are several ways to modify your R library path so you can pick up local packages that you have installed in your own space.</p>
+<p>There are several ways to modify your R library path so you can pick up packages that you have installed in your own space.</p>
 <p>The easiest way is to add them to the <code>R_LIBS</code> environment variable (insert the correct path):</p>
 <div class="codehilite"><pre><span></span><code>export R_LIBS=/your/local/R/library/path:$R_LIBS
 </code></pre></div>
