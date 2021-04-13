@@ -40,7 +40,20 @@ def render_page(page_info, use_local_sources=False):
             package_file = open(page_info.datafile)
             package_dict = json.loads(package_file.read())
         else:
-            package_dict = requests.get(url_stem + page_info.datafile).json()
+            # We're going to give this a few tries:
+            # GitHub Actions network connectivity has been a bit
+            #  spotty and this might avoid problems with that.
+            tries = 3
+            for i in range(tries):
+                # Yes, nested try blocks are okay.
+                try:
+                    package_dict = requests.get(url_stem + page_info.datafile).json()
+                except:
+                    if i < tries - 1:
+                        continue
+                    else:
+                        raise
+                break
     except:
         sys.stderr.write("Error reading package JSON info from \"%s\".\n" % page_info.datafile)
         raise
