@@ -1038,7 +1038,13 @@ varscan OPTION1=value1 OPTION2=value2...
 
 The Vienna Ab initio Simulation Package (VASP) is a computer program for atomic scale materials modelling, e.g. electronic structure calculations and quantum-mechanical molecular dynamics, from first principles.
 
-VASP is licensed software. To gain access, you need to email us the name and email of the main VASP license holder (plus the license number if you have it). We will then ask VASP if we can add you, and on confirmation can do so. We will add you to the `legvasp` reserved application group, and remove you when VASP tell us you no longer have access.
+VASP is licensed software. To gain access, you need to email us letting us know 
+what email address you are named on a VASP license using. You can also mention 
+the name and email of the main VASP license holder and the license number if you 
+have it, though this is not necessary. We will then check in the VASP portal if 
+we can give you access. We will add you to the `legvasp5` or `legvasp6` reserved 
+application groups depending on which versions you are licensed for, and remove 
+you when VASP tell us you no longer have access.
 
 The VASP executables for current versions are named like this:
 * `vasp_gam` - optimised for gamma point calculations only
