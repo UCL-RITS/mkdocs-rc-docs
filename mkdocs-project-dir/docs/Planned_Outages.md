@@ -14,13 +14,14 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-29 Mar 2021 -> 30 Mar 2021 | Myriad | Planned | A number of GPU nodes will be reserved for the [NVidia AI Bootcamp](https://t.co/Moqa1evelh) on the 29th and 30th March. Some users may experience longer than usual waiting times for GPUs, from Monday the 22nd until after the event, especially for long jobs.  We apologise for any inconvenience this may cause.
-30 Mar 2021 | Kathleen | Planned | Essential Lustre filesystem maintenance. Queue draining starts 26th March, SSH access to login nodes disabled on the 30th. Full outage, no access.
+22 May 2021 -> 24 May 2021 | Michael | Planned | Datacentre network outage. Queues to be drained. Full outage, no access.
 
 ## Previous Outages
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+29 Mar 2021 -> 30 Mar 2021 | Myriad | Completed | A number of GPU nodes will be reserved for the [NVidia AI Bootcamp](https://t.co/Moqa1evelh) on the 29th and 30th March. Some users may experience longer than usual waiting times for GPUs, from Monday the 22nd until after the event, especially for long jobs.  We apologise for any inconvenience this may cause.
+30 Mar 2021 | Kathleen | Completed | Essential Lustre filesystem maintenance. Queue draining starts 26th March, SSH access to login nodes disabled on the 30th. Full outage, no access.
 23 Feb 2021 8-9:30am | Young | Completed | Gold and job submission expected to be unavailable for two 10-min periods while network switches upgraded.
 09 Feb 2021 8-1pm   | Young   | Completed | Gold and job submission outage while we migrate our database server.
 08 Jan 2021 -> 12 Jan 2021 | Kathleen | Completed | Electrical work in datacentre. Logins delayed until Tues morning while tests completed.
