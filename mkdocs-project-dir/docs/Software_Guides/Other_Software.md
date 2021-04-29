@@ -368,14 +368,121 @@ GenomeAnalysisTK OPTION1=value1 OPTION2=value2...
 gatk OPTION1=value1 OPTION2=value2...
 ```
 
+### Gaussian
+
+Access to Gaussian 09 or Gaussian 16 are controlled by membership of separate groups. 
+UCL has a site license so UCL users can be added on request.
+
+Gaussian is too resource-intensive to ever be run on the login nodes.
+
+#### Multithreaded shared memory Gaussian jobs
+
+The main Gaussian executable lets you run jobs that use from 1 core up to a full node.
+When using more than one core, make sure your input file contains `%NProcShared=` with
+the number of cores your job is requesting.
+
+`$GAUSS_SCRDIR` is where Gaussian puts temporary files which can use a lot of space.
+On Myriad in a job this is created inside `$TMPDIR` by default. On diskless clusters, you 
+will want to set this to somewhere in your Scratch instead: after loading the Gaussian 
+module, `export $GAUSS_SCRDIR=$HOME/Scratch/gauss_scratch/$JOB_ID` for example.
+The `mkdir -p $GAUSS_SCRDIR` command in the examples will then create this directory 
+path if it doesn't exist. Using `$JOB_ID` (or `$JOB_ID.$SGE_TASK_ID` for array jobs) 
+will make sure each job uses a different directory inside there.
+
+```
+# Example for Gaussian 16
+
+# Set up runtime environment
+module load gaussian/g16-a03/pgi-2016.5
+source $g16root/g16/bsd/g16.profile
+mkdir -p $GAUSS_SCRDIR
+
+# Run g16 job
+echo "GAUSS_SCRDIR = $GAUSS_SCRDIR"
+g16 < testdata.com > testdata.out
+```
+
+```
+# Example for Gaussian 09
+
+# Setup runtime environment
+module load gaussian/g09-d01/pgi-2015.7
+source $g09root/g09/bsd/g09.profile
+mkdir -p $GAUSS_SCRDIR
+
+# Run g09 job
+echo "GAUSS_SCRDIR = $GAUSS_SCRDIR"
+g09 < testdata.com > testdata.out
+```
+
+#### Linda parallel Gaussian jobs
+
+**Only currently working for Gaussian 09.**
+
+Gaussian Linda jobs can run across multiple nodes.
+
+```
+# Select the MPI parallel environment and 80 cores total
+#$ -pe mpi 80
+
+# 8. Select number of threads per Linda worker (value of NProcShared in your
+#     Gaussian input file. This will give 80/40 = 2 Linda workers.
+export OMP_NUM_THREADS=40
+
+# Setup g09 runtime environment
+module load gaussian/g09-d01/pgi-2015.7
+source $g09root/g09/bsd/g09.profile
+mkdir -p $GAUSS_SCRDIR
+
+# Pre-process g09 input file to include nodes allocated to job
+echo "Running: lindaConv testdata.com $JOB_ID $TMPDIR/machines"
+echo ''
+$lindaConv testdata.com $JOB_ID $TMPDIR/machines
+
+# Run g09 job
+
+echo "GAUSS_SCRDIR = $GAUSS_SCRDIR"
+echo ""
+echo "Running: g09 < job$JOB_ID.com > job$JOB_ID.out"
+
+# communication needs to be via ssh not the Linda default
+export GAUSS_LFLAGS='-v -opt "Tsnet.Node.lindarsharg: ssh"'
+
+g09 < job$JOB_ID.com > job$JOB_ID.out
+
+```
+
+#### Troubleshooting: Memory errors
+
+If you encounter errors like:
+```
+Out-of-memory error in routine ShPair-LoodLd2 (IEnd= 257724 MxCore= 242934)
+
+Use %mem=48MW to provide the minimum amount of memory required to complete this step.
+```
+Try adding this to your jobscript:
+```
+export GAUSS_MEMDEF=48000000
+```
+You may need to increase this value even more to allow it to run.
+
+#### Troubleshooting: No space left on device
+
+If you get this error
+```
+  g_write: No space left on device
+```
+
+The `$GAUSS_SCRDIR` is probably full - if it was on a cluster that has local 
+disks and is using `$TMPDIR` you should increase the amount of `tmpfs` you are 
+requesting in your jobscript. Otherwise check `lquota` for your data usage and
+potentially request a larger Scratch.
 
 ### GROMACS
 
 We have many versions of GROMACS installed, some built with Plumed. The module name will indicate this.
 
 Which executable you should run depends on the problem you wish to solve. For both single and double precision version builds, serial binaries and an MPI binary for mdrun (`mdrun_mpi` for newer versions, `gmx_mpi` for Plumed and some older versions) are provided. Double precision binaries have a `_d` suffix (so `gmx_d`, `mdrun_mpi_d`, `gmx_mpi_d` etc). 
-
-
 
 ```
 # Example for gromacs/2019.3/intel-2018
