@@ -15,8 +15,13 @@ Materials and Molecular Modelling.
     - **Thursday 1 April 2021**: Access to the login nodes will be removed and 
       all data will be deleted.
 
+    Thomas has now been retired as an MMM Hub machine.
+    A portion of Thomas is running for UCL users only until the end of 2021.
 
 ## Applying for an account
+
+UCL users can contact David Scanlon or Scott Woodley for access to 
+the post-retirement portion of Thomas.
 
 Thomas accounts belong to you as an individual and are applied for
 through your own institution's [Point of Contact](https://mmmhub.ac.uk/thomas).
@@ -303,82 +308,12 @@ Quota increases may be granted without further approval, depending on size and h
 
 ## Budgets and allocations
 
-We have enabled Gold for allocation management. Jobs that are run under
-a project budget have higher priority than free non-budgeted jobs. All
-jobs need to specify what project they belong to, whether they are paid
-or free.
-
-To see the name of your project(s) and how much allocation that budget
-has, run the command `budgets`.
-
-```
-budgets  
-Project  Machines Balance   
--------- -------- --------  
-UCL_Test ANY      22781.89
-
-```
-
-Pilot users temporarily had access to a project for their institution,
-eg. Imperial\_pilot. These projects are no longer active and will not
-show up.
+There is no more Gold on Thomas. Jobs should now be submitted without specifying
+any `-P` or `-A` entries in your jobscript.
 
 !!! info
     1 Gold unit is 1 hour of using 1 processor core.
 
-
-### Subprojects
-
-You might be in a subproject that does not itself have an allocation,
-but instead takes allocation from a different project:
-
-```
-Project       Machines Balance
---------      -------- --------
-UCL_physM        ANY   474999.70  
-UCL_physM_Bowler ANY        0.00
-```
-
-In this case, you submit jobs using the subproject (`UCL_physM_Bowler`
-here) even though it says it has 0 budget and it takes Gold from the
-superproject.
-
-### Submitting a job under a project
-
-To submit a paid job that will take Gold from a particular project
-budget, add this to your jobscript:
-
-```
-#$ -P Gold
-#$ -A MyProject
-```
-
-To submit a free job that will not use up any Gold, use this instead:
-
-```
-#$ -P Free
-#$ -A MyProject
-```
-
-You can also submit testing jobs that will not use up any Gold, and will
-have higher priority than normal free jobs, but are limited to 2 nodes
-(48 cores) and 1 hour of
-walltime:
-
-```
-#$ -P Test
-#$ -A MyProject
-```
-
-#### Troubleshooting: Unable to verify membership in policyjsv project
-
-```
-Unable to run job: Rejected by policyjsv
-Unable to verify membership of `<username>` in the policyjsv project
-```
-
-You asked for a Free job but didn't specify `#$ -A MyProject` in your
-jobscript.
 
 #### Troubleshooting: Unable to verify membership in project / Uninitialized value
 
@@ -388,43 +323,22 @@ Reason:Unable to verify sufficient material worth to submit this job:
 Unable to verify membership of mmmxxxx in the UCL_Example project
 ```
 
-This error from `qsub` can mean that you aren't in the project you are trying to submit to, but also happens when the Gold daemon is not running. 
+This error from `qsub` can mean that you aren't in the project you are trying to 
+submit to, but also happens when the Gold daemon is not running. 
+
+Remove the `-P` and `-A` lines from your jobscript and submit jobs without any
+project specified.
 
 ```
 Use of uninitialized value in print at /opt/gold/bin/mybalance line 60, <GBALANCE> line 1.
 Failed sending message: (Unable to connect to socket (Connection refused)).
 ```
 
-If you also get this error from the `budgets` command, then the Gold daemon is definitely not running and you should contact rc-support.
+The Gold database is uncontactable.
 
-### Gold charging
+Remove the `-P` and `-A` lines from your jobscript and submit jobs without any
+project specified.
 
-When you submit a job, it will reserve the total number of core hours
-that the job script is asking for. When the job ends, the Gold will move
-from 'reserved' into charged. If the job doesn't run for the full time
-it asked for, the unused reserved portion will be refunded after the job
-ends. You cannot submit a job that you do not have the budget to
-run.
-
-#### Troubleshooting: Unable to verify sufficient material worth
-
-```
-Unable to run job: Rejected by policyjsv
-Reason:Unable to verify sufficient material worth to submit this job:
-Insufficient balance to reserve job
-```
-
-This means you don't have enough Gold to cover the
-cores ⨉ wallclock time cost of the job you are trying to submit. You need
-to wait for queued jobs to finish and return unused Gold to your
-project, or submit a smaller/shorter job. Note that array jobs have to
-cover the whole cost of all the tasks at submit time.
-
-### Job deletion
-
-If you `qdel` a submitted Gold job, the reserved Gold will be made
-available again. This is done by a cron job that runs every 15 minutes,
-so you may not see it back instantly.
 
 ## The Tier 2 SAFE
 
