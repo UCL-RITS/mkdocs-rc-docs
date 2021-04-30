@@ -89,9 +89,9 @@ For batch jobs:
 
 | Cores    | Max. Duration |
 |:--------:|:-------------:|
-| 41-256   | 48h           |
-| 257-512  | 24h           |
-| 513-5760 | 12h           |
+| 41-480   | 48h           |
+| 481-960  | 24h           |
+| 961-5760 | 12h           |
 
 These are numbers of physical cores.
 
