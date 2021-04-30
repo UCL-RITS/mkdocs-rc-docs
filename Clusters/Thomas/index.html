@@ -752,62 +752,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#subprojects" class="md-nav__link">
-    Subprojects
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#submitting-a-job-under-a-project" class="md-nav__link">
-    Submitting a job under a project
-  </a>
-  
-    <nav class="md-nav" aria-label="Submitting a job under a project">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#troubleshooting-unable-to-verify-membership-in-policyjsv-project" class="md-nav__link">
-    Troubleshooting: Unable to verify membership in policyjsv project
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#troubleshooting-unable-to-verify-membership-in-project-uninitialized-value" class="md-nav__link">
     Troubleshooting: Unable to verify membership in project / Uninitialized value
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gold-charging" class="md-nav__link">
-    Gold charging
-  </a>
-  
-    <nav class="md-nav" aria-label="Gold charging">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#troubleshooting-unable-to-verify-sufficient-material-worth" class="md-nav__link">
-    Troubleshooting: Unable to verify sufficient material worth
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#job-deletion" class="md-nav__link">
-    Job deletion
   </a>
   
 </li>
@@ -1435,62 +1381,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#subprojects" class="md-nav__link">
-    Subprojects
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#submitting-a-job-under-a-project" class="md-nav__link">
-    Submitting a job under a project
-  </a>
-  
-    <nav class="md-nav" aria-label="Submitting a job under a project">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#troubleshooting-unable-to-verify-membership-in-policyjsv-project" class="md-nav__link">
-    Troubleshooting: Unable to verify membership in policyjsv project
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#troubleshooting-unable-to-verify-membership-in-project-uninitialized-value" class="md-nav__link">
     Troubleshooting: Unable to verify membership in project / Uninitialized value
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gold-charging" class="md-nav__link">
-    Gold charging
-  </a>
-  
-    <nav class="md-nav" aria-label="Gold charging">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#troubleshooting-unable-to-verify-sufficient-material-worth" class="md-nav__link">
-    Troubleshooting: Unable to verify sufficient material worth
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#job-deletion" class="md-nav__link">
-    Job deletion
   </a>
   
 </li>
@@ -1600,8 +1492,12 @@ Materials and Molecular Modelling.</p>
 <li><strong>Thursday 1 April 2021</strong>: Access to the login nodes will be removed and 
   all data will be deleted.</li>
 </ul>
+<p>Thomas has now been retired as an MMM Hub machine.
+A portion of Thomas is running for UCL users only until the end of 2021.</p>
 </div>
 <h2 id="applying-for-an-account">Applying for an account<a class="headerlink" href="#applying-for-an-account" title="Permanent link">§</a></h2>
+<p>UCL users can contact David Scanlon or Scott Woodley for access to 
+the post-retirement portion of Thomas.</p>
 <p>Thomas accounts belong to you as an individual and are applied for
 through your own institution's <a href="https://mmmhub.ac.uk/thomas">Point of Contact</a>.
 You will need to supply an SSH public key, which is the only method used to log in.</p>
@@ -1847,98 +1743,29 @@ for every core).</p>
 <p>Quota increases may be granted without further approval, depending on size and how full the filesystem is. Otherwise they may need to go to the Thomas User Group for approval.</p>
 <p><a href="#top" title="wikilink"> back to top</a></p>
 <h2 id="budgets-and-allocations">Budgets and allocations<a class="headerlink" href="#budgets-and-allocations" title="Permanent link">§</a></h2>
-<p>We have enabled Gold for allocation management. Jobs that are run under
-a project budget have higher priority than free non-budgeted jobs. All
-jobs need to specify what project they belong to, whether they are paid
-or free.</p>
-<p>To see the name of your project(s) and how much allocation that budget
-has, run the command <code>budgets</code>.</p>
-<div class="codehilite"><pre><span></span><code>budgets  
-Project  Machines Balance   
--------- -------- --------  
-UCL_Test ANY      22781.89
-</code></pre></div>
-
-<p>Pilot users temporarily had access to a project for their institution,
-eg. Imperial_pilot. These projects are no longer active and will not
-show up.</p>
+<p>There is no more Gold on Thomas. Jobs should now be submitted without specifying
+any <code>-P</code> or <code>-A</code> entries in your jobscript.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>1 Gold unit is 1 hour of using 1 processor core.</p>
 </div>
-<h3 id="subprojects">Subprojects<a class="headerlink" href="#subprojects" title="Permanent link">§</a></h3>
-<p>You might be in a subproject that does not itself have an allocation,
-but instead takes allocation from a different project:</p>
-<div class="codehilite"><pre><span></span><code>Project       Machines Balance
---------      -------- --------
-UCL_physM        ANY   474999.70  
-UCL_physM_Bowler ANY        0.00
-</code></pre></div>
-
-<p>In this case, you submit jobs using the subproject (<code>UCL_physM_Bowler</code>
-here) even though it says it has 0 budget and it takes Gold from the
-superproject.</p>
-<h3 id="submitting-a-job-under-a-project">Submitting a job under a project<a class="headerlink" href="#submitting-a-job-under-a-project" title="Permanent link">§</a></h3>
-<p>To submit a paid job that will take Gold from a particular project
-budget, add this to your jobscript:</p>
-<div class="codehilite"><pre><span></span><code>#$ -P Gold
-#$ -A MyProject
-</code></pre></div>
-
-<p>To submit a free job that will not use up any Gold, use this instead:</p>
-<div class="codehilite"><pre><span></span><code>#$ -P Free
-#$ -A MyProject
-</code></pre></div>
-
-<p>You can also submit testing jobs that will not use up any Gold, and will
-have higher priority than normal free jobs, but are limited to 2 nodes
-(48 cores) and 1 hour of
-walltime:</p>
-<div class="codehilite"><pre><span></span><code>#$ -P Test
-#$ -A MyProject
-</code></pre></div>
-
-<h4 id="troubleshooting-unable-to-verify-membership-in-policyjsv-project">Troubleshooting: Unable to verify membership in policyjsv project<a class="headerlink" href="#troubleshooting-unable-to-verify-membership-in-policyjsv-project" title="Permanent link">§</a></h4>
-<div class="codehilite"><pre><span></span><code>Unable to run job: Rejected by policyjsv
-Unable to verify membership of `&lt;username&gt;` in the policyjsv project
-</code></pre></div>
-
-<p>You asked for a Free job but didn't specify <code>#$ -A MyProject</code> in your
-jobscript.</p>
 <h4 id="troubleshooting-unable-to-verify-membership-in-project-uninitialized-value">Troubleshooting: Unable to verify membership in project / Uninitialized value<a class="headerlink" href="#troubleshooting-unable-to-verify-membership-in-project-uninitialized-value" title="Permanent link">§</a></h4>
 <div class="codehilite"><pre><span></span><code>Unable to run job: Rejected by policyjsv 
 Reason:Unable to verify sufficient material worth to submit this job: 
 Unable to verify membership of mmmxxxx in the UCL_Example project
 </code></pre></div>
 
-<p>This error from <code>qsub</code> can mean that you aren't in the project you are trying to submit to, but also happens when the Gold daemon is not running. </p>
+<p>This error from <code>qsub</code> can mean that you aren't in the project you are trying to 
+submit to, but also happens when the Gold daemon is not running. </p>
+<p>Remove the <code>-P</code> and <code>-A</code> lines from your jobscript and submit jobs without any
+project specified.</p>
 <div class="codehilite"><pre><span></span><code>Use of uninitialized value in print at /opt/gold/bin/mybalance line 60, &lt;GBALANCE&gt; line 1.
 Failed sending message: (Unable to connect to socket (Connection refused)).
 </code></pre></div>
 
-<p>If you also get this error from the <code>budgets</code> command, then the Gold daemon is definitely not running and you should contact rc-support.</p>
-<h3 id="gold-charging">Gold charging<a class="headerlink" href="#gold-charging" title="Permanent link">§</a></h3>
-<p>When you submit a job, it will reserve the total number of core hours
-that the job script is asking for. When the job ends, the Gold will move
-from 'reserved' into charged. If the job doesn't run for the full time
-it asked for, the unused reserved portion will be refunded after the job
-ends. You cannot submit a job that you do not have the budget to
-run.</p>
-<h4 id="troubleshooting-unable-to-verify-sufficient-material-worth">Troubleshooting: Unable to verify sufficient material worth<a class="headerlink" href="#troubleshooting-unable-to-verify-sufficient-material-worth" title="Permanent link">§</a></h4>
-<div class="codehilite"><pre><span></span><code>Unable to run job: Rejected by policyjsv
-Reason:Unable to verify sufficient material worth to submit this job:
-Insufficient balance to reserve job
-</code></pre></div>
-
-<p>This means you don't have enough Gold to cover the
-cores ⨉ wallclock time cost of the job you are trying to submit. You need
-to wait for queued jobs to finish and return unused Gold to your
-project, or submit a smaller/shorter job. Note that array jobs have to
-cover the whole cost of all the tasks at submit time.</p>
-<h3 id="job-deletion">Job deletion<a class="headerlink" href="#job-deletion" title="Permanent link">§</a></h3>
-<p>If you <code>qdel</code> a submitted Gold job, the reserved Gold will be made
-available again. This is done by a cron job that runs every 15 minutes,
-so you may not see it back instantly.</p>
+<p>The Gold database is uncontactable.</p>
+<p>Remove the <code>-P</code> and <code>-A</code> lines from your jobscript and submit jobs without any
+project specified.</p>
 <h2 id="the-tier-2-safe">The Tier 2 SAFE<a class="headerlink" href="#the-tier-2-safe" title="Permanent link">§</a></h2>
 <p>SAFE is a service administration platform used by ARCHER and various of the Tier 2 sites. As a user, you can use it to do some management of your details and view your usage across all systems that send data to SAFE.</p>
 <h3 id="see-your-usage-data-in-safe">See your usage data in SAFE<a class="headerlink" href="#see-your-usage-data-in-safe" title="Permanent link">§</a></h3>
