@@ -112,8 +112,8 @@ non-interactive use and
 Jobscripts must begin `#!/bin/bash -l` in order to run as a login shell 
 and get your login environment and modules.
 
-A job on Thomas must also specify what type of job it is (Gold, Free,
-Test) and the project it is being submitted for. 
+Jobs no longer need to specify what type of job it is (Gold, Free,
+Test) or the project it is being submitted for. 
 (See [Budgets and allocations](#budgets-and-allocations) below.)
 
 #### Memory requests
