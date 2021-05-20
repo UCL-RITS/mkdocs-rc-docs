@@ -15,7 +15,8 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
 22 May 2021 -> 24 May 2021 | Michael | Planned | Datacentre network outage. Queues to be drained. Full outage, no access.
-22 May 2021 -> 24 May 2021 | Young | Planned | Gold and job submission expected to be unavailable while database uncontactable due to datacentre network outage. 
+22 May 2021 -> 24 May 2021 | Young | Planned | Gold and job submission expected to be unavailable while database uncontactable due to datacentre network outage.
+22 May 2021 -> 24 May 2021 | Myriad and Kathleen | Planned | Gold (i.e. high priority) job submission expected to be unavailable while database uncontactable due to datacentre network outage.
 
 ## Previous Outages
 
