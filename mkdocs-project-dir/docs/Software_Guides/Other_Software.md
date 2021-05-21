@@ -382,12 +382,9 @@ When using more than one core, make sure your input file contains `%NProcShared=
 the number of cores your job is requesting.
 
 `$GAUSS_SCRDIR` is where Gaussian puts temporary files which can use a lot of space.
-On Myriad in a job this is created inside `$TMPDIR` by default. On diskless clusters, you 
-will want to set this to somewhere in your Scratch instead: after loading the Gaussian 
-module, `export $GAUSS_SCRDIR=$HOME/Scratch/gauss_scratch/$JOB_ID` for example.
-The `mkdir -p $GAUSS_SCRDIR` command in the examples will then create this directory 
-path if it doesn't exist. Using `$JOB_ID` (or `$JOB_ID.$SGE_TASK_ID` for array jobs) 
-will make sure each job uses a different directory inside there.
+On Myriad in a job this is created inside `$TMPDIR` by default. On diskless clusters, this 
+is set this to a directory in your Scratch instead: loading one of the Gaussian 
+modules will handle this automatically and show where it has created the directory.
 
 ```
 # Example for Gaussian 16
@@ -395,11 +392,9 @@ will make sure each job uses a different directory inside there.
 # Set up runtime environment
 module load gaussian/g16-a03/pgi-2016.5
 source $g16root/g16/bsd/g16.profile
-mkdir -p $GAUSS_SCRDIR
 
 # Run g16 job
-echo "GAUSS_SCRDIR = $GAUSS_SCRDIR"
-g16 < testdata.com > testdata.out
+g16 input.com
 ```
 
 ```
@@ -408,11 +403,9 @@ g16 < testdata.com > testdata.out
 # Setup runtime environment
 module load gaussian/g09-d01/pgi-2015.7
 source $g09root/g09/bsd/g09.profile
-mkdir -p $GAUSS_SCRDIR
 
 # Run g09 job
-echo "GAUSS_SCRDIR = $GAUSS_SCRDIR"
-g09 < testdata.com > testdata.out
+g09 input.com
 ```
 
 #### Linda parallel Gaussian jobs
@@ -432,7 +425,6 @@ export OMP_NUM_THREADS=40
 # Setup g09 runtime environment
 module load gaussian/g09-d01/pgi-2015.7
 source $g09root/g09/bsd/g09.profile
-mkdir -p $GAUSS_SCRDIR
 
 # Pre-process g09 input file to include nodes allocated to job
 echo "Running: lindaConv testdata.com $JOB_ID $TMPDIR/machines"
@@ -441,15 +433,12 @@ $lindaConv testdata.com $JOB_ID $TMPDIR/machines
 
 # Run g09 job
 
-echo "GAUSS_SCRDIR = $GAUSS_SCRDIR"
-echo ""
-echo "Running: g09 < job$JOB_ID.com > job$JOB_ID.out"
+echo "Running: g09 \"job$JOB_ID.com\""
 
 # communication needs to be via ssh not the Linda default
 export GAUSS_LFLAGS='-v -opt "Tsnet.Node.lindarsharg: ssh"'
 
-g09 < job$JOB_ID.com > job$JOB_ID.out
-
+g09 "job$JOB_ID.com"
 ```
 
 #### Troubleshooting: Memory errors
