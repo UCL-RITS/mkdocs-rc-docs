@@ -20,13 +20,14 @@ The bindpath specifies what directories are made available inside the container 
 mkdir $HOME/Scratch/.singularity
 
 # Set all the Singularity cache dirs to Scratch
-export SINGULARITY_CACHEDIR=$HOME/Scratch/.singularity/
+export SINGULARITY_CACHEDIR=$HOME/Scratch/.singularity
 export SINGULARITY_TMPDIR=$SINGULARITY_CACHEDIR/tmp
 export SINGULARITY_LOCALCACHEDIR=$SINGULARITY_CACHEDIR/localcache
 export SINGULARITY_PULLFOLDER=$SINGULARITY_CACHEDIR/pull
 
 # Bind your Scratch directory so it is accessible from inside the container
-export SINGULARITY_BINDPATH=/scratch/scratch/$USER
+#      and the temporary storage jobs are allocated
+export SINGULARITY_BINDPATH=/scratch/scratch/$USER,/tmpdir
 ```
 
 Different subdirectories are being set for each cache so you can tell which files came from where.
