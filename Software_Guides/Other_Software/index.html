@@ -1999,22 +1999,17 @@ UCL has a site license so UCL users can be added on request.</p>
 When using more than one core, make sure your input file contains <code>%NProcShared=</code> with
 the number of cores your job is requesting.</p>
 <p><code>$GAUSS_SCRDIR</code> is where Gaussian puts temporary files which can use a lot of space.
-On Myriad in a job this is created inside <code>$TMPDIR</code> by default. On diskless clusters, you 
-will want to set this to somewhere in your Scratch instead: after loading the Gaussian 
-module, <code>export $GAUSS_SCRDIR=$HOME/Scratch/gauss_scratch/$JOB_ID</code> for example.
-The <code>mkdir -p $GAUSS_SCRDIR</code> command in the examples will then create this directory 
-path if it doesn't exist. Using <code>$JOB_ID</code> (or <code>$JOB_ID.$SGE_TASK_ID</code> for array jobs) 
-will make sure each job uses a different directory inside there.</p>
+On Myriad in a job this is created inside <code>$TMPDIR</code> by default. On diskless clusters, this 
+is set this to a directory in your Scratch instead: loading one of the Gaussian 
+modules will handle this automatically and show where it has created the directory.</p>
 <div class="codehilite"><pre><span></span><code># Example for Gaussian 16
 
 # Set up runtime environment
 module load gaussian/g16-a03/pgi-2016.5
 source $g16root/g16/bsd/g16.profile
-mkdir -p $GAUSS_SCRDIR
 
 # Run g16 job
-echo &quot;GAUSS_SCRDIR = $GAUSS_SCRDIR&quot;
-g16 &lt; testdata.com &gt; testdata.out
+g16 input.com
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code># Example for Gaussian 09
@@ -2022,11 +2017,9 @@ g16 &lt; testdata.com &gt; testdata.out
 # Setup runtime environment
 module load gaussian/g09-d01/pgi-2015.7
 source $g09root/g09/bsd/g09.profile
-mkdir -p $GAUSS_SCRDIR
 
 # Run g09 job
-echo &quot;GAUSS_SCRDIR = $GAUSS_SCRDIR&quot;
-g09 &lt; testdata.com &gt; testdata.out
+g09 input.com
 </code></pre></div>
 
 <h4 id="linda-parallel-gaussian-jobs">Linda parallel Gaussian jobs<a class="headerlink" href="#linda-parallel-gaussian-jobs" title="Permanent link">§</a></h4>
@@ -2042,7 +2035,6 @@ export OMP_NUM_THREADS=40
 # Setup g09 runtime environment
 module load gaussian/g09-d01/pgi-2015.7
 source $g09root/g09/bsd/g09.profile
-mkdir -p $GAUSS_SCRDIR
 
 # Pre-process g09 input file to include nodes allocated to job
 echo &quot;Running: lindaConv testdata.com $JOB_ID $TMPDIR/machines&quot;
@@ -2051,14 +2043,12 @@ $lindaConv testdata.com $JOB_ID $TMPDIR/machines
 
 # Run g09 job
 
-echo &quot;GAUSS_SCRDIR = $GAUSS_SCRDIR&quot;
-echo &quot;&quot;
-echo &quot;Running: g09 &lt; job$JOB_ID.com &gt; job$JOB_ID.out&quot;
+echo &quot;Running: g09 \&quot;job$JOB_ID.com\&quot;&quot;
 
 # communication needs to be via ssh not the Linda default
 export GAUSS_LFLAGS=&#39;-v -opt &quot;Tsnet.Node.lindarsharg: ssh&quot;&#39;
 
-g09 &lt; job$JOB_ID.com &gt; job$JOB_ID.out
+g09 &quot;job$JOB_ID.com&quot;
 </code></pre></div>
 
 <h4 id="troubleshooting-memory-errors">Troubleshooting: Memory errors<a class="headerlink" href="#troubleshooting-memory-errors" title="Permanent link">§</a></h4>
