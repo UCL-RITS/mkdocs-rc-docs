@@ -62,7 +62,7 @@ example of how you can get a X terminal session with the qrsh command:
 
 ```
 qrsh -l mem=512M,h_rt=0:30:0 \
-   /shared/ucl/apps/mrxvt/0.5.4/bin/mrxvt -title 'User Test Node'
+   "/shared/ucl/apps/mrxvt/0.5.4/bin/mrxvt -title 'User Test Node'"
 ```
 
 ## Working on the nodes
