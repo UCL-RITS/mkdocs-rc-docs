@@ -814,6 +814,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#graphical-containers-in-interactive-jobs" class="md-nav__link">
+    Graphical containers in interactive jobs
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -896,6 +903,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#graphical-containers-in-interactive-jobs" class="md-nav__link">
+    Graphical containers in interactive jobs
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -941,6 +955,22 @@ export SINGULARITY_BINDPATH=/scratch/scratch/$USER,/tmpdir
 <li><a href="https://sylabs.io/guides/2.6/user-guide/bind_paths_and_mounts.html">Singularity Bind Paths and Mounts</a></li>
 <li><a href="https://sylabs.io/guides/2.6/user-guide/build_environment.html">Singularity Build Environment</a></li>
 </ul>
+<h2 id="graphical-containers-in-interactive-jobs">Graphical containers in interactive jobs<a class="headerlink" href="#graphical-containers-in-interactive-jobs" title="Permanent link">§</a></h2>
+<p>If you are trying to run a graphical application from inside a container in an 
+interactive job and it is failing with errors about not being able to open a 
+display, you will need to: </p>
+<ul>
+<li>ssh in to the cluster with <a href="../howto.md/#how-do-i-run-a-graphical-program">X-forwarding on</a> 
+as normal </li>
+<li>request an <a href="../../Interactive_Jobs/">interactive job</a> using <code>qrsh</code> </li>
+<li>bind mount your <code>$HOME/.Xauthority</code> file inside the container</li>
+</ul>
+<p>To do the bind mount, you could add it to your <code>$SINGULARITY_BINDPATH</code></p>
+<div class="codehilite"><pre><span></span><code>export SINGULARITY_BINDPATH=/scratch/scratch/$USER,/tmpdir,$HOME/.Xauthority
+</code></pre></div>
+
+<p>or you can pass it in with the <code>--bind</code> option to <code>singularity shell</code> or 
+<code>singularity exec</code>.</p>
                 
                   
                 
