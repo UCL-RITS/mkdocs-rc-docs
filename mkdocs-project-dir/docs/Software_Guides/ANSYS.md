@@ -23,15 +23,7 @@ The desired ANSYS module needs to be loaded by issuing a command like:
 module load ansys/19.1
 ```
 
-The first time this is done, users should run the shell script
-`setup_cfx.sh` to configure licensing and HP-MPI options on a login
-node: 
-
-```
-setup_cfx.sh
-```
-
-Running this script is required regardless of which ANSYS application you are running..
+This will set up various necessary config directories for you.
 
 The ANSYS applications are intended to be run primarily within batch
 jobs however you may run short (less than 5 minutes execution time)
