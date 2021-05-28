@@ -40,3 +40,22 @@ For more information on these options, have a look at the Singularity documentat
 * [Singularity Bind Paths and Mounts](https://sylabs.io/guides/2.6/user-guide/bind_paths_and_mounts.html)
 * [Singularity Build Environment](https://sylabs.io/guides/2.6/user-guide/build_environment.html)
 
+## Graphical containers in interactive jobs
+
+If you are trying to run a graphical application from inside a container in an 
+interactive job and it is failing with errors about not being able to open a 
+display, you will need to: 
+
+ * ssh in to the cluster with [X-forwarding on](../howto.md/#how-do-i-run-a-graphical-program) 
+as normal 
+ * request an [interactive job](../Interactive_Jobs.md) using `qrsh` 
+ * bind mount your `$HOME/.Xauthority` file inside the container
+
+To do the bind mount, you could add it to your `$SINGULARITY_BINDPATH`
+```
+export SINGULARITY_BINDPATH=/scratch/scratch/$USER,/tmpdir,$HOME/.Xauthority
+```
+
+or you can pass it in with the `--bind` option to `singularity shell` or 
+`singularity exec`.
+
