@@ -1088,13 +1088,7 @@ number of set up steps. These are detailed here.</p>
 <div class="codehilite"><pre><span></span><code>module load ansys/19.1
 </code></pre></div>
 
-<p>The first time this is done, users should run the shell script
-<code>setup_cfx.sh</code> to configure licensing and HP-MPI options on a login
-node: </p>
-<div class="codehilite"><pre><span></span><code>setup_cfx.sh
-</code></pre></div>
-
-<p>Running this script is required regardless of which ANSYS application you are running..</p>
+<p>This will set up various necessary config directories for you.</p>
 <p>The ANSYS applications are intended to be run primarily within batch
 jobs however you may run short (less than 5 minutes execution time)
 interactive tests on the Login Nodes and longer (up to two hours) on the
