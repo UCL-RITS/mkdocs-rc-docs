@@ -4,7 +4,7 @@ layout: docs
 
 # Planned Outages
 
-The second Tuesday of every month is a maintenance day, when the following compute clusters should be considered at risk from 8:00AM: Myriad, Kathleen, Thomas, Young, Michael, Aristotle and the Data Science Platform. We won’t necessarily perform maintenance every month, and notice by email will not always be given about maintenance day work that only puts services at risk.
+The second Tuesday of every month is a maintenance day, when the following clusters should be considered at risk from 8:00AM: Myriad, Kathleen, Thomas, Young, Michael, Aristotle and the Data Science Platform. We won’t necessarily perform maintenance every month, and notice by email will not always be given about maintenance day work that only puts services at risk.
 
 Full details of outages are emailed to the cluster-specific user lists. 
 
@@ -16,8 +16,8 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-08 Jun 2021 | Thomas | Pending | Storage will be at risk during an essential controller reboot.
-15 Jun 2021 -> 18 Jun 2021 | Myriad | Pending | Datacentre network outage. No jobs will run on the 15th, and Myriad will be at risk for the rest of the week.
+08 Jun 2021 | Thomas | Planned | Storage will be at risk during an essential controller reboot.
+15 Jun 2021 -> 18 Jun 2021 | Myriad | Planned | Datacentre network outage. No jobs will run on the 15th, and Myriad will be at risk for the rest of the week.
 
 ## Previous Outages
 
