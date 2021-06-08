@@ -17,7 +17,9 @@ Materials and Molecular Modelling.
 
     Thomas has now been retired as an MMM Hub machine.
     A portion of Thomas is running for UCL users only until the end of 2021.
+
     7 June 2021: Thomas is now inside the UCL firewall, use VPN, Socrates or ssh.rc.ucl.ac.uk
+    to access.
 
 ## Applying for an account
 
