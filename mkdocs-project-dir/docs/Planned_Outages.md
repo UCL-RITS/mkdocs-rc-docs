@@ -17,6 +17,7 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
 08 Jun 2021 | Thomas | Planned | Storage will be at risk during an essential controller reboot.
+14 Jun 2021 | Kathleen, Young and Data Science Platform | Planned | Datacentre network outage 8.30-9am. No login access and no jobs will run.
 15 Jun 2021 -> 18 Jun 2021 | Myriad | Planned | Datacentre network outage. No jobs will run on the 15th, and Myriad will be at risk for the rest of the week.
 
 ## Previous Outages
