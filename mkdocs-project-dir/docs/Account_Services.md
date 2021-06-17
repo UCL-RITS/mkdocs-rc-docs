@@ -39,9 +39,9 @@ You will need a UCL user name and password. These are the same credentials used
 to access core services like Portico and HR systems.
 
 !!! important "Application Form Outage"
-  The account application form was having intermittent failures to load or to post
-  form submissions from 15-17 June. This should have improved now - we are still 
-  monitoring the situation..
+    The account application form was having intermittent failures to load or to post
+    form submissions from 15-17 June. This should have improved now - we are still 
+    monitoring the situation.
 
 ### Application process
 
