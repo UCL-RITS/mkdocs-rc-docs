@@ -1549,6 +1549,11 @@ used to log in. External users will have a username in the form
 <div class="codehilite"><pre><span></span><code>thomas.rc.ucl.ac.uk
 </code></pre></div>
 
+<p>From inside the UCL VPN you can ssh directly into the above but from outside you can do
+the following:</p>
+<div class="codehilite"><pre><span></span><code>ssh -o ProxyJump=&lt;UCL_user_ID&gt;@socrates.ucl.ac.uk &lt;thomas_user_ID&gt;@thomas.rc.ucl.ac.uk
+</code></pre></div>
+
 <h3 id="ssh-timeouts">SSH timeouts<a class="headerlink" href="#ssh-timeouts" title="Permanent link">§</a></h3>
 <p>Idle ssh sessions will be disconnected after 7 days.</p>
 <h2 id="using-the-system">Using the system<a class="headerlink" href="#using-the-system" title="Permanent link">§</a></h2>
