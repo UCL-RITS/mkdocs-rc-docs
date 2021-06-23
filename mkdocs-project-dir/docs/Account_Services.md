@@ -40,10 +40,6 @@ to access core services like Portico and HR systems.
 
 <<<<<<< HEAD
 =======
-!!! important "Application Form Outage"
-    The account application form was having intermittent failures to load or to post
-    form submissions from 15-17 June. This should have improved now - we are still 
-    monitoring the situation.
 >>>>>>> 53c1198009f0cd1c8144a601afef53ef558694e2
 
 ### Application process
