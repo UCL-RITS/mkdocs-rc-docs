@@ -38,7 +38,7 @@ The online application form can be found here:
 You will need a UCL user name and password. These are the same credentials used
 to access core services like Portico and HR systems.
 
-=======
+
 
 ### Application process
 
