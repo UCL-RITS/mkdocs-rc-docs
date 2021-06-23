@@ -89,6 +89,13 @@ You ssh directly to:
 thomas.rc.ucl.ac.uk
 ```
 
+From inside the UCL VPN you can ssh directly into the above but from outside you can do
+the following:
+
+```
+ssh -o ProxyJump=<UCL_user_ID>@socrates.ucl.ac.uk <thomas_user_ID>@thomas.rc.ucl.ac.uk
+```  
+
 ### SSH timeouts
 
 Idle ssh sessions will be disconnected after 7 days.
