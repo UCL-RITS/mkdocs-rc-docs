@@ -385,7 +385,7 @@ This directory needs to be in your Scratch directory as compute nodes need to be
 
 2) On your local workstation/laptop create a directory to hold information about jobs that have been submitted to the cluster. Again you should not use this directory for anything else.
 
-3) Download either the the [support files for remote submission to Myriad for R2021a](matlab_resources/Myriad_submit_R2021a.zip) or [support files for remote submission to Myriad for R2018b](matlab_resources/Legion_submit_R2018b.zip). Make sure you download the correct one for your version of MATLAB!
+3) Download either the the [support files for remote submission to Myriad for R2021a](matlab_resources/Myriad_submit_R2021a.zip) or [support files for remote submission to Myriad for R2018b](matlab_resources/Myriad_submit_R2018b.zip). Make sure you download the correct one for your version of MATLAB!
 
 4) This step **MUST** be done while Matlab is shut down. Unzip the archive into MATLAB's local toolbox directory. Default locations for the local toolbox directory are:
 
