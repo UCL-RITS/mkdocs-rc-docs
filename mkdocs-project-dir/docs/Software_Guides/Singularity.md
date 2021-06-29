@@ -19,6 +19,11 @@ The bindpath specifies what directories are made available inside the container 
 # Create a .singularity directory in your Scratch
 mkdir $HOME/Scratch/.singularity
 
+# Create cache subdirectories we will use / export
+mkdir $HOME/Scratch/.singularity/tmp
+mkdir $HOME/Scratch/.singularity/localcache
+mkdir $HOME/Scratch/.singularity/pull
+
 # Set all the Singularity cache dirs to Scratch
 export SINGULARITY_CACHEDIR=$HOME/Scratch/.singularity
 export SINGULARITY_TMPDIR=$SINGULARITY_CACHEDIR/tmp
