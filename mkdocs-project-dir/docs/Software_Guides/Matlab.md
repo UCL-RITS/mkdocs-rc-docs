@@ -5,11 +5,16 @@ layout: docs
 
 MATLAB is a numerical computing environment and proprietary programming language developed by MathWorks.
 
-Our MATLAB installs include all the toolboxes included in UCL's Total Academic Headcount-Campus licence plus the Matlab Distributed Computing Server. We also have the NAG toolbox for Matlab available.
+Our MATLAB installs include all the toolboxes included in UCL's Total Academic Headcount-Campus licence plus the MATLAB Parallel Server. We also have the NAG toolbox for Matlab available.
 
-You can submit single node multi-threaded MATLAB jobs or single node jobs which use the Parallel Computing Toolbox and Matlab's Distributed Computing Server. Please note that these currently will not work across multiple nodes, so all types of MATLAB jobs can only use one node.
+You can submit single node multi-threaded MATLAB jobs, single node
+jobs which use the Parallel Computing Toolbox and the MATLAB Parallel
+	Server (MPS) and MATLAB GPU jobs. Currently MATLAB jobs can only be run
+	on Myriad however we are working with MathWorks to allow the
+	submission of multi-node MPS jobs on Kathleen.
 
-You can submit jobs to Myriad and Legion from MATLAB running on your own desktop or laptop.
+
+You can also submit jobs to Myriad from MATLAB running on your own desktop or laptop.
 
 ## Setup
 
@@ -18,10 +23,10 @@ You need to load MATLAB once from a login node before you can submit any jobs. T
 ```
 # on a login node
 module load xorg-utils/X11R7.7
-module load matlab/full/r2018b/9.5
+module load matlab/full/r2021a/9.10
 ``` 
 
-You can run `module avail matlab` to see all the available installed versions.
+We have other versions of MATLAB installed. You can run `module avail matlab` to see all the available installed versions.
 
 ## Single node multi-threaded batch jobs
 
@@ -66,7 +71,7 @@ Here is an example jobscript which you would submit using the `qsub` command, af
 cd $TMPDIR
 
 module load xorg-utils/X11R7.7
-module load matlab/full/r2018b/9.5
+module load matlab/full/r2021a/9.10
 # outputs the modules you have loaded
 module list
 
@@ -130,30 +135,37 @@ Launching with `matlab` will give you the full graphical user interface - you wi
 
 Launching with `matlab -nodesktop -nodisplay` will give you the MATLAB terminal.
 
+[//]: # Up to this point on revision.
 
-## Submitting jobs using the Distributed Computing Server (DCS)
+## Submitting jobs using the MATLAB Parallel Server (MPS)
 
-You must have loaded the MATLAB module once from a login node as described in [Setup](#setup) before you can submit any Matlab DCS jobs.
+You must have loaded the MATLAB module once from a login node as described in [Setup](#setup) before you can submit any MATLAB MPS jobs.
 
-MATLAB DCS jobs must be submitted from an interactive or scripted Matlab session which can be running on the cluster login nodes or on your own machine.
+MATLAB PCS jobs must be submitted from an interactive or scripted
+Matlab session which can be running on the cluster login nodes, from
+another MATLAB job or on your own machine.
 
-MATLAB DCS jobs will only work inside a single node on our clusters. On Myriad this means a maximum of 36 workers can be used per job.
+MATLAB MPS jobs will currently only work inside a single node on our
+clusters. On Myriad this means a maximum of 36 workers can be used per
+job.
+
+
 
 ### Importing the cluster profile
 
 You need to import the cluster profile into your MATLAB environment and set it as the default before you can submit DCS jobs. This only needs doing once. The imported profile will be saved in your MATLAB settings directory.
 
-Importing the profile can be done either by calling MATLAB functions or via the graphical interface. The profile is stored here (for 2018b): 
+Importing the profile can be done either by calling MATLAB functions or via the graphical interface. The profile is stored here (for R2021a): 
 ```
-/shared/ucl/apps/Matlab/toolbox_local/Legion/R2018b/LegionGraceMyriadProfile_R2018b.settings
+/shared/ucl/apps/Matlab/toolbox_local/R2021a/myriad_R2021a.mlsettings
 ```
 
 #### Import using MATLAB functions
 
 Run these functions from a MATLAB session:
 ```
-profile_Legion = parallel.importProfile ('/shared/ucl/apps/Matlab/toolbox_local/Legion/R2018b/LegionGraceMyriadProfile_R2018b.settings');
-parallel.defaultClusterProfile ('LegionGraceMyriadProfileR2018b');
+profile_Myriad = parallel.importProfile ('/shared/ucl/apps/Matlab/toolbox_local/R2021a/myriad_R2021a.mlsettings');
+parallel.defaultClusterProfile ('myriad_R2021a');
 ```
 
 #### Import from MATLAB GUI
@@ -163,19 +175,23 @@ To import using the graphical interface instead, do this.
 1. From the Home tab select the Parallel menu and click _Create and Manage Clusters..._.
 2. The Cluster Profile Manager window will open.
 ![MATLAB Cluster Profile Manager screenshot](../img/MATLAB_ClusterProfBefore.png)
-3. Select Import and in the _Import Profiles from file_ window navigate to the LegionGraceMyriadProfile_R2018b.settings file shown above and select Open.
-4. Select the resulting LegionGraceMyriadProfileR2018b profile and click _Set as Default_. The Cluster Profile Manager window should now look like this:
-![MATLAB Cluster Profile Manager screenshot after](../img/MATLAB_ClusterProfAfter_R2018b.png)
+3. Select Import and in the _Import Profiles from file_ window navigate to the myriad_R2021a.mlsettings file shown above and select Open.
+4. Select the resulting myriad_R2021a profile and click _Set as Default_. The Cluster Profile Manager window should now look like this:
+![MATLAB Cluster Profile Manager screenshot after](../img/MATLAB_ClusterProfAfter.png)
 
 In both cases after you exit MATLAB your cluster profile is saved for future use.
 
 #### Environment variables needed for job submission
 
-We have set up three Grid Engine environment variables to assist with job submission from within MATLAB. These are needed to pass in job resource parameters that aren't supported by the internal MATLAB job submission mechanism.
+We have set up four Grid Engine environment variables to assist with job submission from within MATLAB. These are needed to pass in job resource parameters that aren't supported by the internal MATLAB job submission mechanism.
 
 * `SGE_CONTEXT`: a comma-separated list of variables treated as if added via the `-ac` option, eg. `exclusive`
 * `SGE_OPT`: a comma-separated list of resources treated as if added via the `-l` option, eg. `h_rt=0:10:0,mem=1G,tmpfs=15G`
-* `SGE_PROJECT`: a project treated as if added via the `-P` option (not normally needed).
+
+and two project and Gold related variables. Most users will not need to use either of these:
+
+* `SGE_PROJECT`: a project treated as if added via the `-P` option.
+* `SGE_ACCOUNT`: a Gold project as if added via the `-A` option. When using this your `SGE_PROJECT` needs to be set to `Gold`.
 
 `-ac exclusive` prevents anything else running on the same node as your job, even if you aren't using all the cores. This is no longer a necessary option for MATLAB jobs.
 
@@ -186,6 +202,7 @@ There are two ways to set these:
 export SGE_CONTEXT=exclusive
 export SGE_OPT=h_rt=0:15:0,mem=2G,tmpfs=15G
 export SGE_PROJECT=<your project ID>
+export SGE_ACCOUNT=<your Gold project>
 ```
 
 2) Inside your MATLAB session, using MATLAB's `setenv` function:
@@ -193,9 +210,10 @@ export SGE_PROJECT=<your project ID>
 setenv ('SGE_CONTEXT', 'exclusive');
 setenv ('SGE_OPT', 'h_rt=0:15:0,mem=2G,tmpfs=15G'); 
 setenv ('SGE_PROJECT', '<your project ID>');
+setenv ('SGE_ACCOUNT', '<your Gold project>');
 ```
 
-#### Example: a simple DCS job
+#### Example: a simple MPS job
 
 This submits a job from inside a MATLAB session running on a login node. You need to start MATLAB from a directory in Scratch - jobs will inherit this as their working directory.
 
@@ -204,7 +222,7 @@ This is an example where you have only one MATLAB source file.
 1) Change to the directory in Scratch you want the job to run from and set the SGE environment variables.
 ```
 cd ~/Scratch/Matlab_examples
-export SGE_OPT=h_rt=0:10:0,mem=1G,tmpfs=15G
+export SGE_OPT=h_rt=0:10:0,mem=2G,tmpfs=15G
 ```
 
 2) Either start the MATLAB GUI:
@@ -218,7 +236,7 @@ matlab -nodesktop -nodisplay
 
 3) Inside MATLAB, create a cluster object using the cluster profile:
 ```
-c = parcluster ('LegionGraceMyriadProfileR2018b');
+c = parcluster ('myriad_R2021a');
 ```
 
 4) Use your cluster object to create a job object of the type you need. For this example the job is a parallel job with communication between MATLAB workers of type "Single Program Multiple Data":
@@ -228,8 +246,9 @@ myJob = createCommunicatingJob (c, 'Type', 'SPMD');
 
 5) Set the number of workers:
 ```
-num_workers = 36;
+num_workers = 8;
 ```
+The maximum value you can set here on Myriad is 36.
 
 6) Tell the job the files needed to be made available to each worker - in this example there is only one file:
 ```
@@ -263,7 +282,7 @@ logMess = getDebugLog (c, myJob);
 ```
 
 
-#### Example: a DCS job with more than one input file
+#### Example: a MPS job with more than one input file
 
 This example has several input files. The job type is "MATLAB Pool". A "Pool" job runs the specified task function with a MATLAB pool available to run the body of parfor loops or spmd blocks and is the default job type. This example was kindly supplied to assist in testing MATLAB by colleagues from CoMPLEX. 
 
@@ -272,7 +291,7 @@ The first part of creating the job is the same as the above example apart from t
 1)  Change into a directory in Scratch, set the SGE variables and launch MATLAB:
 ```
 cd ~/Scratch/Matlab_examples
-export SGE_OPT=h_rt=1:0:0,mem=2G,tmpfs=15G
+export SGE_OPT=h_rt=1:0:0,mem=4G,tmpfs=15G
 matlab
 ```
 to launch the GUI or:
@@ -281,7 +300,7 @@ matlab -nodesktop -nodisplay
 ```
 to start a terminal session. 
 ```
-c = parcluster ('LegionGraceMyriadProfileR2018b');
+c = parcluster ('myriad_R2021a');
 ```
 
 2) Using our cluster object create a job object of type "Pool":
@@ -331,7 +350,7 @@ As before use `fetchOutputs` to collect the results.
 
 If you closed your session, you can get your results by:
 ```
-c = parcluster ('LegionGraceMyriadProfileR2018b'); # get a cluster object
+c = parcluster ('myriad_R2021a');                  # get a cluster object
 jobs = findJob(c)                                  # get a list of jobs submitted to that cluster
 job = jobs(3);                                     # pick a particular job
 results = fetchOutputs(job)
@@ -345,20 +364,20 @@ There is a lot more information about using the MATLAB Distributed Computing Ser
 
 ## Submitting MATLAB jobs from your workstation/laptop
 
-You can submit MATLAB jobs to Myriad and Legion from MATLAB sessions running on your own desktop workstation or laptop systems provided they are running the same version of MATLAB and your computer is within the UCL firewall. 
+You can submit MATLAB jobs to Myriad from MATLAB sessions running on your own desktop workstation or laptop systems provided they are running the same version of MATLAB and your computer is within the UCL firewall. 
 
-With MATLAB R2018b you can currently submit jobs to Myriad and Legion. Older versions (R2016b and R2018a) can be used to submit jobs to Legion only, if you still have an account. 
+With MATLAB R2021a you can currently submit jobs to Myriad. Support for R2018b is also still available. 
 
 ### Prerequisites
 
 1. You must already have an account on the clusters!
-2. Have MATLAB R2018b installed on your local workstation/laptop. The local version must match the version running jobs. MATLAB R2018b can be downloaded from the [UCL Software Database](http://swdb.ucl.ac.uk/package/view/id/2?filter=Matlab).
+2. Have MATLAB R2021a (or R2018b) installed on your local workstation/laptop. The local version must match the version running jobs. MATLAB R2021a can be downloaded from the [UCL Software Database](http://swdb.ucl.ac.uk/package/view/id/2?filter=Matlab).
 3. Your local workstation/laptop installation of MATLAB must include the Parallel Computing toolbox. This is included in the UCL TAH MATLAB license and may be installed automatically.
 4. If your local workstation/laptop is not directly connected to the UCL network (at home for example), you need to have the [UCL VPN client](https://www.ucl.ac.uk/isd/services/get-connected/remote-working-services/ucl-virtual-private-network-vpn) installed and running on it.
 
 ### Remote setup
 
-1) On the cluster you are using (Myriad or Legion) create a directory to hold remotely submitted job details. For example:
+1) On the cluster you are using (Myriad in this case) create a directory to hold remotely submitted job details. For example:
 ```
 mkdir ~/Scratch/Matlab_remote_jobs
 ```
@@ -366,27 +385,24 @@ This directory needs to be in your Scratch directory as compute nodes need to be
 
 2) On your local workstation/laptop create a directory to hold information about jobs that have been submitted to the cluster. Again you should not use this directory for anything else.
 
-3) Download the [support files for remote submission to Myriad and Legion for R2018b](matlab_resources/Myriad_submit_R2018b.zip) or [support files for remote submission to Legion only for R2018a](matlab_resources/Legion_submit_R2018a.zip). Make sure you download the correct one for your version of MATLAB!
+3) Download either the the [support files for remote submission to Myriad for R2021a](matlab_resources/Myriad_submit_R2021a.zip) or [support files for remote submission to Myriad for R2018b](matlab_resources/Legion_submit_R2018b.zip). Make sure you download the correct one for your version of MATLAB!
 
 4) This step **MUST** be done while Matlab is shut down. Unzip the archive into MATLAB's local toolbox directory. Default locations for the local toolbox directory are:
 
 * Linux:
-The default local toolbox location is `/usr/local/MATLAB/R2018b/toolbox/local` for R2018b. Navigate to this directory and use `unzip -x archive_name`. 
+The default local toolbox location is `/usr/local/MATLAB/R2021a/toolbox/local` for R2021a. Navigate to this directory and use `unzip -x archive_name`. 
 * Mac OS X:
-The default local toolbox location is `/Applications/MATLAB_R2018b.app/toolbox/local` for R2018b. In order to view or change the contents of an application package, open `/Applications` in a Finder window. Then right-click the application and select "View Package Contents." Then navigate to the appropriate directory. Note: if you don't have access to `/Applications/MATLAB_R2018b.app/toolbox/local`, you can unzip the support files into `~/Documents/MATLAB/` instead. 
+The default local toolbox location is `/Applications/MATLAB_R2021a.app/toolbox/local` for R2021a. In order to view or change the contents of an application package, open `/Applications` in a Finder window. Then right-click the application and select "View Package Contents." Then navigate to the appropriate directory. Note: if you don't have access to `/Applications/MATLAB_R2021a.app/toolbox/local`, you can unzip the support files into `~/Documents/MATLAB/` instead. 
 * Windows:
-The default local toolbox location is `C:\Program Files\MATLAB\R2018b\toolbox\local` for R2018b. Extract the archive here. You can unzip the support files into `Documents\MATLAB\` instead.
+The default local toolbox location is `C:\Program Files\MATLAB\R2021a\toolbox\local` for R2021a. Extract the archive here. You can unzip the support files into `Documents\MATLAB\` instead.
 
-5) Download the [parallelProfileMyriad function](matlab_resources/ParallelProfileMyriad.m.zip) or the [parallelProfileLegion function](matlab_resources/ParallelProfileLegion.m.zip) to your local workstation/laptop. It will need to be unzipped. These functions create a cluster profile for Myriad or Legion.
+5) Download the [parallelProfileMyriad function](matlab_resources/parallelProfileMyriad.m)  to your local workstation/laptop. It will need to be unzipped. This function create a cluster profile for Myriad for R2021a or R2018b.
 
-6) Start MATLAB, navigate to where you saved the `parallelProfileMyriad.m` or `parallelProfileLegion.m` files and run the function by typing:
+6) Start MATLAB, navigate to where you saved the `parallelProfileMyriad.m` file and run the function by typing:
 ```
 parallelProfileMyriad
 ```
-or:
-```
-parallelProfileLegion
-```
+
 at your MATLAB prompt (in your MATLAB Command Window if running the MATLAB GUI) and answer the questions.
 
 ### Submitting a job to the cluster
@@ -398,15 +414,16 @@ Eg. in your MATLAB session set:
 setenv ('SGE_CONTEXT', 'exclusive');                # optional
 setenv ('SGE_OPT', 'h_rt=0:15:0,mem=2G,tmpfs=15G'); 
 setenv ('SGE_PROJECT', '<your project ID>');        # optional
+setenv ('SGE_ACCOUNT', '<your Gold project>');      # optional
 ```
 
 2) In your MATLAB session create a cluster object using the cluster profile created by the `parallelProfile...` functions. For Myriad:
 ```
-c = parcluster ('myriad_R2018b');
+c = parcluster ('myriad_R2021a');
 ```
-For Legion the profile is called `legion_R2018b`.
 
-3) You can now create and submit jobs in a similar way to that shown in the DCS examples above starting from step 4 in the [simple DCS job example](#example-a-simple-dcs-job) or step 2 in the [DCS job with multiple input files example](#example-a-dcs-job-with-more-than-one-input-file).
+
+3) You can now create and submit jobs in a similar way to that shown in the MPS examples above starting from step 4 in the [simple MPS job example](#example-a-simple-dcs-job) or step 2 in the [MPS job with multiple input files example](#example-a-dcs-job-with-more-than-one-input-file).
 
 
 ### Viewing your results
@@ -421,7 +438,7 @@ Right-click on a job and choose "fetch outputs".
 
 This is what will be executed (for job4 on Myriad):
 ```
-myCluster = parcluster('myriad_R2018b');
+myCluster = parcluster('myriad_R2021a');
 job4 = myCluster.findJob('ID',4);
 job4_output = fetchOutputs(job4);
 ```
@@ -443,7 +460,7 @@ Task with ID xxx returned 0 outputs but 1 were expected
 ```
 You need to retrieve the debug log to find out what happened. Example:
 ```
-myCluster = parcluster('myriad_R2018b');
+myCluster = parcluster('myriad_R2021a');
 job4 = myCluster.findJob('ID',4);
 
 jobLog = getDebugLog (myCluster, job4);
@@ -500,7 +517,7 @@ cp /home/ccaabaa/Software/Matlab/Mandelbrot_GPU.m $TMPDIR
 module unload compilers mpi
 module load compilers/gnu/4.9.2
 module load xorg-utils/X11R7.7
-module load matlab/full/r2018b/9.5
+module load matlab/full/r2021a/9.10
 module list
 
 # These echoes output what you are about to run
