@@ -466,7 +466,7 @@ To submit a free job that will not use up any Gold, use this instead:
 
 You can also submit testing jobs that will not use up any Gold, and will
 have higher priority than normal free jobs, but are limited to 2 nodes
-(48 cores) and 1 hour of
+(80 cores) and 1 hour of
 walltime:
 
 ```
