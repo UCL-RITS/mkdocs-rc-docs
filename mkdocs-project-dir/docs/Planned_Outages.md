@@ -16,14 +16,15 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-08 Jun 2021 | Thomas | Planned | Storage will be at risk during an essential controller reboot.
-14 Jun 2021 | Kathleen, Young and Data Science Platform | Planned | Datacentre network outage 8.30-9am. No login access and no jobs will run.
-15 Jun 2021 -> 18 Jun 2021 | Myriad | Planned | Datacentre network outage. No jobs will run on the 15th, and Myriad will be at risk for the rest of the week.
+12 July 2021        | Myriad  | Planned | Drain of d97a (Economics) nodes for 8am to update network config. May require less than the full day. Jobs will remain in queue until drain is over or run on other nodes if they can.
 
 ## Previous Outages
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+15 Jun 2021 -> 18 Jun 2021 | Myriad | Completed | Datacentre network outage. No jobs will run on the 15th, and Myriad will be at risk for the rest of the week.
+14 Jun 2021 | Kathleen, Young and Data Science Platform | Completed | Datacentre network outage 8.30-9am. No login access and no jobs will run.
+08 Jun 2021 | Thomas | Completed | Storage will be at risk during an essential controller reboot.
 22 May 2021 -> 24 May 2021 | Michael | Completed | Datacentre network outage. Queues to be drained. Full outage, no access.
 22 May 2021 -> 24 May 2021 | Young | Completed | Gold and job submission expected to be unavailable while database uncontactable due to datacentre network outage.
 22 May 2021 -> 24 May 2021 | Myriad and Kathleen | Completed | Gold (i.e. high priority) job submission expected to be unavailable while database uncontactable due to datacentre network outage.
