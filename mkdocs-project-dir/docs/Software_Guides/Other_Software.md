@@ -474,8 +474,23 @@ We have many versions of GROMACS installed, some built with Plumed. The module n
 Which executable you should run depends on the problem you wish to solve. For both single and double precision version builds, serial binaries and an MPI binary for mdrun (`mdrun_mpi` for newer versions, `gmx_mpi` for Plumed and some older versions) are provided. Double precision binaries have a `_d` suffix (so `gmx_d`, `mdrun_mpi_d`, `gmx_mpi_d` etc). 
 
 ```
+# Example for gromacs/2021.2/gnu-7.3.0
+module load beta-modules
+module unload -f compilers mpi gcc-libs
+module load gcc-libs/7.3.0
+module load compilers/gnu/7.3.0
+module load mpi/openmpi/3.1.4/gnu-7.3.0
+module load python3
+module load gromacs/2021.2/gnu-7.3.0
+
+# Run GROMACS - replace with mdrun command line suitable for your job!
+
+gerun mdrun_mpi -v -stepout 10000
+```
+
+```
 # Example for gromacs/2019.3/intel-2018
-module unload compilers mpi
+module unload -f compilers mpi
 module load compilers/intel/2018/update3
 module load mpi/intel/2018/update3/intel
 module load gromacs/2019.3/intel-2018
@@ -487,7 +502,7 @@ gerun mdrun_mpi -v -stepout 10000
 
 ```
 # Plumed example for gromacs/2019.3/plumed/intel-2018
-module unload compilers mpi
+module unload -f compilers mpi
 module load compilers/intel/2018/update3 
 module load mpi/intel/2018/update3/intel 
 module load libmatheval 
