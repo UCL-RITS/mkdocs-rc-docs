@@ -1182,7 +1182,30 @@ Building your own VASP: You may also install your own copy of VASP in your home 
 
 XMDS allows the fast and easy solution of sets of ordinary, partial and stochastic differential equations, using a variety of efficient numerical algorithms. 
 
-You will need to load the modules on a login node and run `xmds2-setup` to set up XMDS. 
+We have XMDS 3 and XMDS 2 installed.
+
+For XMDS 3.0.0 you will need to load the modules on a login node and run `xmds3-setup` 
+to set up XMDS.
+
+```
+module unload compilers
+module unload mpi
+module load compilers/gnu/4.9.2
+module load mpi/intel/2015/update3/gnu-4.9.2
+module load python3/3.7
+module load fftw/3.3.4-impi/gnu-4.9.2
+module load hdf/5-1.8.15/gnu-4.9.2
+module load xmds/3.0.0
+
+# run this on a login node to set up XMDS
+xmds3-setup
+```
+
+You can also build the current developmental version from SVN in your space by running 
+`create-svn-xmds3-inst`.
+
+For XMDS 2.2.2 you will need to load the modules on a login node and run `xmds2-setup` 
+to set up XMDS. 
 
 ```
 module unload compilers
@@ -1198,6 +1221,6 @@ module load xmds/2.2.2
 xmds2-setup
 ```
 
-You can also build the current developmental version from SVN in your space by running `create-svn-xmds-inst`. Note: the SVN version on 28 Oct 2015 was failing unit test `test_nonlocal_access_multiple_components`. 
-
+Note that the `create-svn-xmds-inst` SVN install using the 2.2.2 modules will 
+no longer work since the release of XMDS 3.0.0 (see above to use that).
 
