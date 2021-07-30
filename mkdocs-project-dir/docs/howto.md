@@ -35,7 +35,7 @@ You will then be asked to enter your username and password. Only enter your user
 
 ### Logging in from outside the UCL firewall
 
-You will need to either use the [UCL Virtual Private Network](https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn/) or ssh in to UCL's gateway `socrates.ucl.ac.uk` first. From Socrates you can then ssh in to our systems. 
+You will need to either use the [UCL Virtual Private Network](https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn/) or ssh in to UCL's gateways `socrates.ucl.ac.uk` or `ssh.rc.ucl.ac.uk` first. From there you can then ssh in to our systems. 
 
 ```
 ssh <your_UCL_user_id>@socrates.ucl.ac.uk
@@ -52,6 +52,10 @@ html.pub/
 
 **Advanced:** If you find you need to go via Socrates often, you can set up this jump automatically, see [Single-step logins using tunnelling](#single-step-logins-using-tunnelling)
 
+#### China Connect
+
+If you are on China Connect, you will still need to ssh in to a UCL gateway first as 
+described above.
 
 ### Login problems
 
