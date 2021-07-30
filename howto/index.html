@@ -473,6 +473,19 @@
     Logging in from outside the UCL firewall
   </a>
   
+    <nav class="md-nav" aria-label="Logging in from outside the UCL firewall">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#china-connect" class="md-nav__link">
+    China Connect
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1305,6 +1318,19 @@
     Logging in from outside the UCL firewall
   </a>
   
+    <nav class="md-nav" aria-label="Logging in from outside the UCL firewall">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#china-connect" class="md-nav__link">
+    China Connect
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1678,7 +1704,7 @@
 <p><img alt="PuTTY screenshot" src="../img/putty_gui.png" /></p>
 <p>You will then be asked to enter your username and password. Only enter your username, not <code>@&lt;system_name&gt;.rc.ucl.ac.uk</code>. The password field will remain entirely blank when you type in to it - it does not show placeholders to indicate you have typed something. </p>
 <h3 id="logging-in-from-outside-the-ucl-firewall">Logging in from outside the UCL firewall<a class="headerlink" href="#logging-in-from-outside-the-ucl-firewall" title="Permanent link">§</a></h3>
-<p>You will need to either use the <a href="https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn/">UCL Virtual Private Network</a> or ssh in to UCL's gateway <code>socrates.ucl.ac.uk</code> first. From Socrates you can then ssh in to our systems. </p>
+<p>You will need to either use the <a href="https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn/">UCL Virtual Private Network</a> or ssh in to UCL's gateways <code>socrates.ucl.ac.uk</code> or <code>ssh.rc.ucl.ac.uk</code> first. From there you can then ssh in to our systems. </p>
 <div class="codehilite"><pre><span></span><code>ssh &lt;your_UCL_user_id&gt;@socrates.ucl.ac.uk
 ssh &lt;your_UCL_user_id&gt;@&lt;system_name&gt;.rc.ucl.ac.uk
 </code></pre></div>
@@ -1690,6 +1716,9 @@ html.pub/
 </code></pre></div>
 
 <p><strong>Advanced:</strong> If you find you need to go via Socrates often, you can set up this jump automatically, see <a href="#single-step-logins-using-tunnelling">Single-step logins using tunnelling</a></p>
+<h4 id="china-connect">China Connect<a class="headerlink" href="#china-connect" title="Permanent link">§</a></h4>
+<p>If you are on China Connect, you will still need to ssh in to a UCL gateway first as 
+described above.</p>
 <h3 id="login-problems">Login problems<a class="headerlink" href="#login-problems" title="Permanent link">§</a></h3>
 <p>If you experience difficulties with your login, please make sure that you are typing your UCL user ID and your password correctly. If you have recently updated your password, it takes some hours to propagate to all UCL systems.</p>
 <p>If you still cannot get access but can access other UCL services like Socrates, please contact us on rc-support@ucl.ac.uk. Your account may have expired, or you may have gone over quota.</p>
