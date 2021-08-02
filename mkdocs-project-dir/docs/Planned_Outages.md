@@ -16,7 +16,7 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-Tues 3 Aug 2021     | Young, Michael | Planned | Morning: ~10 mins Gold outage for security updates. New job submission and Gold commands will not work during this. 
+Tues 3 Aug 2021     | Young, Michael | Planned | Shortly after 8am: ~10 mins Gold outage for security updates. New job submission and Gold commands will not work during this. 
 
 ## Previous Outages
 
