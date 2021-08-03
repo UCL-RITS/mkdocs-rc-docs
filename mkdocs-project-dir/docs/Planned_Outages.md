@@ -16,12 +16,12 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-Tues 3 Aug 2021     | Young, Michael | Planned | Shortly after 8am: ~10 mins Gold outage for security updates. New job submission and Gold commands will not work during this. 
 
 ## Previous Outages
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+03 Aug 2021     | Young, Michael | Completed | Shortly after 8am: ~10 mins Gold outage for security updates. New job submission and Gold commands will not work during this.
 12 July 2021        | Myriad  | Completed | Drain of d97a (Economics) nodes for 8am to update network config. May require less than the full day. Jobs will remain in queue until drain is over or run on other nodes if they can.
 15 Jun 2021 -> 18 Jun 2021 | Myriad | Completed | Datacentre network outage. No jobs will run on the 15th, and Myriad will be at risk for the rest of the week.
 14 Jun 2021 | Kathleen, Young and Data Science Platform | Completed | Datacentre network outage 8.30-9am. No login access and no jobs will run.
