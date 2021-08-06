@@ -9,11 +9,11 @@ If you want to request that software be installed centrally, you can email us at
 rc-support@ucl.ac.uk. When you send in a request please address the following questions so 
 that the install can be properly prioitised and planned,
 
-*Can you provide some details as to why and give an idea of the timeline you would like us to build it.
+* Can you provide some details as to why and give an idea of the timeline you would like us to build it.
 
-*Do you have an idea of the user base for this software within your community, if you are asking for some software on the MMM machines this can be the wider community and for UCL machines users in your ecosystem.
+* Do you have an idea of the user base for this software within your community, if you are asking for some software on the MMM machines this can be the wider community and for UCL machines users in your ecosystem.
 
-*If the software is only required by you would you be open to trying to install the software in your home space, we could provide some assistance here too.
+* If the software is only required by you would you be open to trying to install the software in your home space, we could provide some assistance here too.
 
 Our buildscripts are in the code section of that repository, so you can see how we 
 built and installed all our central software stack.
