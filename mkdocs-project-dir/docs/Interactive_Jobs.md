@@ -20,7 +20,8 @@ sessions, and available core counts are limited.
 
 You will be granted an interactive shell after running a command that
 checks with the scheduler whether the resources you wish to use in your
-tests/analysis are available. It typically takes the form:
+tests/analysis are available. Interactive sessions are requested using the qrsh command. 
+It typically takes the form:
 
 ```
 qrsh -pe mpi 8 -l mem=512M,h_rt=2:00:00 -now no
