@@ -25,11 +25,11 @@ pages_to_render = [
         template = "python_description.md.mako",
         output =   "python-packages.md",
         ),
-    PackagePageFactory(
-        datafile = "module-packages.json",
-        template = "modules_template.md.mako",
-        output =   "module-packages.md",
-        ),
+#    PackagePageFactory(
+#        datafile = "module-packages.json",
+#        template = "modules_template.md.mako",
+#        output =   "module-packages.md",
+#        ),
     ]
 
 url_stem = "https://www.rc.ucl.ac.uk/lists/"
