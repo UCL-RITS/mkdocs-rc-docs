@@ -469,6 +469,12 @@ If you `qdel` a submitted Gold job, the reserved Gold will be made
 available again. This is done by a cron job that runs every 15 minutes,
 so you may not see it back instantly.
 
+### Reporting Gold usage
+
+There are a few commands that everyone can run that report Gold usage for
+their entire project, broken down by user. See 
+[Reporting from Gold](../Supplementary/Points_of_Contact.md#reporting-from-gold).
+
 ## Support
 
 Email <rc-support@ucl.ac.uk> with any support queries. It will be helpful
