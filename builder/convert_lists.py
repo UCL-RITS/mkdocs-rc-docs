@@ -101,6 +101,7 @@ def guard_comments(s):
 if __name__ == "__main__":
     for p in pages_to_render:
         try:
+            # I did not change this in the end.
             render_page(p, use_local_sources=False)
         except:
             sys.stderr.write("Error creating page \"%s\". See traceback for details.\n" % p.output)
