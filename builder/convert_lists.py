@@ -101,7 +101,9 @@ def guard_comments(s):
 if __name__ == "__main__":
     for p in pages_to_render:
         try:
-            render_page(p, use_local_sources=False)
+            # Switched to using local lists for the moment as GitHub cannot access the new
+            # RedHat 8 RC Docs Server - Aug 13th 2021
+            render_page(p, use_local_sources=True)
         except:
             sys.stderr.write("Error creating page \"%s\". See traceback for details.\n" % p.output)
             raise
