@@ -4,11 +4,11 @@ layout: docs
 
 # Status of machines
 
-This page outlines that status of each of the machines managed by the Research Computing team at UCL. We endeavour to keep this page as up-to-date as possible but there might be some delay. Also there are spontaneos errors that we have to deal with (i.e. high load on login nodes) but feel free to report them to rc-support@ucl.ac.uk. 
+This page outlines that status of each of the machines managed by the Research Computing team at UCL. We endeavour to keep this page as up-to-date as possible but there might be some delay. Also there are spontaneous errors that we have to deal with (i.e. high load on login nodes) but feel free to report them to rc-support@ucl.ac.uk. 
 
 Myriad:
 
-- There are some ongoing file systems issues that may make the experiance sluggish.
+- All systems are working well.
 
 Kathleen:
 
@@ -24,6 +24,6 @@ Michael:
 
 Thomas:
 
-- Systems generally fine but the hardware is dated with respect to the other systems so there maybe some read write errors
+- Systems generally fine but the hardware is dated with respect to the other systems so there may be some read write errors.
 
 
