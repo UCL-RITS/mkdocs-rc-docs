@@ -33,10 +33,10 @@ If you have a particularly complex problem, it may be useful to email the suppor
 
 The Research Computing Team are located at:
 
-> 1-19 Torrington Place
-> Floor 6
+> 105 Judd Street
+> Floor 1
 > London
-> WC1E 7HB
+> WC1E 9RN
 
 Please note that this is a busy, mixed-group office, and people attempting to gain support by walking in uninvited may not be made welcome.
 
