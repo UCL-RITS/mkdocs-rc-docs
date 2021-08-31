@@ -8,7 +8,7 @@ This page outlines that status of each of the machines managed by the Research C
 
 Myriad:
 
-- All systems are working well.
+- Some of the lusture disks are showing an extremely large load hence the slowdown over the long weekend and through today. We are working to solve this issue.
 
 Kathleen:
 
