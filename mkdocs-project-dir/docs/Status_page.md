@@ -18,7 +18,9 @@ Kathleen:
 
 Young:
 
-- All systems are working well.
+- Some of the work nodes were looking at the incorrect /home which was causing read write permission errors.
+
+- There is a small number of nodes that are being re-booted.
 
 Michael:
 
