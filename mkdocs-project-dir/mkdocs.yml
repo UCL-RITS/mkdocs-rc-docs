@@ -25,8 +25,21 @@ theme:
   name: 'material'
   language: 'en'
   palette:
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
     primary: 'deep purple'
     accent: 'deep purple'
+    toggle:
+      icon: material/weather-sunny
+      name: Switch to dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    primary: 'deep purple'
+    accent: 'deep purple'
+    toggle:
+      icon: material/weather-night
+      name: Switch to light mode
+# You can add more colour scheme options here but there's probably no need and the added complexity in switching (tri+modal instead of just light/dark) would probably just make it confusing.
   font: false
   logo: 'img/portico.svg'
   features:
