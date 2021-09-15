@@ -11,6 +11,8 @@ Myriad:
 - Some of the lusture disks are showing an extremely large load hence the slowdown over the long weekend and is still ongoing. We are working to solve this issue.
 
 - We are working to add new hardware to alleviate some of the load issues but this will take time to implement and test.
+ 
+- The re-balancing work is ongoing and should be done by tomorrow (16/09/2020).
 
 Kathleen:
 
