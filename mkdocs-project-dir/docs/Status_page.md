@@ -12,7 +12,7 @@ Myriad:
 
 - We are working to add new hardware to alleviate some of the load issues but this will take time to implement and test.
  
-- The re-balancing work is ongoing and should be done by tomorrow (16/09/2020), at which point jobs should start running.
+- The disk re-balancing is almost done (on directory 481 out of 484) at which point jobs should start running.
 
 Kathleen:
 
