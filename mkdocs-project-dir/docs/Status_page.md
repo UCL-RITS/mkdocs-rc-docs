@@ -9,6 +9,8 @@ This page outlines that status of each of the machines managed by the Research C
 Myriad:
 
 - We are working to add new hardware to alleviate some of the load issues but this will take time to implement and test.
+
+- There was a disk failure on Myriad at 1:30am, it is currently being rebuilt. 
  
 
 Kathleen:
