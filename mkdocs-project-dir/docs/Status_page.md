@@ -10,8 +10,9 @@ Myriad:
 
 - We are working to add new hardware to alleviate some of the load issues but this will take time to implement and test.
 
-- There was a disk failure on Myriad at 1:30am, it is currently being rebuilt. 
- 
+- 2021-09-27 10:20 - We think that one of the OSTs (Object Storage Target) in Myriad is bad rather than overloaded as everything accessing it is very slow. We are going to move all files on it elsewhere. Since most files are already elsewhere, we're going to do this migration live while jobs are running. Jobs were re-enabled.
+
+- If you see any errors when trying to run centrally-installed software which say `Text file busy` please report these to us as this is a file-locking issue after an earlier data migration. 
 
 Kathleen:
 
@@ -19,9 +20,9 @@ Kathleen:
 
 Young:
 
-- Some of the work nodes were looking at the incorrect /home which was causing read write permission errors.
+- 2021-09-24 16:00 - Jobs were re-enabled but we are encountering a ZFS bug that causes a metadata server to reboot or crash and the filesystem hangs until it recovers. This is causing periodic file access slowness and login failures during the recovery periods. Patching of ZFS is being planned.
 
-- There is a small number of nodes that are being re-booted.
+- There are a small number of nodes that switch themselves off and need to be manually re-booted (this causes jobs to be stuck in `dr` state when they end until the reboot happens).
 
 Michael:
 
@@ -29,6 +30,6 @@ Michael:
 
 Thomas:
 
-- Systems generally fine but the hardware is dated with respect to the other systems so there may be some read write errors.
+- System is generally fine but the hardware is dated with respect to the other systems so there may be some read write errors.
 
 
