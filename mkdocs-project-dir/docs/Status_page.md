@@ -22,6 +22,8 @@ Young:
 
 - 2021-09-24 16:00 - Jobs were re-enabled but we are encountering a ZFS bug that causes a metadata server to reboot or crash and the filesystem hangs until it recovers. This is causing periodic file access slowness and login failures during the recovery periods. Patching of ZFS is being planned.
 
+- 2021-09-28 16:40 - Metadata server failing to recover again. New jobs are being prevented from running to give the filesystem a chance to catch up. Will revisit on morning of Weds 29. ZFS upgrade still planned.
+
 - There are a small number of nodes that switch themselves off and need to be manually re-booted (this causes jobs to be stuck in `dr` state when they end until the reboot happens).
 
 Michael:
