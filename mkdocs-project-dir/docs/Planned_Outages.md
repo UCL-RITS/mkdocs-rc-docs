@@ -16,12 +16,13 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-14 Sept 2021        | Myriad  | Planned | Queues drained for 8am so that the central software installs can be redistributed over more servers. This is to help mitigate the effects of current filesystem issues.
+29 Sept 2021 -> 30 Sept 2021 | Young | Planned | Queues drained so ZFS can be upgraded to patch a bug causing metadata server issues. No jobs will be running.
 
 ## Previous Outages
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+14 Sept 2021        | Myriad  | Planned | Queues drained for 8am so that the central software installs can be redistributed over more servers. This is to help mitigate the effects of current filesystem issues.
 03 Aug 2021     | Young, Michael | Completed | Shortly after 8am: ~10 mins Gold outage for security updates. New job submission and Gold commands will not work during this.
 12 July 2021        | Myriad  | Completed | Drain of d97a (Economics) nodes for 8am to update network config. May require less than the full day. Jobs will remain in queue until drain is over or run on other nodes if they can.
 15 Jun 2021 -> 18 Jun 2021 | Myriad | Completed | Datacentre network outage. No jobs will run on the 15th, and Myriad will be at risk for the rest of the week.
