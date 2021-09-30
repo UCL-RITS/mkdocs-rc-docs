@@ -407,9 +407,67 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Status of machines
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Status of machines
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#myriad" class="md-nav__link">
+    Myriad:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kathleen" class="md-nav__link">
+    Kathleen:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#young" class="md-nav__link">
+    Young:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#michael" class="md-nav__link">
+    Michael:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thomas" class="md-nav__link">
+    Thomas:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -963,6 +1021,49 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#myriad" class="md-nav__link">
+    Myriad:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kathleen" class="md-nav__link">
+    Kathleen:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#young" class="md-nav__link">
+    Young:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#michael" class="md-nav__link">
+    Michael:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thomas" class="md-nav__link">
+    Thomas:
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -980,7 +1081,7 @@
                 
                 <h1 id="status-of-machines">Status of machines<a class="headerlink" href="#status-of-machines" title="Permanent link">§</a></h1>
 <p>This page outlines that status of each of the machines managed by the Research Computing team at UCL. We endeavour to keep this page as up-to-date as possible but there might be some delay. Also there are spontaneous errors that we have to deal with (i.e. high load on login nodes) but feel free to report them to rc-support@ucl.ac.uk. Finally, details of our planned outages can be found <a href="https://www.rc.ucl.ac.uk/docs/Planned_Outages/">here</a>.  </p>
-<p>Myriad:</p>
+<h3 id="myriad">Myriad:<a class="headerlink" href="#myriad" title="Permanent link">§</a></h3>
 <ul>
 <li>
 <p>We are working to add new hardware to alleviate some of the load issues but this will take time to implement and test.</p>
@@ -989,14 +1090,21 @@
 <p>2021-09-27 10:20 - We think that one of the OSTs (Object Storage Target) in Myriad is bad rather than overloaded as everything accessing it is very slow. We are going to move all files on it elsewhere. Since most files are already elsewhere, we're going to do this migration live while jobs are running. Jobs were re-enabled.</p>
 </li>
 <li>
-<p>If you see any errors when trying to run centrally-installed software which say <code>Text file busy</code> please report these to us as this is a file-locking issue after an earlier data migration. </p>
+<p>2021-09-29 7:00 - Filesystem issue occurred late last night. New jobs currently prevented from running. Outage likely to be required for full recovery process.</p>
+</li>
+<li>
+<p>2021-09-30 10:00 - We need to run a full filesystem check on Myriad's storage, to rule out filesystem corruption as the root cause of the performance problem or a contributing factor. As this is likely to take a few days we have decided to start immediately. New jobs have already been stopped from running, and unfortunately some long running jobs have had to be killed.</p>
 </li>
 </ul>
-<p>Kathleen:</p>
+<p>We apologise for the continuing disruption, which we are doing our best to bring to a close as soon as possible. We hope the filesystem check will complete at the weekend, but as it hasn’t been done before on the current filesystem we don’t know exactly how long it will take. The next status update will be on Monday morning.</p>
+<ul>
+<li>If you see any errors when trying to run centrally-installed software which say <code>Text file busy</code> please report these to us as this is a file-locking issue after an earlier data migration. </li>
+</ul>
+<h3 id="kathleen">Kathleen:<a class="headerlink" href="#kathleen" title="Permanent link">§</a></h3>
 <ul>
 <li>All systems are working well.</li>
 </ul>
-<p>Young:</p>
+<h3 id="young">Young:<a class="headerlink" href="#young" title="Permanent link">§</a></h3>
 <ul>
 <li>
 <p>2021-09-24 16:00 - Jobs were re-enabled but we are encountering a ZFS bug that causes a metadata server to reboot or crash and the filesystem hangs until it recovers. This is causing periodic file access slowness and login failures during the recovery periods. Patching of ZFS is being planned.</p>
@@ -1008,11 +1116,11 @@
 <p>There are a small number of nodes that switch themselves off and need to be manually re-booted (this causes jobs to be stuck in <code>dr</code> state when they end until the reboot happens).</p>
 </li>
 </ul>
-<p>Michael:</p>
+<h3 id="michael">Michael:<a class="headerlink" href="#michael" title="Permanent link">§</a></h3>
 <ul>
 <li>All systems are working well.</li>
 </ul>
-<p>Thomas:</p>
+<h3 id="thomas">Thomas:<a class="headerlink" href="#thomas" title="Permanent link">§</a></h3>
 <ul>
 <li>System is generally fine but the hardware is dated with respect to the other systems so there may be some read write errors.</li>
 </ul>
