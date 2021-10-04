@@ -6,7 +6,7 @@ layout: docs
 
 This page outlines that status of each of the machines managed by the Research Computing team at UCL. We endeavour to keep this page as up-to-date as possible but there might be some delay. Also there are spontaneous errors that we have to deal with (i.e. high load on login nodes) but feel free to report them to rc-support@ucl.ac.uk. Finally, details of our planned outages can be found [here](https://www.rc.ucl.ac.uk/docs/Planned_Outages/).  
 
-### Myriad:
+### Myriad
 
 - We are working to add new hardware to alleviate some of the load issues but this will take time to implement and test.
 
@@ -22,11 +22,11 @@ Unfortunately, it will be necessary to take Myriad out of service again next Tue
  
 We apologise for any inconvenience this work may cause, and we hope you understand the cautious approach we are taking with Myriad's filesystem after all the recent problems.
 
-### Kathleen:
+### Kathleen
 
 - All systems are working well.
 
-### Young:
+### Young
 
 - 2021-09-24 16:00 - Jobs were re-enabled but we are encountering a ZFS bug that causes a metadata server to reboot or crash and the filesystem hangs until it recovers. This is causing periodic file access slowness and login failures during the recovery periods. Patching of ZFS is being planned.
 
@@ -36,11 +36,11 @@ We apologise for any inconvenience this work may cause, and we hope you understa
 
 - There are a small number of nodes that switch themselves off and need to be manually re-booted (this causes jobs to be stuck in `dr` state when they end until the reboot happens).
 
-### Michael:
+### Michael
 
 - All systems are working well.
 
-### Thomas:
+### Thomas
 
 - System is generally fine but the hardware is dated with respect to the other systems so there may be some read write errors.
 
