@@ -16,9 +16,11 @@ This page outlines that status of each of the machines managed by the Research C
 
 - 2021-09-30 10:00 - We need to run a full filesystem check on Myriad's storage, to rule out filesystem corruption as the root cause of the performance problem or a contributing factor. As this is likely to take a few days we have decided to start immediately. New jobs have already been stopped from running, and unfortunately some long running jobs have had to be killed.
  
-We apologise for the continuing disruption, which we are doing our best to bring to a close as soon as possible. We hope the filesystem check will complete at the weekend, but as it hasn’t been done before on the current filesystem we don’t know exactly how long it will take. The next status update will be on Monday morning.
+- 2021-10-04 13:00 - Jobs were re-enabled on Myriad. 
 
-- If you see any errors when trying to run centrally-installed software which say `Text file busy` please report these to us as this is a file-locking issue after an earlier data migration. 
+Unfortunately, it will be necessary to take Myriad out of service again next Tuesday, the 12th October. This is our next scheduled monthly maintenance day, when all research computing services are at risk. We will carry out load tests on Myriad's filesystem, to avoid performance problems when the planned expansion of the cluster goes ahead. Access to the login nodes will be blocked during the load testing work, which is expected to be finished by the end of the day.
+ 
+We apologise for any inconvenience this work may cause, and we hope you understand the cautious approach we are taking with Myriad's filesystem after all the recent problems.
 
 ### Kathleen:
 
@@ -29,6 +31,8 @@ We apologise for the continuing disruption, which we are doing our best to bring
 - 2021-09-24 16:00 - Jobs were re-enabled but we are encountering a ZFS bug that causes a metadata server to reboot or crash and the filesystem hangs until it recovers. This is causing periodic file access slowness and login failures during the recovery periods. Patching of ZFS is being planned.
 
 - 2021-09-29 15:20 - Queues being drained of jobs so that ZFS upgrade can take place on Thurs 30 Sept. This should fix the above bug.
+
+- 2021-10-04 15:00 - The ZFS upgrade was more complicated than originally thought. We currently expect Young to be back in service midday on Tues 5 Oct.
 
 - There are a small number of nodes that switch themselves off and need to be manually re-booted (this causes jobs to be stuck in `dr` state when they end until the reboot happens).
 
