@@ -16,7 +16,8 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-29 Sept 2021 -> 30 Sept 2021 | Young | Planned | Queues drained so ZFS can be upgraded to patch a bug causing metadata server issues. No jobs will be running.
+12 Oct 2021         | Myriad  | Planned | Filesystem load tests before expansion. No jobs will be running and access to login nodes will be blocked during the test, expected to finish by end of day.
+29 Sept 2021 -> 30 Sept 2021, 5 Oct 2021 | Young | Planned | Extended: expected back in service midday Tues 5 Oct. Queues drained so ZFS can be upgraded to patch a bug causing metadata server issues. No jobs will be running.
 
 ## Previous Outages
 
