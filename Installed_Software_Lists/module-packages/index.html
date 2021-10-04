@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Installed_Software_Lists/module-packages/">
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.1">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8b42a75e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1c75ef36.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -1113,7 +1113,7 @@
 <p>Our clusters have a wide range of software installed, available by using the modules system.</p>
 <p>The module files are organised by name, version, variant (where applicable) and, if relevant, the compiler version used to build the software. If no compiler version is given, either no compiler was required, or only the base system compiler (<code>/usr/bin/gcc</code>) and libraries were used.</p>
 <p>When we install applications, we try to install them on all of our clusters, but sometimes licence restrictions prevent it. If something seems to be missing, it may be because we are not able to provide it. Please contact us for more information if this is hindering your work.</p>
-<p>The lists below were last updated at 18:09:34 (+0100) on 08 Aug 2021, and are generated from the software installed on the <a href="../../Clusters/Myriad/">Myriad</a> cluster.</p>
+<p>The lists below were last updated at 16:21:28 (+0100) on 10 Oct 2021, and are generated from the software installed on the <a href="../../Clusters/Myriad/">Myriad</a> cluster.</p>
 <h2 id="bundles">Bundles<a class="headerlink" href="#bundles" title="Permanent link">§</a></h2>
 <p>Some applications or tools depend on a lot of other modules, or have some awkward requirements. For these, we sometimes make a "bundle" module in this section, that loads all the dependencies.</p>
 <p>For Python and R in particular, we also have <code>recommended</code> bundles that load the module for a recent version of Python or R, along with a collection of packages for it that have been requested by users, and the modules those packages require.</p>
@@ -1142,6 +1142,10 @@
 <tr>
 <td align="center"><code>blic-modules</code></td>
 <td align="left">Adds Cancer Biology supported modules to your environment.</td>
+</tr>
+<tr>
+<td align="center"><code>brunel-modules</code></td>
+<td align="left">Adds Brunel licensed software module space to module avail.</td>
 </tr>
 <tr>
 <td align="center"><code>cancerit/20190218</code></td>
@@ -2909,6 +2913,10 @@
 <tr>
 <td align="center"><code>sod/3.2.7</code></td>
 <td align="left">Adds SOD 3.2.7 to your environment. SOD is a program that automates tedious data selection, downloading, and routine processing tasks in seismology.</td>
+</tr>
+<tr>
+<td align="center"><code>sod/3.2.10</code></td>
+<td align="left">Adds SOD 3.2.10 to your environment. SOD is a program that automates tedious data selection, downloading, and routine processing tasks in seismology.</td>
 </tr>
 <tr>
 <td align="center"><code>spaceranger/1.2.2</code></td>
@@ -4772,6 +4780,10 @@
 <td align="left">Adds the Rappture toolkit to your environment.</td>
 </tr>
 <tr>
+<td align="center"><code>rstudio-ide/1.4.1717</code></td>
+<td align="left">RStudio is an integrated development environment (IDE) for R</td>
+</tr>
+<tr>
 <td align="center"><code>ruby/2.2.2</code></td>
 <td align="left">Ruby 2.2.2 with RubyGems 2.4.8 and libffi 3.2.1</td>
 </tr>
@@ -4915,10 +4927,6 @@
 <td align="center"><code>userscripts/1.4.0</code></td>
 <td align="left">Adds userscripts dir to your path. Provides jobhist among other utilities.</td>
 </tr>
-<tr>
-<td align="center"><code>Path</code></td>
-<td align="left"></td>
-</tr>
 </tbody>
 </table>
 <h2 id="beta-modules">Beta Modules<a class="headerlink" href="#beta-modules" title="Permanent link">§</a></h2>
@@ -4992,6 +5000,10 @@
 <td align="left">Adds FFTW 3.3.8 for GCC 9.2.0 compilers to your environment variables. Includes single and double precision, plus long-double and quad. Includes OpenMP and POSIX threads libraries.</td>
 </tr>
 <tr>
+<td align="center"><code>fftw/3.3.9/gnu-10.2.0</code></td>
+<td align="left">Adds FFTW 3.3.9 for GCC 10.2.0 compilers to your environment variables. Includes single and double precision, plus long-double and quad. Includes OpenMP and POSIX threads libraries.</td>
+</tr>
+<tr>
 <td align="center"><code>gcc-libs/7.3.0</code></td>
 <td align="left">Base module for gcc 7.3.0 -- does not set the standard compiler environment variables. The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages (libstdc++,...).</td>
 </tr>
@@ -5016,12 +5028,24 @@
 <td align="left">adds GDAL 3.1.3 with PROJ.4 7.0.0 to your environment variables.</td>
 </tr>
 <tr>
+<td align="center"><code>gdal/3.3.2/gnu-10.2.0</code></td>
+<td align="left">adds GDAL 3.3.2 with PROJ.4 8.1.1 to your environment variables.</td>
+</tr>
+<tr>
 <td align="center"><code>geos/3.8.1/gnu-9.2.0</code></td>
 <td align="left">Adds geos 3.8.1 to your environment. GEOS (Geometry Engine, Open Source) is a library for performing various spatial operations, especially for boolean operations on GIS data. Note this version <em>does not</em> include the SWIG, Python, Ruby, or PHP bindings.</td>
 </tr>
 <tr>
+<td align="center"><code>geos/3.9.1/gnu-10.2.0</code></td>
+<td align="left">Adds geos 3.9.1 to your environment. GEOS (Geometry Engine, Open Source) is a library for performing various spatial operations, especially for boolean operations on GIS data. Note this version <em>does not</em> include the SWIG, Python, Ruby, or PHP bindings.</td>
+</tr>
+<tr>
 <td align="center"><code>gmt/6.0.0/gnu-9.2.0</code></td>
 <td align="left">adds GMT 6.0.0 to your environment variables</td>
+</tr>
+<tr>
+<td align="center"><code>gmt/6.2.0/gnu-10.2.0</code></td>
+<td align="left">adds GMT 6.2.0 to your environment variables</td>
 </tr>
 <tr>
 <td align="center"><code>gromacs/2020.1/cuda-10.1</code></td>
@@ -5048,8 +5072,16 @@
 <td align="left">adds GSL 2.6 for GCC 9.2.0 to your environment.</td>
 </tr>
 <tr>
+<td align="center"><code>gsl/2.7/gnu-10.2.0</code></td>
+<td align="left">adds GSL 2.7 for GCC 10.2.0 to your environment.</td>
+</tr>
+<tr>
 <td align="center"><code>hdf/5-1.10.5/gnu-9.2.0</code></td>
 <td align="left">Adds hdf 5-1.10.5 to your environment. Serial version built with GNU.</td>
+</tr>
+<tr>
+<td align="center"><code>hdf/5-1.10.6/gnu-10.2.0</code></td>
+<td align="left">Adds hdf 5-1.10.6 to your environment. Serial version built with GNU 10.2.0.</td>
 </tr>
 <tr>
 <td align="center"><code>jags/4.3.0/gnu-10.2.0-openblas</code></td>
@@ -5096,6 +5128,10 @@
 <td align="left">adds NetCDF 4.7.4 for GCC 9.2.0 to your environment.</td>
 </tr>
 <tr>
+<td align="center"><code>netcdf/4.8.1/gnu-10.2.0</code></td>
+<td align="left">adds NetCDF 4.8.1 for GCC 10.2.0 to your environment.</td>
+</tr>
+<tr>
 <td align="center"><code>openblas/0.3.7-native-threads/gnu-9.2.0</code></td>
 <td align="left">OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.</td>
 </tr>
@@ -5124,7 +5160,15 @@
 <td align="left">Adds pcre2 10.35 to your environment. PCRE (Perl-compatible regular expressions) is a C library implementing regular expression pattern-matching using the same semantics as Perl 5.</td>
 </tr>
 <tr>
+<td align="center"><code>pcre2/10.37/gnu-10.2.0</code></td>
+<td align="left">Adds pcre2 10.37 to your environment. PCRE (Perl-compatible regular expressions) is a C library implementing regular expression pattern-matching using the same semantics as Perl 5.</td>
+</tr>
+<tr>
 <td align="center"><code>proj.4/7.0.0/gnu-9.2.0</code></td>
+<td align="left">Adds the PROJ.4 Cartographic Projections library to your environment.</td>
+</tr>
+<tr>
+<td align="center"><code>proj.4/8.1.1/gnu-10.2.0</code></td>
 <td align="left">Adds the PROJ.4 Cartographic Projections library to your environment.</td>
 </tr>
 <tr>
@@ -5132,8 +5176,20 @@
 <td align="left">adds Google Protocol Buffers for GCC 9.2.0 to your environment.</td>
 </tr>
 <tr>
+<td align="center"><code>protobuf/3.17.3/gnu-10.2.0</code></td>
+<td align="left">adds Google Protocol Buffers for GCC 10.2.0 to your environment.</td>
+</tr>
+<tr>
 <td align="center"><code>prsice/2.3.3/gnu-9.2.0</code></td>
 <td align="left">PRSice (pronounced 'precise') is a software package for calculating, applying, evaluating and plotting the results of polygenic risk scores (PRS).</td>
+</tr>
+<tr>
+<td align="center"><code>python/3.9.6-gnu-10.2.0</code></td>
+<td align="left">Adds Python 3.9.6 compiled with GNU 10.2.0 with pip and virtualenv to your environment variables.</td>
+</tr>
+<tr>
+<td align="center"><code>python3/3.9-gnu-10.2.0</code></td>
+<td align="left">Adds UCL recommended set of python packages to your environment variables. To see what is included, check https://github.com/UCL-RITS/rcps-buildscripts/blob/master/lists/python-shared.list and https://github.com/UCL-RITS/rcps-buildscripts/blob/master/lists/python-3.list</td>
 </tr>
 <tr>
 <td align="center"><code>r/3.6.3-openblas/gnu-9.2.0</code></td>
@@ -5144,12 +5200,20 @@
 <td align="left">Adds R 4.0.2 and Bioconductor 3.11 to your environment.</td>
 </tr>
 <tr>
+<td align="center"><code>r/4.1.1-openblas/gnu-10.2.0</code></td>
+<td align="left">Adds R 4.1.1 and Bioconductor 3.13 to your environment.</td>
+</tr>
+<tr>
 <td align="center"><code>r/r-3.6.3_bc-3.10</code></td>
 <td align="left">adds UCL recommended set of R packages to your environment variables</td>
 </tr>
 <tr>
 <td align="center"><code>r/r-4.0.2_bc-3.11</code></td>
 <td align="left">adds UCL recommended set of R packages for R 4.0.2 to your environment variables</td>
+</tr>
+<tr>
+<td align="center"><code>r/r-4.1.1_bc-3.13</code></td>
+<td align="left">adds UCL recommended set of R packages for R 4.1.1 to your environment variables</td>
 </tr>
 <tr>
 <td align="center"><code>rcps-core-beta/gnu-7.3.0</code></td>
@@ -5172,6 +5236,10 @@
 <td align="left">ScaLAPACK is a library of high-performance linear algebra routines for parallel distributed memory machines. ScaLAPACK solves dense and banded linear systems, least squares problems, eigenvalue problems, and singular value problems.</td>
 </tr>
 <tr>
+<td align="center"><code>sqlite/3.36.0/gnu-10.2.0</code></td>
+<td align="left">Adds SQLite Version 3.36.0 to your environment.</td>
+</tr>
+<tr>
 <td align="center"><code>stata/16</code></td>
 <td align="left">Adds Stata/MP 16 to your environment.</td>
 </tr>
@@ -5185,6 +5253,10 @@
 </tr>
 <tr>
 <td align="center"><code>udunits/2.2.26/gnu-9.2.0</code></td>
+<td align="left">adds the UDUNITS-2 package to your environment.</td>
+</tr>
+<tr>
+<td align="center"><code>udunits/2.2.28/gnu-10.2.0</code></td>
 <td align="left">adds the UDUNITS-2 package to your environment.</td>
 </tr>
 </tbody>
@@ -5298,10 +5370,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.f8263e09.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.e99e714c.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.4fc53ad4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c7d1b464.min.js"></script>
       
     
   </body>
