@@ -34,6 +34,8 @@ We apologise for any inconvenience this work may cause, and we hope you understa
 
 - 2021-10-04 15:00 - The ZFS upgrade was more complicated than originally thought. We currently expect Young to be back in service midday on Tues 5 Oct.
 
+- 2021-10-05 12:00 - Upgrade completed. Jobs were re-enabled on Young.
+
 - There are a small number of nodes that switch themselves off and need to be manually re-booted (this causes jobs to be stuck in `dr` state when they end until the reboot happens).
 
 ### Michael
