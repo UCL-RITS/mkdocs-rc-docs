@@ -10,6 +10,7 @@ This page outlines that status of each of the machines managed by the Research C
 
 - We are working to add new hardware to alleviate some of the load issues but this will take time to implement and test.
 
+- 2021-10-11 11:32 - One of the OSTs stopped working over the weekend which lead to login issues and the queue being suspended. The queue has been renabled and users should be able to login and run jobs though thesystem should still be considered at risk. There is a planned outage tomorrow (2021-10-12) so that we can diagnose the problem, we are sorry for the disruption thishas caused.
 - 2021-09-27 10:20 - We think that one of the OSTs (Object Storage Target) in Myriad is bad rather than overloaded as everything accessing it is very slow. We are going to move all files on it elsewhere. Since most files are already elsewhere, we're going to do this migration live while jobs are running. Jobs were re-enabled.
 
 - 2021-09-29 7:00 - Filesystem issue occurred late last night. New jobs currently prevented from running. Outage likely to be required for full recovery process.
