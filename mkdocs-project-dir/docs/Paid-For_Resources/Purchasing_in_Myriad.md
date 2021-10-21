@@ -13,6 +13,10 @@ Researchers may purchase additional resources to be used as part of the [Myriad]
 
 Costs will include backend infrastructure – racks, switches, cables etc – needed to integrate the compute nodes into the facility. Both options can be costed into research proposals.
 
+There are two purchasing rounds every financial year, with orders for a number of compute nodes being placed at the same time in January and just after Easter.  There are therefore two purchasing deadlines for researchers every year, the first in mid December and the second just before Easter.  Before each deadline, researchers wishing to buy compute nodes must choose the number of each node type they need and transfer the funds to ARC.
+
+For the financial year ending 31st July 2022, the money transfer deadlines for researchers are the 10th December 2021 and the 18th March 2022.
+
 ## FAQs
 
 #### Can I add the cost of purchasing nodes to a grant application?
