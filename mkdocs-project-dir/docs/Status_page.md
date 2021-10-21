@@ -8,20 +8,13 @@ This page outlines that status of each of the machines managed by the Research C
 
 ### Myriad
 
-- We are working to add new hardware to alleviate some of the load issues but this will take time to implement and test.
+- 2021-10-12 17:25 - As part of our scheduled outage, we did some load testing on Myriad and believe that we have identified the root cause of all the recent issues with the filesystem to be related to the Mellanox Infiniband interconnect throwing connection errors, specifically failures of network links causing credit loops. These network failures were in turn causing Lustre to crash. 
 
-- 2021-10-11 11:32 - One of the OSTs stopped working over the weekend which lead to login issues and the queue being suspended. The queue has been renabled and users should be able to login and run jobs though thesystem should still be considered at risk. There is a planned outage tomorrow (2021-10-12) so that we can diagnose the problem, we are sorry for the disruption thishas caused.
-- 2021-09-27 10:20 - We think that one of the OSTs (Object Storage Target) in Myriad is bad rather than overloaded as everything accessing it is very slow. We are going to move all files on it elsewhere. Since most files are already elsewhere, we're going to do this migration live while jobs are running. Jobs were re-enabled.
+- 2021-10-14 16:00 - Remedial work on the Infiniband network was completed, jobs re-enabled and logins allowed again. Status of the cluster is good.
 
-- 2021-09-29 7:00 - Filesystem issue occurred late last night. New jobs currently prevented from running. Outage likely to be required for full recovery process.
+We found an undiagnosed issue with one of the quota features in Lustre which we have disabled while we investigate further - this means that filesystem quotas are not currently being enforced, and the `lquota` command does not work.
 
-- 2021-09-30 10:00 - We need to run a full filesystem check on Myriad's storage, to rule out filesystem corruption as the root cause of the performance problem or a contributing factor. As this is likely to take a few days we have decided to start immediately. New jobs have already been stopped from running, and unfortunately some long running jobs have had to be killed.
- 
-- 2021-10-04 13:00 - Jobs were re-enabled on Myriad. 
-
-Unfortunately, it will be necessary to take Myriad out of service again next Tuesday, the 12th October. This is our next scheduled monthly maintenance day, when all research computing services are at risk. We will carry out load tests on Myriad's filesystem, to avoid performance problems when the planned expansion of the cluster goes ahead. Access to the login nodes will be blocked during the load testing work, which is expected to be finished by the end of the day.
- 
-We apologise for any inconvenience this work may cause, and we hope you understand the cautious approach we are taking with Myriad's filesystem after all the recent problems.
+- 2021-10-19 12:00 - the new Myriad expansion nodes were enabled and are running jobs.
 
 ### Kathleen
 
@@ -37,7 +30,7 @@ We apologise for any inconvenience this work may cause, and we hope you understa
 
 - 2021-10-05 12:00 - Upgrade completed. Jobs were re-enabled on Young.
 
-- There are a small number of nodes that switch themselves off and need to be manually re-booted (this causes jobs to be stuck in `dr` state when they end until the reboot happens).
+- There are a number of nodes that intermittently lose power from their chassis, switch themselves off and need to be manually powered back on (this causes jobs to be stuck in `dr` state when they end until the reboot happens). This leads to a higher than usual number of nodes being seen by the scheduler as unavailable. We are awaiting hardware components for those chassis.
 
 ### Michael
 
