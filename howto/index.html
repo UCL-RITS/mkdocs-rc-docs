@@ -1803,12 +1803,17 @@
 </code></pre></div>
 
 <h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">§</a></h3>
-<p>On Windows you need something that will give you a suitable terminal and ssh - usually PuTTY, although you could also use Cygwin if you wanted a full Linux-like environment.</p>
+<p>On Windows you need something that will give you a suitable terminal and ssh - usually PuTTY, or
+on Windows 10 you can use OpenSSH from a command prompt and type the same <code>ssh</code> command as the 
+Linux instructions.</p>
 <h4 id="using-putty">Using PuTTY<a class="headerlink" href="#using-putty" title="Permanent link">§</a></h4>
 <p>PuTTY is a common SSH client on Windows and is available on Desktop@UCL. You can find it under: <code>Start &gt; All Programs &gt; Applications O-P &gt; PuTTY</code></p>
 <p>You will need to create an entry for the host you are connecting to with the settings below. If you want to save your settings, give them an easily-identifiable name in the "Saved Sessions" box and press "Save". Then you can select it and "Load" next time you use PuTTY. </p>
 <p><img alt="PuTTY screenshot" src="../img/putty_gui.png" /></p>
 <p>You will then be asked to enter your username and password. Only enter your username, not <code>@&lt;system_name&gt;.rc.ucl.ac.uk</code>. The password field will remain entirely blank when you type in to it - it does not show placeholders to indicate you have typed something. </p>
+<p>The first time you log in to a new server, you'll get a popup telling you that the server's host 
+key is not cached in the registry - this is normal and is because you have never connected to
+this server before. If you want to, you can check the host fingerprint against <a href="../Supplementary/Hostkeys/">our current key fingerprints</a>.</p>
 <h3 id="logging-in-from-outside-the-ucl-firewall">Logging in from outside the UCL firewall<a class="headerlink" href="#logging-in-from-outside-the-ucl-firewall" title="Permanent link">§</a></h3>
 <p>You will need to either use the <a href="https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn/">UCL Virtual Private Network</a> or ssh in to UCL's gateways <code>socrates.ucl.ac.uk</code> or <code>ssh.rc.ucl.ac.uk</code> first. From there you can then ssh in to our systems. </p>
 <div class="codehilite"><pre><span></span><code>ssh &lt;your_UCL_user_id&gt;@socrates.ucl.ac.uk
