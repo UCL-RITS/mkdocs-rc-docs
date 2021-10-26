@@ -21,7 +21,9 @@ ssh <your_UCL_user_id>@<system_name>.rc.ucl.ac.uk
 
 ### Windows
 
-On Windows you need something that will give you a suitable terminal and ssh - usually PuTTY, although you could also use Cygwin if you wanted a full Linux-like environment.
+On Windows you need something that will give you a suitable terminal and ssh - usually PuTTY, or
+on Windows 10 you can use OpenSSH from a command prompt and type the same `ssh` command as the 
+Linux instructions.
 
 #### Using PuTTY
 
@@ -32,6 +34,10 @@ You will need to create an entry for the host you are connecting to with the set
 ![PuTTY screenshot](img/putty_gui.png)
 
 You will then be asked to enter your username and password. Only enter your username, not `@<system_name>.rc.ucl.ac.uk`. The password field will remain entirely blank when you type in to it - it does not show placeholders to indicate you have typed something. 
+
+The first time you log in to a new server, you'll get a popup telling you that the server's host 
+key is not cached in the registry - this is normal and is because you have never connected to
+this server before. If you want to, you can check the host fingerprint against [our current key fingerprints](Supplementary/Hostkeys.md).
 
 ### Logging in from outside the UCL firewall
 
