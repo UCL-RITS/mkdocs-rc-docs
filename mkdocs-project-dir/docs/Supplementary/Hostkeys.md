@@ -7,13 +7,6 @@ These are the current hostkey fingerprints for our clusters. The MD5 or SHA256
 at the front is letting you know what type of fingerprint it is - your ssh client 
 may not include that part in its output.
 
-## Grace
-```
-ED25519 key fingerprint is MD5:3a:0c:87:32:d2:34:1f:9a:de:f1:de:8d:ca:93:eb:c5
-ECSDA key fingerprint is SHA256:axzJ6VlK+1kOwjRSDB5+2YpXIzsdcB/CSErL2sDJDuk
-RSA key fingerprint is d5:a8:fa:24:27:4a:d8:c5:c9:d9:f0:f3:f0:c9:8f:26
-```
-
 ## Myriad
 ```
 ED25519 key fingerprint is MD5:92:6d:97:46:eb:8d:0a:4b:8a:65:cb:0d:65:79:bb:7f
