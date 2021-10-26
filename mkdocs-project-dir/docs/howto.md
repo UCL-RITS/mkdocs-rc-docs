@@ -27,7 +27,8 @@ Linux instructions.
 
 #### Using PuTTY
 
-PuTTY is a common SSH client on Windows and is available on Desktop@UCL. You can find it under: `Start > All Programs > Applications O-P > PuTTY`
+PuTTY is a common SSH client on Windows and is available on Desktop@UCL. You can find it under:
+ `Start > P > PuTTY` or type "putty" in the toolbar's search box.
 
 You will need to create an entry for the host you are connecting to with the settings below. If you want to save your settings, give them an easily-identifiable name in the "Saved Sessions" box and press "Save". Then you can select it and "Load" next time you use PuTTY. 
 
