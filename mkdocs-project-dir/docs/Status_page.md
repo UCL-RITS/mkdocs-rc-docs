@@ -16,6 +16,8 @@ We found an undiagnosed issue with one of the quota features in Lustre which we 
 
 - 2021-10-19 12:00 - the new Myriad expansion nodes were enabled and are running jobs.
 
+- 2021-10-26 21:50 - Heavy load on Lustre began. We are investigating whether or not this was a job. Is currently causing slow filesystem access, and affecting MATLAB loading, git clone and Python import times among others.
+
 ### Kathleen
 
 - All systems are working well.
