@@ -18,6 +18,8 @@ We found an undiagnosed issue with one of the quota features in Lustre which we 
 
 - 2021-10-26 21:50 - Heavy load on Lustre began. We are investigating whether or not this was a job. Is currently causing slow filesystem access, and affecting MATLAB loading, git clone and Python import times among others.
 
+- 2021-10-29 11:50 - We are going to do a failover between servers, then make some changes to the OSSes (object store servers). We will prevent new jobs from starting while this is going on and will re-enable them later. While the failover is happening, filesystem operations and logins will hang until recovery completes.
+
 ### Kathleen
 
 - All systems are working well.
