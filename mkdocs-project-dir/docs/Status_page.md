@@ -20,6 +20,10 @@ We found an undiagnosed issue with one of the quota features in Lustre which we 
 
 - 2021-10-29 11:50 - We are going to do a failover between servers, then make some changes to the OSSes (object store servers). We will prevent new jobs from starting while this is going on and will re-enable them later. While the failover is happening, filesystem operations and logins will hang until recovery completes.
 
+- 2021-10-29 14:40 - Jobs were re-enabled. Things are looking better at the moment - we will continue to monitor the system. The main change we made was to upgrade the amount of RAM in the OSSes to let them cache disk use more effectively. 
+
+We took the opportunity to also replace the disks from the previous disk failures with completely new disks so we will no longer be running on hot spares - this work had already been planned. The disks should finish rebuilding over the weekend so there will be some impact from that, but the memory increase appears to have made a notable difference at present. 
+
 ### Kathleen
 
 - All systems are working well.
