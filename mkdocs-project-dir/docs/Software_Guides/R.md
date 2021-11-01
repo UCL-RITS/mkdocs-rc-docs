@@ -262,6 +262,17 @@ sink()
 
 mpi.quit()
 ```
+
+This is `monte_carlo.R` which is called by `snow_example.R`:
+```
+monte_carlo <- function(x, numsides=6){
+  streamname <- .lec.GetStreams ()
+  dice <- .lec.uniform.int(streamname[1], n = 1, a=1, b=numsides)
+  outp <- sum(dice)
+  return(outp)
+}
+```
+
 This example is based on [SHARCNET's Using R and MPI](https://www.sharcnet.ca/help/index.php/Using_R_and_MPI).
 
 ## Using your own R packages
