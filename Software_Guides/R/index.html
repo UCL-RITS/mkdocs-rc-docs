@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Software_Guides/R/">
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.5">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.cdeb8541.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -1395,6 +1395,15 @@ sink()
 mpi.quit()
 </code></pre></div>
 
+<p>This is <code>monte_carlo.R</code> which is called by <code>snow_example.R</code>:</p>
+<div class="codehilite"><pre><span></span><code>monte_carlo &lt;- function(x, numsides=6){
+  streamname &lt;- .lec.GetStreams ()
+  dice &lt;- .lec.uniform.int(streamname[1], n = 1, a=1, b=numsides)
+  outp &lt;- sum(dice)
+  return(outp)
+}
+</code></pre></div>
+
 <p>This example is based on <a href="https://www.sharcnet.ca/help/index.php/Using_R_and_MPI">SHARCNET's Using R and MPI</a>.</p>
 <h2 id="using-your-own-r-packages">Using your own R packages<a class="headerlink" href="#using-your-own-r-packages" title="Permanent link">§</a></h2>
 <p>If we do not have R packages installed centrally that you wish to use, you can 
@@ -1521,10 +1530,10 @@ using those libraries. This appends your directory to the existing value of
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.1e84347e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
       
     
   </body>
