@@ -17,8 +17,8 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
 9 Nov 20201         | Myriad  | Planned | Continue to work to improve the file system on myriad.
-## Previous Outages
 
+## Previous Outages
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
 12 Oct 2021         | Myriad  | Completed | Filesystem load tests before expansion. No jobs will be running and access to login nodes will be blocked during the test, expected to finish by end of day.
