@@ -16,7 +16,7 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-9 Nov 20201         | Myriad  | Planned | Continue to work to improve the file system on myriad.
+9 Nov 20201         | Myriad  | Planned | Continued work to improve the file system. Myriad will be unavailable for the whole day. Queues are being drained for 8am.
 
 ## Previous Outages
 Date                | Service | Status | Reason 
