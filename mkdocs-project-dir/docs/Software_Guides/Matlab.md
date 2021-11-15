@@ -143,22 +143,11 @@ You must have loaded the MATLAB module once from a login node as described in [S
 
 MATLAB PCS jobs must be submitted from an interactive or scripted
 Matlab session which can be running on the cluster login nodes, from
-another MATLAB job or on your own machine.
+another MATLAB job or [on your own machine](#submitting-matlab-jobs-from-your-workstationlaptop).
 
 MATLAB MPS jobs will currently only work inside a single node on our
 clusters. On Myriad this means a maximum of 36 workers can be used per
 job.
-
-### Install the MATLAB Parallel Computing Toolbox
-
-If you are working from a MATLAB install on your own machine, make sure the Parallel Computing 
-Toolbox is installed - it is not installed by default.
-
-Home tab > Add-Ons > Get Add-Ons
-
-You will find the Parallel Computing Toolbox in the Workflows category.
-
-If you are submitting from the Myriad login nodes, then we already have it installed.
 
 ### Importing the cluster profile
 
@@ -382,6 +371,8 @@ With MATLAB R2021a you can currently submit jobs to Myriad. Support for R2018b i
 1. You must already have an account on the clusters!
 2. Have MATLAB R2021a (or R2018b) installed on your local workstation/laptop. The local version must match the version running jobs. MATLAB R2021a can be downloaded from the [UCL Software Database](http://swdb.ucl.ac.uk/package/view/id/2?filter=Matlab).
 3. Your local workstation/laptop installation of MATLAB must include the Parallel Computing toolbox. This is included in the UCL TAH MATLAB license and may be installed automatically.
+ Home tab > Add-Ons > Get Add-Ons
+ You will find the Parallel Computing Toolbox in the Workflows category.
 4. If your local workstation/laptop is not directly connected to the UCL network (at home for example), you need to have the [UCL VPN client](https://www.ucl.ac.uk/isd/services/get-connected/remote-working-services/ucl-virtual-private-network-vpn) installed and running on it.
 
 ### Remote setup
