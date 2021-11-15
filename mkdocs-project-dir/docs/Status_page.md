@@ -28,6 +28,9 @@ We took the opportunity to also replace the disks from the previous disk failure
 
 - 2021-11-15 12:00 - Logins are working. Jobs are not yet re-enabled. 
 
+- 2021-11-15 16:05 - Jobs are being re-enabled so new ones can start. (Existing jobs were still 
+ running if they had not failed). We will be monitoring performance.
+
 ### Kathleen
 
 - All systems are working well.
