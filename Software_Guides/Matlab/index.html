@@ -946,13 +946,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#install-the-matlab-parallel-computing-toolbox" class="md-nav__link">
-    Install the MATLAB Parallel Computing Toolbox
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#importing-the-cluster-profile" class="md-nav__link">
     Importing the cluster profile
   </a>
@@ -1226,13 +1219,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#install-the-matlab-parallel-computing-toolbox" class="md-nav__link">
-    Install the MATLAB Parallel Computing Toolbox
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#importing-the-cluster-profile" class="md-nav__link">
     Importing the cluster profile
   </a>
@@ -1489,16 +1475,10 @@ Instead of using Unix input redirection like this:</p>
 <p>You must have loaded the MATLAB module once from a login node as described in <a href="#setup">Setup</a> before you can submit any MATLAB MPS jobs.</p>
 <p>MATLAB PCS jobs must be submitted from an interactive or scripted
 Matlab session which can be running on the cluster login nodes, from
-another MATLAB job or on your own machine.</p>
+another MATLAB job or <a href="#submitting-matlab-jobs-from-your-workstationlaptop">on your own machine</a>.</p>
 <p>MATLAB MPS jobs will currently only work inside a single node on our
 clusters. On Myriad this means a maximum of 36 workers can be used per
 job.</p>
-<h3 id="install-the-matlab-parallel-computing-toolbox">Install the MATLAB Parallel Computing Toolbox<a class="headerlink" href="#install-the-matlab-parallel-computing-toolbox" title="Permanent link">§</a></h3>
-<p>If you are working from a MATLAB install on your own machine, make sure the Parallel Computing 
-Toolbox is installed - it is not installed by default.</p>
-<p>Home tab &gt; Add-Ons &gt; Get Add-Ons</p>
-<p>You will find the Parallel Computing Toolbox in the Workflows category.</p>
-<p>If you are submitting from the Myriad login nodes, then we already have it installed.</p>
 <h3 id="importing-the-cluster-profile">Importing the cluster profile<a class="headerlink" href="#importing-the-cluster-profile" title="Permanent link">§</a></h3>
 <p>You need to import the cluster profile into your MATLAB environment and set it as the default before you can submit DCS jobs. This only needs doing once. The imported profile will be saved in your MATLAB settings directory.</p>
 <p>Importing the profile can be done either by calling MATLAB functions or via the graphical interface. The profile is stored here (for R2021a): </p>
@@ -1677,7 +1657,9 @@ results = fetchOutputs(job)
 <ol>
 <li>You must already have an account on the clusters!</li>
 <li>Have MATLAB R2021a (or R2018b) installed on your local workstation/laptop. The local version must match the version running jobs. MATLAB R2021a can be downloaded from the <a href="http://swdb.ucl.ac.uk/package/view/id/2?filter=Matlab">UCL Software Database</a>.</li>
-<li>Your local workstation/laptop installation of MATLAB must include the Parallel Computing toolbox. This is included in the UCL TAH MATLAB license and may be installed automatically.</li>
+<li>Your local workstation/laptop installation of MATLAB must include the Parallel Computing toolbox. This is included in the UCL TAH MATLAB license and may be installed automatically.
+ Home tab &gt; Add-Ons &gt; Get Add-Ons
+ You will find the Parallel Computing Toolbox in the Workflows category.</li>
 <li>If your local workstation/laptop is not directly connected to the UCL network (at home for example), you need to have the <a href="https://www.ucl.ac.uk/isd/services/get-connected/remote-working-services/ucl-virtual-private-network-vpn">UCL VPN client</a> installed and running on it.</li>
 </ol>
 <h3 id="remote-setup">Remote setup<a class="headerlink" href="#remote-setup" title="Permanent link">§</a></h3>
