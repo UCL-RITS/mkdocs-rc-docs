@@ -149,7 +149,16 @@ MATLAB MPS jobs will currently only work inside a single node on our
 clusters. On Myriad this means a maximum of 36 workers can be used per
 job.
 
+### Install the MATLAB Parallel Computing Toolbox
 
+If you are working from a MATLAB install on your own machine, make sure the Parallel Computing 
+Toolbox is installed - it is not installed by default.
+
+Home tab > Add-Ons > Get Add-Ons
+
+You will find the Parallel Computing Toolbox in the Workflows category.
+
+If you are submitting from the Myriad login nodes, then we already have it installed.
 
 ### Importing the cluster profile
 
