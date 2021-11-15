@@ -24,21 +24,15 @@ We found an undiagnosed issue with one of the quota features in Lustre which we 
 
 We took the opportunity to also replace the disks from the previous disk failures with completely new disks so we will no longer be running on hot spares - this work had already been planned. The disks should finish rebuilding over the weekend so there will be some impact from that, but the memory increase appears to have made a notable difference at present. 
 
+- 2021-11-15 09:16 - Beginning on Saturday night, something triggered a Lustre bug that left both OSSes (object store servers) unresponsive and prevented logins. We are currently working on this.
+
 ### Kathleen
 
 - All systems are working well.
 
 ### Young
 
-- 2021-09-24 16:00 - Jobs were re-enabled but we are encountering a ZFS bug that causes a metadata server to reboot or crash and the filesystem hangs until it recovers. This is causing periodic file access slowness and login failures during the recovery periods. Patching of ZFS is being planned.
-
-- 2021-09-29 15:20 - Queues being drained of jobs so that ZFS upgrade can take place on Thurs 30 Sept. This should fix the above bug.
-
-- 2021-10-04 15:00 - The ZFS upgrade was more complicated than originally thought. We currently expect Young to be back in service midday on Tues 5 Oct.
-
-- 2021-10-05 12:00 - Upgrade completed. Jobs were re-enabled on Young.
-
-- There are a number of nodes that intermittently lose power from their chassis, switch themselves off and need to be manually powered back on (this causes jobs to be stuck in `dr` state when they end until the reboot happens). This leads to a higher than usual number of nodes being seen by the scheduler as unavailable. We are awaiting hardware components for those chassis.
+- There are a number of nodes that intermittently lose power from their chassis, switch themselves off and need to be manually powered back on (this causes jobs to be stuck in `dr` state when they end until the reboot happens). This leads to a higher than usual number of nodes being seen by the scheduler as unavailable. 
 
 ### Michael
 
