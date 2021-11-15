@@ -1110,27 +1110,16 @@
 </li>
 </ul>
 <p>We took the opportunity to also replace the disks from the previous disk failures with completely new disks so we will no longer be running on hot spares - this work had already been planned. The disks should finish rebuilding over the weekend so there will be some impact from that, but the memory increase appears to have made a notable difference at present. </p>
+<ul>
+<li>2021-11-15 09:16 - Beginning on Saturday night, something triggered a Lustre bug that left both OSSes (object store servers) unresponsive and prevented logins. We are currently working on this.</li>
+</ul>
 <h3 id="kathleen">Kathleen<a class="headerlink" href="#kathleen" title="Permanent link">§</a></h3>
 <ul>
 <li>All systems are working well.</li>
 </ul>
 <h3 id="young">Young<a class="headerlink" href="#young" title="Permanent link">§</a></h3>
 <ul>
-<li>
-<p>2021-09-24 16:00 - Jobs were re-enabled but we are encountering a ZFS bug that causes a metadata server to reboot or crash and the filesystem hangs until it recovers. This is causing periodic file access slowness and login failures during the recovery periods. Patching of ZFS is being planned.</p>
-</li>
-<li>
-<p>2021-09-29 15:20 - Queues being drained of jobs so that ZFS upgrade can take place on Thurs 30 Sept. This should fix the above bug.</p>
-</li>
-<li>
-<p>2021-10-04 15:00 - The ZFS upgrade was more complicated than originally thought. We currently expect Young to be back in service midday on Tues 5 Oct.</p>
-</li>
-<li>
-<p>2021-10-05 12:00 - Upgrade completed. Jobs were re-enabled on Young.</p>
-</li>
-<li>
-<p>There are a number of nodes that intermittently lose power from their chassis, switch themselves off and need to be manually powered back on (this causes jobs to be stuck in <code>dr</code> state when they end until the reboot happens). This leads to a higher than usual number of nodes being seen by the scheduler as unavailable. We are awaiting hardware components for those chassis.</p>
-</li>
+<li>There are a number of nodes that intermittently lose power from their chassis, switch themselves off and need to be manually powered back on (this causes jobs to be stuck in <code>dr</code> state when they end until the reboot happens). This leads to a higher than usual number of nodes being seen by the scheduler as unavailable. </li>
 </ul>
 <h3 id="michael">Michael<a class="headerlink" href="#michael" title="Permanent link">§</a></h3>
 <ul>
