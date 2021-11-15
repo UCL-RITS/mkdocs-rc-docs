@@ -26,6 +26,8 @@ We took the opportunity to also replace the disks from the previous disk failure
 
 - 2021-11-15 09:16 - Beginning on Saturday night, something triggered a Lustre bug that left both OSSes (object store servers) unresponsive and prevented logins. We are currently working on this.
 
+- 2021-11-15 12:00 - Logins are working. Jobs are not yet re-enabled. 
+
 ### Kathleen
 
 - All systems are working well.
