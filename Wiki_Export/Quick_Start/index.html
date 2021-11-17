@@ -1142,11 +1142,11 @@ same options you would include in your job submission script, so:</p>
 </code></pre></div>
 
 <p>Is functionally equivalent to: </p>
-<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1">#$ -S /bin/bash</span>
-<span class="c1">#$ -pe mpi 8</span>
-<span class="c1">#$ -l mem=512M</span>
-<span class="c1">#$ -l h_rt=2:0:0</span>
+<div class="codehilite"><pre><span></span><code>#!/bin/bash
+#$ -S /bin/bash
+#$ -pe mpi 8
+#$ -l mem=512M
+#$ -l h_rt=2:0:0
 </code></pre></div>
 
 <p>Except, of course, that the result of qrsh is an interactive

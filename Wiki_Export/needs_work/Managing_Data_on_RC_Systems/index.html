@@ -1419,12 +1419,12 @@ your data to <code>$HOME/Scratch</code>:</p>
 script like the one in the example below, which should be submitted
 using qsub (remember to supply your correct consortium and project for
 the job): </p>
-<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l  </span>
-<span class="c1">#$ -N Data_transfer  </span>
-<span class="c1">#$ -l h_rt=1:0:0  </span>
-<span class="c1">#$ -l mem=1G  </span>
-<span class="c1">#$ -P &lt;your_project_name&gt;  </span>
-<span class="c1">#$ -wd /home/&lt;your_user_id&gt;/Scratch  </span>
+<div class="codehilite"><pre><span></span><code>#!/bin/bash -l  
+#$ -N Data_transfer  
+#$ -l h_rt=1:0:0  
+#$ -l mem=1G  
+#$ -P &lt;your_project_name&gt;  
+#$ -wd /home/&lt;your_user_id&gt;/Scratch  
 &lt;scp_command&gt;
 </code></pre></div>
 
