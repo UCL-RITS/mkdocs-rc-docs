@@ -25,7 +25,6 @@ General User Information:
 Clusters:
 
 - [Myriad](Clusters/Myriad.md)
-- [Grace](Clusters/Grace.md)
 - [Kathleen](Clusters/Kathleen.md)
 - [Thomas](Clusters/Thomas.md)
 - [Young](Clusters/Young.md)
@@ -40,7 +39,7 @@ whatever your skill level or requirements.
 
 ## How to...
 
-- [Connect to the Research Data Storage service](Connecting_to_Research_Data_Services)
+- [Connect to the Research Data Storage service](https://www.ucl.ac.uk/isd/how-to/rdss-myriad-data-storage-transfer-service)
 - [Report a problem with one of our computing platforms](Reporting_problems)
 - [Access services from outside UCL](howto.md#logging-in-from-outside-the-ucl-firewall)
 - [Apply for access to national GPU clusters](Supplementary/GPU_Clusters.md)
