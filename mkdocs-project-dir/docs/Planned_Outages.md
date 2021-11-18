@@ -16,11 +16,12 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-9 Nov 20201         | Myriad  | Planned | Continued work to improve the file system. Myriad will be unavailable for the whole day. Queues are being drained for 8am.
+19 Nov 2021         | Myriad  | Planned | One of our suppliers will be onsite to replace a component. Queues are being drained.
 
 ## Previous Outages
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+9 Nov 2021         | Myriad  | Planned | Continued work to improve the file system. Myriad will be unavailable for the whole day. Queues are being drained for 8am.
 12 Oct 2021         | Myriad  | Completed | Filesystem load tests before expansion. No jobs will be running and access to login nodes will be blocked during the test, expected to finish by end of day.
 29 Sept 2021 -> 30 Sept 2021, 5 Oct 2021 | Young | Completed | Extended: expected back in service midday Tues 5 Oct. Queues drained so ZFS can be upgraded to patch a bug causing metadata server issues. No jobs will be running.
 14 Sept 2021        | Myriad  | Planned | Queues drained for 8am so that the central software installs can be redistributed over more servers. This is to help mitigate the effects of current filesystem issues.
