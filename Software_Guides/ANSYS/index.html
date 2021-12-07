@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Software_Guides/ANSYS/">
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.5">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2a4617e2.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a617204b.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.9204c3b2.min.css">
@@ -37,7 +37,7 @@
     
       <link rel="stylesheet" href="../../stylesheets/tweaks.css">
     
-    <script>function __md_scope(e,t,_){return new URL(_||(t===localStorage?"../..":"../.."),location).pathname+"."+e}function __md_get(e,t=localStorage,_){return JSON.parse(t.getItem(__md_scope(e,t,_)))}function __md_set(e,t,_=localStorage,o){try{_.setItem(__md_scope(e,_,o),JSON.stringify(t))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -1206,7 +1206,17 @@ interactive tools provided you have X-windows functionality enabled
 though your ssh connection. See our User Guide
 for more information about enabling
 X-windows functionality and the User Test nodes.</p>
-<p>UCL's campus-wide license covers 125 instances with 512 HPC licenses (for parallel jobs) available for running CFX, Fluent and AnsysEM jobs and in order to make sure that jobs only run if there are licenses available, it is necessary for users to request ANSYS licenses with their jobs, by adding <code>-ac app=cfx</code> to their job submission.</p>
+<p>UCL's campus-wide license covers 125 instances with 512 HPC licenses (for 
+parallel jobs) available for running CFX, Fluent and AnsysEM jobs and in 
+order to make sure that jobs only run if there are licenses available, it 
+is necessary for users to request ANSYS licenses with their jobs, by adding 
+<code>-ac app=cfx</code> to their job submission.</p>
+<div class="admonition important">
+<p class="admonition-title">License checking</p>
+<p>Current as of Dec 2021, the <code>-ac app=cfx</code> license check does not work
+after ANSYS renamed all products and licenses. Remove this line from
+your jobscripts for the time being or jobs will not be able to start.</p>
+</div>
 <h2 id="ansyscfx">ANSYS/CFX<a class="headerlink" href="#ansyscfx" title="Permanent link">§</a></h2>
 <p>CFX handles its own parallelisation, so a number of complex options need to be passed in job scripts to make it run correctly.</p>
 <h3 id="example-single-node-multi-threaded-ansyscfx-jobscript">Example single node multi-threaded ANSYS/CFX jobscript<a class="headerlink" href="#example-single-node-multi-threaded-ansyscfx-jobscript" title="Permanent link">§</a></h3>
@@ -1233,8 +1243,9 @@ given <code>.def</code> file.</p>
 # Select 12 threads.
 #$ -pe smp 12
 
-# Request ANSYS licences 
-#$ -ac app=cfx
+# Request ANSYS licences
+# Dec 2021: comment out this check as not currently working
+###$ -ac app=cfx
 
 # Set the working directory to somewhere in your scratch space. In this
 # case the subdirectory cfxtests-19.1
@@ -1280,7 +1291,8 @@ cfx5solve -max-elapsed-time &quot;15 [min]&quot; -def StaticMixer.def -par-local
 #$ -pe mpi 36
 
 # Request ANSYS licences 
-#$ -ac app=cfx
+# Dec 2021: comment out this check as not currently working
+###$ -ac app=cfx
 
 # Set the working directory to somewhere in your scratch space.  In this
 # case the subdirectory cfxtests-19.1
@@ -1341,7 +1353,8 @@ correctly.</p>
 #$ -N Fluent_ser1
 
 # Request ANSYS licences
-#$ -ac app=cfx
+# Dec 2021: comment out this check as not currently working
+###$ -ac app=cfx
 
 # Set the working directory to somewhere in your scratch space.  In this
 # case the subdirectory fluent-tests-19.1
@@ -1396,7 +1409,8 @@ across more than one node.</p>
 #$ -l tmpfs=25G
 
 # Request ANSYS licences
-#$ -ac app=cfx
+# Dec 2021: comment out this check as not currently working
+###$ -ac app=cfx
 
 # Set the working directory to somewhere in your scratch space.  In this
 # case the subdirectory fluent-tests-19.1
@@ -1456,7 +1470,8 @@ be used to submit the job eg: </p>
 
 # Request ANSYS licences $ inserted so currently active.Job will queue until
 # suficient licences are available.
-#$ -ac app=cfx
+# Dec 2021: comment out this check as not currently working
+###$ -ac app=cfx
 
 # Set the working directory to somewhere in your scratch space.  In this
 # case the subdirectory ANSYS_Mech
@@ -1563,10 +1578,10 @@ ansys195 -dis -b -p aa_r -machines $CFX_NODES &lt; steady_state_input_file.dat
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.ca141e46.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.cefbb252.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6baa0517.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f8ea78.min.js"></script>
       
     
   </body>
