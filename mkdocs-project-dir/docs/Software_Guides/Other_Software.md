@@ -1071,6 +1071,16 @@ star -notracker -mpi=intel
 ```
 Simulations run using Intel MPI may run faster than they do when using IBM Platform MPI. 
 
+If being run on a diskless cluster without available `$TMPDIR` like Kathleen, 
+then StarCD will create a `$HPC_SCRATCH` location to store its temporary files
+when the module is loaded. In a job this is set to `$HOME/Scratch/STAR_ScrDirs/[randomLabel]`
+and it will make this directory and notify that it did this in your .e file. 
+You can delete the randomly-named directory after the job ends.
+To set the location yourself, after you load the module you can set it to any 
+other existing directory instead:
+```
+export HPC_SCRATCH=/path/to/desired/location
+```
 
 ### Stata/MP
 
