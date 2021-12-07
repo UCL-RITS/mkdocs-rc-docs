@@ -5,6 +5,11 @@ layout: docs
 
 # ANSYS
 
+!!! important "License checking"
+    Current as of Dec 2021, the `-ac app=cfx` license check does not work
+    after ANSYS renamed all products and licenses. Remove this line from
+    your jobscripts for the time being or jobs will not be able to start.
+
 ANSYS/CFX and ANSYS/Fluent are commercial fluid dynamics packages. 
 
 ANSYS/CFX and ANSYS/Fluent version 17.2, 18.0, 19.1 and later are available. The ANSYS Electromagnetics Suite (AnsysEM) is available from version 19.1 onwards. ANSYS Mechanical and Autodyn are available from 2019.r3 onwards.
@@ -39,11 +44,6 @@ parallel jobs) available for running CFX, Fluent and AnsysEM jobs and in
 order to make sure that jobs only run if there are licenses available, it 
 is necessary for users to request ANSYS licenses with their jobs, by adding 
 `-ac app=cfx` to their job submission.
-
-!!! important "License checking"
-    Current as of Dec 2021, the `-ac app=cfx` license check does not work
-    after ANSYS renamed all products and licenses. Remove this line from
-    your jobscripts for the time being or jobs will not be able to start.
 
 ## ANSYS/CFX
 
