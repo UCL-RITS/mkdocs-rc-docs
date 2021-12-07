@@ -2641,6 +2641,16 @@ star -notracker
 </code></pre></div>
 
 <p>Simulations run using Intel MPI may run faster than they do when using IBM Platform MPI. </p>
+<p>If being run on a diskless cluster without available <code>$TMPDIR</code> like Kathleen, 
+then StarCD will create a <code>$HPC_SCRATCH</code> location to store its temporary files
+when the module is loaded. In a job this is set to <code>$HOME/Scratch/STAR_ScrDirs/[randomLabel]</code>
+and it will make this directory and notify that it did this in your .e file. 
+You can delete the randomly-named directory after the job ends.
+To set the location yourself, after you load the module you can set it to any 
+other existing directory instead:</p>
+<div class="codehilite"><pre><span></span><code>export HPC_SCRATCH=/path/to/desired/location
+</code></pre></div>
+
 <h3 id="statamp">Stata/MP<a class="headerlink" href="#statamp" title="Permanent link">§</a></h3>
 <p>Stata is a statistics, data management, and graphics system. Stata/MP is the version of the package that runs on multiple cores. </p>
 <p>We have a sixteen user license of Stata/MP. Our license supports Stata running on up to four cores per job. </p>
