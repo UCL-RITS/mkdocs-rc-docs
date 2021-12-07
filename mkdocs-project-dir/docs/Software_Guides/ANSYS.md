@@ -34,7 +34,16 @@ though your ssh connection. See our User Guide
 for more information about enabling
 X-windows functionality and the User Test nodes.
 
-UCL's campus-wide license covers 125 instances with 512 HPC licenses (for parallel jobs) available for running CFX, Fluent and AnsysEM jobs and in order to make sure that jobs only run if there are licenses available, it is necessary for users to request ANSYS licenses with their jobs, by adding `-ac app=cfx` to their job submission.
+UCL's campus-wide license covers 125 instances with 512 HPC licenses (for 
+parallel jobs) available for running CFX, Fluent and AnsysEM jobs and in 
+order to make sure that jobs only run if there are licenses available, it 
+is necessary for users to request ANSYS licenses with their jobs, by adding 
+`-ac app=cfx` to their job submission.
+
+!!! important "License checking"
+    Current as of Dec 2021, the `-ac app=cfx` license check does not work
+    after ANSYS renamed all products and licenses. Remove this line from
+    your jobscripts for the time being or jobs will not be able to start.
 
 ## ANSYS/CFX
 
@@ -68,8 +77,9 @@ given `.def` file.
 # Select 12 threads.
 #$ -pe smp 12
 
-# Request ANSYS licences 
-#$ -ac app=cfx
+# Request ANSYS licences
+# Dec 2021: comment out this check as not currently working
+###$ -ac app=cfx
 
 # Set the working directory to somewhere in your scratch space. In this
 # case the subdirectory cfxtests-19.1
@@ -118,7 +128,8 @@ Here is an example runscript for running cfx5solve on more than one node
 #$ -pe mpi 36
 
 # Request ANSYS licences 
-#$ -ac app=cfx
+# Dec 2021: comment out this check as not currently working
+###$ -ac app=cfx
 
 # Set the working directory to somewhere in your scratch space.  In this
 # case the subdirectory cfxtests-19.1
@@ -193,7 +204,8 @@ Here is an example jobscript for running Fluent in serial mode (1 core).
 #$ -N Fluent_ser1
 
 # Request ANSYS licences
-#$ -ac app=cfx
+# Dec 2021: comment out this check as not currently working
+###$ -ac app=cfx
 
 # Set the working directory to somewhere in your scratch space.  In this
 # case the subdirectory fluent-tests-19.1
@@ -254,7 +266,8 @@ across more than one node.
 #$ -l tmpfs=25G
 
 # Request ANSYS licences
-#$ -ac app=cfx
+# Dec 2021: comment out this check as not currently working
+###$ -ac app=cfx
 
 # Set the working directory to somewhere in your scratch space.  In this
 # case the subdirectory fluent-tests-19.1
@@ -323,7 +336,8 @@ Fluent 14 required `-mpi=pcmpi -pinfiniband` in the parallel options: if you hav
 
 # Request ANSYS licences $ inserted so currently active.Job will queue until
 # suficient licences are available.
-#$ -ac app=cfx
+# Dec 2021: comment out this check as not currently working
+###$ -ac app=cfx
 
 # Set the working directory to somewhere in your scratch space.  In this
 # case the subdirectory ANSYS_Mech
