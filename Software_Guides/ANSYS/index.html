@@ -1185,6 +1185,12 @@
 
 
 <h1 id="ansys">ANSYS<a class="headerlink" href="#ansys" title="Permanent link">§</a></h1>
+<div class="admonition important">
+<p class="admonition-title">License checking</p>
+<p>Current as of Dec 2021, the <code>-ac app=cfx</code> license check does not work
+after ANSYS renamed all products and licenses. Remove this line from
+your jobscripts for the time being or jobs will not be able to start.</p>
+</div>
 <p>ANSYS/CFX and ANSYS/Fluent are commercial fluid dynamics packages. </p>
 <p>ANSYS/CFX and ANSYS/Fluent version 17.2, 18.0, 19.1 and later are available. The ANSYS Electromagnetics Suite (AnsysEM) is available from version 19.1 onwards. ANSYS Mechanical and Autodyn are available from 2019.r3 onwards.</p>
 <p>Before these applications can be run, the user needs to go though a
@@ -1211,12 +1217,6 @@ parallel jobs) available for running CFX, Fluent and AnsysEM jobs and in
 order to make sure that jobs only run if there are licenses available, it 
 is necessary for users to request ANSYS licenses with their jobs, by adding 
 <code>-ac app=cfx</code> to their job submission.</p>
-<div class="admonition important">
-<p class="admonition-title">License checking</p>
-<p>Current as of Dec 2021, the <code>-ac app=cfx</code> license check does not work
-after ANSYS renamed all products and licenses. Remove this line from
-your jobscripts for the time being or jobs will not be able to start.</p>
-</div>
 <h2 id="ansyscfx">ANSYS/CFX<a class="headerlink" href="#ansyscfx" title="Permanent link">§</a></h2>
 <p>CFX handles its own parallelisation, so a number of complex options need to be passed in job scripts to make it run correctly.</p>
 <h3 id="example-single-node-multi-threaded-ansyscfx-jobscript">Example single node multi-threaded ANSYS/CFX jobscript<a class="headerlink" href="#example-single-node-multi-threaded-ansyscfx-jobscript" title="Permanent link">§</a></h3>
