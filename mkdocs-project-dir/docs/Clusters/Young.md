@@ -6,6 +6,18 @@ Young is the UK National Tier 2 High Performance Computing Hub in
 Materials and Molecular Modelling, and replacement for Thomas. 
 Young went into pilot on 3 Aug 2020.
 
+## Training resources
+
+The [MMM Hub's Events and Training page](http://mmmhub.ac.uk/young-events-and-training/)
+contains useful information for new users and about specific software.
+
+In particular the "Software Training" section:
+ - [A basic introduction video to Young](http://youtu.be/bagooylPXY4), including 
+   details of hardware, how to submit jobs and an overview of types of parallelism
+ - [A quick 4 minute overview of how to choose memory](https://www.youtube.com/watch?v=pYspFuxbWjs)
+ - [Longer videos on memory allocation for new users](https://www.youtube.com/watch?v=D3iF_N0cwv4)
+   - [A hands-on memory allocation example](https://www.youtube.com/watch?v=QlMaN_ECIwg) 
+
 ## Applying for an account
 
 Young accounts belong to you as an individual and are applied for
