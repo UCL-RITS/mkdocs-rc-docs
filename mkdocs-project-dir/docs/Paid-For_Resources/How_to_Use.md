@@ -11,6 +11,19 @@ or both.
 Users with access to paid resources have some extra flags and a tool for
 monitoring their nodes.
 
+## Why we recommend priority access
+
+We recommend priority access via Gold rather than dedicated nodes in most
+circumstances because:
+
+ * The amount of Gold you get is equivalent to the core hours if you ran your node 
+   at 100% utilisation throughout its 3-year lifespan.
+ * If you have a dedicated node and aren't currently running anything on it, it is 
+   idle and you cannot recover that time (and it still uses power and incurs 
+   hosting costs).
+ * If you aren't currently using your Gold, you have 3 months (or your chosen 
+   allocation period length) to recover that time and use it.
+
 ## Dedicated nodes
 
 For dedicated nodes, your project is usually set by default so you do not
