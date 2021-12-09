@@ -5,11 +5,13 @@ layout: docs
 
 # Using Paid-For Resources
 
-Paid resources may be in the form of dedicated nodes, priority access (Gold)
+Paid resources may be in the form of priority access (Gold), dedicated nodes
 or both.
 
-Users with access to paid resources have some extra flags and a tool for
-monitoring their nodes.
+Users with access to Gold have tools for monitoring budgets and usage.
+
+Users with access to dedicated nodes have a tool for monitoring current use of 
+their nodes.
 
 ## Why we recommend priority access
 
@@ -23,48 +25,6 @@ circumstances because:
    hosting costs).
  * If you aren't currently using your Gold, you have 3 months (or your chosen 
    allocation period length) to recover that time and use it.
-
-## Dedicated nodes
-
-For dedicated nodes, your project is usually set by default so you do not
-need to specify it in your jobscript. You can check this by looking at
-`qstat -j $JOB_ID` for an existing job ID, and looking at the `project`
-line near the bottom.
-
-### Jobscript additions for dedicated nodes
-
-If the project is not being set by default, for a job to be eligible to run on 
-your nodes you will need to specify your project in your jobscript:
-
-```
-# Specify project
-#$ -P <project>
-```
-
-This will allow a job to run on your nodes, but it can also be scheduled
-on general-use nodes if some are available first. This should be the
-main way you run jobs.
-
-If you need to, you can force jobs to run on your nodes only. This is
-suitable when you have arranged policies on your nodes that are
-different from the normal policies (eg. a longer maximum wallclock time), 
-as it means your policies will be in effect instead of the general policies.
-
-```
-# Specify paid flag to force running on paid nodes only, with your policies
-#$ -l paid=1
-```
-
-### Check what is running on your nodes
-
-We have a script named `whatsonmynode`, that runs `qhost -j` for all the
-nodes belonging to your project, so you can see which nodes you have,
-what is running on them and from which user.
-
-```
-module load userscripts
-whatsonmynode <project>
-```
 
 ## Priority access via Gold
 
@@ -153,5 +113,48 @@ gstatement -p hpc.xx -s 2020-12-01 -e 2021-12-01
 
 # give a summary between the given dates
 gstatement -p hpc.xx -s 2020-12-01 -e 2021-12-01 --summarize
+```
+
+## Dedicated nodes
+
+For dedicated nodes, only members of your project are allowed to run jobs 
+on your node. Your project is usually set by default so you do not
+need to specify it in your jobscript. You can check this by looking at
+`qstat -j $JOB_ID` for an existing job ID, and looking at the `project`
+line near the bottom.
+
+### Jobscript additions for dedicated nodes
+
+If the project is not being set by default, for a job to be eligible to run on
+your nodes you will need to specify your project in your jobscript:
+
+```
+# Specify project
+#$ -P <project>
+```
+
+This will allow a job to run on your nodes, but it can also be scheduled
+on general-use nodes if some are available first. This should be the
+main way you run jobs.
+
+If you need to, you can force jobs to run on your nodes only. This is
+suitable when you have arranged policies on your nodes that are
+different from the normal policies (eg. a longer maximum wallclock time),
+as it means your policies will be in effect instead of the general policies.
+
+```
+# Specify paid flag to force running on paid nodes only, with your policies
+#$ -l paid=1
+```
+
+### Check what is running on your nodes
+
+We have a script named `whatsonmynode`, that runs `qhost -j` for all the
+nodes belonging to your project, so you can see which nodes you have,
+what is running on them and from which user.
+
+```
+module load userscripts
+whatsonmynode <project>
 ```
 
