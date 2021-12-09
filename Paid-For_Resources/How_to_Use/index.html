@@ -826,33 +826,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dedicated-nodes" class="md-nav__link">
-    Dedicated nodes
-  </a>
-  
-    <nav class="md-nav" aria-label="Dedicated nodes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#jobscript-additions-for-dedicated-nodes" class="md-nav__link">
-    Jobscript additions for dedicated nodes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-what-is-running-on-your-nodes" class="md-nav__link">
-    Check what is running on your nodes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#priority-access-via-gold" class="md-nav__link">
     Priority access via Gold
   </a>
@@ -884,6 +857,33 @@
           <li class="md-nav__item">
   <a href="#monitoring-gold-usage" class="md-nav__link">
     Monitoring Gold usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dedicated-nodes" class="md-nav__link">
+    Dedicated nodes
+  </a>
+  
+    <nav class="md-nav" aria-label="Dedicated nodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jobscript-additions-for-dedicated-nodes" class="md-nav__link">
+    Jobscript additions for dedicated nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-what-is-running-on-your-nodes" class="md-nav__link">
+    Check what is running on your nodes
   </a>
   
 </li>
@@ -1074,33 +1074,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dedicated-nodes" class="md-nav__link">
-    Dedicated nodes
-  </a>
-  
-    <nav class="md-nav" aria-label="Dedicated nodes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#jobscript-additions-for-dedicated-nodes" class="md-nav__link">
-    Jobscript additions for dedicated nodes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-what-is-running-on-your-nodes" class="md-nav__link">
-    Check what is running on your nodes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#priority-access-via-gold" class="md-nav__link">
     Priority access via Gold
   </a>
@@ -1141,6 +1114,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dedicated-nodes" class="md-nav__link">
+    Dedicated nodes
+  </a>
+  
+    <nav class="md-nav" aria-label="Dedicated nodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jobscript-additions-for-dedicated-nodes" class="md-nav__link">
+    Jobscript additions for dedicated nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-what-is-running-on-your-nodes" class="md-nav__link">
+    Check what is running on your nodes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1159,10 +1159,11 @@
 
 
 <h1 id="using-paid-for-resources">Using Paid-For Resources<a class="headerlink" href="#using-paid-for-resources" title="Permanent link">§</a></h1>
-<p>Paid resources may be in the form of dedicated nodes, priority access (Gold)
+<p>Paid resources may be in the form of priority access (Gold), dedicated nodes
 or both.</p>
-<p>Users with access to paid resources have some extra flags and a tool for
-monitoring their nodes.</p>
+<p>Users with access to Gold have tools for monitoring budgets and usage.</p>
+<p>Users with access to dedicated nodes have a tool for monitoring current use of 
+their nodes.</p>
 <h2 id="why-we-recommend-priority-access">Why we recommend priority access<a class="headerlink" href="#why-we-recommend-priority-access" title="Permanent link">§</a></h2>
 <p>We recommend priority access via Gold rather than dedicated nodes in most
 circumstances because:</p>
@@ -1175,37 +1176,6 @@ circumstances because:</p>
 <li>If you aren't currently using your Gold, you have 3 months (or your chosen 
    allocation period length) to recover that time and use it.</li>
 </ul>
-<h2 id="dedicated-nodes">Dedicated nodes<a class="headerlink" href="#dedicated-nodes" title="Permanent link">§</a></h2>
-<p>For dedicated nodes, your project is usually set by default so you do not
-need to specify it in your jobscript. You can check this by looking at
-<code>qstat -j $JOB_ID</code> for an existing job ID, and looking at the <code>project</code>
-line near the bottom.</p>
-<h3 id="jobscript-additions-for-dedicated-nodes">Jobscript additions for dedicated nodes<a class="headerlink" href="#jobscript-additions-for-dedicated-nodes" title="Permanent link">§</a></h3>
-<p>If the project is not being set by default, for a job to be eligible to run on 
-your nodes you will need to specify your project in your jobscript:</p>
-<div class="codehilite"><pre><span></span><code># Specify project
-#$ -P &lt;project&gt;
-</code></pre></div>
-
-<p>This will allow a job to run on your nodes, but it can also be scheduled
-on general-use nodes if some are available first. This should be the
-main way you run jobs.</p>
-<p>If you need to, you can force jobs to run on your nodes only. This is
-suitable when you have arranged policies on your nodes that are
-different from the normal policies (eg. a longer maximum wallclock time), 
-as it means your policies will be in effect instead of the general policies.</p>
-<div class="codehilite"><pre><span></span><code># Specify paid flag to force running on paid nodes only, with your policies
-#$ -l paid=1
-</code></pre></div>
-
-<h3 id="check-what-is-running-on-your-nodes">Check what is running on your nodes<a class="headerlink" href="#check-what-is-running-on-your-nodes" title="Permanent link">§</a></h3>
-<p>We have a script named <code>whatsonmynode</code>, that runs <code>qhost -j</code> for all the
-nodes belonging to your project, so you can see which nodes you have,
-what is running on them and from which user.</p>
-<div class="codehilite"><pre><span></span><code>module load userscripts
-whatsonmynode &lt;project&gt;
-</code></pre></div>
-
 <h2 id="priority-access-via-gold">Priority access via Gold<a class="headerlink" href="#priority-access-via-gold" title="Permanent link">§</a></h2>
 <p>If you have priority access, this is managed by a resource called Gold.
 Gold is divided into allocations, which have start and end dates and a
@@ -1276,6 +1246,38 @@ gstatement -p hpc.xx -s 2020-12-01 -e 2021-12-01
 
 # give a summary between the given dates
 gstatement -p hpc.xx -s 2020-12-01 -e 2021-12-01 --summarize
+</code></pre></div>
+
+<h2 id="dedicated-nodes">Dedicated nodes<a class="headerlink" href="#dedicated-nodes" title="Permanent link">§</a></h2>
+<p>For dedicated nodes, only members of your project are allowed to run jobs 
+on your node. Your project is usually set by default so you do not
+need to specify it in your jobscript. You can check this by looking at
+<code>qstat -j $JOB_ID</code> for an existing job ID, and looking at the <code>project</code>
+line near the bottom.</p>
+<h3 id="jobscript-additions-for-dedicated-nodes">Jobscript additions for dedicated nodes<a class="headerlink" href="#jobscript-additions-for-dedicated-nodes" title="Permanent link">§</a></h3>
+<p>If the project is not being set by default, for a job to be eligible to run on
+your nodes you will need to specify your project in your jobscript:</p>
+<div class="codehilite"><pre><span></span><code># Specify project
+#$ -P &lt;project&gt;
+</code></pre></div>
+
+<p>This will allow a job to run on your nodes, but it can also be scheduled
+on general-use nodes if some are available first. This should be the
+main way you run jobs.</p>
+<p>If you need to, you can force jobs to run on your nodes only. This is
+suitable when you have arranged policies on your nodes that are
+different from the normal policies (eg. a longer maximum wallclock time),
+as it means your policies will be in effect instead of the general policies.</p>
+<div class="codehilite"><pre><span></span><code># Specify paid flag to force running on paid nodes only, with your policies
+#$ -l paid=1
+</code></pre></div>
+
+<h3 id="check-what-is-running-on-your-nodes">Check what is running on your nodes<a class="headerlink" href="#check-what-is-running-on-your-nodes" title="Permanent link">§</a></h3>
+<p>We have a script named <code>whatsonmynode</code>, that runs <code>qhost -j</code> for all the
+nodes belonging to your project, so you can see which nodes you have,
+what is running on them and from which user.</p>
+<div class="codehilite"><pre><span></span><code>module load userscripts
+whatsonmynode &lt;project&gt;
 </code></pre></div>
 
               
