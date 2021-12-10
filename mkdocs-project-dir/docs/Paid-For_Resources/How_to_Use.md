@@ -41,7 +41,7 @@ and taken away from the available balance when you run `qsub`. After the
 job ends, how long it ran for is checked, and any unused Gold is put back
 for anyone to use. 
 
-For example, you asked for 3 hours and 20 cores, but your job finished 
+For example, you asked for 3 hours and 10 cores, but your job finished 
 in 2 hours. When you submit the job, it will reserve 30 Gold and your
 budget will go down by 30. When it ends, the final charge is only 20 Gold,
 so 10 Gold gets put back in your available budget.
