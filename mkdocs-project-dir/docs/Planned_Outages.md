@@ -5,7 +5,7 @@ layout: docs
 # Planned Outages
 
 !!! important "UCL Christmas closing"
-    UCL's closure dates for Christmas are Weds 23 Dec to Tues 3 Jan inclusive. 
+    UCL's closure dates for Christmas are Thurs 23 Dec to Mon 3 Jan inclusive. 
     The clusters will be left running, but any tickets or cluster problems will 
     be dealt with after we return on 4th January. 
 
