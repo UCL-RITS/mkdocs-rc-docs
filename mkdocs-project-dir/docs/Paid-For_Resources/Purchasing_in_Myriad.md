@@ -25,13 +25,13 @@ If you are putting together a grant application and think that you may need to a
 
 #### Can you give me advice on what hardware to buy?
 
-Yes, we’d be happy to discuss this with you. Please contact [rits@ucl.ac.uk](mailto:rits@ucl.ac.uk). Please note that this is not the same address used for support requests.
+Yes, we’d be happy to discuss this with you. Please contact [rc-support@ucl.ac.uk](mailto:rc-support@ucl.ac.uk).
 
 #### What type of nodes can we purchase?
 We currently have three types of node in Myriad, which are well tested and work reliably. These are:
 
  - Standard compute nodes: 36 Cascade Lake Xeon cores, 192GB RAM
- - GPU nodes: 36 Cascade Lake Xeon cores, 192GB RAM, 2x nVidia Tesla V100
+ - GPU nodes: 36 Cascade Lake Xeon cores, 192GB RAM, 4x nVidia A100
  - High memory: 36 Cascade Lake Xeon cores, 1.5TB RAM
 
 If you require an alternative/custom specification, we can’t guarantee that we will be able to accommodate this on the cluster, but we’re happy to look into it.
@@ -42,7 +42,7 @@ No. We have a framework agreement with the vendor which covers all hardware purc
 
 #### I know what hardware I need. Can you send me a quote?
 
-Even if you know what hardware you need, before we can send you a quote, we will need to agree on a detailed specification. Please email [rits@ucl.ac.uk](mailto:rits@ucl.ac.uk) with the following information:
+Even if you know what hardware you need, before we can send you a quote, we will need to agree on a detailed specification. Please email [rc-support@ucl.ac.uk](mailto:rc-support@ucl.ac.uk) with the following information:
 
  - Budget holder: name and contact details
  - Type and number of nodes you’d like to purchase
