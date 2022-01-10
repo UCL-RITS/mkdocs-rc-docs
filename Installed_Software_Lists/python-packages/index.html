@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Installed_Software_Lists/python-packages/">
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.5">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.bb3983ee.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ee0f47ba.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -57,7 +57,7 @@
   
     
     
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -984,7 +984,7 @@
 
 <p>The version of Python 3 provided with this bundle is currently Python 3.8.6.</p>
 <p>Note that some packages we do not provide this way, because they have complicated non-Python dependencies. These are usually provided using the normal application modules system. This includes <strong>TensorFlow</strong>.</p>
-<p>The following list was last updated at 11:35:03 (+0000) on 01 Jan 2022.</p>
+<p>The following list was last updated at 13:05:03 (+0000) on 01 Jan 2022.</p>
 <table>
 <thead>
 <tr>
@@ -994,6 +994,11 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td align="center"><code>absl-py</code></td>
+<td align="center">1.0.0</td>
+<td align="left">Abseil Python Common Libraries, see https://github.com/abseil/abseil-py.</td>
+</tr>
 <tr>
 <td align="center"><code>acora</code></td>
 <td align="center">2.2</td>
@@ -1030,6 +1035,11 @@
 <td align="left">Astronomy and astrophysics core library</td>
 </tr>
 <tr>
+<td align="center"><code>astunparse</code></td>
+<td align="center">1.6.3</td>
+<td align="left">An AST unparser for Python</td>
+</tr>
+<tr>
 <td align="center"><code>attrs</code></td>
 <td align="center">20.3.0</td>
 <td align="left">Classes Without Boilerplate</td>
@@ -1055,6 +1065,11 @@
 <td align="left">band-structure interpolator and transport coefficient calculator</td>
 </tr>
 <tr>
+<td align="center"><code>cachetools</code></td>
+<td align="center">4.2.4</td>
+<td align="left">Extensible memoizing collections and decorators</td>
+</tr>
+<tr>
 <td align="center"><code>castepxbin</code></td>
 <td align="center">0.1.0</td>
 <td align="left">A collection of readers for CASTEP binary outputs</td>
@@ -1078,6 +1093,11 @@
 <td align="center"><code>chardet</code></td>
 <td align="center">3.0.4</td>
 <td align="left">Universal encoding detector for Python 2 and 3</td>
+</tr>
+<tr>
+<td align="center"><code>charset-normalizer</code></td>
+<td align="center">2.0.10</td>
+<td align="left">The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet.</td>
 </tr>
 <tr>
 <td align="center"><code>click</code></td>
@@ -1175,6 +1195,11 @@
 <td align="left">A platform independent file lock.</td>
 </tr>
 <tr>
+<td align="center"><code>flatbuffers</code></td>
+<td align="center">2.0</td>
+<td align="left">The FlatBuffers serialization format for Python</td>
+</tr>
+<tr>
 <td align="center"><code>funcparserlib</code></td>
 <td align="center">0.3.6</td>
 <td align="left">Recursive descent parsing library based on functional combinators</td>
@@ -1183,6 +1208,31 @@
 <td align="center"><code>future</code></td>
 <td align="center">0.18.2</td>
 <td align="left">Clean single-source support for Python 3 and 2</td>
+</tr>
+<tr>
+<td align="center"><code>gast</code></td>
+<td align="center">0.4.0</td>
+<td align="left">Python AST that abstracts the underlying Python version</td>
+</tr>
+<tr>
+<td align="center"><code>google-auth</code></td>
+<td align="center">2.3.3</td>
+<td align="left">Google Authentication Library</td>
+</tr>
+<tr>
+<td align="center"><code>google-auth-oauthlib</code></td>
+<td align="center">0.4.6</td>
+<td align="left">Google Authentication Library</td>
+</tr>
+<tr>
+<td align="center"><code>google-pasta</code></td>
+<td align="center">0.2.0</td>
+<td align="left">pasta is an AST-based Python refactoring library</td>
+</tr>
+<tr>
+<td align="center"><code>grpcio</code></td>
+<td align="center">1.43.0</td>
+<td align="left">HTTP/2-based RPC framework</td>
 </tr>
 <tr>
 <td align="center"><code>h5py</code></td>
@@ -1220,6 +1270,11 @@
 <td align="left">Library for reading and writing a wide range of image, video, scientific, and volumetric data formats.</td>
 </tr>
 <tr>
+<td align="center"><code>importlib-metadata</code></td>
+<td align="center">4.10.0</td>
+<td align="left">Read metadata from Python packages</td>
+</tr>
+<tr>
 <td align="center"><code>iniconfig</code></td>
 <td align="center">1.1.1</td>
 <td align="left">iniconfig: brain-dead simple config-ini parsing</td>
@@ -1255,6 +1310,16 @@
 <td align="left">Lightweight pipelining: using Python functions as pipeline jobs.</td>
 </tr>
 <tr>
+<td align="center"><code>keras</code></td>
+<td align="center">2.7.0</td>
+<td align="left">Deep learning for humans.</td>
+</tr>
+<tr>
+<td align="center"><code>Keras-Preprocessing</code></td>
+<td align="center">1.1.2</td>
+<td align="left">Easy data preprocessing and data augmentation for deep learning models</td>
+</tr>
+<tr>
 <td align="center"><code>kiwisolver</code></td>
 <td align="center">1.3.1</td>
 <td align="left">A fast implementation of the Cassowary constraint solver</td>
@@ -1263,6 +1328,11 @@
 <td align="center"><code>ldap3</code></td>
 <td align="center">2.8.1</td>
 <td align="left">A strictly RFC 4510 conforming LDAP V3 pure Python client library</td>
+</tr>
+<tr>
+<td align="center"><code>libclang</code></td>
+<td align="center">12.0.0</td>
+<td align="left">Clang Python Bindings, mirrored from the official LLVM repo: https://github.com/llvm/llvm-project/tree/main/clang/bindings/python, to make the installation process easier.</td>
 </tr>
 <tr>
 <td align="center"><code>llvmlite</code></td>
@@ -1360,9 +1430,19 @@
 <td align="left">NumPy is the fundamental package for array computing with Python.</td>
 </tr>
 <tr>
+<td align="center"><code>oauthlib</code></td>
+<td align="center">3.1.1</td>
+<td align="left">A generic, spec-compliant, thorough implementation of the OAuth request-signing logic</td>
+</tr>
+<tr>
 <td align="center"><code>obspy</code></td>
 <td align="center">1.2.2</td>
 <td align="left">ObsPy - a Python framework for seismological observatories.</td>
+</tr>
+<tr>
+<td align="center"><code>opt-einsum</code></td>
+<td align="center">3.3.0</td>
+<td align="left">Optimizing numpys einsum function</td>
 </tr>
 <tr>
 <td align="center"><code>orthopy</code></td>
@@ -1435,6 +1515,11 @@
 <td align="left">Library for building powerful interactive command lines in Python</td>
 </tr>
 <tr>
+<td align="center"><code>protobuf</code></td>
+<td align="center">3.19.1</td>
+<td align="left">Protocol Buffers</td>
+</tr>
+<tr>
 <td align="center"><code>psutil</code></td>
 <td align="center">5.8.0</td>
 <td align="left">Cross-platform lib for process and system monitoring in Python.</td>
@@ -1453,6 +1538,11 @@
 <td align="center"><code>pyasn1</code></td>
 <td align="center">0.4.8</td>
 <td align="left">ASN.1 types and codecs</td>
+</tr>
+<tr>
+<td align="center"><code>pyasn1-modules</code></td>
+<td align="center">0.2.8</td>
+<td align="left">A collection of ASN.1-based protocols modules.</td>
 </tr>
 <tr>
 <td align="center"><code>pycparser</code></td>
@@ -1555,9 +1645,19 @@
 <td align="left">Python HTTP for Humans.</td>
 </tr>
 <tr>
+<td align="center"><code>requests-oauthlib</code></td>
+<td align="center">1.3.0</td>
+<td align="left">OAuthlib authentication support for Requests.</td>
+</tr>
+<tr>
 <td align="center"><code>rply</code></td>
 <td align="center">0.7.7</td>
 <td align="left">A pure Python Lex/Yacc that works with RPython</td>
+</tr>
+<tr>
+<td align="center"><code>rsa</code></td>
+<td align="center">4.8</td>
+<td align="left">Pure-Python RSA implementation</td>
 </tr>
 <tr>
 <td align="center"><code>ruamel.yaml</code></td>
@@ -1655,6 +1755,41 @@
 <td align="left">Retry code until it succeeds</td>
 </tr>
 <tr>
+<td align="center"><code>tensorboard</code></td>
+<td align="center">2.7.0</td>
+<td align="left">TensorBoard lets you watch Tensors Flow</td>
+</tr>
+<tr>
+<td align="center"><code>tensorboard-data-server</code></td>
+<td align="center">0.6.1</td>
+<td align="left">Fast data loading for TensorBoard</td>
+</tr>
+<tr>
+<td align="center"><code>tensorboard-plugin-wit</code></td>
+<td align="center">1.8.1</td>
+<td align="left">What-If Tool TensorBoard plugin.</td>
+</tr>
+<tr>
+<td align="center"><code>tensorflow</code></td>
+<td align="center">2.7.0</td>
+<td align="left">TensorFlow is an open source machine learning framework for everyone.</td>
+</tr>
+<tr>
+<td align="center"><code>tensorflow-estimator</code></td>
+<td align="center">2.7.0</td>
+<td align="left">TensorFlow Estimator.</td>
+</tr>
+<tr>
+<td align="center"><code>tensorflow-io-gcs-filesystem</code></td>
+<td align="center">0.23.1</td>
+<td align="left">TensorFlow IO</td>
+</tr>
+<tr>
+<td align="center"><code>termcolor</code></td>
+<td align="center">1.1.0</td>
+<td align="left">ANSII Color formatting for output in terminal.</td>
+</tr>
+<tr>
 <td align="center"><code>threadpoolctl</code></td>
 <td align="center">2.1.0</td>
 <td align="left">threadpoolctl</td>
@@ -1678,6 +1813,11 @@
 <td align="center"><code>traitlets</code></td>
 <td align="center">5.0.5</td>
 <td align="left">Traitlets Python configuration system</td>
+</tr>
+<tr>
+<td align="center"><code>typing_extensions</code></td>
+<td align="center">4.0.1</td>
+<td align="left">Backported and Experimental Type Hints for Python 3.6+</td>
 </tr>
 <tr>
 <td align="center"><code>uncertainties</code></td>
@@ -1705,9 +1845,19 @@
 <td align="left">WebLogo3 : Sequence Logos Redrawn</td>
 </tr>
 <tr>
+<td align="center"><code>Werkzeug</code></td>
+<td align="center">2.0.2</td>
+<td align="left">The comprehensive WSGI web application library.</td>
+</tr>
+<tr>
 <td align="center"><code>wheel</code></td>
 <td align="center">0.35.1</td>
 <td align="left">A built-package format for Python</td>
+</tr>
+<tr>
+<td align="center"><code>wrapt</code></td>
+<td align="center">1.13.3</td>
+<td align="left">Module for decorators, wrappers and monkey patching.</td>
 </tr>
 <tr>
 <td align="center"><code>xlrd</code></td>
@@ -1733,6 +1883,11 @@
 <td align="center"><code>xopen</code></td>
 <td align="center">1.0.1</td>
 <td align="left">Open compressed files transparently</td>
+</tr>
+<tr>
+<td align="center"><code>zipp</code></td>
+<td align="center">3.7.0</td>
+<td align="left">Backport of pathlib-compatible object wrapper for zip files</td>
 </tr>
 </tbody>
 </table>
@@ -1818,10 +1973,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b6ff8c07.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5e13d264.min.js"></script>
       
     
   </body>
