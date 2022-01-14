@@ -41,10 +41,18 @@ function update_docs() {
     git pull
 }
 
+function fix_permissions() {
+    cd "$local_repo_dir"
+    chmod -R a+rX .
+}
+
 if update_is_available; then
     echo "[$(date)] Update available, pulling from repository..."
     update_docs
     echo "[$(date)] Update complete."
+    echo "[$(date)] Setting/fixing permissions..."    
+    fix_permissions
+    echo "[$(date)] Permissions set."
 else
     echo "[$(date)] No update available."
 fi
