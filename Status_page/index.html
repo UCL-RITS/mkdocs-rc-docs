@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Status_page/">
       
       <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.7">
     
     
       
@@ -1121,15 +1121,20 @@
 </ul>
 <h3 id="young">Young<a class="headerlink" href="#young" title="Permanent link">§</a></h3>
 <ul>
-<li>2022-01-13 - The Young filesystem is up but not in a very stable state. We want to do a backup and run checks over the weekend and then put the cluster back into service on Monday the 17th.</li>
-<li>
-<p>2022-01-11 - Young cluster is back in service. Please check for completed successfully / failed jobs. We believe there has been no data loss, but jobs would have been broken after the long interval since 23rd of Dec 2021 up to today, due to timeouts and I/O issues with the filesystem.</p>
-</li>
 <li>
 <p>2022-01-04 - The file system on Young is down and has been since the 23rd December. We are working to resolve the issue but there is no official timeline for sorting this out.</p>
 </li>
 <li>
-<p>2021-01-04 - There are a number of nodes that intermittently lose power from their chassis, switch themselves off and need to be manually powered back on (this causes jobs to be stuck in <code>dr</code> state when they end until the reboot happens). This leads to a higher than usual number of nodes being seen by the scheduler as unavailable. </p>
+<p>2022-01-11 - Young cluster is back in service. Please check for completed successfully / failed jobs. We believe there has been no data loss, but jobs would have been broken after the long interval since 23rd of Dec 2021 up to today, due to timeouts and I/O issues with the filesystem.</p>
+</li>
+<li>
+<p>2022-01-13 - The Young filesystem is up but not in a very stable state. We want to do a backup and run checks over the weekend and then put the cluster back into service on Monday the 17th. The login nodes are powered off until the backup completes to prevent any risk of data corruption and to make sure nothing else is accessing the data in order to make the backup as fast as possible.</p>
+</li>
+<li>
+<p>2022-01-17 - We are still waiting for the backup to finish, and at current progress do not expect it to finish until Wednesday at the earliest - sorry about the extended timescale here. The login nodes are still powered off.</p>
+</li>
+<li>
+<p>Longterm: There are a number of nodes that intermittently lose power from their chassis, switch themselves off and need to be manually powered back on (this causes jobs to be stuck in <code>dr</code> state when they end until the reboot happens). This leads to a higher than usual number of nodes being seen by the scheduler as unavailable. </p>
 </li>
 </ul>
 <h3 id="michael">Michael<a class="headerlink" href="#michael" title="Permanent link">§</a></h3>
@@ -1225,7 +1230,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.1514a9a0.min.js"></script>
+      <script src="../assets/javascripts/bundle.01de222e.min.js"></script>
       
     
   </body>
