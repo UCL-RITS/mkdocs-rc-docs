@@ -52,7 +52,7 @@ function update_is_available() {
 
 function update_docs() {
     cd "$local_repo_dir"
-    git pull
+    git pull --ff-only
 }
 
 function fix_permissions() {
