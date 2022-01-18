@@ -12,9 +12,9 @@ remote_repo="UCL-RITS/mkdocs-rc-docs"
 #  we don't have any way to install packages >:(
 function _jq() {
     if command -v jq >/dev/null 2>/dev/null; then
-        jq
+        jq "$@"
     else
-        ~/bin/jq
+        ~/bin/jq "$@"
     fi
 }
 
