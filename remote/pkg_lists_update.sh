@@ -3,7 +3,7 @@
 set -o errexit \
     -o nounset
 
-destination="/data/rcps_mkdocs/lists/"
+destination="/data/content/rcps_mkdocs/lists/"
 
 echo "[$(date)] Updating package lists..." >&2
 
