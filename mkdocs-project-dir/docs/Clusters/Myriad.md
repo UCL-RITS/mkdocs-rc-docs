@@ -95,6 +95,7 @@ variants, new letters are added.
 | I,B   | 36               | 1.5TB        | 1500G | 9     |
 | J     | 36 + 2 P100 GPUs | 192GB        | 1500G | 2     |
 | E,F   | 36 + 2 V100 GPUs | 192GB        | 1500G | 9     |
+| L     | 36 + 4 A100 GPUs | 192GB        | 1500G | 6     |
 
 You can tell the type of a node by its name: type H nodes are named
 `node-h00a-001` etc.
