@@ -8,9 +8,20 @@ set -o errexit \
 local_repo_dir="/data/content/rcps_mkdocs/docs"
 remote_repo="UCL-RITS/mkdocs-rc-docs"
 
+# We had to install jq in a non-standard location on the webserver because
+#  we don't have any way to install packages >:(
+function _jq() {
+    if command -v jq >/dev/null 2>/dev/null; then
+        jq
+    else
+        ~/bin/jq
+    fi
+}
+
 function get_remote_update_time() {
-    curl -sS https://api.github.com/repos/"$remote_repo" \
-        | sed -n -e 's/^[ ]*"updated_at": "\([^"]*\)",[ ]*$/\1/;T;s/Z$/+0000/;s/T/ /p'
+    curl -sS https://api.github.com/repos/"$remote_repo"/branches/gh-pages \
+        | _jq .commit.commit.committer.date \
+        | tr -d '"'
 }
 
 function get_remote_update_timestamp() {
