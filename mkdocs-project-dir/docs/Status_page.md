@@ -45,6 +45,8 @@ We took the opportunity to also replace the disks from the previous disk failure
 
 - 2022-01-17 - We are still waiting for the backup to finish, and at current progress do not expect it to finish until Wednesday at the earliest - sorry about the extended timescale here. The login nodes are still powered off.
 
+- 2022-01-20 - The current status of the Young backup is that we don't expect it to finish until Monday at the earliest now. Apologies for the delay.
+
 - Longterm: There are a number of nodes that intermittently lose power from their chassis, switch themselves off and need to be manually powered back on (this causes jobs to be stuck in `dr` state when they end until the reboot happens). This leads to a higher than usual number of nodes being seen by the scheduler as unavailable. 
 
 ### Michael
