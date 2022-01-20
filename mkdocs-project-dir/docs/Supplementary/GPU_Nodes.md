@@ -16,7 +16,7 @@ There are several types of GPU nodes available in Myriad.
 You can see the available CUDA modules by typing
 
 ```
-`module avail cuda`
+module avail cuda
 ```
 
 ## Sample CUDA code
@@ -38,7 +38,7 @@ You can see [sample jobscripts here](../Example_Jobscripts.md#gpu-job-script-exa
 Use this in your script to request up to 2 GPUs. 
 
 ```
-`#$ -l gpu=2`
+#$ -l gpu=2
 ```
 
 Load GCC and the relevant CUDA module. 
@@ -61,9 +61,9 @@ get an error saying it cannot link the CUDA libraries, and `ERROR: CUDA could no
 1\. Load the cuda module 
 
 ```
-`module unload compilers mpi`  
-`module load compilers/gnu/4.9.2`  
-`module load cuda/7.5.18/gnu-4.9.2`
+module unload compilers mpi
+module load compilers/gnu/4.9.2 
+module load cuda/7.5.18/gnu-4.9.2
 ```
 
 2\. Copy the samples directory to somewhere in your home (or to Scratch
