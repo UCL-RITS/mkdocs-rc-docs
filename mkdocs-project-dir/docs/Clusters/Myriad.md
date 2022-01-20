@@ -103,7 +103,7 @@ You can tell the type of a node by its name: type H nodes are named
 Here are the processors each node type has:
 
   - F, H, I, J: Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz
-  - B, D, E: Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
+  - B, D, E, L: Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
 
 (If you ever need to check this, you can include `cat /proc/cpuinfo` in your jobscript so
 you get it in your job's .o file for the exact node your job ran on. You will get an entry
@@ -111,10 +111,31 @@ for every core).
 
 ## GPUs
 
-Myriad has three types of GPU nodes, J, E and F. There are two J-type nodes each with two nVidia Tesla P100s.
-There is one F-type and eight E-type nodes, each with two nVidia Tesla V100s. The CPUs are slightly different on these two.
+Myriad has four types of GPU nodes: E, F, J and L. 
 
-You can request one or two GPUs by adding them as a resource request to your jobscript: 
+  - L-type nodes each have four NVIDIA A100s. (Compute Capability 80)
+  - F-type and E-type nodes each have two NVIDIA Tesla V100s. The CPUs are slightly different on the different letters, see above. (Compute Capability 70)
+  - J-type nodes each have two NVIDIA Tesla P100s. (Compute Capability 60)
+
+You can include `nvidia-smi` in your jobscript to get information about the GPU your job ran on.
+
+### Compute Capability
+
+[Compute Capability](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-generations) is how NVIDIA categorises its generations of GPU architectures. 
+When code is compiled, it targets one or multiple of these and so it may only be able 
+to run on GPUs of a specific Compute Capability.
+
+If you get an error like this:
+
+```
+CUDA runtime implicit initialization on GPU:0 failed. Status: device kernel image is invalid
+```
+then the software you are running does not support the Compute Capability of the GPU
+you tried to run it on, and you probably need a newer version.
+
+### Requesting multiple and specific types of GPU
+
+You can request a number of GPUs by adding them as a resource request to your jobscript: 
 
 ```
 # For 1 GPU
@@ -122,13 +143,22 @@ You can request one or two GPUs by adding them as a resource request to your job
 
 # For 2 GPUs
 #$ -l gpu=2
+
+# For 4 GPUs
+#$ -l gpu=4
 ```
 
-This will give you either type of GPU. If you need to specify one over the other, add a request for that type of node to your jobscript:
+If you ask for one or two GPUs your job can run on any type of GPU since it can fit on
+any of the nodetypes. If you ask for four, it can only be a node that has four. 
+If you need to specify one node type over the others because you need a particular 
+Compute Capability, add a request for that type of node to your jobscript:
 
 ```
 # request a V100 node only
 #$ -ac allow=EF
+
+# request an A100 node only
+#$ -ac allow=L
 ```
 
 The [GPU nodes](../Supplementary/GPU_Nodes.md) page has some sample code for running GPU jobs if you need a test example.
@@ -141,11 +171,9 @@ available versions.
 Modules to load for the non-MKL GPU version: 
 
 ```
-module unload compilers mpi
-module load compilers/gnu/4.9.2
-module load python3/recommended
-module load cuda/8.0.61-patch2/gnu-4.9.2
-module load cudnn/6.0/cuda-8.0
-module load tensorflow/1.4.1/gpu
+module load python3/3.7
+module load cuda/10.0.130/gnu-4.9.2
+module load cudnn/7.4.2.24/cuda-10.0
+module load tensorflow/2.0.0/gpu-py37
 ```
 

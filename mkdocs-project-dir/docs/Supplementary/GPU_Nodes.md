@@ -13,11 +13,15 @@ There are several types of GPU nodes available in Myriad.
 
 ## Available modules
 
-You can see the available CUDA modules by typing
+You can see all the available CUDA modules by typing
 
 ```
+module load beta-modules
 module avail cuda
 ```
+
+The ones that become visible once you load `beta-modules` have been built with newer
+compilers.
 
 ## Sample CUDA code
 
@@ -135,7 +139,7 @@ available versions.
 Modules to load for the non-MKL GPU version: 
 
 ```
-module unload compilers mpi  
+module unload compilers mpi 
 module load compilers/gnu/4.9.2  
 module load python3/3.7
 module load cuda/10.0.130/gnu-4.9.2  
@@ -146,7 +150,7 @@ module load tensorflow/2.0.0/gpu-py37
 ## Using MPI and GPUs
 
 It is possible to run MPI programs that use GPUs but only within a
-single node, so you can request up to 2 GPUs and 36 cores on Myriad.
+single node, so you can request up to 4 GPUs and 36 cores on Myriad.
 
 ## Looking for more GPUs?
 
