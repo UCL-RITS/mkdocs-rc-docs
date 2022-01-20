@@ -626,6 +626,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#compute-capability" class="md-nav__link">
+    Compute Capability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requesting-multiple-and-specific-types-of-gpu" class="md-nav__link">
+    Requesting multiple and specific types of GPU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tensorflow" class="md-nav__link">
     Tensorflow
   </a>
@@ -1130,6 +1144,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#compute-capability" class="md-nav__link">
+    Compute Capability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requesting-multiple-and-specific-types-of-gpu" class="md-nav__link">
+    Requesting multiple and specific types of GPU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tensorflow" class="md-nav__link">
     Tensorflow
   </a>
@@ -1282,25 +1310,50 @@ variants, new letters are added.</p>
 <p>Here are the processors each node type has:</p>
 <ul>
 <li>F, H, I, J: Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz</li>
-<li>B, D, E: Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz</li>
+<li>B, D, E, L: Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz</li>
 </ul>
 <p>(If you ever need to check this, you can include <code>cat /proc/cpuinfo</code> in your jobscript so
 you get it in your job's .o file for the exact node your job ran on. You will get an entry
 for every core).</p>
 <h2 id="gpus">GPUs<a class="headerlink" href="#gpus" title="Permanent link">§</a></h2>
-<p>Myriad has three types of GPU nodes, J, E and F. There are two J-type nodes each with two nVidia Tesla P100s.
-There is one F-type and eight E-type nodes, each with two nVidia Tesla V100s. The CPUs are slightly different on these two.</p>
-<p>You can request one or two GPUs by adding them as a resource request to your jobscript: </p>
+<p>Myriad has four types of GPU nodes: E, F, J and L. </p>
+<ul>
+<li>L-type nodes each have four NVIDIA A100s. (Compute Capability 80)</li>
+<li>F-type and E-type nodes each have two NVIDIA Tesla V100s. The CPUs are slightly different on the different letters, see above. (Compute Capability 70)</li>
+<li>J-type nodes each have two NVIDIA Tesla P100s. (Compute Capability 60)</li>
+</ul>
+<p>You can include <code>nvidia-smi</code> in your jobscript to get information about the GPU your job ran on.</p>
+<h3 id="compute-capability">Compute Capability<a class="headerlink" href="#compute-capability" title="Permanent link">§</a></h3>
+<p><a href="https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-generations">Compute Capability</a> is how NVIDIA categorises its generations of GPU architectures. 
+When code is compiled, it targets one or multiple of these and so it may only be able 
+to run on GPUs of a specific Compute Capability.</p>
+<p>If you get an error like this:</p>
+<div class="codehilite"><pre><span></span><code>CUDA runtime implicit initialization on GPU:0 failed. Status: device kernel image is invalid
+</code></pre></div>
+
+<p>then the software you are running does not support the Compute Capability of the GPU
+you tried to run it on, and you probably need a newer version.</p>
+<h3 id="requesting-multiple-and-specific-types-of-gpu">Requesting multiple and specific types of GPU<a class="headerlink" href="#requesting-multiple-and-specific-types-of-gpu" title="Permanent link">§</a></h3>
+<p>You can request a number of GPUs by adding them as a resource request to your jobscript: </p>
 <div class="codehilite"><pre><span></span><code># For 1 GPU
 #$ -l gpu=1
 
 # For 2 GPUs
 #$ -l gpu=2
+
+# For 4 GPUs
+#$ -l gpu=4
 </code></pre></div>
 
-<p>This will give you either type of GPU. If you need to specify one over the other, add a request for that type of node to your jobscript:</p>
+<p>If you ask for one or two GPUs your job can run on any type of GPU since it can fit on
+any of the nodetypes. If you ask for four, it can only be a node that has four. 
+If you need to specify one node type over the others because you need a particular 
+Compute Capability, add a request for that type of node to your jobscript:</p>
 <div class="codehilite"><pre><span></span><code># request a V100 node only
 #$ -ac allow=EF
+
+# request an A100 node only
+#$ -ac allow=L
 </code></pre></div>
 
 <p>The <a href="../../Supplementary/GPU_Nodes/">GPU nodes</a> page has some sample code for running GPU jobs if you need a test example.</p>
@@ -1308,12 +1361,10 @@ There is one F-type and eight E-type nodes, each with two nVidia Tesla V100s. Th
 <p>Tensorflow is installed: type <code>module avail tensorflow</code> to see the
 available versions.</p>
 <p>Modules to load for the non-MKL GPU version: </p>
-<div class="codehilite"><pre><span></span><code>module unload compilers mpi
-module load compilers/gnu/4.9.2
-module load python3/recommended
-module load cuda/8.0.61-patch2/gnu-4.9.2
-module load cudnn/6.0/cuda-8.0
-module load tensorflow/1.4.1/gpu
+<div class="codehilite"><pre><span></span><code>module load python3/3.7
+module load cuda/10.0.130/gnu-4.9.2
+module load cudnn/7.4.2.24/cuda-10.0
+module load tensorflow/2.0.0/gpu-py37
 </code></pre></div>
 
               

@@ -1040,10 +1040,13 @@
 <p>You can view the hardware specifications for <a href="../../Clusters/Myriad/">GPU node types in Myriad</a>.</p>
 <p>There are several types of GPU nodes available in Myriad.</p>
 <h2 id="available-modules">Available modules<a class="headerlink" href="#available-modules" title="Permanent link">§</a></h2>
-<p>You can see the available CUDA modules by typing</p>
-<div class="codehilite"><pre><span></span><code>`module avail cuda`
+<p>You can see all the available CUDA modules by typing</p>
+<div class="codehilite"><pre><span></span><code>module load beta-modules
+module avail cuda
 </code></pre></div>
 
+<p>The ones that become visible once you load <code>beta-modules</code> have been built with newer
+compilers.</p>
 <h2 id="sample-cuda-code">Sample CUDA code<a class="headerlink" href="#sample-cuda-code" title="Permanent link">§</a></h2>
 <p>There are samples in some CUDA install locations, e.g. </p>
 <div class="codehilite"><pre><span></span><code>/shared/ucl/apps/cuda/7.5.18/gnu-4.9.2/samples
@@ -1055,7 +1058,7 @@ you should look at their CUDA docs: <a href="http://docs.nvidia.com/cuda/">http:
 <h2 id="sample-jobscripts">Sample jobscripts<a class="headerlink" href="#sample-jobscripts" title="Permanent link">§</a></h2>
 <p>You can see <a href="../../Example_Jobscripts/#gpu-job-script-example">sample jobscripts here</a>.</p>
 <p>Use this in your script to request up to 2 GPUs. </p>
-<div class="codehilite"><pre><span></span><code>`#$ -l gpu=2`
+<div class="codehilite"><pre><span></span><code>#$ -l gpu=2
 </code></pre></div>
 
 <p>Load GCC and the relevant CUDA module. </p>
@@ -1071,9 +1074,9 @@ samples and run it in an interactive session on a GPU node.</p>
 they do not require all the CUDA libraries to be present at compile time. If they do, you'll
 get an error saying it cannot link the CUDA libraries, and <code>ERROR: CUDA could not be found on your system</code>  and you will need tro do your compiling on the GPU node as well.</p>
 <p>1. Load the cuda module </p>
-<div class="codehilite"><pre><span></span><code>`module unload compilers mpi`  
-`module load compilers/gnu/4.9.2`  
-`module load cuda/7.5.18/gnu-4.9.2`
+<div class="codehilite"><pre><span></span><code>module unload compilers mpi
+module load compilers/gnu/4.9.2 
+module load cuda/7.5.18/gnu-4.9.2
 </code></pre></div>
 
 <p>2. Copy the samples directory to somewhere in your home (or to Scratch
@@ -1130,7 +1133,7 @@ have the correct libraries.</p>
 <p>Tensorflow is installed: type <code>module avail tensorflow</code> to see the
 available versions.</p>
 <p>Modules to load for the non-MKL GPU version: </p>
-<div class="codehilite"><pre><span></span><code>module unload compilers mpi  
+<div class="codehilite"><pre><span></span><code>module unload compilers mpi 
 module load compilers/gnu/4.9.2  
 module load python3/3.7
 module load cuda/10.0.130/gnu-4.9.2  
@@ -1140,7 +1143,7 @@ module load tensorflow/2.0.0/gpu-py37
 
 <h2 id="using-mpi-and-gpus">Using MPI and GPUs<a class="headerlink" href="#using-mpi-and-gpus" title="Permanent link">§</a></h2>
 <p>It is possible to run MPI programs that use GPUs but only within a
-single node, so you can request up to 2 GPUs and 36 cores on Myriad.</p>
+single node, so you can request up to 4 GPUs and 36 cores on Myriad.</p>
 <h2 id="looking-for-more-gpus">Looking for more GPUs?<a class="headerlink" href="#looking-for-more-gpus" title="Permanent link">§</a></h2>
 <ul>
 <li><a href="../GPU_Clusters/">GPU clusters available to UCL users</a>.</li>
