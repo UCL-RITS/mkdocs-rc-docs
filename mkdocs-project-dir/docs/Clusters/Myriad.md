@@ -91,10 +91,10 @@ variants, new letters are added.
 
 | Type  | Cores per node   | RAM per node | tmpfs | Nodes |
 | ----- | ---------------- | ------------ | ----- | ----- |
-| H,D   | 36               | 192GB        | 1500G | 86    |
-| I,B   | 36               | 1.5TB        | 1500G | 9     |
+| H,D   | 36               | 192GB        | 1500G | 342   |
+| I,B   | 36               | 1.5TB        | 1500G | 17    |
 | J     | 36 + 2 P100 GPUs | 192GB        | 1500G | 2     |
-| E,F   | 36 + 2 V100 GPUs | 192GB        | 1500G | 9     |
+| E,F   | 36 + 2 V100 GPUs | 192GB        | 1500G | 19    |
 | L     | 36 + 4 A100 GPUs | 192GB        | 1500G | 6     |
 
 You can tell the type of a node by its name: type H nodes are named
