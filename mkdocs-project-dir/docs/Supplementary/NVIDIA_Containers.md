@@ -26,7 +26,7 @@ The NAMD authors publish a NAMD container on the NGC Container Registry, and we 
 
 The page about how to use the container is here: <https://catalog.ngc.nvidia.com/orgs/hpc/containers/namd>
 
-Following it through, we can download the benchmark example to check later whether our container works:
+Following it through, you can download the benchmark example to check later whether your container works:
 
 ```
 mkdir ngc_namd_experiment
@@ -48,7 +48,7 @@ Before you use Singularity to create the container image, you should load the Si
 module load singularity-env
 ```
 
-Once we've done that, we can download the container's files and build them into the usable container:
+Once you've done that, you can download the container's files and build them into the usable container:
 
 ```
 singularity build ${NAMD_TAG}.sif docker://nvcr.io/hpc/namd:${NAMD_TAG}
@@ -86,7 +86,7 @@ bin  boot  dev	environment  etc  home	host_pwd  lib  lib64  lustre  media  mnt  
 
 The warning you get is telling you that your current working directory overlaps with a directory being "bound" into the container. Binding brings a directory into the container's view of the filesystem, so that, for example, programs can still access your home directory as usual. In this case it's not a problem, because it's warning you that your home directory is being bound into the container in the same place it would usually be, and that means the same files are visible.
 
-By default, we have Singularity configured to bind your home and Scratch directories into the container, as well as the per-job temporary storage allocated to jobs under `$TMPDIR`. 
+By default, the clusters have Singularity configured to bind your home and Scratch directories into the container, as well as the per-job temporary storage allocated to jobs under `$TMPDIR`. 
 
 The NAMD instructions make an alternative suggestion when setting up this environment variable to use to run Singularity, binding your data directory into a fixed place in the container:
 
@@ -108,7 +108,7 @@ In both cases, you should see the same files, because you're looking at the same
 
 ### Running on a Single Node
 
-At this point we're ready to run NAMD inside the container, but we need a job script to submit to the scheduler which can set up the number of cores and GPUs correctly.
+At this point you're ready to run NAMD inside the container, but you need a job script to submit to the scheduler which can set up the number of cores and GPUs correctly.
 
 ```bash
 #!/bin/bash -l
