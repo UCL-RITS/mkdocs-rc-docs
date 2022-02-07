@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Software_Guides/Other_Software/">
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.9">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.10">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2b4465f4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d6be258b.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -2398,23 +2398,32 @@ num_processors = 4
 <h3 id="molpro">MOLPRO<a class="headerlink" href="#molpro" title="Permanent link">§</a></h3>
 <p>Molpro is a complete system of ab initio programs for molecular electronic structure calculations. </p>
 <p>Molpro 2015.1.3 was provided as binary only and supports communication over Ethernet and not Infiniband - use this one on single-node jobs primarily.</p>
-<p>Molpro 2015.1.5 was built from source with the Intel compilers and Intel MPI.</p>
+<p>Molpro 2015.1.5 was built from source with the Intel compilers and Intel MPI, so can be run multi-node.</p>
+<p>Molpro 2020.1 is a more recent binary install and supports both.</p>
 <div class="codehilite"><pre><span></span><code>module load molpro/2015.1.5/intel-2015-update2
 
 # Example files available in /shared/ucl/apps/molpro/2015.1.5/intel-2015-update2/molprop_2015_1_linux_x86_64_i8/examples/
-# You need to set the wavefunction directory to somewhere in Scratch with -W.
-# $SGE_O_WORKDIR is what your job specified with -wd.
+# If this is a multi-node job you need to set the wavefunction directory to 
+# somewhere in Scratch with -W. For a single-node job -W should be in $TMPDIR.
+# You can use $SGE_O_WORKDIR to refer to the directory you set with -wd in your jobscript.
 # $NSLOTS will use the number of cores you requested with -pe mpi.
 
-echo &quot;Running molpro -n $NSLOTS -W $SGE_O_WORKDIR h2o_scf.com&quot;
+echo &quot;Running molpro -n $NSLOTS -W $TMPDIR h2o_scf.com&quot;
 
-molpro -n $NSLOTS -W $SGE_O_WORKDIR h2o_scf.com
+molpro -n $NSLOTS -W $TMPDIR h2o_scf.com
 </code></pre></div>
 
-<p>On Myriad, if you get this error, please use the binary 2015.1.3 install.</p>
+<p>On Myriad, if you get this error with the MPI 2015 install, please use the binary 2015.1.3 install.</p>
 <div class="codehilite"><pre><span></span><code>libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
 </code></pre></div>
 
+<p>Output: MOLPRO can end up writing very many small output files, and this is detrimental to
+the performance of a parallel filesystem like Lustre. If you are running jobs on Myriad then
+you should set your -I -d and (especially) -W directories to be in $TMPDIR so they can be 
+accessed quickly and not slow down other jobs. At the end of the job, copy back the data you
+want to keep into your Scratch.</p>
+<p>If you are running parallel multi-node jobs and the directories need to be readable by all 
+the nodes, then you need to write to Scratch.</p>
 <h3 id="mrtrix">MRtrix<a class="headerlink" href="#mrtrix" title="Permanent link">§</a></h3>
 <p>MRtrix provides a set of tools to perform diffusion-weighted MRI white matter tractography in the presence of crossing fibres. </p>
 <div class="codehilite"><pre><span></span><code>module load python3/recommended
@@ -2847,10 +2856,10 @@ no longer work since the release of XMDS 3.0.0 (see above to use that).</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.960e086b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e3b2bf44.min.js"></script>
       
     
   </body>
