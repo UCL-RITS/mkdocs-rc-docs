@@ -752,25 +752,37 @@ Molpro is a complete system of ab initio programs for molecular electronic struc
 
 Molpro 2015.1.3 was provided as binary only and supports communication over Ethernet and not Infiniband - use this one on single-node jobs primarily.
 
-Molpro 2015.1.5 was built from source with the Intel compilers and Intel MPI.
+Molpro 2015.1.5 was built from source with the Intel compilers and Intel MPI, so can be run multi-node.
+
+Molpro 2020.1 is a more recent binary install and supports both.
 
 ```
 module load molpro/2015.1.5/intel-2015-update2
 
 # Example files available in /shared/ucl/apps/molpro/2015.1.5/intel-2015-update2/molprop_2015_1_linux_x86_64_i8/examples/
-# You need to set the wavefunction directory to somewhere in Scratch with -W.
-# $SGE_O_WORKDIR is what your job specified with -wd.
+# If this is a multi-node job you need to set the wavefunction directory to 
+# somewhere in Scratch with -W. For a single-node job -W should be in $TMPDIR.
+# You can use $SGE_O_WORKDIR to refer to the directory you set with -wd in your jobscript.
 # $NSLOTS will use the number of cores you requested with -pe mpi.
 
-echo "Running molpro -n $NSLOTS -W $SGE_O_WORKDIR h2o_scf.com"
+echo "Running molpro -n $NSLOTS -W $TMPDIR h2o_scf.com"
 
-molpro -n $NSLOTS -W $SGE_O_WORKDIR h2o_scf.com
+molpro -n $NSLOTS -W $TMPDIR h2o_scf.com
 ```
 
-On Myriad, if you get this error, please use the binary 2015.1.3 install.
+On Myriad, if you get this error with the MPI 2015 install, please use the binary 2015.1.3 install.
 ```
 libi40iw-i40iw_ucreate_qp: failed to create QP, unsupported QP type: 0x4
 ```
+
+Output: MOLPRO can end up writing very many small output files, and this is detrimental to
+the performance of a parallel filesystem like Lustre. If you are running jobs on Myriad then
+you should set your -I -d and (especially) -W directories to be in $TMPDIR so they can be 
+accessed quickly and not slow down other jobs. At the end of the job, copy back the data you
+want to keep into your Scratch.
+
+If you are running parallel multi-node jobs and the directories need to be readable by all 
+the nodes, then you need to write to Scratch.
 
 
 ### MRtrix
