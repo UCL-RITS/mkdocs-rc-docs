@@ -306,6 +306,27 @@ du -h --max-depth=1
 The first will give you a summary of the sizes of directory tree and subtrees inside the directory you specify, using human-readable sizes with a total at the bottom. The second will show you the totals for all top-level directories relative to where you are, plus the grand total. These can help you track down the locations of large amounts of data if you need to reduce your disk usage.
 
 
+## How do I connect to UCL group folders or other smb mounts?
+
+You may have data stored in a UCL group folder that you normally mount using smb. 
+You can use `smbclient` to copy the files across onto Myriad (you do want them to be copied 
+onto Myriad before you run any jobs using them, otherwise the compute node will be sitting 
+there waiting for the copy to complete before it can do anything useful).
+
+If the address you are trying to mount looks like `smb://ad.ucl.ac.uk/groupfolders`
+then you would do this:
+
+```
+smbclient \\ad.ucl.ac.uk\groupfolders 
+```
+
+This will give you a prompt where you can access that storage in an ftp-like way, where you 
+can use `get` commands to copy files from there on to Myriad, or `put` commands to copy data
+into there from Myriad.
+
+You can look at `man smbclient` on Myriad for the manual.
+
+
 ## How do I submit a job to the scheduler?
 
 To submit a job to the scheduler you need to write a jobscript that contains the resources the job is asking for and the actual commands you want to run. This jobscript is then submitted using the `qsub` command.
