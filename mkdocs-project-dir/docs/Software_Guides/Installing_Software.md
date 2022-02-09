@@ -9,14 +9,17 @@ If you want to request that software be installed centrally, you can email us at
 rc-support@ucl.ac.uk. When you send in a request please address the following questions so 
 that the install can be properly prioitised and planned,
 
-* Can you provide some details as to why and give an idea of the timeline you would like us to build it.
+* Can you provide some details as to why and give an idea of the timeline you would like us 
+to build it in?
+* Do you have an idea of the user base for this software within your community? If you are asking 
+for some software on the MMM machines this can be the wider community and for UCL machines users 
+in your ecosystem.
+* If the software is only required by you would you be open to trying to install the software in 
+your home space? We can provide some assistance here if you tell us what problems you are
+encountering.
 
-* Do you have an idea of the user base for this software within your community, if you are asking for some software on the MMM machines this can be the wider community and for UCL machines users in your ecosystem.
-
-* If the software is only required by you would you be open to trying to install the software in your home space, we could provide some assistance here too.
-
-Our buildscripts are in the code section of that repository, so you can see how we 
-built and installed all our central software stack.
+The requests will be added to the issues in our [buildscripts repository](https://github.com/UCL-RITS/rcps-buildscripts). The buildscripts themselves are there too, so you can see how we 
+built and installed our central software stack.
 
 You can install software yourself in your space on the cluster. Below are some tips for 
 installing packages for languages such as Python or Perl as well as compiling software.
