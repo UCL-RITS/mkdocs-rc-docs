@@ -2088,7 +2088,7 @@ rungms exam01.inp 00 $NSLOTS $(ppn)
 <p>Version 4 of GATK is BSD-licensed so does not require a group to control access to the software. </p>
 <p>Version 3 of GATK requires you to agree to the GATK license before we can add you to the <code>leggatk</code> group which gives you access: you can do this by downloading GATK 3 from <a href="https://software.broadinstitute.org/gatk/download/">The Broad Institute GATK download page</a>, reading the license, and telling us you agree to it. You may need to create a gatkforums account before you can download.</p>
 <p>GATK 3 uses Java 1.7 (the system Java) so you do not need to load a Java module. GATK 4 uses 1.8 so you need to load <code>java/1.8.0_92</code> first.</p>
-<p>GATK 4.2.5.0 uses the newest version of Java 8, so you need to load <code>java/temurin-8</code>.</p>
+<p>GATK 4.2.5.0 or newer uses the newest version of Java 8, so you need to load <code>java/temurin-8</code>.</p>
 <p>Load the version you want, then to run GATK you should either prefix the .jar you want to run with <code>$GATKPATH</code>:</p>
 <div class="codehilite"><pre><span></span><code>java -Xmx2g -jar $GATKPATH/GenomeAnalysisTK.jar OPTION1=value1 OPTION2=value2...
 </code></pre></div>
@@ -2100,7 +2100,7 @@ rungms exam01.inp 00 $NSLOTS $(ppn)
 <div class="codehilite"><pre><span></span><code>gatk OPTION1=value1 OPTION2=value2...
 </code></pre></div>
 
-<p>If you want to use some of the newer tools in GATK 4 which rely on Python/Conda, you must use GATK &gt;= 4.2.5.0 and additionally set up your miniconda environment.  With 4.2.50 this means:</p>
+<p>If you want to use some of the newer tools in GATK 4 which rely on Python/Conda, you must use GATK &gt;= 4.2.5.0 and additionally set up your miniconda environment.  With 4.2.5.0 this means:</p>
 <div class="codehilite"><pre><span></span><code>module load java/temurin-8
 module load gatk/4.2.5.0
 module load python/miniconda3/4.10.3
