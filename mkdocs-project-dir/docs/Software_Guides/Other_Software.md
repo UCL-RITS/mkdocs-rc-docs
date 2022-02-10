@@ -355,7 +355,7 @@ Version 3 of GATK requires you to agree to the GATK license before we can add yo
 
 GATK 3 uses Java 1.7 (the system Java) so you do not need to load a Java module. GATK 4 uses 1.8 so you need to load `java/1.8.0_92` first.
 
-GATK 4.2.5.0 uses the newest version of Java 8, so you need to load `java/temurin-8`.
+GATK 4.2.5.0 or newer uses the newest version of Java 8, so you need to load `java/temurin-8`.
 
 Load the version you want, then to run GATK you should either prefix the .jar you want to run with `$GATKPATH`:
 ```
@@ -370,7 +370,7 @@ GenomeAnalysisTK OPTION1=value1 OPTION2=value2...
 gatk OPTION1=value1 OPTION2=value2...
 ```
 
-If you want to use some of the newer tools in GATK 4 which rely on Python/Conda, you must use GATK >= 4.2.5.0 and additionally set up your miniconda environment.  With 4.2.50 this means:
+If you want to use some of the newer tools in GATK 4 which rely on Python/Conda, you must use GATK >= 4.2.5.0 and additionally set up your miniconda environment.  With 4.2.5.0 this means:
 
 ```
 module load java/temurin-8
