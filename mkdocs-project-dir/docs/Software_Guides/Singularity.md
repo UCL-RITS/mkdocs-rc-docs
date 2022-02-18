@@ -15,6 +15,14 @@ The cache directories should be set to somewhere in your space so they don't fil
 
 The bindpath specifies what directories are made available inside the container - only your home is bound by default so you need to add Scratch.
 
+You can either use the `singularity-env` environment module for this, or run the commands manually.
+
+```
+module load singularity-env
+```
+
+or:
+
 ```
 # Create a .singularity directory in your Scratch
 mkdir $HOME/Scratch/.singularity
