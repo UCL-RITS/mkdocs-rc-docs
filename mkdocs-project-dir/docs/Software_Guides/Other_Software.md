@@ -843,6 +843,88 @@ mutect OPTION1=value1 OPTION2=value2...
 ```
 
 
+### NAMD
+
+NAMD is a parallel molecular dynamics code designed for high-performance simulation of 
+large biomolecular systems.
+
+We have several different types of install, some of them suited to particular clusters
+only. To see all the versions, type `module avail namd`.
+
+These examples are running the `apoa1` benchmark, available from the [NAMD website](https://www.ks.uiuc.edu/Research/namd/benchmarks/).
+
+#### Multicore GPU
+
+This version of NAMD runs within one GPU node. It can run on multiple GPUs on that node, 
+but not across multiple different nodes. NAMD uses the CPUs and GPUs together so it is 
+recommended you request all the cores on the node if you are requesting all the GPUs.
+
+For best performance of simulations it is recommended that you use an entire node, 
+all the CPUs and all the available GPUs.
+
+```
+# request a number of CPUs and GPUs
+#$ -pe smp 10
+#$ -l gpu=1
+
+module load namd/2.14/multicore-gpu
+
+# ${NSLOTS} will get the number of cores you asked for with -pe smp.
+# +setcpuaffinity is recommended to make sure threads are assigned to specific CPUs.
+
+namd2 +p${NSLOTS} +setcpuaffinity apoa1_nve_cuda.namd
+```
+
+#### OFI
+
+This version of NAMD is for clusters with OmniPath interconnects (not Myriad).
+It can run across multiple nodes. The OFI versions should use significantly less 
+memory than the older MPI-based installs.
+
+```
+module unload -f compilers mpi
+module load compilers/intel/2019/update5
+module load mpi/intel/2019/update5/intel
+module load namd/2.14/ofi/intel-2019
+
+# ${NSLOTS} will get the number of cores you asked for with -pe.
+
+charmrun +p${NSLOTS} namd2 apoa1.namd
+```
+
+#### OFI-SMP
+
+This version of NAMD runs with threads (smp) and processes and is for clusters 
+with OmniPath interconnects (not Myriad). It can run across multiple nodes.
+The OFI versions should use significantly less memory than the older MPI-based installs.
+
+```
+module unload -f compilers mpi
+module load compilers/intel/2019/update5
+module load mpi/intel/2019/update5/intel
+module load namd/2.14/ofi-smp/intel-2019
+
+# ${NSLOTS} will get the number of cores you asked for with -pe.
+# +setcpuaffinity is recommended to make sure threads are assigned to specific CPUs.
+# ++ppn is the number of PEs (or worker threads) to create for each process.
+
+charmrun +p${NSLOTS} namd2 apoa1.namd ++ppn2 +setcpuaffinity
+```
+
+#### MPI
+
+These are older versions. It is recommended to run the OFI versions above instead
+if possible.
+
+```
+module load fftw/2.1.5/intel-2015-update2
+module load namd/2.13/intel-2018-update3
+
+# GErun is our mpirun wrapper that gets $NSLOTS and the machinefile for you.
+
+gerun namd2 apoa1.namd 
+```
+
 ### NONMEM
 
 NONMEM® is a nonlinear mixed effects modelling tool used in population pharmacokinetic / pharmacodynamic analysis. 
