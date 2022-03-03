@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Software_Guides/Other_Software/">
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.1">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.e8d9bf0c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2d9f7617.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -2433,7 +2433,7 @@ module load jags/4.2.0/gnu.4.9.2-openblas
 <p>LAMMPS-8Dec15 and later were built with additional packages <code>kspace</code>, <code>replica</code>, <code>rigid</code>, and <code>class2</code>.</p>
 <p>The versions from <code>lammps-16Mar18-basic_install</code> onwards (not <code>lammps/16Mar18/intel-2017</code>) have most of the included packages built. There are also <code>userintel</code> and <code>gpu</code> versions from this point.</p>
 <p>We do not install the LAMMPS user packages as part of our central install, but you can build your own version with the ones that you want in your space.</p>
-<div class="codehilite"><pre><span></span><code>module unload compilers mpi
+<div class="codehilite"><pre><span></span><code>module -f unload compilers mpi
 module load compilers/intel/2018
 module load mpi/intel/2018
 module load lammps/16Mar18/basic/intel-2018
@@ -2443,6 +2443,36 @@ module load lammps/16Mar18/basic/intel-2018
 gerun $(which lmp_default) -in inputfile
 </code></pre></div>
 
+<p>For the latest version of LAMMPS we have installed which is 29th September 2021 Update 2 where the binaries are called <code>lmp_mpi</code> for the MPI version and <code>lmp_gpu</code> for the GPU version:</p>
+<div class="codehilite"><pre><span></span><code>module -f unload compilers mpi gcc-libs
+module load beta-modules
+module load gcc-libs/10.2.0
+module load compilers/gnu/10.2.0
+module load mpi/openmpi/4.0.5/gnu-10.2.0
+module load python3/3.9-gnu-10.2.0
+module load lammps/29sep21up2/basic/gnu-10.2.0
+
+gerun lmp_mpi -in inputfile
+</code></pre></div>
+
+<p>for the basic MPI version and:</p>
+<div class="codehilite"><pre><span></span><code>module -f unload compilers mpi gcc-libs
+module load beta-modules
+module load gcc-libs/10.2.0
+module load compilers/gnu/10.2.0
+module load numactl/2.0.12
+module load binutils/2.36.1/gnu-10.2.0
+module load ucx/1.9.0/gnu-10.2.0
+module load mpi/openmpi/4.0.5/gnu-10.2.0
+module load cuda/11.3.1/gnu-10.2.0
+module load python3/3.9-gnu-10.2.0
+module load lammps/29sep21up2/gpu/gnu-10.2.0
+
+gerun lmp_gpu -sf gpu -pk gpu 1 -in inputfile
+</code></pre></div>
+
+<p>for the version with GPU support which is only curently available on the Myriad Cluster. The MPI version is available on all clusters. Also on Myriad the <code>numactl</code>, <code>binutils</code> and <code>ucx</code> modules are additionally needed by  OpenMPI.</p>
+<p>LAMMPS 29th September 2021 Update 2 has been built with the GNU compilers, OpenMPI and CUDA for the GPU version. We will also be providing builds using the Intel Compilers and Tools.</p>
 <h3 id="meme-suite">MEME Suite<a class="headerlink" href="#meme-suite" title="Permanent link">§</a></h3>
 <p>MEME Suite: Motif-based sequence analysis tools. This install is for the command-line tools and connects to their website for further analysis. </p>
 <div class="codehilite"><pre><span></span><code>module unload compilers
@@ -3017,7 +3047,7 @@ no longer work since the release of XMDS 3.0.0 (see above to use that).</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.8aa65030.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5413a266.min.js"></script>
       
     
   </body>
