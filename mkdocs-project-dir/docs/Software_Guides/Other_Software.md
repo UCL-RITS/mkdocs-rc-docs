@@ -688,7 +688,7 @@ The versions from `lammps-16Mar18-basic_install` onwards (not `lammps/16Mar18/in
 We do not install the LAMMPS user packages as part of our central install, but you can build your own version with the ones that you want in your space.
 
 ```
-module unload compilers mpi
+module -f unload compilers mpi
 module load compilers/intel/2018
 module load mpi/intel/2018
 module load lammps/16Mar18/basic/intel-2018
@@ -698,6 +698,38 @@ module load lammps/16Mar18/basic/intel-2018
 gerun $(which lmp_default) -in inputfile
 ```
 
+For the latest version of LAMMPS we have installed which is 29th September 2021 Update 2 where the binaries are called `lmp_mpi` for the MPI version and `lmp_gpu` for the GPU version:
+
+```
+module -f unload compilers mpi gcc-libs
+module load beta-modules
+module load gcc-libs/10.2.0
+module load compilers/gnu/10.2.0
+module load mpi/openmpi/4.0.5/gnu-10.2.0
+module load python3/3.9-gnu-10.2.0
+module load lammps/29sep21up2/basic/gnu-10.2.0
+
+gerun lmp_mpi -in inputfile
+```
+for the basic MPI version and:
+```
+module -f unload compilers mpi gcc-libs
+module load beta-modules
+module load gcc-libs/10.2.0
+module load compilers/gnu/10.2.0
+module load numactl/2.0.12
+module load binutils/2.36.1/gnu-10.2.0
+module load ucx/1.9.0/gnu-10.2.0
+module load mpi/openmpi/4.0.5/gnu-10.2.0
+module load cuda/11.3.1/gnu-10.2.0
+module load python3/3.9-gnu-10.2.0
+module load lammps/29sep21up2/gpu/gnu-10.2.0
+
+gerun lmp_gpu -sf gpu -pk gpu 1 -in inputfile
+```
+for the version with GPU support which is only curently available on the Myriad Cluster. The MPI version is available on all clusters. Also on Myriad the `numactl`, `binutils` and `ucx` modules are additionally needed by  OpenMPI.
+
+LAMMPS 29th September 2021 Update 2 has been built with the GNU compilers, OpenMPI and CUDA for the GPU version. We will also be providing builds using the Intel Compilers and Tools.
 
 ### MEME Suite
 
