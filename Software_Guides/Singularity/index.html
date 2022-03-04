@@ -1043,6 +1043,11 @@
 <h2 id="set-up-cache-locations-and-bind-directories">Set up cache locations and bind directories<a class="headerlink" href="#set-up-cache-locations-and-bind-directories" title="Permanent link">§</a></h2>
 <p>The cache directories should be set to somewhere in your space so they don't fill up <code>/tmp</code> on the login nodes.</p>
 <p>The bindpath specifies what directories are made available inside the container - only your home is bound by default so you need to add Scratch.</p>
+<p>You can either use the <code>singularity-env</code> environment module for this, or run the commands manually.</p>
+<div class="codehilite"><pre><span></span><code>module load singularity-env
+</code></pre></div>
+
+<p>or:</p>
 <div class="codehilite"><pre><span></span><code># Create a .singularity directory in your Scratch
 mkdir $HOME/Scratch/.singularity
 
