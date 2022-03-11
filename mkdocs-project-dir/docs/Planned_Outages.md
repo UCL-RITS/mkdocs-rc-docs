@@ -23,7 +23,6 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-
 1 Apr 2022 -> 4 Apr 2022 | Kathleen, Young, Michael | Planned | Datacentre work. Clusters will be will be drained of jobs and access to the login nodes disabled, for 4pm Friday 1st April. Clusters will be brought back into service on Monday the 4th April. They should be considered AT RISK that day.
 12 Apr 2022 -> 19 Apr 2022 |  Kathleen, Young, Michael | Planned | Datacentre work. Clusters will be will be drained of jobs and access to the login nodes disabled, for for 5:30pm Tuesday 12th April. Clusters will be brought back into service on Tuesday 19th April. They should be considered AT RISK that day.
 
