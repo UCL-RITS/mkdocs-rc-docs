@@ -513,10 +513,24 @@ where `myprogram myargs` is however you normally run your program, with whatever
 
 When your job finishes, you will get output about the resources it used and how long it took - the relevant one for memory is `maxrss` (maximum resident set size) which roughly tells you the largest amount of memory it used.
 
+If your job is not completing successfully or you need to know how the memory usage 
+changes throughout the job, there is a tool called [Ruse](https://github.com/JanneM/Ruse)
+that can measure this for you.
+
+Run your program as:
+```
+module load ruse/2.0
+
+# sample the current memory usage every 120s and output it to stdout
+ruse --stdout --time=120 --steps myprogram myargs
+ruse
+```
+where `myprogram myargs` is however you normally run your program, with whatever options you 
+pass to it.
+
 Remember that memory requests in your jobscript are always per core, so check the total you are requesting is sensible - if you increase it too much you may end up with a job that cannot be submitted.
 
 You can also look at [nodesforjob](#nodesforjob) while a job is running to see a snapshot of the memory, swap and load on the nodes your job is running on.
-
 
 ## How can I see what types of node a cluster has?
 
