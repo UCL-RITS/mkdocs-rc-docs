@@ -11,11 +11,13 @@ Researchers may purchase additional resources to be used as part of the [Myriad]
  - Nodes purchased by researchers can be converted into a quarterly allocation of “priority cycles” equivalent to the amount of computation provided by the nodes, but usable across the whole cluster. We calculate how much time exists on your nodes for three months, and every three months you receive an allocation of that much priority time to use however you want on Myriad (GPU/large memory nodes cost more to use, and give you more if you buy them). We recommend this route.
  - The purchaser may request to buy nodes to be reserved for their group or department, restricting usage to the owned nodes. There may be an additional cost implication to this option (price on application).
 
-Costs will include backend infrastructure – racks, switches, cables etc – needed to integrate the compute nodes into the facility. Both options can be costed into research proposals.
+Costs will include backend infrastructure – racks, switches, cables etc – needed to integrate the compute nodes into the facility. Both options can be costed into research proposals. These costs will be stated in an agreed Statement of Work document giving details of the number of each node type to be purchased, which must be approved by ARC and the purchaser before the purchase can go ahead.
 
-There are two purchasing rounds every financial year, with orders for a number of compute nodes being placed at the same time in January and just after Easter.  There are therefore two purchasing deadlines for researchers every year, the first in mid December and the second just before Easter.  Before each deadline, researchers wishing to buy compute nodes must choose the number of each node type they need and transfer the funds to ARC.
+## Deadlines
 
-For the financial year ending 31st July 2022, the money transfer deadlines for researchers are the 10th December 2021 and the 18th March 2022.
+There are two purchasing rounds every financial year, with orders for a number of compute nodes being placed at the same time just before Christmas and at the end of March.  There are therefore two purchasing deadlines for researchers every year, the first in mid December and the second in mid March.  Before each deadline, researchers wishing to buy compute nodes must approve an agreed Statement of Work and transfer the funds to ARC.
+
+For the financial year ending 31st July 2022, the money transfer deadlines for researchers are the 10th December 2021 and the 18th March 2022.  **This year there will also be a purchasing opportunity after Easter, with a money transfer deadline of Tuesday the 26th April.**  We can't place orders after this date because the hardware might not arrive before the end of UCL's financial year. 
 
 ## FAQs
 
