@@ -976,6 +976,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#newer-versions-of-gcc-and-glibcxx" class="md-nav__link">
+    Newer versions of GCC and GLIBCXX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#glibc-version-error" class="md-nav__link">
+    GLIBC version error
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#blas-and-lapack" class="md-nav__link">
     BLAS and LAPACK
   </a>
@@ -1226,6 +1240,20 @@
           <li class="md-nav__item">
   <a href="#set-up-modules" class="md-nav__link">
     Set up modules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#newer-versions-of-gcc-and-glibcxx" class="md-nav__link">
+    Newer versions of GCC and GLIBCXX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#glibc-version-error" class="md-nav__link">
+    GLIBC version error
   </a>
   
 </li>
@@ -1488,6 +1516,26 @@ module load compilers/gnu/4.9.2
 module load mpi/openmpi/4.0.3/gnu-4.9.2
 </code></pre></div>
 
+<h3 id="newer-versions-of-gcc-and-glibcxx">Newer versions of GCC and GLIBCXX<a class="headerlink" href="#newer-versions-of-gcc-and-glibcxx" title="Permanent link">§</a></h3>
+<p>The software you want to run may require newer compilers or a precompiled binary may say 
+that it needs a newer GLIBCXX to be able to run. You can access these as follows:</p>
+<div class="codehilite"><pre><span></span><code># make all the newer versions visible
+module load beta-modules
+# unload current compiler, mpi and gcc-libs modules
+module unload -f compilers mpi gcc-libs
+# load GCC 10.2.0
+module load gcc-libs/10.2.0
+module load compilers/gnu/10.2.0
+</code></pre></div>
+
+<p>The <code>gcc-libs</code> module contains the actual compiler and libraries, while the <code>compilers/gnu</code> 
+module sets environment variables that are likely to be picked up by build systems, telling them
+what the C, C++ and Fortran compilers are called.</p>
+<h3 id="glibc-version-error">GLIBC version error<a class="headerlink" href="#glibc-version-error" title="Permanent link">§</a></h3>
+<p>If you get an error saying that a precompiled binary that you are installing needs a newer
+GLIBC (not GLIBCXX) then this has been compiled on a newer operating system and will not
+work on our clusters. Look for a binary that was created for CentOS 7 (we have RHEL 7) or
+build the program from source if possible.</p>
 <h3 id="blas-and-lapack">BLAS and LAPACK<a class="headerlink" href="#blas-and-lapack" title="Permanent link">§</a></h3>
 <p>BLAS and LAPACK are provided as part of MKL, OpenBLAS or ATLAS. There are several 
 different OpenBLAS and ATLAS modules on for different compilers. MKL is available 

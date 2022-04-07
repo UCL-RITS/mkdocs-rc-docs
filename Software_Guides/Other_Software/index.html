@@ -1921,10 +1921,14 @@ module help &lt;module&gt;    # Shows a longer text description for the software
 
 <h3 id="find-out-if-a-software-package-is-installed-and-load-it">Find out if a software package is installed and load it<a class="headerlink" href="#find-out-if-a-software-package-is-installed-and-load-it" title="Permanent link">§</a></h3>
 <p>Generically, the way you find out if a piece of software is installed is to run</p>
-<div class="codehilite"><pre><span></span><code>module avail packagename
+<div class="codehilite"><pre><span></span><code>module load beta-modules
+module avail packagename
 </code></pre></div>
 
-<p>This gives you a list of all the modules we have that match the name you searched for. You can then type </p>
+<p>By loading <code>beta-modules</code> you will also be able to see newer versions of GCC and the software that
+has been built using them.</p>
+<p>Then <code>module avail</code> gives you a list of all the modules we have that match the name you searched 
+for. You can then type </p>
 <div class="codehilite"><pre><span></span><code>module show packagename
 </code></pre></div>
 
@@ -1932,13 +1936,15 @@ module help &lt;module&gt;    # Shows a longer text description for the software
 <p>Once you have found the modules you want to load, it is good practice to refer to them using their full name, including the version. If you use the short form (<code>package</code> rather than <code>package/5.1.2/gnu-4.9.2</code>) then a matching module will be loaded, but if we install a different version, your jobs may begin using the new one and you would not know which version created your results. Different software versions may not be compatible or may have different default settings, so this is undesirable.</p>
 <p>You may need to unload current modules in order to load some requirements (eg different compiler, different MPI).</p>
 <p>This example switches from Intel compiler and MPI modules to GNU ones.</p>
-<div class="codehilite"><pre><span></span><code>module unload compilers mpi
+<div class="codehilite"><pre><span></span><code>module unload -f compilers mpi
 module load compilers/gnu/4.9.2
 module load mpi/openmpi/3.1.4/gnu-4.9.2
 </code></pre></div>
 
 <p>You can use the short name when unloading things because there is usually only one match in your current modules.</p>
-<p>The last part of a module name usually tells you what compiler it was built with. There may be a GNU compiler version and an Intel compiler version of the same software available.</p>
+<p>The last part of a module name usually tells you what compiler it was built with and which version 
+of that compiler. There may be GNU compiler versions and Intel compiler versions of the same 
+software available.</p>
 <p>Once the module is loaded, you should have all the usual executables in your path, and can use its commands. You load modules in exactly the same way inside a jobscript.</p>
 <h2 id="notes-on-how-to-run-specific-packages">Notes on how to run specific packages<a class="headerlink" href="#notes-on-how-to-run-specific-packages" title="Permanent link">§</a></h2>
 <p>The packages below have slightly complex commands needed to run them, or different settings needed on our clusters. These are examples of what should be added to your jobscripts. Change the module load command to the version you want to load and check that the dependencies are the same.</p>
