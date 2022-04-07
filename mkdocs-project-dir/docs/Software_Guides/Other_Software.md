@@ -30,10 +30,15 @@ module help <module>    # Shows a longer text description for the software
 
 Generically, the way you find out if a piece of software is installed is to run
 ```
+module load beta-modules
 module avail packagename
 ```
 
-This gives you a list of all the modules we have that match the name you searched for. You can then type 
+By loading `beta-modules` you will also be able to see newer versions of GCC and the software that
+has been built using them.
+
+Then `module avail` gives you a list of all the modules we have that match the name you searched 
+for. You can then type 
 ```
 module show packagename
 ```
@@ -45,13 +50,15 @@ You may need to unload current modules in order to load some requirements (eg di
 
 This example switches from Intel compiler and MPI modules to GNU ones.
 ```
-module unload compilers mpi
+module unload -f compilers mpi
 module load compilers/gnu/4.9.2
 module load mpi/openmpi/3.1.4/gnu-4.9.2
 ```
 You can use the short name when unloading things because there is usually only one match in your current modules.
 
-The last part of a module name usually tells you what compiler it was built with. There may be a GNU compiler version and an Intel compiler version of the same software available.
+The last part of a module name usually tells you what compiler it was built with and which version 
+of that compiler. There may be GNU compiler versions and Intel compiler versions of the same 
+software available.
 
 Once the module is loaded, you should have all the usual executables in your path, and can use its commands. You load modules in exactly the same way inside a jobscript.
 

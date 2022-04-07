@@ -69,6 +69,32 @@ module load compilers/gnu/4.9.2
 module load mpi/openmpi/4.0.3/gnu-4.9.2
 ```
 
+### Newer versions of GCC and GLIBCXX
+
+The software you want to run may require newer compilers or a precompiled binary may say 
+that it needs a newer GLIBCXX to be able to run. You can access these as follows:
+
+```
+# make all the newer versions visible
+module load beta-modules
+# unload current compiler, mpi and gcc-libs modules
+module unload -f compilers mpi gcc-libs
+# load GCC 10.2.0
+module load gcc-libs/10.2.0
+module load compilers/gnu/10.2.0
+```
+
+The `gcc-libs` module contains the actual compiler and libraries, while the `compilers/gnu` 
+module sets environment variables that are likely to be picked up by build systems, telling them
+what the C, C++ and Fortran compilers are called.
+
+### GLIBC version error
+
+If you get an error saying that a precompiled binary that you are installing needs a newer
+GLIBC (not GLIBCXX) then this has been compiled on a newer operating system and will not
+work on our clusters. Look for a binary that was created for CentOS 7 (we have RHEL 7) or
+build the program from source if possible.
+
 ### BLAS and LAPACK
 
 BLAS and LAPACK are provided as part of MKL, OpenBLAS or ATLAS. There are several 
