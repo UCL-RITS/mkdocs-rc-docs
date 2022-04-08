@@ -37,6 +37,7 @@ We took the opportunity to also replace the disks from the previous disk failure
 
 - 2022-04-04 17:17 - Scheduled cluster update from 1st to 4th of April is still in progress. Users are expected to be able to login tomorrow April 5th.
 
+- 2022-04-08 09:36 - Major datacentre work during the Easter closure period. Kathleen will be drained of jobs and access to the login nodes disabled, for 5:30pm on Tuesday 12th April and we will **bring the cluster back into service on Tuesday 19th April**.
 
 ### Young
 
@@ -52,12 +53,16 @@ We took the opportunity to also replace the disks from the previous disk failure
 
 - 2022-04-04 17:19 - Scheduled cluster update from 1st to 4th of April is still in progress. Users are expected to be able to login tomorrow April 5th.
 
+- 2022-04-08 09:38 - Major datacentre work during the Easter closure period. Young will be drained of jobs and access to the login nodes disabled, for 5:30pm on Tuesday 12th April and we will **bring the cluster back into service on Tuesday 19th April**.
+
 - **Longterm**: There are a number of nodes that intermittently lose power from their chassis, switch themselves off and need to be manually powered back on (this causes jobs to be stuck in `dr` state when they end until the reboot happens). This leads to a higher than usual number of nodes being seen by the scheduler as unavailable. 
 
 ### Michael
 
 - All systems are working well.
 
+- 2022-04-08 09:39 - Major datacentre work during the Easter closure period. Michael will be drained of jobs and access to the login nodes disabled, for 5:30pm on Tuesday 12th April and we will **bring the cluster back into service on Tuesday 19th April**.
+ 
 ### Thomas
 
 - System is generally fine but the hardware is dated with respect to the other systems so there may be some read write errors.
