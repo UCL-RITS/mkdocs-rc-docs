@@ -129,6 +129,12 @@ or the directory the script was submitted from:
 #$ -l threads=1
 ```
 
+The `-l threads=` request is not a true/false setting, instead you are telling the scheduler
+you want one slot to block one virtual cpu instead of the normal situation where it blocks two.
+If you have a script with a threads request and want to override it on the command line or set
+it back to normal, the usual case is `-l threads=2`. (Setting threads to 0 does not disable
+hyperthreading!)
+
 With Hyperthreads enabled you need to request twice as many cores and then control threads vs MPI ranks with `OMP_NUM_THREADS`.  E.g. 
 
 ```bash

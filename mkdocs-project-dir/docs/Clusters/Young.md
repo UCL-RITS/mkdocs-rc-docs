@@ -349,6 +349,12 @@ core - some programs can take advantage of this.
 
 If you do not ask for hyperthreading, your job only uses one thread per core as normal.
 
+The `-l threads=` request is not a true/false setting, instead you are telling the scheduler
+you want one slot to block one virtual cpu instead of the normal situation where it blocks two.
+If you have a script with a threads request and want to override it on the command line or set
+it back to normal, the usual case is `-l threads=2`. (Setting threads to 0 does not disable
+hyperthreading!)
+
 ```
 # request hyperthreading in this job
 #$ -l threads=1
