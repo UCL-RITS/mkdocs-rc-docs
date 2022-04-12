@@ -4,10 +4,10 @@ layout: docs
 
 # Planned Outages
 
-!!! important "UCL Christmas closing"
-    UCL's closure dates for Christmas are Thurs 23 Dec to Mon 3 Jan inclusive. 
-    The clusters will be left running, but any tickets or cluster problems will 
-    be dealt with after we return on 4th January. 
+!!! important "UCL Easter closing"
+    UCL's closure dates for Easter are Weds 13 April 2022 to Mon 18 April inclusive. 
+    Clusters not mentioned below will be left running, but any tickets or cluster problems will 
+    be dealt with after we return on 19th April. 
 
     Email rc-support@ucl.ac.uk as usual.
 
