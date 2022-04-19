@@ -18,6 +18,16 @@ In particular the "Software Training" section:
  - [Longer videos on memory allocation for new users](https://www.youtube.com/watch?v=D3iF_N0cwv4)
    - [A hands-on memory allocation example](https://www.youtube.com/watch?v=QlMaN_ECIwg) 
 
+### MMM Hub: HPE / NVIDIA GPU Training Day
+
+The MMM Hub: HPE / NVIDIA GPU Training Day took place on 31 March 2022 and recordings 
+of the talks are available at the link below. The day was split into two parts, 
+"Technology and Partner sessions (UCL, HPE & NVIDIA)" which gave an overview of the 
+new GPU nodes being added to Young and tools useful for GPU programming, followed by 
+"Materials community codes, experiences & lessons learned (invited speakers)" which 
+looked at how CASTEP, VASP, CP2K, GSGW and QMCpack had approached adding GPU support.
+ - [MMM Hub: HPE / NVIDIA GPU Training Day](https://thomasyoungcentre.org/event/mmm-hub-hpe-nvidia-gpu-training-day/)
+
 ## Applying for an account
 
 Young accounts belong to you as an individual and are applied for
