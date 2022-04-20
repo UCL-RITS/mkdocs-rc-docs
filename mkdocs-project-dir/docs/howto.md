@@ -521,9 +521,8 @@ Run your program as:
 ```
 module load ruse/2.0
 
-# sample the current memory usage every 120s and output it to stdout
-ruse --stdout --time=120 --steps myprogram myargs
-ruse
+# sample the current memory usage every 120s and output each step to stdout
+ruse --stdout --time=120 -s myprogram myargs
 ```
 where `myprogram myargs` is however you normally run your program, with whatever options you 
 pass to it.
