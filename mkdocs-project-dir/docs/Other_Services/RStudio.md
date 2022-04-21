@@ -16,7 +16,7 @@ The Research Computing team currently runs 2 supported and 1 unsupported instanc
 
 The latter of these is only available to members of the Economics department. The former is more general purpose, but may require permission to access.
 
-The unsupported instance of RStudio has the URL:
+The unsupported instance of RStudio has the address:
 
  - <https://rstudio.myriad.rc.ucl.ac.uk/>
 
