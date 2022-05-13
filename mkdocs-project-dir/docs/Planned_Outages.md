@@ -4,12 +4,6 @@ layout: docs
 
 # Planned Outages
 
-!!! important "UCL Easter closing"
-    UCL's closure dates for Easter are Weds 13 April 2022 to Mon 18 April inclusive. 
-    Clusters not mentioned below will be left running, but any tickets or cluster problems will 
-    be dealt with after we return on 19th April. 
-
-    Email rc-support@ucl.ac.uk as usual.
 
 The second Tuesday of every month is a maintenance day, when the following clusters should be considered at risk from 8:00AM: Myriad, Kathleen, Thomas, Young, Michael, Aristotle and the Data Science Platform. We won’t necessarily perform maintenance every month, and notice by email will not always be given about maintenance day work that only puts services at risk.
 
@@ -23,11 +17,12 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-12 Apr 2022 -> 19 Apr 2022 |  Kathleen, Young, Michael | Planned | Datacentre work. Clusters will be drained of jobs and access to the login nodes disabled, for 4:00pm Tuesday 12th April. Clusters will be brought back into service during the day on Tuesday 19th April. They should be considered AT RISK that day.
+16 May 2022 | rstudio.rc.ucl.ac.uk | Planned | The old RStudio service will be decommisioned and users will no longer be able to login to it.
 
 ## Previous Outages
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+12 Apr 2022 -> 19 Apr 2022 |  Kathleen, Young, Michael | Completed | Datacentre work. Clusters will be drained of jobs and access to the login nodes disabled, for 4:00pm Tuesday 12th April. Clusters will be brought back into service during the day on Tuesday 19th April. They should be considered AT RISK that day.
 1 Apr 2022 -> 4 Apr 2022 | Kathleen, Young, Michael | Completed | Datacentre work. Clusters will be will be drained of jobs and access to the login nodes disabled, for 4pm Friday 1st April. Clusters will be brought back into service on Monday the 4th April. They should be considered AT RISK that day.
 7 Jan 2022 -> 10 Jan 2022 | Kathleen, Young, Michael | Completed | Datacentre power outage. Jobs will be drained for 2pm on Fri 7. Login nodes will be powered down. Clusters will be brought back online during Mon 10, should be considered at risk that day.
 19 Nov 2021         | Myriad  | Completed | One of our suppliers will be onsite to replace a component. Queues are being drained.
