@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Installed_Software_Lists/module-packages/">
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.14">
     
     
       
@@ -23,10 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.120efc48.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3de6f41f.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -1173,7 +1173,7 @@
 <p>Our clusters have a wide range of software installed, available by using the modules system.</p>
 <p>The module files are organised by name, version, variant (where applicable) and, if relevant, the compiler version used to build the software. If no compiler version is given, either no compiler was required, or only the base system compiler (<code>/usr/bin/gcc</code>) and libraries were used.</p>
 <p>When we install applications, we try to install them on all of our clusters, but sometimes licence restrictions prevent it. If something seems to be missing, it may be because we are not able to provide it. Please contact us for more information if this is hindering your work.</p>
-<p>The lists below were last updated at 16:21:28 (+0100) on 10 Oct 2021, and are generated from the software installed on the <a href="../../Clusters/Myriad/">Myriad</a> cluster.</p>
+<p>The lists below were last updated at 12:05:15 (+0100) on 05 May 2022, and are generated from the software installed on the <a href="../../Clusters/Myriad/">Myriad</a> cluster.</p>
 <h2 id="bundles">Bundles<a class="headerlink" href="#bundles" title="Permanent link">§</a></h2>
 <p>Some applications or tools depend on a lot of other modules, or have some awkward requirements. For these, we sometimes make a "bundle" module in this section, that loads all the dependencies.</p>
 <p>For Python and R in particular, we also have <code>recommended</code> bundles that load the module for a recent version of Python or R, along with a collection of packages for it that have been requested by users, and the modules those packages require.</p>
@@ -1432,6 +1432,10 @@
 </tr>
 <tr>
 <td align="center"><code>ansys/2019.r3</code></td>
+<td align="left">Adds Ansys CFX/Fluent, EM etc to your environment</td>
+</tr>
+<tr>
+<td align="center"><code>ansys/2021.r2</code></td>
 <td align="left">Adds Ansys CFX/Fluent, EM etc to your environment</td>
 </tr>
 <tr>
@@ -1912,7 +1916,11 @@
 </tr>
 <tr>
 <td align="center"><code>foldx/4</code></td>
-<td align="left">Adds FoldX Suite 4 to your environment.</td>
+<td align="left">Adds FoldX Suite 4.0 to your environment.</td>
+</tr>
+<tr>
+<td align="center"><code>foldx/5</code></td>
+<td align="left">Adds FoldX Suite 5.0 to your environment.</td>
 </tr>
 <tr>
 <td align="center"><code>freesurfer/5.3.0</code></td>
@@ -1921,6 +1929,10 @@
 <tr>
 <td align="center"><code>freesurfer/6.0.0</code></td>
 <td align="left">Adds FreeSurfer 6.0.0 to your environment. FreeSurfer is a set of automated tools for reconstruction of the brain's cortical surface from structural MRI data, and overlay of functional MRI data onto the reconstructed surface.</td>
+</tr>
+<tr>
+<td align="center"><code>freesurfer/7.2.0</code></td>
+<td align="left">Adds FreeSurfer 7.2.0 to your environment. FreeSurfer is a set of automated tools for reconstruction of the brain's cortical surface from structural MRI data, and overlay of functional MRI data onto the reconstructed surface.</td>
 </tr>
 <tr>
 <td align="center"><code>fsl/5.0.9</code></td>
@@ -1964,6 +1976,10 @@
 </tr>
 <tr>
 <td align="center"><code>gatk/4.2.1.0</code></td>
+<td align="left">Adds GATK 4.2.1.0 to your environment. The Genome Analysis Toolkit or GATK is a software package developed at the Broad Institute to analyze high-throughput sequencing data. Website: https://www.broadinstitute.org/gatk/index.php</td>
+</tr>
+<tr>
+<td align="center"><code>gatk/4.2.5.0</code></td>
 <td align="left">Adds GATK 4.2.1.0 to your environment. The Genome Analysis Toolkit or GATK is a software package developed at the Broad Institute to analyze high-throughput sequencing data. Website: https://www.broadinstitute.org/gatk/index.php</td>
 </tr>
 <tr>
@@ -2115,6 +2131,10 @@
 <td align="left">GROMACS 2019.3 molecular dynamics package, built with Intel 2018u3 compilers, PLUMED 2.5.2 patches (including libmatheval).</td>
 </tr>
 <tr>
+<td align="center"><code>gromacs/2021.3/plumed/gnu-10.2.0</code></td>
+<td align="left">GROMACS 2021.3 molecular dynamics package, built with GNU 10.2.0 compilers, PLUMED 2.7.2 patches (including libmatheval).</td>
+</tr>
+<tr>
 <td align="center"><code>gulp/4.5/intel-2018</code></td>
 <td align="left">Adds GULP 4.5 to your environment. Built with FoX and without plumed. GULP is a materials simulation code.</td>
 </tr>
@@ -2129,6 +2149,10 @@
 <tr>
 <td align="center"><code>gurobi/8.1.1</code></td>
 <td align="left">Adds Gurobi 8.1.1 to your environment.</td>
+</tr>
+<tr>
+<td align="center"><code>gurobi/9.1.2</code></td>
+<td align="left">Adds Gurobi 9.1.2 to your environment.</td>
 </tr>
 <tr>
 <td align="center"><code>h5utils/1.12.1</code></td>
@@ -2483,6 +2507,18 @@
 <td align="left">Adds NAMD 2.13 to your environment</td>
 </tr>
 <tr>
+<td align="center"><code>namd/2.14/multicore-gpu</code></td>
+<td align="left">NAMD is a parallel molecular dynamics code designed for high-performance simulation of large biomolecular systems. This is NAMD's Linux-x86_64-multicore-CUDA binary.</td>
+</tr>
+<tr>
+<td align="center"><code>namd/2.14/ofi-smp/intel-2019</code></td>
+<td align="left">Adds NAMD 2.14 OFI-SMP version to your environment. This version should be run using charmrun.</td>
+</tr>
+<tr>
+<td align="center"><code>namd/2.14/ofi/intel-2019</code></td>
+<td align="left">Adds NAMD 2.14 OFI version to your environment. This version should be run using charmrun.</td>
+</tr>
+<tr>
 <td align="center"><code>nco/4.5.0</code></td>
 <td align="left">Adds nco to your environment.</td>
 </tr>
@@ -2603,6 +2639,14 @@
 <td align="left">Adds OpenFOAMplus v1906 to your environment</td>
 </tr>
 <tr>
+<td align="center"><code>openfoamplus/v1906/gnu-7.3.0-64</code></td>
+<td align="left">Adds OpenFOAMplus v1906 with 64 bit labels to your environment</td>
+</tr>
+<tr>
+<td align="center"><code>openfoamplus/v2112/gnu-7.3.0-64</code></td>
+<td align="left">Adds OpenFOAMplus v2112 with 64 bit labels to your environment</td>
+</tr>
+<tr>
 <td align="center"><code>openmm/7.3.1/cuda-10</code></td>
 <td align="left">Adds OpenMM to your environment.</td>
 </tr>
@@ -2715,6 +2759,14 @@
 <td align="left">Adds PLUMED 2.6.0 to your environment, built using MKL and libmatheval</td>
 </tr>
 <tr>
+<td align="center"><code>plumed/2.7.2/gnu-10.2.0</code></td>
+<td align="left">Adds PLUMED 2.7.2 to your environment, built using GCC, OpenBLAS and libmatheval. PLUMED is a plugin that works with a large number of molecular dynamics codes.</td>
+</tr>
+<tr>
+<td align="center"><code>plumed/2.7.2/intel-2020</code></td>
+<td align="left">Adds PLUMED 2.7.2 to your environment, built using MKL and libmatheval. PLUMED is a plugin that works with a large number of molecular dynamics codes.</td>
+</tr>
+<tr>
 <td align="center"><code>postgres+postgis/9.5.3+2.2.2/gnu-4.9.2</code></td>
 <td align="left">Adds postgres+postgis 9.5.3+2.2.2 to your environment. PostgreSQL is a relational database, and PostGIS is a geographical information enhancement for PostgreSQL.</td>
 </tr>
@@ -2797,6 +2849,10 @@
 <tr>
 <td align="center"><code>quantum-espresso/6.5-impi/thermo_pw-1.2.1/intel-2018</code></td>
 <td align="left">Adds quantum-espresso 6.5 + thermo_pw 1.2.1 to your environment.</td>
+</tr>
+<tr>
+<td align="center"><code>quantum-espresso/7.0-impi/intel-2018</code></td>
+<td align="left">Adds quantum-espresso 7.0 to your environment.</td>
 </tr>
 <tr>
 <td align="center"><code>r/3.2.0-atlas/gnu-4.9.2</code></td>
@@ -2995,10 +3051,6 @@
 <td align="left">Adds SPM12 to your environment</td>
 </tr>
 <tr>
-<td align="center"><code>spss/24</code></td>
-<td align="left">Adds SPSS 24 to your environment</td>
-</tr>
-<tr>
 <td align="center"><code>spss/25</code></td>
 <td align="left">Adds SPSS 25 to your environment</td>
 </tr>
@@ -3149,6 +3201,10 @@
 <tr>
 <td align="center"><code>tensorflow/2.0.0/mkl-py37</code></td>
 <td align="left">Adds Tensorflow 2.0.0 to your environment.</td>
+</tr>
+<tr>
+<td align="center"><code>tensorflow/2.8.0/python-3.8.6</code></td>
+<td align="left">Adds Tensorflow 2.8.0 to your environment.</td>
 </tr>
 <tr>
 <td align="center"><code>tephra2/2.0/gnu-4.9.2</code></td>
@@ -3307,6 +3363,22 @@
 <td align="left">Adds VASP 6.1.2 to your environment.</td>
 </tr>
 <tr>
+<td align="center"><code>vasp/6.2.1-19Jan2022/intel-2019-update5</code></td>
+<td align="left">Adds VASP 6.2.1 to your environment.</td>
+</tr>
+<tr>
+<td align="center"><code>vasp/6.2.1-19Jan2022/nvidia-22.1-gpu</code></td>
+<td align="left">Adds VASP 6.2.1 FOR GPUS ONLY to your environment.</td>
+</tr>
+<tr>
+<td align="center"><code>vasp/6.3.0-24Jan2022/intel-2019-update5</code></td>
+<td align="left">Adds VASP 6.3.0 to your environment.</td>
+</tr>
+<tr>
+<td align="center"><code>vasp/6.3.0-24Jan2022/nvidia-22.1-gpu</code></td>
+<td align="left">Adds VASP 6.3.0 FOR GPUS ONLY to your environment.</td>
+</tr>
+<tr>
 <td align="center"><code>vcftools/0.1.15/gnu-4.9.2</code></td>
 <td align="left">Adds VCFtools version 0.1.15 to your environment. Tools for working with VCF files.</td>
 </tr>
@@ -3345,6 +3417,10 @@
 <tr>
 <td align="center"><code>vmd/1.9.3/text-only</code></td>
 <td align="left">The binary, text only version of VMD 1.9.3</td>
+</tr>
+<tr>
+<td align="center"><code>vmd/1.9.4/a55-gl+cuda</code></td>
+<td align="left">Adds VMD 1.9.4 Development Version a55 to your environment.</td>
 </tr>
 <tr>
 <td align="center"><code>vt/2018-08-01/gnu-4.9.2</code></td>
@@ -3519,6 +3595,10 @@
 <td align="left">adds Eigen for GCC 4.9.2 compilers to your environment variables</td>
 </tr>
 <tr>
+<td align="center"><code>eigen/3.3.9/gnu-4.9.2</code></td>
+<td align="left">Adds Eigen 3.3.9 to your environment. Eigen is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms.</td>
+</tr>
+<tr>
 <td align="center"><code>elfutils/0.170/gnu-4.9.2</code></td>
 <td align="left">Adds elfutils 0.170 to your environment. Elfutils provides utilities for manipulating binary ELF files, and is one possible provider of libelf.</td>
 </tr>
@@ -3573,6 +3653,10 @@
 <tr>
 <td align="center"><code>fftw/3.3.8-ompi/gnu-4.9.2</code></td>
 <td align="left">Adds fftw 3.3.8 (built with OpenMPI) to your environment.</td>
+</tr>
+<tr>
+<td align="center"><code>fftw/3.3.10/nvidia-22.1</code></td>
+<td align="left">Adds fftw 3.3.10 to your environment.</td>
 </tr>
 <tr>
 <td align="center"><code>forge/1.0.0/gnu-4.9.2</code></td>
@@ -4043,6 +4127,10 @@
 <td align="left">Adds mpi4py 3.0.2 for Python 3.7 to your environment.</td>
 </tr>
 <tr>
+<td align="center"><code>multinest/3.10b/gnu-4.9.2</code></td>
+<td align="left">Adds MultiNest 3.10b to your environment.</td>
+</tr>
+<tr>
 <td align="center"><code>mumps-thirdparty/3.0.0/intel-2018</code></td>
 <td align="left">The COIN-OR Tools project ThirdParty-Mumps can be used to download the MUMPS code and build a MUMPS library that is recognized by Ipopt. This version of ThirdParty-Mumps retrieves and builds MUMPS 5.4.0.</td>
 </tr>
@@ -4073,6 +4161,14 @@
 <tr>
 <td align="center"><code>mysql-connector-python/8.0.22/python-3.9.0</code></td>
 <td align="left">Adds mysql-connector-python 8.0.22 to your environment. This is Oracle's python-only MySQL connector for Python3</td>
+</tr>
+<tr>
+<td align="center"><code>mysql-connector-python/8.0.22/python-3.9.6</code></td>
+<td align="left">Adds mysql-connector-python 8.0.22 to your environment. This is Oracle's python-only MySQL connector for Python3</td>
+</tr>
+<tr>
+<td align="center"><code>mysql-connector-python/8.0.28/python-3.9.10</code></td>
+<td align="left">Adds mysql-connector-python 8.0.28 to your environment. This is Oracle's python-only MySQL connector for Python3</td>
 </tr>
 <tr>
 <td align="center"><code>nag/fortran/mark22/gnu-4.9.2</code></td>
@@ -4424,6 +4520,10 @@
 <td align="left">This is a module with no description string.</td>
 </tr>
 <tr>
+<td align="center"><code>clojure/1.10.3.1069</code></td>
+<td align="left">This is a module with no description string.</td>
+</tr>
+<tr>
 <td align="center"><code>cmake/3.2.1</code></td>
 <td align="left">adds Cmake 3.2.1 compilers to your environment variables</td>
 </tr>
@@ -4616,6 +4716,34 @@
 <td align="left">adds Oracle JDK 11.0.3 compilers to your environment variables</td>
 </tr>
 <tr>
+<td align="center"><code>java/semeru-8/8u322-b06</code></td>
+<td align="left">adds IBM Semeru 8u322-b06 compilers to your environment variables</td>
+</tr>
+<tr>
+<td align="center"><code>java/semeru-11/11.0.14.1+1</code></td>
+<td align="left">adds IBM Semeru 11.0.14.1+1 compilers to your environment variables</td>
+</tr>
+<tr>
+<td align="center"><code>java/semeru-17/17.0.2+8</code></td>
+<td align="left">adds IBM Semeru 17.0.2+8 compilers to your environment variables</td>
+</tr>
+<tr>
+<td align="center"><code>java/temurin-8/8u322-b06</code></td>
+<td align="left">adds Adoptium Temurin 8u322-b06 compilers to your environment variables</td>
+</tr>
+<tr>
+<td align="center"><code>java/temurin-11/11.0.14+9</code></td>
+<td align="left">adds Adoptium Temurin 11.0.14+9 compilers to your environment variables</td>
+</tr>
+<tr>
+<td align="center"><code>java/temurin-11/11.0.14.1+1</code></td>
+<td align="left">adds Adoptium Temurin 11.0.14.1+1 compilers to your environment variables</td>
+</tr>
+<tr>
+<td align="center"><code>java/temurin-17/17.0.2+8</code></td>
+<td align="left">adds Adoptium Temurin 17.0.2+8 compilers to your environment variables</td>
+</tr>
+<tr>
 <td align="center"><code>julia/0.3.10</code></td>
 <td align="left">adds Julia 0.3.10 to your environment variables</td>
 </tr>
@@ -4668,6 +4796,14 @@
 <td align="left">adds Julia 1.6.2 to your environment variables</td>
 </tr>
 <tr>
+<td align="center"><code>julia/1.7.0</code></td>
+<td align="left">adds Julia 1.7.0 to your environment variables</td>
+</tr>
+<tr>
+<td align="center"><code>julia/1.7.1</code></td>
+<td align="left">adds Julia 1.7.1 to your environment variables</td>
+</tr>
+<tr>
 <td align="center"><code>libtool/2.4.6</code></td>
 <td align="left">Adds libtool 2.4.6 to your environment. GNU libtool is a generic library support script. Libtool hides the complexity of using shared libraries behind a consistent, portable interface.</td>
 </tr>
@@ -4697,6 +4833,10 @@
 </tr>
 <tr>
 <td align="center"><code>nano/4.9</code></td>
+<td align="left">The nano text editor.</td>
+</tr>
+<tr>
+<td align="center"><code>nano/6.1</code></td>
 <td align="left">The nano text editor.</td>
 </tr>
 <tr>
@@ -4808,12 +4948,20 @@
 <td align="left">Adds Python 3.9.6 with pip and virtualenv to your environment variables.</td>
 </tr>
 <tr>
+<td align="center"><code>python/3.9.10</code></td>
+<td align="left">Adds Python 3.9.10 with pip and virtualenv to your environment variables.</td>
+</tr>
+<tr>
 <td align="center"><code>python/idp3/2019/3.6.8</code></td>
 <td align="left">Adds Intel Distribution for Python to your environment variables.</td>
 </tr>
 <tr>
 <td align="center"><code>python/miniconda3/4.5.11</code></td>
 <td align="left">Adds Miniconda 4.5.11 to your environment variables.</td>
+</tr>
+<tr>
+<td align="center"><code>python/miniconda3/4.10.3</code></td>
+<td align="left">Adds Miniconda 4.10.3 to your environment variables.</td>
 </tr>
 <tr>
 <td align="center"><code>qt/4.8.6/gnu-4.9.2</code></td>
@@ -4852,12 +5000,28 @@
 <td align="left">A command-line utility to periodically measure the memory use of a process and its subprocesses.</td>
 </tr>
 <tr>
+<td align="center"><code>ruse/2.0</code></td>
+<td align="left">Ruse is a command-line utility that periodically measures the resource use of a process and its subprocesses.</td>
+</tr>
+<tr>
 <td align="center"><code>sbcl/1.3.19</code></td>
 <td align="left">Adds Steelbank Common LISP 1.3.19 to your environment.</td>
 </tr>
 <tr>
 <td align="center"><code>sbcl/2.1.6</code></td>
 <td align="left">Adds Steelbank Common LISP 2.1.6 to your environment.</td>
+</tr>
+<tr>
+<td align="center"><code>sbt/1.6.1</code></td>
+<td align="left">This is a module with no description string.</td>
+</tr>
+<tr>
+<td align="center"><code>scala/2.13.8</code></td>
+<td align="left">This is a module with no description string.</td>
+</tr>
+<tr>
+<td align="center"><code>scala/3.1.1</code></td>
+<td align="left">This is a module with no description string.</td>
 </tr>
 <tr>
 <td align="center"><code>scons/2.3.4</code></td>
@@ -4968,6 +5132,10 @@
 <td align="left">adds Screen 4.8.0 to your environment variables</td>
 </tr>
 <tr>
+<td align="center"><code>singularity-env/1.0.0</code></td>
+<td align="left">Sets up the environment and cache directories for the Singularity container runtime.</td>
+</tr>
+<tr>
 <td align="center"><code>userscripts/1.0.0</code></td>
 <td align="left">Adds userscripts dir to your path. Provides jobhist among other utilities.</td>
 </tr>
@@ -4987,6 +5155,10 @@
 <td align="center"><code>userscripts/1.4.0</code></td>
 <td align="left">Adds userscripts dir to your path. Provides jobhist among other utilities.</td>
 </tr>
+<tr>
+<td align="center"><code>GATK</code></td>
+<td align="left">Some GATK tools require conda and associated libraries.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="beta-modules">Beta Modules<a class="headerlink" href="#beta-modules" title="Permanent link">§</a></h2>
@@ -4999,6 +5171,18 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td align="center"><code>amber/20/mpi/gnu-10.2.0</code></td>
+<td align="left">Adds AMBER 20 and AmberTools 21 to your environment</td>
+</tr>
+<tr>
+<td align="center"><code>amber/20/openmp/gnu-10.2.0</code></td>
+<td align="left">Adds AMBER 20 and AmberTools 21 to your environment. OpenMP threaded version.</td>
+</tr>
+<tr>
+<td align="center"><code>amber/20/serial/gnu-10.2.0</code></td>
+<td align="left">Adds AMBER 20 and AmberTools 21 to your environment</td>
+</tr>
 <tr>
 <td align="center"><code>armadillo/10.4.0/gnu-10.2.0</code></td>
 <td align="left">Adds Armadillo Version 10.4.0 C++ library to your environment.</td>
@@ -5056,6 +5240,10 @@
 <td align="left">Adds cuDNN 8.2.1 to your environment.</td>
 </tr>
 <tr>
+<td align="center"><code>fftw/3.3.8/gnu-7.3.0</code></td>
+<td align="left">Adds FFTW 3.3.8 for GCC 7.3.0 compilers to your environment variables. Includes single and double precision, plus long-double and quad. Includes OpenMP and POSIX threads libraries.</td>
+</tr>
+<tr>
 <td align="center"><code>fftw/3.3.8/gnu-9.2.0</code></td>
 <td align="left">Adds FFTW 3.3.8 for GCC 9.2.0 compilers to your environment variables. Includes single and double precision, plus long-double and quad. Includes OpenMP and POSIX threads libraries.</td>
 </tr>
@@ -5108,6 +5296,14 @@
 <td align="left">adds GMT 6.2.0 to your environment variables</td>
 </tr>
 <tr>
+<td align="center"><code>grass/8.0-dev/gnu-10.2.0</code></td>
+<td align="left">Adds GRASS GIS 8.0 Development Version to your environment.</td>
+</tr>
+<tr>
+<td align="center"><code>grass/8.0dev</code></td>
+<td align="left">adds UCL set of modules for GRASS GIS 8.0 Dev to your environment</td>
+</tr>
+<tr>
 <td align="center"><code>gromacs/2020.1/cuda-10.1</code></td>
 <td align="left">Adds gromacs 2020.1 to your environment. GROMACS is a package for performing molecular dynamics, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.</td>
 </tr>
@@ -5128,6 +5324,10 @@
 <td align="left">Adds gromacs 2021.2 to your environment. GROMACS is a package for performing molecular dynamics, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.</td>
 </tr>
 <tr>
+<td align="center"><code>gromacs/2021.5/cuda-11.3</code></td>
+<td align="left">Adds gromacs 2021.5 built with CUDA 11.3 to your environment. ThreadMPI and OpenMPI versions included. GROMACS is a package for performing molecular dynamics, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.</td>
+</tr>
+<tr>
 <td align="center"><code>gsl/2.6/gnu-9.2.0</code></td>
 <td align="left">adds GSL 2.6 for GCC 9.2.0 to your environment.</td>
 </tr>
@@ -5146,6 +5346,34 @@
 <tr>
 <td align="center"><code>jags/4.3.0/gnu-10.2.0-openblas</code></td>
 <td align="left">Adds JAGS 4.3.0 to your environment.</td>
+</tr>
+<tr>
+<td align="center"><code>lammps/29sep21up2/basic-fftw/gnu-10.2.0</code></td>
+<td align="left">Adds LAMMPS 29Sep2021 Update 2 to your environment. Binary is lmp_mpi.</td>
+</tr>
+<tr>
+<td align="center"><code>lammps/29sep21up2/basic/gnu-10.2.0</code></td>
+<td align="left">Adds LAMMPS 29Sep2021 Update 2 to your environment. Binary is lmp.</td>
+</tr>
+<tr>
+<td align="center"><code>lammps/29sep21up2/basic/gnu-10.2.0-aristotle</code></td>
+<td align="left">Adds LAMMPS 29Sep2021 Update 2 to your environment. Binary is lmp_aristotle.</td>
+</tr>
+<tr>
+<td align="center"><code>lammps/29sep21up2/basic/intel-2020</code></td>
+<td align="left">Adds LAMMPS 29Sep2021 Update 2 to your environment. Binary is lmp_mpi or lmp_default.</td>
+</tr>
+<tr>
+<td align="center"><code>lammps/29sep21up2/gpu/gnu-10.2.0</code></td>
+<td align="left">Adds LAMMPS 29Sep2021 Update 2 to your environment. Binary is lmp.</td>
+</tr>
+<tr>
+<td align="center"><code>lammps/29sep21up2/gpu/intel-2020</code></td>
+<td align="left">Adds LAMMPS 29Sep2021 Update 2 with gpu package to your environment. Binary is lmp_gpu or lmp_default.</td>
+</tr>
+<tr>
+<td align="center"><code>lammps/29sep21up2/userintel/intel-2020</code></td>
+<td align="left">Adds LAMMPS 29Sep2021 Update 2 with INTEL package to your environment. Binary is lmp_mpi or lmp_default.</td>
 </tr>
 <tr>
 <td align="center"><code>libpng/1.6.37/gnu-9.2.0</code></td>
@@ -5252,6 +5480,10 @@
 <td align="left">Adds UCL recommended set of python packages to your environment variables. To see what is included, check https://github.com/UCL-RITS/rcps-buildscripts/blob/master/lists/python-shared.list and https://github.com/UCL-RITS/rcps-buildscripts/blob/master/lists/python-3.list</td>
 </tr>
 <tr>
+<td align="center"><code>quip/c6359e1/gnu-10.2.0</code></td>
+<td align="left">Adds QUIP to your environment built with GNU 10.2.0 for recent versions of LAMMPS</td>
+</tr>
+<tr>
 <td align="center"><code>r/3.6.3-openblas/gnu-9.2.0</code></td>
 <td align="left">Adds R 3.6.3 and Bioconductor 3.10 to your environment.</td>
 </tr>
@@ -5290,6 +5522,10 @@
 <tr>
 <td align="center"><code>rcps-core-beta/gnu-10.2.0</code></td>
 <td align="left">adds a core set of applications and libraries to your environment.</td>
+</tr>
+<tr>
+<td align="center"><code>sac/102.0-test/gnu-10.2.0</code></td>
+<td align="left">Adds SAC 102.0 to your environment.</td>
 </tr>
 <tr>
 <td align="center"><code>scalapack/2.1.0/gnu-9.2.0/openblas-0.3.7</code></td>
@@ -5426,7 +5662,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c2e1ee47.min.js"></script>
       
     
   </body>
