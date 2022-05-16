@@ -416,7 +416,7 @@ supported by the MPI).
 #$ -pe mpi 80
 
 # Set the working directory to somewhere in your scratch space. 
-# This directory musgt exist.
+# This directory must exist.
 #$ -wd /home/<your_UCL_id/scratch/output/
 
 # Automatically set threads using ppn. On a cluster with 40 cores
