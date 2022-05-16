@@ -21,7 +21,7 @@ Holidays and College Closures.
 We aim to provide to you with a useful response within 24 hours.
 
 **Please do not email individuals unless you are explicitly asked to do
-so; always use the rc-support email address provided.**
+so; always use the rc-support email address provided as this is the best way for your request to be processed.**
 
 ## Drop-In Sessions
 
@@ -38,5 +38,6 @@ The Research Computing Team are located at:
 > London
 > WC1E 9RN
 
-Please note that this is a busy, mixed-group office, and people attempting to gain support by walking in uninvited may not be made welcome.
+We are keen to collaborate and are welcome visitors to our offices to talk about all things research computing.
+However, we do not operate a walk-up service desk: if you are frustrated by slow response to a support ticket, we are sorry but please do send reminders as there is probably a good reason why your request is not being processed.
 
