@@ -157,7 +157,7 @@ qsub ngc_namd_experiment.sh
 This should take about 5 minutes to run on a 36-core, 2-GPU node. 
 
 
-[^what_is_container]: A container is a way of bundling up a collection of files and instructions to run as a kind of "altered view" of the normal computer's files and systems.
+[^what_is_container]: A container is a way of bundling up a collection of files and instructions to run as a kind of "altered view" of the computer's files and systems.
 
 [^why_no_docker]: This is for a variety of reasons, but primarily that Docker presents a much larger range of security and misuse risks when used by inexperienced or hostile users. Singularity represents a much better fit for common HPC workloads and use-cases.
 
