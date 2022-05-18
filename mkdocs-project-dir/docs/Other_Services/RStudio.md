@@ -16,15 +16,6 @@ The Research Computing team currently runs 2 supported instances of RStudio. The
 
 The latter of these is only available to members of the Economics department. The former is more general purpose, but requires permission to access.
 
-There also is an unsupported instance of RStudio with the address:
-
- - <https://rstudio.rc.ucl.ac.uk/>
-
-!!! warning
-	This runs on very old hardware and will be decommissioned on
-	Monday 16th May 2022. Please use
-	<https://rstudio.data-science.rc.ucl.ac.uk/> instead.
-
 ## Troubleshooting and problem pre-emption
 
 For all of the services, please take care to either run `q()` in the R window or press the red logout button in the top right hand corner when you are done with the window, DO NOT just close the tab. This decreases the chance of there being stale sessions and future issues with logging in. If you cannot reach the landing page, then please first try getting there using private browsing and if that works then clear your cookies and cache. In most browsers you can do this for a certain time range, though look at the documentation for the browser you are using.
