@@ -28,7 +28,7 @@ If this does not solve your logging-in problem then there are 2 courses of actio
     $HOME/.local/share/rstudio/sessions/
     ```
 
- - If it is the Rstudio Pro teaching service please in the first instance [get in touch with RC support](../Contact_Us.md).  This service shares home directories with the central Unix services so it is possible to log into Socrates (`socrates.ucl.ac.uk`) [via SSH](../Walkthroughs/Logging_In.md) and deleting the folder above which may resolve your issues.
+ - If it is the Rstudio Pro teaching service please in the first instance [get in touch with RC support](../Contact_Us.md).  This service shares home directories with the central Unix services so it is possible to log into Socrates (`socrates.ucl.ac.uk`) [via SSH](../Walkthroughs/Logging_In.md) and delete the folder above which may resolve your issues.
 
 Note that this route should only be taken if you are getting an ever-spinning loading screen.
 
