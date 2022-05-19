@@ -1,8 +1,6 @@
 ---
 title: Acknowledging the Use of RC Systems
 categories:
- - Legion
- - Grace
  - Myriad
  - Aristotle
  - User Guide
@@ -18,10 +16,10 @@ When preparing papers describing work that has used any of our clusters or
 services, please use the terms below, especially the "*service*@UCL" label,
 so that we can easily search for them.
 
-## Legion
+## Kathleen
 
-"The authors acknowledge the use of the UCL Legion High Performance
-Computing Facility (Legion@UCL), and associated support services, in the
+"The authors acknowledge the use of the UCL Kathleen High Performance
+Computing Facility (Kathleen@UCL), and associated support services, in the
 completion of this work."
 
 ## Myriad
@@ -30,19 +28,17 @@ completion of this work."
 Computing Facility (Myriad@UCL), and associated support services, in the
 completion of this work."
 
-## Grace
-
-"The authors acknowledge the use of the UCL Grace High Performance
-Computing Facility (Grace@UCL), and associated support services, in the
-completion of this work."
-
 ## Aristotle
 
 "The authors acknowledge the use of the UCL Aristotle Computing Facility
 (Aristotle@UCL), and associated support services, in the completion of
 this work."
 
-## Thomas
+## MMM Hub Young
+
+Please find the appropriate wording at [Acknowledging the use of Young in publications](Young.md#acknowledging-the-use-of-young-in-publications).
+
+## MMM Hub Thomas
 
 Please find the appropriate wording at [Acknowledging the use of Thomas in publications](Thomas.md#acknowledging-the-use-of-thomas-in-publications).
 
