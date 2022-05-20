@@ -150,14 +150,15 @@ You can use the command-line utilities scp, sftp or rsync to copy your data abou
 
 #### scp
 
-This will copy a data file from somewhere on your local machine to a specified location on the remote machine (Legion, Grace etc).
+This will copy a data file from somewhere on your local machine to a specified location on the 
+remote machine (Myriad etc).
 
 ```
 scp <local_data_file> <remote_user_id>@<remote_hostname>:<remote_path>
 ```
 ```
-# Example: copy myfile from your local current directory into Scratch on Legion
-scp myfile ccxxxxx@legion.rc.ucl.ac.uk:~/Scratch/
+# Example: copy myfile from your local current directory into Scratch on Myriad
+scp myfile ccxxxxx@myriad.rc.ucl.ac.uk:~/Scratch/
 ```
 
 This will do the reverse, copying from the remote machine to your local machine. (This is still run from your local machine).
@@ -166,8 +167,8 @@ This will do the reverse, copying from the remote machine to your local machine.
 scp <remote_user_id>@<remote_hostname>:<remote_path><remote_data_file> <local_path>
 ```
 ```
-# Example: copy myfile from Legion into the Backups directory in your local current directory
-scp ccxxxxx@legion.rc.ucl.ac.uk:~/Scratch/myfile Backups/
+# Example: copy myfile from Myriad into the Backups directory in your local current directory
+scp ccxxxxx@myriad.rc.ucl.ac.uk:~/Scratch/myfile Backups/
 ```
 
 #### sftp
@@ -184,7 +185,7 @@ put <local_file>
 ```
 # Example: download a copy of file1 into your local current directory,
 # change local directory and upload a copy of file2
-sftp ccxxxxx@legion.rc.ucl.ac.uk
+sftp ccxxxxx@myriad.rc.ucl.ac.uk
 cd Scratch/files
 get file1
 lcd ../files_to_upload
@@ -261,17 +262,16 @@ Host myriad
    HostName myriad.rc.ucl.ac.uk
    proxyCommand ssh -W myriad.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
 
-Host login05
+Host myriad12
    User ccxxxxx
-   HostName login05.external.legion.ucl.ac.uk
-   proxyCommand ssh -W login05.external.legion.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
+   HostName login12.myriad.ucl.ac.uk
+   proxyCommand ssh -W login12.myriad.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
 
 Host aristotle
    User ccxxxxx
    HostName aristotle.rc.ucl.ac.uk
    proxyCommand ssh -W aristotle.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
 ```
-<!--- replace legion example above with something else  --->
 
 You can now just type `ssh myriad` or `scp file1 aristotle:~` and you will go through Socrates. You'll be asked for login details twice since you're logging in to two machines, Socrates and your endpoint.  
 
@@ -287,10 +287,40 @@ WinSCP can also set up SSH tunnels.
  6. Fill in your username and password for that host and set the file protocol to SCP.
  7. Save your settings with a useful name.
 
-#### Windows - PuTTY
+#### Creating a tunnel that other applications can use
 
-You can use PuTTY for tunnelling when you just want a single-step login and not a file transfer.
+Some applications do not read your SSH config file and also cannot set up tunnels themselves,
+but can use one that you have created separately. FileZilla in particular is something you
+may want to do this with to transfer your files directly to the clusters from outside UCL using 
+a graphical client.
 
+##### SSH tunnel creation using a terminal
+
+You can do this in Linux, Mac OS X and the Windows Command Prompt on Windows 10 and later.
+
+Set up a tunnel between a port on your local computer (this is using 3333 as it is unlikely to be
+in use, but you can pick different ones) to Myriad's port 22 (which is the standard port for ssh), 
+going via a UCL gateway.
+
+```
+# replace ccxxxxx with your UCL username
+ssh -L 3333:myriad.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk 
+```
+
+You may also want to use the `-N` option to tell it not to execute any remote commands and 
+`-f` to put this command into the background if you want to continue to type other commands 
+into the same terminal.
+
+The tunnel now exists, and `localhost:3333` on your computer connects to Myriad.
+
+##### SSH tunnel creation using PuTTY
+
+On Windows you can also [set up a tunnel using PuTTY](https://winscp.net/eng/docs/guide_tunnel#tunnel_putty).
+
+##### Connect to your tunnel with an application (like FileZilla)
+
+You can then tell your application to connect to `localhost:3333` instead of Myriad. If it has 
+separate boxes for hostname and port, put `localhost` as the hostname and `3333` as the port.
 
 ### Managing your quota
 
@@ -325,6 +355,24 @@ can use `get` commands to copy files from there on to Myriad, or `put` commands 
 into there from Myriad.
 
 You can look at `man smbclient` on Myriad for the manual.
+
+
+## How do I connect out to an FTP server?
+
+You cannot connect in to Myriad using FTP (we only allow SFTP access) but you can connect out 
+to FTP servers run by other people. 
+
+Load the GNU inetutils module which provides ftp, telnet and tftp clients.
+
+```
+module load inetutils/1.9.4
+
+# connect to your desired server
+ftp servername.ac.uk
+```
+
+You can then use `put` and `get` commands to put data on the remote FTP server or download it
+from there to Myriad. 
 
 
 ## How do I submit a job to the scheduler?
