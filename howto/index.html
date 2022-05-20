@@ -670,9 +670,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#windows-putty" class="md-nav__link">
-    Windows - PuTTY
+  <a href="#creating-a-tunnel-that-other-applications-can-use" class="md-nav__link">
+    Creating a tunnel that other applications can use
   </a>
+  
+    <nav class="md-nav" aria-label="Creating a tunnel that other applications can use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssh-tunnel-creation-using-a-terminal" class="md-nav__link">
+    SSH tunnel creation using a terminal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-tunnel-creation-using-putty" class="md-nav__link">
+    SSH tunnel creation using PuTTY
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-to-your-tunnel-with-an-application-like-filezilla" class="md-nav__link">
+    Connect to your tunnel with an application (like FileZilla)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -696,6 +723,13 @@
         <li class="md-nav__item">
   <a href="#how-do-i-connect-to-ucl-group-folders-or-other-smb-mounts" class="md-nav__link">
     How do I connect to UCL group folders or other smb mounts?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-connect-out-to-an-ftp-server" class="md-nav__link">
+    How do I connect out to an FTP server?
   </a>
   
 </li>
@@ -1663,9 +1697,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#windows-putty" class="md-nav__link">
-    Windows - PuTTY
+  <a href="#creating-a-tunnel-that-other-applications-can-use" class="md-nav__link">
+    Creating a tunnel that other applications can use
   </a>
+  
+    <nav class="md-nav" aria-label="Creating a tunnel that other applications can use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssh-tunnel-creation-using-a-terminal" class="md-nav__link">
+    SSH tunnel creation using a terminal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-tunnel-creation-using-putty" class="md-nav__link">
+    SSH tunnel creation using PuTTY
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-to-your-tunnel-with-an-application-like-filezilla" class="md-nav__link">
+    Connect to your tunnel with an application (like FileZilla)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1689,6 +1750,13 @@
         <li class="md-nav__item">
   <a href="#how-do-i-connect-to-ucl-group-folders-or-other-smb-mounts" class="md-nav__link">
     How do I connect to UCL group folders or other smb mounts?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-connect-out-to-an-ftp-server" class="md-nav__link">
+    How do I connect out to an FTP server?
   </a>
   
 </li>
@@ -1985,20 +2053,21 @@ when trying to log in, try adding an ssh timeout to your ssh command:</p>
 <h3 id="copying-files-using-linux-or-mac-os-x">Copying files using Linux or Mac OS X<a class="headerlink" href="#copying-files-using-linux-or-mac-os-x" title="Permanent link">§</a></h3>
 <p>You can use the command-line utilities scp, sftp or rsync to copy your data about. You can also use a graphical client (Transmit, CyberDuck, FileZilla).</p>
 <h4 id="scp">scp<a class="headerlink" href="#scp" title="Permanent link">§</a></h4>
-<p>This will copy a data file from somewhere on your local machine to a specified location on the remote machine (Legion, Grace etc).</p>
+<p>This will copy a data file from somewhere on your local machine to a specified location on the 
+remote machine (Myriad etc).</p>
 <div class="codehilite"><pre><span></span><code>scp &lt;local_data_file&gt; &lt;remote_user_id&gt;@&lt;remote_hostname&gt;:&lt;remote_path&gt;
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code># Example: copy myfile from your local current directory into Scratch on Legion
-scp myfile ccxxxxx@legion.rc.ucl.ac.uk:~/Scratch/
+<div class="codehilite"><pre><span></span><code># Example: copy myfile from your local current directory into Scratch on Myriad
+scp myfile ccxxxxx@myriad.rc.ucl.ac.uk:~/Scratch/
 </code></pre></div>
 
 <p>This will do the reverse, copying from the remote machine to your local machine. (This is still run from your local machine).</p>
 <div class="codehilite"><pre><span></span><code>scp &lt;remote_user_id&gt;@&lt;remote_hostname&gt;:&lt;remote_path&gt;&lt;remote_data_file&gt; &lt;local_path&gt;
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code># Example: copy myfile from Legion into the Backups directory in your local current directory
-scp ccxxxxx@legion.rc.ucl.ac.uk:~/Scratch/myfile Backups/
+<div class="codehilite"><pre><span></span><code># Example: copy myfile from Myriad into the Backups directory in your local current directory
+scp ccxxxxx@myriad.rc.ucl.ac.uk:~/Scratch/myfile Backups/
 </code></pre></div>
 
 <h4 id="sftp">sftp<a class="headerlink" href="#sftp" title="Permanent link">§</a></h4>
@@ -2012,7 +2081,7 @@ put &lt;local_file&gt;
 
 <div class="codehilite"><pre><span></span><code># Example: download a copy of file1 into your local current directory,
 # change local directory and upload a copy of file2
-sftp ccxxxxx@legion.rc.ucl.ac.uk
+sftp ccxxxxx@myriad.rc.ucl.ac.uk
 cd Scratch/files
 get file1
 lcd ../files_to_upload
@@ -2069,18 +2138,16 @@ scp -o ProxyJump=socrates.ucl.ac.uk my_file myriad.rc.ucl.ac.uk:~/Scratch/
    HostName myriad.rc.ucl.ac.uk
    proxyCommand ssh -W myriad.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
 
-Host login05
+Host myriad12
    User ccxxxxx
-   HostName login05.external.legion.ucl.ac.uk
-   proxyCommand ssh -W login05.external.legion.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
+   HostName login12.myriad.ucl.ac.uk
+   proxyCommand ssh -W login12.myriad.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
 
 Host aristotle
    User ccxxxxx
    HostName aristotle.rc.ucl.ac.uk
    proxyCommand ssh -W aristotle.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
 </code></pre></div>
-
-<!--- replace legion example above with something else  --->
 
 <p>You can now just type <code>ssh myriad</code> or <code>scp file1 aristotle:~</code> and you will go through Socrates. You'll be asked for login details twice since you're logging in to two machines, Socrates and your endpoint.  </p>
 <h4 id="windows-winscp">Windows - WinSCP<a class="headerlink" href="#windows-winscp" title="Permanent link">§</a></h4>
@@ -2094,8 +2161,29 @@ Host aristotle
 <li>Fill in your username and password for that host and set the file protocol to SCP.</li>
 <li>Save your settings with a useful name.</li>
 </ol>
-<h4 id="windows-putty">Windows - PuTTY<a class="headerlink" href="#windows-putty" title="Permanent link">§</a></h4>
-<p>You can use PuTTY for tunnelling when you just want a single-step login and not a file transfer.</p>
+<h4 id="creating-a-tunnel-that-other-applications-can-use">Creating a tunnel that other applications can use<a class="headerlink" href="#creating-a-tunnel-that-other-applications-can-use" title="Permanent link">§</a></h4>
+<p>Some applications do not read your SSH config file and also cannot set up tunnels themselves,
+but can use one that you have created separately. FileZilla in particular is something you
+may want to do this with to transfer your files directly to the clusters from outside UCL using 
+a graphical client.</p>
+<h5 id="ssh-tunnel-creation-using-a-terminal">SSH tunnel creation using a terminal<a class="headerlink" href="#ssh-tunnel-creation-using-a-terminal" title="Permanent link">§</a></h5>
+<p>You can do this in Linux, Mac OS X and the Windows Command Prompt on Windows 10 and later.</p>
+<p>Set up a tunnel between a port on your local computer (this is using 3333 as it is unlikely to be
+in use, but you can pick different ones) to Myriad's port 22 (which is the standard port for ssh), 
+going via a UCL gateway.</p>
+<div class="codehilite"><pre><span></span><code># replace ccxxxxx with your UCL username
+ssh -L 3333:myriad.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk 
+</code></pre></div>
+
+<p>You may also want to use the <code>-N</code> option to tell it not to execute any remote commands and 
+<code>-f</code> to put this command into the background if you want to continue to type other commands 
+into the same terminal.</p>
+<p>The tunnel now exists, and <code>localhost:3333</code> on your computer connects to Myriad.</p>
+<h5 id="ssh-tunnel-creation-using-putty">SSH tunnel creation using PuTTY<a class="headerlink" href="#ssh-tunnel-creation-using-putty" title="Permanent link">§</a></h5>
+<p>On Windows you can also <a href="https://winscp.net/eng/docs/guide_tunnel#tunnel_putty">set up a tunnel using PuTTY</a>.</p>
+<h5 id="connect-to-your-tunnel-with-an-application-like-filezilla">Connect to your tunnel with an application (like FileZilla)<a class="headerlink" href="#connect-to-your-tunnel-with-an-application-like-filezilla" title="Permanent link">§</a></h5>
+<p>You can then tell your application to connect to <code>localhost:3333</code> instead of Myriad. If it has 
+separate boxes for hostname and port, put <code>localhost</code> as the hostname and <code>3333</code> as the port.</p>
 <h3 id="managing-your-quota">Managing your quota<a class="headerlink" href="#managing-your-quota" title="Permanent link">§</a></h3>
 <p>After using <code>lquota</code> to see your total usage, you may wish to find what is using all your space.</p>
 <p><code>du</code> is a command that gives you information about your disk usage. Useful options are:</p>
@@ -2118,6 +2206,18 @@ then you would do this:</p>
 can use <code>get</code> commands to copy files from there on to Myriad, or <code>put</code> commands to copy data
 into there from Myriad.</p>
 <p>You can look at <code>man smbclient</code> on Myriad for the manual.</p>
+<h2 id="how-do-i-connect-out-to-an-ftp-server">How do I connect out to an FTP server?<a class="headerlink" href="#how-do-i-connect-out-to-an-ftp-server" title="Permanent link">§</a></h2>
+<p>You cannot connect in to Myriad using FTP (we only allow SFTP access) but you can connect out 
+to FTP servers run by other people. </p>
+<p>Load the GNU inetutils module which provides ftp, telnet and tftp clients.</p>
+<div class="codehilite"><pre><span></span><code>module load inetutils/1.9.4
+
+# connect to your desired server
+ftp servername.ac.uk
+</code></pre></div>
+
+<p>You can then use <code>put</code> and <code>get</code> commands to put data on the remote FTP server or download it
+from there to Myriad. </p>
 <h2 id="how-do-i-submit-a-job-to-the-scheduler">How do I submit a job to the scheduler?<a class="headerlink" href="#how-do-i-submit-a-job-to-the-scheduler" title="Permanent link">§</a></h2>
 <p>To submit a job to the scheduler you need to write a jobscript that contains the resources the job is asking for and the actual commands you want to run. This jobscript is then submitted using the <code>qsub</code> command.</p>
 <div class="codehilite"><pre><span></span><code>qsub myjobscript
