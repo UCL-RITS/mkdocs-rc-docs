@@ -14,7 +14,10 @@ The Research Computing team currently runs 2 supported instances of RStudio. The
  - <https://rstudio.data-science.rc.ucl.ac.uk/>
  - <https://econ-myriad.rc.ucl.ac.uk/>
 
-The latter of these is only available to members of the Economics department. The former is more general purpose, but requires permission to access.
+The first of these is part of the [Data Science Platform](https://www.ucl.ac.uk/isd/data-science-platform) 
+and is licensed for teaching, see that page for information on access.
+
+The latter of these is only available to members of the Economics department.
 
 ## Troubleshooting and problem pre-emption
 
