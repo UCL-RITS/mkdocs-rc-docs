@@ -17,7 +17,6 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-16 May 2022 | rstudio.rc.ucl.ac.uk | Planned | The old RStudio service will be decommisioned and users will no longer be able to login to it.
 
 ## Previous Outages
 Date                | Service | Status | Reason 
@@ -52,19 +51,24 @@ Date                | Service | Status | Reason
 2 Mar 2020 -> 9 Mar 2020 | Michael | Completed | Installation of phase 2 hardware, network bridging
 10 Feb 2020 -> 17 Feb 2020 | Myriad | Cancelled | Storage upgrade to 3PB
 
+
 ## Retirements
 
-These clusters are being retired. Notable dates are below.
+These clusters or services are being retired. Notable dates are below.
 
-Grace:
+### Grace
 
 - 1st February 2021: Job submission will be switched off. Jobs still in the queue will run. Access to the login nodes will remain for three months so you can recover your data.
 - 3rd May 2021: Access to the login nodes will be removed and all data will be deleted.
 
-Thomas:
+### Thomas
 
 - Monday 1 March 2021: Job submission will be switched off this morning. Jobs already in the queue may still run. Access to the login nodes will remain for one month so you can retrieve data.
 - Friday 5 March 2021: Queues will be drained. Any jobs left will never run.
 - Thursday 1 April 2021: Access to the login nodes will be removed and all data will be deleted.
 
+### RStudio (rstudio.rc.ucl.ac.uk)
+
+- 16 May 2022: The old RStudio service that was at rstudio.rc.ucl.ac.uk  will be decommisioned 
+and users will no longer be able to login to it.
 
