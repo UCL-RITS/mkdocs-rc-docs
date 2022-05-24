@@ -61,11 +61,16 @@ These clusters or services are being retired. Notable dates are below.
 - 1st February 2021: Job submission will be switched off. Jobs still in the queue will run. Access to the login nodes will remain for three months so you can recover your data.
 - 3rd May 2021: Access to the login nodes will be removed and all data will be deleted.
 
-### Thomas
+### MMM Hub Thomas
 
-- Monday 1 March 2021: Job submission will be switched off this morning. Jobs already in the queue may still run. Access to the login nodes will remain for one month so you can retrieve data.
+This service has been retired as part of the MMM Hub. Some remains are still running
+temporarily for UCL users only.
+
+- Monday 1 March 2021: Job submission for MMM Hub users will be switched off this morning. 
+Jobs already in the queue may still run. Access to the login nodes will remain for one month 
+so you can retrieve data.
 - Friday 5 March 2021: Queues will be drained. Any jobs left will never run.
-- Thursday 1 April 2021: Access to the login nodes will be removed and all data will be deleted.
+- Thursday 1 April 2021: Access to the login nodes for MMM Hub users will be removed and all data will be deleted.
 
 ### RStudio (rstudio.rc.ucl.ac.uk)
 
