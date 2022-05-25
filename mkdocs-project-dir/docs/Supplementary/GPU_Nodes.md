@@ -165,7 +165,7 @@ module load cudnn/8.2.1.32/cuda-11.3
 module load pytorch/1.11.0/gpu
 ```
 
-If you want the CPU only version there use:
+If you want the CPU only version then use:
 
 ```
 module -f unload compilers mpi gcc-libs
