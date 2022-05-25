@@ -1081,6 +1081,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pytorch" class="md-nav__link">
+    PyTorch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-mpi-and-gpus" class="md-nav__link">
     Using MPI and GPUs
   </a>
@@ -1216,6 +1223,28 @@ module load python3/3.7
 module load cuda/10.0.130/gnu-4.9.2  
 module load cudnn/7.4.2.24/cuda-10.0
 module load tensorflow/2.0.0/gpu-py37
+</code></pre></div>
+
+<h2 id="pytorch">PyTorch<a class="headerlink" href="#pytorch" title="Permanent link">§</a></h2>
+<p>PyTorch is installed: type <code>module avail pytorch</code> to see the versions
+available.</p>
+<p>Modules to load the most recent release we have installed (May 2022)
+are:</p>
+<div class="codehilite"><pre><span></span><code>module -f unload compilers mpi gcc-libs
+module load beta-modules
+module load gcc-libs/10.2.0
+module load python3/3.9-gnu-10.2.0
+module load cuda/11.3.1/gnu-10.2.0
+module load cudnn/8.2.1.32/cuda-11.3
+module load pytorch/1.11.0/gpu
+</code></pre></div>
+
+<p>If you want the CPU only version there use:</p>
+<div class="codehilite"><pre><span></span><code>module -f unload compilers mpi gcc-libs
+module load beta-modules
+module load gcc-libs/10.2.0
+module load python3/3.9-gnu-10.2.0
+module load pytorch/1.11.0/cpu
 </code></pre></div>
 
 <h2 id="using-mpi-and-gpus">Using MPI and GPUs<a class="headerlink" href="#using-mpi-and-gpus" title="Permanent link">§</a></h2>
