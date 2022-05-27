@@ -177,7 +177,7 @@ module load cudnn/7.4.2.24/cuda-10.0
 module load tensorflow/2.0.0/gpu-py37
 ```
 
-## PyTorch
+### PyTorch
 
 PyTorch is installed: type `module avail pytorch` to see the versions
 available.
