@@ -9,12 +9,13 @@ layout: docs
 
 ## Overview
 
-The Research Computing team currently runs 2 supported instances of RStudio. The supported services can be accessed using the following addresses:
+The Research Computing team currently runs 2 supported instances of RStudio:
 
  - <https://rstudio.data-science.rc.ucl.ac.uk/>
- - <https://econ-myriad.rc.ucl.ac.uk/>
+    This instance is for general teaching use but requires permission to access. It uses the central UNIX filestore for user data.
 
-The latter of these is only available to members of the Economics department. The former is more general purpose, but requires permission to access.
+ - <https://econ-myriad.rc.ucl.ac.uk/>
+    This instance is for research use by members of the Economics department. It uses the Myriad filesystem for user data.
 
 ## Troubleshooting and problem pre-emption
 
