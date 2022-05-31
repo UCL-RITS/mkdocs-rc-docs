@@ -42,22 +42,14 @@ this server before. If you want to, you can check the host fingerprint against [
 
 ### Logging in from outside the UCL firewall
 
-You will need to either use the [UCL Virtual Private Network](https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn/) or ssh in to UCL's gateways `socrates.ucl.ac.uk` or `ssh.rc.ucl.ac.uk` first. From there you can then ssh in to our systems. 
+You will need to either use the [UCL Virtual Private Network](https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn/) or ssh in to UCL's Gateway system `ssh-gateway.ucl.ac.uk` first. From there you can then ssh in to our systems. 
 
 ```
-ssh <your_UCL_user_id>@socrates.ucl.ac.uk
+ssh <your_UCL_user_id>@ssh-gateway.ucl.ac.uk
 ssh <your_UCL_user_id>@<system_name>.rc.ucl.ac.uk
 ```
 
-Note: the default shell (what you are typing commands into) on Socrates is `csh` rather than `bash` and so your default prompt will look different and use a `%` rather than a `$` as the dividing character:
-
-```
-25 % ls
-html.pub/
-26 %
-```
-
-**Advanced:** If you find you need to go via Socrates often, you can set up this jump automatically, see [Single-step logins using tunnelling](#single-step-logins-using-tunnelling)
+**Advanced:** If you find you need to go via the Gateway often, you can set up this jump automatically, see [Single-step logins using tunnelling](#single-step-logins-using-tunnelling)
 
 #### China Connect
 
@@ -68,7 +60,7 @@ described above.
 
 If you experience difficulties with your login, please make sure that you are typing your UCL user ID and your password correctly. If you have recently updated your password, it takes some hours to propagate to all UCL systems.
 
-If you still cannot get access but can access other UCL services like Socrates, please contact us on rc-support@ucl.ac.uk. Your account may have expired, or you may have gone over quota.
+If you still cannot get access but can access other UCL services like the SSH Gateway, please contact us on rc-support@ucl.ac.uk. Your account may have expired, or you may have gone over quota.
 
 If you cannot access anything, please see UCL MyAccount - you may need to request a password reset from the [Service Desk](https://www.ucl.ac.uk/isd/help-support). 
 
@@ -108,13 +100,13 @@ ssh-keygen -R myriad.rc.ucl.ac.uk
 ``` 
 or you can manually delete line 11 yourself in a text editor.
 
-If you are logging in via Socrates, you will need to remove the old key there too. On Socrates, 
-`pico` and `vi` are available text editors. If you are not already familiar 
-with `vi`, use `pico` - it has the command shortcuts shown at the bottom, where `^O` means 
+If you are logging in via the Gateway, you will need to remove the old key there too. On the Gateway, 
+`nano` and `vim` are available text editors. If you are not already familiar 
+with `vim`, use `nano` - it has the command shortcuts shown at the bottom, where `^O` means 
 press `Ctrl` and then the letter `o`.
 ```
-# to open the file for editing in pico
-pico ~/.ssh/known_hosts
+# to open the file for editing in nano
+nano ~/.ssh/known_hosts
 ```
 Once you have removed the old host key you will be able to ssh in again. The first time 
 you log in to an unknown server you will get a message like this:
@@ -214,9 +206,9 @@ files and have them transferred to the cluster.
 
 ### Transferring files from outside the UCL firewall
 
-As when logging in, when you are outside the UCL firewall you will need a method to connect inside it before you copy files. (You do not want to be copying files on to Socrates and then on to our systems - this is slow, unnecessary, and it means you need space available on Socrates too).
+As when logging in, when you are outside the UCL firewall you will need a method to connect inside it before you copy files.
 
-You can use the [UCL Virtual Private Network](https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn/) and scp direct to our systems or you can do some form of ssh tunnelling.
+You can use the [UCL Virtual Private Network](https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn/) and scp direct to our systems or you can do some form of SSH tunnelling.
 
 ### Single-step logins using tunnelling
 
@@ -225,16 +217,16 @@ You can use the [UCL Virtual Private Network](https://www.ucl.ac.uk/isd/services
 ##### On the command line
 
 ```
-# Log in to Myriad, jumping via Socrates
-ssh -o ProxyJump=socrates.ucl.ac.uk myriad.rc.ucl.ac.uk
+# Log in to Myriad, jumping via the Gateway
+ssh -o ProxyJump=ssh-gateway.ucl.ac.uk myriad.rc.ucl.ac.uk
 ```
 or
 ```
 # Copy 'my_file' from the machine you are logged in to into your Scratch on Grace
-scp -o ProxyJump=socrates.ucl.ac.uk my_file myriad.rc.ucl.ac.uk:~/Scratch/
+scp -o ProxyJump=ssh-gateway.ucl.ac.uk my_file myriad.rc.ucl.ac.uk:~/Scratch/
 ```
 
-This tunnels through Socrates in order to get you to your destination - you'll be asked for your password twice, once for each machine. You can use this to log in or to copy files.
+This tunnels through the Gateway in order to get you to your destination - you'll be asked for your password twice, once for each machine. You can use this to log in or to copy files.
 
 You may also need to do this if you are trying to reach one cluster from another and there is a firewall in the way.
 
@@ -250,7 +242,7 @@ Generally, it should be of this form where `<name>` can be anything you want to 
 Host <name>
    User <remote_user_id>
    HostName <remote_hostname>
-   proxyCommand ssh -W <remote_hostname>:22 <remote_user_id>@socrates.ucl.ac.uk
+   proxyCommand ssh -W <remote_hostname>:22 <remote_user_id>@ssh-gateway.ucl.ac.uk
 ```
 This causes the commands you type in your client to be forwarded on over a secure channel to the specified remote host.
 
@@ -259,21 +251,21 @@ Here are some examples - you can have as many of these as you need in your confi
 Host myriad
    User ccxxxxx
    HostName myriad.rc.ucl.ac.uk
-   proxyCommand ssh -W myriad.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
+   proxyCommand ssh -W myriad.rc.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk
 
 Host login05
    User ccxxxxx
    HostName login05.external.legion.ucl.ac.uk
-   proxyCommand ssh -W login05.external.legion.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
+   proxyCommand ssh -W login05.external.legion.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk
 
 Host aristotle
    User ccxxxxx
    HostName aristotle.rc.ucl.ac.uk
-   proxyCommand ssh -W aristotle.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
+   proxyCommand ssh -W aristotle.rc.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk
 ```
 <!--- replace legion example above with something else  --->
 
-You can now just type `ssh myriad` or `scp file1 aristotle:~` and you will go through Socrates. You'll be asked for login details twice since you're logging in to two machines, Socrates and your endpoint.  
+You can now just type `ssh myriad` or `scp file1 aristotle:~` and you will go through the Gateway. You'll be asked for login details twice since you're logging in to two machines, a Gateway server and your endpoint.  
 
 #### Windows - WinSCP
 
@@ -281,8 +273,8 @@ WinSCP can also set up SSH tunnels.
 
  1. Create a new session as before, and tick the Advanced options box in the bottom left corner.
  2. Select Connection > Tunnel from the left pane.
- 3. Tick the Connect through SSH tunnel box and enter the hostname of the gateway you are tunnelling through, for example socrates.ucl.ac.uk
- 4. Fill in your username and password for that host. (Central UCL ones for Socrates).
+ 3. Tick the Connect through SSH tunnel box and enter the hostname of the gateway you are tunnelling through, for example ssh-gateway.ucl.ac.uk
+ 4. Fill in your username and password for that host. (Central UCL ones for the Gateway).
  5. Select Session from the left pane and fill in the hostname you want to end up on after the tunnel.
  6. Fill in your username and password for that host and set the file protocol to SCP.
  7. Save your settings with a useful name.
@@ -568,7 +560,7 @@ You need to make sure you use either the `-X` or `-Y` (look at `man ssh` for det
 
 For example, connecting from outside of UCL:
 ```
-ssh -X <your_UCL_user_id>@socrates.ucl.ac.uk
+ssh -X <your_UCL_user_id>@ssh-gateway.ucl.ac.uk
 ```
 and then
 ```

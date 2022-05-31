@@ -82,8 +82,8 @@ not show placeholders to indicate you have typed something.
 If you experience difficulties with your login, please make sure that
 you are typing your UCL user ID and your password correctly.
 
-If you still cannot get access but can access other UCL services like
-Socrates, please contact us on [rc-support@ucl.ac.uk](mailto:rc-support@ucl.ac.uk).
+If you still cannot get access but can access other UCL services like 
+the SSH Gateway, please contact us on [rc-support@ucl.ac.uk](mailto:rc-support@ucl.ac.uk).
 
 If you cannot access anything, please see [UCL MyAccount](https://myaccount.ucl.ac.uk) - you may need to request a
 password reset from the Service Desk.
@@ -92,10 +92,10 @@ password reset from the Service Desk.
 
 If you wish to access any of our machines from outside UCL, you cannot
 do so directly as they are behind UCL's firewall. To do so you will have
-to either use ssh to connect to UCL's gateway first:
+to either use ssh to connect to UCL's SSH Gateway system first:
 
 ```
-ssh ccaaxyz@socrates.ucl.ac.uk
+ssh ccaaxyz@ssh-gateway.ucl.ac.uk
 ```
 
 and from there connect to the correct host as described above, or login
@@ -111,7 +111,7 @@ a part of the UCL network, once the connection has been established,
 so you can establish an ssh connection to the host machine directly, for example:
 
 ```
-ssh ccaaxyz@legion.rc.ucl.ac.uk
+ssh ccaaxyz@myriad.rc.ucl.ac.uk
 ```
 
 ## Running graphical applications using X-forwarding
@@ -123,21 +123,21 @@ computer and display the user interface on their own computer.
 
 If you wish to have X-windows functionality enabled you have to make
 sure that you add either the `-X` or `-Y` flags (see `man ssh` for details) on
-all `ssh` commands you have to run to establish a connection to Legion.
+all `ssh` commands you have to run to establish a connection to Myriad.
 
 For example:
 
 ```
-ssh -X ccaaxyz@legion.rc.ucl.ac.uk
+ssh -X ccaaxyz@myriad.rc.ucl.ac.uk
 ```
 
 To use X-Forwarding from outside UCL, you must either use the VPN, or the
 appropriate flags with *both* `ssh` steps, for example:
 
 ```
-[me@my_computer ~]$ ssh -X ccaaxyz@socrates.ucl.ac.uk
+[me@my_computer ~]$ ssh -X ccaaxyz@ssh-gateway.ucl.ac.uk
 [...]
-[ccaaxyz@socrates-a ~]$ ssh -X ccaaxyz@legion.rc.ucl.ac.uk
+[ccaaxyz@ejp-gateway-01 ~]$ ssh -X ccaaxyz@myriad.rc.ucl.ac.uk
 ```
 
 ### X-forwarding on Mac OS X

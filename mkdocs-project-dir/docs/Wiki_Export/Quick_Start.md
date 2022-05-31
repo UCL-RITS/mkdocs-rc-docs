@@ -20,7 +20,7 @@ to:
 
 Your username and password are the same as those for your central UCL
 user id. Legion, Myriad, and Grace are only accessible from within UCL’s network. If you
-need to access them from outside, you need to log in via Socrates, a
+need to access them from outside, you need to log in via the Gateway, a
 departmental machine, or install the IS VPN service.
 
 More details on connecting to these services are provided on the [Accessing RC Systems](Accessing_RC_Systems) page.

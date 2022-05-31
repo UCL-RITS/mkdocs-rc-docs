@@ -18,7 +18,7 @@ Materials and Molecular Modelling.
     Thomas has now been retired as an MMM Hub machine.
     A portion of Thomas is running for UCL users only until the end of 2021.
 
-    7 June 2021: Thomas is now inside the UCL firewall, use VPN, Socrates or ssh.rc.ucl.ac.uk
+    7 June 2021: Thomas is now inside the UCL firewall, use VPN, or SSH via ssh-gateway.ucl.ac.uk
     to access.
 
 ## Applying for an account
@@ -93,7 +93,7 @@ From inside the UCL VPN you can ssh directly into the above but from outside you
 the following:
 
 ```
-ssh -o ProxyJump=<UCL_user_ID>@socrates.ucl.ac.uk <thomas_user_ID>@thomas.rc.ucl.ac.uk
+ssh -o ProxyJump=<UCL_user_ID>@ssh-gateway.ucl.ac.uk <thomas_user_ID>@thomas.rc.ucl.ac.uk
 ```  
 
 ### SSH timeouts
