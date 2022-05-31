@@ -79,13 +79,7 @@ finding where space is being used.
 
 Please consider that Kathleen nodes have 40 physical cores - 2 nodes is 80 cores. Jobs do not share nodes, so although asking for 41 cores is possible, it means you are wasting the other 39 cores on your second node!
 
-For interactive jobs:
-
-| Cores           | Max. Duration |
-|:---------------:|:-------------:|
-| 41-80 (2 nodes) | 2h            |
-
-For batch jobs:
+For interactive and batch jobs:
 
 | Cores    | Max. Duration |
 |:--------:|:-------------:|
