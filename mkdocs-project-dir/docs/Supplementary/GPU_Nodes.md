@@ -147,6 +147,34 @@ module load cudnn/7.4.2.24/cuda-10.0
 module load tensorflow/2.0.0/gpu-py37
 ```
 
+## PyTorch
+
+PyTorch is installed: type `module avail pytorch` to see the versions
+available.
+
+Modules to load the most recent release we have installed (May 2022)
+are:
+
+```
+module -f unload compilers mpi gcc-libs
+module load beta-modules
+module load gcc-libs/10.2.0
+module load python3/3.9-gnu-10.2.0
+module load cuda/11.3.1/gnu-10.2.0
+module load cudnn/8.2.1.32/cuda-11.3
+module load pytorch/1.11.0/gpu
+```
+
+If you want the CPU only version then use:
+
+```
+module -f unload compilers mpi gcc-libs
+module load beta-modules
+module load gcc-libs/10.2.0
+module load python3/3.9-gnu-10.2.0
+module load pytorch/1.11.0/cpu
+```
+
 ## Using MPI and GPUs
 
 It is possible to run MPI programs that use GPUs but only within a

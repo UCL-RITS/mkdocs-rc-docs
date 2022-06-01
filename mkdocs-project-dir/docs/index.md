@@ -45,6 +45,7 @@ whatever your skill level or requirements.
 - [Apply for access to national GPU clusters](Supplementary/GPU_Clusters.md)
 - [Get more resources](Additional_Resource_Requests.md) (more storage, more
   compute time, longer run time, etc)
+- [Acknowledge the use of RC Systems](Clusters/Acknowledging_RC_Systems.md)
 
 ## Training
 
