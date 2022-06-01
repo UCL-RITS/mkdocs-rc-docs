@@ -9,15 +9,13 @@ layout: docs
 
 ## Overview
 
-The Research Computing team currently runs 2 supported instances of RStudio. The supported services can be accessed using the following addresses:
+The Research Computing team currently runs 2 supported instances of RStudio:
 
  - <https://rstudio.data-science.rc.ucl.ac.uk/>
+   This instance is for general teaching use but requires permission to access as part of the [Data Science Platform](https://www.ucl.ac.uk/isd/data-science-platform). It uses the central UNIX filestore for user data.
+
  - <https://econ-myriad.rc.ucl.ac.uk/>
-
-The first of these is part of the [Data Science Platform](https://www.ucl.ac.uk/isd/data-science-platform) 
-and is licensed for teaching, see that page for information on access.
-
-The latter of these is only available to members of the Economics department.
+   This instance is for research use by members of the Economics department. It uses the Myriad filesystem for user data.
 
 ## Troubleshooting and problem pre-emption
 
@@ -27,9 +25,9 @@ If this does not solve your logging-in problem then there are 2 courses of actio
 
  - For the Economics RStudio service, ssh into Myriad and change the name of or delete a folder located at:
     
-    ```
-    $HOME/.local/share/rstudio/sessions/
-    ```
+   ```
+   $HOME/.local/share/rstudio/sessions/
+   ```
 
  - If it is the Rstudio Pro teaching service please in the first instance [get in touch with RC support](../Contact_Us.md).  This service shares home directories with the central Unix services so it is possible to log into Socrates (`socrates.ucl.ac.uk`) [via SSH](../Walkthroughs/Logging_In.md) and delete the folder above which may resolve your issues.
 
