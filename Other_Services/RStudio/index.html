@@ -1115,25 +1115,26 @@
 
 <h1 id="rstudio">RStudio<a class="headerlink" href="#rstudio" title="Permanent link">§</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">§</a></h2>
-<p>The Research Computing team currently runs 2 supported instances of RStudio. The supported services can be accessed using the following addresses:</p>
+<p>The Research Computing team currently runs 2 supported instances of RStudio:</p>
 <ul>
-<li><a href="https://rstudio.data-science.rc.ucl.ac.uk/">https://rstudio.data-science.rc.ucl.ac.uk/</a></li>
-<li><a href="https://econ-myriad.rc.ucl.ac.uk/">https://econ-myriad.rc.ucl.ac.uk/</a></li>
+<li>
+<p><a href="https://rstudio.data-science.rc.ucl.ac.uk/">https://rstudio.data-science.rc.ucl.ac.uk/</a>
+   This instance is for general teaching use but requires permission to access as part of the <a href="https://www.ucl.ac.uk/isd/data-science-platform">Data Science Platform</a>. It uses the central UNIX filestore for user data.</p>
+</li>
+<li>
+<p><a href="https://econ-myriad.rc.ucl.ac.uk/">https://econ-myriad.rc.ucl.ac.uk/</a>
+   This instance is for research use by members of the Economics department. It uses the Myriad filesystem for user data.</p>
+</li>
 </ul>
-<p>The first of these is part of the <a href="https://www.ucl.ac.uk/isd/data-science-platform">Data Science Platform</a> 
-and is licensed for teaching, see that page for information on access.</p>
-<p>The latter of these is only available to members of the Economics department.</p>
 <h2 id="troubleshooting-and-problem-pre-emption">Troubleshooting and problem pre-emption<a class="headerlink" href="#troubleshooting-and-problem-pre-emption" title="Permanent link">§</a></h2>
 <p>For all of the services, please take care to either run <code>q()</code> in the R window or press the red logout button in the top right hand corner when you are done with the window, DO NOT just close the tab. This decreases the chance of there being stale sessions and future issues with logging in. If you cannot reach the landing page, then please first try getting there using private browsing and if that works then clear your cookies and cache. In most browsers you can do this for a certain time range, though look at the documentation for the browser you are using.</p>
 <p>If this does not solve your logging-in problem then there are 2 courses of action for the 2 supported services:</p>
 <ul>
-<li>
-<p>For the Economics RStudio service, ssh into Myriad and change the name of or delete a folder located at:</p>
+<li>For the Economics RStudio service, ssh into Myriad and change the name of or delete a folder located at:</li>
+</ul>
 <p><code>$HOME/.local/share/rstudio/sessions/</code></p>
-</li>
-<li>
-<p>If it is the Rstudio Pro teaching service please in the first instance <a href="../../Contact_Us/">get in touch with RC support</a>.  This service shares home directories with the central Unix services so it is possible to log into Socrates (<code>socrates.ucl.ac.uk</code>) <a href="../../Walkthroughs/Logging_In/">via SSH</a> and delete the folder above which may resolve your issues.</p>
-</li>
+<ul>
+<li>If it is the Rstudio Pro teaching service please in the first instance <a href="../../Contact_Us/">get in touch with RC support</a>.  This service shares home directories with the central Unix services so it is possible to log into Socrates (<code>socrates.ucl.ac.uk</code>) <a href="../../Walkthroughs/Logging_In/">via SSH</a> and delete the folder above which may resolve your issues.</li>
 </ul>
 <p>Note that this route should only be taken if you are getting an ever-spinning loading screen.</p>
 
