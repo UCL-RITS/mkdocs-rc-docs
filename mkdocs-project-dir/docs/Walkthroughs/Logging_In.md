@@ -35,7 +35,7 @@ Replace "uccacxx" with your own central UCL username.
 ssh uccacxx@ssh-gateway.ucl.ac.uk
 ```
 
-![SSH to the Gateway](../../img/socrates_login/win_01.png)
+![SSH to the Gateway](../../img/ssh-gateway_login/win_01.png)
 
 If your computer has never connected to the Gateway before, it has no existing record of the 
 host fingerprint which identifies it, so it will ask if you want to accept it 
@@ -46,7 +46,7 @@ fingerprint is different, it can be an indication that something else is pretend
 be the Gateway (or that it has changed after a major update). If concerned, contact 
 rc-support@ucl.ac.uk or the main Service Desk.
 
-![Accept host fingerprint](../../img/socrates_login/win_02.png)
+![Accept host fingerprint](../../img/ssh-gateway_login/win_02.png)
 
 It now informs you that it has added the Gateway to your list of known hosts.
 
@@ -54,7 +54,7 @@ You have now contacted the Gateway and it displays a small splash screen and ask
 UCL password. Nothing will show up when typing in this box - no placeholders or bullet
 point characters. Press return at the end to submit.
 
-![Type password](../../img/socrates_login/win_03.png)
+![Type password](../../img/ssh-gateway_login/win_03.png)
 
 If you have a typo in your password or have changed it within the last couple of hours
 and the new one hasn't propagated yet, it will ask again.
@@ -68,7 +68,7 @@ From the Gateway, we want to ssh in to Myriad:
 ssh uccacxx@myriad.rc.ucl.ac.uk
 ```
 
-![On the Gateway, SSH into Myriad](../../img/socrates_login/win_04.png)
+![On the Gateway, SSH into Myriad](../../img/ssh-gateway_login/win_04.png)
 
 Your user on the Gateway will also not have connected to Myriad before, so you will get a 
 similar prompt about Myriad's host fingerprint. You can check this against 
@@ -78,7 +78,7 @@ After saying "yes" you will be prompted for your password again, and after typin
 you will be logged in to Myriad and see Myriad's message containing information about
 the system and where to get help.
 
-![Welcome from Myriad](../../img/socrates_login/win_05.png)
+![Welcome from Myriad](../../img/ssh-gateway_login/win_05.png)
 
 At the bottom you can see that the prompt on Myriad looks like
 
