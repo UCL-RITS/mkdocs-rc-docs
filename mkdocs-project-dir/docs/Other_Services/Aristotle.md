@@ -46,7 +46,7 @@ If you experience difficulties with your login, please make sure that
 you are typing your UCL user ID and your password correctly. If you
 still cannot get access, please contact us at [rc-support@ucl.ac.uk](mailto:rc-support@ucl.ac.uk).
 
-If you are outside the UCL firewall, you will need to [connect to Socrates first](../howto.md#logging-in-from-outside-the-ucl-firewall) and then SSH in to Aristotle from there.
+If you are outside the UCL firewall, you will need to [connect to the Gateway system first](../howto.md#logging-in-from-outside-the-ucl-firewall) and then SSH in to Aristotle from there.
 
 ## User Environment
 

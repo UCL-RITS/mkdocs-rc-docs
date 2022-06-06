@@ -39,18 +39,18 @@ Like Windows, macOS doesn't come with an X server to receive X windows. The most
 
 Almost all Linux versions that have a graphical desktop use an X server to provide it, so you don't have to install a separate one.
 
-You still have to set up your SSH client's connection to "tunnel" the X windows from the remote computer, though. You can do this by simply adding the `-X` option to your `ssh` command line, so for example to connect to Legion with X-Forwarding:
+You still have to set up your SSH client's connection to "tunnel" the X windows from the remote computer, though. You can do this by simply adding the `-X` option to your `ssh` command line, so for example to connect to Myriad with X-Forwarding:
 
 ```
-ssh -X ccaaxyz@legion.rc.ucl.ac.uk
+ssh -X ccaaxyz@myriad.rc.ucl.ac.uk
 ```
 
-To use X-Forwarding from outside UCL, you must either use the VPN, or use the [Socrates gateway machine](Socrates.md), with the appropriate flags for *both* `ssh` steps, for example:
+To use X-Forwarding from outside UCL, you must either use the VPN, or use the SSH Gateway system, with the appropriate flags for *both* `ssh` steps, for example:
 
 ```
-[me@my_computer ~]$ ssh -X ccaaxyz@socrates.ucl.ac.uk
+[me@my_computer ~]$ ssh -X ccaaxyz@ssh-gateway.ucl.ac.uk
 [...]
-[ccaaxyz@socrates-a ~]$ ssh -X ccaaxyz@legion.rc.ucl.ac.uk
+[ccaaxyz@ejp-gateway-01 ~]$ ssh -X ccaaxyz@myriad.rc.ucl.ac.uk
 ```
 
 !!! note
