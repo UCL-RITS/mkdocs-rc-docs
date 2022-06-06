@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Remote_Access/">
       
       <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.2">
     
     
       
@@ -23,11 +23,12 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1c3799f8.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.5d38496d.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
         
+      
       
     
     
@@ -461,6 +462,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-storage-on-the-gateway-servers" class="md-nav__link">
+    File storage on the Gateway servers
+  </a>
   
 </li>
       
@@ -1179,6 +1187,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#file-storage-on-the-gateway-servers" class="md-nav__link">
+    File storage on the Gateway servers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#key-management" class="md-nav__link">
     Key management
   </a>
@@ -1205,12 +1220,9 @@
 
 <h1 id="remote-access-to-research-computing-resources">Remote Access to Research Computing Resources<a class="headerlink" href="#remote-access-to-research-computing-resources" title="Permanent link">§</a></h1>
 <p>UCL's Research Computing services are accessible from inside the UCL firewall.  If you wish to connect from outside, you need to either connect through a VPN or use SSH to log in to a machine accessible from outside and use that to "jump" through into the UCL network.</p>
-<!-- Previously the recommended host for doing this was Socrates. Due to the degree to which this service is overloaded due to the prevailing pandemic increasing its use, ISD has built a new set of "jump" boxes which are designed to be fast, scalable and secure for access to Research Computing services. -->
-
-<p>The Socrates system is currently used as a "jump box" for Research Computing services, as well as serving several other university needs. Due to the increased load this is under in recent months, it will soon<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> be replaced with a dedicated group of machines.</p>
 <h2 id="connecting-to-the-jump-boxes">Connecting to the jump boxes<a class="headerlink" href="#connecting-to-the-jump-boxes" title="Permanent link">§</a></h2>
 <p>You can connect to the jump boxes by connecting with your SSH client to:</p>
-<div class="codehilite"><pre><span></span><code>socrates.ucl.ac.uk
+<div class="codehilite"><pre><span></span><code>ssh-gateway.ucl.ac.uk
 </code></pre></div>
 
 <p>Once connected you can then log on to the UCL RC service you are using as normal.</p>
@@ -1219,12 +1231,12 @@
 <h4 id="linux-unix-mac-os-x">Linux / Unix / Mac OS X<a class="headerlink" href="#linux-unix-mac-os-x" title="Permanent link">§</a></h4>
 <h5 id="on-the-command-line">On the command line<a class="headerlink" href="#on-the-command-line" title="Permanent link">§</a></h5>
 <div class="codehilite"><pre><span></span><code># Log in to Kathleen, jumping via jump box
-ssh -o ProxyJump=socrates.ucl.ac.uk kathleen.rc.ucl.ac.uk
+ssh -o ProxyJump=ssh-gateway.ucl.ac.uk kathleen.rc.ucl.ac.uk
 </code></pre></div>
 
 <p>or</p>
-<div class="codehilite"><pre><span></span><code># Copy &#39;my_file&#39; from the machine you are logged in to into your Scratch on Kathleen
-scp -o ProxyJump=socrates.ucl.ac.uk my_file kathleen.rc.ucl.ac.uk:~/Scratch/
+<div class="codehilite"><pre><span></span><code># Copy &#39;my_file&#39;, from the machine you are logged in to, into your Scratch on Kathleen
+scp -o ProxyJump=ssh-gateway.ucl.ac.uk my_file kathleen.rc.ucl.ac.uk:~/Scratch/
 </code></pre></div>
 
 <p>This tunnels through the jump box service in order to get you to your destination - you'll be asked for your password twice, once for each machine. You can use this to log in or to copy files.</p>
@@ -1236,7 +1248,7 @@ scp -o ProxyJump=socrates.ucl.ac.uk my_file kathleen.rc.ucl.ac.uk:~/Scratch/
 <div class="codehilite"><pre><span></span><code>Host &lt;name&gt;
    User &lt;remote_user_id&gt;
    HostName &lt;remote_hostname&gt;
-   proxyCommand ssh -W &lt;remote_hostname&gt;:22 &lt;remote_user_id&gt;@socrates.ucl.ac.uk
+   proxyCommand ssh -W &lt;remote_hostname&gt;:22 &lt;remote_user_id&gt;@ssh-gateway.ucl.ac.uk
 </code></pre></div>
 
 <p>This <code>proxyCommand</code> option causes the commands you type in your client to be forwarded on over a secure channel to the specified remote host.</p>
@@ -1244,46 +1256,32 @@ scp -o ProxyJump=socrates.ucl.ac.uk my_file kathleen.rc.ucl.ac.uk:~/Scratch/
 <div class="codehilite"><pre><span></span><code>Host myriad
    User ccxxxxx
    HostName myriad.rc.ucl.ac.uk
-   proxyCommand ssh -W myriad.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
+   proxyCommand ssh -W myriad.rc.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk
 
 Host login05
    User ccxxxxx
    HostName login05.external.legion.ucl.ac.uk
-   proxyCommand ssh -W login05.external.legion.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
+   proxyCommand ssh -W login05.external.legion.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk
 
 Host aristotle
    User ccxxxxx
    HostName aristotle.rc.ucl.ac.uk
-   proxyCommand ssh -W aristotle.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
+   proxyCommand ssh -W aristotle.rc.ucl.ac.uk:22 ccxxxxx@ssh-gateway.rc.ucl.ac.uk
 </code></pre></div>
 
 <p>You can now just type <code>ssh myriad</code> or <code>scp file1 aristotle:~</code> and you will go through the jump box. You'll be asked for login details twice since you're logging in to two machines, the jump box and your endpoint.  </p>
-<!-- Commenting out until the new service is up
-## File storage
-
-The jump boxes have extremely limited file storage space, intentionally, and should not be used for storing files - if you need to transfer files you should use the two-step process above.  This storage should only be used for SSH configuration files.
-
-This storage is not mirrored across the jump boxes which means if you write a file to your home directory, you will not be able to read it if you are allocated to another jump box next time you log in.
--->
-
+<h2 id="file-storage-on-the-gateway-servers">File storage on the Gateway servers<a class="headerlink" href="#file-storage-on-the-gateway-servers" title="Permanent link">§</a></h2>
+<p>The individual servers in the pool for the Gateway service have extremely limited file storage space, intentionally, and should not be used for storing files - if you need to transfer files you should use the two-step process above.  This storage should only be used for SSH configuration files.</p>
+<p>This storage is not mirrored across the jump boxes which means if you write a file to your home directory, you will not be able to read it if you are allocated to another jump box next time you log in.</p>
 <h2 id="key-management">Key management<a class="headerlink" href="#key-management" title="Permanent link">§</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If you use SSH keys you absolutely <strong>MUST NOT STORE UNENCRYPTED PRIVATE KEYS ON THIS OR ANY OTHER MULTI-USER COMPUTER</strong>.  We will be running regular scans of the filesystem to identify and then block unencrypted key pairs across our services.</p>
 </div>
-<!-- Delete this for the new service -->
-<p>The <code>/home</code> filesystems on Socrates are the same as those for the Aristotle service, and can also be made available on the Desktop@UCL service as the <code>T:</code> by running a script from the Start Menu.</p>
-<p>This means that any keys you use for Aristotle will also be usable for Socrates, and vice-versa.</p>
-<!-- Commenting out until the new service is up
-There are currently two servers in the pool, `ejp-gateway01` and `ejp-gateway02`. 
-
-Because the `/home` filesystem is not shared across the jump boxes, you need to sync SSH configuration files like `~/.ssh/authorized_keys` across all the available jump boxes so that the change takes effect whichever jump box you are allocated to.
-
-You can see which machine you are logged into by the bash prompt.
-
-So for example, if on `ejp-gateway02` then do:
-
-
+<p>There are currently two servers in the pool, internally named <code>ejp-gateway01</code> and <code>ejp-gateway02</code>. </p>
+<p>Because the <code>/home</code> filesystem is not shared across the jump boxes, you need to sync SSH configuration files like <code>~/.ssh/authorized_keys</code> across all the available jump boxes so that the change takes effect whichever jump box you are allocated to.</p>
+<p>You can see which machine you are logged into by the bash prompt.</p>
+<p>So for example, if on <code>ejp-gateway02</code> then do:</p>
 <div class="codehilite"><pre><span></span><code><span class="gp">[ccaaxxx@ad.ucl.ac.uk@ejp-gateway02 ~]$ </span>scp -r ~/.ssh ejp-gateway01:
 
 <span class="go">Password:</span>
@@ -1292,23 +1290,11 @@ So for example, if on `ejp-gateway02` then do:
 <span class="gp">[ccaaxxx@ad.ucl.ac.uk@ejp-gateway02 ~]$</span>
 </code></pre></div>
 
-
-
-and similarly if on `ejp-gateway01` do `scp -r ~/.ssh ejp-gateway02:`
-
--->
-
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>Expected late October/early-mid November 2020.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
+<p>and similarly if on <code>ejp-gateway01</code> do <code>scp -r ~/.ssh ejp-gateway02:</code></p>
 
               
             </article>
+            
           </div>
         </div>
         
@@ -1316,7 +1302,8 @@ and similarly if on `ejp-gateway01` do `scp -r ~/.ssh ejp-gateway02:`
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
         <a href="../Planned_Outages/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Planned Outages" rel="prev">
@@ -1388,10 +1375,10 @@ and similarly if on `ejp-gateway01` do `scp -r ~/.ssh ejp-gateway02:`
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["instant"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["instant"], "search": "../assets/javascripts/workers/search.b028fd86.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+      <script src="../assets/javascripts/bundle.7f366e99.min.js"></script>
       
     
   </body>

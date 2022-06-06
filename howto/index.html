@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/howto/">
       
       <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.2">
     
     
       
@@ -23,11 +23,12 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1c3799f8.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.5d38496d.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
         
+      
       
     
     
@@ -1972,24 +1973,18 @@ Linux instructions.</p>
 key is not cached in the registry - this is normal and is because you have never connected to
 this server before. If you want to, you can check the host fingerprint against <a href="../Supplementary/Hostkeys/">our current key fingerprints</a>.</p>
 <h3 id="logging-in-from-outside-the-ucl-firewall">Logging in from outside the UCL firewall<a class="headerlink" href="#logging-in-from-outside-the-ucl-firewall" title="Permanent link">§</a></h3>
-<p>You will need to either use the <a href="https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn/">UCL Virtual Private Network</a> or ssh in to UCL's gateways <code>socrates.ucl.ac.uk</code> or <code>ssh.rc.ucl.ac.uk</code> first. From there you can then ssh in to our systems. </p>
-<div class="codehilite"><pre><span></span><code>ssh &lt;your_UCL_user_id&gt;@socrates.ucl.ac.uk
+<p>You will need to either use the <a href="https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn/">UCL Virtual Private Network</a> or ssh in to UCL's Gateway system <code>ssh-gateway.ucl.ac.uk</code> first. From there you can then ssh in to our systems. </p>
+<div class="codehilite"><pre><span></span><code>ssh &lt;your_UCL_user_id&gt;@ssh-gateway.ucl.ac.uk
 ssh &lt;your_UCL_user_id&gt;@&lt;system_name&gt;.rc.ucl.ac.uk
 </code></pre></div>
 
-<p>Note: the default shell (what you are typing commands into) on Socrates is <code>csh</code> rather than <code>bash</code> and so your default prompt will look different and use a <code>%</code> rather than a <code>$</code> as the dividing character:</p>
-<div class="codehilite"><pre><span></span><code>25 % ls
-html.pub/
-26 %
-</code></pre></div>
-
-<p><strong>Advanced:</strong> If you find you need to go via Socrates often, you can set up this jump automatically, see <a href="#single-step-logins-using-tunnelling">Single-step logins using tunnelling</a></p>
+<p><strong>Advanced:</strong> If you find you need to go via the Gateway often, you can set up this jump automatically, see <a href="#single-step-logins-using-tunnelling">Single-step logins using tunnelling</a></p>
 <h4 id="china-connect">China Connect<a class="headerlink" href="#china-connect" title="Permanent link">§</a></h4>
 <p>If you are on China Connect, you will still need to ssh in to a UCL gateway first as 
 described above.</p>
 <h3 id="login-problems">Login problems<a class="headerlink" href="#login-problems" title="Permanent link">§</a></h3>
 <p>If you experience difficulties with your login, please make sure that you are typing your UCL user ID and your password correctly. If you have recently updated your password, it takes some hours to propagate to all UCL systems.</p>
-<p>If you still cannot get access but can access other UCL services like Socrates, please contact us on rc-support@ucl.ac.uk. Your account may have expired, or you may have gone over quota.</p>
+<p>If you still cannot get access but can access other UCL services like the SSH Gateway, please contact us on rc-support@ucl.ac.uk. Your account may have expired, or you may have gone over quota.</p>
 <p>If you cannot access anything, please see UCL MyAccount - you may need to request a password reset from the <a href="https://www.ucl.ac.uk/isd/help-support">Service Desk</a>. </p>
 <p>If you get a host key error message, you will need to delete old host keys - continue reading!</p>
 <h4 id="remote-host-identification-has-changed">Remote host identification has changed<a class="headerlink" href="#remote-host-identification-has-changed" title="Permanent link">§</a></h4>
@@ -2022,12 +2017,12 @@ Sometimes it will give you a direct command you can run to remove that specific 
 </code></pre></div>
 
 <p>or you can manually delete line 11 yourself in a text editor.</p>
-<p>If you are logging in via Socrates, you will need to remove the old key there too. On Socrates, 
-<code>pico</code> and <code>vi</code> are available text editors. If you are not already familiar 
-with <code>vi</code>, use <code>pico</code> - it has the command shortcuts shown at the bottom, where <code>^O</code> means 
+<p>If you are logging in via the Gateway, you will need to remove the old key there too. On the Gateway, 
+<code>nano</code> and <code>vim</code> are available text editors. If you are not already familiar 
+with <code>vim</code>, use <code>nano</code> - it has the command shortcuts shown at the bottom, where <code>^O</code> means 
 press <code>Ctrl</code> and then the letter <code>o</code>.</p>
-<div class="codehilite"><pre><span></span><code># to open the file for editing in pico
-pico ~/.ssh/known_hosts
+<div class="codehilite"><pre><span></span><code># to open the file for editing in nano
+nano ~/.ssh/known_hosts
 </code></pre></div>
 
 <p>Once you have removed the old host key you will be able to ssh in again. The first time 
@@ -2105,21 +2100,21 @@ put file2
 panel separately as well as for the main panel, to allow you to drag and drop 
 files and have them transferred to the cluster.</p>
 <h3 id="transferring-files-from-outside-the-ucl-firewall">Transferring files from outside the UCL firewall<a class="headerlink" href="#transferring-files-from-outside-the-ucl-firewall" title="Permanent link">§</a></h3>
-<p>As when logging in, when you are outside the UCL firewall you will need a method to connect inside it before you copy files. (You do not want to be copying files on to Socrates and then on to our systems - this is slow, unnecessary, and it means you need space available on Socrates too).</p>
-<p>You can use the <a href="https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn/">UCL Virtual Private Network</a> and scp direct to our systems or you can do some form of ssh tunnelling.</p>
+<p>As when logging in, when you are outside the UCL firewall you will need a method to connect inside it before you copy files.</p>
+<p>You can use the <a href="https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn/">UCL Virtual Private Network</a> and scp direct to our systems or you can do some form of SSH tunnelling.</p>
 <h3 id="single-step-logins-using-tunnelling">Single-step logins using tunnelling<a class="headerlink" href="#single-step-logins-using-tunnelling" title="Permanent link">§</a></h3>
 <h4 id="linux-unix-mac-os-x_1">Linux / Unix / Mac OS X<a class="headerlink" href="#linux-unix-mac-os-x_1" title="Permanent link">§</a></h4>
 <h5 id="on-the-command-line">On the command line<a class="headerlink" href="#on-the-command-line" title="Permanent link">§</a></h5>
-<div class="codehilite"><pre><span></span><code># Log in to Myriad, jumping via Socrates
-ssh -o ProxyJump=socrates.ucl.ac.uk myriad.rc.ucl.ac.uk
+<div class="codehilite"><pre><span></span><code># Log in to Myriad, jumping via the Gateway
+ssh -o ProxyJump=ssh-gateway.ucl.ac.uk myriad.rc.ucl.ac.uk
 </code></pre></div>
 
 <p>or</p>
 <div class="codehilite"><pre><span></span><code># Copy &#39;my_file&#39; from the machine you are logged in to into your Scratch on Grace
-scp -o ProxyJump=socrates.ucl.ac.uk my_file myriad.rc.ucl.ac.uk:~/Scratch/
+scp -o ProxyJump=ssh-gateway.ucl.ac.uk my_file myriad.rc.ucl.ac.uk:~/Scratch/
 </code></pre></div>
 
-<p>This tunnels through Socrates in order to get you to your destination - you'll be asked for your password twice, once for each machine. You can use this to log in or to copy files.</p>
+<p>This tunnels through the Gateway in order to get you to your destination - you'll be asked for your password twice, once for each machine. You can use this to log in or to copy files.</p>
 <p>You may also need to do this if you are trying to reach one cluster from another and there is a firewall in the way.</p>
 <h5 id="using-a-config-file">Using a config file<a class="headerlink" href="#using-a-config-file" title="Permanent link">§</a></h5>
 <p>You can create a config file which does this without you needing to type it every time.</p>
@@ -2128,7 +2123,7 @@ scp -o ProxyJump=socrates.ucl.ac.uk my_file myriad.rc.ucl.ac.uk:~/Scratch/
 <div class="codehilite"><pre><span></span><code>Host &lt;name&gt;
    User &lt;remote_user_id&gt;
    HostName &lt;remote_hostname&gt;
-   proxyCommand ssh -W &lt;remote_hostname&gt;:22 &lt;remote_user_id&gt;@socrates.ucl.ac.uk
+   proxyCommand ssh -W &lt;remote_hostname&gt;:22 &lt;remote_user_id&gt;@ssh-gateway.ucl.ac.uk
 </code></pre></div>
 
 <p>This causes the commands you type in your client to be forwarded on over a secure channel to the specified remote host.</p>
@@ -2136,27 +2131,27 @@ scp -o ProxyJump=socrates.ucl.ac.uk my_file myriad.rc.ucl.ac.uk:~/Scratch/
 <div class="codehilite"><pre><span></span><code>Host myriad
    User ccxxxxx
    HostName myriad.rc.ucl.ac.uk
-   proxyCommand ssh -W myriad.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
+   proxyCommand ssh -W myriad.rc.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk
 
 Host myriad12
    User ccxxxxx
    HostName login12.myriad.ucl.ac.uk
-   proxyCommand ssh -W login12.myriad.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
+   proxyCommand ssh -W login12.myriad.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk
 
 Host aristotle
    User ccxxxxx
    HostName aristotle.rc.ucl.ac.uk
-   proxyCommand ssh -W aristotle.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk
+   proxyCommand ssh -W aristotle.rc.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk
 </code></pre></div>
 
-<p>You can now just type <code>ssh myriad</code> or <code>scp file1 aristotle:~</code> and you will go through Socrates. You'll be asked for login details twice since you're logging in to two machines, Socrates and your endpoint.  </p>
+<p>You can now just type <code>ssh myriad</code> or <code>scp file1 aristotle:~</code> and you will go through the Gateway. You'll be asked for login details twice since you're logging in to two machines, a Gateway server and your endpoint.  </p>
 <h4 id="windows-winscp">Windows - WinSCP<a class="headerlink" href="#windows-winscp" title="Permanent link">§</a></h4>
 <p>WinSCP can also set up SSH tunnels.</p>
 <ol>
 <li>Create a new session as before, and tick the Advanced options box in the bottom left corner.</li>
 <li>Select Connection &gt; Tunnel from the left pane.</li>
-<li>Tick the Connect through SSH tunnel box and enter the hostname of the gateway you are tunnelling through, for example socrates.ucl.ac.uk</li>
-<li>Fill in your username and password for that host. (Central UCL ones for Socrates).</li>
+<li>Tick the Connect through SSH tunnel box and enter the hostname of the gateway you are tunnelling through, for example ssh-gateway.ucl.ac.uk</li>
+<li>Fill in your username and password for that host. (Central UCL ones for the Gateway).</li>
 <li>Select Session from the left pane and fill in the hostname you want to end up on after the tunnel.</li>
 <li>Fill in your username and password for that host and set the file protocol to SCP.</li>
 <li>Save your settings with a useful name.</li>
@@ -2395,7 +2390,7 @@ use X-forwarding.</p>
 <p>Desktop Linux operating systems already have X-Windows installed, so you just need to ssh in with the correct flags.</p>
 <p>You need to make sure you use either the <code>-X</code> or <code>-Y</code> (look at <code>man ssh</code> for details) flags on all ssh commands you run to establish a connection to the cluster.</p>
 <p>For example, connecting from outside of UCL:</p>
-<div class="codehilite"><pre><span></span><code>ssh -X &lt;your_UCL_user_id&gt;@socrates.ucl.ac.uk
+<div class="codehilite"><pre><span></span><code>ssh -X &lt;your_UCL_user_id&gt;@ssh-gateway.ucl.ac.uk
 </code></pre></div>
 
 <p>and then</p>
@@ -2442,6 +2437,7 @@ use X-forwarding.</p>
 
               
             </article>
+            
           </div>
         </div>
         
@@ -2449,7 +2445,8 @@ use X-forwarding.</p>
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
         <a href="../UCL_Service_For_Me/" class="md-footer__link md-footer__link--prev" aria-label="Previous: UCL Service For Me" rel="prev">
@@ -2521,10 +2518,10 @@ use X-forwarding.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["instant"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["instant"], "search": "../assets/javascripts/workers/search.b028fd86.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+      <script src="../assets/javascripts/bundle.7f366e99.min.js"></script>
       
     
   </body>

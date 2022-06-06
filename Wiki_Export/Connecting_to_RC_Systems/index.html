@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Wiki_Export/Connecting_to_RC_Systems/">
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.2">
     
     
       
@@ -23,11 +23,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1c3799f8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.5d38496d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
+      
       
     
     
@@ -1247,15 +1248,15 @@ not show placeholders to indicate you have typed something.</p>
 <h2 id="login-problems">Login problems<a class="headerlink" href="#login-problems" title="Permanent link">§</a></h2>
 <p>If you experience difficulties with your login, please make sure that
 you are typing your UCL user ID and your password correctly.</p>
-<p>If you still cannot get access but can access other UCL services like
-Socrates, please contact us on <a href="mailto:rc-support@ucl.ac.uk">rc-support@ucl.ac.uk</a>.</p>
+<p>If you still cannot get access but can access other UCL services like 
+the SSH Gateway, please contact us on <a href="mailto:rc-support@ucl.ac.uk">rc-support@ucl.ac.uk</a>.</p>
 <p>If you cannot access anything, please see <a href="https://myaccount.ucl.ac.uk">UCL MyAccount</a> - you may need to request a
 password reset from the Service Desk.</p>
 <h2 id="accessing-services-from-outside-ucl">Accessing services from outside UCL<a class="headerlink" href="#accessing-services-from-outside-ucl" title="Permanent link">§</a></h2>
 <p>If you wish to access any of our machines from outside UCL, you cannot
 do so directly as they are behind UCL's firewall. To do so you will have
-to either use ssh to connect to UCL's gateway first:</p>
-<div class="codehilite"><pre><span></span><code>ssh ccaaxyz@socrates.ucl.ac.uk
+to either use ssh to connect to UCL's SSH Gateway system first:</p>
+<div class="codehilite"><pre><span></span><code>ssh ccaaxyz@ssh-gateway.ucl.ac.uk
 </code></pre></div>
 
 <p>and from there connect to the correct host as described above, or login
@@ -1267,7 +1268,7 @@ there.</p>
 to connect to UCL using a virtual private network. This makes your computer
 a part of the UCL network, once the connection has been established, 
 so you can establish an ssh connection to the host machine directly, for example:</p>
-<div class="codehilite"><pre><span></span><code>ssh ccaaxyz@legion.rc.ucl.ac.uk
+<div class="codehilite"><pre><span></span><code>ssh ccaaxyz@myriad.rc.ucl.ac.uk
 </code></pre></div>
 
 <h2 id="running-graphical-applications-using-x-forwarding">Running graphical applications using X-forwarding<a class="headerlink" href="#running-graphical-applications-using-x-forwarding" title="Permanent link">§</a></h2>
@@ -1276,16 +1277,16 @@ computer and display the user interface on their own computer.</p>
 <h3 id="x-forwarding-on-linux">X-forwarding on Linux<a class="headerlink" href="#x-forwarding-on-linux" title="Permanent link">§</a></h3>
 <p>If you wish to have X-windows functionality enabled you have to make
 sure that you add either the <code>-X</code> or <code>-Y</code> flags (see <code>man ssh</code> for details) on
-all <code>ssh</code> commands you have to run to establish a connection to Legion.</p>
+all <code>ssh</code> commands you have to run to establish a connection to Myriad.</p>
 <p>For example:</p>
-<div class="codehilite"><pre><span></span><code>ssh -X ccaaxyz@legion.rc.ucl.ac.uk
+<div class="codehilite"><pre><span></span><code>ssh -X ccaaxyz@myriad.rc.ucl.ac.uk
 </code></pre></div>
 
 <p>To use X-Forwarding from outside UCL, you must either use the VPN, or the
 appropriate flags with <em>both</em> <code>ssh</code> steps, for example:</p>
-<div class="codehilite"><pre><span></span><code>[me@my_computer ~]$ ssh -X ccaaxyz@socrates.ucl.ac.uk
+<div class="codehilite"><pre><span></span><code>[me@my_computer ~]$ ssh -X ccaaxyz@ssh-gateway.ucl.ac.uk
 [...]
-[ccaaxyz@socrates-a ~]$ ssh -X ccaaxyz@legion.rc.ucl.ac.uk
+[ccaaxyz@ejp-gateway-01 ~]$ ssh -X ccaaxyz@myriad.rc.ucl.ac.uk
 </code></pre></div>
 
 <h3 id="x-forwarding-on-mac-os-x">X-forwarding on Mac OS X<a class="headerlink" href="#x-forwarding-on-mac-os-x" title="Permanent link">§</a></h3>
@@ -1348,6 +1349,7 @@ servers are available. We cannot verify how well it may be working.</p>
 
               
             </article>
+            
           </div>
         </div>
         
@@ -1355,7 +1357,8 @@ servers are available. We cannot verify how well it may be working.</p>
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
         <a href="../Compiling/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Compiling Your Code" rel="prev">
@@ -1427,10 +1430,10 @@ servers are available. We cannot verify how well it may be working.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.b028fd86.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+      <script src="../../assets/javascripts/bundle.7f366e99.min.js"></script>
       
     
   </body>

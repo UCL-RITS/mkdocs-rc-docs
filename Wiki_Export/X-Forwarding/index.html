@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Wiki_Export/X-Forwarding/">
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.2">
     
     
       
@@ -23,11 +23,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1c3799f8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.5d38496d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
+      
       
     
     
@@ -1115,14 +1116,14 @@
 <p>Like Windows, macOS doesn't come with an X server to receive X windows. The most commonly used X server for macOS is <a href="https://www.xquartz.org/">XQuartz</a>. If you download and install that, you can follow the Linux instructions below. When you connect with X-Forwarding enabled, the XQuartz server program should start automatically, ready to present remote windows.</p>
 <h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">§</a></h2>
 <p>Almost all Linux versions that have a graphical desktop use an X server to provide it, so you don't have to install a separate one.</p>
-<p>You still have to set up your SSH client's connection to "tunnel" the X windows from the remote computer, though. You can do this by simply adding the <code>-X</code> option to your <code>ssh</code> command line, so for example to connect to Legion with X-Forwarding:</p>
-<div class="codehilite"><pre><span></span><code>ssh -X ccaaxyz@legion.rc.ucl.ac.uk
+<p>You still have to set up your SSH client's connection to "tunnel" the X windows from the remote computer, though. You can do this by simply adding the <code>-X</code> option to your <code>ssh</code> command line, so for example to connect to Myriad with X-Forwarding:</p>
+<div class="codehilite"><pre><span></span><code>ssh -X ccaaxyz@myriad.rc.ucl.ac.uk
 </code></pre></div>
 
-<p>To use X-Forwarding from outside UCL, you must either use the VPN, or use the <a href="Socrates.md">Socrates gateway machine</a>, with the appropriate flags for <em>both</em> <code>ssh</code> steps, for example:</p>
-<div class="codehilite"><pre><span></span><code>[me@my_computer ~]$ ssh -X ccaaxyz@socrates.ucl.ac.uk
+<p>To use X-Forwarding from outside UCL, you must either use the VPN, or use the SSH Gateway system, with the appropriate flags for <em>both</em> <code>ssh</code> steps, for example:</p>
+<div class="codehilite"><pre><span></span><code>[me@my_computer ~]$ ssh -X ccaaxyz@ssh-gateway.ucl.ac.uk
 [...]
-[ccaaxyz@socrates-a ~]$ ssh -X ccaaxyz@legion.rc.ucl.ac.uk
+[ccaaxyz@ejp-gateway-01 ~]$ ssh -X ccaaxyz@myriad.rc.ucl.ac.uk
 </code></pre></div>
 
 <div class="admonition note">
@@ -1151,6 +1152,7 @@
 
               
             </article>
+            
           </div>
         </div>
         
@@ -1158,7 +1160,8 @@
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
         <a href="../User_Scripts/" class="md-footer__link md-footer__link--prev" aria-label="Previous: User Scripts" rel="prev">
@@ -1230,10 +1233,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.b028fd86.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+      <script src="../../assets/javascripts/bundle.7f366e99.min.js"></script>
       
     
   </body>

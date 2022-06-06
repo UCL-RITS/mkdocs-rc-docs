@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Walkthroughs/Logging_In/">
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.2">
     
     
       
@@ -23,11 +23,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1c3799f8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.5d38496d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
+      
       
     
     
@@ -1167,41 +1168,39 @@ open a terminal window you can type into and press return to submit.</p>
 <p>Launch the Command Prompt from the Windows Start menu. It will give you a prompt that
 you can type commands into. </p>
 <p>Replace "uccacxx" with your own central UCL username.</p>
-<div class="codehilite"><pre><span></span><code>ssh uccacxx@socrates.ucl.ac.uk
+<div class="codehilite"><pre><span></span><code>ssh uccacxx@ssh-gateway.ucl.ac.uk
 </code></pre></div>
 
-<p><img alt="SSH to Socrates" src="../../img/socrates_login/win_01.png" /></p>
-<p>If your computer has never connected to Socrates before, it has no existing record of the 
-host fingerprint for Socrates which identifies it, so it will ask if you want to accept it 
+<p><img alt="SSH to the Gateway" src="../../img/ssh-gateway_login/win_01.png" /></p>
+<p>If your computer has never connected to the Gateway before, it has no existing record of the 
+host fingerprint which identifies it, so it will ask if you want to accept it 
 and continue.</p>
 <p>Type "yes" to accept the fingerprint. It will save it and check it next time. If the 
 fingerprint is different, it can be an indication that something else is pretending to
-be Socrates (or that it has changed after a major update). If concerned, contact 
+be the Gateway (or that it has changed after a major update). If concerned, contact 
 rc-support@ucl.ac.uk or the main Service Desk.</p>
-<p><img alt="Accept host fingerprint" src="../../img/socrates_login/win_02.png" /></p>
-<p>It now informs you that it has added Socrates to your list of known hosts.</p>
-<p>You have now contacted Socrates and it displays a small splash screen and asks for your
+<p><img alt="Accept host fingerprint" src="../../img/ssh-gateway_login/win_02.png" /></p>
+<p>It now informs you that it has added the Gateway to your list of known hosts.</p>
+<p>You have now contacted the Gateway and it displays a small splash screen and asks for your
 UCL password. Nothing will show up when typing in this box - no placeholders or bullet
 point characters. Press return at the end to submit.</p>
-<p><img alt="Type password" src="../../img/socrates_login/win_03.png" /></p>
+<p><img alt="Type password" src="../../img/ssh-gateway_login/win_03.png" /></p>
 <p>If you have a typo in your password or have changed it within the last couple of hours
 and the new one hasn't propagated yet, it will ask again.</p>
 <p>Once the correct password has been entered, it will show you a longer message about
 the system.</p>
-<p>The prompt on Socrates looks like a number followed by a <code>%</code> - this does not mean that you 
-are 15% logged in and need to wait, it is just some characters to start off the line.</p>
-<p>From Socrates, we want to ssh in to Myriad:</p>
+<p>From the Gateway, we want to ssh in to Myriad:</p>
 <div class="codehilite"><pre><span></span><code>ssh uccacxx@myriad.rc.ucl.ac.uk
 </code></pre></div>
 
-<p><img alt="On Socrates, SSH into Myriad" src="../../img/socrates_login/win_04.png" /></p>
-<p>Your user on Socrates will also not have connected to Myriad before, so you will get a 
+<p><img alt="On the Gateway, SSH into Myriad" src="../../img/ssh-gateway_login/win_04.png" /></p>
+<p>Your user on the Gateway will also not have connected to Myriad before, so you will get a 
 similar prompt about Myriad's host fingerprint. You can check this against 
 <a href="../../Supplementary/Hostkeys.md">our current key fingerprints</a>.</p>
 <p>After saying "yes" you will be prompted for your password again, and after typing it in
 you will be logged in to Myriad and see Myriad's message containing information about
 the system and where to get help.</p>
-<p><img alt="Welcome from Myriad" src="../../img/socrates_login/win_05.png" /></p>
+<p><img alt="Welcome from Myriad" src="../../img/ssh-gateway_login/win_05.png" /></p>
 <p>At the bottom you can see that the prompt on Myriad looks like</p>
 <div class="codehilite"><pre><span></span><code>[uccacxx@login13 ~]$
 </code></pre></div>
@@ -1219,6 +1218,7 @@ additional configuration for SSH usage - either should work.</p>
 
               
             </article>
+            
           </div>
         </div>
         
@@ -1226,7 +1226,8 @@ additional configuration for SSH usage - either should work.</p>
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
         <a href="../../Software_Guides/Installing_Software/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installing Software" rel="prev">
@@ -1283,10 +1284,10 @@ additional configuration for SSH usage - either should work.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.b028fd86.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+      <script src="../../assets/javascripts/bundle.7f366e99.min.js"></script>
       
     
   </body>
