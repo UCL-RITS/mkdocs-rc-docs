@@ -26,7 +26,7 @@ qrsh -pe mpi 8 -l mem=512M,h_rt=2:00:00 -now no
 
 In this example you are asking to run eight parallel processes
 within an MPI environment, 512MB RAM per process, for a period of two
-hours (the maximum allowed for interactive sessions).
+hours.
 
 All job types we support on the system are supported via an interactive
 session (see our [examples section](Example_Jobscripts.md)).
