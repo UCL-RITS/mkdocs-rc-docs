@@ -13,9 +13,6 @@ These can be used for live visualisation, software debugging, or to work up a sc
 your program without having to submit each attempt separately to the
 queue and wait for it to complete.
 
-Please note that time limits are restricted to two hours for interactive
-sessions, and available core counts are limited.
-
 ## Requesting Access
 
 You will be granted an interactive shell after running a command that
