@@ -12,6 +12,7 @@ The [MMM Hub's Events and Training page](http://mmmhub.ac.uk/young-events-and-tr
 contains useful information for new users and about specific software.
 
 In particular the "Software Training" section:
+
  - [A basic introduction video to Young](http://youtu.be/bagooylPXY4), including 
    details of hardware, how to submit jobs and an overview of types of parallelism
  - [A quick 4 minute overview of how to choose memory](https://www.youtube.com/watch?v=pYspFuxbWjs)
@@ -311,14 +312,15 @@ If your job must run within a single CU, you can request the parallel environmen
 
 ## Node types
 
-Young has three types of node: standard nodes, big memory nodes, and really 
-big memory nodes. Note those last have only 36 cores per node, not 40.
+Young has four types of node: standard nodes, big memory nodes, really big memory nodes 
+and GPU nodes. Note those last two have different processors and number of CPU cores per node.
 
-| Type  | Cores per node | RAM per node | tmpfs | Nodes | Memory request necessary |
-| ----- | -------------- | ------------ | ----- | ----- | ------------------------ |
-| C     | 40             | 192G         | None  | 576   | Any |
-| Y     | 40             | 1.5T         | None  | 3     | mpi: mem >=19G, smp: >186G total |
-| Z     | 36             | 3.0T         | None  | 3     | mpi: mem >=42G, smp: >1530G total |
+| Type  | Cores per node | RAM per node | tmpfs | Nodes | Memory request necessary | GPU |
+| ----- | -------------- | ------------ | ----- | ----- | ------------------------ | --- |
+| C     | 40             | 192G         | None  | 576   | Any | None |
+| Y     | 40             | 1.5T         | None  | 3     | mpi: mem >=19G, smp: >186G total | None |
+| Z     | 36             | 3.0T         | None  | 3     | mpi: mem >=42G, smp: >1530G total | None |
+| X     | 64             | 1T           | 200G  | 6     | Any | 8 x Nvidia 40G A100 |
 
 These are numbers of physical cores: multiply by two for virtual cores with
 hyperthreading. 
@@ -333,10 +335,15 @@ Here are the processors each node type has:
   - C: Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz 
   - Y: Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz
   - Z: Intel(R) Xeon(R) Gold 6240M CPU @ 2.60GHz
+  - X: dual AMD EPYC 7543 32-Core Processor
 
 (If you ever need to check this, you can include `cat /proc/cpuinfo` in your jobscript so 
 you get it in your job's .o file for the exact node your job ran on. You will get an entry
 for every core).
+
+## GPU nodes
+
+Not yet available for general use, we will inform everyone when they are and update this space.
 
 ### Restricting to one node type
 
