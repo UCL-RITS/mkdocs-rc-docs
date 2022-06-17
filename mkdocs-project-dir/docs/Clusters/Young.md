@@ -27,6 +27,7 @@ of the talks are available at the link below. The day was split into two parts,
 new GPU nodes being added to Young and tools useful for GPU programming, followed by 
 "Materials community codes, experiences & lessons learned (invited speakers)" which 
 looked at how CASTEP, VASP, CP2K, GSGW and QMCpack had approached adding GPU support.
+
  - [MMM Hub: HPE / NVIDIA GPU Training Day](https://thomasyoungcentre.org/event/mmm-hub-hpe-nvidia-gpu-training-day/)
 
 ## Applying for an account
@@ -132,6 +133,10 @@ only one core per node. This allows you to have sparse process placement
 when you do actually need that much RAM per process.
 
 Young also has [high memory nodes](#node-types), where a job like this may run.
+
+If you want to avoid sparse process placement and your job taking up more nodes
+than you were expecting, the maximum memory request you can make when using all
+the cores in a standard node is 4.6G.
 
 ### Monitoring a job
 
@@ -570,6 +575,25 @@ so you may not see it back instantly.
 There are a few commands that everyone can run that report Gold usage for
 their entire project, broken down by user. See 
 [Reporting from Gold](../Supplementary/Points_of_Contact.md#reporting-from-gold).
+
+## Requests for longer wallclock time
+
+You can apply for access to a 96-hour queue for **Gold jobs only** using this form:
+
+ - [Wall clock request form](../Additional_Resource_Requests/MMMHub_wallclock_request_form.docx)
+
+The request must be sent to your local MMM Hub point of contact (PoC) who will 
+evaluate the request and approve or reject it, as appropriate. 
+The list of PoCs may be found on the [MMM Hub website](http://mmmhub.ac.uk/young/).
+
+Please complete the form and send it to your PoC.
+
+The request must include a clear and compelling justification of why the usual 
+48-hour wall time is insufficient, how a 96-hour wall time would alleviate 
+the problem and what it will enable you to achieve scientifically. 
+Justifications that are solely based on simplifying your workflow and job 
+management will not be approved - clear reasoning must be provided for why it 
+is either very difficult or impossible to work within a 48-hour wall time.
 
 ## Support
 
