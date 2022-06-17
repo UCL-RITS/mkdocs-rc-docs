@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Clusters/Young/">
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.3">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
     
     
       
@@ -844,7 +844,14 @@
     Node types
   </a>
   
-    <nav class="md-nav" aria-label="Node types">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpu-nodes" class="md-nav__link">
+    GPU nodes
+  </a>
+  
+    <nav class="md-nav" aria-label="GPU nodes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1629,7 +1636,14 @@
     Node types
   </a>
   
-    <nav class="md-nav" aria-label="Node types">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpu-nodes" class="md-nav__link">
+    GPU nodes
+  </a>
+  
+    <nav class="md-nav" aria-label="GPU nodes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1806,12 +1820,14 @@ Young went into pilot on 3 Aug 2020.</p>
 <h2 id="training-resources">Training resources<a class="headerlink" href="#training-resources" title="Permanent link">§</a></h2>
 <p>The <a href="http://mmmhub.ac.uk/young-events-and-training/">MMM Hub's Events and Training page</a>
 contains useful information for new users and about specific software.</p>
-<p>In particular the "Software Training" section:
- - <a href="http://youtu.be/bagooylPXY4">A basic introduction video to Young</a>, including 
-   details of hardware, how to submit jobs and an overview of types of parallelism
- - <a href="https://www.youtube.com/watch?v=pYspFuxbWjs">A quick 4 minute overview of how to choose memory</a>
- - <a href="https://www.youtube.com/watch?v=D3iF_N0cwv4">Longer videos on memory allocation for new users</a>
-   - <a href="https://www.youtube.com/watch?v=QlMaN_ECIwg">A hands-on memory allocation example</a> </p>
+<p>In particular the "Software Training" section:</p>
+<ul>
+<li><a href="http://youtu.be/bagooylPXY4">A basic introduction video to Young</a>, including 
+   details of hardware, how to submit jobs and an overview of types of parallelism</li>
+<li><a href="https://www.youtube.com/watch?v=pYspFuxbWjs">A quick 4 minute overview of how to choose memory</a></li>
+<li><a href="https://www.youtube.com/watch?v=D3iF_N0cwv4">Longer videos on memory allocation for new users</a></li>
+<li><a href="https://www.youtube.com/watch?v=QlMaN_ECIwg">A hands-on memory allocation example</a> </li>
+</ul>
 <h3 id="mmm-hub-hpe-nvidia-gpu-training-day">MMM Hub: HPE / NVIDIA GPU Training Day<a class="headerlink" href="#mmm-hub-hpe-nvidia-gpu-training-day" title="Permanent link">§</a></h3>
 <p>The MMM Hub: HPE / NVIDIA GPU Training Day took place on 31 March 2022 and recordings 
 of the talks are available at the link below. The day was split into two parts, 
@@ -2048,8 +2064,8 @@ long waits if every CU is half full.</p>
 <p>If your job must run within a single CU, you can request the parallel environment as <code>-pe wss</code> instead of <code>-pe mpi</code> (<code>wss</code> standing for 'wants single switch'). This will increase your queue times. It is suggested you only do this for benchmarking or if performance is being greatly affected by running in the superqueue.</p>
 <p><a href="#top" title="wikilink"> back to top</a></p>
 <h2 id="node-types">Node types<a class="headerlink" href="#node-types" title="Permanent link">§</a></h2>
-<p>Young has three types of node: standard nodes, big memory nodes, and really 
-big memory nodes. Note those last have only 36 cores per node, not 40.</p>
+<p>Young has four types of node: standard nodes, big memory nodes, really big memory nodes 
+and GPU nodes. Note those last two have different processors and number of CPU cores per node.</p>
 <table>
 <thead>
 <tr>
@@ -2059,6 +2075,7 @@ big memory nodes. Note those last have only 36 cores per node, not 40.</p>
 <th>tmpfs</th>
 <th>Nodes</th>
 <th>Memory request necessary</th>
+<th>GPU</th>
 </tr>
 </thead>
 <tbody>
@@ -2069,6 +2086,7 @@ big memory nodes. Note those last have only 36 cores per node, not 40.</p>
 <td>None</td>
 <td>576</td>
 <td>Any</td>
+<td>None</td>
 </tr>
 <tr>
 <td>Y</td>
@@ -2077,6 +2095,7 @@ big memory nodes. Note those last have only 36 cores per node, not 40.</p>
 <td>None</td>
 <td>3</td>
 <td>mpi: mem &gt;=19G, smp: &gt;186G total</td>
+<td>None</td>
 </tr>
 <tr>
 <td>Z</td>
@@ -2085,6 +2104,16 @@ big memory nodes. Note those last have only 36 cores per node, not 40.</p>
 <td>None</td>
 <td>3</td>
 <td>mpi: mem &gt;=42G, smp: &gt;1530G total</td>
+<td>None</td>
+</tr>
+<tr>
+<td>X</td>
+<td>64</td>
+<td>1T</td>
+<td>200G</td>
+<td>6</td>
+<td>Any</td>
+<td>8 x Nvidia 40G A100</td>
 </tr>
 </tbody>
 </table>
@@ -2099,10 +2128,13 @@ request (slots * mem) fits on.</p>
 <li>C: Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz </li>
 <li>Y: Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz</li>
 <li>Z: Intel(R) Xeon(R) Gold 6240M CPU @ 2.60GHz</li>
+<li>X: dual AMD EPYC 7543 32-Core Processor</li>
 </ul>
 <p>(If you ever need to check this, you can include <code>cat /proc/cpuinfo</code> in your jobscript so 
 you get it in your job's .o file for the exact node your job ran on. You will get an entry
 for every core).</p>
+<h2 id="gpu-nodes">GPU nodes<a class="headerlink" href="#gpu-nodes" title="Permanent link">§</a></h2>
+<p>Not yet available for general use, we will inform everyone when they are and update this space.</p>
 <h3 id="restricting-to-one-node-type">Restricting to one node type<a class="headerlink" href="#restricting-to-one-node-type" title="Permanent link">§</a></h3>
 <p>The scheduler will schedule your job on the relevant nodetype 
 based on the resources you request, but if you really need to specify 
@@ -2381,10 +2413,10 @@ consortium and funded by EPSRC grant ref EP/P022561/1"</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.b028fd86.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f758a944.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a877e258.min.js"></script>
       
     
   </body>
