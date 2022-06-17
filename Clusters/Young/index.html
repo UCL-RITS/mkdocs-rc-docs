@@ -969,6 +969,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#requests-for-longer-wallclock-time" class="md-nav__link">
+    Requests for longer wallclock time
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#support" class="md-nav__link">
     Support
   </a>
@@ -1761,6 +1768,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#requests-for-longer-wallclock-time" class="md-nav__link">
+    Requests for longer wallclock time
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#support" class="md-nav__link">
     Support
   </a>
@@ -1834,8 +1848,10 @@ of the talks are available at the link below. The day was split into two parts,
 "Technology and Partner sessions (UCL, HPE &amp; NVIDIA)" which gave an overview of the 
 new GPU nodes being added to Young and tools useful for GPU programming, followed by 
 "Materials community codes, experiences &amp; lessons learned (invited speakers)" which 
-looked at how CASTEP, VASP, CP2K, GSGW and QMCpack had approached adding GPU support.
- - <a href="https://thomasyoungcentre.org/event/mmm-hub-hpe-nvidia-gpu-training-day/">MMM Hub: HPE / NVIDIA GPU Training Day</a></p>
+looked at how CASTEP, VASP, CP2K, GSGW and QMCpack had approached adding GPU support.</p>
+<ul>
+<li><a href="https://thomasyoungcentre.org/event/mmm-hub-hpe-nvidia-gpu-training-day/">MMM Hub: HPE / NVIDIA GPU Training Day</a></li>
+</ul>
 <h2 id="applying-for-an-account">Applying for an account<a class="headerlink" href="#applying-for-an-account" title="Permanent link">§</a></h2>
 <p>Young accounts belong to you as an individual and are applied for
 through your own institution's <a href="https://mmmhub.ac.uk/young">Point of Contact</a>.
@@ -1911,6 +1927,9 @@ If you ask for 192GB RAM and 40 cores, that may run on 40 nodes using
 only one core per node. This allows you to have sparse process placement
 when you do actually need that much RAM per process.</p>
 <p>Young also has <a href="#node-types">high memory nodes</a>, where a job like this may run.</p>
+<p>If you want to avoid sparse process placement and your job taking up more nodes
+than you were expecting, the maximum memory request you can make when using all
+the cores in a standard node is 4.6G.</p>
 <h3 id="monitoring-a-job">Monitoring a job<a class="headerlink" href="#monitoring-a-job" title="Permanent link">§</a></h3>
 <p>In addition to <a href="../../howto/#how-do-i-monitor-a-job">qstat</a>, <code>nodesforjob
 $JOB_ID</code> can be useful to see what proportion of cpu/memory/swap is
@@ -2304,6 +2323,21 @@ so you may not see it back instantly.</p>
 <p>There are a few commands that everyone can run that report Gold usage for
 their entire project, broken down by user. See 
 <a href="../../Supplementary/Points_of_Contact/#reporting-from-gold">Reporting from Gold</a>.</p>
+<h2 id="requests-for-longer-wallclock-time">Requests for longer wallclock time<a class="headerlink" href="#requests-for-longer-wallclock-time" title="Permanent link">§</a></h2>
+<p>You can apply for access to a 96-hour queue for <strong>Gold jobs only</strong> using this form:</p>
+<ul>
+<li><a href="../Additional_Resource_Requests/MMMHub_wallclock_request_form.docx">Wall clock request form</a></li>
+</ul>
+<p>The request must be sent to your local MMM Hub point of contact (PoC) who will 
+evaluate the request and approve or reject it, as appropriate. 
+The list of PoCs may be found on the <a href="http://mmmhub.ac.uk/young/">MMM Hub website</a>.</p>
+<p>Please complete the form and send it to your PoC.</p>
+<p>The request must include a clear and compelling justification of why the usual 
+48-hour wall time is insufficient, how a 96-hour wall time would alleviate 
+the problem and what it will enable you to achieve scientifically. 
+Justifications that are solely based on simplifying your workflow and job 
+management will not be approved - clear reasoning must be provided for why it 
+is either very difficult or impossible to work within a 48-hour wall time.</p>
 <h2 id="support">Support<a class="headerlink" href="#support" title="Permanent link">§</a></h2>
 <p>Email <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#99;&#45;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#117;&#99;&#108;&#46;&#97;&#99;&#46;&#117;&#107;">&#114;&#99;&#45;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#117;&#99;&#108;&#46;&#97;&#99;&#46;&#117;&#107;</a> with any support queries. It will be helpful
 to include Young in the subject along with some descriptive text about
