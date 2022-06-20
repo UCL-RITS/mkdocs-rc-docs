@@ -19,6 +19,9 @@ There are two purchasing rounds every financial year, with orders for a number o
 
 For the financial year ending 31st July 2022, the money transfer deadlines for researchers are the 10th December 2021 and the 18th March 2022.  **This year there will also be a purchasing opportunity after Easter, with a money transfer deadline of Tuesday the 26th April.**  We can't place orders after this date because the hardware might not arrive before the end of UCL's financial year. 
 
+ - There are currently several-month lead times on some components - we cannot add new purchasing 
+rounds until after 31st July 2022.
+
 ## FAQs
 
 #### Can I add the cost of purchasing nodes to a grant application?
