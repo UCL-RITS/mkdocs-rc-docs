@@ -1314,14 +1314,17 @@ optional arguments:
 
 <h4 id="add-a-new-user">Add a new user<a class="headerlink" href="#add-a-new-user" title="Permanent link">§</a></h4>
 <p><code>thomas-add user</code> allows you to add a new user,
-with their initial project and point of contact. This does not create
-their account, but does email us with everything we need in order to
-create it. If you run this, you do not need to email us separately. The
-project specified must exist.</p>
+with their initial project and point of contact. As of 21 June 2022 this now goes 
+ahead and creates their account automatically - first prompting you that the
+information you have entered is correct. You do not need to email us separately 
+about creating accounts unless something has gone wrong. The user's initial project
+must already exist (create with <code>thomas-add project</code> first).</p>
 <p>The user will be allocated the next free <code>mmmxxxx</code> username - you should 
 only specify username yourself if they are an existing UCL user, or on
 Young if they previously had a Thomas or Michael account you should give
-them the same username.</p>
+them the same username. If they already have an account on this cluster with
+a different institution, just add them as a projectuser instead using their 
+existing username.</p>
 <p>You can get your <code>poc_id</code> by looking at <code>thomas-show --contacts</code>.</p>
 <div class="codehilite"><pre><span></span><code>thomas-add user -h  
 usage: thomas-add user [-h] -u USERNAME -n GIVEN_NAME [-s SURNAME] -e  
@@ -1344,6 +1347,7 @@ optional arguments:
                        Initial project the user belongs to  
  -c POC_ID, --contact POC_ID  
                        Short ID of the user&#39;s Point of Contact  
+ --noconfirm           Don&#39;t ask for confirmation on user account creation
  --verbose             Show SQL queries that are being submitted  
  --debug               Show SQL query submitted without committing the change
 </code></pre></div>
@@ -1376,7 +1380,8 @@ Windows</a>
 also shows where users can get the second format out of PuTTY.</p>
 <h4 id="add-new-users-in-bulk-from-a-csv-file">Add new users in bulk from a CSV file<a class="headerlink" href="#add-new-users-in-bulk-from-a-csv-file" title="Permanent link">§</a></h4>
 <p><code>young-add csv</code> allows you to add users in bulk using a CSV file of specific format 
-and headers. </p>
+and headers. As of 21 June 2022 the accounts will be all created and activated 
+automatically.</p>
 <p>The CSV is comma-separated with a header line of </p>
 <div class="codehilite"><pre><span></span><code>email,given_name,surname,username,project_ID,ssh_key
 </code></pre></div>
@@ -1390,6 +1395,8 @@ example data.</p>
 your username. If it can't, or if you have more than one, it will give you a 
 list to choose from. (All users in one CSV upload will be added using the
 same Point of Contact ID). </p>
+<p>It will prompt you for confirmation on each user account creation unless you give
+the <code>--noconfirm</code> option.</p>
 <p>The project you are adding the user to must already exist.</p>
 <p>The SSH key must be formatted as shown in <a href="#ssh_key_formats">SSH key formats</a>.</p>
 <p>If you check your CSV file on the cluster with <code>cat -v</code> and it shows that it is 
