@@ -142,15 +142,18 @@ optional arguments:
 #### Add a new user
 
 `thomas-add user` allows you to add a new user,
-with their initial project and point of contact. This does not create
-their account, but does email us with everything we need in order to
-create it. If you run this, you do not need to email us separately. The
-project specified must exist.
+with their initial project and point of contact. As of 21 June 2022 this now goes 
+ahead and creates their account automatically - first prompting you that the
+information you have entered is correct. You do not need to email us separately 
+about creating accounts unless something has gone wrong. The user's initial project
+must already exist (create with `thomas-add project` first).
 
 The user will be allocated the next free `mmmxxxx` username - you should 
 only specify username yourself if they are an existing UCL user, or on
 Young if they previously had a Thomas or Michael account you should give
-them the same username.
+them the same username. If they already have an account on this cluster with
+a different institution, just add them as a projectuser instead using their 
+existing username.
 
 You can get your `poc_id` by looking at `thomas-show --contacts`.
 
@@ -176,6 +179,7 @@ optional arguments:
                        Initial project the user belongs to  
  -c POC_ID, --contact POC_ID  
                        Short ID of the user's Point of Contact  
+ --noconfirm           Don't ask for confirmation on user account creation
  --verbose             Show SQL queries that are being submitted  
  --debug               Show SQL query submitted without committing the change
 ```
@@ -215,7 +219,8 @@ also shows where users can get the second format out of PuTTY.
 #### Add new users in bulk from a CSV file
 
 `young-add csv` allows you to add users in bulk using a CSV file of specific format 
-and headers. 
+and headers. As of 21 June 2022 the accounts will be all created and activated 
+automatically.
 
 The CSV is comma-separated with a header line of 
 ```
@@ -232,6 +237,9 @@ example data.
 your username. If it can't, or if you have more than one, it will give you a 
 list to choose from. (All users in one CSV upload will be added using the
 same Point of Contact ID). 
+
+It will prompt you for confirmation on each user account creation unless you give
+the `--noconfirm` option.
 
 The project you are adding the user to must already exist.
 
