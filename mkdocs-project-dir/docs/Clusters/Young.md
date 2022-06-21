@@ -580,7 +580,7 @@ their entire project, broken down by user. See
 
 You can apply for access to a 96-hour queue for **Gold jobs only** using this form:
 
- - [Wall clock request form](../../Additional_Resource_Requests/MMMHub_wallclock_request_form.docx)
+ - [Wall clock request form](Young/MMMHub_wallclock_request_form.docx)
 
 The request must be sent to your local MMM Hub point of contact (PoC) who will 
 evaluate the request and approve or reject it, as appropriate. 
