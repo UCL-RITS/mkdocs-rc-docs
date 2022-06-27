@@ -142,9 +142,9 @@ optional arguments:
 #### Add a new user
 
 `thomas-add user` allows you to add a new user,
-with their initial project and point of contact. As of 21 June 2022 this now goes 
-ahead and creates their account automatically - first prompting you that the
-information you have entered is correct. You do not need to email us separately 
+with their initial project and point of contact. As of 27 June 2022 this now goes 
+ahead and creates their account automatically within 10 minutes - first prompting you 
+that the information you have entered is correct. You do not need to email us separately 
 about creating accounts unless something has gone wrong. The user's initial project
 must already exist (create with `thomas-add project` first).
 
@@ -219,8 +219,8 @@ also shows where users can get the second format out of PuTTY.
 #### Add new users in bulk from a CSV file
 
 `young-add csv` allows you to add users in bulk using a CSV file of specific format 
-and headers. As of 21 June 2022 the accounts will be all created and activated 
-automatically.
+and headers. As of 27 June 2022 the accounts will be all created and activated 
+automatically within 10 minutes.
 
 The CSV is comma-separated with a header line of 
 ```
