@@ -68,4 +68,4 @@ Researchers may purchase additional resources to be used as part of the [Myriad]
 ## Further information
 
 For further advice or information on future hardware options, please
-contact [rits@ucl.ac.uk](mailto:rits@ucl.ac.uk).
+contact [rc-support@ucl.ac.uk](mailto:rc-support@ucl.ac.uk).
