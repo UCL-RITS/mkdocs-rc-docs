@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Installed_Software_Lists/module-packages/">
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
     
     
       
@@ -1174,7 +1174,7 @@
 <p>Our clusters have a wide range of software installed, available by using the modules system.</p>
 <p>The module files are organised by name, version, variant (where applicable) and, if relevant, the compiler version used to build the software. If no compiler version is given, either no compiler was required, or only the base system compiler (<code>/usr/bin/gcc</code>) and libraries were used.</p>
 <p>When we install applications, we try to install them on all of our clusters, but sometimes licence restrictions prevent it. If something seems to be missing, it may be because we are not able to provide it. Please contact us for more information if this is hindering your work.</p>
-<p>The lists below were last updated at 15:35:10 (+0100) on 06 Jun 2022, and are generated from the software installed on the <a href="../../Clusters/Myriad/">Myriad</a> cluster.</p>
+<p>The lists below were last updated at 09:05:09 (+0100) on 07 Jul 2022, and are generated from the software installed on the <a href="../../Clusters/Myriad/">Myriad</a> cluster.</p>
 <h2 id="bundles">Bundles<a class="headerlink" href="#bundles" title="Permanent link">§</a></h2>
 <p>Some applications or tools depend on a lot of other modules, or have some awkward requirements. For these, we sometimes make a "bundle" module in this section, that loads all the dependencies.</p>
 <p>For Python and R in particular, we also have <code>recommended</code> bundles that load the module for a recent version of Python or R, along with a collection of packages for it that have been requested by users, and the modules those packages require.</p>
@@ -1267,6 +1267,10 @@
 <tr>
 <td align="center"><code>gmt/recommended</code></td>
 <td align="left">Adds set of default modules to the environment for gmt users.</td>
+</tr>
+<tr>
+<td align="center"><code>imperial-modules</code></td>
+<td align="left">Adds Imperial College licensed software module space to module avail.</td>
 </tr>
 <tr>
 <td align="center"><code>naglib/mark27-intel-2019</code></td>
@@ -1370,6 +1374,10 @@
 <tr>
 <td align="center"><code>abaqus/2017-intelmpi</code></td>
 <td align="left">Adds Abaqus 2017 to your environment.</td>
+</tr>
+<tr>
+<td align="center"><code>abinit/9.6.2/intel-2018-update3</code></td>
+<td align="left">adds ABINIT Version 9.6.2 compiled using Intel 2018 to your environment.</td>
 </tr>
 <tr>
 <td align="center"><code>adf/2014.10</code></td>
@@ -2514,6 +2522,10 @@
 <tr>
 <td align="center"><code>namd/2.14/multicore-gpu</code></td>
 <td align="left">NAMD is a parallel molecular dynamics code designed for high-performance simulation of large biomolecular systems. This is NAMD's Linux-x86_64-multicore-CUDA binary.</td>
+</tr>
+<tr>
+<td align="center"><code>namd/2.14/ofi-smp-gpu/intel-2019</code></td>
+<td align="left">Adds NAMD 2.14 OFI-SMP-GPU version to your environment. This version should be run using charmrun.</td>
 </tr>
 <tr>
 <td align="center"><code>namd/2.14/ofi-smp/intel-2019</code></td>
@@ -4260,12 +4272,20 @@
 <td align="left">adds NetCDF 4.4.1 for Intel 2015 to your environment.</td>
 </tr>
 <tr>
+<td align="center"><code>netcdf-fortran/4.5.4/intel-2018-update3</code></td>
+<td align="left">adds NetCDF Fortran 4.5.4 for Intel 2018 to your environment.</td>
+</tr>
+<tr>
 <td align="center"><code>netcdf/4.3.3.1/gnu-4.9.2</code></td>
 <td align="left">adds NetCDF 4.3.3.1 for GCC 4.9.2 to your environment.</td>
 </tr>
 <tr>
 <td align="center"><code>netcdf/4.3.3.1/intel-2015-update2</code></td>
 <td align="left">adds NetCDF 4.3.3.1 for Intel 2015 to your environment.</td>
+</tr>
+<tr>
+<td align="center"><code>netcdf/4.9.0/intel-2018-update3</code></td>
+<td align="left">adds NetCDF 4.9.0 for Intel 2018 to your environment.</td>
 </tr>
 <tr>
 <td align="center"><code>numactl/2.0.12</code></td>
@@ -4310,6 +4330,10 @@
 <tr>
 <td align="center"><code>openjpeg/2.4.0/gnu-4.9.2</code></td>
 <td align="left">OpenJPEG is an open-source JPEG 2000 codec written in C language.</td>
+</tr>
+<tr>
+<td align="center"><code>openslide/3.4.1/gnu-4.9.2</code></td>
+<td align="left">adds OpenSlide library 3.4.1 to your environment variables</td>
 </tr>
 <tr>
 <td align="center"><code>papi/5.5.1/gnu-4.9.2</code></td>
@@ -5705,7 +5729,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.0238f547.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
     
   </body>
