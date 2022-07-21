@@ -39,8 +39,46 @@ but can then be used alongside any other compiler.
 module load beta-modules
 module avail cuda
 
+# pick one of the 11.x CUDA installs
 module load cuda/11.3.1/gnu-10.2.0
+# or
+module load cuda/11.2.0/gnu-10.2.0
 ```
+
+#### Choosing a CUDA version
+
+The drivers we have installed on the GPU nodes are version 460.27.03 which is CUDA 11.2.
+CUDA 11 has minor version compatibility so in most cases you can use the 11.3.1 runtime,
+but not all functionality is available.
+
+If your code builds but when running it you get an error like this:
+
+```
+CUDA RUNTIME API error: Free failed with error cudaErrorUnsupportedPtxVersion 
+```
+
+then use the `cuda/11.2.0/gnu-10.2.0` module to build and run your program instead.
+
+#### Building with CUDA
+
+If the code you are trying to build only needs to link to the CUDA runtime libraries,
+`libcudart.so` then you can build it on the login nodes which do not have GPUs.
+
+If it needs the full `libcuda.so` to be available, you need to build it on a GPU node.
+You can submit it as a job or request an [interactive session with qrsh](../Interactive_Jobs.md). 
+Eg:
+
+```
+qrsh -l gpu=8,h_rt=2:0:0,tmpfs=10G,mem=1G -pe smp 4 -P Free -A Inst_Project -now no
+```
+
+#### NVIDIA documentation
+
+NVIDIA has some useful information at these locations:
+
+ * [Building Ampere compatible apps using CUDA 11](https://docs.nvidia.com/cuda/ampere-compatibility-guide/index.html#building-ampere-compatible-apps-using-cuda-11-0)
+ * [CUDA Toolkit release notes](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)
+
 
 ### Run on a specific device or limit the number visible
 
