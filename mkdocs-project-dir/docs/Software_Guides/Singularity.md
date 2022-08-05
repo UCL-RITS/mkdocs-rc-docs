@@ -49,9 +49,9 @@ You probably want to add those `export` statements to your `.bashrc` under `# Us
 
 For more information on these options, have a look at the Singularity documentation:
 
-* [Singularity user guide](https://sylabs.io/guides/2.6/user-guide/index.html)
-* [Singularity Bind Paths and Mounts](https://sylabs.io/guides/2.6/user-guide/bind_paths_and_mounts.html)
-* [Singularity Build Environment](https://sylabs.io/guides/2.6/user-guide/build_environment.html)
+* [Singularity user guide](https://sylabs.io/guides/3.5/user-guide/index.html)
+* [Singularity Bind Paths and Mounts](https://sylabs.io/guides/3.5/user-guide/bind_paths_and_mounts.html)
+* [Singularity Build Environment](https://sylabs.io/guides/3.5/user-guide/build_environment.html)
 
 ## Graphical containers in interactive jobs
 
