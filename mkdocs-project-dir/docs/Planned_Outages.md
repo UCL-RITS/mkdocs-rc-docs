@@ -17,6 +17,7 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+6 Sep 2022 -> 7 Sep 2022 | Myriad | Planned | Moving switches. Jobs will be drained for 8am on 6 Sept and access to the login nodes disabled. Access should be restored during the day on Thurs 8. Myriad should be considered at risk for the rest of the week. 
 
 ## Previous Outages
 Date                | Service | Status | Reason 
