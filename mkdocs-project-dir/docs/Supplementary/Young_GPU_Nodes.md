@@ -28,9 +28,22 @@ The AMD equivalent of hyperthreading is not enabled.
 ```
 
 At the start of the pilot, jobs did not share nodes and you always got all 8 GPUs 
-on each node even if you only ask for 1 until the device cgroups are implemented.
-This has since been altered so jobs can share nodes on the GPU nodes and each only 
-have access to the number of GPUs they requested.
+on each node even if you only asked for 1. This has since been altered and device 
+cgroups are implemented (as of 10 Aug 2022) so jobs can share nodes on the GPU 
+nodes and each only have access to the number of GPUs they requested.
+
+#### Exclusive use of nodes
+
+If you are using fewer than 8 GPUs but want to make sure nothing else is running on
+the same node as you, add this to your jobscript:
+
+```
+#$ -ac exclusive
+```
+
+This would generally only be done if you are benchmarking or investigating speeds
+and want to rule out anything else running on the rest of the node as possibly
+affecting your timings.
 
 ### CUDA versions
 
