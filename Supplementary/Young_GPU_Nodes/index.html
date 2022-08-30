@@ -1036,6 +1036,19 @@
     Request GPUs
   </a>
   
+    <nav class="md-nav" aria-label="Request GPUs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exclusive-use-of-nodes" class="md-nav__link">
+    Exclusive use of nodes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1149,9 +1162,18 @@ The AMD equivalent of hyperthreading is not enabled.</p>
 </code></pre></div>
 
 <p>At the start of the pilot, jobs did not share nodes and you always got all 8 GPUs 
-on each node even if you only ask for 1 until the device cgroups are implemented.
-This has since been altered so jobs can share nodes on the GPU nodes and each only 
-have access to the number of GPUs they requested.</p>
+on each node even if you only asked for 1. This has since been altered and device 
+cgroups are implemented (as of 10 Aug 2022) so jobs can share nodes on the GPU 
+nodes and each only have access to the number of GPUs they requested.</p>
+<h4 id="exclusive-use-of-nodes">Exclusive use of nodes<a class="headerlink" href="#exclusive-use-of-nodes" title="Permanent link">§</a></h4>
+<p>If you are using fewer than 8 GPUs but want to make sure nothing else is running on
+the same node as you, add this to your jobscript:</p>
+<div class="codehilite"><pre><span></span><code>#$ -ac exclusive
+</code></pre></div>
+
+<p>This would generally only be done if you are benchmarking or investigating speeds
+and want to rule out anything else running on the rest of the node as possibly
+affecting your timings.</p>
 <h3 id="cuda-versions">CUDA versions<a class="headerlink" href="#cuda-versions" title="Permanent link">§</a></h3>
 <p>The newer CUDA installs we have are made visible by first loading <code>beta-modules</code>
 but can then be used alongside any other compiler.</p>
