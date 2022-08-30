@@ -27,8 +27,10 @@ The AMD equivalent of hyperthreading is not enabled.
 #$ -A Inst_Project
 ```
 
-Jobs won't share nodes at the start of the pilot, and you will always get all 8 GPUs 
+At the start of the pilot, jobs did not share nodes and you always got all 8 GPUs 
 on each node even if you only ask for 1 until the device cgroups are implemented.
+This has since been altered so jobs can share nodes on the GPU nodes and each only 
+have access to the number of GPUs they requested.
 
 ### CUDA versions
 
