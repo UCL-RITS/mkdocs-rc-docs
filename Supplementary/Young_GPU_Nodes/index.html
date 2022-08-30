@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Supplementary/Young_GPU_Nodes/">
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
     
     
       
@@ -1148,8 +1148,10 @@ The AMD equivalent of hyperthreading is not enabled.</p>
 #$ -A Inst_Project
 </code></pre></div>
 
-<p>Jobs won't share nodes at the start of the pilot, and you will always get all 8 GPUs 
-on each node even if you only ask for 1 until the device cgroups are implemented.</p>
+<p>At the start of the pilot, jobs did not share nodes and you always got all 8 GPUs 
+on each node even if you only ask for 1 until the device cgroups are implemented.
+This has since been altered so jobs can share nodes on the GPU nodes and each only 
+have access to the number of GPUs they requested.</p>
 <h3 id="cuda-versions">CUDA versions<a class="headerlink" href="#cuda-versions" title="Permanent link">§</a></h3>
 <p>The newer CUDA installs we have are made visible by first loading <code>beta-modules</code>
 but can then be used alongside any other compiler.</p>
