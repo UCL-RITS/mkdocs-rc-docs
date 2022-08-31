@@ -15,7 +15,7 @@ Costs will include backend infrastructure – racks, switches, cables etc – ne
 
 ## Deadline
 
-The deadline for making requests to purchase Myriad nodes is the end of April.  Before this deadline, researchers wishing to buy compute nodes must approve an agreed Statement of Work and transfer the funds to ARC.  We can't place orders after this date because the hardware might not arrive before the end of UCL's financial year. 
+The deadline for making requests to purchase Myriad nodes is the end of April.  Before this date, researchers wishing to buy compute nodes must approve an agreed Statement of Work and transfer the funds to ARC.  We can't place orders after this date because the hardware might not arrive before the end of UCL's financial year. 
 
 ## FAQs
 
