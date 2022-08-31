@@ -13,14 +13,9 @@ Researchers may purchase additional resources to be used as part of the [Myriad]
 
 Costs will include backend infrastructure – racks, switches, cables etc – needed to integrate the compute nodes into the facility. Both options can be costed into research proposals. These costs will be stated in an agreed Statement of Work document giving details of the number of each node type to be purchased, which must be approved by ARC and the purchaser before the purchase can go ahead.
 
-## Deadlines
+## Deadline
 
-There are two purchasing rounds every financial year, with orders for a number of compute nodes being placed at the same time just before Christmas and at the end of March.  There are therefore two purchasing deadlines for researchers every year, the first in mid December and the second in mid March.  Before each deadline, researchers wishing to buy compute nodes must approve an agreed Statement of Work and transfer the funds to ARC.
-
-For the financial year ending 31st July 2022, the money transfer deadlines for researchers are the 10th December 2021 and the 18th March 2022.  **This year there will also be a purchasing opportunity after Easter, with a money transfer deadline of Tuesday the 26th April.**  We can't place orders after this date because the hardware might not arrive before the end of UCL's financial year. 
-
- - There are currently several-month lead times on some components - we cannot add new purchasing 
-rounds until after 31st July 2022.
+The deadline for making requests to purchase Myriad nodes is the end of April.  Before this deadline, researchers wishing to buy compute nodes must approve an agreed Statement of Work and transfer the funds to ARC.  We can't place orders after this date because the hardware might not arrive before the end of UCL's financial year. 
 
 ## FAQs
 
