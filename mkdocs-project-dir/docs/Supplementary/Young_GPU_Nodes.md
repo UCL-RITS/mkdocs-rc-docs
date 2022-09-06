@@ -5,15 +5,16 @@ layout: docs
 
 ## Pilot access
 
-A group of nominated pilot users have access to these nodes during the pilot, which is 
-intended to last for four weeks, until mid-August 2022.
+A group of nominated pilot users had access to these nodes during the pilot, which lasted
+from 15 July to 5 September 2022.
 
 ### GPU specs
 
 The nodes are listed in [Young's node types table](../Clusters/Young.md#node-types) 
 
 There are 6 nodes which each have 64 AMD EPYC CPU cores and 8 Nvidia A100-SXM4-40GB GPUs.
-They have 1T RAM and 200G local disk is available for `tmpfs` unlike the rest of Young. 
+They have 1T RAM and 200G local disk is [available to request](#request-tmpfs) as `tmpfs` 
+unlike the rest of Young. 
 The AMD equivalent of hyperthreading is not enabled.
 
 ### Request GPUs
@@ -27,10 +28,14 @@ The AMD equivalent of hyperthreading is not enabled.
 #$ -A Inst_Project
 ```
 
-At the start of the pilot, jobs did not share nodes and you always got all 8 GPUs 
-on each node even if you only asked for 1. This has since been altered and device 
+At the start of the pilot, jobs did not share nodes and users always had access to all 
+GPUs on each node. This has since been altered and device 
 cgroups are implemented (as of 10 Aug 2022) so jobs can share nodes on the GPU 
 nodes and each only have access to the number of GPUs they requested.
+
+For example, 8 separate single-GPU jobs from different users can be running on one node, 
+or 2 4-GPU jobs. Multi-node parallel GPU jobs do not share nodes, so a job asking for 
+9-15 GPUs will block out the entire 16 GPUs on those two nodes.
 
 #### Exclusive use of nodes
 
@@ -99,8 +104,8 @@ NVIDIA has some useful information at these locations:
 
 If you want to tell your code to run on a specific device or devices, you can set 
 `CUDA_VISIBLE_DEVICES` to the ids between 0 and 7. If the code only uses one GPU 
-it will usually default to running on device 0, but if it is running on all 8 and 
-you don't want it to, you can limit it.
+it will usually default to running on device 0, but if it is running on all GPUs that
+belong to your job and you don't want it to, you can limit it.
 
 ```
 # run on gpu 1

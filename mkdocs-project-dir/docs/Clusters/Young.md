@@ -348,7 +348,10 @@ for every core).
 
 ## GPU nodes
 
-Not yet available for general use, we will inform everyone when they are and update this space.
+Now available for general use, for Free jobs only. There will be separate GPU Gold budgets in 
+future.
+
+[How to use the GPU nodes](../Supplementary/Young_GPU_Nodes.md).
 
 ### Restricting to one node type
 
