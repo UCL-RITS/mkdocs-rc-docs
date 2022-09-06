@@ -55,7 +55,7 @@ When you purchase nodes or priority cycles, we will ask you for a list of userna
 
 #### What is the difference between paying for priority cycles and purchasing dedicated nodes?
 
-Priority cycles is the better option for most people as it provides greater flexibility: priority cycles can be used across many nodes at once, and there is no time limit to using them. Dedicated hardware however would need to be in use 24/7 in order to get the most out of it. Researchers might want dedicated nodes if they have particular requirements which mean they can only run their work on their own nodes; e.g., they have purchased non-standard nodes, or the software they are using requires a static licence tied to a particular node.
+Priority cycles is the better option for most people as it provides greater flexibility: priority cycles can be used across many nodes at once, and there is an entire allocation period to use them. Dedicated hardware however would need to be in use 24/7 in order to get the most out of it. Researchers might want dedicated nodes if they have particular requirements which mean they can only run their work on their own nodes; e.g., they have purchased non-standard nodes, or the software they are using requires a static licence tied to a particular node.
 
 #### Will my 3-month priority cycle allocation roll over to the next quarter if I don’t use it?
 
