@@ -1145,12 +1145,13 @@
   <h1>Young GPU Nodes</h1>
 
 <h2 id="pilot-access">Pilot access<a class="headerlink" href="#pilot-access" title="Permanent link">§</a></h2>
-<p>A group of nominated pilot users have access to these nodes during the pilot, which is 
-intended to last for four weeks, until mid-August 2022.</p>
+<p>A group of nominated pilot users had access to these nodes during the pilot, which lasted
+from 15 July to 5 September 2022.</p>
 <h3 id="gpu-specs">GPU specs<a class="headerlink" href="#gpu-specs" title="Permanent link">§</a></h3>
 <p>The nodes are listed in <a href="../../Clusters/Young/#node-types">Young's node types table</a> </p>
 <p>There are 6 nodes which each have 64 AMD EPYC CPU cores and 8 Nvidia A100-SXM4-40GB GPUs.
-They have 1T RAM and 200G local disk is available for <code>tmpfs</code> unlike the rest of Young. 
+They have 1T RAM and 200G local disk is <a href="#request-tmpfs">available to request</a> as <code>tmpfs</code> 
+unlike the rest of Young. 
 The AMD equivalent of hyperthreading is not enabled.</p>
 <h3 id="request-gpus">Request GPUs<a class="headerlink" href="#request-gpus" title="Permanent link">§</a></h3>
 <div class="codehilite"><pre><span></span><code># Submit a job to the GPU nodes by adding a request for a number of GPUs
@@ -1161,10 +1162,13 @@ The AMD equivalent of hyperthreading is not enabled.</p>
 #$ -A Inst_Project
 </code></pre></div>
 
-<p>At the start of the pilot, jobs did not share nodes and you always got all 8 GPUs 
-on each node even if you only asked for 1. This has since been altered and device 
+<p>At the start of the pilot, jobs did not share nodes and users always had access to all 
+GPUs on each node. This has since been altered and device 
 cgroups are implemented (as of 10 Aug 2022) so jobs can share nodes on the GPU 
 nodes and each only have access to the number of GPUs they requested.</p>
+<p>For example, 8 separate single-GPU jobs from different users can be running on one node, 
+or 2 4-GPU jobs. Multi-node parallel GPU jobs do not share nodes, so a job asking for 
+9-15 GPUs will block out the entire 16 GPUs on those two nodes.</p>
 <h4 id="exclusive-use-of-nodes">Exclusive use of nodes<a class="headerlink" href="#exclusive-use-of-nodes" title="Permanent link">§</a></h4>
 <p>If you are using fewer than 8 GPUs but want to make sure nothing else is running on
 the same node as you, add this to your jobscript:</p>
@@ -1213,8 +1217,8 @@ Eg:</p>
 <h3 id="run-on-a-specific-device-or-limit-the-number-visible">Run on a specific device or limit the number visible<a class="headerlink" href="#run-on-a-specific-device-or-limit-the-number-visible" title="Permanent link">§</a></h3>
 <p>If you want to tell your code to run on a specific device or devices, you can set 
 <code>CUDA_VISIBLE_DEVICES</code> to the ids between 0 and 7. If the code only uses one GPU 
-it will usually default to running on device 0, but if it is running on all 8 and 
-you don't want it to, you can limit it.</p>
+it will usually default to running on device 0, but if it is running on all GPUs that
+belong to your job and you don't want it to, you can limit it.</p>
 <div class="codehilite"><pre><span></span><code># run on gpu 1
 export CUDA_VISIBLE_DEVICES=1
 
