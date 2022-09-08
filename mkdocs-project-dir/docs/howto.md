@@ -328,7 +328,7 @@ du -h --max-depth=1
 The first will give you a summary of the sizes of directory tree and subtrees inside the directory you specify, using human-readable sizes with a total at the bottom. The second will show you the totals for all top-level directories relative to where you are, plus the grand total. These can help you track down the locations of large amounts of data if you need to reduce your disk usage.
 
 
-## How do I connect to UCL group folders or other smb mounts?
+## How do I connect to UCL group folders, N drive or other smb mounts?
 
 You may have data stored in a UCL group folder that you normally mount using smb. 
 You can use `smbclient` to copy the files across onto Myriad (you do want them to be copied 
@@ -348,6 +348,11 @@ into there from Myriad.
 
 You can look at `man smbclient` on Myriad for the manual.
 
+### UCL N drive
+
+The N drive (Windows filestore, Filestore@UCL) can also be accessed using smb. To find out what 
+smb address to use, look at [Adding your home N drive to a Linux machine](https://www.ucl.ac.uk/isd/how-to/filestoreucl-adding-your-home-n-drive-to-linux-machine). 
+Then use `smbclient` as above to connect to it.
 
 ## How do I connect out to an FTP server?
 
