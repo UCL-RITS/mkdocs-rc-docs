@@ -10,9 +10,11 @@ layout: docs
     after ANSYS renamed all products and licenses. Remove this line from
     your jobscripts for the time being or jobs will not be able to start.
 
-ANSYS/CFX and ANSYS/Fluent are commercial fluid dynamics packages. 
+ANSYS/CFX and ANSYS/Fluent are commercial fluid dynamics packages.
 
-ANSYS/CFX and ANSYS/Fluent version 17.2, 18.0, 19.1 and later are available. The ANSYS Electromagnetics Suite (AnsysEM) is available from version 19.1 onwards. ANSYS Mechanical and Autodyn are available from 2019.r3 onwards.
+The most recent version of ANSYS we have installed on the clusters is ANSYS 2021.R2 including ANSYS/CFX, ANSYS/Fluent, ANSYS Mechanical and the ANSYS Electromagnetics Suite (AnsysEM). Some other products included in the ANSYS Campus Agreement are also available including Autodyn.
+
+Older versions of some ANSYS products including ANSYS/CFX and ANSYS/Fluent are also available - 2019.R3, 19.1 for example. However ANSYS Inc changed the way they license their software at the beginning of 2021, causing some products from versions before 2020 to have issues getting a valid license from the lciense server.
 
 Before these applications can be run, the user needs to go though a
 number of set up steps. These are detailed here.
@@ -25,19 +27,19 @@ module avail ansys
 The desired ANSYS module needs to be loaded by issuing a command like:
 
 ```
-module load ansys/19.1
+module load ansys/2021.r2
 ```
 
 This will set up various necessary config directories for you.
 
 The ANSYS applications are intended to be run primarily within batch
 jobs however you may run short (less than 5 minutes execution time)
-interactive tests on the Login Nodes and longer (up to two hours) on the
-User Test Nodes. Interactive work can be done using the ANSYS
+interactive tests on the Login Nodes and longer (up to two hours) on an
+interactive session on a compute node using qrsh. Interactive work can be done using the ANSYS
 interactive tools provided you have X-windows functionality enabled
 though your ssh connection. See our User Guide
 for more information about enabling
-X-windows functionality and the User Test nodes.
+X-windows functionality and using the qrsh command to start interactive sessions.
 
 UCL's campus-wide license covers 125 instances with 512 HPC licenses (for 
 parallel jobs) available for running CFX, Fluent and AnsysEM jobs and in 
@@ -58,7 +60,7 @@ given `.def` file.
 ```
 #!/bin/bash -l
 
-# ANSYS 19.1: Batch script to run cfx5solve on the StaticMixer.def example 
+# ANSYS 2021.R2: Batch script to run cfx5solve on the StaticMixer.def example 
 # file, single node multi-threaded (12 threads),
 
 # Force bash as the executing shell.
@@ -82,12 +84,12 @@ given `.def` file.
 ###$ -ac app=cfx
 
 # Set the working directory to somewhere in your scratch space. In this
-# case the subdirectory cfxtests-19.1
-#$ -wd /home/<your_UCL_id>/Scratch/cfxtests-19.1
+# case the subdirectory cfxtests-2021.R2
+#$ -wd /home/<your_UCL_id>/Scratch/cfxtests-2021.R2
 
 # Load the ANSYS module to set up your environment
 
-module load ansys/19.1
+module load ansys/2021.r2
 
 # Copy the .def file into the working (current) directory
 
@@ -98,7 +100,7 @@ cp /home/<your userid>/cfx_examples/StaticMixer.def .
 
 cfx5solve -max-elapsed-time "15 [min]" -def StaticMixer.def -par-local -partition $OMP_NUM_THREADS
 ```
-You will need to change the `-wd /home/<your_UCL_id>/Scratch/cfxtests-19.1` location and may need to change the memory, wallclock time, number of threads and job name directives as well. Replace the .def file with your one and modify the -max-elapsed-time value if needed. The simplest form of qsub command can be used to submit the job eg:
+You will need to change the `-wd /home/<your_UCL_id>/Scratch/cfxtests-2021.R2` location and may need to change the memory, wallclock time, number of threads and job name directives as well. Replace the .def file with your one and modify the -max-elapsed-time value if needed. The simplest form of qsub command can be used to submit the job eg:
 ```
 qsub run-StaticMixer-thr.sh
 ```
@@ -107,51 +109,58 @@ Output files will be saved in the job's working directory.
 ### Example multi-node MPI ANSYS/CFX jobscript
 
 Here is an example runscript for running cfx5solve on more than one node
-(using MPI) on a given .def file.
+(using MPI) on a given .def file. 
 
 ```
 #!/bin/bash -l
 
-# ANSYS 19.1: Batch script to run cfx5solve on the StaticMixer.def example 
-# file, distributed parallel (36 cores).
+# ANSYS 2021.R2: Batch script to run cfx5solve on the StaticMixer.def example 
+# file, distributed parallel (80 cores).
 
-# Request one hour of wallclock time (format hours:minutes:seconds).
-#$ -l h_rt=1:00:0
+# Using ANSYS 2021 licence manager running on UCL central licence server.
 
-# Request 2 gigabyte of RAM per core.
+# 1. Force bash as the executing shell.
+#$ -S /bin/bash
+
+# 2. Request one hour of wallclock time (format hours:minutes:seconds).
+#$ -l h_rt=0:60:0
+
+# 3. Request 2 gigabyte of RAM per core.
 #$ -l mem=2G
 
-# Set the name of the job.
-#$ -N StaticMixer_P_dist_36
+# 4. Set the name of the job.
+#$ -N StaticMixer_P_dist_80_NLC
 
-# Select the MPI parallel environment and 36 processors.
-#$ -pe mpi 36
+# 5. Select the MPI parallel environment and 80 processors.
+#$ -pe mpi 80
 
-# Request ANSYS licences 
-# Dec 2021: comment out this check as not currently working
-###$ -ac app=cfx
+# 6. Request ANSYS licences $ not inserted so currently inactive. Job will queue until
+# suficient licenses are available when active.
+# -ac app=cfx
 
-# Set the working directory to somewhere in your scratch space.  In this
-# case the subdirectory cfxtests-19.1
-#$ -wd /home/<your_UCL_userid>/Scratch/cfxtests-19.1
+# 7. Set the working directory to somewhere in your scratch space.  In this
+# case the subdirectory cfxtests-18.0
+#$ -wd /home/<your_UCL_id>/Scratch/cfxtests-2021.R2
 
-# Load the ANSYS module to set up your environment
+# 8. Load the ANSYS module to set up your environment
 
-module load ansys/19.1
+module load ansys/2021.r2
 
-# Copy the .def file into the working (current) directory
+# 9. Copy the .def file into the working (current) directory
 
-cp /home/<your_UCL_userid>/cfx_examples/StaticMixer.def .
+cp /home/<your_UCL_id>/Software/ANSYS/cfx_examples/StaticMixer.def .
 
-# SGE puts the machine file in $TMPDIR/machines. Use this to generate the 
+# 10. SGE puts the machine file in $TMPDIR/machines. Use this to generate the 
 # string CFX_NODES needed by cfx5solve
 
-export CFX_NODES=$(cfxnodes $TMPDIR/machines)
+export CFX_NODES=`cfxnodes $TMPDIR/machines`
 
-# Run cfx5solve - Note: -max-elapsed-time needs to be set to the same
+# 11. Run cfx5solve - Note: -max-elapsed-time needs to be set to the same
 # time as defined by 2 above.
 
+# Run with default MPI.
 cfx5solve -max-elapsed-time "60 [min]" -def StaticMixer.def -par-dist $CFX_NODES
+
 ```
 
 Please copy if you wish and edit it to suit your jobs. You will
@@ -169,7 +178,7 @@ Output files will be saved in the job's working directory.
 
 #### Running CFX with MPI on Myriad
 
-The default supplied Intel MPI doesn't work on Myriad. Instead you need to use the supplied IBM MPI. This can be done by adding: `-start-method "IBM MPI Distributed Parallel"` to the `cfx5solve` command.
+The default supplied Intel MPI doesn't work on Myriad. Instead you need to use the supplied IBM MPI. This can be done by adding: `-start-method "IBM MPI Distributed Parallel"` to the `cfx5solve` command. Also the maximum number of MPI processors you can request is 36.
 
 ### Troubleshooting CFX
 
@@ -191,7 +200,7 @@ Here is an example jobscript for running Fluent in serial mode (1 core).
 ```
 #!/bin/bash -l
 
-# ANSYS 19.1: Batch script to run ANSYS/fluent in serial mode 
+# ANSYS 2021.R2: Batch script to run ANSYS/fluent in serial mode 
 # (1 core). 
 
 # Request 2 hours of wallclock time (format hours:minutes:seconds).
@@ -209,11 +218,11 @@ Here is an example jobscript for running Fluent in serial mode (1 core).
 
 # Set the working directory to somewhere in your scratch space.  In this
 # case the subdirectory fluent-tests-19.1
-#$ -wd /home/<your_UCL_userid>/Scratch/fluent-tests-19.1
+#$ -wd /home/<your_UCL_userid>/Scratch/fluent-tests-2021.R2
 
 # Load the ANSYS module to set up your environment
 
-module load ansys/19.1
+module load ansys/2021.r2
 
 # Copy Fluent input files into the working (current) directory
 
@@ -227,7 +236,7 @@ fluent 2d -g < test-1.in
 ```
 
 Please copy if you wish and edit it to suit your jobs. You will need to
-change the `-wd /home/<your_UCL_id>/Scratch/fluent-tests-19.1` 
+change the `-wd /home/<your_UCL_id>/Scratch/fluent-tests-2021.R2` 
 location and may
 need to change the memory, wallclock time, and job name as
 well. Replace the `.cas` and `.in` files with your ones. The
@@ -247,8 +256,8 @@ across more than one node.
 ```
 #!/bin/bash -l
 
-# ANSYS 19.1: Batch script to run ANSYS/fluent distributed parallel 
-# (32 cores). 
+# ANSYS 2021.R2: Batch script to run ANSYS/fluent distributed parallel 
+# (80 cores). 
 
 # Request 2 hours of wallclock time (format hours:minutes:seconds).
 #$ -l h_rt=2:0:0
@@ -257,10 +266,10 @@ across more than one node.
 #$ -l mem=2G
 
 # Set the name of the job.
-#$ -N Fluent_par32
+#$ -N Fluent_par80
 
-# Select the MPI parallel environment and 32 processors.
-#$ -pe mpi 32
+# Select the MPI parallel environment and 80 processors.
+#$ -pe mpi 80
 
 # Request 25 Gb TMPDIR space (if on a cluster that supports this)
 #$ -l tmpfs=25G
@@ -271,11 +280,11 @@ across more than one node.
 
 # Set the working directory to somewhere in your scratch space.  In this
 # case the subdirectory fluent-tests-19.1
-#$ -wd /home/<your_UCL_userid>/Scratch/fluent-tests-19.1
+#$ -wd /home/<your_UCL_userid>/Scratch/fluent-tests-2021.R2
 
 # Load the ANSYS module to set up your environment
 
-module load ansys/19.1
+module load ansys/2021.r2
 
 # Copy Fluent input files into the working (current) directory
 
@@ -286,21 +295,23 @@ cp <path to your input files>/test-1.in .
 # 3ddp. For 2D use 2d or 2ddp. 
 # Do not change -t, -mpi, -pinfiniband and -cnf options.
 
-fluent 3ddp -t$NSLOTS -mpi=ibmmpi -cnf=$TMPDIR/machines -g < test-1.in
+fluent 3ddp -t$NSLOTS -mpi=intelmpi -cnf=$TMPDIR/machines -g < test-1.in
 ```
 
 Please copy if you wish and edit it to suit your jobs. You will
-need to change the `-wd /home/<your_UCL_id>/Scratch/fluent-tests-19.1` location and may
+need to change the `-wd /home/<your_UCL_id>/Scratch/fluent-tests-2021.r2` location and may
 need to change the memory, wallclock time, number of MPI processors
 and job name as well. Replace the *.cas* and *.in*
 files with your ones. The simplest form of qsub command can
 be used to submit the job eg: 
 
 ```
-qsub run-ANSYS-fluent-par-32.sh
+qsub run-ANSYS-fluent-par-80.sh
 ```
 
 Output files will be saved in the job's working directory.
+
+If you want to use IBM Platform MPI instead of Intel MPI, then replace the `-mpi=intelmpi` with `-mpi=ibmmpi`.
 
 ### Troubleshooting Fluent
 
@@ -311,13 +322,15 @@ Fluent 14 required `-mpi=pcmpi -pinfiniband` in the parallel options: if you hav
 
 ## ANSYS Mechanical 
 
+ANSYS Mechanical handles its own parallelisation, and needs an additional setting to work on our clusters. It also only appears to work with Intel MPI. Here is an example jobscript for running in parallel potentially across more than one node, for example on the Kathleen cluster.
+
 ```
 #!/bin/bash -l
 
-# ANSYS 2019.R3: Batch script to run ANSYS Mechanical solver
-# file, distributed parallel (32 cores).
+# ANSYS 2021.R2: Batch script to run ANSYS Mechanical solver
+# file, distributed parallel (80 cores).
 
-# Using ANSYS 2019 licence manager running on UCL central licence server.
+# Using ANSYS 2021.R2 licence manager running on UCL central licence server.
 
 # Force bash as the executing shell.
 #$ -S /bin/bash
@@ -329,10 +342,10 @@ Fluent 14 required `-mpi=pcmpi -pinfiniband` in the parallel options: if you hav
 #$ -l mem=2G
 
 # Set the name of the job.
-#$ -N Mech_P_dist_32
+#$ -N Mech_P_dist_80
 
-# Select the MPI parallel environment and 32 processors.
-#$ -pe mpi 32
+# Select the MPI parallel environment and 80 processors.
+#$ -pe mpi 80
 
 # Request ANSYS licences $ inserted so currently active.Job will queue until
 # suficient licences are available.
@@ -344,23 +357,87 @@ Fluent 14 required `-mpi=pcmpi -pinfiniband` in the parallel options: if you hav
 #$ -wd /home/<your_UCL_username>/Scratch/ANSYS_Mech
 
 # Load the ANSYS module to set up your environment
-module load ansys/2019.r3
+module load ansys/2021.r2
 
 # Copy the .in file into the working (current) directory
 cp ~/ANSYS/steady_state_input_file.dat .
 
-# SGE puts the machine file in $TMPDIR/machines. Use this to generate the 
+# 10. SGE puts the machine file in $TMPDIR/machines. Use this to generate the 
 # string CFX_NODES needed by ansys195 which requires : as the separator.
 
-export CFX_NODES=$(cfxnodes $TMPDIR/machines | sed -e 's/\*/:/g' -e 's/,/:/g')
+export CFX_NODES=`cfxnodes_cs $TMPDIR/machines`
 echo $CFX_NODES
+
+# Need to set KMP_AFFINTY to get round error: OMP: System error #22: Invalid argument
+
+export KMP_AFFINITY=disabled
 
 # Run ansys mechanical - Note: use ansys195 instead of ansys and -p argument
 # needed to switch to a valid UCL license.
 
-ansys195 -dis -b -p aa_r -machines $CFX_NODES < steady_state_input_file.dat
+ansys212 -dis -mpi intelmpi -machines $CFX_NODES -b < steady_state_input_file.dat
+
 ```
 
-If you have access to Grace, this test input and jobscript are available at `/home/ccaabaa/Software/ANSYS/steady_state_input_file.dat` and `/home/ccaabaa/Software/ANSYS/ansys-mech-ex.sh`
+Please copy if you wish and edit it to suit your jobs. You will
+need to change the `-wd /home/<your_UCL_id>/Scratch/ANSYS_Mech` location and may
+need to change the memory, wallclock time, number of MPI processors
+and job name as well. Replace the *.dat* 
+file with your one. The simplest form of qsub command can
+be used to submit the job eg: 
 
+```
+qsub ansys-mech-2021.R2-ex.sh
+```
+
+Output files will be saved in the job's working directory.
+
+If you have access to Kathleen, this test input and jobscript are available at `/home/ccaabaa/Software/ANSYS/steady_state_input_file.dat` and `/home/ccaabaa/Software/ANSYS/ansys-mech-2021.R2-ex.sh`
+
+## ANSYS Electromagnetic Suite (AnsysEM)
+
+The AnsysEM products handle their own parallelisation so a number of complex options need to be passed in job scripts to make it run correctly. Also additional module commands are required.
+
+Here is an example jobscript for running in parallel potentially across more than one node, for example on the Kathleen cluster.
+
+```
+#!/bin/bash -l
+
+# AnsysEM 2021 R2: Batch script to run one of the Ansys Electromagnetics Products
+# example simulations on Kathleen - distributed parallel (80 cores)
+
+# 1. Force bash as the executing shell.
+#$ -S /bin/bash
+
+# 2. Request one hour of wallclock time (format hours:minutes:seconds).
+#$ -l h_rt=1:00:0
+
+# 3. Request 2 gigabyte of RAM per core.
+#$ -l mem=2G
+
+# 4. Set the name of the job.
+#$ -N DiffSL_P_dist_80
+
+# 5. Select the MPI parallel environment and 80 processors - two nodes.
+#$ -pe mpi 80
+
+# 7. Request ANSYS licences $ inserted so currently active. Job will queue until
+# suficient licenses are available. Not currently active.
+# -ac app=cfx
+
+# 8. Set the working directory to somewhere in your scratch space.  In this
+# case the directory the job was submitted from,
+#$ -cwd
+
+# 9. Load the ANSYS module to set up your environment
+
+module load ansys/2021.r2
+module load xorg-utils/X11R7.7
+module load giflib/5.1.1
+
+# 10. Run ansysedt
+
+ansysedt -ng -Distributed -machinelist num=$NSLOTS -batchoptions 'HFSS/MPIVendor'='Intel' -batchoptions 'TempDirectory'="${TMPDIR}" -batchoptions 'HFSS/HPCLicenseType'='pool'  -batchoptions 'HFSS-IE/HPCLicenseType'='pool' -BatchSolve differential_stripline.aedt
+
+```
 
