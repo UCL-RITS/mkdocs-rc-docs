@@ -494,6 +494,25 @@ We have many versions of GROMACS installed, some built with Plumed. The module n
 
 Which executable you should run depends on the problem you wish to solve. For both single and double precision version builds, serial binaries and an MPI binary for mdrun (`mdrun_mpi` for newer versions, `gmx_mpi` for Plumed and some older versions) are provided. Double precision binaries have a `_d` suffix (so `gmx_d`, `mdrun_mpi_d`, `gmx_mpi_d` etc). 
 
+You can see what the executable names are by running `module show gromacs/2021.2/gnu-7.3.0` 
+for example and then running the `ls` command on the `bin` directory that the module tells you 
+that version is installed in.
+
+```
+# Example for GPU gromacs/2021.5/cuda-11.3
+module load beta-modules
+module unload -f compilers mpi gcc-libs
+module load gcc-libs/10.2.0
+module load compilers/gnu/10.2.0
+module load python3/3.9-gnu-10.2.0 
+module load cuda/11.3.1/gnu-10.2.0
+module load mpi/openmpi/4.0.5/gnu-10.2.0
+module load gromacs/2021.5/cuda-11.3
+
+# Run GROMACS - the executables are gmx_cuda, gmx_mpi_cuda and mdrun_mpi_cuda
+
+```
+
 ```
 # Example for gromacs/2021.2/gnu-7.3.0
 module load beta-modules
