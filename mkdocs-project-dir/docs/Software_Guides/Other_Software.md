@@ -1334,12 +1334,16 @@ application groups depending on which versions you are licensed for, and remove
 you when VASP tell us you no longer have access.
 
 The VASP executables for current versions are named like this:
-* `vasp_gam` - optimised for gamma point calculations only
-* `vasp_std` - standard version
-* `vasp_ncl` - for non-collinear magnetic structure and/or spin-orbit coupling calculations 
+
+ * `vasp_gam` - optimised for gamma point calculations only
+ * `vasp_std` - standard version
+ * `vasp_ncl` - for non-collinear magnetic structure and/or spin-orbit coupling calculations 
+
+#### VASP 5
 
 ```
-module unload compilers mpi
+# vasp 5
+module unload -f compilers mpi
 module load compilers/intel/2017/update1
 module load mpi/intel/2017/update1/intel
 module load vasp/5.4.4-18apr2017/intel-2017-update1
@@ -1350,6 +1354,36 @@ gerun vasp_std > vasp_output.$JOB_ID
 ```
 
 Note: although you can run VASP using the default Intel 2018 compiler this can lead to numerical errors in some types of simulation. In those cases we recommend switching to the specific compiler and MPI version used to build that install (mentioned at the end of the module name). We do this in the example above.
+
+#### VASP 6
+
+```
+# vasp 6
+module unload -f compilers mpi
+module load compilers/intel/2019/update5
+module load mpi/intel/2019/update5/intel
+module load vasp/6.3.0-24Jan2022/intel-2019-update5
+
+gerun vasp_std > vasp_output.$JOB_ID
+```
+
+#### VASP 6 GPU
+
+This is the OpenACC GPU port of VASP. The [VASP documentation](https://www.vasp.at/wiki/index.php/OpenACC_GPU_port_of_VASP) has some information about suitable numbers of MPI processes vs GPUs.
+
+```
+# vasp 6 GPU
+
+# request a gpu
+#$ -l gpu=1
+
+module unload -f compilers mpi
+module load compilers/nvidia/hpc-sdk/22.1
+module load fftw/3.3.10/nvidia-22.1
+module load vasp/6.3.0-24Jan2022/nvidia-22.1-gpu
+
+gerun vasp_std > vasp_output.$JOB_ID
+```
 
 Building your own VASP: You may also install your own copy of VASP in your home if you have access to the source, and we provide a [simple VASP individual install script](https://github.com/UCL-RITS/rcps-buildscripts/blob/master/vasp_individual_install) (tested with VASP 5.4.4, no patches). You need to download the VASP source code into your home directory and then you can run the script following the instructions at the top. 
 
