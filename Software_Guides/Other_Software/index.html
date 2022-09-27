@@ -3071,6 +3071,7 @@ gerun vasp_std &gt; vasp_output.$JOB_ID
 </code></pre></div>
 
 <p>Note: although you can run VASP using the default Intel 2018 compiler this can lead to numerical errors in some types of simulation. In those cases we recommend switching to the specific compiler and MPI version used to build that install (mentioned at the end of the module name). We do this in the example above.</p>
+<p>Building your own VASP: You may also install your own copy of VASP in your home if you have access to the source, and we provide a <a href="https://github.com/UCL-RITS/rcps-buildscripts/blob/master/vasp_individual_install">simple VASP individual install script</a> (tested with VASP 5.4.4, no patches). You need to download the VASP source code into your home directory and then you can run the script following the instructions at the top.</p>
 <h4 id="vasp-6">VASP 6<a class="headerlink" href="#vasp-6" title="Permanent link">§</a></h4>
 <div class="codehilite"><pre><span></span><code># vasp 6
 module unload -f compilers mpi
@@ -3096,7 +3097,6 @@ module load vasp/6.3.0-24Jan2022/nvidia-22.1-gpu
 gerun vasp_std &gt; vasp_output.$JOB_ID
 </code></pre></div>
 
-<p>Building your own VASP: You may also install your own copy of VASP in your home if you have access to the source, and we provide a <a href="https://github.com/UCL-RITS/rcps-buildscripts/blob/master/vasp_individual_install">simple VASP individual install script</a> (tested with VASP 5.4.4, no patches). You need to download the VASP source code into your home directory and then you can run the script following the instructions at the top. </p>
 <h3 id="xmds">XMDS<a class="headerlink" href="#xmds" title="Permanent link">§</a></h3>
 <p>XMDS allows the fast and easy solution of sets of ordinary, partial and stochastic differential equations, using a variety of efficient numerical algorithms. </p>
 <p>We have XMDS 3 and XMDS 2 installed.</p>
