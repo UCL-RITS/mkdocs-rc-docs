@@ -1355,6 +1355,8 @@ gerun vasp_std > vasp_output.$JOB_ID
 
 Note: although you can run VASP using the default Intel 2018 compiler this can lead to numerical errors in some types of simulation. In those cases we recommend switching to the specific compiler and MPI version used to build that install (mentioned at the end of the module name). We do this in the example above.
 
+Building your own VASP: You may also install your own copy of VASP in your home if you have access to the source, and we provide a [simple VASP individual install script](https://github.com/UCL-RITS/rcps-buildscripts/blob/master/vasp_individual_install) (tested with VASP 5.4.4, no patches). You need to download the VASP source code into your home directory and then you can run the script following the instructions at the top.
+
 #### VASP 6
 
 ```
@@ -1384,8 +1386,6 @@ module load vasp/6.3.0-24Jan2022/nvidia-22.1-gpu
 
 gerun vasp_std > vasp_output.$JOB_ID
 ```
-
-Building your own VASP: You may also install your own copy of VASP in your home if you have access to the source, and we provide a [simple VASP individual install script](https://github.com/UCL-RITS/rcps-buildscripts/blob/master/vasp_individual_install) (tested with VASP 5.4.4, no patches). You need to download the VASP source code into your home directory and then you can run the script following the instructions at the top. 
 
 
 ### XMDS
