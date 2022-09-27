@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Software_Guides/Other_Software/">
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.0">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2e8b5541.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -1383,6 +1383,33 @@
     VASP
   </a>
   
+    <nav class="md-nav" aria-label="VASP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vasp-5" class="md-nav__link">
+    VASP 5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vasp-6" class="md-nav__link">
+    VASP 6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vasp-6-gpu" class="md-nav__link">
+    VASP 6 GPU
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1931,6 +1958,33 @@
   <a href="#vasp" class="md-nav__link">
     VASP
   </a>
+  
+    <nav class="md-nav" aria-label="VASP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vasp-5" class="md-nav__link">
+    VASP 5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vasp-6" class="md-nav__link">
+    VASP 6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vasp-6-gpu" class="md-nav__link">
+    VASP 6 GPU
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2998,11 +3052,15 @@ have it, though this is not necessary. We will then check in the VASP portal if
 we can give you access. We will add you to the <code>legvasp5</code> or <code>legvasp6</code> reserved 
 application groups depending on which versions you are licensed for, and remove 
 you when VASP tell us you no longer have access.</p>
-<p>The VASP executables for current versions are named like this:
-* <code>vasp_gam</code> - optimised for gamma point calculations only
-* <code>vasp_std</code> - standard version
-* <code>vasp_ncl</code> - for non-collinear magnetic structure and/or spin-orbit coupling calculations </p>
-<div class="codehilite"><pre><span></span><code>module unload compilers mpi
+<p>The VASP executables for current versions are named like this:</p>
+<ul>
+<li><code>vasp_gam</code> - optimised for gamma point calculations only</li>
+<li><code>vasp_std</code> - standard version</li>
+<li><code>vasp_ncl</code> - for non-collinear magnetic structure and/or spin-orbit coupling calculations </li>
+</ul>
+<h4 id="vasp-5">VASP 5<a class="headerlink" href="#vasp-5" title="Permanent link">§</a></h4>
+<div class="codehilite"><pre><span></span><code># vasp 5
+module unload -f compilers mpi
 module load compilers/intel/2017/update1
 module load mpi/intel/2017/update1/intel
 module load vasp/5.4.4-18apr2017/intel-2017-update1
@@ -3013,6 +3071,31 @@ gerun vasp_std &gt; vasp_output.$JOB_ID
 </code></pre></div>
 
 <p>Note: although you can run VASP using the default Intel 2018 compiler this can lead to numerical errors in some types of simulation. In those cases we recommend switching to the specific compiler and MPI version used to build that install (mentioned at the end of the module name). We do this in the example above.</p>
+<h4 id="vasp-6">VASP 6<a class="headerlink" href="#vasp-6" title="Permanent link">§</a></h4>
+<div class="codehilite"><pre><span></span><code># vasp 6
+module unload -f compilers mpi
+module load compilers/intel/2019/update5
+module load mpi/intel/2019/update5/intel
+module load vasp/6.3.0-24Jan2022/intel-2019-update5
+
+gerun vasp_std &gt; vasp_output.$JOB_ID
+</code></pre></div>
+
+<h4 id="vasp-6-gpu">VASP 6 GPU<a class="headerlink" href="#vasp-6-gpu" title="Permanent link">§</a></h4>
+<p>This is the OpenACC GPU port of VASP. The <a href="https://www.vasp.at/wiki/index.php/OpenACC_GPU_port_of_VASP">VASP documentation</a> has some information about suitable numbers of MPI processes vs GPUs.</p>
+<div class="codehilite"><pre><span></span><code># vasp 6 GPU
+
+# request a gpu
+#$ -l gpu=1
+
+module unload -f compilers mpi
+module load compilers/nvidia/hpc-sdk/22.1
+module load fftw/3.3.10/nvidia-22.1
+module load vasp/6.3.0-24Jan2022/nvidia-22.1-gpu
+
+gerun vasp_std &gt; vasp_output.$JOB_ID
+</code></pre></div>
+
 <p>Building your own VASP: You may also install your own copy of VASP in your home if you have access to the source, and we provide a <a href="https://github.com/UCL-RITS/rcps-buildscripts/blob/master/vasp_individual_install">simple VASP individual install script</a> (tested with VASP 5.4.4, no patches). You need to download the VASP source code into your home directory and then you can run the script following the instructions at the top. </p>
 <h3 id="xmds">XMDS<a class="headerlink" href="#xmds" title="Permanent link">§</a></h3>
 <p>XMDS allows the fast and easy solution of sets of ordinary, partial and stochastic differential equations, using a variety of efficient numerical algorithms. </p>
@@ -3141,10 +3224,10 @@ no longer work since the release of XMDS 3.0.0 (see above to use that).</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.48f2be22.min.js"></script>
+      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
       
     
   </body>
