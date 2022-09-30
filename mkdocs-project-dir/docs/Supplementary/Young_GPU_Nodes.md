@@ -6,9 +6,9 @@ layout: docs
 ## Pilot access
 
 A group of nominated pilot users had access to these nodes during the pilot, which lasted
-from 15 July to 5 September 2022.
+from 15 July to 5 September 2022. They are now available to all.
 
-### GPU specs
+## GPU specs
 
 The nodes are listed in [Young's node types table](../Clusters/Young.md#node-types) 
 
@@ -17,7 +17,7 @@ They have 1T RAM and 200G local disk is [available to request](#request-tmpfs) a
 unlike the rest of Young. 
 The AMD equivalent of hyperthreading is not enabled.
 
-### Request GPUs
+## Request GPUs
 
 ```
 # Submit a job to the GPU nodes by adding a request for a number of GPUs
@@ -37,7 +37,7 @@ For example, 8 separate single-GPU jobs from different users can be running on o
 or 2 4-GPU jobs. Multi-node parallel GPU jobs do not share nodes, so a job asking for 
 9-15 GPUs will block out the entire 16 GPUs on those two nodes.
 
-#### Exclusive use of nodes
+### Exclusive use of nodes
 
 If you are using fewer than 8 GPUs but want to make sure nothing else is running on
 the same node as you, add this to your jobscript:
@@ -50,7 +50,7 @@ This would generally only be done if you are benchmarking or investigating speed
 and want to rule out anything else running on the rest of the node as possibly
 affecting your timings.
 
-### CUDA versions
+## CUDA versions
 
 The newer CUDA installs we have are made visible by first loading `beta-modules`
 but can then be used alongside any other compiler.
@@ -65,7 +65,7 @@ module load cuda/11.3.1/gnu-10.2.0
 module load cuda/11.2.0/gnu-10.2.0
 ```
 
-#### Choosing a CUDA version
+### Choosing a CUDA version
 
 The drivers we have installed on the GPU nodes are version 460.27.03 which is CUDA 11.2.
 CUDA 11 has minor version compatibility so in most cases you can use the 11.3.1 runtime,
@@ -79,7 +79,7 @@ CUDA RUNTIME API error: Free failed with error cudaErrorUnsupportedPtxVersion
 
 then use the `cuda/11.2.0/gnu-10.2.0` module to build and run your program instead.
 
-#### Building with CUDA
+### Building with CUDA
 
 If the code you are trying to build only needs to link to the CUDA runtime libraries,
 `libcudart.so` then you can build it on the login nodes which do not have GPUs.
@@ -92,7 +92,7 @@ Eg:
 qrsh -l gpu=8,h_rt=2:0:0,tmpfs=10G,mem=1G -pe smp 4 -P Free -A Inst_Project -now no
 ```
 
-#### NVIDIA documentation
+### NVIDIA documentation
 
 NVIDIA has some useful information at these locations:
 
@@ -100,7 +100,7 @@ NVIDIA has some useful information at these locations:
  * [CUDA Toolkit release notes](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)
 
 
-### Run on a specific device or limit the number visible
+## Run on a specific device or limit the number visible
 
 If you want to tell your code to run on a specific device or devices, you can set 
 `CUDA_VISIBLE_DEVICES` to the ids between 0 and 7. If the code only uses one GPU 
@@ -115,7 +115,7 @@ export CUDA_VISIBLE_DEVICES=1
 export CUDA_VISIBLE_DEVICES=0,4
 ```
 
-#### CUDA utility deviceQuery
+### CUDA utility deviceQuery
 
 CUDA has a number of small utilities that come with its examples which can be useful: 
 you can take a copy of the samples directory from the corresponding CUDA version - 
@@ -127,7 +127,7 @@ setting `CUDA_VISIBLE_DEVICES` is working - you can run it before and after sett
 The devices will have been renamed as 0 and 1 in its output, but the location IDs will 
 be the same as when you could see all of them.
 
-### Setting PPN
+## Setting PPN
 
 You will also be able to set the number of cpu slots per node that you want. 
 Instead of `-pe smp` or `-pe mpi`, you would request:
@@ -147,7 +147,7 @@ automatically for Intel MPI as usual and our OpenMPI modules shouldn't need it s
 have scheduler integration, but you can find it in `$TMPDIR/machines` if you are using 
 mpirun and need it.
 
-### Request tmpfs
+## Request tmpfs
 
 The GPU nodes do have local disks and you can request an amount of tmpfs up to the maximum 
 200G like this:
@@ -163,5 +163,18 @@ explicitly with a command line argument.
 
 `$TMPDIR` is deleted at the end of the job, so if you need any data that is being written
 to there, copy it back to your Scratch at the end of the job.
+
+## Software of interest
+
+GPU software we have installed that may be of particular interest to users of Young.
+
+ * [VASP 6 GPU](../Software_Guides/Other_Software.md/#vasp-6-gpu)
+ * [GROMACS 2021.5 GPU](../Software_Guides/Other_Software/#gromacs)
+ * [NAMD 2.14 GPU](../Software_Guides/Other_Software/#namd)
+ * [LAMMPS 29 Sep 21 Update 2 GPU](../Software_Guides/Other_Software/#lammps)
+ 
+You can also use [NVIDIA Grid Cloud Containers](NVIDIA_Containers.md) via Singularity
+which provide pre-configured GPU applications. Our page gives an example of using the 
+NAMD 3 container.
 
 
