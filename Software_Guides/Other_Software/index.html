@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Software_Guides/Other_Software/">
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.3">
     
     
       
@@ -1243,6 +1243,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ofi-smp-gpu" class="md-nav__link">
+    OFI-SMP-GPU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#mpi" class="md-nav__link">
     MPI
   </a>
@@ -1814,6 +1821,13 @@
           <li class="md-nav__item">
   <a href="#ofi-smp" class="md-nav__link">
     OFI-SMP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofi-smp-gpu" class="md-nav__link">
+    OFI-SMP-GPU
   </a>
   
 </li>
@@ -2603,9 +2617,12 @@ gerun lmp_mpi -in inputfile
 module load beta-modules
 module load gcc-libs/10.2.0
 module load compilers/gnu/10.2.0
+
+# these three modules for Myriad only
 module load numactl/2.0.12
 module load binutils/2.36.1/gnu-10.2.0
 module load ucx/1.9.0/gnu-10.2.0
+
 module load mpi/openmpi/4.0.5/gnu-10.2.0
 module load cuda/11.3.1/gnu-10.2.0
 module load python3/3.9-gnu-10.2.0
@@ -2614,8 +2631,33 @@ module load lammps/29sep21up2/gpu/gnu-10.2.0
 gerun lmp_gpu -sf gpu -pk gpu 1 -in inputfile
 </code></pre></div>
 
-<p>for the version with GPU support which is only curently available on the Myriad Cluster. The MPI version is available on all clusters. Also on Myriad the <code>numactl</code>, <code>binutils</code> and <code>ucx</code> modules are additionally needed by  OpenMPI.</p>
-<p>LAMMPS 29th September 2021 Update 2 has been built with the GNU compilers, OpenMPI and CUDA for the GPU version. We will also be providing builds using the Intel Compilers and Tools.</p>
+<p>for the version with GPU support which is only available on clusters with GPUs. 
+The MPI version is available on all clusters. On Myriad the <code>numactl</code>, <code>binutils</code> and 
+<code>ucx</code> modules are additionally needed by OpenMPI.</p>
+<p>LAMMPS 29th September 2021 Update 2 has been built with the GNU compilers, OpenMPI and CUDA for the GPU version. </p>
+<p>We also have Intel installs:</p>
+<div class="codehilite"><pre><span></span><code># LAMMPS 29 Sep 2021 Update 2 with Intel compilers and INTEL package
+module unload -f compilers mpi
+module load compilers/intel/2020/release
+module load mpi/intel/2019/update6/intel
+module load python/3.9.10
+module load lammps/29sep21up2/userintel/intel-2020
+
+gerun lmp_mpi -in inputfile
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code># LAMMPS 29 Sep 2021 Update 2 for GPU with Intel compilers
+module unload -f compilers mpi
+module load beta-modules
+module load compilers/intel/2020/release
+module load mpi/intel/2019/update6/intel
+module load python/3.9.10
+module load cuda/11.3.1/gnu-10.2.0
+module load lammps/29sep21up2/gpu/intel-2020
+
+gerun lmp_gpu -sf gpu -pk gpu 1 -in inputfile
+</code></pre></div>
+
 <h3 id="meme-suite">MEME Suite<a class="headerlink" href="#meme-suite" title="Permanent link">§</a></h3>
 <p>MEME Suite: Motif-based sequence analysis tools. This install is for the command-line tools and connects to their website for further analysis. </p>
 <div class="codehilite"><pre><span></span><code>module unload compilers
@@ -2733,7 +2775,7 @@ but not across multiple different nodes. NAMD uses the CPUs and GPUs together so
 recommended you request all the cores on the node if you are requesting all the GPUs.</p>
 <p>For best performance of simulations it is recommended that you use an entire node, 
 all the CPUs and all the available GPUs.</p>
-<div class="codehilite"><pre><span></span><code># request a number of CPUs and GPUs
+<div class="codehilite"><pre><span></span><code># request a number of CPU cores and GPUs
 #$ -pe smp 10
 #$ -l gpu=1
 
@@ -2773,6 +2815,33 @@ module load namd/2.14/ofi-smp/intel-2019
 # ++ppn is the number of PEs (or worker threads) to create for each process.
 
 charmrun +p${NSLOTS} namd2 apoa1.namd ++ppn2 +setcpuaffinity
+</code></pre></div>
+
+<h4 id="ofi-smp-gpu">OFI-SMP-GPU<a class="headerlink" href="#ofi-smp-gpu" title="Permanent link">§</a></h4>
+<p>This version of NAMD runs with threads (smp) and processes and is for clusters
+with OmniPath interconnects as well as GPUs (not Myriad). It can run across multiple nodes.</p>
+<div class="codehilite"><pre><span></span><code># request a number of CPU cores and GPUs
+#$ -pe smp 24
+#$ -l gpu=2
+
+module unload -f compilers mpi gcc-libs
+module load beta-modules
+module load gcc-libs/7.3.0
+module load compilers/intel/2019/update5
+module load mpi/intel/2019/update5/intel
+module load cuda/11.3.1/gnu-10.2.0
+module load namd/2.14/ofi-smp-gpu/intel-2019
+
+# ${NSLOTS} will get the number of cores you asked for with -pe.
+# +setcpuaffinity is recommended to make sure threads are assigned to specific CPUs.
+# ++ppn is the number of PEs (or worker threads) to create for each process.
+
+# The number of GPU devices must be a multiple of the number of NAMD processes
+# since processes cannot share GPUs.
+# Here we have ++ppn12 for 12 threads, and charmrun works out we have 2 NAMD processes 
+# available for the 2 GPUs.
+
+charmrun +p${NSLOTS} namd2 apoa1_nve_cuda.namd ++ppn12 +setcpuaffinity 
 </code></pre></div>
 
 <h4 id="mpi">MPI<a class="headerlink" href="#mpi" title="Permanent link">§</a></h4>
