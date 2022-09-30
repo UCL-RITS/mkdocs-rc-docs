@@ -95,17 +95,130 @@ GLIBC (not GLIBCXX) then this has been compiled on a newer operating system and 
 work on our clusters. Look for a binary that was created for CentOS 7 (we have RHEL 7) or
 build the program from source if possible.
 
-### BLAS and LAPACK
+## Build systems
 
-BLAS and LAPACK are provided as part of MKL, OpenBLAS or ATLAS. There are several 
-different OpenBLAS and ATLAS modules on for different compilers. MKL is available 
-in the Intel compiler module.
+Most software will use some kind of build system to manage how files are
+compiled and linked and in what order. Here are a few common ones.
+
+### Automake configure
+
+[Automake](http://www.gnu.org/software/automake/manual/automake.html)
+will generate the Makefile for you and hopefully pick up sensible
+options through configuration. You can give it an install prefix to tell
+it where to install (or you can build it in place and not use make
+install at all).
+
+```
+./configure --prefix=/home/username/place/you/want/to/install
+make
+# if it has a test suite, good idea to use it
+make test 
+make install
+```
+
+If it has more configuration flags, you can use `./configure --help` to
+view them.
+
+Usually configure will create a config.log: you can look in there to
+find if any tests have failed or things you think should have been
+picked up haven't.
+
+### CMake
+
+[CMake](http://www.cmake.org/) is another build system. It will have a
+CMakeFile or the instructions will ask you to use cmake or ccmake rather
+than make. It also generates Makefiles for you. `ccmake` is a
+terminal-based interactive interface where you can see what variables
+are set to and change them, then repeatedly configure until everything
+is correct, generate the Makefile and quit. `cmake` is the commandline
+version. The interactive process tends to go like this:
+
+```
+ccmake CMakeLists.txt
+# press c to configure - will pick up some options
+# press t to toggle advanced options
+# keep making changes and configuring until no more errors or changes
+# press g to generate and exit
+make
+# if it has a test suite, good idea to use it
+make test 
+make install
+```
+
+The options that you set using ccmake can also be passed on the commandline to
+cmake with `-D`. This allows you to script an install and run it again later.
+`CMAKE_INSTALL_PREFIX` is how you tell it where to install.
+
+```
+# making a build directory allows you to clean it up more easily
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=/home/username/place/you/want/to/install
+```
+
+If you need to rerun cmake/ccmake and reconfigure, remember to delete the
+`CMakeCache.txt` file first or it will still use your old options.
+Turning on verbose Makefiles in cmake is also useful if your code
+didn't compile first time - you'll be able to see what flags the
+compiler or linker is actually being given when it fails.
+
+### Make
+
+Your code may come with a Makefile and have no configure, in which
+case the generic way to compile it is as follows:
+
+```
+make targetname
+```
+
+There's usually a default target, which `make` on its own will use. `make all`
+is also frequently used. 
+If you need to change any configuration options, you'll need to edit those
+sections of the Makefile (usually near the top, where the variables/flags are
+defined).
+
+Here are some typical variables you may want to change in a Makefile.
+
+These are what compilers/mpi wrappers to use - these are also defined by
+the compiler modules, so you can see what they should be. Intel would be
+`icc`, `icpc`, `ifort`, while the GNU compiler would be `gcc`, `g++`, `gfortran`. 
+If this is a program that can be compiled using MPI and only has a variable for CC, 
+then set that to mpicc.
+
+```
+CC=gcc
+CXX=g++
+FC=gfortran
+MPICC=mpicc
+MPICXX=mpicxx
+MPIF90=mpif90
+```
+
+CFLAGS and LDFLAGS are flags for the compiler and linker respectively,
+and there might be LIBS or INCLUDE in the Makefile as well. When linking a library 
+with the name libfoo, use `-lfoo`.
+
+```
+CFLAGS="-I/path/to/include"
+LDFLAGS="-L/path/to/foo/lib -L/path/to/bar/lib"
+LDLIBS="-lfoo -lbar"
+```
+
+Remember to `make clean` first if you are recompiling with new options. This will delete
+object files from previous attempts. 
+
+
+## BLAS and LAPACK
+
+BLAS and LAPACK are linear algebra libraries that are provided as part of MKL, 
+OpenBLAS or ATLAS. There are several different OpenBLAS and ATLAS modules for 
+different compilers. MKL is available as part of each Intel compiler module.
 
 Your code may try to link `-lblas -llapack`: this isn't the right way to use BLAS 
 and LAPACK with MKL or ATLAS (though our OpenBLAS now has symlinks that mean this 
 will work).
 
-#### MKL
+### MKL
 
 When you have an Intel compiler module loaded, typing 
 ```
@@ -113,13 +226,13 @@ echo $MKLROOT
 ```
 will show you that MKL is available.
 
-##### Easy linking of MKL
+#### Easy linking of MKL
 
 If you can, try to use `-mkl` as a compiler flag - if that works, it should get 
 all the correct libraries linked in the right order. Some build systems do not 
 work with this however and need explicit linking.
 
-##### Intel MKL link line advisor
+#### Intel MKL link line advisor
 
 It can be complicated to get the correct link line for MKL, so Intel has provided 
 a tool which will give you the link line with the libraries in the right order.
@@ -153,11 +266,12 @@ correct: do an `ls ${MKLROOT}/lib/intel64` and make sure the directory exists
 and contains the libraries. In the past there have been slight path differences 
 between tool and install for some versions.
 
-#### OpenBLAS
+### OpenBLAS
 
 We have native threads, OpenMP and serial versions of OpenBLAS. 
+Type `module avail openblas` to see the available versions.
 
-##### Linking OpenBLAS
+#### Linking OpenBLAS
 
 Our OpenBLAS modules now contain symlinks for `libblas` and `liblapack` that both 
 point to `libopenblas`. This means that the default `-lblas -llapack` will in fact work.
@@ -169,7 +283,7 @@ This is how you would normally link OpenBLAS:
 If code you are compiling requires separate entries for BLAS and LAPACK, set them 
 both to `-lopenblas`.
 
-##### Troubleshooting: OpenMP loop warning
+#### Troubleshooting: OpenMP loop warning
 
 If you are running a threaded program and get this warning:
 ```
@@ -188,12 +302,12 @@ void openblas_set_num_threads(int num_threads);
 You can avoid this error by compiling with one of the `native-threads` or `serial` 
 OpenBLAS modules instead of the `openmp` one.
 
-#### ATLAS
+### ATLAS
 
 We would generally recommend using OpenBLAS instead at present, but we do have 
 ATLAS modules.
 
-##### Dynamic linking ATLAS
+#### Dynamic linking ATLAS
 
 There is one combined library each for serial and threaded ATLAS (in most 
 circumstances you probably want the serial version).
@@ -208,7 +322,7 @@ Threaded:
 -L${ATLASROOT}/lib -ltatlas
 ```
 
-##### Static linking ATLAS
+#### Static linking ATLAS
 
 There are multiple libraries to link.
 
@@ -222,7 +336,7 @@ Threaded:
 -L${ATLASROOT}/lib -llapack -lptf77blas -lptcblas -latlas
 ```
 
-##### Troubleshooting: libgfortran or lifcore cannot be found
+#### Troubleshooting: libgfortran or lifcore cannot be found
 
 If you get a runtime error saying that `libgfortran.so` cannot be found, 
 you need to add `-lgfortran` to your link line.
@@ -374,6 +488,5 @@ in your environment instead, which will be the one from the Python module you've
 ```
 #!/usr/bin/env python
 ```
-
 
 
