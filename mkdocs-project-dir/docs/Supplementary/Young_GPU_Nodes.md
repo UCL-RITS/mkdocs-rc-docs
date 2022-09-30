@@ -168,10 +168,10 @@ to there, copy it back to your Scratch at the end of the job.
 
 GPU software we have installed that may be of particular interest to users of Young.
 
- * [VASP 6 GPU](../Software_Guides/Other_Software.md/#vasp-6-gpu)
- * [GROMACS 2021.5 GPU](../Software_Guides/Other_Software/#gromacs)
- * [NAMD 2.14 GPU](../Software_Guides/Other_Software/#namd)
- * [LAMMPS 29 Sep 21 Update 2 GPU](../Software_Guides/Other_Software/#lammps)
+ * [VASP 6 GPU](../Software_Guides/Other_Software.md#vasp-6-gpu)
+ * [GROMACS 2021.5 GPU](../Software_Guides/Other_Software.md#gromacs)
+ * [NAMD 2.14 GPU](../Software_Guides/Other_Software.md#namd)
+ * [LAMMPS 29 Sep 21 Update 2 GPU](../Software_Guides/Other_Software.md#lammps)
  
 You can also use [NVIDIA Grid Cloud Containers](NVIDIA_Containers.md) via Singularity
 which provide pre-configured GPU applications. Our page gives an example of using the 
