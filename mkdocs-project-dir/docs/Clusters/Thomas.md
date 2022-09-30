@@ -21,6 +21,18 @@ Materials and Molecular Modelling.
     7 June 2021: Thomas is now inside the UCL firewall, use VPN, or SSH via ssh-gateway.ucl.ac.uk
     to access.
 
+## Thomas technical specs
+
+Thomas originally consisted of 720 Lenovo Intel x86-64 nodes, giving 17.2k cores in
+total, with Intel OmniPath interconnect (1:1 nonblocking in 36 node
+blocks, 3:1 between blocks and across the system).
+
+Each node has the following specs:
+
+  - 2 x 12 core Intel Broadwell processors (24 cores total)
+  - 128GB RAM
+  - 120GB SSD
+
 ## Applying for an account
 
 UCL users can contact David Scanlon or Scott Woodley for access to 
