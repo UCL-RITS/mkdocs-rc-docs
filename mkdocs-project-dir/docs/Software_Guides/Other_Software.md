@@ -743,9 +743,12 @@ module -f unload compilers mpi gcc-libs
 module load beta-modules
 module load gcc-libs/10.2.0
 module load compilers/gnu/10.2.0
+
+# these three modules for Myriad only
 module load numactl/2.0.12
 module load binutils/2.36.1/gnu-10.2.0
 module load ucx/1.9.0/gnu-10.2.0
+
 module load mpi/openmpi/4.0.5/gnu-10.2.0
 module load cuda/11.3.1/gnu-10.2.0
 module load python3/3.9-gnu-10.2.0
@@ -753,9 +756,37 @@ module load lammps/29sep21up2/gpu/gnu-10.2.0
 
 gerun lmp_gpu -sf gpu -pk gpu 1 -in inputfile
 ```
-for the version with GPU support which is only curently available on the Myriad Cluster. The MPI version is available on all clusters. Also on Myriad the `numactl`, `binutils` and `ucx` modules are additionally needed by  OpenMPI.
+for the version with GPU support which is only available on clusters with GPUs. 
+The MPI version is available on all clusters. On Myriad the `numactl`, `binutils` and 
+`ucx` modules are additionally needed by OpenMPI.
 
-LAMMPS 29th September 2021 Update 2 has been built with the GNU compilers, OpenMPI and CUDA for the GPU version. We will also be providing builds using the Intel Compilers and Tools.
+LAMMPS 29th September 2021 Update 2 has been built with the GNU compilers, OpenMPI and CUDA for the GPU version. 
+
+We also have Intel installs:
+
+```
+# LAMMPS 29 Sep 2021 Update 2 with Intel compilers and INTEL package
+module unload -f compilers mpi
+module load compilers/intel/2020/release
+module load mpi/intel/2019/update6/intel
+module load python/3.9.10
+module load lammps/29sep21up2/userintel/intel-2020
+
+gerun lmp_mpi -in inputfile
+```
+
+```
+# LAMMPS 29 Sep 2021 Update 2 for GPU with Intel compilers
+module unload -f compilers mpi
+module load beta-modules
+module load compilers/intel/2020/release
+module load mpi/intel/2019/update6/intel
+module load python/3.9.10
+module load cuda/11.3.1/gnu-10.2.0
+module load lammps/29sep21up2/gpu/intel-2020
+
+gerun lmp_gpu -sf gpu -pk gpu 1 -in inputfile
+```
 
 ### MEME Suite
 
@@ -921,7 +952,7 @@ For best performance of simulations it is recommended that you use an entire nod
 all the CPUs and all the available GPUs.
 
 ```
-# request a number of CPUs and GPUs
+# request a number of CPU cores and GPUs
 #$ -pe smp 10
 #$ -l gpu=1
 
@@ -967,6 +998,36 @@ module load namd/2.14/ofi-smp/intel-2019
 # ++ppn is the number of PEs (or worker threads) to create for each process.
 
 charmrun +p${NSLOTS} namd2 apoa1.namd ++ppn2 +setcpuaffinity
+```
+
+#### OFI-SMP-GPU
+
+This version of NAMD runs with threads (smp) and processes and is for clusters
+with OmniPath interconnects as well as GPUs (not Myriad). It can run across multiple nodes.
+
+```
+# request a number of CPU cores and GPUs
+#$ -pe smp 24
+#$ -l gpu=2
+
+module unload -f compilers mpi gcc-libs
+module load beta-modules
+module load gcc-libs/7.3.0
+module load compilers/intel/2019/update5
+module load mpi/intel/2019/update5/intel
+module load cuda/11.3.1/gnu-10.2.0
+module load namd/2.14/ofi-smp-gpu/intel-2019
+
+# ${NSLOTS} will get the number of cores you asked for with -pe.
+# +setcpuaffinity is recommended to make sure threads are assigned to specific CPUs.
+# ++ppn is the number of PEs (or worker threads) to create for each process.
+
+# The number of GPU devices must be a multiple of the number of NAMD processes
+# since processes cannot share GPUs.
+# Here we have ++ppn12 for 12 threads, and charmrun works out we have 2 NAMD processes 
+# available for the 2 GPUs.
+
+charmrun +p${NSLOTS} namd2 apoa1_nve_cuda.namd ++ppn12 +setcpuaffinity 
 ```
 
 #### MPI
