@@ -241,10 +241,29 @@ comsol batch -f $TMPDIR/machines -np $NSLOTS -mpifabrics shm:tcp \
 
 CP2K performs atomistic and molecular simulations.
 
+To see all available versions type
+
 ```
-module unload compilers mpi
-module load mpi/openmpi/3.0.0/gnu-4.9.2
-module load cp2k/5.1/ompi/gnu-4.9.2
+module load beta-modules
+module avail cp2k
+```
+
+To load CP2K 8.2:
+
+```
+module unload -f compilers mpi gcc-libs
+module load beta-modules
+module load gcc-libs/10.2.0
+module load compilers/gnu/10.2.0
+
+# These three modules only needed on Myriad
+module load numactl/2.0.12
+module load binutils/2.36.1/gnu-10.2.0
+module load ucx/1.9.0/gnu-10.2.0
+
+module load mpi/openmpi/4.0.5/gnu-10.2.0
+module load openblas/0.3.13-openmp/gnu-10.2.0
+module load cp2k/8.2/ompi/gnu-10.2.0
 
 # Gerun is our mpirun wrapper which sets the machinefile and number of 
 # processes to the amount you requested with -pe mpi.
