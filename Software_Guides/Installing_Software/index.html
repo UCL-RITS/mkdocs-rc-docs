@@ -1006,7 +1006,46 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-systems" class="md-nav__link">
+    Build systems
+  </a>
+  
+    <nav class="md-nav" aria-label="Build systems">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
+  <a href="#automake-configure" class="md-nav__link">
+    Automake configure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmake" class="md-nav__link">
+    CMake
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make" class="md-nav__link">
+    Make
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#blas-and-lapack" class="md-nav__link">
     BLAS and LAPACK
   </a>
@@ -1094,11 +1133,6 @@
   <a href="#troubleshooting-libgfortran-or-lifcore-cannot-be-found" class="md-nav__link">
     Troubleshooting: libgfortran or lifcore cannot be found
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1323,7 +1357,46 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-systems" class="md-nav__link">
+    Build systems
+  </a>
+  
+    <nav class="md-nav" aria-label="Build systems">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
+  <a href="#automake-configure" class="md-nav__link">
+    Automake configure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmake" class="md-nav__link">
+    CMake
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make" class="md-nav__link">
+    Make
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#blas-and-lapack" class="md-nav__link">
     BLAS and LAPACK
   </a>
@@ -1411,11 +1484,6 @@
   <a href="#troubleshooting-libgfortran-or-lifcore-cannot-be-found" class="md-nav__link">
     Troubleshooting: libgfortran or lifcore cannot be found
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1603,24 +1671,113 @@ what the C, C++ and Fortran compilers are called.</p>
 GLIBC (not GLIBCXX) then this has been compiled on a newer operating system and will not
 work on our clusters. Look for a binary that was created for CentOS 7 (we have RHEL 7) or
 build the program from source if possible.</p>
-<h3 id="blas-and-lapack">BLAS and LAPACK<a class="headerlink" href="#blas-and-lapack" title="Permanent link">§</a></h3>
-<p>BLAS and LAPACK are provided as part of MKL, OpenBLAS or ATLAS. There are several 
-different OpenBLAS and ATLAS modules on for different compilers. MKL is available 
-in the Intel compiler module.</p>
+<h2 id="build-systems">Build systems<a class="headerlink" href="#build-systems" title="Permanent link">§</a></h2>
+<p>Most software will use some kind of build system to manage how files are
+compiled and linked and in what order. Here are a few common ones.</p>
+<h3 id="automake-configure">Automake configure<a class="headerlink" href="#automake-configure" title="Permanent link">§</a></h3>
+<p><a href="http://www.gnu.org/software/automake/manual/automake.html">Automake</a>
+will generate the Makefile for you and hopefully pick up sensible
+options through configuration. You can give it an install prefix to tell
+it where to install (or you can build it in place and not use make
+install at all).</p>
+<div class="codehilite"><pre><span></span><code>./configure --prefix=/home/username/place/you/want/to/install
+make
+# if it has a test suite, good idea to use it
+make test 
+make install
+</code></pre></div>
+
+<p>If it has more configuration flags, you can use <code>./configure --help</code> to
+view them.</p>
+<p>Usually configure will create a config.log: you can look in there to
+find if any tests have failed or things you think should have been
+picked up haven't.</p>
+<h3 id="cmake">CMake<a class="headerlink" href="#cmake" title="Permanent link">§</a></h3>
+<p><a href="http://www.cmake.org/">CMake</a> is another build system. It will have a
+CMakeFile or the instructions will ask you to use cmake or ccmake rather
+than make. It also generates Makefiles for you. <code>ccmake</code> is a
+terminal-based interactive interface where you can see what variables
+are set to and change them, then repeatedly configure until everything
+is correct, generate the Makefile and quit. <code>cmake</code> is the commandline
+version. The interactive process tends to go like this:</p>
+<div class="codehilite"><pre><span></span><code>ccmake CMakeLists.txt
+# press c to configure - will pick up some options
+# press t to toggle advanced options
+# keep making changes and configuring until no more errors or changes
+# press g to generate and exit
+make
+# if it has a test suite, good idea to use it
+make test 
+make install
+</code></pre></div>
+
+<p>The options that you set using ccmake can also be passed on the commandline to
+cmake with <code>-D</code>. This allows you to script an install and run it again later.
+<code>CMAKE_INSTALL_PREFIX</code> is how you tell it where to install.</p>
+<div class="codehilite"><pre><span></span><code># making a build directory allows you to clean it up more easily
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=/home/username/place/you/want/to/install
+</code></pre></div>
+
+<p>If you need to rerun cmake/ccmake and reconfigure, remember to delete the
+<code>CMakeCache.txt</code> file first or it will still use your old options.
+Turning on verbose Makefiles in cmake is also useful if your code
+didn't compile first time - you'll be able to see what flags the
+compiler or linker is actually being given when it fails.</p>
+<h3 id="make">Make<a class="headerlink" href="#make" title="Permanent link">§</a></h3>
+<p>Your code may come with a Makefile and have no configure, in which
+case the generic way to compile it is as follows:</p>
+<div class="codehilite"><pre><span></span><code>make targetname
+</code></pre></div>
+
+<p>There's usually a default target, which <code>make</code> on its own will use. <code>make all</code>
+is also frequently used. 
+If you need to change any configuration options, you'll need to edit those
+sections of the Makefile (usually near the top, where the variables/flags are
+defined).</p>
+<p>Here are some typical variables you may want to change in a Makefile.</p>
+<p>These are what compilers/mpi wrappers to use - these are also defined by
+the compiler modules, so you can see what they should be. Intel would be
+<code>icc</code>, <code>icpc</code>, <code>ifort</code>, while the GNU compiler would be <code>gcc</code>, <code>g++</code>, <code>gfortran</code>. 
+If this is a program that can be compiled using MPI and only has a variable for CC, 
+then set that to mpicc.</p>
+<div class="codehilite"><pre><span></span><code>CC=gcc
+CXX=g++
+FC=gfortran
+MPICC=mpicc
+MPICXX=mpicxx
+MPIF90=mpif90
+</code></pre></div>
+
+<p>CFLAGS and LDFLAGS are flags for the compiler and linker respectively,
+and there might be LIBS or INCLUDE in the Makefile as well. When linking a library 
+with the name libfoo, use <code>-lfoo</code>.</p>
+<div class="codehilite"><pre><span></span><code>CFLAGS=&quot;-I/path/to/include&quot;
+LDFLAGS=&quot;-L/path/to/foo/lib -L/path/to/bar/lib&quot;
+LDLIBS=&quot;-lfoo -lbar&quot;
+</code></pre></div>
+
+<p>Remember to <code>make clean</code> first if you are recompiling with new options. This will delete
+object files from previous attempts. </p>
+<h2 id="blas-and-lapack">BLAS and LAPACK<a class="headerlink" href="#blas-and-lapack" title="Permanent link">§</a></h2>
+<p>BLAS and LAPACK are linear algebra libraries that are provided as part of MKL, 
+OpenBLAS or ATLAS. There are several different OpenBLAS and ATLAS modules for 
+different compilers. MKL is available as part of each Intel compiler module.</p>
 <p>Your code may try to link <code>-lblas -llapack</code>: this isn't the right way to use BLAS 
 and LAPACK with MKL or ATLAS (though our OpenBLAS now has symlinks that mean this 
 will work).</p>
-<h4 id="mkl">MKL<a class="headerlink" href="#mkl" title="Permanent link">§</a></h4>
+<h3 id="mkl">MKL<a class="headerlink" href="#mkl" title="Permanent link">§</a></h3>
 <p>When you have an Intel compiler module loaded, typing </p>
 <div class="codehilite"><pre><span></span><code>echo $MKLROOT
 </code></pre></div>
 
 <p>will show you that MKL is available.</p>
-<h5 id="easy-linking-of-mkl">Easy linking of MKL<a class="headerlink" href="#easy-linking-of-mkl" title="Permanent link">§</a></h5>
+<h4 id="easy-linking-of-mkl">Easy linking of MKL<a class="headerlink" href="#easy-linking-of-mkl" title="Permanent link">§</a></h4>
 <p>If you can, try to use <code>-mkl</code> as a compiler flag - if that works, it should get 
 all the correct libraries linked in the right order. Some build systems do not 
 work with this however and need explicit linking.</p>
-<h5 id="intel-mkl-link-line-advisor">Intel MKL link line advisor<a class="headerlink" href="#intel-mkl-link-line-advisor" title="Permanent link">§</a></h5>
+<h4 id="intel-mkl-link-line-advisor">Intel MKL link line advisor<a class="headerlink" href="#intel-mkl-link-line-advisor" title="Permanent link">§</a></h4>
 <p>It can be complicated to get the correct link line for MKL, so Intel has provided 
 a tool which will give you the link line with the libraries in the right order.</p>
 <ul>
@@ -1651,9 +1808,10 @@ Intel(R) MKL 2018.0), and these options:</p>
 correct: do an <code>ls ${MKLROOT}/lib/intel64</code> and make sure the directory exists 
 and contains the libraries. In the past there have been slight path differences 
 between tool and install for some versions.</p>
-<h4 id="openblas">OpenBLAS<a class="headerlink" href="#openblas" title="Permanent link">§</a></h4>
-<p>We have native threads, OpenMP and serial versions of OpenBLAS. </p>
-<h5 id="linking-openblas">Linking OpenBLAS<a class="headerlink" href="#linking-openblas" title="Permanent link">§</a></h5>
+<h3 id="openblas">OpenBLAS<a class="headerlink" href="#openblas" title="Permanent link">§</a></h3>
+<p>We have native threads, OpenMP and serial versions of OpenBLAS. 
+Type <code>module avail openblas</code> to see the available versions.</p>
+<h4 id="linking-openblas">Linking OpenBLAS<a class="headerlink" href="#linking-openblas" title="Permanent link">§</a></h4>
 <p>Our OpenBLAS modules now contain symlinks for <code>libblas</code> and <code>liblapack</code> that both 
 point to <code>libopenblas</code>. This means that the default <code>-lblas -llapack</code> will in fact work.</p>
 <p>This is how you would normally link OpenBLAS:</p>
@@ -1662,7 +1820,7 @@ point to <code>libopenblas</code>. This means that the default <code>-lblas -lla
 
 <p>If code you are compiling requires separate entries for BLAS and LAPACK, set them 
 both to <code>-lopenblas</code>.</p>
-<h5 id="troubleshooting-openmp-loop-warning">Troubleshooting: OpenMP loop warning<a class="headerlink" href="#troubleshooting-openmp-loop-warning" title="Permanent link">§</a></h5>
+<h4 id="troubleshooting-openmp-loop-warning">Troubleshooting: OpenMP loop warning<a class="headerlink" href="#troubleshooting-openmp-loop-warning" title="Permanent link">§</a></h4>
 <p>If you are running a threaded program and get this warning:</p>
 <div class="codehilite"><pre><span></span><code>OpenBLAS Warning : Detect OpenMP Loop and this application may hang. Please rebuild the library with USE_OPENMP=1 option.
 </code></pre></div>
@@ -1678,10 +1836,10 @@ both to <code>-lopenblas</code>.</p>
 
 <p>You can avoid this error by compiling with one of the <code>native-threads</code> or <code>serial</code> 
 OpenBLAS modules instead of the <code>openmp</code> one.</p>
-<h4 id="atlas">ATLAS<a class="headerlink" href="#atlas" title="Permanent link">§</a></h4>
+<h3 id="atlas">ATLAS<a class="headerlink" href="#atlas" title="Permanent link">§</a></h3>
 <p>We would generally recommend using OpenBLAS instead at present, but we do have 
 ATLAS modules.</p>
-<h5 id="dynamic-linking-atlas">Dynamic linking ATLAS<a class="headerlink" href="#dynamic-linking-atlas" title="Permanent link">§</a></h5>
+<h4 id="dynamic-linking-atlas">Dynamic linking ATLAS<a class="headerlink" href="#dynamic-linking-atlas" title="Permanent link">§</a></h4>
 <p>There is one combined library each for serial and threaded ATLAS (in most 
 circumstances you probably want the serial version).</p>
 <p>Serial:</p>
@@ -1692,7 +1850,7 @@ circumstances you probably want the serial version).</p>
 <div class="codehilite"><pre><span></span><code>-L${ATLASROOT}/lib -ltatlas
 </code></pre></div>
 
-<h5 id="static-linking-atlas">Static linking ATLAS<a class="headerlink" href="#static-linking-atlas" title="Permanent link">§</a></h5>
+<h4 id="static-linking-atlas">Static linking ATLAS<a class="headerlink" href="#static-linking-atlas" title="Permanent link">§</a></h4>
 <p>There are multiple libraries to link.</p>
 <p>Serial:</p>
 <div class="codehilite"><pre><span></span><code>-L${ATLASROOT}/lib -llapack -lf77blas -lcblas -latlas
@@ -1702,7 +1860,7 @@ circumstances you probably want the serial version).</p>
 <div class="codehilite"><pre><span></span><code>-L${ATLASROOT}/lib -llapack -lptf77blas -lptcblas -latlas
 </code></pre></div>
 
-<h5 id="troubleshooting-libgfortran-or-lifcore-cannot-be-found">Troubleshooting: libgfortran or lifcore cannot be found<a class="headerlink" href="#troubleshooting-libgfortran-or-lifcore-cannot-be-found" title="Permanent link">§</a></h5>
+<h4 id="troubleshooting-libgfortran-or-lifcore-cannot-be-found">Troubleshooting: libgfortran or lifcore cannot be found<a class="headerlink" href="#troubleshooting-libgfortran-or-lifcore-cannot-be-found" title="Permanent link">§</a></h4>
 <p>If you get a runtime error saying that <code>libgfortran.so</code> cannot be found, 
 you need to add <code>-lgfortran</code> to your link line.</p>
 <p>The Intel equivalent is <code>-lifcore</code>.</p>
