@@ -2,11 +2,6 @@
 layout: docs
 ---
 
-!!! warning
-    Converting and updating this documentation to the new system is still a work
-    in progress, and pages may change content or organisation as we work on it.
-    Please bear with us while we complete the move.
-
 # Research Computing Services
 
 This documentation is maintained by the Research Computing team for the purpose
