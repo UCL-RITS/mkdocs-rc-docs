@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Status_page/">
       
       <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.3">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.7a952b86.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
@@ -1186,13 +1186,18 @@
 <h3 id="kathleen">Kathleen<a class="headerlink" href="#kathleen" title="Permanent link">§</a></h3>
 <ul>
 <li>
-<p>All systems are working well.</p>
+<p>2022-09-27 - Kathleen's metadata servers have started encountering the ZFS+Lustre bug that Young 
+ had in the past, which causes very high load and hangs. We also discovered we were running out of
+ inodes on the metadata server - an inode exists for every file and directory, so we need a 
+ reduction in the number of files on the system. We prevented new jobs from starting for the time 
+ being.</p>
 </li>
 <li>
-<p>2022-04-04 17:17 - Scheduled cluster update from 1st to 4th of April is still in progress. Users are expected to be able to login tomorrow April 5th.</p>
-</li>
-<li>
-<p>2022-04-08 09:36 - Major datacentre work during the Easter closure period. Kathleen will be drained of jobs and access to the login nodes disabled, for 5:30pm on Tuesday 12th April and we will <strong>bring the cluster back into service on Tuesday 19th April</strong>.</p>
+<p>2022-10-03 - We are upgrading Kathleen's ZFS and Lustre on the metadata servers to mitigate the
+ bug. Jobs will not start running again until this is done. Quotas have been enabled. We have 
+ contacted users who are currently over quota and also have jobs in the queue - their jobs are held 
+ so they do not fail straight away unable to write files once jobs are restarted. These users will 
+ be able to release the hold themselves once under quota again with the <code>qrls all</code> command.</p>
 </li>
 </ul>
 <h3 id="young">Young<a class="headerlink" href="#young" title="Permanent link">§</a></h3>
@@ -1215,21 +1220,10 @@
 <li>
 <p>2022-04-04 17:19 - Scheduled cluster update from 1st to 4th of April is still in progress. Users are expected to be able to login tomorrow April 5th.</p>
 </li>
-<li>
-<p>2022-04-08 09:38 - Major datacentre work during the Easter closure period. Young will be drained of jobs and access to the login nodes disabled, for 5:30pm on Tuesday 12th April and we will <strong>bring the cluster back into service on Tuesday 19th April</strong>.</p>
-</li>
-<li>
-<p><strong>Longterm</strong>: There are a number of nodes that intermittently lose power from their chassis, switch themselves off and need to be manually powered back on (this causes jobs to be stuck in <code>dr</code> state when they end until the reboot happens). This leads to a higher than usual number of nodes being seen by the scheduler as unavailable. </p>
-</li>
 </ul>
 <h3 id="michael">Michael<a class="headerlink" href="#michael" title="Permanent link">§</a></h3>
 <ul>
-<li>
-<p>All systems are working well.</p>
-</li>
-<li>
-<p>2022-04-08 09:39 - Major datacentre work during the Easter closure period. Michael will be drained of jobs and access to the login nodes disabled, for 5:30pm on Tuesday 12th April and we will <strong>bring the cluster back into service on Tuesday 19th April</strong>.</p>
-</li>
+<li>All systems are working well.</li>
 </ul>
 <h3 id="thomas">Thomas<a class="headerlink" href="#thomas" title="Permanent link">§</a></h3>
 <ul>
@@ -1328,7 +1322,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["instant"], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.37e9125f.min.js"></script>
+      <script src="../assets/javascripts/bundle.078830c0.min.js"></script>
       
     
   </body>
