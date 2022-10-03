@@ -33,11 +33,17 @@ We took the opportunity to also replace the disks from the previous disk failure
 
 ### Kathleen
 
-- All systems are working well.
+- 2022-09-27 - Kathleen's metadata servers have started encountering the ZFS+Lustre bug that Young 
+ had in the past, which causes very high load and hangs. We also discovered we were running out of
+ inodes on the metadata server - an inode exists for every file and directory, so we need a 
+ reduction in the number of files on the system. We prevented new jobs from starting for the time 
+ being.
 
-- 2022-04-04 17:17 - Scheduled cluster update from 1st to 4th of April is still in progress. Users are expected to be able to login tomorrow April 5th.
-
-- 2022-04-08 09:36 - Major datacentre work during the Easter closure period. Kathleen will be drained of jobs and access to the login nodes disabled, for 5:30pm on Tuesday 12th April and we will **bring the cluster back into service on Tuesday 19th April**.
+- 2022-10-03 - We are upgrading Kathleen's ZFS and Lustre on the metadata servers to mitigate the
+ bug. Jobs will not start running again until this is done. Quotas have been enabled. We have 
+ contacted users who are currently over quota and also have jobs in the queue - their jobs are held 
+ so they do not fail straight away unable to write files once jobs are restarted. These users will 
+ be able to release the hold themselves once under quota again with the `qrls all` command.
 
 ### Young
 
@@ -53,16 +59,11 @@ We took the opportunity to also replace the disks from the previous disk failure
 
 - 2022-04-04 17:19 - Scheduled cluster update from 1st to 4th of April is still in progress. Users are expected to be able to login tomorrow April 5th.
 
-- 2022-04-08 09:38 - Major datacentre work during the Easter closure period. Young will be drained of jobs and access to the login nodes disabled, for 5:30pm on Tuesday 12th April and we will **bring the cluster back into service on Tuesday 19th April**.
-
-- **Longterm**: There are a number of nodes that intermittently lose power from their chassis, switch themselves off and need to be manually powered back on (this causes jobs to be stuck in `dr` state when they end until the reboot happens). This leads to a higher than usual number of nodes being seen by the scheduler as unavailable. 
 
 ### Michael
 
 - All systems are working well.
 
-- 2022-04-08 09:39 - Major datacentre work during the Easter closure period. Michael will be drained of jobs and access to the login nodes disabled, for 5:30pm on Tuesday 12th April and we will **bring the cluster back into service on Tuesday 19th April**.
- 
 ### Thomas
 
 - System is generally fine but the hardware is dated with respect to the other systems so there may be some read write errors.
