@@ -785,6 +785,26 @@
     Troubleshooting and problem pre-emption
   </a>
   
+    <nav class="md-nav" aria-label="Troubleshooting and problem pre-emption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#not-being-able-to-reach-the-landing-login-page" class="md-nav__link">
+    Not being able to reach the landing (login) page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-session-not-starting-or-rstudio-initialisation-error" class="md-nav__link">
+    R session not starting or RStudio Initialisation Error
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1082,6 +1102,26 @@
     Troubleshooting and problem pre-emption
   </a>
   
+    <nav class="md-nav" aria-label="Troubleshooting and problem pre-emption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#not-being-able-to-reach-the-landing-login-page" class="md-nav__link">
+    Not being able to reach the landing (login) page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r-session-not-starting-or-rstudio-initialisation-error" class="md-nav__link">
+    R session not starting or RStudio Initialisation Error
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1118,16 +1158,50 @@
 </li>
 </ul>
 <h2 id="troubleshooting-and-problem-pre-emption">Troubleshooting and problem pre-emption<a class="headerlink" href="#troubleshooting-and-problem-pre-emption" title="Permanent link">§</a></h2>
-<p>For all of the services, please take care to either run <code>q()</code> in the R window or press the red logout button in the top right hand corner when you are done with the window, DO NOT just close the tab. This decreases the chance of there being stale sessions and future issues with logging in. If you cannot reach the landing page, then please first try getting there using private browsing and if that works then clear your cookies and cache. In most browsers you can do this for a certain time range, though look at the documentation for the browser you are using.</p>
-<p>If this does not solve your logging-in problem then there are 2 courses of action for the 2 supported services:</p>
+<p>For all of the services, please take care to either run <code>q()</code> in the R
+window or press the red logout button in the top right hand corner
+when you are done with the window, DO NOT just close the tab. This
+decreases the chance of there being stale sessions and future issues
+with logging in.</p>
+<h3 id="not-being-able-to-reach-the-landing-login-page">Not being able to reach the landing (login) page<a class="headerlink" href="#not-being-able-to-reach-the-landing-login-page" title="Permanent link">§</a></h3>
+<p>If you cannot reach the landing page, then please first try getting
+there using private browsing and if that works then clear your cookies
+and cache. In most browsers you can do this for a certain time range,
+though look at the documentation for the browser you are using.</p>
+<h3 id="r-session-not-starting-or-rstudio-initialisation-error">R session not starting or RStudio Initialisation Error<a class="headerlink" href="#r-session-not-starting-or-rstudio-initialisation-error" title="Permanent link">§</a></h3>
+<p>If you get an error pop-up RStudio Initialisation Error: Unable to
+connect to service or an ever-spinning loading screen you can try and
+resolve the problem using one of the methods below or  <a href="../../Contact_Us/">get in touch with RC support</a>. </p>
+<p>There are 2 courses of action for the 2 supported services:</p>
 <ul>
-<li>For the Economics RStudio service, ssh into Myriad and change the name of or delete a folder located at:</li>
+<li><strong>Economics RStudio service</strong>: ssh into Myriad and change the name of or delete a folder located at:</li>
 </ul>
-<p><code>$HOME/.local/share/rstudio/sessions/</code></p>
+<p><code>~/.local/share/rstudio/sessions/</code></p>
 <ul>
-<li>If it is the Rstudio Pro teaching service please in the first instance <a href="../../Contact_Us/">get in touch with RC support</a>.  This service shares home directories with the central Unix services so it is possible to log into Socrates (<code>socrates.ucl.ac.uk</code>) <a href="../../Walkthroughs/Logging_In/">via SSH</a> and delete the folder above which may resolve your issues.</li>
+<li>
+<p><strong>Data Science Platform RStudio Pro teaching service</strong>: This service
+ shares home directories with the central Unix services so you need to
+ do:</p>
+<ol>
+<li>login to either Socrates (<code>socrates.ucl.ac.uk</code>) or Aristotle
+(<code>aristotle.rc.ucl.ac.uk</code>) via SSH. If you don't know how to do this
+there are istructions here: 
+<a href="../../Walkthroughs/Logging_In/">l,ogging in via SSH</a></li>
+<li>
+<p>Change directory to ~/.local/share:</p>
+<p><code>cd ~/.local/share</code></p>
+</li>
+<li>
+<p>delete the rstudio folder:</p>
+<p><code>rm -rf rstudio</code></p>
+</li>
+</ol>
+</li>
+<li>
+<p>logout.</p>
+</li>
 </ul>
-<p>Note that this route should only be taken if you are getting an ever-spinning loading screen.</p>
+<p>If doing this doesn't resolve your issues,  <a href="../../Contact_Us/">get in touch with RC support</a> .</p>
 
 
 
