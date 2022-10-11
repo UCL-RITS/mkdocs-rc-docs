@@ -77,7 +77,7 @@ there are istructions here:
 		rm -rf sessions
 		```
 
-   5. logout.
+	5. logout.
 
 If doing this doesn't resolve your issues,  [get in touch with RC support](../Contact_Us.md) .
 
