@@ -65,8 +65,16 @@ there are istructions here:
 		```
 		rm -rf rstudio
 		```
+		
+	4. It is worth testing if you can login to RStudio after the last
+       step. If you still cannot login, delete the folllowing directory as well:
+	   
+	   ```
+	   cd ~/.rstudio
+	   rm -rf sessions
+	   ```
 
-   4. logout.
+   5. logout.
 
 If doing this doesn't resolve your issues,  [get in touch with RC support](../Contact_Us.md) .
 
