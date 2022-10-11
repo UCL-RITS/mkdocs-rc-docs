@@ -71,6 +71,7 @@ there are istructions here:
 	   
 	   ```
 	   cd ~/.rstudio
+	   
 	   rm -rf sessions
 	   ```
 
