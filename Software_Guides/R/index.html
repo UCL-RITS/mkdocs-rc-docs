@@ -1226,11 +1226,11 @@
 <p>The current version will always also exist as <code>r/recommended</code> - this is a module bundle and loading it will also load its many dependencies.</p>
 <p><code>module show r/recommended</code> shows you exactly which versions loading this module will give you.</p>
 <p>R can be run on a single core or multithreaded using many cores (some commands can run threaded automatically, otherwise you may wish to look at R's <code>parallel</code> package). </p>
-<p><code>Rmpi</code> and <code>snow</code> allow multi-node parallel jobs using MPI to be run.</p>
+<p><code>doMPI</code>, <code>Rmpi</code> and <code>snow</code> allow multi-node parallel jobs using MPI to be run.</p>
 <p><a href="../../Installed_Software_Lists/r-packages">List of additional R packages</a> shows you what packages are installed and available for the current R version.</p>
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">§</a></h2>
 <p>Before you can use R interactively, you need to load the R module using: </p>
-<div class="codehilite"><pre><span></span><code>module unload compilers mpi
+<div class="codehilite"><pre><span></span><code>module -f unload compilers mpi gcc-libs
 module load r/recommended
 </code></pre></div>
 
@@ -1260,8 +1260,7 @@ module load r/recommended
 cd $TMPDIR
 
 # Load the R module and run your R program
-module unload compilers
-module unload mpi
+module -f unload compilers mpi gcc-libs
 module load r/recommended
 
 R --no-save &lt; /home/username/Scratch/myR_job.R &gt; myR_job.out
@@ -1309,8 +1308,7 @@ tar zcvf $HOME/Scratch/R_output/files_from_job_$JOB_ID.tgz $TMPDIR
 cd $TMPDIR
 
 # Load the R module and run your R program
-module unload compilers
-module unload mpi
+module -f unload compilers mpi gcc-libs
 module load r/recommended
 
 R --no-save &lt; /home/username/Scratch/myR_job.R &gt; myR_job.out
@@ -1355,7 +1353,7 @@ tar zcvf $HOME/Scratch/R_output/files_from_job_$JOB_ID.tgz $TMPDIR
 #$ -wd /home/&lt;your_UCL_id&gt;/Scratch/R_output
 
 # Load the R module
-module unload compilers mpi
+module -f unload compilers mpi gcc-libs
 module load r/recommended
 
 # Copy example files in to the working directory (not necessary if already there)
@@ -1499,7 +1497,7 @@ using those libraries. This appends your directory to the existing value of
 <p>If you want to keep some libraries separate, you can have multiple colon-separated paths in your <code>$R_LIBS</code> and specify which one you want to install into with <code>R CMD INSTALL</code>.</p>
 <h2 id="bioconductor">BioConductor<a class="headerlink" href="#bioconductor" title="Permanent link">§</a></h2>
 <p>If you are installing extra packages for BioConductor, check that you are using the same version that the R module you have loaded is using.</p>
-<p>Eg. you can find the <a href="http://www.bioconductor.org/packages/3.6/BiocViews.html#___Software">BioConductor 3.6 package downloads here</a>.</p>
+<p>Eg. you can find the <a href="http://www.bioconductor.org/packages/3.15/BiocViews.html#___Software">BioConductor 3.15 package downloads here</a>.</p>
 
 
 
