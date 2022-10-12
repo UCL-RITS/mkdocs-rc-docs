@@ -11,7 +11,7 @@ The current version will always also exist as `r/recommended` - this is a module
 
 R can be run on a single core or multithreaded using many cores (some commands can run threaded automatically, otherwise you may wish to look at R's `parallel` package). 
 
-`Rmpi` and `snow` allow multi-node parallel jobs using MPI to be run.
+`doMPI`, `Rmpi` and `snow` allow multi-node parallel jobs using MPI to be run.
 
 [List of additional R packages](../../Installed_Software_Lists/r-packages) shows you what packages are installed and available for the current R version.
 
@@ -20,7 +20,7 @@ R can be run on a single core or multithreaded using many cores (some commands c
 Before you can use R interactively, you need to load the R module using: 
 
 ```
-module unload compilers mpi
+module -f unload compilers mpi gcc-libs
 module load r/recommended
 ```
 
@@ -53,8 +53,7 @@ This script runs R using only one core.
 cd $TMPDIR
 
 # Load the R module and run your R program
-module unload compilers
-module unload mpi
+module -f unload compilers mpi gcc-libs
 module load r/recommended
 
 R --no-save < /home/username/Scratch/myR_job.R > myR_job.out
@@ -107,8 +106,7 @@ This script uses multiple cores on the same node. It cannot run across multiple 
 cd $TMPDIR
 
 # Load the R module and run your R program
-module unload compilers
-module unload mpi
+module -f unload compilers mpi gcc-libs
 module load r/recommended
 
 R --no-save < /home/username/Scratch/myR_job.R > myR_job.out
@@ -158,7 +156,7 @@ This script uses Rmpi and snow to allow it to run across multiple nodes using MP
 #$ -wd /home/<your_UCL_id>/Scratch/R_output
 
 # Load the R module
-module unload compilers mpi
+module -f unload compilers mpi gcc-libs
 module load r/recommended
 
 # Copy example files in to the working directory (not necessary if already there)
@@ -325,5 +323,5 @@ If you want to keep some libraries separate, you can have multiple colon-separat
 
 If you are installing extra packages for BioConductor, check that you are using the same version that the R module you have loaded is using.
 
-Eg. you can find the [BioConductor 3.6 package downloads here](http://www.bioconductor.org/packages/3.6/BiocViews.html#___Software).
+Eg. you can find the [BioConductor 3.15 package downloads here](http://www.bioconductor.org/packages/3.15/BiocViews.html#___Software).
 
