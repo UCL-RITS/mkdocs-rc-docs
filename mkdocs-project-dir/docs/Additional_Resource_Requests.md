@@ -38,6 +38,23 @@ other users is not deemed to be significant, or of long duration.
 
   - [Additional resource request form](Additional_Resource_Requests/CRAG_additional_resources_request_form.rtf)
 
+### Examples of requests
+
+ - Increased Scratch quota - tell us how much, for what purpose and how long you'll need it.
+    - Once implemented, `lquota` will show the new quota.
+ - Longer wallclock limit
+    - Consider whether you can checkpoint and restart your job: that is, write out everything that
+      you need for a second job to begin where the previous one finished. Running multiple shorter
+      jobs one after the other is more robust since if anything goes wrong you lose less work. If
+      this is not possible for your jobs, explain why. 
+    - Please note that we cannot guarantee that longer jobs will not be interrupted by planned
+      outages or maintenance periods. We try not to, but sometimes it is unavoidable.
+    - Include details on what resources one job is likely to require, how many of those jobs you
+      expect to need to run, and over what time period you'll need access to longer jobs. 
+    - If granted, you will be given access to the `crag5day` project for example, and by adding
+      `#$ -P crag5day` to your jobscript you will be able to request a longer wallclock time than 
+      usual for that job.
+
 ## Request hosting of shared datasets
 
 We have provision for hosting shared datasets for users on Myriad. These
