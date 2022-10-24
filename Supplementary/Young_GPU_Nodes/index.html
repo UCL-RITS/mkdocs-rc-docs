@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Supplementary/Young_GPU_Nodes/">
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.7">
     
     
       
@@ -1159,7 +1159,7 @@ They have 1T RAM and 200G local disk is <a href="#request-tmpfs">available to re
 unlike the rest of Young. 
 The AMD equivalent of hyperthreading is not enabled.</p>
 <h2 id="request-gpus">Request GPUs<a class="headerlink" href="#request-gpus" title="Permanent link">§</a></h2>
-<div class="codehilite"><pre><span></span><code># Submit a job to the GPU nodes by adding a request for a number of GPUs
+<div class="codehilite"><pre><span></span><code># Submit a job to the GPU nodes by adding a request for a number of GPUs per node
 #$ -l gpu=8
 
 # Only Free jobs are available at present. Use your normal projects
@@ -1173,7 +1173,8 @@ cgroups are implemented (as of 10 Aug 2022) so jobs can share nodes on the GPU
 nodes and each only have access to the number of GPUs they requested.</p>
 <p>For example, 8 separate single-GPU jobs from different users can be running on one node, 
 or 2 4-GPU jobs. Multi-node parallel GPU jobs do not share nodes, so a job asking for 
-9-15 GPUs will block out the entire 16 GPUs on those two nodes.</p>
+two nodes and some number of GPUs per node over those two nodes will block out the entire
+16 GPUs even if using fewer than that.</p>
 <h3 id="exclusive-use-of-nodes">Exclusive use of nodes<a class="headerlink" href="#exclusive-use-of-nodes" title="Permanent link">§</a></h3>
 <p>If you are using fewer than 8 GPUs but want to make sure nothing else is running on
 the same node as you, add this to your jobscript:</p>
@@ -1246,8 +1247,10 @@ Instead of <code>-pe smp</code> or <code>-pe mpi</code>, you would request:</p>
 <div class="codehilite"><pre><span></span><code>-pe ppn=&lt;slots per node&gt; &lt;total slots&gt;
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code># this would give you 4 slots per node and 8 slots total (so is using 2 nodes)
-#$ -pe ppn=4 8
+<div class="codehilite"><pre><span></span><code># this would give you 8 slots per node and 16 slots total (so is using 2 nodes)
+# along with 8 GPUs per node (16 GPUs in total).
+#$ -pe ppn=8 16
+#$ -l gpu=8
 </code></pre></div>
 
 <p>Like <code>-pe mpi</code> this will also create a suitable machinefile for you so MPI will know 
@@ -1368,10 +1371,10 @@ NAMD 3 container.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.078830c0.min.js"></script>
+      <script src="../../assets/javascripts/bundle.8492ddcf.min.js"></script>
       
     
   </body>
