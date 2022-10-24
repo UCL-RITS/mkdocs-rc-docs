@@ -20,7 +20,7 @@ The AMD equivalent of hyperthreading is not enabled.
 ## Request GPUs
 
 ```
-# Submit a job to the GPU nodes by adding a request for a number of GPUs
+# Submit a job to the GPU nodes by adding a request for a number of GPUs per node
 #$ -l gpu=8
 
 # Only Free jobs are available at present. Use your normal projects
@@ -35,7 +35,8 @@ nodes and each only have access to the number of GPUs they requested.
 
 For example, 8 separate single-GPU jobs from different users can be running on one node, 
 or 2 4-GPU jobs. Multi-node parallel GPU jobs do not share nodes, so a job asking for 
-9-15 GPUs will block out the entire 16 GPUs on those two nodes.
+two nodes and some number of GPUs per node over those two nodes will block out the entire
+16 GPUs even if using fewer than that.
 
 ### Exclusive use of nodes
 
@@ -137,8 +138,10 @@ Instead of `-pe smp` or `-pe mpi`, you would request:
 ```
 
 ```
-# this would give you 4 slots per node and 8 slots total (so is using 2 nodes)
-#$ -pe ppn=4 8
+# this would give you 8 slots per node and 16 slots total (so is using 2 nodes)
+# along with 8 GPUs per node (16 GPUs in total).
+#$ -pe ppn=8 16
+#$ -l gpu=8
 ```
 
 Like `-pe mpi` this will also create a suitable machinefile for you so MPI will know 
