@@ -17,7 +17,7 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-2 Nov 2022 -> 3 Nov 2022 | Myriad | Planned | Upgrade of firmware on all Lustre storage disks. No reading or writing of files will be possible during the upgrade interval. Jobs will be drained for 8am on 2 Nov.
+1 Nov 2022 -> 2 Nov 2022 | Myriad | Planned | Upgrade of firmware on all Lustre storage disks. No reading or writing of files will be possible during the upgrade interval. Jobs will be drained for 8am on Tues 1 Nov and we expect to re-enable jobs on Weds 2 Nov.
 
 ## Previous Outages
 Date                | Service | Status | Reason 
