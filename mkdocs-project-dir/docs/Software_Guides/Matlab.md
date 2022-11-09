@@ -109,6 +109,8 @@ you can also do:
 matlab -nosplash -nodesktop -nodisplay -r $Matlab_infile
 ```
 
+**NOTE:** You should use the `-r` syntax if your input file contains function definitions as using `<` treats the script as keyboard input and MATLAB does not allow you to define functions directly on the command line.
+
 ### Run without the JVM to reduce overhead
 
 You can give the `-nojvm` option to tell MATLAB to run without the Java Virtual Machine. This will speed up startup time, possibly execution time, and remove some memory overhead, but will prevent you using any tools that require Java (eg, tools that use the Java API for I/O and networking like URLREAD, or call Java object methods). 
@@ -125,7 +127,6 @@ matlab -nosplash -nodesktop -nodisplay -nojvm -singleCompThread < $Matlab_infile
 ```
 
 The `-singleCompThread` forces MATLAB to run single-threaded, and the `-nojvm` tells it to run without the Java Virtual Machine, as above. 
-
 
 ## Using the MATLAB GUI interactively
 
