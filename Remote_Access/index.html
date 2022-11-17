@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Remote_Access/">
       
       <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.9">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.472b142f.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.08040f6c.min.css">
@@ -1223,12 +1223,14 @@
 <h4 id="linux-unix-mac-os-x">Linux / Unix / Mac OS X<a class="headerlink" href="#linux-unix-mac-os-x" title="Permanent link">§</a></h4>
 <h5 id="on-the-command-line">On the command line<a class="headerlink" href="#on-the-command-line" title="Permanent link">§</a></h5>
 <div class="codehilite"><pre><span></span><code># Log in to Kathleen, jumping via jump box
-ssh -o ProxyJump=ssh-gateway.ucl.ac.uk kathleen.rc.ucl.ac.uk
+# Replace ccxxxxx with your own username.
+ssh -o ProxyJump=ccxxxxx@ssh-gateway.ucl.ac.uk ccxxxxx@kathleen.rc.ucl.ac.uk
 </code></pre></div>
 
 <p>or</p>
 <div class="codehilite"><pre><span></span><code># Copy &#39;my_file&#39;, from the machine you are logged in to, into your Scratch on Kathleen
-scp -o ProxyJump=ssh-gateway.ucl.ac.uk my_file kathleen.rc.ucl.ac.uk:~/Scratch/
+# Replace ccxxxxx with your own username.
+scp -o ProxyJump=ccxxxxx@ssh-gateway.ucl.ac.uk my_file ccxxxxx@kathleen.rc.ucl.ac.uk:~/Scratch/
 </code></pre></div>
 
 <p>This tunnels through the jump box service in order to get you to your destination - you'll be asked for your password twice, once for each machine. You can use this to log in or to copy files.</p>

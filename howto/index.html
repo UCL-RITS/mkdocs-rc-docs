@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/howto/">
       
       <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.9">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.472b142f.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.08040f6c.min.css">
@@ -2123,13 +2123,14 @@ files and have them transferred to the cluster.</p>
 <h3 id="single-step-logins-using-tunnelling">Single-step logins using tunnelling<a class="headerlink" href="#single-step-logins-using-tunnelling" title="Permanent link">§</a></h3>
 <h4 id="linux-unix-mac-os-x_1">Linux / Unix / Mac OS X<a class="headerlink" href="#linux-unix-mac-os-x_1" title="Permanent link">§</a></h4>
 <h5 id="on-the-command-line">On the command line<a class="headerlink" href="#on-the-command-line" title="Permanent link">§</a></h5>
-<div class="codehilite"><pre><span></span><code># Log in to Myriad, jumping via the Gateway
-ssh -o ProxyJump=ssh-gateway.ucl.ac.uk myriad.rc.ucl.ac.uk
+<div class="codehilite"><pre><span></span><code># Log in to Myriad, jumping via the Gateway (replace ccxxxxx with your own username)
+ssh -o ProxyJump=ccxxxxx@ssh-gateway.ucl.ac.uk ccxxxxx@myriad.rc.ucl.ac.uk
 </code></pre></div>
 
 <p>or</p>
 <div class="codehilite"><pre><span></span><code># Copy &#39;my_file&#39; from the machine you are logged in to into your Scratch on Grace
-scp -o ProxyJump=ssh-gateway.ucl.ac.uk my_file myriad.rc.ucl.ac.uk:~/Scratch/
+# Replace ccxxxxx with your own username.
+scp -o ProxyJump=ccxxxxx@ssh-gateway.ucl.ac.uk my_file ccxxxxx@myriad.rc.ucl.ac.uk:~/Scratch/
 </code></pre></div>
 
 <p>This tunnels through the Gateway in order to get you to your destination - you'll be asked for your password twice, once for each machine. You can use this to log in or to copy files.</p>
@@ -2185,13 +2186,22 @@ a graphical client.</p>
 in use, but you can pick different ones) to Myriad's port 22 (which is the standard port for ssh), 
 going via a UCL gateway.</p>
 <div class="codehilite"><pre><span></span><code># replace ccxxxxx with your UCL username
-ssh -L 3333:myriad.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk 
+ssh -L 3333:myriad.rc.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk 
 </code></pre></div>
 
 <p>You may also want to use the <code>-N</code> option to tell it not to execute any remote commands and 
 <code>-f</code> to put this command into the background if you want to continue to type other commands 
 into the same terminal.</p>
 <p>The tunnel now exists, and <code>localhost:3333</code> on your computer connects to Myriad.</p>
+<p>You can do this with ports other than 22 if you are not wanting to ssh in but to instead connect
+with a local browser to something running on Myriad. Here the port remains as 3333,
+something could be launched on that port on Myriad and your browser could be pointed at 
+<code>localhost:3333</code> to connect to it.</p>
+<div class="codehilite"><pre><span></span><code># replace ccxxxxx with your UCL username
+ssh -L 3333:myriad.rc.ucl.ac.uk:3333 ccxxxxx@ssh-gateway.ucl.ac.uk
+</code></pre></div>
+
+<p>Do not leave things like this running for long periods on the login nodes.</p>
 <h5 id="ssh-tunnel-creation-using-putty">SSH tunnel creation using PuTTY<a class="headerlink" href="#ssh-tunnel-creation-using-putty" title="Permanent link">§</a></h5>
 <p>On Windows you can also <a href="https://winscp.net/eng/docs/guide_tunnel#tunnel_putty">set up a tunnel using PuTTY</a>.</p>
 <h5 id="connect-to-your-tunnel-with-an-application-like-filezilla">Connect to your tunnel with an application (like FileZilla)<a class="headerlink" href="#connect-to-your-tunnel-with-an-application-like-filezilla" title="Permanent link">§</a></h5>
