@@ -27,12 +27,14 @@ You can configure your ssh client to automatically connect via these jump boxes 
 ##### On the command line
 ```
 # Log in to Kathleen, jumping via jump box
-ssh -o ProxyJump=ssh-gateway.ucl.ac.uk kathleen.rc.ucl.ac.uk
+# Replace ccxxxxx with your own username.
+ssh -o ProxyJump=ccxxxxx@ssh-gateway.ucl.ac.uk ccxxxxx@kathleen.rc.ucl.ac.uk
 ```
 or
 ```
 # Copy 'my_file', from the machine you are logged in to, into your Scratch on Kathleen
-scp -o ProxyJump=ssh-gateway.ucl.ac.uk my_file kathleen.rc.ucl.ac.uk:~/Scratch/
+# Replace ccxxxxx with your own username.
+scp -o ProxyJump=ccxxxxx@ssh-gateway.ucl.ac.uk my_file ccxxxxx@kathleen.rc.ucl.ac.uk:~/Scratch/
 ```
 
 This tunnels through the jump box service in order to get you to your destination - you'll be asked for your password twice, once for each machine. You can use this to log in or to copy files.

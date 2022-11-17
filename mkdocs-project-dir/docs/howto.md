@@ -218,13 +218,14 @@ You can use the [UCL Virtual Private Network](https://www.ucl.ac.uk/isd/services
 ##### On the command line
 
 ```
-# Log in to Myriad, jumping via the Gateway
-ssh -o ProxyJump=ssh-gateway.ucl.ac.uk myriad.rc.ucl.ac.uk
+# Log in to Myriad, jumping via the Gateway (replace ccxxxxx with your own username)
+ssh -o ProxyJump=ccxxxxx@ssh-gateway.ucl.ac.uk ccxxxxx@myriad.rc.ucl.ac.uk
 ```
 or
 ```
 # Copy 'my_file' from the machine you are logged in to into your Scratch on Grace
-scp -o ProxyJump=ssh-gateway.ucl.ac.uk my_file myriad.rc.ucl.ac.uk:~/Scratch/
+# Replace ccxxxxx with your own username.
+scp -o ProxyJump=ccxxxxx@ssh-gateway.ucl.ac.uk my_file ccxxxxx@myriad.rc.ucl.ac.uk:~/Scratch/
 ```
 
 This tunnels through the Gateway in order to get you to your destination - you'll be asked for your password twice, once for each machine. You can use this to log in or to copy files.
@@ -296,7 +297,7 @@ going via a UCL gateway.
 
 ```
 # replace ccxxxxx with your UCL username
-ssh -L 3333:myriad.rc.ucl.ac.uk:22 ccxxxxx@socrates.ucl.ac.uk 
+ssh -L 3333:myriad.rc.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk 
 ```
 
 You may also want to use the `-N` option to tell it not to execute any remote commands and 
@@ -304,6 +305,18 @@ You may also want to use the `-N` option to tell it not to execute any remote co
 into the same terminal.
 
 The tunnel now exists, and `localhost:3333` on your computer connects to Myriad.
+
+You can do this with ports other than 22 if you are not wanting to ssh in but to instead connect
+with a local browser to something running on Myriad. Here the port remains as 3333,
+something could be launched on that port on Myriad and your browser could be pointed at 
+`localhost:3333` to connect to it.
+
+```
+# replace ccxxxxx with your UCL username
+ssh -L 3333:myriad.rc.ucl.ac.uk:3333 ccxxxxx@ssh-gateway.ucl.ac.uk
+```
+
+Do not leave things like this running for long periods on the login nodes.
 
 ##### SSH tunnel creation using PuTTY
 
