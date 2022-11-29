@@ -50,5 +50,5 @@ suspended indefinitely.
 We have an online Moodle course "Introduction to the Unix Shell" and
 infrequently provide a training course aimed at getting users up and running on
 one of our main clusters. Please see our
-[Research IT Training page](https://www.ucl.ac.uk/isd/services/research-it/research-it-training)
+[Research IT Training page](https://www.ucl.ac.uk/advanced-research-computing/education/training)
 for details.
