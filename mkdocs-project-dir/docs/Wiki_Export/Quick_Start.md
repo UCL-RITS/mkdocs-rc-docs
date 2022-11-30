@@ -10,7 +10,7 @@ operating in an HPC environment.
 
 ## Accessing A Cluster
 
-Before accessing the Legion cluster, it is necessary to [apply for an account](Account_Services). Once you have received
+Before accessing the Legion cluster, it is necessary to [apply for an account](../../Account_Services). Once you have received
 notification that your account has been created, you may log in via SSH
 to:
 
@@ -23,7 +23,7 @@ user id. Legion, Myriad, and Grace are only accessible from within UCL’s netwo
 need to access them from outside, you need to log in via the Gateway, a
 departmental machine, or install the IS VPN service.
 
-More details on connecting to these services are provided on the [Accessing RC Systems](Accessing_RC_Systems) page.
+More details on connecting to these services are provided on the [Accessing RC Systems](../Connecting_to_RC_Systems) page.
 
 ## Managing data on the our clusters
 
@@ -63,7 +63,7 @@ system.
 
 The module system handles dependency and conflict information.
 
-You can find out more about the modules system on Legion on the [RC Systems user environment](RC_Systems_user_environment) page.
+You can find out more about the modules system on Legion on the [RC Systems user environment](../RC_Systems_user_environment) page.
 
 ## Compiling your code
 
@@ -72,7 +72,7 @@ through the modules system, with the usual wrappers. For a full list of
 the development tools available see here or in the development
 tools/compilers sections of the modules system.
 
-You can find out more about compiling code on a cluster on the [Compiling](Compiling) page.
+You can find out more about compiling code on a cluster on the [Compiling](../Compiling) page.
 
 ## Job scheduling policy and projects
 
@@ -109,10 +109,10 @@ directives preceded by `#$`.
 
 You can then follow these directives with the commands your script would
 execute. Legion supports a wide variety of job types and we would
-strongly recommend you study the [example scripts](Example_Scripts).
+strongly recommend you study the [example scripts](../Example_Submission_Scripts).
 
 Jobs can be controlled with `qsub` (submit job), `qstat` (list jobs) and
-`qdel` (delete job). See the [Introduction to batch processing](Batch_Processing) page for more details.
+`qdel` (delete job). See the [Introduction to batch processing](../Background/Batch_Processing) page for more details.
 
 ## Testing jobs using Interactive Jobs
 
@@ -136,15 +136,15 @@ Is functionally equivalent to:
 ```
 
 Except, of course, that the result of qrsh is an interactive
-shell. For more details, see the [Interactive Jobs](Interactive Jobs) page.
+shell. For more details, see the [Interactive Jobs](../../Interactive_Jobs) page.
 
 # More information
 
- - [How the scheduler works](The_Scheduler)
- - [Example submission scripts](Example_Scripts)
- - [Acknowledging the use of our services in publications](Acknowledging_RC_Systems)
- - [Contact and support](Contact_and_Support)
- - [FAQ](FAQ)
- - [Known issues](Known_Issues)
- - [Reporting Problems](Reporting_problems)
+ - [How the scheduler works](../Background/The_Scheduler)
+ - [Example submission scripts](../Example_Submission_Scripts)
+ - [Acknowledging the use of our services in publications](../../Clusters/Acknowledging_RC_Systems)
+ - [Contact and support](../../Contact_Us)
+ - [FAQ](../FAQ)
+ - [Known issues](../Known_Issues)
+ - [Reporting Problems](../Reporting_problems)
 
