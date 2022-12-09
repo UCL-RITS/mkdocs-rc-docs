@@ -17,11 +17,12 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-1 Nov 2022 -> 2 Nov 2022 | Myriad | Planned | Upgrade of firmware on all Lustre storage disks. No reading or writing of files will be possible during the upgrade interval. Jobs will be drained for 8am on Tues 1 Nov and we expect to re-enable jobs on Weds 2 Nov.
+13 Dec 2022 -> 14 Dec 2022 | Myriad | Planned | Upgrade of firmware on all Lustre storage disks. Jobs will be drained for 8am on Tues 13 Dec and we expect to re-enable jobs on Weds 14 Dec.
 
 ## Previous Outages
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+1 Nov 2022 -> 2 Nov 2022 | Myriad | Complete | Upgrade of firmware on all Lustre storage disks. No reading or writing of files will be possible during the upgrade interval. Jobs will be drained for 8am on Tues 1 Nov and we expect to re-enable jobs on Weds 2 Nov.
 27 Sep 2022 -> 28 Sep 2022 | Myriad | Completed | **Revised dates** Moving switches. Jobs will be drained for 8am on 27 Sept and access to the login nodes disabled. Access should be restored during the day on Thurs 29. Myriad should be considered at risk for the rest of the week.
 12 Apr 2022 -> 19 Apr 2022 |  Kathleen, Young, Michael | Completed | Datacentre work. Clusters will be drained of jobs and access to the login nodes disabled, for 4:00pm Tuesday 12th April. Clusters will be brought back into service during the day on Tuesday 19th April. They should be considered AT RISK that day.
 1 Apr 2022 -> 4 Apr 2022 | Kathleen, Young, Michael | Completed | Datacentre work. Clusters will be will be drained of jobs and access to the login nodes disabled, for 4pm Friday 1st April. Clusters will be brought back into service on Monday the 4th April. They should be considered AT RISK that day.
