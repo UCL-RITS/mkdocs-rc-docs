@@ -4,6 +4,10 @@ layout: docs
 
 # Planned Outages
 
+!!! important "Christmas closing"
+    UCL is closed from 5:30pm on Friday 23 December to 9am on Tuesday 3 January 2023.
+    There will be no support available during this period and any issues will be dealt
+    with on our return.
 
 The second Tuesday of every month is a maintenance day, when the following clusters should be considered at risk from 8:00AM: Myriad, Kathleen, Thomas, Young, Michael, Aristotle and the Data Science Platform. We won’t necessarily perform maintenance every month, and notice by email will not always be given about maintenance day work that only puts services at risk.
 
@@ -17,11 +21,11 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-13 Dec 2022 -> 14 Dec 2022 | Myriad | Planned | Upgrade of firmware on all Lustre storage disks. Jobs will be drained for 8am on Tues 13 Dec and we expect to re-enable jobs on Weds 14 Dec.
 
 ## Previous Outages
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+13 Dec 2022 -> 14 Dec 2022 | Myriad | Postponed | Upgrade of firmware on all Lustre storage disks. Jobs will be drained for 8am on Tues 13 Dec and we expect to re-enable jobs on Weds 14 Dec. Discovered that we would need to update the storage controller firmware as well, and possibly the OSSs (object store servers) and Lustre itself. We don't want to do this right before the Christmas closure so are postponing the update until later.
 1 Nov 2022 -> 2 Nov 2022 | Myriad | Complete | Upgrade of firmware on all Lustre storage disks. No reading or writing of files will be possible during the upgrade interval. Jobs will be drained for 8am on Tues 1 Nov and we expect to re-enable jobs on Weds 2 Nov.
 27 Sep 2022 -> 28 Sep 2022 | Myriad | Completed | **Revised dates** Moving switches. Jobs will be drained for 8am on 27 Sept and access to the login nodes disabled. Access should be restored during the day on Thurs 29. Myriad should be considered at risk for the rest of the week.
 12 Apr 2022 -> 19 Apr 2022 |  Kathleen, Young, Michael | Completed | Datacentre work. Clusters will be drained of jobs and access to the login nodes disabled, for 4:00pm Tuesday 12th April. Clusters will be brought back into service during the day on Tuesday 19th April. They should be considered AT RISK that day.
