@@ -21,6 +21,7 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+23 Dec 2022 -> 3-4 Jan 2023 | Young, Michael, Kathleen | Planned | Full shutdown during UCL Christmas closing to prevent risk of filesystem damage from instability or power issues. Jobs will be drained for 9am on 23rd, shutting down at 1pm. Will be brought back up throughout 3 Jan with intent to have jobs running at some point on 4 Jan. 
 
 ## Previous Outages
 Date                | Service | Status | Reason 
