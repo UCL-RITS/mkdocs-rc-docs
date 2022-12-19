@@ -118,7 +118,7 @@ Note that this job script works directly in scratch instead of in the temporary 
 #$ -l tmpfs=15G
 
 # Set the name of the job.
-#$ -N Multi-threaded Job
+#$ -N Multi-threaded_Job
 
 # Request 16 cores.
 #$ -pe smp 16
