@@ -11,11 +11,50 @@ layout: docs
 
 The Research Computing team currently runs 2 supported instances of RStudio:
 
- - <https://rstudio.data-science.rc.ucl.ac.uk/>
-   This instance is for general teaching use but requires permission to access as part of the [Data Science Platform](https://www.ucl.ac.uk/isd/data-science-platform). It uses the central UNIX filestore for user data.
+### <https://rstudio.data-science.rc.ucl.ac.uk/>
 
- - <https://econ-myriad.rc.ucl.ac.uk/>
-   This instance is for research use by members of the Economics department. It uses the Myriad filesystem for user data.
+This instance is for general teaching use and is part of the Data
+Science Platform. It uses the central UNIX filestore for user data. Access is blocked by default due to licencing restrictions.
+
+Staff who would like to use the service to deliver teaching should
+email rc-support@ucl.ac.uk to request access (please include your UCL
+username). To grant access to students, please pre-register the course
+by emailing the above address and provide the SITS code of the
+relevant module(s) and a pdf or link to the syllabus. Students who are
+registered on those SITS modules will then be added automatically.
+
+In addition we have a smalll number of Named Researcher licenses for
+RStudio Pro which also run on this instance. Staff and Research
+Postgraduates who would like to have access to one of these licenses
+should email rc-support@ucl.ac.uk to request access explaining why
+they need to use RStudio.
+
+The Data Science Platform and all of its components are only
+accessible from the UCL network. When off campus, you will need to
+connect to the
+[UCL VPN](https://ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn)
+first or when working from China, the
+[China Connect Service](https://www.ucl.ac.uk/isd/services/get-connected/china-connect).
+
+**Please note:** The main aim of this service is to support teaching
+  and the service should not be used for computationally intensive
+  research. If your use starts to affect the experience of other
+  users, we reserve the right to terminate sessions without
+  notice. For computationally intensive
+  research you should be using the [Myriad Cluster](https://www.rc.ucl.ac.uk/docs/Clusters/Myriad/).
+
+### <https://econ-myriad.rc.ucl.ac.uk/>
+
+This instance is for research use by members of the Economics
+department. It uses the Myriad filesystem for user data.
+
+## Installing R Packages
+
+Users can install R packages in their home directories, but we recommend that if you are planning on teaching a course, you make sure the packages you want to use are pre-installed on the system. This saves time and reduces the load on the server.
+
+The main version of R used by the RStudio server copies it's packages from the [Myriad Cluster](https://www.rc.ucl.ac.uk/docs/Clusters/Myriad/), so any package available there should be available in RStudio too. There's an automatically updated list here: [R packages](https://www.rc.ucl.ac.uk/docs/Installed_Software_Lists/r-packages/). Alternatively, check the list of available packages from within RStudio itself.
+
+Requests to install packages can be sent to rc-support@ucl.ac.uk. Please give as much notice as possible when requesting packages as these requests will be handled on a best efforts basis by the research computing applications support team.
 
 ## Troubleshooting and problem pre-emption
 
