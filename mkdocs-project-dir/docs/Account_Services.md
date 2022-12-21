@@ -9,9 +9,6 @@ layout: docs
 
 ## Cluster access application
 
-!!! important "Account application outage"
-    The account application page will be down from 5pm on 15 Dec 2022 to 9am on 16 Dec.
-
 There is a single online form for applying to the majority of our clusters.
 Use of these services is subject to a common set of
 [terms and conditions](Terms_and_Conditions.md).
