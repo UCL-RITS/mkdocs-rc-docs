@@ -10,8 +10,8 @@ layout: docs
 
 We recognise that researchers may sometimes require a higher throughput
 of work than it is possible to achieve with free ‘fair share’ usage of
-[Myriad](Clusters/Myriad.md), [Grace](Clusters/Grace.md) and [Kathleen](Clusters/Kathleen.md).
-There a couple of ways of obtaining additional Legion resource
+[Myriad](Clusters/Myriad.md) and [Kathleen](Clusters/Kathleen.md).
+There a couple of ways of obtaining additional Myriad resources
 beyond this fair share:
 
 ## Make a special request to the CRAG for free access to additional resources
