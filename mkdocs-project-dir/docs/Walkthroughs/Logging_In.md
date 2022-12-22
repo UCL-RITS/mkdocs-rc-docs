@@ -72,7 +72,7 @@ ssh uccacxx@myriad.rc.ucl.ac.uk
 
 Your user on the Gateway will also not have connected to Myriad before, so you will get a 
 similar prompt about Myriad's host fingerprint. You can check this against 
-[our current key fingerprints](../../Supplementary/Hostkeys.md).
+[our current key fingerprints](../Supplementary/Hostkeys.md).
 
 After saying "yes" you will be prompted for your password again, and after typing it in
 you will be logged in to Myriad and see Myriad's message containing information about
