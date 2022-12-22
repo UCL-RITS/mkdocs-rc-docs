@@ -29,8 +29,7 @@ follow the manual installation instructions for a user-space install
 
 Before you start compiling, you need to make sure you have the right
 compilers, libraries and other tools available for your software. If you
-haven't changed anything, you will have the default modules loaded. For
-more information on how to use modules, see [RC Systems user environment](RC_Systems_user_environment).
+haven't changed anything, you will have the default modules loaded.
 
 Check what the instructions for your software tell you about compiling
 it. If the website doesn't say much, the source code will hopefully have
@@ -144,8 +143,8 @@ Here are some typical variables you may want to change in a Makefile.
 
 These are what compilers/mpi wrappers to use - these are also defined by
 the compiler modules, so you can see what they should be. Intel would be
-icc, icpc, ifort, for example. If it's a program that can be compiled
-using MPI and only has a variable for CC, then set that to mpicc.
+`icc`, `icpc`, `ifort`, for example. If it's a program that can be compiled
+using MPI and only has a variable for `CC`, then set that to `mpicc`.
 
 ```
 CC=gcc  
@@ -168,66 +167,6 @@ LDLIBS="-lfoo -lbar"
 
 Remember to `make clean` first if you are recompiling with new options\!
 
-## AVX instructions
-
-**Note**: Legion's current login nodes are of a newer architecture than
-some of the compute nodes - the login nodes have AVX instructions but
-the XYZ type nodes do not. This means if you want your code to run on
-the older nodes, some compiler options cannot be used (e.g.
-`-march=native`, `-mtune`, `-xHost`) or your code will segfault.
-
-You can either build the code on the login nodes and restrict your jobs
-to only running on the newer nodes, compile the code with appropriate
-options for all the nodes, or compile your code inside a job that is
-running on the XYZ nodes (or during a qrsh session on the same).
-
-### Intel compilers
-
-To tell the Intel compilers to build for SSE4.2 instructions and no AVX,
-add this to CFLAGS (and CXXFLAGS if relevant):
-
-```
-CFLAGS=-axSSE4.2
-```
-
-(Also see `icc -help codegen`).
-
-### GNU compilers
-
-To tell GCC to build for SSE4.2 without AVX, add this to CFLAGS (and
-CXXFLAGS if relevant): 
-
-```
-CFLAGS=-march=nehalem
-```
-
-### Restrict node type
-
-To restrict a job to newer nodes only, put this in your script:
-
-```
-#$ -ac allow=LMNOPQSTU
-```
-
-You can also compile one version without AVX and one with, so you can
-take advantage of the newer nodes when possible. You could use
-`hostname` in your jobscript to check what type of node you were on and
-run the appropriate binary. Hostnames begin with node-x for an X-type
-node, node-u for a U-type and so on.
-
-### Test for AVX
-
-We have a script that will let you test whether your compiled code is
-using AVX instructions. If you pass it a directory it will recursively
-test everything in there. Note that if your code builds multiple kernels
-and so can choose based on where it runs which instructions to use (like
-MKL) then this will find AVX instructions but they won't cause your code
-to segfault.
-
-```
-find /home/username/path/ -perm /111 -type f | xargs /shared/ucl/apps/rcops_scripts/hasavx -q
-```
-
 ## BLAS and LAPACK
 
 BLAS and LAPACK are provided as part of MKL, OpenBLAS or ATLAS. There
@@ -237,10 +176,6 @@ compilers. MKL is available in the Intel compiler module.
 Your code may try to link `-lblas -llapack`: this isn't the right way to
 use BLAS and LAPACK with MKL or ATLAS (our OpenBLAS now has symlinks
 that allow you to do this).
-
-  - [MKL on Legion](MKL_on_Legion "wikilink")
-  - [OpenBLAS on Legion](OpenBLAS_on_Legion "wikilink")
-  - [ATLAS on Legion](ATLAS_on_Legion "wikilink")
 
 ## Set your PATH and other environment variables
 
@@ -279,7 +214,7 @@ scipy available.
 
 ### Set compiler module
 
-The Python versions on Legion were built with GCC. You can run them with
+The Python versions on Myriad were built with GCC. You can run them with
 the default Intel compilers loaded because everything depends on the
 gcc-libs/4.9.2 module. When you are building your own Python packages
 you should have the GCC compiler module loaded however, to avoid the
@@ -372,7 +307,7 @@ like this, and it fails because that python doesn't exist in that
 location or isn't the one that has the additional packages installed:
 
 ```
-#!/usr/bin/python2.6
+#!/usr/bin/python2.7
 ```
 
 You should change it so it uses the first python found in your
@@ -457,7 +392,7 @@ too. Add `-Duseshrplib` to your build flags.
 ## R
 
 There are instructions on installing and using local R packages in
-[Using your own local R packages](https://wiki.rc.ucl.ac.uk/wiki/R_on_Legion#Using_your_own_local_R_packages).
+[Using your own R packages](../Software_Guides/R.md#using_your_own_r_packages).
 
 ## Compiling with MPI
 
