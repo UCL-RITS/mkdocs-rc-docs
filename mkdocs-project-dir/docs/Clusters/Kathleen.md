@@ -13,7 +13,7 @@ Kathleen is a compute cluster designed for extensively parallel, multi-node batc
 
 Kathleen accounts can be applied for via the [Research Computing sign up process](../Account_Services.md).
 
-As Kathleen is intended for multi-node jobs, users who specify that they will need to use multi-node jobs (e.g. with [MPI](../Appendices/Glossary.md#MPI)) will be given access to Kathleen.
+As Kathleen is intended for multi-node jobs, users who specify that they will need to use multi-node jobs (e.g. with [MPI](../Supplementary/Glossary.md#MPI)) will be given access to Kathleen.
 
 ## Logging in
 

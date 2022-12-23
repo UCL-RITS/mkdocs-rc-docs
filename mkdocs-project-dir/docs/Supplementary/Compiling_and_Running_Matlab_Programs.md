@@ -1,32 +1,29 @@
 ---
-title: Building and Running Matlab Programs
+title: Compiling and Running Matlab Programs
 categories:
- - Legion
  - Myriad
  - Matlab
 layout: docs
 ---
-### Before you start, here are the caveats:
 
-Although full Matlab is now available on Legion, you can still compile
-Matlab programs on an external machine and then run them on Legion using
+Although full Matlab is available on Myriad, you can also compile
+Matlab programs on an external machine and then run them on Myriad using
 the Matlab runtime.
 
-Your Matlab program must be compiled using a 64bit Linux version of the
-Matlab compiler; the compiled code is not cross-platform compatible so
-it cannot be built on OS X and then transferred to Legion.
+There are some caveats, however: 
 
-Piping code into the Matlab compiler will not work, and the main routine
+- Your Matlab program must be compiled using a 64bit Linux version of the
+Matlab compiler; the compiled code is not cross-platform compatible, so for example, 
+it cannot be built on macOS and then transferred to Myriad. 
+
+- Piping code into the Matlab compiler will not work, and the main routine
 being executed must be converted into a proper Matlab function.
 
-When arguments are passed into compiled Matlab executable, the compiled
+- When arguments are passed into compiled Matlab executable, the compiled
 code does not automatically convert them to the required type (i.e.
 float or integer) as Matlab does from the command line. In this case the
 arguments, where necessary, must be converted to numbers using the
 `str2num()` function.
-
-Because of the way Matlab threads work, you **must** request exclusive
-access to Legion nodes when running compiled Matlab programs.
 
 ### Compiling your program:
 
@@ -61,19 +58,13 @@ execute.
     correctly in batch mode.  
     `--singleCompThread`: use only a single computational thread,
     otherwise Matlab will try to use more than one thread when the
-    operation being performed supports multi threading. This is an
-    alternative to allocating a whole Legion node to your job.
+    operation being performed supports multi threading.
 
 Once the application has been built, there should be an executable named
 after the prefix of the `.m` file, generally `<app name>.m`, and a shell
 script with the name `run\_<app name>.sh` - both these files need to be
-transferred to Legion.
+transferred to Myriad.
 
-We have installed a runtime environment on Legion here:
-
-```
-/shared/ucl/apps/Matlab/R2011a/Runtime7.15/v715/
-```
 
 If you have been given pre-compiled code by someone else, the
 application may not work as the Matlab runtime version must reasonably
@@ -83,7 +74,7 @@ installation directory of Matlab. The runtime has a GUI install
 interface and it can be installed at any location in your home
 directory.
 
-For more information, please read your Matlab documentation.
+For more information, please read the Matlab documentation.
 
 ### Job submission scripts:
 
@@ -94,12 +85,9 @@ There are three things that you must take into account:
     argument.
 2.  The compiler runtime needs a directory (cache) to unpack files to
     when it is running. By default this directory is in the home folder.
-    This needs to be changed since the home directory is not writable in
-    Legion from the compute nodes. Since the Matlab runs will be single
+    Since the Matlab runs will be single
     node jobs, the cache location should be in the storage on the
     compute nodes which is stored in `TMPDIR`.
-3.  Use the `-ac exclusive` SGE option to request exclusive access to a
-    Legion node unless you use the `--singleCompThread` Matlab option.
 
 For example, a multi-threaded serial script should look something like:
 
@@ -116,12 +104,8 @@ For example, a multi-threaded serial script should look something like:
 # Request 1 gigabyte of RAM 
 #$ -l mem=1G
 
-# Select 12 threads (the most possible on Legion).
-#$ -l thr=12
-
-# The way Matlab threads work requires Matlab to not share nodes with other
-# jobs.
-#$ -ac exclusive
+# Request 36 cores
+#$ -pe smp 36
 
 # Set the name of the job.
 #$ -N Matlab_Job_1

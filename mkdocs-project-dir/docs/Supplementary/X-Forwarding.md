@@ -54,7 +54,7 @@ To use X-Forwarding from outside UCL, you must either use the VPN, or use the SS
 ```
 
 !!! note
-    This assumes you use a Linux distribution that uses Xorg as its display server. If your distribution uses Wayland instead, and you aren't sure how to make this work, please [contact us](Contact_Us.md), letting us know what version of which distribution you're using.
+    This assumes you use a Linux distribution that uses Xorg as its display server. If your distribution uses Wayland instead, and you aren't sure how to make this work, please [contact us](../Contact_Us.md), letting us know what version of which distribution you're using.
 
 ## Checking your Setup
 

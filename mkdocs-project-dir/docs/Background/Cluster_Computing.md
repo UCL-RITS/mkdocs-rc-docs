@@ -42,6 +42,6 @@ The ssh client gives you a command prompt when you can enter text commands, but 
 pass graphical windows through the network connection, using a system called X-Forwarding.
 This can be useful for visualising your data without transferring all the files back, but the network
  connection makes it a bit slower to use than running it on your own computer.
-You'll need an X server on your own computer to use this: check [our page on X-Forwarding](Wiki_Export/X-Forwarding.md) for details.
+You'll need an X server on your own computer to use this: check [our page on X-Forwarding](../Supplementary/X-Forwarding.md) for details.
 
 

@@ -29,14 +29,6 @@ Myriad is designed to be most suitable for serial work, including large numbers 
  
 Kathleen is intended for multi-node jobs (using e.g. MPI) and went into service in Feb 2020 as a replacement for Grace. We recommend using Kathleen if you intend to use more than 36 cores per job. See [Kathleen](Clusters/Kathleen.md).
 
-- Grace
-
-Grace is intended for multi-node jobs (using e.g. MPI) and went into service in Dec 2015. We recommend using Grace if you intend to use more than 36 cores per job. Grace will run until around the first quarter of 2021. See [Grace](Clusters/Grace.md).
-
-- Legion
-
-The Legion service was an older multipurpose cluster, including capability for serial jobs, multi-threaded jobs, and small multi-node jobs. It is currently being decommissioned and is not running new jobs for general users. Data access ceases entirely by 1 May 2020.
-
 - Thomas
 
 Thomas is the UK's Tier 2 Materials and Molecular Modelling Hub. It is accessible by members of partner institutions and relevant consortia, and is for materials and molecular modelling work only. It has separate access procedures from UCL's central clusters. Access is managed by a Point of Contact from the relevant institution or consortia, not by Research Computing. See [Thomas](Clusters/Thomas.md).
