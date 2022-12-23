@@ -12,14 +12,14 @@
         <meta name="author" content="UCL RCAS Team">
       
       
-        <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Wiki_Export/Research_Computing_Glossary/">
+        <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Supplementary/Compiling_Your_Code/">
       
       <link rel="icon" href="../../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>Research Computing Glossary - UCL Research Computing Documentation</title>
+        <title>Compiling Your Code - UCL Research Computing Documentation</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bash" class="md-skip">
+        <a href="#compiling-your-code" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Research Computing Glossary
+              Compiling Your Code
             
           </span>
         </div>
@@ -1027,6 +1027,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1035,113 +1037,200 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bash" class="md-nav__link">
-    Bash
+  <a href="#download-your-code" class="md-nav__link">
+    Download your code
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cluster" class="md-nav__link">
-    Cluster
+  <a href="#set-up-your-modules" class="md-nav__link">
+    Set up your modules
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#core" class="md-nav__link">
-    Core
+  <a href="#available-compilers" class="md-nav__link">
+    Available compilers
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#interconnect" class="md-nav__link">
-    Interconnect
+  <a href="#build-systems" class="md-nav__link">
+    Build systems
+  </a>
+  
+    <nav class="md-nav" aria-label="Build systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automake-configure" class="md-nav__link">
+    Automake configure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmake" class="md-nav__link">
+    CMake
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make" class="md-nav__link">
+    Make
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blas-and-lapack" class="md-nav__link">
+    BLAS and LAPACK
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#job" class="md-nav__link">
-    Job
+  <a href="#set-your-path-and-other-environment-variables" class="md-nav__link">
+    Set your PATH and other environment variables
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#job-script" class="md-nav__link">
-    Job Script
+  <a href="#python" class="md-nav__link">
+    Python
+  </a>
+  
+    <nav class="md-nav" aria-label="Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-compiler-module" class="md-nav__link">
+    Set compiler module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-your-own-packages-in-the-same-virtualenv" class="md-nav__link">
+    Install your own packages in the same virtualenv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-your-own-virtualenvs" class="md-nav__link">
+    Use your own virtualenvs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-via-setuppy" class="md-nav__link">
+    Installing via setup.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-script-executable-paths" class="md-nav__link">
+    Python script executable paths
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perl" class="md-nav__link">
+    Perl
+  </a>
+  
+    <nav class="md-nav" aria-label="Perl">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpan" class="md-nav__link">
+    CPAN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-perl5lib-paths" class="md-nav__link">
+    Set PERL5LIB paths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errors-when-using-non-default-perl-versions" class="md-nav__link">
+    Errors when using non-default Perl versions
+  </a>
+  
+    <nav class="md-nav" aria-label="Errors when using non-default Perl versions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#warningspm" class="md-nav__link">
+    warnings.pm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libperlso-not-found" class="md-nav__link">
+    libperl.so not found
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r" class="md-nav__link">
+    R
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mpi" class="md-nav__link">
-    MPI
+  <a href="#compiling-with-mpi" class="md-nav__link">
+    Compiling with MPI
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#node" class="md-nav__link">
-    Node
+  <a href="#enabling-openmp" class="md-nav__link">
+    Enabling OpenMP
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#openmp" class="md-nav__link">
-    OpenMP
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#process" class="md-nav__link">
-    Process
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#script" class="md-nav__link">
-    Script
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#shebang" class="md-nav__link">
-    Shebang
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#shell" class="md-nav__link">
-    Shell
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#son-of-grid-engine-sge-or-soge" class="md-nav__link">
-    Son of Grid Engine (SGE or SoGE)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sun-grid-engine-sge" class="md-nav__link">
-    Sun Grid Engine (SGE)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#thread" class="md-nav__link">
-    Thread
+  <a href="#problems" class="md-nav__link">
+    Problems
   </a>
   
 </li>
@@ -1160,101 +1249,322 @@
                 
                   
 
-  <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Wiki_Export/Research_Computing_Glossary.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Supplementary/Compiling_Your_Code.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-  <h1>Research Computing Glossary</h1>
+<h1 id="compiling-your-code">Compiling Your Code<a class="headerlink" href="#compiling-your-code" title="Permanent link">§</a></h1>
+<h2 id="download-your-code">Download your code<a class="headerlink" href="#download-your-code" title="Permanent link">§</a></h2>
+<p>Use wget or curl to download the source code for the software you want
+to install to your account. There might be binaries available, but they
+often won't work on our clusters because they were compiled for other
+machines with other library versions available. Use tar or unzip or
+similar depending on archive type to uncompress your source code.</p>
+<div class="codehilite"><pre><span></span><code>wget https://www.example.com/program.tar.gz
+tar -xvf program.tar.gz
+</code></pre></div>
 
-<h2 id="bash">Bash<a class="headerlink" href="#bash" title="Permanent link">§</a></h2>
-<p>A <a href="#shell">shell</a> and <a href="#script">scripting</a> language, which is the default
-command processor on most Linux operating systems.</p>
-<h2 id="cluster">Cluster<a class="headerlink" href="#cluster" title="Permanent link">§</a></h2>
-<p>A cluster consists of a set of computer <a href="#node">nodes</a>
-connected together over a fast local area network. A message passing
-protocol such as <a href="#mpi">MPI</a> allows individual nodes to
-work together as a single system.</p>
-<h2 id="core">Core<a class="headerlink" href="#core" title="Permanent link">§</a></h2>
-<p>A core refers to a processing unit within a <a href="#node">node</a>. A node may have multiple cores which can
-work in parallel on a single task, operating on the same data in
-memory. This kind of parallelism is coordinated using the <a href="#openmp">OpenMP</a> library. Alternatively, cores may work
-independently on different tasks. Cores may or may not also share
-cache.</p>
-<h2 id="interconnect">Interconnect<a class="headerlink" href="#interconnect" title="Permanent link">§</a></h2>
-<p>The interconnect is the network which is used to transfer data
-between <a href="#node">nodes</a> in a <a href="#cluster">cluster</a>. Different types of interconnect
-operate at different bandwidths and with different amounts of latency, which affects the
-suitability of a collection of nodes for jobs which use message
-passing (<a href="#mpi">MPI</a>).</p>
-<h2 id="job">Job<a class="headerlink" href="#job" title="Permanent link">§</a></h2>
-<p>In the context of <a href="Batch Processing">Batch Processing</a>, a job refers to a
-computational task to be performed such as a single simulation or
-analysis.</p>
-<h2 id="job-script">Job Script<a class="headerlink" href="#job-script" title="Permanent link">§</a></h2>
-<p>A job script is essentially a special kind of <a href="#script">script</a> used to specify the parameters of a job.
-Users can specify the data to input, program to use, and the
-computing resources required. The job script is specified when a job
-is submitted to SGE, which reads lines starting with <code>#$</code>.</p>
-<h2 id="mpi">MPI<a class="headerlink" href="#mpi" title="Permanent link">§</a></h2>
-<p>The Message Passing Interface (MPI) system is a set of portable
-libraries which can be incorporated into programs in order to
-control parallel computation. Specifically it coordinates effort
-between <a href="#node">nodes</a> which do not share the same
-memory address space cf. <a href="#openmp">OpenMP</a>.</p>
-<h2 id="node">Node<a class="headerlink" href="#node" title="Permanent link">§</a></h2>
-<p>In cluster computing, a node refers to a computational unit which is
-capable of operating independently of other parts of the cluster. As
-a minimum it consists of one (or more) processing <a href="#core">cores</a>, has its own memory, and runs its own
-operating system.</p>
-<h2 id="openmp">OpenMP<a class="headerlink" href="#openmp" title="Permanent link">§</a></h2>
-<p>Open Multi-Processing. OpenMP supports multithreading, a process
-whereby a master <a href="#thread">thread</a> generates a number of
-slave threads to run a task which is divided among them. OpenMP
-applies to processes running on shared memory platforms, i.e. 
-<a href="#job">jobs</a> running on a single <a href="#node">node</a>. Hybrid applications may make use of both
-OpenMP and <a href="#mpi">MPI</a>.</p>
-<h2 id="process">Process<a class="headerlink" href="#process" title="Permanent link">§</a></h2>
-<p>A process is a single instance of a program that is running on a
-computer. A single process may consist of many <a href="#thread">threads</a> acting concurrently, and there may
-multiple instances of a program running as separate processes.</p>
-<h2 id="script">Script<a class="headerlink" href="#script" title="Permanent link">§</a></h2>
-<p>A <a href="#shell">shell</a> script enables users to list commands
-to be run consecutively by typing them into a text file instead of typing them out live. The first
-line of the script uses the <a href="#Shebang">shebang</a> notation <code>#!</code> to designate the
-scripting language interpreter program to be used to interpret the commands, e.g. <a href="#bash">bash</a>.</p>
-<h2 id="shebang">Shebang<a class="headerlink" href="#shebang" title="Permanent link">§</a></h2>
-<p>"Shebang" is a common abbreviation for "hash-bang" — the character sequence <code>#!</code> — which is placed at
-the start of a <a href="#script">script</a> to specify the
-interpreter that should be used. When the shebang is found in the
-first line of a script, the program loader reads the rest of the
-line as the path to the required interpreter (e.g. <code>/bin/bash</code> is the
-usual path to the <a href="#bash">bash</a> shell). The specified
-interpreter is then run with the path to the script passed as an
-argument to it.</p>
-<h2 id="shell">Shell<a class="headerlink" href="#shell" title="Permanent link">§</a></h2>
-<p>A command line interpreter which provides an interface for users to
-type instructions to be interpreted by the operating system and
-display output via the monitor. Users type specific shell commands
-in order to run <a href="#process">processes</a>, e.g. <code>ls</code> to list
-directory contents.</p>
-<h2 id="son-of-grid-engine-sge-or-soge">Son of Grid Engine (SGE or SoGE)<a class="headerlink" href="#son-of-grid-engine-sge-or-soge" title="Permanent link">§</a></h2>
-<p>The queuing system used by many cluster computing systems (including, currently, all the ones we run)
-to organise and schedule <a href="#job">jobs</a>. Once jobs are submitted to SGE, it takes
-care of executing them when the required resources become available.
-Job priority is subject to the local fair use policy.</p>
-<h2 id="sun-grid-engine-sge">Sun Grid Engine (SGE)<a class="headerlink" href="#sun-grid-engine-sge" title="Permanent link">§</a></h2>
-<p>The original software written by Sun Microsystems that was later modified to
-make Son of Grid Engine (among other products, like Univa Grid Engine).
-Documentation may refer to Sun Grid Engine instead of Son of Grid Engine, and
-for most user purposes, the terms are interchangeable.</p>
-<h2 id="thread">Thread<a class="headerlink" href="#thread" title="Permanent link">§</a></h2>
-<p>A thread refers to a serial computational process which can run on a
-single <a href="#core">core</a>. The number of threads generated by
-a parallel job may exceed the number of cores available though, in
-which case cores may alternate between running different threads.
-Threads are a software concept whereas cores are physical hardware.</p>
+<p>You won't be able to use a package manager like yum, you'll need to
+follow the manual installation instructions for a user-space install
+(not using sudo).</p>
+<h2 id="set-up-your-modules">Set up your modules<a class="headerlink" href="#set-up-your-modules" title="Permanent link">§</a></h2>
+<p>Before you start compiling, you need to make sure you have the right
+compilers, libraries and other tools available for your software. If you
+haven't changed anything, you will have the default modules loaded.</p>
+<p>Check what the instructions for your software tell you about compiling
+it. If the website doesn't say much, the source code will hopefully have
+a <code>README</code> or <code>INSTALL</code> file.</p>
+<p>You may want to use a different compiler - the default is the Intel
+compiler.</p>
+<p><code>module avail compilers</code> will show you all the compiler modules
+available. Most Open Source software tends to assume you're using GCC
+and OpenMPI (if it uses MPI) and is most tested with that combination,
+so if it doesn't specify you may want to begin there (do check what the
+newest modules available are):</p>
+<div class="codehilite"><pre><span></span><code>module unload compilers mpi mkl
+module load compilers/gnu/4.9.2  
+module load mpi/openmpi/1.10.1/gnu-4.9.2
+</code></pre></div>
+
+<h2 id="available-compilers">Available compilers<a class="headerlink" href="#available-compilers" title="Permanent link">§</a></h2>
+<p>The following compilers are available and supported on Legion:</p>
+<ul>
+<li>Intel C, C++ and Fortran</li>
+<li>GNU C, C++ and Fortran</li>
+</ul>
+<p>We currently have a limited number of licenses for the Intel compilers
+so only a certain number of users can use them simultaneously. This
+means that your compilation may fail with an error complaining about not
+being able to obtain a valid license. If this happens, simply wait for a
+few minutes and try again.</p>
+<p>In addition to the supported tools, there are a number of tools
+installed on Legion which are not supported (for example the PGI
+compilers) which were installed to build certain supported packages.
+Users who use the unsupported packages do so at their own risk.</p>
+<h2 id="build-systems">Build systems<a class="headerlink" href="#build-systems" title="Permanent link">§</a></h2>
+<p>Most software will use some kind of build system to manage how files are
+compiled and linked and in what order. Here are a few common ones.</p>
+<h3 id="automake-configure">Automake configure<a class="headerlink" href="#automake-configure" title="Permanent link">§</a></h3>
+<p><a href="http://www.gnu.org/software/automake/manual/automake.html">Automake</a>
+will generate the Makefile for you and hopefully pick up sensible
+options through configuration. You can give it an install prefix to tell
+it where to install (or you can build it in place and not use make
+install at all).</p>
+<div class="codehilite"><pre><span></span><code>./configure --prefix=/home/username/place/you/want/to/install  
+make  
+# if it has a test suite, good idea to use it  
+make test   
+make install
+</code></pre></div>
+
+<p>If it has more configuration flags, you can use <code>./configure --help</code> to
+view them.</p>
+<p>Usually configure will create a config.log: you can look in there to
+find if any tests have failed or things you think should have been
+picked up haven't.</p>
+<h3 id="cmake">CMake<a class="headerlink" href="#cmake" title="Permanent link">§</a></h3>
+<p><a href="http://www.cmake.org/">CMake</a> is another build system. It will have a
+CMakeFile or the instructions will ask you to use cmake or ccmake rather
+than make. It also generates Makefiles for you. <code>ccmake</code> is a
+terminal-based interactive interface where you can see what variables
+are set to and change them, then repeatedly configure until everything
+is correct, generate the Makefile and quit. <code>cmake</code> is the commandline
+version. The process tends to go like
+this:</p>
+<div class="codehilite"><pre><span></span><code>ccmake CMakeLists.txt  
+# press c to configure - will pick up some options  
+# press t to toggle advanced options  
+# keep making changes and configuring until no more errors or changes  
+# press g to generate and exit  
+make  
+# if it has a test suite, good idea to use it  
+make test   
+make install
+</code></pre></div>
+
+<p>If you need to rerun ccmake and reconfigure, remember to delete the
+<code>CMakeCache.txt</code> file, or you'll be wondering why your changes haven't taken.
+Turning on verbose Makefiles in ccmake is also useful if your code
+didn't compile first time - you'll be able to see what flags the
+compiler or linker is actually being given when it fails.</p>
+<h3 id="make">Make<a class="headerlink" href="#make" title="Permanent link">§</a></h3>
+<p>Your code may just come with a Makefile and have no configure, in which
+case the generic way to compile it is as follows:</p>
+<div class="codehilite"><pre><span></span><code>make targetname
+</code></pre></div>
+
+<p>There's usually a default target, which <code>make</code> on its own will use. If
+you need to change any configuration options, you'll need to edit those
+sections of the Makefile (at the top, where the variables/flags are
+defined).</p>
+<p>Here are some typical variables you may want to change in a Makefile.</p>
+<p>These are what compilers/mpi wrappers to use - these are also defined by
+the compiler modules, so you can see what they should be. Intel would be
+<code>icc</code>, <code>icpc</code>, <code>ifort</code>, for example. If it's a program that can be compiled
+using MPI and only has a variable for <code>CC</code>, then set that to <code>mpicc</code>.</p>
+<div class="codehilite"><pre><span></span><code>CC=gcc  
+CXX=g++  
+FC=gfortran  
+MPICC=mpicc  
+MPICXX=mpicxx  
+MPIF90=mpif90
+</code></pre></div>
+
+<p>CFLAGS and LDFLAGS are flags for the compiler and linker respectively,
+and there might be LIBS or INCLUDE as well. When linking a library with
+the name libfoo, use <code>-lfoo</code>.</p>
+<div class="codehilite"><pre><span></span><code>CFLAGS=&quot;-I/path/to/include&quot;  
+LDFLAGS=&quot;-L/path/to/foo/lib -L/path/to/bar/lib&quot;  
+LDLIBS=&quot;-lfoo -lbar&quot;
+</code></pre></div>
+
+<p>Remember to <code>make clean</code> first if you are recompiling with new options!</p>
+<h2 id="blas-and-lapack">BLAS and LAPACK<a class="headerlink" href="#blas-and-lapack" title="Permanent link">§</a></h2>
+<p>BLAS and LAPACK are provided as part of MKL, OpenBLAS or ATLAS. There
+are several different OpenBLAS and ATLAS modules on Legion for different
+compilers. MKL is available in the Intel compiler module.</p>
+<p>Your code may try to link <code>-lblas -llapack</code>: this isn't the right way to
+use BLAS and LAPACK with MKL or ATLAS (our OpenBLAS now has symlinks
+that allow you to do this).</p>
+<h2 id="set-your-path-and-other-environment-variables">Set your PATH and other environment variables<a class="headerlink" href="#set-your-path-and-other-environment-variables" title="Permanent link">§</a></h2>
+<p>After you have installed your software, you'll need to add it to your
+<code>PATH</code> environment variable so you can run it without having to give the
+full path to its location.</p>
+<p>Put this in your <code>~/.bashrc</code> file so it will set this with every new session you
+create. Replace username with your username and point to the directory
+your binary was built in (frequently <code>program/bin</code>). This adds it to the
+front of your PATH, so if you install a newer version of something, it
+will be found before the system one.</p>
+<div class="codehilite"><pre><span></span><code>export PATH=/home/username/location/of/software/binary:$PATH
+</code></pre></div>
+
+<p>If you built a library that you'll go on to compile other software with,
+you probably want to also add the lib directory to your
+LD_LIBRARY_PATH and LIBRARY_PATH, and the include directory to CPATH
+(add export statements as above). This may mean your configure step will
+pick your library up correctly without any further effort on your part.</p>
+<p>To make these changes to your .bashrc take effect in your current
+session:</p>
+<div class="codehilite"><pre><span></span><code>source ~/.bashrc
+</code></pre></div>
+
+<h2 id="python">Python<a class="headerlink" href="#python" title="Permanent link">§</a></h2>
+<p>There are <code>python2/recommended</code> and <code>python3/recommended</code> bundles. These
+use a virtualenv and have pip set up for you. They both have numpy and
+scipy available.</p>
+<h3 id="set-compiler-module">Set compiler module<a class="headerlink" href="#set-compiler-module" title="Permanent link">§</a></h3>
+<p>The Python versions on Myriad were built with GCC. You can run them with
+the default Intel compilers loaded because everything depends on the
+gcc-libs/4.9.2 module. When you are building your own Python packages
+you should have the GCC compiler module loaded however, to avoid the
+situation where you build a package with the Intel compiler and then try
+to run it with GCC, in which case it will be unable to find
+Intel-specific instructions.</p>
+<div class="codehilite"><pre><span></span><code>module unload compilers
+module load compilers/gnu/4.9.2
+</code></pre></div>
+
+<p>If you get an error like this when trying to run something, recheck what
+compiler you used.</p>
+<div class="codehilite"><pre><span></span><code>undefined symbol: __intel_sse2_strrchr
+</code></pre></div>
+
+<h3 id="install-your-own-packages-in-the-same-virtualenv">Install your own packages in the same virtualenv<a class="headerlink" href="#install-your-own-packages-in-the-same-virtualenv" title="Permanent link">§</a></h3>
+<p>This will use our central virtualenv, which contains a number of
+packages already installed.</p>
+<div class="codehilite"><pre><span></span><code>pip install --user &lt;python2pkg&gt;  
+pip3 install --user &lt;python3pkg&gt;
+</code></pre></div>
+
+<p>These will install into <code>.python2local</code> or <code>.python3local</code> directories in your home directory, respectively.</p>
+<p>To see what is already installed, the <a href="https://github.com/UCL-RITS/rcps-buildscripts/blob/master/lists/python-shared.list">Python-shared list</a>
+shows what is installed for both Python2 and 3, while the <a href="https://github.com/UCL-RITS/rcps-buildscripts/blob/master/lists/python-2.list">Python2 list</a>
+and <a href="https://github.com/UCL-RITS/rcps-buildscripts/blob/master/lists/python-3.list">Python3 list</a>
+show what is only installed for one or the other. (There may also be
+prereqs that aren't listed explicitly - pip will tell you if something
+is already installed as long as you have the recommended module bundle
+loaded).</p>
+<h3 id="use-your-own-virtualenvs">Use your own virtualenvs<a class="headerlink" href="#use-your-own-virtualenvs" title="Permanent link">§</a></h3>
+<p>If you need different packages that are not compatible with the central
+installs, you can create a new virtualenv and only yours will be
+available.</p>
+<div class="codehilite"><pre><span></span><code>virtualenv &lt;DIR&gt; 
+source &lt;DIR&gt;/bin/activate
+</code></pre></div>
+
+<p>Your bash prompt will show you that a different virtualenv is active.</p>
+<h3 id="installing-via-setuppy">Installing via setup.py<a class="headerlink" href="#installing-via-setuppy" title="Permanent link">§</a></h3>
+<p>If you need to install using setup.py, you can use the <code>--user</code> flag and
+as long as one of the python bundles is loaded, it will install into the
+same <code>.python2local</code> or <code>.python3local</code> as pip and you won't need to add
+any new paths to your environment.</p>
+<div class="codehilite"><pre><span></span><code>python setup.py install --user
+</code></pre></div>
+
+<p>You can alternatively use <code>--prefix</code> in which case you will have to set
+the install prefix to somewhere in your space, and also set PYTHONPATH
+and PATH to include your install location. Some installs won't create
+the prefix directory for you, in which case create it first. This is
+useful if you want to keep this package entirely separate and only in
+your paths on demand.</p>
+<div class="codehilite"><pre><span></span><code>export PYTHONPATH=/home/username/your/path/lib/python2.7/site-packages:$PYTHONPATH  
+# if necessary, create install path  
+mkdir -p home/username/your/path/lib/python2.7/site-packages  
+python setup.py install --prefix=/home/username/your/path
+
+# add these to your .bashrc or jobscript  
+export PYTHONPATH=/home/username/your/path/lib/python2.7/site-packages:$PYTHONPATH  
+export PATH=/home/username/your/path/bin:$PATH
+</code></pre></div>
+
+<p>Check that the PATH is where your Python executables were installed, and
+the PYTHONPATH is correct. It will tend to tell you at install time if
+you need to change or create the PYTHONPATH directory.</p>
+<h3 id="python-script-executable-paths">Python script executable paths<a class="headerlink" href="#python-script-executable-paths" title="Permanent link">§</a></h3>
+<p>If you have an executable python script giving the location of python
+like this, and it fails because that python doesn't exist in that
+location or isn't the one that has the additional packages installed:</p>
+<div class="codehilite"><pre><span></span><code>#!/usr/bin/python2.7
+</code></pre></div>
+
+<p>You should change it so it uses the first python found in your
+environment. </p>
+<div class="codehilite"><pre><span></span><code>#!/usr/bin/env python 
+</code></pre></div>
+
+<h2 id="perl">Perl<a class="headerlink" href="#perl" title="Permanent link">§</a></h2>
+<p>Perl modules will freqently have a Makefile.PL (especially if you
+download the tar files from CPAN.org yourself). You can install manually
+as:</p>
+<div class="codehilite"><pre><span></span><code>perl Makefile.PL PREFIX=/home/username/your/perl/location
+make
+make install
+</code></pre></div>
+
+<h3 id="cpan">CPAN<a class="headerlink" href="#cpan" title="Permanent link">§</a></h3>
+<p>You can use CPAN to download and install modules locally for you. The
+first time you run the <code>cpan</code> command, it will create a <code>.cpan</code>
+directory for you and ask you to give it configuration settings or allow
+it to set them automatically.</p>
+<p>You need to tell it where you want your install prefix to be.</p>
+<p>If it is automatically configured, you need to edit these lines in your
+<code>.cpan/CPAN/MyConfig.pm</code>, for example if you want it to be in a lib
+directory in your home (change username to your own username):</p>
+<div class="codehilite"><pre><span></span><code><span class="s">&#39;make_install_arg&#39;</span> <span class="o">=&gt;</span> <span class="sx">q[PREFIX=/home/username/lib]</span><span class="p">,</span>
+ <span class="c1"># other lines in here  </span>
+<span class="s">&#39;makepl_arg&#39;</span> <span class="o">=&gt;</span> <span class="sx">q[PREFIX=/home/username/lib]</span><span class="p">,</span>
+<span class="s">&#39;mbuild_install_arg&#39;</span> <span class="o">=&gt;</span> <span class="sx">q[PREFIX=/home/username/lib]</span><span class="p">,</span>
+<span class="s">&#39;mbuildpl_arg&#39;</span> <span class="o">=&gt;</span> <span class="sx">q[--install_base /home/username/lib]</span><span class="p">,</span>
+</code></pre></div>
+
+<p>It will download and build modules inside .cpan and install them where
+you specified.</p>
+<h3 id="set-perl5lib-paths">Set PERL5LIB paths<a class="headerlink" href="#set-perl5lib-paths" title="Permanent link">§</a></h3>
+<p>If you install your own Perl or Perl modules, you will need to append
+them to your PERL5LIB:</p>
+<div class="codehilite"><pre><span></span><code>export PERL5LIB=/home/username/your/perl/location:$PERL5LIB
+</code></pre></div>
+
+<p>If you installed with CPAN, you may need to add several paths to this
+based on the layout it creates inside your nominated Perl directory.</p>
+<h3 id="errors-when-using-non-default-perl-versions">Errors when using non-default Perl versions<a class="headerlink" href="#errors-when-using-non-default-perl-versions" title="Permanent link">§</a></h3>
+<h4 id="warningspm">warnings.pm<a class="headerlink" href="#warningspm" title="Permanent link">§</a></h4>
+<p>If you are using a version of Perl that is not the default system Perl
+and get strange errors when trying to run a Perl script, particularly
+ones about
+warnings.pm:</p>
+<div class="codehilite"><pre><span></span><code>Search pattern not terminated at /shared/ucl/apps/perl/5.20.0/lib/5.20.0/warnings.pm line 1099
+</code></pre></div>
+
+<p>then you need to edit the script so that instead of beginning with
+<code>#!/usr/bin/perl</code>, it begins with <code>#!/usr/bin/env perl</code>. Otherwise it
+will try to use the old system Perl libraries with your newer Perl
+executable, which won't work.</p>
+<h4 id="libperlso-not-found">libperl.so not found<a class="headerlink" href="#libperlso-not-found" title="Permanent link">§</a></h4>
+<p>You probably built perl without telling it to build the shared library
+too. Add <code>-Duseshrplib</code> to your build flags.</p>
+<h2 id="r">R<a class="headerlink" href="#r" title="Permanent link">§</a></h2>
+<p>There are instructions on installing and using local R packages in
+<a href="../../Software_Guides/R/#using_your_own_r_packages">Using your own R packages</a>.</p>
+<h2 id="compiling-with-mpi">Compiling with MPI<a class="headerlink" href="#compiling-with-mpi" title="Permanent link">§</a></h2>
+<p>OpenMPI and Intel MPI are available. Certain programs do not work well
+with one or the other, so if you are having problems try the other one.
+Intel MPI is based on MPICH, so if the program you are compiling
+mentions that, try Intel MPI first.</p>
+<p>The Intel MPI is threadsafe; some versions of OpenMPI aren't.</p>
+<p>Note that OpenMPI 1.8.4 had a segv bug in non-blocking collectives that
+is fixed in OpenMPI 1.10.1.</p>
+<h2 id="enabling-openmp">Enabling OpenMP<a class="headerlink" href="#enabling-openmp" title="Permanent link">§</a></h2>
+<p>To enable OpenMP with the Intel compilers, you simply need to add
+<code>-openmp</code> to your compile line. With the GNU compilers you need to add
+<code>-fopenmp</code>.</p>
+<h2 id="problems">Problems<a class="headerlink" href="#problems" title="Permanent link">§</a></h2>
+<p>If you experience problems building your applications, please contact
+your local IT support in the first instance. We are available at
+rc-support AT ucl.ac.uk to help you if you still cannot build your app
+or if you need to report a problem with our software stack.</p>
 
 
 
@@ -1275,7 +1585,7 @@ Threads are a software concept whereas cores are physical hardware.</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../RC_Systems_user_environment/" class="md-footer__link md-footer__link--prev" aria-label="Previous: RC Systems user environment" rel="prev">
+        <a href="../../Software_Guides/Singularity/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Singularity" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1284,20 +1594,20 @@ Threads are a software concept whereas cores are physical hardware.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              RC Systems user environment
+              Singularity
             </div>
           </div>
         </a>
       
       
         
-        <a href="../Terms_and_Conditions/" class="md-footer__link md-footer__link--next" aria-label="Next: Terms and Conditions of Use" rel="next">
+        <a href="../Compiling_and_Running_Matlab_Programs/" class="md-footer__link md-footer__link--next" aria-label="Next: Compiling and Running Matlab Programs" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Terms and Conditions of Use
+              Compiling and Running Matlab Programs
             </div>
           </div>
           <div class="md-footer__button md-icon">

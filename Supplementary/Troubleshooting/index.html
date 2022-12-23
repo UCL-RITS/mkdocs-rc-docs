@@ -12,14 +12,14 @@
         <meta name="author" content="UCL RCAS Team">
       
       
-        <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Wiki_Export/Connecting_to_Research_Data_Services/">
+        <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Supplementary/Troubleshooting/">
       
       <link rel="icon" href="../../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>Connecting to Research Data Services - UCL Research Computing Documentation</title>
+        <title>Troubleshooting - UCL Research Computing Documentation</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#between-legion-and-rds" class="md-skip">
+        <a href="#troubleshooting" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Connecting to Research Data Services
+              Troubleshooting
             
           </span>
         </div>
@@ -1027,6 +1027,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1035,29 +1037,51 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#between-legion-and-rds" class="md-nav__link">
-    Between Legion and RDS
-  </a>
-  
-    <nav class="md-nav" aria-label="Between Legion and RDS">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#from-rds-to-legion" class="md-nav__link">
-    From RDS to Legion
+  <a href="#why-is-my-job-in-eqw-status" class="md-nav__link">
+    Why is my job in Eqw status?
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#from-legion-to-rds" class="md-nav__link">
-    From Legion to RDS
+      
+        <li class="md-nav__item">
+  <a href="#binbash-invalid-option-error" class="md-nav__link">
+    "/bin/bash: invalid option" error
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#i-think-i-deleted-my-scratch-space-how-do-i-restore-it" class="md-nav__link">
+    I think I deleted my Scratch space, how do I restore it?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#which-mkl-library-files-should-i-use-to-build-my-application" class="md-nav__link">
+    Which MKL library files should I use to build my application?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unable-to-run-job-jsv-stderr-perl-warning-setting-locale-failed" class="md-nav__link">
+    Unable to run job: JSV stderr: perl: warning: Setting locale failed.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-can-i-do-to-minimise-the-time-i-need-to-wait-for-my-jobs-to-run" class="md-nav__link">
+    What can I do to minimise the time I need to wait for my job(s) to run?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-my-project-code-short-string-project-id" class="md-nav__link">
+    What is my project code (short string) / project ID?
+  </a>
   
 </li>
       
@@ -1075,46 +1099,84 @@
                 
                   
 
-  <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Wiki_Export/Connecting_to_Research_Data_Services.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Supplementary/Troubleshooting.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-  <h1>Connecting to Research Data Services</h1>
-
-<p>The <a href="http://www.ucl.ac.uk/isd/services/research-it/research-data/">Research Data Services</a>
-group (RDS) run a number of systems designed to help with data storage
-during and after a project. Several solutions for copying data between
-RDS and each of the central UCL research computing platforms are
-presented below. Sections of the example code surrounded by angle
-brackets (\&lt;>) should be replaced by the information indicated (do not
-keep the angle brackets in).</p>
-<h2 id="between-legion-and-rds">Between Legion and RDS<a class="headerlink" href="#between-legion-and-rds" title="Permanent link">§</a></h2>
-<p>If you already have an account with Research Data Services, you can
-transfer data directly between Legion and Research Data Storage using
-the Secure Copy (<code>scp</code>) command.</p>
-<h3 id="from-rds-to-legion">From RDS to Legion<a class="headerlink" href="#from-rds-to-legion" title="Permanent link">§</a></h3>
-<p>If you are on a research data login node, you can transfer data to
-Legion’s Scratch area at the highest rate currently possible by running
-the command: </p>
-<div class="codehilite"><pre><span></span><code>scp data_file.tgz login05.external.legion.ucl.ac.uk:~/Scratch/
+<h1 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">§</a></h1>
+<p>This page lists some common problems encountered by users, with methods to investigate or solve them.</p>
+<h3 id="why-is-my-job-in-eqw-status">Why is my job in Eqw status?<a class="headerlink" href="#why-is-my-job-in-eqw-status" title="Permanent link">§</a></h3>
+<p>If your job goes straight into Eqw state, there was an error in your
+jobscript that meant your job couldn't be started. The standard <code>qstat</code>
+job information command will give you a truncated version of the error:</p>
+<div class="codehilite"><pre><span></span><code>qstat -j &lt;job_ID&gt;
 </code></pre></div>
 
-<p>Or from somewhere within Legion (including compute nodes in
-running jobs) running the command: </p>
-<div class="codehilite"><pre><span></span><code>scp ssh.rd.ucl.ac.uk:~/data_file.tgz ~/Scratch/
+<p>To see the full error instead:</p>
+<div class="codehilite"><pre><span></span><code>qexplain &lt;job_ID&gt;
 </code></pre></div>
 
-<h3 id="from-legion-to-rds">From Legion to RDS<a class="headerlink" href="#from-legion-to-rds" title="Permanent link">§</a></h3>
-<p>From Legion, send data to your project space on RDS by running the
-command:</p>
-<div class="codehilite"><pre><span></span><code>scp data_file.tgz ccaaxyz@ssh.rd.ucl.ac.uk:&lt;path_to_project_space&gt;
+<p>The <code>qexplain</code> script is part of our <code>userscripts</code> set -- if you try to use it and get
+an error that it doesn't exist, load the <code>userscripts</code> module:</p>
+<div class="codehilite"><pre><span></span><code>module load userscripts
 </code></pre></div>
 
-<p>The RDS support pages provide more
-information:</p>
-<p><a href="http://www.ucl.ac.uk/isd/services/research-it/research-data/storage/access-guide">http://www.ucl.ac.uk/isd/services/research-it/research-data/storage/access-guide</a></p>
+<p>The most common reason jobs go into this error state is that 
+a file or directory your job is trying to use doesn't exist.
+Creating it after the job is in the <code>Eqw</code> state won't make the job
+run: it'll still have to be deleted and re-submitted.</p>
+<h3 id="binbash-invalid-option-error">"/bin/bash: invalid option" error<a class="headerlink" href="#binbash-invalid-option-error" title="Permanent link">§</a></h3>
+<p>This is a sign that your jobscript is a DOS-formatted text file and not
+a Unix one - the line break characters are different. Type <code>dos2unix
+&lt;yourscriptname&gt;</code> in your terminal to convert it.</p>
+<p>Sometimes the offending characters will be visible in the error. You can
+see here it's trying to parse <code>^M</code> as an option.</p>
+<h3 id="i-think-i-deleted-my-scratch-space-how-do-i-restore-it">I think I deleted my Scratch space, how do I restore it?<a class="headerlink" href="#i-think-i-deleted-my-scratch-space-how-do-i-restore-it" title="Permanent link">§</a></h3>
+<p>You may have accidentally deleted or replaced the link to your Scratch
+space. Do an <code>ls -al</code> in your home - if set up correctly, it should look
+like this:</p>
+<div class="codehilite"><pre><span></span><code>lrwxrwxrwx   1 username group       24 Apr 14  2022 Scratch -&gt; /scratch/scratch/username
+</code></pre></div>
+
+<p>where <code>username</code> is your UCL user ID and <code>group</code> is your primary group. </p>
+<p>If this link is not present, you can recreate it with</p>
+<div class="codehilite"><pre><span></span><code>ln -s /scratch/scratch/$(whoami) Scratch
+</code></pre></div>
+
+<p>If you have actually deleted the files stored in your Scratch space, there is unfortunately no way to restore them.</p>
+<h3 id="which-mkl-library-files-should-i-use-to-build-my-application">Which MKL library files should I use to build my application?<a class="headerlink" href="#which-mkl-library-files-should-i-use-to-build-my-application" title="Permanent link">§</a></h3>
+<p>Depending on which whether you wish to use BLAS/LAPACK/ScaLAPACK/etc...
+there is a specific set of libraries that you need to pass to your
+compilation command line. Fortunately, Intel have released a tool that
+allows you to determine which libraries to link and in which order for a
+number of compilers and operating systems:</p>
+<p><a href="http://software.intel.com/en-us/articles/intel-mkl-link-line-advisor/">http://software.intel.com/en-us/articles/intel-mkl-link-line-advisor/</a></p>
+<h3 id="unable-to-run-job-jsv-stderr-perl-warning-setting-locale-failed">Unable to run job: JSV stderr: perl: warning: Setting locale failed.<a class="headerlink" href="#unable-to-run-job-jsv-stderr-perl-warning-setting-locale-failed" title="Permanent link">§</a></h3>
+<p>This error is generally because your SSH client is passing LANG through
+as part of the SSH command, and is passing something that conflicts with
+what Myriad has it set to. You may be more likely to come across this
+with newer versions of macOS - if your client is different, have a
+look for an equivalent option.</p>
+<p>In Mac OS X Terminal, click Settings and under International untick the
+box that says "Set locale environment variables on startup".</p>
+<p>Per session, you can try <code>LANG=C ssh userid@myriad.rc.ucl.ac.uk</code></p>
+<h3 id="what-can-i-do-to-minimise-the-time-i-need-to-wait-for-my-jobs-to-run">What can I do to minimise the time I need to wait for my job(s) to run?<a class="headerlink" href="#what-can-i-do-to-minimise-the-time-i-need-to-wait-for-my-jobs-to-run" title="Permanent link">§</a></h3>
+<ol>
+<li>Minimise the amount of wall clock time you request.</li>
+<li>Use job arrays instead of submitting large numbers of jobs (see our
+    <a href="Example_Scripts">job script examples</a>).</li>
+<li>Plan your work so that you can do other things while your jobs are
+    being scheduled.</li>
+</ol>
+<h3 id="what-is-my-project-code-short-string-project-id">What is my project code (short string) / project ID?<a class="headerlink" href="#what-is-my-project-code-short-string-project-id" title="Permanent link">§</a></h3>
+<p>Prior to July 2014, every user had a project code. Now all users belong
+to the default project "AllUsers" and no longer have to specify this. If
+you see older job script examples mentioning a project ID, you can
+delete that section. Only projects with access to paid or specialised
+resources need to give a project code in order to use those resources.
+If you do not know yours, <a href="Contact and Support">contact rc-support</a>.</p>
 
 
 
@@ -1135,7 +1197,7 @@ information:</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../Compiling/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Compiling Your Code" rel="prev">
+        <a href="../Points_of_Contact/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MMM Points of Contact" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1144,20 +1206,20 @@ information:</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Compiling Your Code
+              MMM Points of Contact
             </div>
           </div>
         </a>
       
       
         
-        <a href="../FAQ/" class="md-footer__link md-footer__link--next" aria-label="Next: FAQ" rel="next">
+        <a href="../X-Forwarding/" class="md-footer__link md-footer__link--next" aria-label="Next: X-Forwarding" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              FAQ
+              X-Forwarding
             </div>
           </div>
           <div class="md-footer__button md-icon">

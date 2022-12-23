@@ -12,14 +12,14 @@
         <meta name="author" content="UCL RCAS Team">
       
       
-        <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Wiki_Export/Building_and_Running_Matlab_Programs/">
+        <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Supplementary/Compiling_and_Running_Matlab_Programs/">
       
       <link rel="icon" href="../../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>Building and Running Matlab Programs - UCL Research Computing Documentation</title>
+        <title>Compiling and Running Matlab Programs - UCL Research Computing Documentation</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#before-you-start-here-are-the-caveats" class="md-skip">
+        <a href="#compiling-your-program" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Building and Running Matlab Programs
+              Compiling and Running Matlab Programs
             
           </span>
         </div>
@@ -1035,13 +1035,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#before-you-start-here-are-the-caveats" class="md-nav__link">
-    Before you start, here are the caveats:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#compiling-your-program" class="md-nav__link">
     Compiling your program:
   </a>
@@ -1083,30 +1076,36 @@
                 
                   
 
-  <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Wiki_Export/Building_and_Running_Matlab_Programs.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Supplementary/Compiling_and_Running_Matlab_Programs.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-  <h1>Building and Running Matlab Programs</h1>
+  <h1>Compiling and Running Matlab Programs</h1>
 
-<h3 id="before-you-start-here-are-the-caveats">Before you start, here are the caveats:<a class="headerlink" href="#before-you-start-here-are-the-caveats" title="Permanent link">§</a></h3>
-<p>Although full Matlab is now available on Legion, you can still compile
-Matlab programs on an external machine and then run them on Legion using
+<p>Although full Matlab is available on Myriad, you can also compile
+Matlab programs on an external machine and then run them on Myriad using
 the Matlab runtime.</p>
+<p>There are some caveats, however: </p>
+<ul>
+<li>
 <p>Your Matlab program must be compiled using a 64bit Linux version of the
-Matlab compiler; the compiled code is not cross-platform compatible so
-it cannot be built on OS X and then transferred to Legion.</p>
+Matlab compiler; the compiled code is not cross-platform compatible, so for example, 
+it cannot be built on macOS and then transferred to Myriad. </p>
+</li>
+<li>
 <p>Piping code into the Matlab compiler will not work, and the main routine
 being executed must be converted into a proper Matlab function.</p>
+</li>
+<li>
 <p>When arguments are passed into compiled Matlab executable, the compiled
 code does not automatically convert them to the required type (i.e.
 float or integer) as Matlab does from the command line. In this case the
 arguments, where necessary, must be converted to numbers using the
 <code>str2num()</code> function.</p>
-<p>Because of the way Matlab threads work, you <strong>must</strong> request exclusive
-access to Legion nodes when running compiled Matlab programs.</p>
+</li>
+</ul>
 <h3 id="compiling-your-program">Compiling your program:<a class="headerlink" href="#compiling-your-program" title="Permanent link">§</a></h3>
 <p>The Matlab code is must be compiled using the <strong>mcc</strong> tool; this must be
 initially run as <code>mcc -setup</code> before anything is built. The mcc tool can
@@ -1137,17 +1136,12 @@ execute.</p>
     correctly in batch mode.<br />
 <code>--singleCompThread</code>: use only a single computational thread,
     otherwise Matlab will try to use more than one thread when the
-    operation being performed supports multi threading. This is an
-    alternative to allocating a whole Legion node to your job.</li>
+    operation being performed supports multi threading.</li>
 </ul>
 <p>Once the application has been built, there should be an executable named
 after the prefix of the <code>.m</code> file, generally <code>&lt;app name&gt;.m</code>, and a shell
 script with the name <code>run\_&lt;app name&gt;.sh</code> - both these files need to be
-transferred to Legion.</p>
-<p>We have installed a runtime environment on Legion here:</p>
-<div class="codehilite"><pre><span></span><code>/shared/ucl/apps/Matlab/R2011a/Runtime7.15/v715/
-</code></pre></div>
-
+transferred to Myriad.</p>
 <p>If you have been given pre-compiled code by someone else, the
 application may not work as the Matlab runtime version must reasonably
 match that of the Matlab compiler that was used to build the
@@ -1155,7 +1149,7 @@ application. The runtime is freely distributable and can be found in the
 installation directory of Matlab. The runtime has a GUI install
 interface and it can be installed at any location in your home
 directory.</p>
-<p>For more information, please read your Matlab documentation.</p>
+<p>For more information, please read the Matlab documentation.</p>
 <h3 id="job-submission-scripts">Job submission scripts:<a class="headerlink" href="#job-submission-scripts" title="Permanent link">§</a></h3>
 <p>There are three things that you must take into account:</p>
 <ol>
@@ -1164,12 +1158,9 @@ directory.</p>
     argument.</li>
 <li>The compiler runtime needs a directory (cache) to unpack files to
     when it is running. By default this directory is in the home folder.
-    This needs to be changed since the home directory is not writable in
-    Legion from the compute nodes. Since the Matlab runs will be single
+    Since the Matlab runs will be single
     node jobs, the cache location should be in the storage on the
     compute nodes which is stored in <code>TMPDIR</code>.</li>
-<li>Use the <code>-ac exclusive</code> SGE option to request exclusive access to a
-    Legion node unless you use the <code>--singleCompThread</code> Matlab option.</li>
 </ol>
 <p>For example, a multi-threaded serial script should look something like:</p>
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
@@ -1184,12 +1175,8 @@ directory.</p>
 <span class="c1"># Request 1 gigabyte of RAM </span>
 <span class="c1">#$ -l mem=1G</span>
 
-<span class="c1"># Select 12 threads (the most possible on Legion).</span>
-<span class="c1">#$ -l thr=12</span>
-
-<span class="c1"># The way Matlab threads work requires Matlab to not share nodes with other</span>
-<span class="c1"># jobs.</span>
-<span class="c1">#$ -ac exclusive</span>
+<span class="c1"># Request 36 cores</span>
+<span class="c1">#$ -pe smp 36</span>
 
 <span class="c1"># Set the name of the job.</span>
 <span class="c1">#$ -N Matlab_Job_1</span>
@@ -1243,7 +1230,7 @@ tar zcvf <span class="nv">$HOME</span>/Scratch/files_from_job_<span class="si"
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../../Walkthroughs/Logging_In/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Logging In" rel="prev">
+        <a href="../Compiling_Your_Code/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Compiling Your Code" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1252,20 +1239,20 @@ tar zcvf <span class="nv">$HOME</span>/Scratch/files_from_job_<span class="si"
               <span class="md-footer__direction">
                 Previous
               </span>
-              Logging In
+              Compiling Your Code
             </div>
           </div>
         </a>
       
       
         
-        <a href="../Compiling/" class="md-footer__link md-footer__link--next" aria-label="Next: Compiling Your Code" rel="next">
+        <a href="../Connecting_to_RDSS/" class="md-footer__link md-footer__link--next" aria-label="Next: Connecting to the Research Data Storage Service" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Compiling Your Code
+              Connecting to the Research Data Storage Service
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -12,14 +12,14 @@
         <meta name="author" content="UCL RCAS Team">
       
       
-        <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Wiki_Export/Quick_Start/">
+        <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Supplementary/Installing_PGI/">
       
       <link rel="icon" href="../../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>Quick Start - UCL Research Computing Documentation</title>
+        <title>Installing PGI - UCL Research Computing Documentation</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#accessing-a-cluster" class="md-skip">
+        <a href="#pgi-compiler-suite-installation-at-ucl" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Quick Start
+              Installing PGI
             
           </span>
         </div>
@@ -1035,57 +1035,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#accessing-a-cluster" class="md-nav__link">
-    Accessing A Cluster
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#managing-data-on-the-our-clusters" class="md-nav__link">
-    Managing data on the our clusters
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#user-environment" class="md-nav__link">
-    User Environment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#compiling-your-code" class="md-nav__link">
-    Compiling your code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#job-scheduling-policy-and-projects" class="md-nav__link">
-    Job scheduling policy and projects
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#submission-scripts" class="md-nav__link">
-    Submission scripts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-jobs-using-interactive-jobs" class="md-nav__link">
-    Testing jobs using Interactive Jobs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#more-information" class="md-nav__link">
-    More information
+  <a href="#pgi-compiler-suite-installation-at-ucl" class="md-nav__link">
+    PGI Compiler Suite Installation at UCL
   </a>
   
 </li>
@@ -1104,141 +1055,61 @@
                 
                   
 
-  <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Wiki_Export/Quick_Start.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Supplementary/Installing_PGI.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<p>This is a quick start guide to our clusters for users already familiar with
-operating in an HPC environment.</p>
-<h2 id="accessing-a-cluster">Accessing A Cluster<a class="headerlink" href="#accessing-a-cluster" title="Permanent link">§</a></h2>
-<p>Before accessing the Legion cluster, it is necessary to <a href="Account_Services">apply for an account</a>. Once you have received
-notification that your account has been created, you may log in via SSH
-to:</p>
+  <h1>Installing PGI</h1>
+
+<h2 id="pgi-compiler-suite-installation-at-ucl">PGI Compiler Suite Installation at UCL<a class="headerlink" href="#pgi-compiler-suite-installation-at-ucl" title="Permanent link">§</a></h2>
+<p>UCL has two floating licences for PGI Fortran/C/C++ Server for Linux,
+purchased primarily for building Gaussian 03 and Gaussian 09 on UCL
+computers. To install follow the procedure below. If you are installing
+on a system outside the Institutional Firewall, please connect to the
+<a href="http://www.ucl.ac.uk/isd/services/get-connected/remote-working/vpn">UCL VPN service</a>
+first.</p>
 <ul>
-<li><em>Legion:</em> legion.rc.ucl.ac.uk</li>
-<li><em>Myriad:</em> myriad.rc.ucl.ac.uk</li>
-<li><em>Grace:</em> grace.rc.ucl.ac.uk</li>
+<li>Download version 13.9 or 11.9 from the <a href="http://swdb.ucl.ac.uk/">UCL Software Database</a>
+    on your Linux system in a empty directory. You will need to login 
+    with your UCL userid and password.</li>
+<li>Untar the installer files using:  </li>
 </ul>
-<p>Your username and password are the same as those for your central UCL
-user id. Legion, Myriad, and Grace are only accessible from within UCL’s network. If you
-need to access them from outside, you need to log in via the Gateway, a
-departmental machine, or install the IS VPN service.</p>
-<p>More details on connecting to these services are provided on the <a href="Accessing_RC_Systems">Accessing RC Systems</a> page.</p>
-<h2 id="managing-data-on-the-our-clusters">Managing data on the our clusters<a class="headerlink" href="#managing-data-on-the-our-clusters" title="Permanent link">§</a></h2>
-<p>Users on our clusters have access to three pools of storage. They have a home
-directory which is mounted read only on the compute
-nodes and therefore cannot be written to by running jobs. They have a
-"scratch" area which is writable from jobs and intended for live data and job output.
-There is a link to this area called "Scratch" within the user’s home
-directory. Finally, within a job users have access to temporary local storage on the
-nodes (environmental variable <code>$TMPDIR</code>) which is cleared at the end of
-the job.</p>
-<p>Legion has slow external network connections, so there is a dedicated transfer node with 10 gigabit network links to and
-from Legion available at:</p>
-<div class="codehilite"><pre><span></span><code>login05.external.legion.ucl.ac.uk
+<div class="codehilite"><pre><span></span><code>tar xvzf pgilinux-2013-139.tar.gz
 </code></pre></div>
 
-<p>Transfers to Grace and Myriad may use any of the normal login nodes.</p>
-<p>For more details on the fairly complicated data management structures
-within Legion, see the <a href="Managing_Data_on_RC_Systems">Managing Data on RC Systems</a> page.</p>
-<h2 id="user-environment">User Environment<a class="headerlink" href="#user-environment" title="Permanent link">§</a></h2>
-<p>Our clusters run an operating system based on Red Hat Enterprise Linux 7 with
-the Son of Grid Engine batch scheduler. UCL-supported and provided
-packages are made available to users through the use of the modules
-system.</p>
-<table>
-<thead>
-<tr>
-<th align="left"></th>
-<th align="left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>module avail</code></td>
-<td align="left">lists available modules</td>
-</tr>
-<tr>
-<td align="left"><code>module load</code></td>
-<td align="left">loads a module</td>
-</tr>
-<tr>
-<td align="left"><code>module remove</code></td>
-<td align="left">removes a module</td>
-</tr>
-</tbody>
-</table>
-<p>The module system handles dependency and conflict information.</p>
-<p>You can find out more about the modules system on Legion on the <a href="RC_Systems_user_environment">RC Systems user environment</a> page.</p>
-<h2 id="compiling-your-code">Compiling your code<a class="headerlink" href="#compiling-your-code" title="Permanent link">§</a></h2>
-<p>We provide Intel and GNU compilers, and OpenMPI and Intel MPI
-through the modules system, with the usual wrappers. For a full list of
-the development tools available see here or in the development
-tools/compilers sections of the modules system.</p>
-<p>You can find out more about compiling code on a cluster on the <a href="Compiling">Compiling</a> page.</p>
-<h2 id="job-scheduling-policy-and-projects">Job scheduling policy and projects<a class="headerlink" href="#job-scheduling-policy-and-projects" title="Permanent link">§</a></h2>
-<p>A fair-share resource allocation model has been implemented on all our clusters.
-See <a href="Resource Allocation">Resource Allocation</a> for more information and context.</p>
-<h2 id="submission-scripts">Submission scripts<a class="headerlink" href="#submission-scripts" title="Permanent link">§</a></h2>
-<p>Jobs submitted to the scheduler (with "qsub") are shell scripts with
-directives preceded by <code>#$</code>.</p>
-<div class="codehilite"><pre><span></span><code>#!/bin/bash -l
-
-# Request ten minutes of wallclock time (format hours:minutes:seconds).
-#$ -l h_rt=0:10:0
-
-# Request 1 gigabyte of RAM per process.
-#$ -l mem=1G
-
-# Set the name of the job.
-#$ -N SomeScience_1_16
-
-# Select the MPI parallel environment and 16 processes.
-#$ -pe mpi 16
-
-# Select the project that this job will run under. (Only if you have
-#  access to paid resources).
-#$ -P &lt;your_project_id&gt;
-
-# Set the working directory to somewhere in your scratch space.
-#$ -wd /home/&lt;your_UCL_id&gt;/Scratch/output
-</code></pre></div>
-
-<p>You can then follow these directives with the commands your script would
-execute. Legion supports a wide variety of job types and we would
-strongly recommend you study the <a href="Example_Scripts">example scripts</a>.</p>
-<p>Jobs can be controlled with <code>qsub</code> (submit job), <code>qstat</code> (list jobs) and
-<code>qdel</code> (delete job). See the <a href="Batch_Processing">Introduction to batch processing</a> page for more details.</p>
-<h2 id="testing-jobs-using-interactive-jobs">Testing jobs using Interactive Jobs<a class="headerlink" href="#testing-jobs-using-interactive-jobs" title="Permanent link">§</a></h2>
-<p>As well as batch access to the system, it is possible to run short, small jobs with
-interactive access through the scheduler. These can be
-requested though the <code>qrsh</code> command. You need to provide qrsh with the
-same options you would include in your job submission script, so:</p>
-<div class="codehilite"><pre><span></span><code>qrsh -pe mpi 8 -l mem=512M -l h_rt=2:0:0
-</code></pre></div>
-
-<p>Is functionally equivalent to: </p>
-<div class="codehilite"><pre><span></span><code>#!/bin/bash
-#$ -S /bin/bash
-#$ -pe mpi 8
-#$ -l mem=512M
-#$ -l h_rt=2:0:0
-</code></pre></div>
-
-<p>Except, of course, that the result of qrsh is an interactive
-shell. For more details, see the <a href="Interactive Jobs">Interactive Jobs</a> page.</p>
-<h1 id="more-information">More information<a class="headerlink" href="#more-information" title="Permanent link">§</a></h1>
 <ul>
-<li><a href="The_Scheduler">How the scheduler works</a></li>
-<li><a href="Example_Scripts">Example submission scripts</a></li>
-<li><a href="Acknowledging_RC_Systems">Acknowledging the use of our services in publications</a></li>
-<li><a href="Contact_and_Support">Contact and support</a></li>
-<li><a href="FAQ">FAQ</a></li>
-<li><a href="Known_Issues">Known issues</a></li>
-<li><a href="Reporting_problems">Reporting Problems</a></li>
+<li>Run the installer as root and follow the instructions:</li>
 </ul>
+<div class="codehilite"><pre><span></span><code>./install`
+</code></pre></div>
+
+<ul>
+<li>
+<p>During the installation you will be asked: <em>Do you wish to generate
+    license keys? (y/n)</em> - Enter <code>n</code> as you will need to use the central
+    UCL licence server.</p>
+</li>
+<li>
+<p>Add the PGI Suite bin directory to your PATH. The default location
+    used by the installer is <code>/opt/pgi/linux86-64/13.9/bin</code>.</p>
+</li>
+<li>Open access to TCP ports 27000 and 27055 in your local firewall and
+    any departmental firewall.</li>
+<li>Setup access to the licence server by setting the <code>LM_LICENSE_FILE</code>
+    environment variable. Use either:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>export LM_LICENSE_FILE=27000@lic-pgi.ucl.ac.uk
+
+export LM_LICENSE_FILE=$LM_LICENSE_FILE:27000@lic-pgi.ucl.ac.uk
+</code></pre></div>
+
+<ul>
+<li>Use the second version if you have other licence managers already
+    defined.</li>
+</ul>
+<p>The PGI compilers should now be installed and working.</p>
 
 
 
@@ -1259,7 +1130,7 @@ shell. For more details, see the <a href="Interactive Jobs">Interactive Jobs</a>
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../Publications/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Publications" rel="prev">
+        <a href="../Hostkeys/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Hostkeys" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1268,20 +1139,20 @@ shell. For more details, see the <a href="Interactive Jobs">Interactive Jobs</a>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Publications
+              Hostkeys
             </div>
           </div>
         </a>
       
       
         
-        <a href="../RC_Systems_user_environment/" class="md-footer__link md-footer__link--next" aria-label="Next: RC Systems user environment" rel="next">
+        <a href="../NVIDIA_Containers/" class="md-footer__link md-footer__link--next" aria-label="Next: Using NVIDIA Grid Cloud Containers" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              RC Systems user environment
+              Using NVIDIA Grid Cloud Containers
             </div>
           </div>
           <div class="md-footer__button md-icon">

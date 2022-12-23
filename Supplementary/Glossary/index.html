@@ -12,14 +12,14 @@
         <meta name="author" content="UCL RCAS Team">
       
       
-        <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Wiki_Export/X-Forwarding/">
+        <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Supplementary/Glossary/">
       
       <link rel="icon" href="../../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>X-Forwarding - UCL Research Computing Documentation</title>
+        <title>Research Computing Glossary - UCL Research Computing Documentation</title>
       
     
     
@@ -67,11 +67,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#windows" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -100,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              X-Forwarding
+              Research Computing Glossary
             
           </span>
         </div>
@@ -1028,62 +1023,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows
-  </a>
-  
-    <nav class="md-nav" aria-label="Windows">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installing-exceed" class="md-nav__link">
-    Installing Exceed
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-putty-with-exceed" class="md-nav__link">
-    Using PuTTY with Exceed
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
-    macOS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    Linux
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#checking-your-setup" class="md-nav__link">
-    Checking your Setup
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1096,65 +1035,103 @@
                 
                   
 
-  <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Wiki_Export/X-Forwarding.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Supplementary/Glossary.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-  <h1>X-Forwarding</h1>
+  <h1>Research Computing Glossary</h1>
 
-<p>X is a system and protocol that lets remote computers push interactive windows to your local computer over a network. We use a method known as X-Forwarding, together with an SSH client, to direct the network messages for X over the same connection you use for the command-line.</p>
-<p>The setup steps for getting this working on Windows, Linux, and macOS are each different, and we've put them below.</p>
-<h2 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">§</a></h2>
-<p>Windows doesn't natively have the ability to receive X windows, so you need to install an X server separately.</p>
-<p>There are a few choices; UCL has a site-wide license (covering UCL-owned and personal computers) for one called <a href="https://www.opentext.co.uk/products-and-solutions/products/specialty-technologies/connectivity/exceed">Exceed</a>, which is pretty reliable and seems to handle 3D content well, but there's also <a href="http://www.straightrunning.com/XmingNotes/">Xming</a>, which is free and open-source if that's a concern.</p>
-<p>Exceed is installed on all UCL's centrally-managed Windows computers.</p>
-<h3 id="installing-exceed">Installing Exceed<a class="headerlink" href="#installing-exceed" title="Permanent link">§</a></h3>
-<p>Exceed comes in two parts: the main package, and the add-on that handles certain types of rendered 3D content.</p>
-<p>You can download both parts from the <a href="http://swdb.ucl.ac.uk/package/view/id/150">Exceed page in the UCL Software Database</a>. First, install the main package, then the 3D package.</p>
-<h3 id="using-putty-with-exceed">Using PuTTY with Exceed<a class="headerlink" href="#using-putty-with-exceed" title="Permanent link">§</a></h3>
-<p>When you run the Exceed program, it will automatically wait in the background until you run a remote application, so you only have to configure PuTTY to pass the data through.</p>
-<p>To do this, first fill in the details for your PuTTY connection as normal with the hostname and any other details you'd normally use to connect, and then, in the pane labelled "Category" on the left, click the "+" next to "SSH" and then select "X11".</p>
-<p>The main pane should change to one labelled "Options controlling SSH X11 forwarding". Check the box labelled "Enable X11 Forwarding".</p>
-<p>You can now click "Open" to start the connection, or you can return to the "Session" options to save this setup. </p>
-<h2 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">§</a></h2>
-<p>Like Windows, macOS doesn't come with an X server to receive X windows. The most commonly used X server for macOS is <a href="https://www.xquartz.org/">XQuartz</a>. If you download and install that, you can follow the Linux instructions below. When you connect with X-Forwarding enabled, the XQuartz server program should start automatically, ready to present remote windows.</p>
-<h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">§</a></h2>
-<p>Almost all Linux versions that have a graphical desktop use an X server to provide it, so you don't have to install a separate one.</p>
-<p>You still have to set up your SSH client's connection to "tunnel" the X windows from the remote computer, though. You can do this by simply adding the <code>-X</code> option to your <code>ssh</code> command line, so for example to connect to Myriad with X-Forwarding:</p>
-<div class="codehilite"><pre><span></span><code>ssh -X ccaaxyz@myriad.rc.ucl.ac.uk
-</code></pre></div>
-
-<p>To use X-Forwarding from outside UCL, you must either use the VPN, or use the SSH Gateway system, with the appropriate flags for <em>both</em> <code>ssh</code> steps, for example:</p>
-<div class="codehilite"><pre><span></span><code>[me@my_computer ~]$ ssh -X ccaaxyz@ssh-gateway.ucl.ac.uk
-[...]
-[ccaaxyz@ejp-gateway-01 ~]$ ssh -X ccaaxyz@myriad.rc.ucl.ac.uk
-</code></pre></div>
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This assumes you use a Linux distribution that uses Xorg as its display server. If your distribution uses Wayland instead, and you aren't sure how to make this work, please <a href="Contact_Us.md">contact us</a>, letting us know what version of which distribution you're using.</p>
-</div>
-<h2 id="checking-your-setup">Checking your Setup<a class="headerlink" href="#checking-your-setup" title="Permanent link">§</a></h2>
-<p>There are some simple programs on the system that use X, which can be used to check whether your setup is working correctly.</p>
-<ul>
-<li>
-<p><code>xterm</code> is a terminal emulator -- it presents a terminal much like you would already be using.</p>
-</li>
-<li>
-<p><code>glxgears</code> is a small test/benchmark program for the 3D remote rendering capability. It presents a small set of animated gears.</p>
-</li>
-</ul>
-<p>If these work, you have a working X connection. If not, you should see an error when you try to run them that may look something like:</p>
-<div class="codehilite"><pre><span></span><code>xterm: Xt error: Can&#39;t open display:
-</code></pre></div>
-
-<p>Or:</p>
-<div class="codehilite"><pre><span></span><code>Error: couldn&#39;t open display (null)
-</code></pre></div>
-
-<p>If you see these, please check you have followed all the appropriate steps above, and if you still have problems, contact <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#99;&#45;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#117;&#99;&#108;&#46;&#97;&#99;&#46;&#117;&#107;">&#114;&#99;&#45;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#117;&#99;&#108;&#46;&#97;&#99;&#46;&#117;&#107;</a> for assistance.</p>
+<dl>
+<dt>Bash</dt>
+<dd>A <a href="#shell">shell</a> and <a href="#script">scripting</a> language, which is the default
+  command processor on most Linux operating systems.</dd>
+<dt>Cluster</dt>
+<dd>A cluster consists of a set of computer <a href="#node">nodes</a>
+connected together over a fast local area network. A message passing
+protocol such as <a href="#mpi">MPI</a> allows individual nodes to
+work together as a single system.</dd>
+<dt>Core</dt>
+<dd>A core refers to a processing unit within a <a href="#node">node</a>. A node may have multiple cores which can
+work in parallel on a single task, operating on the same data in
+memory. This kind of parallelism is coordinated using the <a href="#openmp">OpenMP</a> library. Alternatively, cores may work
+independently on different tasks. Cores may or may not also share
+cache.</dd>
+<dt>Interconnect</dt>
+<dd>The interconnect is the network which is used to transfer data
+between <a href="#node">nodes</a> in a <a href="#cluster">cluster</a>. Different types of interconnect
+operate at different bandwidths and with different amounts of latency, which affects the
+suitability of a collection of nodes for jobs which use message
+passing (<a href="#mpi">MPI</a>).</dd>
+<dt>Job</dt>
+<dd>In the context of <a href="Batch Processing">Batch Processing</a>, a job refers to a
+computational task to be performed such as a single simulation or
+analysis.</dd>
+<dt>Job Script</dt>
+<dd>A job script is essentially a special kind of <a href="#script">script</a> used to specify the parameters of a job.
+Users can specify the data to input, program to use, and the
+computing resources required. The job script is specified when a job
+is submitted to SGE, which reads lines starting with <code>#$</code>.</dd>
+<dt>MPI</dt>
+<dd>The Message Passing Interface (MPI) system is a set of portable
+libraries which can be incorporated into programs in order to
+control parallel computation. Specifically it coordinates effort
+between <a href="#node">nodes</a> which do not share the same
+memory address space cf. <a href="#openmp">OpenMP</a>.</dd>
+<dt>Node</dt>
+<dd>In cluster computing, a node refers to a computational unit which is
+capable of operating independently of other parts of the cluster. As
+a minimum it consists of one (or more) processing <a href="#core">cores</a>, has its own memory, and runs its own
+operating system.</dd>
+<dt>OpenMP</dt>
+<dd>Open Multi-Processing. OpenMP supports multithreading, a process
+whereby a master <a href="#thread">thread</a> generates a number of
+slave threads to run a task which is divided among them. OpenMP
+applies to processes running on shared memory platforms, i.e. 
+<a href="#job">jobs</a> running on a single <a href="#node">node</a>. Hybrid applications may make use of both
+OpenMP and <a href="#mpi">MPI</a>.</dd>
+<dt>Process</dt>
+<dd>A process is a single instance of a program that is running on a
+computer. A single process may consist of many <a href="#thread">threads</a> acting concurrently, and there may
+multiple instances of a program running as separate processes.</dd>
+<dt>Script</dt>
+<dd>A <a href="#shell">shell</a> script enables users to list commands
+to be run consecutively by typing them into a text file instead of typing them out live. The first
+line of the script uses the <a href="#Shebang">shebang</a> notation <code>#!</code> to designate the
+scripting language interpreter program to be used to interpret the commands, e.g. <a href="#bash">bash</a>.</dd>
+<dt>Shebang</dt>
+<dd>"Shebang" is a common abbreviation for "hash-bang" — the character sequence <code>#!</code> — which is placed at
+the start of a <a href="#script">script</a> to specify the
+interpreter that should be used. When the shebang is found in the
+first line of a script, the program loader reads the rest of the
+line as the path to the required interpreter (e.g. <code>/bin/bash</code> is the
+usual path to the <a href="#bash">bash</a> shell). The specified
+interpreter is then run with the path to the script passed as an
+argument to it.</dd>
+<dt>Shell</dt>
+<dd>A command line interpreter which provides an interface for users to
+type instructions to be interpreted by the operating system and
+display output via the monitor. Users type specific shell commands
+in order to run <a href="#process">processes</a>, e.g. <code>ls</code> to list
+directory contents.</dd>
+<dt>Son of Grid Engine (SGE or SoGE)</dt>
+<dd>The queuing system used by many cluster computing systems (including, currently, all the ones we run)
+to organise and schedule <a href="#job">jobs</a>. Once jobs are submitted to SGE, it takes
+care of executing them when the required resources become available.
+Job priority is subject to the local fair use policy.</dd>
+<dt>Sun Grid Engine (SGE)</dt>
+<dd>The original software written by Sun Microsystems that was later modified to
+make Son of Grid Engine (among other products, like Univa Grid Engine).
+Documentation may refer to Sun Grid Engine instead of Son of Grid Engine, and
+for most user purposes, the terms are interchangeable.</dd>
+<dt>Thread</dt>
+<dd>A thread refers to a serial computational process which can run on a
+single <a href="#core">core</a>. The number of threads generated by
+a parallel job may exceed the number of cores available though, in
+which case cores may alternate between running different threads.
+Threads are a software concept whereas cores are physical hardware.</dd>
+</dl>
 
 
 
@@ -1175,7 +1152,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../User_Scripts/" class="md-footer__link md-footer__link--prev" aria-label="Previous: User Scripts" rel="prev">
+        <a href="../GPU_Nodes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: GPU nodes" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1184,20 +1161,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              User Scripts
+              GPU nodes
             </div>
           </div>
         </a>
       
       
         
-        <a href="../Background/Batch_Processing/" class="md-footer__link md-footer__link--next" aria-label="Next: Batch Processing" rel="next">
+        <a href="../Hostkeys/" class="md-footer__link md-footer__link--next" aria-label="Next: Hostkeys" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Batch Processing
+              Hostkeys
             </div>
           </div>
           <div class="md-footer__button md-icon">
