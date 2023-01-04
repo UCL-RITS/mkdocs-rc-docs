@@ -1,7 +1,6 @@
 mkdocs
 mkdocs-material
 mkdocs-awesome-pages-plugin
-mkdocs-git-revision-date-localized-plugin
 pygments
 requests
 Mako

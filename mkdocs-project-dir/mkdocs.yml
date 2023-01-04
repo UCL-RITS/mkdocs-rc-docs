@@ -87,8 +87,6 @@ plugins:
   - search
   - awesome-pages
 # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
-  - git-revision-date-localized
-# https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
 
 # Customization
 extra:
