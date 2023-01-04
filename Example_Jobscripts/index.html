@@ -14,8 +14,14 @@
       
         <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Example_Jobscripts/">
       
+      
+        <link rel="prev" href="../Contact_Us/">
+      
+      
+        <link rel="next" href="../Experienced_Users/">
+      
       <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
@@ -23,11 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.f56500e0.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
-        
       
       
 
@@ -110,8 +115,6 @@
       <form class="md-header__option" data-md-component="palette">
         
           
-          
-          
           <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
@@ -119,8 +122,6 @@
             </label>
           
         
-          
-          
           
           <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
           
@@ -1300,10 +1301,9 @@
                 
                   
 
-  <a href="https://github.com/UCL-RITS/mkdocs-rc-docs/blob/master/mkdocs-project-dir/docs/Example_Jobscripts.md" title="Edit this page" class="md-content__button md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+  
+  
+
 
 
   <h1>Example Jobscripts</h1>
@@ -1366,13 +1366,13 @@ disk space on the node, if it is not diskless).</p>
 <span class="c1">#$ -wd /home/&lt;your_UCL_id&gt;/Scratch/workspace</span>
 
 <span class="c1"># Your work should be done in $TMPDIR </span>
-<span class="nb">cd</span> <span class="nv">$TMPDIR</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$TMPDIR</span>
 
 <span class="c1"># Run the application and put the output into a file called date.txt</span>
-/bin/date &gt; date.txt
+/bin/date<span class="w"> </span>&gt;<span class="w"> </span>date.txt
 
 <span class="c1"># Preferably, tar-up (archive) all output files onto the shared scratch area</span>
-tar -zcvf <span class="nv">$HOME</span>/Scratch/files_from_job_<span class="nv">$JOB_ID</span>.tar.gz <span class="nv">$TMPDIR</span>
+tar<span class="w"> </span>-zcvf<span class="w"> </span><span class="nv">$HOME</span>/Scratch/files_from_job_<span class="nv">$JOB_ID</span>.tar.gz<span class="w"> </span><span class="nv">$TMPDIR</span>
 
 <span class="c1"># Make sure you have given enough time for the copy to complete!</span>
 </code></pre></div>
@@ -1439,7 +1439,7 @@ modules are loaded, either in your jobscript or in your shell start-up files (e.
 <span class="c1">#$ -wd /home/&lt;your_UCL_id&gt;/Scratch/output</span>
 
 <span class="c1"># Run our MPI job.  GERun is a wrapper that launches MPI jobs on our clusters.</span>
-gerun <span class="nv">$HOME</span>/src/science/simulate
+gerun<span class="w"> </span><span class="nv">$HOME</span>/src/science/simulate
 </code></pre></div>
 
 <h2 id="array-job-script-example">Array Job Script Example<a class="headerlink" href="#array-job-script-example" title="Permanent link">§</a></h2>
@@ -1477,7 +1477,7 @@ arrays.</p>
 
 <span class="c1"># Run the application.</span>
 
-<span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$JOB_NAME</span><span class="s2"> </span><span class="nv">$SGE_TASK_ID</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$JOB_NAME</span><span class="s2"> </span><span class="nv">$SGE_TASK_ID</span><span class="s2">&quot;</span>
 </code></pre></div>
 
 <h2 id="array-job-script-example-using-parameter-file">Array Job Script Example Using Parameter File<a class="headerlink" href="#array-job-script-example-using-parameter-file" title="Permanent link">§</a></h2>
@@ -1533,7 +1533,7 @@ thousands or tens of thousands of tasks.</p>
 
 <span class="c1"># Run the program (replace echo with your binary and options).</span>
 
-<span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$index</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="nv">$variable1</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="nv">$variable2</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="nv">$variable3</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$index</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$variable1</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$variable2</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$variable3</span><span class="s2">&quot;</span>
 </code></pre></div>
 
 <h2 id="example-array-job-using-local2scratch">Example Array Job Using Local2Scratch<a class="headerlink" href="#example-array-job-using-local2scratch" title="Permanent link">§</a></h2>
@@ -1572,8 +1572,8 @@ with the structure <code>&lt;job id&gt;/&lt;job id&gt;.&lt;task id&gt;.&lt;queue
 <span class="c1">#Local2Scratch</span>
 
 <span class="c1"># Run the application in TMPDIR.</span>
-<span class="nb">cd</span> <span class="nv">$TMPDIR</span>
-hostname &gt; hostname.txt
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$TMPDIR</span>
+hostname<span class="w"> </span>&gt;<span class="w"> </span>hostname.txt
 </code></pre></div>
 
 <h2 id="array-job-script-with-a-stride">Array Job Script with a Stride<a class="headerlink" href="#array-job-script-with-a-stride" title="Permanent link">§</a></h2>
@@ -1609,17 +1609,17 @@ hostname &gt; hostname.txt
 <span class="c1">#Local2Scratch</span>
 
 <span class="c1"># Do your work in $TMPDIR </span>
-<span class="nb">cd</span> <span class="nv">$TMPDIR</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$TMPDIR</span>
 
 <span class="c1"># 10. Loop through the IDs covered by this stride and run the application if </span>
 <span class="c1"># the input file exists. (This is because the last stride may not have that</span>
 <span class="c1"># many inputs available). Or you can leave out the check and get an error.</span>
-<span class="k">for</span> <span class="o">((</span> <span class="nv">i</span><span class="o">=</span><span class="nv">$SGE_TASK_ID</span><span class="p">;</span> i&lt;<span class="nv">$SGE_TASK_ID</span>+10<span class="p">;</span> i++ <span class="o">))</span>
+<span class="k">for</span><span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="nv">i</span><span class="o">=</span><span class="nv">$SGE_TASK_ID</span><span class="p">;</span><span class="w"> </span>i&lt;<span class="nv">$SGE_TASK_ID</span>+10<span class="p">;</span><span class="w"> </span>i++<span class="w"> </span><span class="o">))</span>
 <span class="k">do</span>
-  <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&quot;input.</span><span class="nv">$i</span><span class="s2">&quot;</span> <span class="o">]</span>
-  <span class="k">then</span>
-    <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$JOB_NAME</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="nv">$SGE_TASK_ID</span><span class="s2">&quot;</span> <span class="s2">&quot;input.</span><span class="nv">$i</span><span class="s2">&quot;</span>
-  <span class="k">fi</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;input.</span><span class="nv">$i</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span>
+<span class="w">  </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$JOB_NAME</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$SGE_TASK_ID</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;input.</span><span class="nv">$i</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="k">fi</span>
 <span class="k">done</span>
 </code></pre></div>
 
@@ -1666,10 +1666,10 @@ supported by the MPI).</p>
 
 <span class="c1"># Automatically set threads using ppn. On a cluster with 40 cores</span>
 <span class="c1"># per node this will be 80/2 = 40 threads.</span>
-<span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="k">$(</span>ppn<span class="k">)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="k">$(</span>ppn<span class="k">)</span>
 
 <span class="c1"># Run our MPI job with the default modules. Gerun is a wrapper script for mpirun. </span>
-gerun <span class="nv">$HOME</span>/src/madscience/madhybrid
+gerun<span class="w"> </span><span class="nv">$HOME</span>/src/madscience/madhybrid
 </code></pre></div>
 
 <p>If you want to specify a specific number of OMP threads yourself, you would alter 
@@ -1707,18 +1707,18 @@ gerun your_binary
 <span class="c1">#$ -wd /home/&lt;your_UCL_id&gt;/Scratch/output</span>
 
 <span class="c1"># Change into temporary directory to run work</span>
-<span class="nb">cd</span> <span class="nv">$TMPDIR</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$TMPDIR</span>
 
 <span class="c1"># load the cuda module (in case you are running a CUDA program)</span>
-module unload compilers mpi
-module load compilers/gnu/4.9.2
-module load cuda/7.5.18/gnu-4.9.2
+module<span class="w"> </span>unload<span class="w"> </span>compilers<span class="w"> </span>mpi
+module<span class="w"> </span>load<span class="w"> </span>compilers/gnu/4.9.2
+module<span class="w"> </span>load<span class="w"> </span>cuda/7.5.18/gnu-4.9.2
 
 <span class="c1"># Run the application - the line below is just a random example.</span>
 mygpucode
 
 <span class="c1"># 10. Preferably, tar-up (archive) all output files onto the shared scratch area</span>
-tar zcvf <span class="nv">$HOME</span>/Scratch/files_from_job_<span class="nv">$JOB_ID</span>.tar.gz <span class="nv">$TMPDIR</span>
+tar<span class="w"> </span>zcvf<span class="w"> </span><span class="nv">$HOME</span>/Scratch/files_from_job_<span class="nv">$JOB_ID</span>.tar.gz<span class="w"> </span><span class="nv">$TMPDIR</span>
 
 <span class="c1"># Make sure you have given enough time for the copy to complete!</span>
 </code></pre></div>
@@ -1743,12 +1743,12 @@ tar zcvf <span class="nv">$HOME</span>/Scratch/files_from_job_<span class="nv">$
 <span class="c1">#$ -wd /home/&lt;your user id&gt;/Scratch/output/</span>
 
 <span class="c1"># Run our MPI job. You can choose OpenMPI or IntelMPI for GCC.</span>
-module unload compilers mpi
-module load compilers/gnu/4.9.2
-module load mpi/openmpi/1.10.1/gnu-4.9.2
-module load cuda/7.5.18/gnu-4.9.2
+module<span class="w"> </span>unload<span class="w"> </span>compilers<span class="w"> </span>mpi
+module<span class="w"> </span>load<span class="w"> </span>compilers/gnu/4.9.2
+module<span class="w"> </span>load<span class="w"> </span>mpi/openmpi/1.10.1/gnu-4.9.2
+module<span class="w"> </span>load<span class="w"> </span>cuda/7.5.18/gnu-4.9.2
 
-gerun myGPUapp
+gerun<span class="w"> </span>myGPUapp
 </code></pre></div>
 
 
@@ -1765,42 +1765,6 @@ gerun myGPUapp
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../Contact_Us/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Contact and Support" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Contact and Support
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../Experienced_Users/" class="md-footer__link md-footer__link--next" aria-label="Next: Quick Start Guide for Experienced HPC Users" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Quick Start Guide for Experienced HPC Users
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1840,12 +1804,11 @@ gerun myGPUapp
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["instant"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["instant"], "search": "../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
-    
     
   </body>
 </html>
