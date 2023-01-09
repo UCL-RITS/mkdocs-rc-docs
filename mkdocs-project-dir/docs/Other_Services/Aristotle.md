@@ -10,8 +10,7 @@ layout: docs
 ## Overview
 
 Aristotle is an interactive, Linux-based compute service for
-teaching, running on three nodes of the same specification as
-[Legion's U-type nodes](../Clusters/Legion.md#Hardware), each with 64 gigabytes
+teaching, running on four nodes, each with 128 gigabytes
 of RAM and 16 cores. The nodes run the Red Hat Enterprise Linux operating system
 ([RHEL 7](https://en.wikipedia.org/wiki/Red_Hat_Enterprise_Linux))
 and have a subset of the RCPS software stack available.
@@ -33,11 +32,10 @@ aristotle.rc.ucl.ac.uk
 ```
 
 This address can point to more than one actual server (via DNS
-round-robin); usually there are two available. To connect to a specific
-server from the set, you will need to know its number: for example, the
-second server has the address `aristotle02.rc.ucl.ac.uk`. When you
-connect, you should be shown which one you are connected to on your
-command line.
+round-robin). To connect to a specific server from the set, you will 
+need to know its number: for example, the second server has the address
+ `aristotle02.rc.ucl.ac.uk`. When you connect, you should be shown which 
+one you are connected to on your command line.
 
 The userid and password you need to connect with are those provided to
 you by [Information Services Division](http://ucl.ac.uk/isd).
