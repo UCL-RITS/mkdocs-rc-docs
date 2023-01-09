@@ -63,9 +63,16 @@ is correct at time of writing):
 
 ```
 # unload your current compiler and mpi modules
-module unload compilers mpi
-# load the GNU compiler and OpenMPI
+module unload -f compilers mpi
+# load the GNU compiler
 module load compilers/gnu/4.9.2
+
+# these three modules are only needed on Myriad
+module load numactl/2.0.12
+module load binutils/2.29.1/gnu-4.9.2
+module load ucx/1.8.0/gnu-4.9.2
+
+# load OpenMPI
 module load mpi/openmpi/4.0.3/gnu-4.9.2
 ```
 
