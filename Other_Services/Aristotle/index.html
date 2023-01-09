@@ -21,7 +21,7 @@
         <link rel="next" href="../JupyterHub/">
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.3">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.f56500e0.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6b71719e.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
@@ -462,12 +462,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16" type="checkbox" id="__nav_16" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_16" type="checkbox" id="__nav_16" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_16">
+        <label class="md-nav__link" for="__nav_16" tabindex="0" aria-expanded="false">
           Background
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -510,12 +511,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_17" type="checkbox" id="__nav_17" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_17" type="checkbox" id="__nav_17" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_17">
+        <label class="md-nav__link" for="__nav_17" tabindex="0" aria-expanded="false">
           Clusters
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -628,12 +630,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_18" type="checkbox" id="__nav_18" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_18" type="checkbox" id="__nav_18" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_18">
+        <label class="md-nav__link" for="__nav_18" tabindex="0" aria-expanded="false">
           Installed Software Lists
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -706,12 +709,13 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_19" type="checkbox" id="__nav_19" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_19" type="checkbox" id="__nav_19" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_19">
+        <label class="md-nav__link" for="__nav_19" tabindex="0" aria-expanded="true">
           Other Services
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -851,12 +855,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_20" type="checkbox" id="__nav_20" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_20" type="checkbox" id="__nav_20" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_20">
+        <label class="md-nav__link" for="__nav_20" tabindex="0" aria-expanded="false">
           Paid-For Resources
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -913,12 +918,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_21" type="checkbox" id="__nav_21" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_21" type="checkbox" id="__nav_21" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_21">
+        <label class="md-nav__link" for="__nav_21" tabindex="0" aria-expanded="false">
           Software Guides
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1031,12 +1037,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_22" type="checkbox" id="__nav_22" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_22" type="checkbox" id="__nav_22" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_22">
+        <label class="md-nav__link" for="__nav_22" tabindex="0" aria-expanded="false">
           Walkthroughs
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1137,8 +1144,7 @@
 <h1 id="aristotle">Aristotle<a class="headerlink" href="#aristotle" title="Permanent link">§</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">§</a></h2>
 <p>Aristotle is an interactive, Linux-based compute service for
-teaching, running on three nodes of the same specification as
-<a href="../Clusters/Legion.md#Hardware">Legion's U-type nodes</a>, each with 64 gigabytes
+teaching, running on four nodes, each with 128 gigabytes
 of RAM and 16 cores. The nodes run the Red Hat Enterprise Linux operating system
 (<a href="https://en.wikipedia.org/wiki/Red_Hat_Enterprise_Linux">RHEL 7</a>)
 and have a subset of the RCPS software stack available.</p>
@@ -1156,11 +1162,10 @@ access Aristotle by connecting via <code>ssh</code> to:</p>
 </code></pre></div>
 
 <p>This address can point to more than one actual server (via DNS
-round-robin); usually there are two available. To connect to a specific
-server from the set, you will need to know its number: for example, the
-second server has the address <code>aristotle02.rc.ucl.ac.uk</code>. When you
-connect, you should be shown which one you are connected to on your
-command line.</p>
+round-robin). To connect to a specific server from the set, you will 
+need to know its number: for example, the second server has the address
+ <code>aristotle02.rc.ucl.ac.uk</code>. When you connect, you should be shown which 
+one you are connected to on your command line.</p>
 <p>The userid and password you need to connect with are those provided to
 you by <a href="http://ucl.ac.uk/isd">Information Services Division</a>.</p>
 <p>If you experience difficulties with your login, please make sure that
@@ -1234,10 +1239,10 @@ relevant <a href="../../Software_Guides/Other_Software/">modules documentation</
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.5cf534bf.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
       
     
   </body>
