@@ -27,7 +27,7 @@ your case will be presented to the
 [CRAG](http://www.ucl.ac.uk/isd/about/governance/research-it/crag) for
 consideration at the next meeting of the Group. The
 [CRAG](http://www.ucl.ac.uk/isd/about/governance/research-it/crag) meets
-monthly, usually on the third Friday of the month, and users will be
+monthly, usually on the second Tuesday of the month, and users will be
 informed of the Group’s decision as soon as possible after their next
 meeting.
 
