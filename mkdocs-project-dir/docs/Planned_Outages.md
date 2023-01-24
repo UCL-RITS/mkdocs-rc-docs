@@ -16,6 +16,7 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+31 Jan 2023 -> 1st Feb 2023 | Myriad | Planned | Full shutdown of the system to perform firmware updates to the storage system, including all controllers and drives. Jobs will be drained for 08:00 on 31st. It is intended to make the system available again in the evening of the 1st.
 
 ## Previous Outages
 
