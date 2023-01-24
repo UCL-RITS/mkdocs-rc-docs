@@ -257,7 +257,7 @@ Host myriad
 
 Host myriad12
    User ccxxxxx
-   HostName login12.myriad.ucl.ac.uk
+   HostName login12.myriad.rc.ucl.ac.uk
    proxyCommand ssh -W login12.myriad.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk
 
 Host aristotle
