@@ -16,12 +16,12 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-31 Jan 2023 -> 1st Feb 2023 | Myriad | Planned | Full shutdown of the system to perform firmware updates to the storage system, including all controllers and drives. Jobs will be drained for 08:00 on 31st. It is intended to make the system available again in the evening of the 1st.
 
 ## Previous Outages
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+31 Jan 2023 -> 1st Feb 2023 | Myriad | Completed | Full shutdown of the system to perform firmware updates to the storage system, including all controllers and drives. Jobs will be drained for 08:00 on 31st. It is intended to make the system available again in the evening of the 1st.
 23 Dec 2022 -> 3-4 Jan 2023 | Young, Michael, Kathleen | Complete | Full shutdown during UCL Christmas closing to prevent risk of filesystem damage from instability or power issues. Jobs will be drained for 9am on 23rd, shutting down at 1pm. Will be brought back up throughout 3 Jan with intent to have jobs running at some point on 4 Jan.
 13 Dec 2022 -> 14 Dec 2022 | Myriad | Postponed | Upgrade of firmware on all Lustre storage disks. Jobs will be drained for 8am on Tues 13 Dec and we expect to re-enable jobs on Weds 14 Dec. Discovered that we would need to update the storage controller firmware as well, and possibly the OSSs (object store servers) and Lustre itself. We don't want to do this right before the Christmas closure so are postponing the update until later.
 1 Nov 2022 -> 2 Nov 2022 | Myriad | Complete | Upgrade of firmware on all Lustre storage disks. No reading or writing of files will be possible during the upgrade interval. Jobs will be drained for 8am on Tues 1 Nov and we expect to re-enable jobs on Weds 2 Nov.
