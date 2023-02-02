@@ -6,6 +6,10 @@ categories:
 
 # Purchasing in Myriad
 
+!!! important "Feb 2023: We cannot buy any nodes in Myriad for the foreseeable future."
+    We may be able to add nodes to an upcoming on-premise cloud/container-based platform intended 
+    for interactive workloads with graphical user interfaces. Please contact rc-support@ucl.ac.uk
+
 Researchers may purchase additional resources to be used as part of the [Myriad](../Clusters/Myriad.md) High Performance Computing cluster if the free service does not meet their needs. These resources can be made available in one of two ways:
 
  - Nodes purchased by researchers can be converted into a quarterly allocation of “priority cycles” equivalent to the amount of computation provided by the nodes, but usable across the whole cluster. We calculate how much time exists on your nodes for three months, and every three months you receive an allocation of that much priority time to use however you want on Myriad (GPU/large memory nodes cost more to use, and give you more if you buy them). We recommend this route.
