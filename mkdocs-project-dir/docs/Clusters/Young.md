@@ -611,7 +611,7 @@ presentations and papers with the following text:
 
 "We are grateful to the UK Materials and Molecular Modelling Hub for
 computational resources, which is partially funded by EPSRC
-(EP/P020194/1 and EP/T022213/1)"
+(EP/T022213/1, EP/W032260/1 and EP/P020194/1)"
 
 ### MCC
 
@@ -621,7 +621,7 @@ please include the following acknowledgment:
 "Via our membership of the UK's HEC Materials Chemistry Consortium,
 which is funded by EPSRC (EP/L000202), this work used the UK Materials
 and Molecular Modelling Hub for computational resources, MMM Hub, which
-is partially funded by EPSRC (EP/P020194 and EP/T022213)"
+is partially funded by EPSRC (EP/T022213/1, EP/W032260/1 and EP/P020194/1)"
 
 ### UKCP
 
@@ -631,6 +631,6 @@ please include:
 
 "We are grateful for computational support from the UK Materials and
 Molecular Modelling Hub, which is partially funded by EPSRC
-(EP/P020194 and EP/T022213), for which access was obtained via the UKCP 
-consortium and funded by EPSRC grant ref EP/P022561/1"
+(EP/T022213/1, EP/W032260/1 and EP/P020194/1), for which access was obtained 
+via the UKCP consortium and funded by EPSRC grant ref EP/P022561/1"
 
