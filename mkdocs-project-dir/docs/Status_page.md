@@ -45,6 +45,9 @@ We took the opportunity to also replace the disks from the previous disk failure
  so they do not fail straight away unable to write files once jobs are restarted. These users will 
  be able to release the hold themselves once under quota again with the `qrls all` command.
 
+- 2023-03-14 09:30 - A datacentre cooling issue has caused servers in Kathleen to overheat and power off.
+ As of the afternoon, work continues to bring Kathleen back up.
+
 ### Young
 
 - 2022-01-04 - The file system on Young is down and has been since the 23rd December. We are working to resolve the issue but there is no official timeline for sorting this out.
@@ -58,6 +61,10 @@ We took the opportunity to also replace the disks from the previous disk failure
 - 2022-01-20 - The current status of the Young backup is that we don't expect it to finish until Monday at the earliest now. Apologies for the delay.
 
 - 2022-04-04 17:19 - Scheduled cluster update from 1st to 4th of April is still in progress. Users are expected to be able to login tomorrow April 5th.
+
+- 2023-03-14 09:30 - A datacentre cooling issue has caused servers in Young to overheat and power off. 
+ Some disks that hold the operating system on the Object Store Servers have failed. We cannot currently 
+ bring the filesystem back up as a result. As of the afternoon, work is continuing.
 
 
 ### Michael
