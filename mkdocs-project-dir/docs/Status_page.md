@@ -46,7 +46,8 @@ We took the opportunity to also replace the disks from the previous disk failure
  be able to release the hold themselves once under quota again with the `qrls all` command.
 
 - 2023-03-14 09:30 - A datacentre cooling issue has caused servers in Kathleen to overheat and power off.
- As of the afternoon, work continues to bring Kathleen back up.
+ As of the afternoon, work continues to bring Kathleen back up. 16:20 - We expect to be able to put
+ Kathleen back in service tomorrow.
 
 ### Young
 
@@ -64,7 +65,8 @@ We took the opportunity to also replace the disks from the previous disk failure
 
 - 2023-03-14 09:30 - A datacentre cooling issue has caused servers in Young to overheat and power off. 
  Some disks that hold the operating system on the Object Store Servers have failed. We cannot currently 
- bring the filesystem back up as a result. As of the afternoon, work is continuing.
+ bring the filesystem back up as a result. As of the afternoon, work is continuing. 16:20 - Work on 
+ this will need to continue tomorrow.
 
 
 ### Michael
