@@ -8,28 +8,17 @@ This page outlines that status of each of the machines managed by the Research C
 
 ### Myriad
 
-- 2021-10-12 17:25 - As part of our scheduled outage, we did some load testing on Myriad and believe that we have identified the root cause of all the recent issues with the filesystem to be related to the Mellanox Infiniband interconnect throwing connection errors, specifically failures of network links causing credit loops. These network failures were in turn causing Lustre to crash. 
+- 2023-03-06 - Myriad's filesystem is getting full again, which will impact performance. If you are 
+ able, please consider backing up and deleting any files that you aren't actively using for your 
+ research for the time being.
 
-- 2021-10-14 16:00 - Remedial work on the Infiniband network was completed, jobs re-enabled and logins allowed again. Status of the cluster is good.
+ You can check your quota and see how much space you are using on Myriad with the `lquota` command, 
+ and you can see which directories are taking the most space using the `du` command, which can also 
+ be run in specific directories. You can tell `du` to only output details of the first level of 
+ directory sizes with the `--max-depth=1` option.
 
-We found an undiagnosed issue with one of the quota features in Lustre which we have disabled while we investigate further - this means that filesystem quotas are not currently being enforced, and the `lquota` command does not work.
-
-- 2021-10-19 12:00 - the new Myriad expansion nodes were enabled and are running jobs.
-
-- 2021-10-26 21:50 - Heavy load on Lustre began. We are investigating whether or not this was a job. Is currently causing slow filesystem access, and affecting MATLAB loading, git clone and Python import times among others.
-
-- 2021-10-29 11:50 - We are going to do a failover between servers, then make some changes to the OSSes (object store servers). We will prevent new jobs from starting while this is going on and will re-enable them later. While the failover is happening, filesystem operations and logins will hang until recovery completes.
-
-- 2021-10-29 14:40 - Jobs were re-enabled. Things are looking better at the moment - we will continue to monitor the system. The main change we made was to upgrade the amount of RAM in the OSSes to let them cache disk use more effectively. 
-
-We took the opportunity to also replace the disks from the previous disk failures with completely new disks so we will no longer be running on hot spares - this work had already been planned. The disks should finish rebuilding over the weekend so there will be some impact from that, but the memory increase appears to have made a notable difference at present. 
-
-- 2021-11-15 09:16 - Beginning on Saturday night, something triggered a Lustre bug that left both OSSes (object store servers) unresponsive and prevented logins. We are currently working on this.
-
-- 2021-11-15 12:00 - Logins are working. Jobs are not yet re-enabled. 
-
-- 2021-11-15 16:05 - Jobs are being re-enabled so new ones can start. (Existing jobs were still 
- running if they had not failed). We will be monitoring performance.
+ Jobs are still running for the moment, but if the filesystem keeps getting fuller we may need to 
+ stop new jobs running until usage is brought down again.
 
 ### Kathleen
 
@@ -51,23 +40,16 @@ We took the opportunity to also replace the disks from the previous disk failure
 
 ### Young
 
-- 2022-01-04 - The file system on Young is down and has been since the 23rd December. We are working to resolve the issue but there is no official timeline for sorting this out.
-
-- 2022-01-11 - Young cluster is back in service. Please check for completed successfully / failed jobs. We believe there has been no data loss, but jobs would have been broken after the long interval since 23rd of Dec 2021 up to today, due to timeouts and I/O issues with the filesystem.
-
-- 2022-01-13 - The Young filesystem is up but not in a very stable state. We want to do a backup and run checks over the weekend and then put the cluster back into service on Monday the 17th. The login nodes are powered off until the backup completes to prevent any risk of data corruption and to make sure nothing else is accessing the data in order to make the backup as fast as possible.
-
-- 2022-01-17 - We are still waiting for the backup to finish, and at current progress do not expect it to finish until Wednesday at the earliest - sorry about the extended timescale here. The login nodes are still powered off.
-
-- 2022-01-20 - The current status of the Young backup is that we don't expect it to finish until Monday at the earliest now. Apologies for the delay.
-
-- 2022-04-04 17:19 - Scheduled cluster update from 1st to 4th of April is still in progress. Users are expected to be able to login tomorrow April 5th.
-
 - 2023-03-14 09:30 - A datacentre cooling issue has caused servers in Young to overheat and power off. 
  Some disks that hold the operating system on the Object Store Servers have failed. We cannot currently 
  bring the filesystem back up as a result. As of the afternoon, work is continuing. 16:20 - Work on 
  this will need to continue tomorrow.
 
+- 2023-03-15 11:45 - Young is back up - you should be able to log in now and jobs have started running.
+ Any jobs that were running when the nodes powered down will have failed.
+ We're currently running at risk and with reduced I/O performance because we only have one OSS (Object 
+ Store Server) running and it has one failed disk in its boot volume, so we are lacking in resilience 
+ until that is replaced (hopefully later today) and the second OSS is fixed and brought back up. 
 
 ### Michael
 
@@ -75,6 +57,7 @@ We took the opportunity to also replace the disks from the previous disk failure
 
 ### Thomas
 
-- System is generally fine but the hardware is dated with respect to the other systems so there may be some read write errors.
+- System is generally fine but the hardware is dated with respect to the other systems so there may be 
+ some read/write errors.
 
 
