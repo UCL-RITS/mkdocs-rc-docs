@@ -1928,6 +1928,15 @@ used to log in. External users will have a username in the form
 <div class="codehilite"><pre><span></span><code>young.rc.ucl.ac.uk
 </code></pre></div>
 
+<p>Young has two login nodes and you will be round-robin assigned to one or the other each time. 
+You can also ssh directly into a specific login node, useful if you had a <code>tmux</code> or  <code>screen</code> 
+session running there.</p>
+<div class="codehilite"><pre><span></span><code># replace &#39;mmmxxxx&#39; with your username
+ssh mmmxxxx@login01.young.rc.ucl.ac.uk
+# or
+ssh mmmxxxx@login02.young.rc.ucl.ac.uk
+</code></pre></div>
+
 <h3 id="ssh-timeouts">SSH timeouts<a class="headerlink" href="#ssh-timeouts" title="Permanent link">§</a></h3>
 <p>Idle ssh sessions will be disconnected after 7 days.</p>
 <h2 id="using-the-system">Using the system<a class="headerlink" href="#using-the-system" title="Permanent link">§</a></h2>
