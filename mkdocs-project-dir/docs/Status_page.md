@@ -38,6 +38,11 @@ This page outlines that status of each of the machines managed by the Research C
  As of the afternoon, work continues to bring Kathleen back up. 16:20 - We expect to be able to put
  Kathleen back in service tomorrow.
 
+- 2023-03-16 08:20 - Kathleen is back up and running jobs and you should be able to log in again. 
+ This took a bit longer than expected as we had some configuration issues with the login nodes that 
+ were fixed last thing yesterday, after which we ran some test jobs.
+ Any jobs that were running when the nodes powered down will have failed.
+
 ### Young
 
 - 2023-03-14 09:30 - A datacentre cooling issue has caused servers in Young to overheat and power off. 
@@ -56,6 +61,9 @@ This page outlines that status of each of the machines managed by the Research C
 - All systems are working well.
 
 ### Thomas
+
+ - 2023-03-15 15:00 - Thomas had some Lustre filesystem issues. Jobs may have failed and logins been
+ timing out. This was fixed at 17:00 and all should be working as normal again.
 
 - System is generally fine but the hardware is dated with respect to the other systems so there may be 
  some read/write errors.
