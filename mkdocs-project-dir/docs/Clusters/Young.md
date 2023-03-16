@@ -95,6 +95,17 @@ You ssh directly to:
 young.rc.ucl.ac.uk
 ```
 
+Young has two login nodes and you will be round-robin assigned to one or the other each time. 
+You can also ssh directly into a specific login node, useful if you had a `tmux` or  `screen` 
+session running there.
+
+```
+# replace 'mmmxxxx' with your username
+ssh mmmxxxx@login01.young.rc.ucl.ac.uk
+# or
+ssh mmmxxxx@login02.young.rc.ucl.ac.uk
+```
+
 ### SSH timeouts
 
 Idle ssh sessions will be disconnected after 7 days.
