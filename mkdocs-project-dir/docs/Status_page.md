@@ -54,7 +54,10 @@ This page outlines that status of each of the machines managed by the Research C
  Any jobs that were running when the nodes powered down will have failed.
  We're currently running at risk and with reduced I/O performance because we only have one OSS (Object 
  Store Server) running and it has one failed disk in its boot volume, so we are lacking in resilience 
- until that is replaced (hopefully later today) and the second OSS is fixed and brought back up. 
+ until that is replaced (hopefully later today - done) and the second OSS is fixed and brought back up. 
+
+- 2023-03-16 09:30 - Young's admin nodes have now gone offline, which will be preventing anyone from 
+ logging in. We are investigating.
 
 ### Michael
 
