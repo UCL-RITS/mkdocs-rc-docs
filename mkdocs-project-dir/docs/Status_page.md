@@ -73,7 +73,19 @@ This page outlines that status of each of the machines managed by the Research C
  - 2023-03-15 15:00 - Thomas had some Lustre filesystem issues. Jobs may have failed and logins been
  timing out. This was fixed at 17:00 and all should be working as normal again.
 
-- System is generally fine but the hardware is dated with respect to the other systems so there may be 
- some read/write errors.
+ - 2023-03-21 10:00 - The Lustre outage we had last week was a symptom of Thomas' filesystem finally 
+ getting too old and beginning to fail, so it is now time that we retire Thomas.
 
+ We're draining the cluster of jobs at the moment - existing jobs will complete, and new jobs will 
+ not start.
+
+ We will keep the filesystem up and running as best we can until **Monday 22 May**, shortly after 
+ which we will shut down the machine for the last time and no data that was on Scratch will be 
+ recoverable. (We currently believe that we can keep it running this long, barring unexpected events).
+
+ We're two years after Thomas stopped being the MMM Hub machine and originally was intended to stop 
+ running - we appreciate the hardware for being able to continue this long!
+
+ If you are trying to copy data to other UCL clusters and get errors about too many authentication 
+ failures, make sure you don't have old out of date entries in your `.ssh/known_hosts` file.  
 

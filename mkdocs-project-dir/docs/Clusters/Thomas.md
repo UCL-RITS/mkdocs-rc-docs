@@ -5,21 +5,31 @@ layout: cluster
 Thomas is the UK National Tier 2 High Performance Computing Hub in
 Materials and Molecular Modelling.
 
-!!! important "Thomas end of life"
-    The Thomas cluster is being retired. Notable dates are:
-     
-    - **Monday 1 March 2021**: Job submission will be switched off this morning. Jobs 
-      already in the queue may still run. Access to the login nodes will remain for 
-      one month so you can retrieve data.
-    - **Friday 5 March 2021**: Queues will be drained. Any jobs left will never run. 
-    - **Thursday 1 April 2021**: Access to the login nodes will be removed and 
-      all data will be deleted.
+!!! important "Thomas final retirement"
+    The Thomas cluster is being retired. Thomas' filesystem is getting too old and 
+    beginning to fail, so we now need to retire Thomas. Notable dates are:
+    
+    - **Monday 20 March 2023**: The queue is being drained. Existing jobs will 
+      complete and new jobs will not start. 
+    - **Monday 22 May 2023**: Access to the login nodes will be removed and 
+      data will no longer be recoverable.
 
-    Thomas has now been retired as an MMM Hub machine.
-    A portion of Thomas is running for UCL users only until the end of 2021.
+### Original Thomas retirement dates:
 
-    7 June 2021: Thomas is now inside the UCL firewall, use VPN, or SSH via ssh-gateway.ucl.ac.uk
-    to access.
+The Thomas cluster is being retired. Notable dates are:
+
+- **Monday 1 March 2021**: Job submission will be switched off this morning. Jobs
+  already in the queue may still run. Access to the login nodes will remain for
+  one month so you can retrieve data.
+- **Friday 5 March 2021**: Queues will be drained. Any jobs left will never run.
+- **Thursday 1 April 2021**: Access to the login nodes will be removed and
+  all data will be deleted.
+
+Thomas has now been retired as an MMM Hub machine.
+A portion of Thomas is running for UCL users only until the end of 2021.
+
+7 June 2021: Thomas is now inside the UCL firewall, use VPN, or SSH via ssh-gateway.ucl.ac.uk
+to access.
 
 ## Thomas technical specs
 
