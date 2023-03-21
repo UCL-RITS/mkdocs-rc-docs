@@ -1247,10 +1247,19 @@
  timing out. This was fixed at 17:00 and all should be working as normal again.</p>
 </li>
 <li>
-<p>System is generally fine but the hardware is dated with respect to the other systems so there may be 
- some read/write errors.</p>
+<p>2023-03-21 10:00 - The Lustre outage we had last week was a symptom of Thomas' filesystem finally 
+ getting too old and beginning to fail, so it is now time that we retire Thomas.</p>
 </li>
 </ul>
+<p>We're draining the cluster of jobs at the moment - existing jobs will complete, and new jobs will 
+ not start.</p>
+<p>We will keep the filesystem up and running as best we can until <strong>Monday 22 May</strong>, shortly after 
+ which we will shut down the machine for the last time and no data that was on Scratch will be 
+ recoverable. (We currently believe that we can keep it running this long, barring unexpected events).</p>
+<p>We're two years after Thomas stopped being the MMM Hub machine and originally was intended to stop 
+ running - we appreciate the hardware for being able to continue this long!</p>
+<p>If you are trying to copy data to other UCL clusters and get errors about too many authentication 
+ failures, make sure you don't have old out of date entries in your <code>.ssh/known_hosts</code> file.  </p>
 
 
 
