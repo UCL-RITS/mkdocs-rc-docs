@@ -91,7 +91,7 @@ cd $TMPDIR
 /bin/date > date.txt
 
 # Preferably, tar-up (archive) all output files onto the shared scratch area
-tar -zcvf $HOME/Scratch/files_from_job_$JOB_ID.tar.gz $TMPDIR
+tar -zcvf $HOME/Scratch/workspace/files_from_job_$JOB_ID.tar.gz $TMPDIR
 
 # Make sure you have given enough time for the copy to complete!
 ```
