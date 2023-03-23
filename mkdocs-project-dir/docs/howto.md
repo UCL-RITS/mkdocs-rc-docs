@@ -633,6 +633,8 @@ and then
 ssh -X <your_UCL_user_id>@myriad.rc.ucl.ac.uk
 ```
 
+[A video walkthrough of running remote applications using X11, X-forwarding on compute nodes](https://www.youtube.com/watch?v=nVQlnuo3GSc)
+
 ### X-forwarding on Mac OS X
 
 You will need to install XQuartz to provide an X-Window System for Mac OS X. (Previously known as X11.app).
