@@ -12,20 +12,18 @@
         <meta name="author" content="UCL RCAS Team">
       
       
-        <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Supplementary/NVIDIA_Containers/">
+        <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Walkthroughs/Machine_Learning/">
       
       
-        <link rel="prev" href="../Installing_PGI/">
+        <link rel="prev" href="../Logging_In/">
       
-      
-        <link rel="next" href="../Points_of_Contact/">
       
       <link rel="icon" href="../../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
-        <title>Using NVIDIA Grid Cloud Containers - UCL Research Computing Documentation</title>
+        <title>Machine Learning - UCL Research Computing Documentation</title>
       
     
     
@@ -72,11 +70,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#using-nvidia-grid-cloud-containers" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -107,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Using NVIDIA Grid Cloud Containers
+              Machine Learning
             
           </span>
         </div>
@@ -977,14 +970,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" checked>
       
       
       
@@ -993,7 +988,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_22">
           <span class="md-nav__icon md-icon"></span>
           Walkthroughs
@@ -1006,7 +1001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Walkthroughs/Logging_In/" class="md-nav__link">
+      <a href="../Logging_In/" class="md-nav__link">
         Logging In
       </a>
     </li>
@@ -1018,11 +1013,19 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../Walkthroughs/Machine_Learning/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Machine Learning
       </a>
+      
     </li>
   
 
@@ -1051,43 +1054,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#worked-example-namd-3" class="md-nav__link">
-    Worked Example: NAMD 3
-  </a>
-  
-    <nav class="md-nav" aria-label="Worked Example: NAMD 3">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#creating-the-container-image" class="md-nav__link">
-    Creating the Container Image
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#running-on-a-single-node" class="md-nav__link">
-    Running on a Single Node
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1105,130 +1071,14 @@
   
 
 
-<h1 id="using-nvidia-grid-cloud-containers">Using NVIDIA Grid Cloud Containers<a class="headerlink" href="#using-nvidia-grid-cloud-containers" title="Permanent link">§</a></h1>
-<p>NVIDIA's <a href="https://catalog.ngc.nvidia.com/">NGC Container Registry</a> stores a lot of containers<sup id="fnref:what_is_container"><a class="footnote-ref" href="#fn:what_is_container">1</a></sup> with various applications pre-configured to be run with GPUs.
-Each container can be set up completely differently, so you'll need to read the instructions in the registry to work out how to use it.</p>
-<p>Many of the instructions for using these containers assume you are using the Docker toolset to run the container, but this is not installed on our services<sup id="fnref:why_no_docker"><a class="footnote-ref" href="#fn:why_no_docker">2</a></sup>. The <a href="https://sylabs.io/singularity">Singularity container runtime</a> can be used instead for most workloads, but there are some limitations, that mostly affect containers that try to run web services.</p>
-<p>In general, if a container's instructions do not have specific instructions for using Singularity, and would tell you to run, for example:</p>
-<div class="codehilite"><pre><span></span><code>docker run --gpus all nvcr.io/some/container
-</code></pre></div>
+  <h1>Machine Learning</h1>
 
-<p>You should instead use:</p>
-<div class="codehilite"><pre><span></span><code>singularity run --nv https://nvcr.io/some/container
-</code></pre></div>
-
-<p>For jobs using MPI, this is more complicated, because the MPI traffic has to be passed between the container and the operating system underneath. Containers built to use MPI will usually contain instructions for using Singularity, however.</p>
-<h2 id="worked-example-namd-3">Worked Example: NAMD 3<a class="headerlink" href="#worked-example-namd-3" title="Permanent link">§</a></h2>
-<p>The NAMD authors publish a NAMD container on the NGC Container Registry, and we should be able to download this and run it on our cluster inside a batch job. </p>
-<p>The page about how to use the container is here: <a href="https://catalog.ngc.nvidia.com/orgs/hpc/containers/namd">https://catalog.ngc.nvidia.com/orgs/hpc/containers/namd</a></p>
-<p>Following it through, you can download the benchmark example to check later whether your container works:</p>
-<div class="codehilite"><pre><span></span><code>mkdir ngc_namd_experiment
-cd ngc_namd_experiment
-wget -O - https://gitlab.com/NVHPC/ngc-examples/raw/master/namd/3.0/get_apoa1.sh | bash
-</code></pre></div>
-
-<p>There are a couple of typos in the instructions: you'll need to use the tag <code>3.0-alpha3-singlenode</code> instead of <code>3.0_alpha3-singlenode</code>:</p>
-<div class="codehilite"><pre><span></span><code>export NAMD_TAG=&quot;3.0-alpha3-singlenode&quot;
-</code></pre></div>
-
-<h3 id="creating-the-container-image">Creating the Container Image<a class="headerlink" href="#creating-the-container-image" title="Permanent link">§</a></h3>
-<p>Before you use Singularity to create the container image, you should load the Singularity module to set up some directories where things are stored. Not doing this can cause you problems, because the default places often do not have space to store the large files needed.</p>
-<div class="codehilite"><pre><span></span><code>module load singularity-env
-</code></pre></div>
-
-<p>Once you've done that, you can download the container's files and build them into the usable container:</p>
-<div class="codehilite"><pre><span></span><code>singularity build ${NAMD_TAG}.sif docker://nvcr.io/hpc/namd:${NAMD_TAG}
-</code></pre></div>
-
-<p>This can take a while: Singularity has to download quite a few file collections and assemble them into a single usable set. You may see some of the following warnings:</p>
-<div class="codehilite"><pre><span></span><code>WARNING: &#39;nodev&#39; mount option set on /lustre, it could be a source of failure during build process
-2022/02/03 14:06:28  warn xattr{var/log/apt/term.log} ignoring ENOTSUP on setxattr &quot;user.rootlesscontainers&quot;
-2022/02/03 14:06:28  warn xattr{/home/uccaiki/Scratch/.singularity/tmp/rootfs-5ac43e37-84fa-11ec-8784-0894ef553d4e/var/log/apt/term.log} destination filesystem does not support xattrs, further warnings will be suppressed
-</code></pre></div>
-
-<p>These indicate that various capabilities are not available because of how we're building the container. For HPC use, they don't present a problem, but they could be problematic if you were building a web server into a container.</p>
-<p>When Singularity has finished, you should see the following message:</p>
-<div class="codehilite"><pre><span></span><code>INFO:    Creating SIF file...
-INFO:    Build complete: 3.0-alpha3-singlenode.sif
-</code></pre></div>
-
-<p>This file is the <em>container image</em>, which contains the files needed to run NAMD. You can see what NAMD gets when running "inside" the container, by running <code>ls</code> with it:</p>
-<div class="codehilite"><pre><span></span><code>singularity exec 3.0-alpha3-singlenode.sif ls /
-</code></pre></div>
-
-<p>gives:</p>
-<div class="codehilite"><pre><span></span><code>WARNING: Bind mount &#39;/home/uccaiki =&gt; /home/uccaiki&#39; overlaps container CWD /home/uccaiki/ngc_namd_experiment, may not be available
-bin  boot  dev  environment  etc  home  host_pwd  lib  lib64  lustre  media  mnt  opt  proc  root  run  sbin  scratch  singularity  srv  sys  tmp  tmpdir  usr  var
-</code></pre></div>
-
-<p>The warning you get is telling you that your current working directory overlaps with a directory being "bound" into the container. Binding brings a directory into the container's view of the filesystem, so that, for example, programs can still access your home directory as usual. In this case it's not a problem, because it's warning you that your home directory is being bound into the container in the same place it would usually be, and that means the same files are visible.</p>
-<p>By default, the clusters have Singularity configured to bind your home and Scratch directories into the container, as well as the per-job temporary storage allocated to jobs under <code>$TMPDIR</code>. </p>
-<p>The NAMD instructions make an alternative suggestion when setting up this environment variable to use to run Singularity, binding your data directory into a fixed place in the container:</p>
-<div class="codehilite"><pre><span></span><code>SINGULARITY=&quot;$(which singularity) exec --nv -B $(pwd):/host_pwd ${NAMD_TAG}.sif&quot;
-</code></pre></div>
-
-<p>The option <code>-B $(pwd):/host_pwd</code> handles this, binding wherever you run the command from to the fixed location <code>/host_pwd</code> inside the container.</p>
-<p>So, for example, if you run:</p>
-<div class="codehilite"><pre><span></span><code>ls
-$SINGULARITY ls /host_pwd
-</code></pre></div>
-
-<p>In both cases, you should see the same files, because you're looking at the same underlying directory.</p>
-<h3 id="running-on-a-single-node">Running on a Single Node<a class="headerlink" href="#running-on-a-single-node" title="Permanent link">§</a></h3>
-<p>At this point you're ready to run NAMD inside the container, but you need a job script to submit to the scheduler which can set up the number of cores and GPUs correctly.</p>
-<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
-
-<span class="c1"># Start with our resource requirements:</span>
-<span class="c1">#  1 hour&#39;s maximum runtime</span>
-<span class="c1">#$ -l h_rt=1:00:00</span>
-
-<span class="c1"># 2 GPUs</span>
-<span class="c1">#$ -l gpu=2</span>
-
-<span class="c1"># 36 processor cores</span>
-<span class="c1">#$ -pe smp 36</span>
-
-<span class="c1"># Start with current working directory the same as where we submitted the job from</span>
-<span class="c1">#$ -cwd</span>
-
-<span class="c1"># Make sure Singularity looks for our stored container data in the right places</span>
-module<span class="w"> </span>load<span class="w"> </span>singularity-env
-
-<span class="c1"># Set the variables we need for this example to run</span>
-<span class="nv">NAMD_TAG</span><span class="o">=</span><span class="s2">&quot;3.0-alpha3-singlenode&quot;</span>
-<span class="nv">SINGULARITY</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>which<span class="w"> </span>singularity<span class="k">)</span><span class="s2"> exec --nv -B </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">:/host_pwd </span><span class="si">${</span><span class="nv">NAMD_TAG</span><span class="si">}</span><span class="s2">.sif&quot;</span>
-
-<span class="c1"># This is where the benchmark&#39;s data ends up inside the container</span>
-<span class="nv">INPUT</span><span class="o">=</span><span class="s2">&quot;/host_pwd/apoa1/apoa1_nve_cuda.namd&quot;</span>
-
-<span class="c1"># Show us some info we can refer to later</span>
-<span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;Running NAMD using:\n Cores: %d\n GPUs: %d\n Container image: %s\nWorking directory: %s\n Input: %s\n&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="s2">&quot;</span><span class="nv">$NSLOTS</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="s2">&quot;</span><span class="nv">$GPU</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">NAMD_TAG</span><span class="si">}</span><span class="s2">.sif&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="s2">&quot;</span><span class="nv">$INPUT</span><span class="s2">&quot;</span>
-
-<span class="c1"># Run NAMD</span>
-<span class="s2">&quot;</span><span class="nv">$SINGULARITY</span><span class="s2">&quot;</span><span class="w"> </span>namd3<span class="w">  </span>+ppn<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NSLOTS</span><span class="s2">&quot;</span><span class="w"> </span>+setcpuaffinity<span class="w"> </span>+idlepoll<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$INPUT</span><span class="s2">&quot;</span>
-</code></pre></div>
-
-<p>Copy this into a file, and submit it to the queue, e.g.:</p>
-<div class="codehilite"><pre><span></span><code>qsub ngc_namd_experiment.sh
-</code></pre></div>
-
-<p>This should take about 5 minutes to run on a 36-core, 2-GPU node. </p>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:what_is_container">
-<p>A container is a way of bundling up a collection of files and instructions to run as a kind of "altered view" of the computer's files and systems.&#160;<a class="footnote-backref" href="#fnref:what_is_container" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:why_no_docker">
-<p>This is for a variety of reasons, but primarily that Docker presents a much larger range of security and misuse risks when used by inexperienced or hostile users. Singularity represents a much better fit for common HPC workloads and use-cases.&#160;<a class="footnote-backref" href="#fnref:why_no_docker" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
+<p>Myriad is a traditional HPC system with a batch scheduler. This means that there are some additional steps to think about when running Machine Learning toolkits. Here are some videos that walk through installing and using various machine learning toolkits on Myriad.</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=D3SZqg1PIDo">PyTorch</a></li>
+<li><a href="https://www.youtube.com/watch?v=JvutTubU_tY">Tensorflow</a></li>
+<li><a href="https://www.youtube.com/watch?v=Yd1JkPljpbY">Flux</a></li>
+</ul>
 
 
 

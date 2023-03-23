@@ -255,4 +255,9 @@
          <lastmod>2023-03-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
+    <url>
+         <loc>https://www.rc.ucl.ac.uk/docs/Walkthroughs/Machine_Learning/</loc>
+         <lastmod>2023-03-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>
