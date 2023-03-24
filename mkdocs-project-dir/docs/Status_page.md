@@ -64,6 +64,16 @@ This page outlines that status of each of the machines managed by the Research C
  up and jobs kept running, but they might have failed due to Lustre being unavailable. UCL Estates know 
  the cause of the problem and so hopefully this should not happen again for the time being.
 
+- 2023-03-23 03:20 - Young's single running OSS went down due to high load and was brought back up
+ shortly before 9am. The second OSS had lost both internal drives and is likely to take several more
+ days before it can be brought back into service, so we are still running at risk.
+
+- 2023-03-24 09:00 - Young's single running OSS went down again overnight. Last night we appeared to 
+ be running into a new ZFS issue, where we had a kernel panic, a reboot and a failure to start ZFS 
+ resources. Our Infrastructure team brought the resources back up this morning and Lustre recovery 
+ began, but now the OSS has become unresponsive again. This means that you will not be able to log in 
+ at the moment and jobs will have failed because they haven't been able to access the filesystem. 
+
 ### Michael
 
 - All systems are working well.
