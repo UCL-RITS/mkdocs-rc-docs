@@ -74,6 +74,16 @@ This page outlines that status of each of the machines managed by the Research C
  began, but now the OSS has become unresponsive again. This means that you will not be able to log in 
  at the moment and jobs will have failed because they haven't been able to access the filesystem. 
 
+- 2023-03-24 13:00 - We do not currently expect to be able to bring everything up again until after 
+ the weekend. Right now there is very high memory usage on the existing OSS even when only the util 
+ and login nodes are running Lustre clients and all the compute nodes are off. We aren't sure why. 
+
+ Next week we may need to delay bringing the compute back up until after the other OSS is fully fixed,
+ but we will update you on this then.
+
+ Sorry about this, we were running ok on one OSS until Thursday and now something is preventing us 
+ from continuing like that, so we may have another underlying problem.
+
 ### Michael
 
 - All systems are working well.
