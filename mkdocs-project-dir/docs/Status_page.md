@@ -84,6 +84,13 @@ This page outlines that status of each of the machines managed by the Research C
  Sorry about this, we were running ok on one OSS until Thursday and now something is preventing us 
  from continuing like that, so we may have another underlying problem.
 
+- 2023-03-27 11:00 - The disks in the Young OSSes will be replaced tomorrow (we had another 
+ failure in the OSS that is currently up, so it is down a disk again). This means that it will be 
+ during Wednesday at the earliest that we're able to start jobs again, and it does depend somewhat 
+ on how well everything is behaving after all the disks are replaced and we have a properly 
+ resilient system again - we'll need to do some testing before allowing jobs to start even if 
+ everything looks good.
+
 ### Michael
 
 - All systems are working well.
