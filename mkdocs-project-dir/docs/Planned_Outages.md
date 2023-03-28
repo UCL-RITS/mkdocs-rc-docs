@@ -16,6 +16,7 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+18 -> 20 Apr 2023 | Myriad | Planned | Power work in datacentre - in theory Myriad should be unaffected but it is possible that some cabinets could lose power, so please consider the service to be at risk.
 
 ## Previous Outages
 
