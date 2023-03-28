@@ -91,6 +91,10 @@ This page outlines that status of each of the machines managed by the Research C
  resilient system again - we'll need to do some testing before allowing jobs to start even if 
  everything looks good.
 
+- 2023-03-28 17:15 - Young's filesystem is running on two OSSes again. Roughly half the compute nodes 
+ are enabled and jobs are running on them. If all goes well, we'll switch on the rest of the compute 
+ nodes tomorrow.
+
 ### Michael
 
 - All systems are working well.
