@@ -1272,13 +1272,32 @@
 <p>Sorry about this, we were running ok on one OSS until Thursday and now something is preventing us 
  from continuing like that, so we may have another underlying problem.</p>
 <ul>
-<li>2023-03-27 11:00 - The disks in the Young OSSes will be replaced tomorrow (we had another 
+<li>
+<p>2023-03-27 11:00 - The disks in the Young OSSes will be replaced tomorrow (we had another 
  failure in the OSS that is currently up, so it is down a disk again). This means that it will be 
  during Wednesday at the earliest that we're able to start jobs again, and it does depend somewhat 
  on how well everything is behaving after all the disks are replaced and we have a properly 
  resilient system again - we'll need to do some testing before allowing jobs to start even if 
- everything looks good.</li>
+ everything looks good.</p>
+</li>
+<li>
+<p>2023-03-28 17:15 - Young's filesystem is running on two OSSes again. Roughly half the compute nodes 
+ are enabled and jobs are running on them. If all goes well, we'll switch on the rest of the compute 
+ nodes tomorrow.</p>
+</li>
+<li>
+<p>2023-03-29 15:10 - Jobs were started on the rest of the nodes at around 10:30am and everything is 
+ running ok with the exception of the GPU nodes. On the GPU nodes we are seeing Lustre client 
+ evictions which cause I/O errors for jobs running on the nodes - they weren't able to complete 
+ the read or write they were requesting. For now we aren't running jobs on the GPU nodes until we have 
+ this sorted out. You may have a job that started running there earlier today or yesterday and failed 
+ or did not create all the output expected because of this - please do check your output carefully in 
+ that case.</p>
+</li>
 </ul>
+<p>This is a new issue. We have some suspicions that it is configuration-related, since the GPU nodes 
+ have two OmniPath cards each and Lustre is set up to use both. This setup was working previously; we 
+ are going to investigate further.</p>
 <h3 id="michael">Michael<a class="headerlink" href="#michael" title="Permanent link">§</a></h3>
 <ul>
 <li>All systems are working well.</li>
