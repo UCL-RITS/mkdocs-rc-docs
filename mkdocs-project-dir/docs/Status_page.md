@@ -95,6 +95,18 @@ This page outlines that status of each of the machines managed by the Research C
  are enabled and jobs are running on them. If all goes well, we'll switch on the rest of the compute 
  nodes tomorrow.
 
+- 2023-03-29 15:10 - Jobs were started on the rest of the nodes at around 10:30am and everything is 
+ running ok with the exception of the GPU nodes. On the GPU nodes we are seeing Lustre client 
+ evictions which cause I/O errors for jobs running on the nodes - they weren't able to complete 
+ the read or write they were requesting. For now we aren't running jobs on the GPU nodes until we have 
+ this sorted out. You may have a job that started running there earlier today or yesterday and failed 
+ or did not create all the output expected because of this - please do check your output carefully in 
+ that case.
+
+ This is a new issue. We have some suspicions that it is configuration-related, since the GPU nodes 
+ have two OmniPath cards each and Lustre is set up to use both. This setup was working previously; we 
+ are going to investigate further.
+
 ### Michael
 
 - All systems are working well.
