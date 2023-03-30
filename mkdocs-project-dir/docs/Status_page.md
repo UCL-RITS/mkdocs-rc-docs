@@ -107,6 +107,15 @@ This page outlines that status of each of the machines managed by the Research C
  have two OmniPath cards each and Lustre is set up to use both. This setup was working previously; we 
  are going to investigate further.
 
+- 2023-03-30 10:40 - Last night we had two ZFS panics, one on each OSS. These occurred at just 
+ before 10pm and again at 1:30am. These will have caused some jobs to fail with I/O errors. We have 
+ adjusted some configuration so that if we have more panics then the filesystem should hopefully be 
+ able to recover more quickly and cause fewer I/O errors.
+
+ We had a problem with ZFS panics before where it was a known issue with the versions we were running 
+ and fixed it by upgrading the versions of Lustre and ZFS that we had on Young. The current issue we 
+ are experiencing does not appear to be a known one, investigation continues.
+
 ### Michael
 
 - All systems are working well.
