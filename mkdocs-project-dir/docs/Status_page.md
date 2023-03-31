@@ -9,112 +9,112 @@ This page outlines that status of each of the machines managed by the Research C
 ### Myriad
 
 - 2023-03-06 - Myriad's filesystem is getting full again, which will impact performance. If you are 
- able, please consider backing up and deleting any files that you aren't actively using for your 
- research for the time being.
+  able, please consider backing up and deleting any files that you aren't actively using for your 
+  research for the time being.
 
- You can check your quota and see how much space you are using on Myriad with the `lquota` command, 
- and you can see which directories are taking the most space using the `du` command, which can also 
- be run in specific directories. You can tell `du` to only output details of the first level of 
- directory sizes with the `--max-depth=1` option.
+  You can check your quota and see how much space you are using on Myriad with the `lquota` command, 
+  and you can see which directories are taking the most space using the `du` command, which can also 
+  be run in specific directories. You can tell `du` to only output details of the first level of 
+  directory sizes with the `--max-depth=1` option.
 
- Jobs are still running for the moment, but if the filesystem keeps getting fuller we may need to 
- stop new jobs running until usage is brought down again.
+  Jobs are still running for the moment, but if the filesystem keeps getting fuller we may need to 
+  stop new jobs running until usage is brought down again.
 
 ### Kathleen
 
 - 2022-09-27 - Kathleen's metadata servers have started encountering the ZFS+Lustre bug that Young 
- had in the past, which causes very high load and hangs. We also discovered we were running out of
- inodes on the metadata server - an inode exists for every file and directory, so we need a 
- reduction in the number of files on the system. We prevented new jobs from starting for the time 
- being.
+  had in the past, which causes very high load and hangs. We also discovered we were running out of
+  inodes on the metadata server - an inode exists for every file and directory, so we need a 
+  reduction in the number of files on the system. We prevented new jobs from starting for the time 
+  being.
 
 - 2022-10-03 - We are upgrading Kathleen's ZFS and Lustre on the metadata servers to mitigate the
- bug. Jobs will not start running again until this is done. Quotas have been enabled. We have 
- contacted users who are currently over quota and also have jobs in the queue - their jobs are held 
- so they do not fail straight away unable to write files once jobs are restarted. These users will 
- be able to release the hold themselves once under quota again with the `qrls all` command.
+  bug. Jobs will not start running again until this is done. Quotas have been enabled. We have 
+  contacted users who are currently over quota and also have jobs in the queue - their jobs are held 
+  so they do not fail straight away unable to write files once jobs are restarted. These users will 
+  be able to release the hold themselves once under quota again with the `qrls all` command.
 
 - 2023-03-14 09:30 - A datacentre cooling issue has caused servers in Kathleen to overheat and power off.
- As of the afternoon, work continues to bring Kathleen back up. 16:20 - We expect to be able to put
- Kathleen back in service tomorrow.
+  As of the afternoon, work continues to bring Kathleen back up. 16:20 - We expect to be able to put
+  Kathleen back in service tomorrow.
 
 - 2023-03-16 08:20 - Kathleen is back up and running jobs and you should be able to log in again. 
- This took a bit longer than expected as we had some configuration issues with the login nodes that 
- were fixed last thing yesterday, after which we ran some test jobs.
- Any jobs that were running when the nodes powered down will have failed.
+  This took a bit longer than expected as we had some configuration issues with the login nodes that 
+  were fixed last thing yesterday, after which we ran some test jobs.
+  Any jobs that were running when the nodes powered down will have failed.
 
 ### Young
 
 - 2023-03-14 09:30 - A datacentre cooling issue has caused servers in Young to overheat and power off. 
- Some disks that hold the operating system on the Object Store Servers have failed. We cannot currently 
- bring the filesystem back up as a result. As of the afternoon, work is continuing. 16:20 - Work on 
- this will need to continue tomorrow.
+  Some disks that hold the operating system on the Object Store Servers have failed. We cannot currently 
+  bring the filesystem back up as a result. As of the afternoon, work is continuing. 16:20 - Work on 
+  this will need to continue tomorrow.
 
 - 2023-03-15 11:45 - Young is back up - you should be able to log in now and jobs have started running.
- Any jobs that were running when the nodes powered down will have failed.
- We're currently running at risk and with reduced I/O performance because we only have one OSS (Object 
- Store Server) running and it has one failed disk in its boot volume, so we are lacking in resilience 
- until that is replaced (hopefully later today - done) and the second OSS is fixed and brought back up. 
+  Any jobs that were running when the nodes powered down will have failed.
+  We're currently running at risk and with reduced I/O performance because we only have one OSS (Object 
+  Store Server) running and it has one failed disk in its boot volume, so we are lacking in resilience 
+  until that is replaced (hopefully later today - done) and the second OSS is fixed and brought back up. 
 
 - 2023-03-16 09:30 - Young's admin nodes have now gone offline, which will be preventing anyone from 
- logging in. We are investigating.
+  logging in. We are investigating.
 
 - 2023-03-16 13:15 - Young is back up. There was a cooling issue that affected only the admin rack this 
- time which consists of admin, util and login nodes plus the Lustre storage. The compute nodes stayed 
- up and jobs kept running, but they might have failed due to Lustre being unavailable. UCL Estates know 
- the cause of the problem and so hopefully this should not happen again for the time being.
+  time which consists of admin, util and login nodes plus the Lustre storage. The compute nodes stayed 
+  up and jobs kept running, but they might have failed due to Lustre being unavailable. UCL Estates know 
+  the cause of the problem and so hopefully this should not happen again for the time being.
 
 - 2023-03-23 03:20 - Young's single running OSS went down due to high load and was brought back up
- shortly before 9am. The second OSS had lost both internal drives and is likely to take several more
- days before it can be brought back into service, so we are still running at risk.
+  shortly before 9am. The second OSS had lost both internal drives and is likely to take several more
+  days before it can be brought back into service, so we are still running at risk.
 
 - 2023-03-24 09:00 - Young's single running OSS went down again overnight. Last night we appeared to 
- be running into a new ZFS issue, where we had a kernel panic, a reboot and a failure to start ZFS 
- resources. Our Infrastructure team brought the resources back up this morning and Lustre recovery 
- began, but now the OSS has become unresponsive again. This means that you will not be able to log in 
- at the moment and jobs will have failed because they haven't been able to access the filesystem. 
+  be running into a new ZFS issue, where we had a kernel panic, a reboot and a failure to start ZFS 
+  resources. Our Infrastructure team brought the resources back up this morning and Lustre recovery 
+  began, but now the OSS has become unresponsive again. This means that you will not be able to log in 
+  at the moment and jobs will have failed because they haven't been able to access the filesystem. 
 
 - 2023-03-24 13:00 - We do not currently expect to be able to bring everything up again until after 
- the weekend. Right now there is very high memory usage on the existing OSS even when only the util 
- and login nodes are running Lustre clients and all the compute nodes are off. We aren't sure why. 
+  the weekend. Right now there is very high memory usage on the existing OSS even when only the util 
+  and login nodes are running Lustre clients and all the compute nodes are off. We aren't sure why. 
 
- Next week we may need to delay bringing the compute back up until after the other OSS is fully fixed,
- but we will update you on this then.
+  Next week we may need to delay bringing the compute back up until after the other OSS is fully fixed,
+  but we will update you on this then.
 
- Sorry about this, we were running ok on one OSS until Thursday and now something is preventing us 
- from continuing like that, so we may have another underlying problem.
+  Sorry about this, we were running ok on one OSS until Thursday and now something is preventing us 
+  from continuing like that, so we may have another underlying problem.
 
 - 2023-03-27 11:00 - The disks in the Young OSSes will be replaced tomorrow (we had another 
- failure in the OSS that is currently up, so it is down a disk again). This means that it will be 
- during Wednesday at the earliest that we're able to start jobs again, and it does depend somewhat 
- on how well everything is behaving after all the disks are replaced and we have a properly 
- resilient system again - we'll need to do some testing before allowing jobs to start even if 
- everything looks good.
+  failure in the OSS that is currently up, so it is down a disk again). This means that it will be 
+  during Wednesday at the earliest that we're able to start jobs again, and it does depend somewhat 
+  on how well everything is behaving after all the disks are replaced and we have a properly 
+  resilient system again - we'll need to do some testing before allowing jobs to start even if 
+  everything looks good.
 
 - 2023-03-28 17:15 - Young's filesystem is running on two OSSes again. Roughly half the compute nodes 
- are enabled and jobs are running on them. If all goes well, we'll switch on the rest of the compute 
- nodes tomorrow.
+  are enabled and jobs are running on them. If all goes well, we'll switch on the rest of the compute 
+  nodes tomorrow.
 
 - 2023-03-29 15:10 - Jobs were started on the rest of the nodes at around 10:30am and everything is 
- running ok with the exception of the GPU nodes. On the GPU nodes we are seeing Lustre client 
- evictions which cause I/O errors for jobs running on the nodes - they weren't able to complete 
- the read or write they were requesting. For now we aren't running jobs on the GPU nodes until we have 
- this sorted out. You may have a job that started running there earlier today or yesterday and failed 
- or did not create all the output expected because of this - please do check your output carefully in 
- that case.
+  running ok with the exception of the GPU nodes. On the GPU nodes we are seeing Lustre client 
+  evictions which cause I/O errors for jobs running on the nodes - they weren't able to complete 
+  the read or write they were requesting. For now we aren't running jobs on the GPU nodes until we have 
+  this sorted out. You may have a job that started running there earlier today or yesterday and failed 
+  or did not create all the output expected because of this - please do check your output carefully in 
+  that case.
 
- This is a new issue. We have some suspicions that it is configuration-related, since the GPU nodes 
- have two OmniPath cards each and Lustre is set up to use both. This setup was working previously; we 
- are going to investigate further.
+  This is a new issue. We have some suspicions that it is configuration-related, since the GPU nodes 
+  have two OmniPath cards each and Lustre is set up to use both. This setup was working previously; we 
+  are going to investigate further.
 
 - 2023-03-30 10:40 - Last night we had two ZFS panics, one on each OSS. These occurred at just 
- before 10pm and again at 1:30am. These will have caused some jobs to fail with I/O errors. We have 
- adjusted some configuration so that if we have more panics then the filesystem should hopefully be 
- able to recover more quickly and cause fewer I/O errors.
+  before 10pm and again at 1:30am. These will have caused some jobs to fail with I/O errors. We have 
+  adjusted some configuration so that if we have more panics then the filesystem should hopefully be 
+  able to recover more quickly and cause fewer I/O errors.
 
- We had a problem with ZFS panics before where it was a known issue with the versions we were running 
- and fixed it by upgrading the versions of Lustre and ZFS that we had on Young. The current issue we 
- are experiencing does not appear to be a known one, investigation continues.
+  We had a problem with ZFS panics before where it was a known issue with the versions we were running 
+  and fixed it by upgrading the versions of Lustre and ZFS that we had on Young. The current issue we 
+  are experiencing does not appear to be a known one, investigation continues.
 
 ### Michael
 
@@ -122,22 +122,22 @@ This page outlines that status of each of the machines managed by the Research C
 
 ### Thomas
 
- - 2023-03-15 15:00 - Thomas had some Lustre filesystem issues. Jobs may have failed and logins been
- timing out. This was fixed at 17:00 and all should be working as normal again.
+- 2023-03-15 15:00 - Thomas had some Lustre filesystem issues. Jobs may have failed and logins been
+  timing out. This was fixed at 17:00 and all should be working as normal again.
 
- - 2023-03-21 10:00 - The Lustre outage we had last week was a symptom of Thomas' filesystem finally 
- getting too old and beginning to fail, so it is now time that we retire Thomas.
+- 2023-03-21 10:00 - The Lustre outage we had last week was a symptom of Thomas' filesystem finally 
+  getting too old and beginning to fail, so it is now time that we retire Thomas.
 
- We're draining the cluster of jobs at the moment - existing jobs will complete, and new jobs will 
- not start.
+  We're draining the cluster of jobs at the moment - existing jobs will complete, and new jobs will 
+  not start.
 
- We will keep the filesystem up and running as best we can until **Monday 22 May**, shortly after 
- which we will shut down the machine for the last time and no data that was on Scratch will be 
- recoverable. (We currently believe that we can keep it running this long, barring unexpected events).
+  We will keep the filesystem up and running as best we can until **Monday 22 May**, shortly after 
+  which we will shut down the machine for the last time and no data that was on Scratch will be 
+  recoverable. (We currently believe that we can keep it running this long, barring unexpected events).
 
- We're two years after Thomas stopped being the MMM Hub machine and originally was intended to stop 
- running - we appreciate the hardware for being able to continue this long!
+  We're two years after Thomas stopped being the MMM Hub machine and originally was intended to stop 
+  running - we appreciate the hardware for being able to continue this long!
 
- If you are trying to copy data to other UCL clusters and get errors about too many authentication 
- failures, make sure you don't have old out of date entries in your `.ssh/known_hosts` file.  
+  If you are trying to copy data to other UCL clusters and get errors about too many authentication 
+  failures, make sure you don't have old out of date entries in your `.ssh/known_hosts` file.  
 
