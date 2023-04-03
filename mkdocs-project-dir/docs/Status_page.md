@@ -120,6 +120,10 @@ This page outlines that status of each of the machines managed by the Research C
   - 2023-04-03 10:30 - Young stayed up over the weekend and was running CPU jobs successfully. We have 
     now re-enabled the GPU nodes as well.
     
+    We are still getting some ZFS panics, but the change to how they work mean the filesystem is 
+    failing over and recovering in time to only affect a few client connections. We are scanning for
+    corrupted metadata and files since this may be the cause.
+    
     We will be leaving Young up and running jobs over Easter. UCL's Easter closing is from Thurs 6 April 
     to Weds 12 April inclusive and we will be back on Thurs 13 April. If anything goes wrong during this 
     time, we won't be able to fix it until we are back.
