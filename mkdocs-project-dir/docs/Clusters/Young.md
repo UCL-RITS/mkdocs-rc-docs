@@ -292,21 +292,28 @@ facilities.
 
 ## Maximum job resources
 
-| Cores | Max wallclock |
-| ----- | ------------- |
-| 5120   | 48hrs         |
+| Job type                  | Cores | GPUs | Max wallclock |
+| ------------------------- | ----- | ---- | ------------- |
+| Gold CPU job, any         | 5120  | 0    | 48hrs         |
+| Free CPU job, any         | 5120  | 0    | 24hrs         |
+| Free GPU job, any         | 320   | 40   | 48hrs         |
+| Free GPU fast interactive | 64    | 8    | 6hrs          |
+
+CPU jobs or [GPU jobs](#GPU_nodes) can be run on Young, and there are 
+different [nodes](#Node_types) dedicated for each.
 
 These are numbers of physical cores: multiply by two for virtual cores 
-with [hyperthreads](#hyperthreading).
+with [hyperthreads](#hyperthreading) on the CPU nodes.
 
 On Young, interactive sessions using qrsh have the same wallclock limit
 as other jobs.
 
-Jobs on Young **do not share nodes**. This means that if you request
-less than 40 cores, your job is still taking up an entire node and no
+CPU jobs on Young **do not share nodes**, whereas GPU jobs do. 
+This means that if you request less than 40 cores for a CPU job, 
+your job is still taking up an entire node and no
 other jobs can run on it, but some of the cores are idle. Whenever
 possible, request a number of cores that is a multiple of 40 for full
-usage of your nodes.
+usage of your CPU nodes.
 
 There is a superqueue for use in exceptional circumstances that will
 allow access to a larger number of cores outside the nonblocking
