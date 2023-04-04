@@ -128,6 +128,10 @@ This page outlines that status of each of the machines managed by the Research C
     to Weds 12 April inclusive and we will be back on Thurs 13 April. If anything goes wrong during this 
     time, we won't be able to fix it until we are back.
 
+  - 2023-04-04 14:20 - The `zfs scrub` we were running to look for corrupted metadata and files
+    has exposed a drive failure. We have spares and the affected ZFS pool is now recovering, which will 
+    take a day or so. I/O performance may be degraded during the recovery. 
+
 ### Michael
 
   - All systems are working well.
