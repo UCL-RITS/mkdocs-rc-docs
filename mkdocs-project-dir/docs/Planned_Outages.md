@@ -4,11 +4,6 @@ layout: docs
 
 # Planned Outages
 
-!!! important "UCL Easter closing"
-    UCL's Easter closing is from Thurs 6 April to Weds 12 April inclusive and we will be back on 
-    Thurs 13 April. If anything goes wrong during this time, we won't be able to fix it until we 
-    are back.
-
 The second Tuesday of every month is a maintenance day, when the following clusters should be considered at risk from 8:00AM: Myriad, Kathleen, Thomas, Young, Michael, Aristotle and the Data Science Platform. We won’t necessarily perform maintenance every month, and notice by email will not always be given about maintenance day work that only puts services at risk.
 
 Full details of outages are emailed to the cluster-specific user lists. 
