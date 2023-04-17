@@ -21,7 +21,7 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-18 -> 21 Apr 2023 | Myriad | Planned | Power work taking place in the datacentre that Myriad is in which may result in some cabinets losing power. We will be draining jobs for the morning of Tuesday 18 April and re-enabling them again once the work is complete. Since 21 April is a Friday, we may not be able to re-enable jobs until Monday.
+18 -> 21 Apr 2023 | Myriad | Cancelled | Power work taking place in the datacentre that Myriad is in which may result in some cabinets losing power. We will be draining jobs for the morning of Tuesday 18 April and re-enabling them again once the work is complete. Since 21 April is a Friday, we may not be able to re-enable jobs until Monday.
 21 -> 23 Apr 2023 | Young, Michael, Kathleen | Planned | Electrical works in the datacentre require us to switch off all three clusters. Jobs will be drained for the morning of Friday 21 April. The clusters will be powered down that afternoon, probably around 2-3pm. You won't be able to log in or access data from then or throughout the weekend. We will bring the clusters back up during Monday 24 April. This may take a few hours to most of the day.
 
 
