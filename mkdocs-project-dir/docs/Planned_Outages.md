@@ -16,14 +16,14 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-18 -> 21 Apr 2023 | Myriad | Cancelled | Power work taking place in the datacentre that Myriad is in which may result in some cabinets losing power. We will be draining jobs for the morning of Tuesday 18 April and re-enabling them again once the work is complete. Since 21 April is a Friday, we may not be able to re-enable jobs until Monday.
-21 -> 23 Apr 2023 | Young, Michael, Kathleen | Planned | Electrical works in the datacentre require us to switch off all three clusters. Jobs will be drained for 12:00pm on Friday 21 April. The clusters will be powered down shortly after 12:00pm. You won't be able to log in or access data from then or throughout the weekend. We will bring the clusters back up during Monday 24 April. This may take a few hours to most of the day.
+10 -> 15 May 2023 | Myriad | Planned | Power work taking place in the datacentre that Myriad is in which may result in some cabinets losing power. We will be draining jobs for 8am on Weds 10 May and re-enabling them again once the work is complete, likely to be during Tues 16 May.
 
 
 ## Previous Outages
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+21 -> 23 Apr 2023 | Young, Michael, Kathleen | Completed | Electrical works in the datacentre require us to switch off all three clusters. Jobs will be drained for 12:00pm on Friday 21 April. The clusters will be powered down shortly after 12:00pm. You won't be able to log in or access data from then or throughout the weekend. We will bring the clusters back up during Monday 24 April. This may take a few hours to most of the day.
 31 Jan 2023 -> 1st Feb 2023 | Myriad | Completed | Full shutdown of the system to perform firmware updates to the storage system, including all controllers and drives. Jobs will be drained for 08:00 on 31st. It is intended to make the system available again in the evening of the 1st.
 23 Dec 2022 -> 3-4 Jan 2023 | Young, Michael, Kathleen | Complete | Full shutdown during UCL Christmas closing to prevent risk of filesystem damage from instability or power issues. Jobs will be drained for 9am on 23rd, shutting down at 1pm. Will be brought back up throughout 3 Jan with intent to have jobs running at some point on 4 Jan.
 13 Dec 2022 -> 14 Dec 2022 | Myriad | Postponed | Upgrade of firmware on all Lustre storage disks. Jobs will be drained for 8am on Tues 13 Dec and we expect to re-enable jobs on Weds 14 Dec. Discovered that we would need to update the storage controller firmware as well, and possibly the OSSs (object store servers) and Lustre itself. We don't want to do this right before the Christmas closure so are postponing the update until later.
