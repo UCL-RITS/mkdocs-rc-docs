@@ -113,7 +113,7 @@ for every core).
 
 Myriad has four types of GPU nodes: E, F, J and L. 
 
-  - L-type nodes each have four NVIDIA A100s. (Compute Capability 80)
+  - L-type nodes each have four NVIDIA 40G A100s. (Compute Capability 80)
   - F-type and E-type nodes each have two NVIDIA Tesla V100s. The CPUs are slightly different on the different letters, see above. (Compute Capability 70)
   - J-type nodes each have two NVIDIA Tesla P100s. (Compute Capability 60)
 
