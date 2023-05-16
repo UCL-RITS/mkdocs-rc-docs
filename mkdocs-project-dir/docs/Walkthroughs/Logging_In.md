@@ -100,4 +100,7 @@ You can use PuTTY or the Windows Command Prompt on Desktop@UCL Anywhere to log i
 It has a version of the Command Prompt called "SSH Command Prompt" that may set up some 
 additional configuration for SSH usage - either should work.
 
+If you want to use SSH keys for your connection, you need to use PuTTY and PuTTYgen. The
+OpenSSH Authentication Agent is not running as a service on Desktop@UCL Anywhere or on UCL
+managed laptops, so you cannot use `ssh-add` in the Windows Command Prompt.
 
