@@ -2258,19 +2258,25 @@ du -h --max-depth=1
 
 <p>The first will give you a summary of the sizes of directory tree and subtrees inside the directory you specify, using human-readable sizes with a total at the bottom. The second will show you the totals for all top-level directories relative to where you are, plus the grand total. These can help you track down the locations of large amounts of data if you need to reduce your disk usage.</p>
 <h2 id="how-do-i-connect-to-ucl-group-folders-n-drive-or-other-smb-mounts">How do I connect to UCL group folders, N drive or other smb mounts?<a class="headerlink" href="#how-do-i-connect-to-ucl-group-folders-n-drive-or-other-smb-mounts" title="Permanent link">§</a></h2>
-<p>You may have data stored in a UCL group folder that you normally mount using smb. 
+<p>You may have data stored in a <a href="https://www.ucl.ac.uk/isd/services/file-storage-sharing/groupfolders-shared-s-drive">UCL group folder</a> (S drive) that you normally mount using smb. 
 You can use <code>smbclient</code> to copy the files across onto Myriad (you do want them to be copied 
 onto Myriad before you run any jobs using them, otherwise the compute node will be sitting 
 there waiting for the copy to complete before it can do anything useful).</p>
 <p>If the address you are trying to mount looks like <code>smb://ad.ucl.ac.uk/groupfolders</code>
 then you would do this:</p>
-<div class="codehilite"><pre><span></span><code>smbclient \\ad.ucl.ac.uk\groupfolders 
+<div class="codehilite"><pre><span></span><code>smbclient //ad.ucl.ac.uk/groupfolders 
 </code></pre></div>
 
 <p>This will give you a prompt where you can access that storage in an ftp-like way, where you 
 can use <code>get</code> commands to copy files from there on to Myriad, or <code>put</code> commands to copy data
 into there from Myriad.</p>
 <p>You can look at <code>man smbclient</code> on Myriad for the manual.</p>
+<p>If you get an error like this:</p>
+<div class="codehilite"><pre><span></span><code>\ad.ucl.ac.ukgroupfolders: Not enough &#39;\&#39; characters in service
+</code></pre></div>
+
+<p>then you need to change the format from <code>\\ad.ucl.ac.uk\groupfolders</code> to 
+<code>//ad.ucl.ac.uk/groupfolders</code> instead.</p>
 <h3 id="ucl-n-drive">UCL N drive<a class="headerlink" href="#ucl-n-drive" title="Permanent link">§</a></h3>
 <p>The N drive (Windows filestore, Filestore@UCL) can also be accessed using smb. To find out what 
 smb address to use, look at <a href="https://www.ucl.ac.uk/isd/how-to/filestoreucl-adding-your-home-n-drive-to-linux-machine">Adding your home N drive to a Linux machine</a>. 
