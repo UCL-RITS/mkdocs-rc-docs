@@ -343,7 +343,7 @@ The first will give you a summary of the sizes of directory tree and subtrees in
 
 ## How do I connect to UCL group folders, N drive or other smb mounts?
 
-You may have data stored in a UCL group folder that you normally mount using smb. 
+You may have data stored in a [UCL group folder](https://www.ucl.ac.uk/isd/services/file-storage-sharing/groupfolders-shared-s-drive) (S drive) that you normally mount using smb. 
 You can use `smbclient` to copy the files across onto Myriad (you do want them to be copied 
 onto Myriad before you run any jobs using them, otherwise the compute node will be sitting 
 there waiting for the copy to complete before it can do anything useful).
@@ -352,7 +352,7 @@ If the address you are trying to mount looks like `smb://ad.ucl.ac.uk/groupfolde
 then you would do this:
 
 ```
-smbclient \\ad.ucl.ac.uk\groupfolders 
+smbclient //ad.ucl.ac.uk/groupfolders 
 ```
 
 This will give you a prompt where you can access that storage in an ftp-like way, where you 
@@ -360,6 +360,15 @@ can use `get` commands to copy files from there on to Myriad, or `put` commands 
 into there from Myriad.
 
 You can look at `man smbclient` on Myriad for the manual.
+
+If you get an error like this:
+
+```
+\ad.ucl.ac.ukgroupfolders: Not enough '\' characters in service
+```
+
+then you need to change the format from `\\ad.ucl.ac.uk\groupfolders` to 
+`//ad.ucl.ac.uk/groupfolders` instead.
 
 ### UCL N drive
 
