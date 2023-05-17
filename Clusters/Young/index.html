@@ -21,7 +21,7 @@
         <link rel="next" href="../../Installed_Software_Lists/module-packages/">
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.12">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
     
     
       
@@ -771,6 +771,26 @@
   <a href="#useful-utilities" class="md-nav__link">
     Useful utilities
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#known-problems" class="md-nav__link">
+    Known problems
+  </a>
+  
+    <nav class="md-nav" aria-label="Known problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slowness-in-vim" class="md-nav__link">
+    Slowness in vim
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1606,6 +1626,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#known-problems" class="md-nav__link">
+    Known problems
+  </a>
+  
+    <nav class="md-nav" aria-label="Known problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slowness-in-vim" class="md-nav__link">
+    Slowness in vim
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2006,6 +2046,22 @@ help you find information about your jobs after they have run.</p>
 <p>These utilities live in GitHub at
 <a href="https://github.com/UCL-RITS/go-clustertools">https://github.com/UCL-RITS/go-clustertools</a> and
 <a href="https://github.com/UCL-RITS/rcps-cluster-scripts">https://github.com/UCL-RITS/rcps-cluster-scripts</a></p>
+<h3 id="known-problems">Known problems<a class="headerlink" href="#known-problems" title="Permanent link">§</a></h3>
+<h4 id="slowness-in-vim">Slowness in vim<a class="headerlink" href="#slowness-in-vim" title="Permanent link">§</a></h4>
+<p>Use of vim has frequent lags which can make editing (or viewing) files in it annoying.
+This is caused by how often vim autosaves status (every few seconds by default) which
+causes a lot of metadata accesses. It might include saving things like the current cursor
+position into .viminfo). When Young's filesystem is being particularly slow, this can
+make use of vim impossible.</p>
+<p>You can turn off autosaves entirely:</p>
+<div class="codehilite"><pre><span></span><code>:set noswapfile
+</code></pre></div>
+
+<p>or you can set the autosave frequency in milliseconds:</p>
+<div class="codehilite"><pre><span></span><code>:set updatetime=
+</code></pre></div>
+
+<p>You can save these in your <code>.vimrc</code>.</p>
 <h2 id="software">Software<a class="headerlink" href="#software" title="Permanent link">§</a></h2>
 <p>Young mounts the <a href="../../Installed_Software_Lists/General_Software_Lists">RC Systems software stack</a>.</p>
 <p>Have a look at <a href="../../Software_Guides/Other_Software">Software Guides</a> for specific
@@ -2506,7 +2562,7 @@ via the UKCP consortium and funded by EPSRC grant ref EP/P022561/1"</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c2be25ad.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
     
   </body>
