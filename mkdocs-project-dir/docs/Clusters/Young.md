@@ -173,6 +173,32 @@ These utilities live in GitHub at
 <https://github.com/UCL-RITS/go-clustertools> and
 <https://github.com/UCL-RITS/rcps-cluster-scripts>
 
+
+### Known problems
+
+#### Slowness in vim
+
+Use of vim has frequent lags which can make editing (or viewing) files in it annoying.
+This is caused by how often vim autosaves status (every few seconds by default) which
+causes a lot of metadata accesses. It might include saving things like the current cursor
+position into .viminfo). When Young's filesystem is being particularly slow, this can
+make use of vim impossible.
+
+You can turn off autosaves entirely:
+
+``` 
+:set noswapfile
+```
+
+or you can set the autosave frequency in milliseconds:
+
+```
+:set updatetime=
+```
+
+You can save these in your `.vimrc`.
+
+
 ## Software
 
 Young mounts the [RC Systems software stack](../../Installed_Software_Lists/General_Software_Lists).
