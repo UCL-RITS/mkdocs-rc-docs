@@ -2303,7 +2303,7 @@ You can then run <code>cp2k.submit</code> which will ask you questions in order 
 <h3 id="crystal">CRYSTAL<a class="headerlink" href="#crystal" title="Permanent link">§</a></h3>
 <p>CRYSTAL is a general-purpose program for the study of crystalline solids. The CRYSTAL program computes the electronic structure of periodic systems within Hartree Fock, density functional or various hybrid approximations. </p>
 <p>CRYSTAL is commercial software which is available free of charge to UK academics. You must obtain a license from Crystal Solutions: <a href="http://www.crystalsolutions.eu/cat/crystal-cryscor/academic-uk">How to get CRYSTAL - Academic UK license</a>. You need to create an account and then request to be upgraded to Academic UK. Access to CRYSTAL is enabled by being a member of the reserved application group <code>legcryst</code>. For proof of access we accept emails from CRYSTAL saying your account has been upgraded to "Academic UK", or a screenshot of your account page showing you have the full download available rather than just the demo version. </p>
-<div class="codehilite"><pre><span></span><code>module unload mpi
+<div class="codehilite"><pre><span></span><code>module unload -f mpi
 module load mpi/openmpi/2.1.2/intel-2017
 module load crystal17/v1.0.1
 
@@ -2325,7 +2325,7 @@ gerun $CRY17_EXEDIR/$VERSION/Pproperties
 <p>For CRYSTAL 17 v1.0.2, the modules and path are slightly different and you would do this instead:</p>
 <div class="codehilite"><pre><span></span><code>module unload -f compilers mpi
 module load compilers/intel/2017/update4
-module load mpi/openmpi/2.1.2/intel-2017
+module load mpi/intel/2017/update3/intel
 module load crystal17/v1.0.2/intel-2017
 
 # Create a directory for this job and copy the input file into it.
