@@ -6,8 +6,8 @@ Thomas is the UK National Tier 2 High Performance Computing Hub in
 Materials and Molecular Modelling.
 
 !!! important "Thomas final retirement"
-    The Thomas cluster is being retired. Thomas' filesystem is getting too old and 
-    beginning to fail, so we now need to retire Thomas. Notable dates are:
+    The Thomas cluster has been retired. Thomas' filesystem was getting too old and 
+    beginning to fail, so we had to retire Thomas. Notable dates are:
     
     - **Monday 20 March 2023**: The queue is being drained. Existing jobs will 
       complete and new jobs will not start. 

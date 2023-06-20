@@ -21,7 +21,6 @@ Clusters:
 
 - [Myriad](Clusters/Myriad.md)
 - [Kathleen](Clusters/Kathleen.md)
-- [Thomas](Clusters/Thomas.md)
 - [Young](Clusters/Young.md)
 - [Michael](Clusters/Michael.md)
 
