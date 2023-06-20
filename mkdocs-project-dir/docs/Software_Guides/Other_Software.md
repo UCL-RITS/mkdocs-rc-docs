@@ -297,7 +297,7 @@ CRYSTAL is a general-purpose program for the study of crystalline solids. The CR
 CRYSTAL is commercial software which is available free of charge to UK academics. You must obtain a license from Crystal Solutions: [How to get CRYSTAL - Academic UK license](http://www.crystalsolutions.eu/cat/crystal-cryscor/academic-uk). You need to create an account and then request to be upgraded to Academic UK. Access to CRYSTAL is enabled by being a member of the reserved application group `legcryst`. For proof of access we accept emails from CRYSTAL saying your account has been upgraded to "Academic UK", or a screenshot of your account page showing you have the full download available rather than just the demo version. 
 
 ```
-module unload mpi
+module unload -f mpi
 module load mpi/openmpi/2.1.2/intel-2017
 module load crystal17/v1.0.1
 
@@ -320,7 +320,7 @@ For CRYSTAL 17 v1.0.2, the modules and path are slightly different and you would
 ```
 module unload -f compilers mpi
 module load compilers/intel/2017/update4
-module load mpi/openmpi/2.1.2/intel-2017
+module load mpi/intel/2017/update3/intel
 module load crystal17/v1.0.2/intel-2017
 
 # Create a directory for this job and copy the input file into it.
