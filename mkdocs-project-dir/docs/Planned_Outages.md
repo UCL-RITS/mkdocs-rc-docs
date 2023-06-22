@@ -16,7 +16,7 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-
+11 July 2023        | Myriad  | Planned | Full shutdown for replacement of both Lustre controllers in the filesystem. There will be no login access, no jobs running. Jobs will be drained for 8am. Myriad will be returned to service during the day on Weds 12 July.
 
 ## Previous Outages
 
