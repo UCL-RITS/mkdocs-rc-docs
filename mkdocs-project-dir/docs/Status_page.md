@@ -132,6 +132,60 @@ This page outlines that status of each of the machines managed by the Research C
     has exposed a drive failure. We have spares and the affected ZFS pool is now recovering, which will 
     take a day or so. I/O performance may be degraded during the recovery. 
 
+  - 2023-06-21 16:30 - We had a filesystem issue caused by a failed disk in the metadata server 
+    at about 4:30pm. We brought it back up and it was recovering at around 8:20pm and will have 
+    been slower for a while overnight until recovery completed. Jobs will have failed in the 
+    period when it was down, so please do check on things that were running during this time to 
+    see whether they completed or not - our apologies for this.
+
+  - 2023-06-27 20:15 - We’ve had an unexpectedly high number of drive failures in Young’s 
+    filesystem, and this has created a significant risk of filesystem failure until we can replace 
+    the drives and restore resiliency. 
+    
+    To try to keep the filesystem running, we’ve had to shut down the login and compute nodes, 
+    terminating all running jobs and removing access to the cluster. This should massively 
+    reduce the load on the filesystem, and allow us to more rapidly bring the system back to a 
+    safe level of redundancy.
+
+    In future, we will also attempt to keep more spare drives on-site, which should help us avoid 
+    this kind of situation.
+
+    Apologies for the inconvenience: we’re going to be replacing drives and we will hopefully have 
+    an update with better news tomorrow.
+
+  - 2023-06-28 11:00 The situation with the disks in Young's filesystem is worse than we thought 
+    and we're currently doing some data recovery procedures so we can then evaluate what we 
+    should do next.
+
+    Data in home directories is backed up. We have likely lost some data from Scratch but are 
+    working to find out the implications of that, and what and how much could be affected.
+
+    How long Young will be down depends on what we discover in the next few days. We will need 
+    to do a full filesystem check once we have a recovered filesystem to check, and this can take 
+    some time.
+
+    The detail, for those who wish to know:
+
+    A Lustre filesystem consists of object store servers and metadata servers, and the metadata 
+    servers store information such as filenames, directories, access permissions, and file layout.
+
+    We had a failed drive in a metadata mirror on Wednesday last week. We have eight mirrors in 
+    that metadata target and each consists of two drives. We had a replacement drive arrive, but 
+    before we could fit it, the second drive in the same mirror indicated that it was beginning to 
+    fail. 
+
+    We fitted the replacement drive yesterday, but the rebuild of the mirror overnight did not 
+    succeed and the failing disk's status degraded further. What we are going to do next is to 
+    retrieve as much off the failing disk as we can, move it onto a healthy disk, and then see 
+    what status the filesystem is in and what is in an inconsistent state. 
+
+    As was mentioned, we had also ordered more spare drives to keep on site but this happened 
+    before those arrived.
+
+    We're sorry for this situation and are working to address it. We'll keep you updated as we 
+    know more.
+
+
 ### Michael
 
   - All systems are working well.
