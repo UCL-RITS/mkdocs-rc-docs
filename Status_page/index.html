@@ -21,7 +21,7 @@
         <link rel="next" href="../Terms_and_Conditions/">
       
       <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.16">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.17">
     
     
       
@@ -1328,6 +1328,51 @@ time, we won't be able to fix it until we are back.</p>
     has exposed a drive failure. We have spares and the affected ZFS pool is now recovering, which will 
     take a day or so. I/O performance may be degraded during the recovery. </p>
 </li>
+<li>
+<p>2023-06-21 16:30 - We had a filesystem issue caused by a failed disk in the metadata server 
+    at about 4:30pm. We brought it back up and it was recovering at around 8:20pm and will have 
+    been slower for a while overnight until recovery completed. Jobs will have failed in the 
+    period when it was down, so please do check on things that were running during this time to 
+    see whether they completed or not - our apologies for this.</p>
+</li>
+<li>
+<p>2023-06-27 20:15 - We’ve had an unexpectedly high number of drive failures in Young’s 
+    filesystem, and this has created a significant risk of filesystem failure until we can replace 
+    the drives and restore resiliency. </p>
+<p>To try to keep the filesystem running, we’ve had to shut down the login and compute nodes, 
+terminating all running jobs and removing access to the cluster. This should massively 
+reduce the load on the filesystem, and allow us to more rapidly bring the system back to a 
+safe level of redundancy.</p>
+<p>In future, we will also attempt to keep more spare drives on-site, which should help us avoid 
+this kind of situation.</p>
+<p>Apologies for the inconvenience: we’re going to be replacing drives and we will hopefully have 
+an update with better news tomorrow.</p>
+</li>
+<li>
+<p>2023-06-28 11:00 The situation with the disks in Young's filesystem is worse than we thought 
+    and we're currently doing some data recovery procedures so we can then evaluate what we 
+    should do next.</p>
+<p>Data in home directories is backed up. We have likely lost some data from Scratch but are 
+working to find out the implications of that, and what and how much could be affected.</p>
+<p>How long Young will be down depends on what we discover in the next few days. We will need 
+to do a full filesystem check once we have a recovered filesystem to check, and this can take 
+some time.</p>
+<p>The detail, for those who wish to know:</p>
+<p>A Lustre filesystem consists of object store servers and metadata servers, and the metadata 
+servers store information such as filenames, directories, access permissions, and file layout.</p>
+<p>We had a failed drive in a metadata mirror on Wednesday last week. We have eight mirrors in 
+that metadata target and each consists of two drives. We had a replacement drive arrive, but 
+before we could fit it, the second drive in the same mirror indicated that it was beginning to 
+fail. </p>
+<p>We fitted the replacement drive yesterday, but the rebuild of the mirror overnight did not 
+succeed and the failing disk's status degraded further. What we are going to do next is to 
+retrieve as much off the failing disk as we can, move it onto a healthy disk, and then see 
+what status the filesystem is in and what is in an inconsistent state. </p>
+<p>As was mentioned, we had also ordered more spare drives to keep on site but this happened 
+before those arrived.</p>
+<p>We're sorry for this situation and are working to address it. We'll keep you updated as we 
+know more.</p>
+</li>
 </ul>
 <h3 id="michael">Michael<a class="headerlink" href="#michael" title="Permanent link">§</a></h3>
 <ul>
@@ -1412,7 +1457,7 @@ failures, make sure you don't have old out of date entries in your <code>.ssh/kn
     <script id="__config" type="application/json">{"base": "..", "features": ["instant"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.a51614de.min.js"></script>
+      <script src="../assets/javascripts/bundle.b425cdc4.min.js"></script>
       
     
   </body>
