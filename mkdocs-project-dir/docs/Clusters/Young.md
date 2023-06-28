@@ -623,6 +623,14 @@ There are a few commands that everyone can run that report Gold usage for
 their entire project, broken down by user. See 
 [Reporting from Gold](../Supplementary/Points_of_Contact.md#reporting-from-gold).
 
+Specifically, `gstatement` can show you a summary of who in your budget used
+what amount during a given time period:
+
+```
+# summarise per user usage of the MyProject budget from 00:00 on these dates
+gstatement -p MyProject -s 2023-01-01 -e 2023-04-01 --summarize
+```
+
 ## Requests for longer wallclock time
 
 You can apply for access to a 96-hour queue for **Gold jobs only** using this form:
