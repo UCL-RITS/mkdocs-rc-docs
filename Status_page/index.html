@@ -1373,6 +1373,26 @@ before those arrived.</p>
 <p>We're sorry for this situation and are working to address it. We'll keep you updated as we 
 know more.</p>
 </li>
+<li>
+<p>2023-06-29 11:30 - We've recovered what was on the failing disk and are missing approximately 
+    250kB of metadata. (Since it is metadata, this doesn't directly translate to the effect on your
+    files, but we can probably be cautiously optimistic about the expected size of impact, should 
+    nothing else go horribly wrong).</p>
+<p>Replacement disks are being sent to us and should arrive today or tomorrow.</p>
+<p>Once the disks arrive, we will proceed with the next step of moving the recovered data onto a 
+new disk and getting the filesystem to use that in replacement of the failed disk, and then we 
+can attempt to bring the filesystem up and see what status it thinks it is in. At that point we
+will have several levels of filesystem health checking to run.</p>
+<p>We are also progressing with some contingency plans relating to the backup data we have, to 
+make it easier to use should we need to. </p>
+<p>I've had a couple of questions about when Young will be back up - we don't know yet, but not 
+during next week. I would expect us to still be doing the filesystem recovery and checks on 
+the first couple of days of the week even if the disks do arrive today, so we probably won't 
+have any additional updates for you until midweek.</p>
+<p>It does take a long and unpredictable time to rebuild disks, check all the data, and recover 
+files: as an example, our metadata recovery was giving us estimates of 19 hours to 5 days while
+it was dealing with the most damaged portions of the disk. </p>
+</li>
 </ul>
 <h3 id="michael">Michael<a class="headerlink" href="#michael" title="Permanent link">§</a></h3>
 <ul>
