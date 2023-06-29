@@ -1068,7 +1068,7 @@ gerun namd2 apoa1.namd
 We do not currently have central installs of Nextflow, but a group of UCL researchers have 
 contributed a config file and instructions for Myriad at the [nf-core/configs repository](https://github.com/nf-core/configs/blob/master/docs/ucl_myriad.md)
 
-Nextflow containers can be run using [Singularity](../Singularity.md).
+Nextflow containers can be run using [Singularity](Singularity.md).
 
 ### NONMEM
 
