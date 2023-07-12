@@ -209,6 +209,58 @@ This page outlines that status of each of the machines managed by the Research C
     files: as an example, our metadata recovery was giving us estimates of 19 hours to 5 days while
     it was dealing with the most damaged portions of the disk. 
 
+  - 2023-07-04 10:25 - I just wanted to give you an update on our progress. The short version is 
+    "we are still working on it but now believe we have lost little to no user data".
+ 
+    We do not have an ETA for return to service but may be able to give you read-only access to 
+    your files in the near future.
+
+    More detail for those who are interested:
+ 
+    We have fitted the replacement disks and migrated the data to the new drives. The underlying 
+    ZFS filesystem now believes that everything is OK and we are running the Lustre filesystem 
+    checks. 
+ 
+    We are also restoring a backup to a different file-system so that in the event that any data 
+    in /home was damaged we can restore it quickly.
+ 
+    Medium term, we plan to replace the storage appliance, which we are funding from UCL's budget 
+    in our FY 23/24 (starts 1st August). This work should be completed by Christmas and will also 
+    affect the local Kathleen system.
+
+  - 2023-07-04 16:25 - I'm pleased to announce that while we are not in a position to return to 
+    service yet (the Lustre filesystem check is still running), we have managed to get to a state 
+    where we can safely give you read-only access to your files. You should be able to log into 
+    the login nodes as usual to retrieve your files.
+ 
+    (Obviously, this means you cannot change any files or run jobs!)
+
+  - 2023-07-07 12:30 - I didn't want to head into the weekend without giving an update – we are 
+    still running the Lustre File-system Check and hope to have completed it by mid next week, 
+    but unfortunately the tool that does this doesn't report its progress in a very helpful way – 
+    as of this morning it had completed checking 13.7M directories on the file-system but we don't 
+    have an exact number for how many there are total, only an estimate.
+ 
+    Again, apologies for this unplanned outage – we are working at full speed to get a replacement 
+    for this hardware later this year so we should not see a recurrence of these problems once 
+    that is done.
+
+  - 2023-07-12 16:30 - Full access to Young is restored, and jobs are running again!
+
+    The Lustre filesystem check finished successfully earlier today and we ran some I/O-heavy test 
+    jobs without issues. 
+
+    We have replaced disks in the metadata server where both in a pair were still original disks, 
+    to prevent this situation happening again.
+
+    We remounted the filesystem read-write and at 15:45 and 16:00 rebooted the login nodes one 
+    after the other. We're now back in full service.
+
+    Please do check your space and if anything appears to be inconsistent or missing, email 
+    rc-support@ucl.ac.uk 
+
+    Thank you for your patience during this time.
+
 
 ### Michael
 
@@ -216,22 +268,5 @@ This page outlines that status of each of the machines managed by the Research C
 
 ### Thomas
 
-  - 2023-03-15 15:00 - Thomas had some Lustre filesystem issues. Jobs may have failed and logins been
-    timing out. This was fixed at 17:00 and all should be working as normal again.
-
-  - 2023-03-21 10:00 - The Lustre outage we had last week was a symptom of Thomas' filesystem finally 
-    getting too old and beginning to fail, so it is now time that we retire Thomas.
-    
-    We're draining the cluster of jobs at the moment - existing jobs will complete, and new jobs will 
-    not start.
-    
-    We will keep the filesystem up and running as best we can until **Monday 22 May**, shortly after 
-    which we will shut down the machine for the last time and no data that was on Scratch will be 
-    recoverable. (We currently believe that we can keep it running this long, barring unexpected events).
-    
-    We're two years after Thomas stopped being the MMM Hub machine and originally was intended to stop 
-    running - we appreciate the hardware for being able to continue this long!
-    
-    If you are trying to copy data to other UCL clusters and get errors about too many authentication 
-    failures, make sure you don't have old out of date entries in your `.ssh/known_hosts` file.  
+  - Thomas is now retired.
 
