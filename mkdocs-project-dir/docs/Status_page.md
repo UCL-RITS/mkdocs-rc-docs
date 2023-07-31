@@ -20,6 +20,20 @@ This page outlines that status of each of the machines managed by the Research C
     Jobs are still running for the moment, but if the filesystem keeps getting fuller we may need to 
     stop new jobs running until usage is brought down again.
 
+  - 2023-07-31 12:30 - Myriad's filesystem is currently being very slow because we have two failed 
+    drives in the Object Store Target storage. One drive has fully failed and the volume is under 
+    reconstruction. The other has been detected as failing soon and is being copied to a spare, but
+    this is happening slowly, likely because the disk is failing.
+
+    They are in separate volumes so there isn't a risk there, but it can take some time for 
+    reconstruction to complete and this will make the filesystem sluggish. This will affect you 
+    accessing files on the login nodes, and also your jobs reading or writing to files on Scratch 
+    or home, and accessing our centrally-installed software. (It won't affect writing to `$TMPDIR`,
+    the local hard disk on the compute node).
+
+    Once the reconstruction is complete, performance should return to normal. This could take most 
+    of the day and potentially continue into tomorrow.
+
 ### Kathleen
 
   - 2022-09-27 - Kathleen's metadata servers have started encountering the ZFS+Lustre bug that Young 
