@@ -21,7 +21,7 @@
         <link rel="next" href="../New_Users/">
       
       <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.eebd395e.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
@@ -1221,30 +1221,30 @@
 <table>
 <thead>
 <tr>
-<th align="left">File Name</th>
-<th align="left">Contents</th>
+<th style="text-align: left;">File Name</th>
+<th style="text-align: left;">Contents</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>myscript.sh</code></td>
-<td align="left">Your job script.</td>
+<td style="text-align: left;"><code>myscript.sh</code></td>
+<td style="text-align: left;">Your job script.</td>
 </tr>
 <tr>
-<td align="left"><code>myscript.sh.o12345</code></td>
-<td align="left">Output from the job. (<code>stdout</code>)</td>
+<td style="text-align: left;"><code>myscript.sh.o12345</code></td>
+<td style="text-align: left;">Output from the job. (<code>stdout</code>)</td>
 </tr>
 <tr>
-<td align="left"><code>myscript.sh.e12345</code></td>
-<td align="left">Errors, warnings, and other messages from the job that aren't mixed into the output. (<code>stderr</code>)</td>
+<td style="text-align: left;"><code>myscript.sh.e12345</code></td>
+<td style="text-align: left;">Errors, warnings, and other messages from the job that aren't mixed into the output. (<code>stderr</code>)</td>
 </tr>
 <tr>
-<td align="left"><code>myscript.sh.po12345</code></td>
-<td align="left">Output from the setup script run before a job. ("prolog")</td>
+<td style="text-align: left;"><code>myscript.sh.po12345</code></td>
+<td style="text-align: left;">Output from the setup script run before a job. ("prolog")</td>
 </tr>
 <tr>
-<td align="left"><code>myscript.sh.pe12345</code></td>
-<td align="left">Output from the clean-up script run after a job. ("epilog")</td>
+<td style="text-align: left;"><code>myscript.sh.pe12345</code></td>
+<td style="text-align: left;">Output from the clean-up script run after a job. ("epilog")</td>
 </tr>
 </tbody>
 </table>
@@ -1257,29 +1257,29 @@
 <table>
 <thead>
 <tr>
-<th align="left">Command</th>
+<th style="text-align: left;">Command</th>
 <th>Action</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>qsub myscript.sh</code></td>
+<td style="text-align: left;"><code>qsub myscript.sh</code></td>
 <td>Submit the script as-is</td>
 </tr>
 <tr>
-<td align="left"><code>qsub -N NewName myscript.sh</code></td>
+<td style="text-align: left;"><code>qsub -N NewName myscript.sh</code></td>
 <td>Submit the script but change the job's name</td>
 </tr>
 <tr>
-<td align="left"><code>qsub -l h_rt=24:0:0 myscript.sh</code></td>
+<td style="text-align: left;"><code>qsub -l h_rt=24:0:0 myscript.sh</code></td>
 <td>Submit the script but change the maximum run-time</td>
 </tr>
 <tr>
-<td align="left"><code>qsub -hold_jid 12345 myscript.sh</code></td>
+<td style="text-align: left;"><code>qsub -hold_jid 12345 myscript.sh</code></td>
 <td>Submit the script but make it wait for job 12345 to finish</td>
 </tr>
 <tr>
-<td align="left"><code>qsub -ac allow=XYZ myscript.sh</code></td>
+<td style="text-align: left;"><code>qsub -ac allow=XYZ myscript.sh</code></td>
 <td>Submit the script but only let it run on node classes X, Y, and Z</td>
 </tr>
 </tbody>
