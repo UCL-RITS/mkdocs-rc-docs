@@ -61,6 +61,11 @@ This page outlines that status of each of the machines managed by the Research C
     currently working on bringing everything back up. You won't be able to log in right now, and 
     jobs that were running at the time will have failed. 
 
+  - 2023-07-31 17:30 - Kathleen is running jobs again and you should be able to log in. It took a 
+    bit longer to bring back up because one of the OSSs temporarily misplaced its network card - 
+    after encouraging it to find it again we verified that it was working under load before 
+    re-enabling jobs.
+
 ### Young
 
   - 2023-03-14 09:30 - A datacentre cooling issue has caused servers in Young to overheat and power off. 
