@@ -43,6 +43,10 @@ This page outlines that status of each of the machines managed by the Research C
     were fixed last thing yesterday, after which we ran some test jobs.
     Any jobs that were running when the nodes powered down will have failed.
 
+  - 2023-07-31 10:00 - Kathleen's Object Store Servers went down on Sunday at around 6am. We're
+    currently working on bringing everything back up. You won't be able to log in right now, and 
+    jobs that were running at the time will have failed. 
+
 ### Young
 
   - 2023-03-14 09:30 - A datacentre cooling issue has caused servers in Young to overheat and power off. 
