@@ -1203,6 +1203,19 @@ directory sizes with the <code>--max-depth=1</code> option.</p>
 <p>Jobs are still running for the moment, but if the filesystem keeps getting fuller we may need to 
 stop new jobs running until usage is brought down again.</p>
 </li>
+<li>
+<p>2023-07-31 12:30 - Myriad's filesystem is currently being very slow because we have two failed 
+    drives in the Object Store Target storage. One drive has fully failed and the volume is under 
+    reconstruction. The other has been detected as failing soon and is being copied to a spare, but
+    this is happening slowly, likely because the disk is failing.</p>
+<p>They are in separate volumes so there isn't a risk there, but it can take some time for 
+reconstruction to complete and this will make the filesystem sluggish. This will affect you 
+accessing files on the login nodes, and also your jobs reading or writing to files on Scratch 
+or home, and accessing our centrally-installed software. (It won't affect writing to <code>$TMPDIR</code>,
+the local hard disk on the compute node).</p>
+<p>Once the reconstruction is complete, performance should return to normal. This could take most 
+of the day and potentially continue into tomorrow.</p>
+</li>
 </ul>
 <h3 id="kathleen">Kathleen<a class="headerlink" href="#kathleen" title="Permanent link">§</a></h3>
 <ul>
