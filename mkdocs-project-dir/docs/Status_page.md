@@ -34,6 +34,14 @@ This page outlines that status of each of the machines managed by the Research C
     Once the reconstruction is complete, performance should return to normal. This could take most 
     of the day and potentially continue into tomorrow.
 
+  - 2023-08-01 11:00 - We have had a report of another impending disk failure in the same volume as
+    the first failed disk, which puts data at risk. The volume reconstruction is still in progress 
+    and expected to take another 30-odd hours. (The second copy to spare has completed).
+
+    We have stopped Myriad from running jobs to reduce load on the filesystem while the 
+    reconstruction completes, so no new jobs will start for the time being. We'll keep you updated 
+    if anything changes.
+
 ### Kathleen
 
   - 2022-09-27 - Kathleen's metadata servers have started encountering the ZFS+Lustre bug that Young 
