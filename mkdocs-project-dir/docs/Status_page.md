@@ -42,6 +42,10 @@ This page outlines that status of each of the machines managed by the Research C
     reconstruction completes, so no new jobs will start for the time being. We'll keep you updated 
     if anything changes.
 
+  - 2023-08-03 10:30 - We have another estimated 18 hours of volume reconstruction to go, so we are
+    leaving jobs off today. On Friday morning we will check on the status of everything and 
+    hopefully be able to re-enable jobs then if all is well.
+
 ### Kathleen
 
   - 2022-09-27 - Kathleen's metadata servers have started encountering the ZFS+Lustre bug that Young 
