@@ -32,6 +32,12 @@ module load ansys/2021.r2
 
 This will set up various necessary config directories for you.
 
+!!! important "Module for UCL staff and Students only" 
+	these ANSYS modules are for
+	UCL staff and Students only as they use the UCL ANSYS License
+	Manager. Users from external Institutions on Young (the MMM Hub
+	cluster) need to use modules specific to their institution instead.
+
 The ANSYS applications are intended to be run primarily within batch
 jobs however you may run short (less than 5 minutes execution time)
 interactive tests on the Login Nodes and longer (up to two hours) on an
