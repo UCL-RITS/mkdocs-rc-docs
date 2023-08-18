@@ -42,6 +42,7 @@ other users is not deemed to be significant, or of long duration.
 
  - Increased Scratch quota - tell us how much, for what purpose and how long you'll need it.
     - Once implemented, `lquota` will show the new quota.
+    - *NB:* we are not currently accepting requests for an increased storage quota on Myriad. This is because there is insufficient remaining storage.
  - Longer wallclock limit
     - Consider whether you can checkpoint and restart your job: that is, write out everything that
       you need for a second job to begin where the previous one finished. Running multiple shorter
