@@ -59,7 +59,7 @@ in to the login node with ssh -X or some equivalent method. Here is an
 example of how you can get a X terminal session with the qrsh command:
 
 ```
-qrsh -l mem=512M,h_rt=0:30:0 \
+qrsh -l mem=512M,h_rt=0:30:0 -now no \
    "/shared/ucl/apps/mrxvt/0.5.4/bin/mrxvt -title 'User Test Node'"
 ```
 
