@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.1">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.6">
     
     
       
@@ -1550,21 +1550,23 @@ scp -o ProxyJump=ccxxxxx@ssh-gateway.ucl.ac.uk my_file ccxxxxx@kathleen.rc.ucl.a
 </code></pre></div>
 
 <p>This <code>proxyCommand</code> option causes the commands you type in your client to be forwarded on over a secure channel to the specified remote host.</p>
+<p>On newer versions of OpenSSH, you can use <code>ProxyJump &lt;remote_user_id&gt;@ssh-gateway.ucl.ac.uk</code> 
+instead of this <code>proxyCommand</code> line.</p>
 <p>Here are some examples - you can have as many of these as you need in your config file.</p>
 <div class="codehilite"><pre><span></span><code>Host myriad
    User ccxxxxx
    HostName myriad.rc.ucl.ac.uk
    proxyCommand ssh -W myriad.rc.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk
 
-Host login05
+Host kathleen01
    User ccxxxxx
-   HostName login05.external.legion.ucl.ac.uk
-   proxyCommand ssh -W login05.external.legion.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk
+   HostName login01.kathleen.rc.ucl.ac.uk
+   proxyCommand ssh -W login01.kathleen.rc.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk
 
 Host aristotle
    User ccxxxxx
    HostName aristotle.rc.ucl.ac.uk
-   proxyCommand ssh -W aristotle.rc.ucl.ac.uk:22 ccxxxxx@ssh-gateway.rc.ucl.ac.uk
+   proxyCommand ssh -W aristotle.rc.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk
 </code></pre></div>
 
 <p>You can now just type <code>ssh myriad</code> or <code>scp file1 aristotle:~</code> and you will go through the jump box. You'll be asked for login details twice since you're logging in to two machines, the jump box and your endpoint.  </p>
