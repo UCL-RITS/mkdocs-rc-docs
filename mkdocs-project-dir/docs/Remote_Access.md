@@ -57,6 +57,9 @@ Host <name>
 ```
 This `proxyCommand` option causes the commands you type in your client to be forwarded on over a secure channel to the specified remote host.
 
+On newer versions of OpenSSH, you can use `ProxyJump <remote_user_id>@ssh-gateway.ucl.ac.uk` 
+instead of this `proxyCommand` line.
+
 Here are some examples - you can have as many of these as you need in your config file.
 ```ssh-config
 Host myriad
@@ -64,15 +67,15 @@ Host myriad
    HostName myriad.rc.ucl.ac.uk
    proxyCommand ssh -W myriad.rc.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk
 
-Host login05
+Host kathleen01
    User ccxxxxx
-   HostName login05.external.legion.ucl.ac.uk
-   proxyCommand ssh -W login05.external.legion.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk
+   HostName login01.kathleen.rc.ucl.ac.uk
+   proxyCommand ssh -W login01.kathleen.rc.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk
 
 Host aristotle
    User ccxxxxx
    HostName aristotle.rc.ucl.ac.uk
-   proxyCommand ssh -W aristotle.rc.ucl.ac.uk:22 ccxxxxx@ssh-gateway.rc.ucl.ac.uk
+   proxyCommand ssh -W aristotle.rc.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk
 ```
 
 You can now just type `ssh myriad` or `scp file1 aristotle:~` and you will go through the jump box. You'll be asked for login details twice since you're logging in to two machines, the jump box and your endpoint.  
