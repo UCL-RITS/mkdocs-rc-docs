@@ -16,12 +16,12 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-29 Aug -> 1 Sept 2023 | Kathleen | Planned | Our vendors need us to do some filesystem testing on Kathleen to prepare for the replacement of its Scratch filesystem with a new filesystem later this year. We will drain jobs for 8am on Tues 29th. Depending on how long it takes to gather this information, we may not be running jobs for the rest of the week. We will update you on Thursday around lunchtime. 
 
 ## Previous Outages
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+29 Aug -> 1 Sept 2023 | Kathleen | Completed | Our vendors need us to do some filesystem testing on Kathleen to prepare for the replacement of its Scratch filesystem with a new filesystem later this year. We will drain jobs for 8am on Tues 29th. Depending on how long it takes to gather this information, we may not be running jobs for the rest of the week. We will update you on Thursday around lunchtime. (Jobs were restarted on Mon 4 Sept 12:00)
 11 July 2023        | Myriad  | Completed | Full shutdown for replacement of both Lustre controllers in the filesystem. There will be no login access, no jobs running. Jobs will be drained for 8am. Myriad will be returned to service during the day on Weds 12 July.
 10 -> 15 May 2023 | Myriad | Completed | Power work taking place in the datacentre that Myriad is in which may result in some cabinets losing power. We will be draining jobs for 8am on Weds 10 May and re-enabling them again once the work is complete, likely to be during Tues 16 May.
 21 -> 23 Apr 2023 | Young, Michael, Kathleen | Completed | Electrical works in the datacentre require us to switch off all three clusters. Jobs will be drained for 12:00pm on Friday 21 April. The clusters will be powered down shortly after 12:00pm. You won't be able to log in or access data from then or throughout the weekend. We will bring the clusters back up during Monday 24 April. This may take a few hours to most of the day.
