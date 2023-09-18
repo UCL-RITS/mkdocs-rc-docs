@@ -62,6 +62,13 @@ software available.
 
 Once the module is loaded, you should have all the usual executables in your path, and can use its commands. You load modules in exactly the same way inside a jobscript.
 
+Useful resources:
+
+* [Modules pt 1 (moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4846737) (UCL users)
+* [Modules pt 2 (moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4846739) (UCL users)
+* [Modules pt 1 (mediacentral)](https://mediacentral.ucl.ac.uk/Play/98405) (non-UCL users)
+* [Modules pt 2 (mediacentral)](https://mediacentral.ucl.ac.uk/Play/98414) (non-UCL users)
+
 
 ## Notes on how to run specific packages
 
