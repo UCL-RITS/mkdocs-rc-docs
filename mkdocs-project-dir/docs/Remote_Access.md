@@ -43,8 +43,10 @@ You may also need to do this if you are trying to reach one cluster from another
 
 Useful resources can be found here:
 
-* [Creating an SSH key pair (moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4845640) (UCL users)
-* [Creating an SSH key pair (mediacentral)](https://mediacentral.ucl.ac.uk/Play/96472) (non-UCL users)
+* [SSH key pair pt 1 (moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4845640) (UCL users)
+* [SSH key pair pt 2 (moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4845645) (UCL users)
+* [SSH key pair pt 1 (mediacentral)](https://mediacentral.ucl.ac.uk/Play/96472) (non-UCL users)
+* [SSH key pair pt 2 (mediacentral)](https://mediacentral.ucl.ac.uk/Play/96694) (non-UCL users)
 
 ##### Using a config file
 
