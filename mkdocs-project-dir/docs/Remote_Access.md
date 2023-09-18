@@ -41,6 +41,11 @@ This tunnels through the jump box service in order to get you to your destinatio
 
 You may also need to do this if you are trying to reach one cluster from another and there is a firewall in the way.
 
+Useful resources can be found here:
+
+* [Creating an SSH key pair (moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4845640) (UCL users)
+* [Creating an SSH key pair (mediacentral)](https://mediacentral.ucl.ac.uk/Play/96472) (non-UCL users)
+
 ##### Using a config file
 
 You can create a config which does this without you needing to type it every time.
