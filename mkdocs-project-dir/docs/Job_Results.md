@@ -64,4 +64,7 @@ You can use more than one of these options by putting them together after the `-
 ```
 #$ -m be
 ```
+Further resources can be found here:
 
+* [Scheduler fundamentals (moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4845666) (UCL users)
+* [Scheduler fundamentals (mediacentral)](https://mediacentral.ucl.ac.uk/Play/98368) (non-UCL users)
