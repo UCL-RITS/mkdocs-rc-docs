@@ -57,10 +57,10 @@ If you have no notion of how much you should request for any of these, have a lo
 
 Useful resources:
 
--  [Resource requests (Moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4846681) (UCL users)
--  [Resource requests pt.2 (Moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4846689) (UCL users)
--  [Resource requests (mediacentral)](https://mediacentral.ucl.ac.uk/Play/98371) (non-UCL users)
--  [Resrource requests pt.2 (mediacentral)](https://mediacentral.ucl.ac.uk/Play/98393) (non-UCL users)
+- [Resource requests (Moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4846681) (UCL users)
+- [Resource requests pt.2 (Moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4846689) (UCL users)
+- [Resource requests (mediacentral)](https://mediacentral.ucl.ac.uk/Play/98371) (non-UCL users)
+- [Resrource requests pt.2 (mediacentral)](https://mediacentral.ucl.ac.uk/Play/98393) (non-UCL users)
 
 ## Serial Job Script Example
 
