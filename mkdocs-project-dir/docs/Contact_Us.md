@@ -33,10 +33,10 @@ If you have a particularly complex problem, it may be useful to email the suppor
 
 The Research Computing Team are located at:
 
-> 105 Judd Street
-> Floor 1
+> 38-50 Bidborough Street
+> Floor 3
 > London
-> WC1E 9RN
+> WC1H 9BT
 
 We are keen to collaborate and welcome visitors to our offices to talk about all things research computing.
 However, we do not operate a walk-up service desk: if you are frustrated by slow response to a support ticket, we are sorry but please do send reminders as there is probably a good reason why your request is not being processed.
