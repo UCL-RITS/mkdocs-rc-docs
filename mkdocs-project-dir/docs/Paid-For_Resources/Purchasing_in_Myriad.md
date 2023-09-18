@@ -6,9 +6,12 @@ categories:
 
 # Purchasing in Myriad
 
-!!! important "Feb 2023: We cannot buy any nodes in Myriad for the foreseeable future."
-    We may be able to add nodes to an upcoming on-premise cloud/container-based platform intended 
-    for interactive workloads with graphical user interfaces. Please contact rc-support@ucl.ac.uk
+!!! important "Sept 2023: We cannot buy any nodes or add paid time in Myriad for the time being."
+    This is because we have no more space in the datacentre to add new hardware, which is needed 
+    for priority access/Gold as well as dedicated node purchases.
+
+    Please raise your requests with rc-support@ucl.ac.uk but be aware that we cannot confirm
+    our ability to fulfill them until we know what future space we will have available. 
 
 Researchers may purchase additional resources to be used as part of the [Myriad](../Clusters/Myriad.md) High Performance Computing cluster if the free service does not meet their needs. These resources can be made available in one of two ways:
 
