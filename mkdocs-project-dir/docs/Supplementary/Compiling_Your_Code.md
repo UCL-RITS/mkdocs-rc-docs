@@ -50,6 +50,13 @@ module load compilers/gnu/4.9.2
 module load mpi/openmpi/1.10.1/gnu-4.9.2
 ```
 
+Useful resources:
+
+* [Modules pt 1 (moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4846737) (UCL users)
+* [Modules pt 2 (moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4846739) (UCL users)
+* [Modules pt 1 (mediacentral)](https://mediacentral.ucl.ac.uk/Play/98405) (non-UCL users)
+* [Modules pt 2 (mediacentral)](https://mediacentral.ucl.ac.uk/Play/98414) (non-UCL users)
+
 ## Available compilers
 
 The following compilers are available and supported on Legion:
