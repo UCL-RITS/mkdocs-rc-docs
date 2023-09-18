@@ -56,10 +56,10 @@ disk space on the node, if it is not diskless). More details on how to request r
 If you have no notion of how much you should request for any of these, have a look at [How do I estimate what resources to request in my jobscript?](howto.md#how-do-i-estimate-what-resources-to-request-in-my-jobscript)
 
 Useful resources:
-- [Resource requests (Moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4846681) (UCL users)
-- [Resource requests pt.2 (Moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4846689) (UCL users)
-- [Resource requests (mediacentral)](https://mediacentral.ucl.ac.uk/Play/98371) (non-UCL users)
-- [Resrource requests pt.2 (mediacentral)](https://mediacentral.ucl.ac.uk/Play/98393) (non-UCL users)
+-  [Resource requests (Moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4846681) (UCL users)
+-  [Resource requests pt.2 (Moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4846689) (UCL users)
+-  [Resource requests (mediacentral)](https://mediacentral.ucl.ac.uk/Play/98371) (non-UCL users)
+-  [Resrource requests pt.2 (mediacentral)](https://mediacentral.ucl.ac.uk/Play/98393) (non-UCL users)
 
 ## Serial Job Script Example
 
