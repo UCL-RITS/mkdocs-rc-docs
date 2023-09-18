@@ -90,6 +90,13 @@ It shows you your username, which Myriad login node you are on, and where you ar
 (`~` is a short way to reference your home directory). You can now look at what software
 is available and write jobscripts.
 
+Helpful resources:
+
+* [Logging in with a password](https://moodle.ucl.ac.uk/mod/page/view.php?id=4845639) (UCL users)
+* [Logging in with a password](https://mediacentral.ucl.ac.uk/Play/96471) (non-UCL users)
+
+After you have successfully logged in for the first time, visit the [remote access](https://www.rc.ucl.ac.uk/docs/Remote_Access) for further resources on  accessing UCL services from outside the UCL firewall and creating an SSH key pair to help with logging in.
+
 ### Desktop@UCL Anywhere
 
 You can log in to this from a web browser or download a Citrix client. Once logged in,
