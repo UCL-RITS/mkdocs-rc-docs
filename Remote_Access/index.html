@@ -1539,6 +1539,11 @@ scp -o ProxyJump=ccxxxxx@ssh-gateway.ucl.ac.uk my_file ccxxxxx@kathleen.rc.ucl.a
 
 <p>This tunnels through the jump box service in order to get you to your destination - you'll be asked for your password twice, once for each machine. You can use this to log in or to copy files.</p>
 <p>You may also need to do this if you are trying to reach one cluster from another and there is a firewall in the way.</p>
+<p>Useful resources can be found here:</p>
+<ul>
+<li><a href="https://moodle.ucl.ac.uk/mod/page/view.php?id=4845640">Creating an SSH key pair (moodle)</a> (UCL users)</li>
+<li><a href="https://mediacentral.ucl.ac.uk/Play/96472">Creating an SSH key pair (mediacentral)</a> (non-UCL users)</li>
+</ul>
 <h5 id="using-a-config-file">Using a config file<a class="headerlink" href="#using-a-config-file" title="Permanent link">§</a></h5>
 <p>You can create a config which does this without you needing to type it every time.</p>
 <p>Inside your <code>~/.ssh</code> directory on your local machine, add the below to your <code>config</code> file (or create a file called <code>config</code> if you don't already have one).</p>
