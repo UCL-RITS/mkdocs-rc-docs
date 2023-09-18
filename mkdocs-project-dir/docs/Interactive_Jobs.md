@@ -41,6 +41,11 @@ until it gets scheduled. Pressing Ctrl+C (i.e. the control key
 and the C key at the same time) will safely cancel the request
 if it doesn't seem to be able to get you a session.
 
+More resources can be found here:
+
+* [Moodle](https://moodle.ucl.ac.uk/mod/page/view.php?id=4846689) (UCL users)
+* [Mediacentral](https://mediacentral.ucl.ac.uk/Play/98393) (non-UCL users)
+
 ## Interactive X sessions
 
 You can get an interactive X session from the head node of the job back
