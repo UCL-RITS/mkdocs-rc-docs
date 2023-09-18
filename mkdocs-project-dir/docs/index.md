@@ -48,6 +48,8 @@ suspended indefinitely.
 
 We have an online Moodle course "Introduction to the Unix Shell" and
 infrequently provide a training course aimed at getting users up and running on
-one of our main clusters. Please see our
+one of our main clusters. ["Introduction to the Unix Shell(Moodle)](https://moodle.ucl.ac.uk/course/view.php?id=12953)(UCL users only), [GitHub-Pages](http://rits.github-pages.ucl.ac.uk/intro-unix-shell/index.html)(non-UCL users), additional resources can be found on [UCL mediacentral](https://mediacentral.ucl.ac.uk).
+
+Please see our
 [Research IT Training page](https://www.ucl.ac.uk/advanced-research-computing/education/training)
 for details.
