@@ -76,6 +76,13 @@ module load ucx/1.8.0/gnu-4.9.2
 module load mpi/openmpi/4.0.3/gnu-4.9.2
 ```
 
+Useful resources:
+
+* [Modules pt 1 (moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4846737) (UCL users)
+* [Modules pt 2 (moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4846739) (UCL users)
+* [Modules pt 1 (mediacentral)](https://mediacentral.ucl.ac.uk/Play/98405) (non-UCL users)
+* [Modules pt 2 (mediacentral)](https://mediacentral.ucl.ac.uk/Play/98414) (non-UCL users)
+
 ### Newer versions of GCC and GLIBCXX
 
 The software you want to run may require newer compilers or a precompiled binary may say 
