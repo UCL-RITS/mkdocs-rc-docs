@@ -427,9 +427,9 @@ qsub -hold_jid 12345 myscript.sh
 
 You may specify node type with the `-ac allow=` flags as below: 
 ```
-qsub -ac allow=XYZ myscript.sh
+qsub -ac allow=EFJL myscript.sh
 ```
-That would restrict the job to running on nodes of type X, Y or Z (the older Legion nodes).
+That would restrict the job to running on nodes of type E , F , J or L (the Myriad GPU nodes).
 <!--- provide an alternate example, e.g., using Myriad's or Kathleen's nodes  --->
 
 Note that for debugging purposes, it helps us if you have these options inside your jobscript rather than passed in on the command line whenever possible. We (and you) can see the exact jobscript that was submitted for every job that ran but not what command line options you submitted it with.
