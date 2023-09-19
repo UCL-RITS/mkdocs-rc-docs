@@ -7,11 +7,11 @@ layout: docs
 ## What Services are available?
 
 ### UCL
- * Grace/Kathleen - HPC, large parallel MPI jobs.
+ * Kathleen - HPC, large parallel MPI jobs.
  * Myriad - High Throughput, GPU or large memory jobs.
 
 ### External
- * Thomas - MMM Hub Tier 2
+ * Young - MMM Hub Tier 2
  * Michael - Faraday Institution Tier 2
 
 
@@ -29,13 +29,14 @@ All connections are via SSH, and you use your UCL credentials to log in (externa
 
 |Service | General alias          | Direct login node addresses                                   |
 |--------|------------------------|---------------------------------------------------------------|
-|Grace   | `grace.rc.ucl.ac.uk`   | `login01.ext.grace.ucl.ac.uk` `login02.ext.grace.ucl.ac.uk`     |
 |Kathleen| `kathleen.rc.ucl.ac.uk`| `login01.kathleen.rc.ucl.ac.uk` `login02.kathleen.rc.ucl.ac.uk` |
 |Myriad  | `myriad.rc.ucl.ac.uk`  | `login12.myriad.rc.ucl.ac.uk` `login13.myriad.rc.ucl.ac.uk`     |
-|Thomas  | `thomas.rc.ucl.ac.uk`  | `login03.thomas.rc.ucl.ac.uk` `login04.thomas.rc.ucl.ac.uk`     |
+|Young   | `young.rc.ucl.ac.uk`   | `login01.young.rc.ucl.ac.uk` `login02.young.rc.ucl.ac.uk `      |
 |Michael | `michael.rc.ucl.ac.uk` | `login10.michael.rc.ucl.ac.uk` `login11.michael.rc.ucl.ac.uk `  |
 
 Generally you should connect to the general alias as this is load-balanced across the available login nodes, however if you use `screen` or `tmux` you will want to use the direct hostname so that you can reconnect to your session.
+
+Please be aware that login nodes are shared resources, so users should not run memory intensive jobs nor jobs with long runtimes in the login node. Doing so may negatively impact the performance of the login node for other users.
 
 ## Software stack
 
