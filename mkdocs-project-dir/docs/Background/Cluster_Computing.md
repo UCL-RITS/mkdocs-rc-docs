@@ -52,4 +52,4 @@ This can be useful for visualising your data without transferring all the files 
  connection makes it a bit slower to use than running it on your own computer.
 You'll need an X server on your own computer to use this: check [our page on X-Forwarding](../Supplementary/X-Forwarding.md) for details.
 
-Please be aware that login nodes are shared resources, so users should not be running memory intensive jobs nor jobs with long runtimes in the login node. Doing so may negatively impact the performance of the login node for other users. 
+Please be aware that login nodes are shared resources, so users should not be running memory intensive jobs nor jobs with long runtimes in the login node. Doing so may negatively impact the performance of the login node for other users. Hence, identified culprit user processes are systematically killed.
