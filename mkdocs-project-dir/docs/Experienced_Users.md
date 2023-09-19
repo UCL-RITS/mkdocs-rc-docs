@@ -36,7 +36,7 @@ All connections are via SSH, and you use your UCL credentials to log in (externa
 
 Generally you should connect to the general alias as this is load-balanced across the available login nodes, however if you use `screen` or `tmux` you will want to use the direct hostname so that you can reconnect to your session.
 
-Please be aware that login nodes are shared resources, so users should not run memory intensive jobs nor jobs with long runtimes in the login node. Doing so may negatively impact the performance of the login node for other users.
+Please be aware that login nodes are shared resources, so users should not run memory intensive jobs nor jobs with long runtimes in the login node. Doing so may negatively impact the performance of the login node for other users. Hence, identified culprit user processes are systematically killed.
 
 ## Software stack
 
