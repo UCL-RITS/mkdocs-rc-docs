@@ -1752,12 +1752,12 @@
 <h2 id="what-services-are-available">What Services are available?<a class="headerlink" href="#what-services-are-available" title="Permanent link">§</a></h2>
 <h3 id="ucl">UCL<a class="headerlink" href="#ucl" title="Permanent link">§</a></h3>
 <ul>
-<li>Grace/Kathleen - HPC, large parallel MPI jobs.</li>
+<li>Kathleen - HPC, large parallel MPI jobs.</li>
 <li>Myriad - High Throughput, GPU or large memory jobs.</li>
 </ul>
 <h3 id="external">External<a class="headerlink" href="#external" title="Permanent link">§</a></h3>
 <ul>
-<li>Thomas - MMM Hub Tier 2</li>
+<li>Young - MMM Hub Tier 2</li>
 <li>Michael - Faraday Institution Tier 2</li>
 </ul>
 <h2 id="how-do-i-get-access">How do I get access?<a class="headerlink" href="#how-do-i-get-access" title="Permanent link">§</a></h2>
@@ -1776,11 +1776,6 @@
 </thead>
 <tbody>
 <tr>
-<td>Grace</td>
-<td><code>grace.rc.ucl.ac.uk</code></td>
-<td><code>login01.ext.grace.ucl.ac.uk</code> <code>login02.ext.grace.ucl.ac.uk</code></td>
-</tr>
-<tr>
 <td>Kathleen</td>
 <td><code>kathleen.rc.ucl.ac.uk</code></td>
 <td><code>login01.kathleen.rc.ucl.ac.uk</code> <code>login02.kathleen.rc.ucl.ac.uk</code></td>
@@ -1791,9 +1786,9 @@
 <td><code>login12.myriad.rc.ucl.ac.uk</code> <code>login13.myriad.rc.ucl.ac.uk</code></td>
 </tr>
 <tr>
-<td>Thomas</td>
-<td><code>thomas.rc.ucl.ac.uk</code></td>
-<td><code>login03.thomas.rc.ucl.ac.uk</code> <code>login04.thomas.rc.ucl.ac.uk</code></td>
+<td>Young</td>
+<td><code>young.rc.ucl.ac.uk</code></td>
+<td><code>login01.young.rc.ucl.ac.uk</code> <code>login02.young.rc.ucl.ac.uk</code></td>
 </tr>
 <tr>
 <td>Michael</td>
@@ -1803,6 +1798,7 @@
 </tbody>
 </table>
 <p>Generally you should connect to the general alias as this is load-balanced across the available login nodes, however if you use <code>screen</code> or <code>tmux</code> you will want to use the direct hostname so that you can reconnect to your session.</p>
+<p>Please be aware that login nodes are shared resources, so users should not run memory intensive jobs nor jobs with long runtimes in the login node. Doing so may negatively impact the performance of the login node for other users.</p>
 <h2 id="software-stack">Software stack<a class="headerlink" href="#software-stack" title="Permanent link">§</a></h2>
 <p>All UCL services use the same software stack based upon RHEL 7.x with a standardised set of packages, exposed to the user through environment modules (the <code>module</code> command).  By default this has a set of useful tools loaded, as well as the Intel compilers and MPI but users are free to change their own environment.</p>
 <h2 id="batch-system">Batch System<a class="headerlink" href="#batch-system" title="Permanent link">§</a></h2>
