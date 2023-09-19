@@ -1798,7 +1798,7 @@
 </tbody>
 </table>
 <p>Generally you should connect to the general alias as this is load-balanced across the available login nodes, however if you use <code>screen</code> or <code>tmux</code> you will want to use the direct hostname so that you can reconnect to your session.</p>
-<p>Please be aware that login nodes are shared resources, so users should not run memory intensive jobs nor jobs with long runtimes in the login node. Doing so may negatively impact the performance of the login node for other users.</p>
+<p>Please be aware that login nodes are shared resources, so users should not run memory intensive jobs nor jobs with long runtimes in the login node. Doing so may negatively impact the performance of the login node for other users. Hence, identified culprit user processes are systematically killed.</p>
 <h2 id="software-stack">Software stack<a class="headerlink" href="#software-stack" title="Permanent link">§</a></h2>
 <p>All UCL services use the same software stack based upon RHEL 7.x with a standardised set of packages, exposed to the user through environment modules (the <code>module</code> command).  By default this has a set of useful tools loaded, as well as the Intel compilers and MPI but users are free to change their own environment.</p>
 <h2 id="batch-system">Batch System<a class="headerlink" href="#batch-system" title="Permanent link">§</a></h2>
