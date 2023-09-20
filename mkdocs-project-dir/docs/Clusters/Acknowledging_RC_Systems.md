@@ -38,7 +38,3 @@ this work."
 
 Please find the appropriate wording at [Acknowledging the use of Young in publications](Young.md#acknowledging-the-use-of-young-in-publications).
 
-## MMM Hub Thomas
-
-Please find the appropriate wording at [Acknowledging the use of Thomas in publications](Thomas.md#acknowledging-the-use-of-thomas-in-publications).
-
