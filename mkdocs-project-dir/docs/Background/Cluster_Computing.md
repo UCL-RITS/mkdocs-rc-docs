@@ -14,13 +14,9 @@ In this context, a cluster is a collection of computers (often referred to as "n
 They're networked together with some shared storage and a scheduling system that lets people 
 run programs on them without having to enter commands "live".
 
-The UCL Moodle course  "ARC - Introduction to High Performance Computing at UCL" has a video explanation of this is here: 
-     [ (Moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4623810) (UCL users)
-  
+The UCL Moodle course "ARC - Introduction to High Performance Computing at UCL" has a video explanation of this here: [(Moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4623810) (UCL users)
 
-This video is also available here:                     [(mediacentral)](https://mediacentral.ucl.ac.uk/Play/96444) (non-UCL users)
-
-
+This video is also available here: [(mediacentral)](https://mediacentral.ucl.ac.uk/Play/96444) (non-UCL users)
 
 ## Why would I want to use one?
 
