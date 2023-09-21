@@ -31,6 +31,8 @@ bulletpoints will show on screen - this is normal.
 If you are outside the UCL firewall you will need to follow the
 instructions for [Logging in from outside the UCL firewall](../howto.md#logging-in-from-outside-the-ucl-firewall).
 
+The login nodes allow you to manage your files, compile code and submit jobs. Very short (\<15mins) and non-resource-intensive software tests can be run on the login nodes, but anything more should be submitted as a job.
+
 ### Logging in to a specific node
 
 You can access a specific Kathleen login node by using their dedicated addresses instead of the main `kathleen.rc.ucl.ac.uk` address, for example:
