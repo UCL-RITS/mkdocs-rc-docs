@@ -426,10 +426,19 @@ qsub -hold_jid 12345 myscript.sh
 ```
 
 You may specify node type with the `-ac allow=` flags as below: 
+
 ```
-qsub -ac allow=L myscript.sh    or      qsub -ac allow=EF myscript.sh
+qsub -ac allow=L myscript.sh
 ```
-That would choose a specific GPU node of type E , F , L (the Myriad GPU nodes).
+
+This command tells this GPU job to only run the type L nodes which have Nvidia A100s
+
+```
+qsub -ac allow=EF myscript.sh
+```
+
+This tells this GPU job to only run on the type E and F nodes which have Nvidia V100s.
+
 <!--- provide an alternate example, e.g., using Myriad's or Kathleen's nodes  --->
 
 Note that for debugging purposes, it helps us if you have these options inside your jobscript rather than passed in on the command line whenever possible. We (and you) can see the exact jobscript that was submitted for every job that ran but not what command line options you submitted it with.
