@@ -3,7 +3,7 @@ title: MMM Hub Young
 layout: cluster
 ---
 Young is the UK National Tier 2 High Performance Computing Hub in
-Materials and Molecular Modelling, and replacement for [Thomas](https://www.rc.ucl.ac.uk/docs/Clusters/Thomas/). 
+Materials and Molecular Modelling, and replacement for [Thomas](./Thomas.md). 
 Young went into pilot on 3 Aug 2020.
 
 ## Training resources
