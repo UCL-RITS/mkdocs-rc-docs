@@ -54,7 +54,8 @@ We have an online Moodle course "Introduction to High Performance Computing at U
 We have an online Moodle course "Introduction to High Performance Computing at UCL" aimed at getting users comfortable with
 using HPC at UCL. 
 ["Introduction to High Performance Computing at UCL" (Moodle)](https://moodle.ucl.ac.uk/course/view.php?id=33216) 
-(UCL users), and on [UCL mediacentral](https://mediacentral.ucl.ac.uk) by searching for "HPC" (non-UCL users).
+(UCL users), 
+and on [UCL mediacentral](https://mediacentral.ucl.ac.uk) by searching for "HPC" (non-UCL users).
 
 Please see our
 [Research IT Training page](https://www.ucl.ac.uk/advanced-research-computing/education/training)
