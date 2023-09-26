@@ -43,16 +43,18 @@ whatever your skill level or requirements.
 
 ## Training
 
-Due to the on-going COVID-19 pandemic, our ordinary training courses have been
-suspended indefinitely.
-
 We have an online Moodle course "Introduction to the Unix Shell" and
 infrequently provide a training course aimed at getting users up and running on
 one of our main clusters. ["Introduction to the Unix Shell (Moodle)](https://moodle.ucl.ac.uk/course/view.php?id=12953) (UCL users), [GitHub-Pages](http://rits.github-pages.ucl.ac.uk/intro-unix-shell/index.html) (non-UCL users), additional resources can be found on [UCL mediacentral](https://mediacentral.ucl.ac.uk).
 
-We have an online Moodle course "Introduction to High Performance Computing at UCL" aimed at getting users comfortable with using HPC at UCL. ["Introduction to High Performance Computing at UCL" (Moodle)](https://moodle.ucl.ac.uk/course/view.php?id=33216) 
-(UCL users), non-UCL users will have to go to [UCL mediacentral](https://mediacentral.ucl.ac.uk) and search for "HPC".
+We have an online Moodle course "Introduction to High Performance Computing at UCL" aimed at 
+getting users comfortable with using HPC at UCL. ["Introduction to High Performance Computing at UCL" (Moodle)](https://moodle.ucl.ac.uk/course/view.php?id=33216) 
+(UCL users), non-UCL users will have to go to [UCL mediacentral](https://mediacentral.ucl.ac.uk) 
+and search for "HPC". 
+
+We run some instances of these courses between specified dates with scheduled 
+online tutorial sessions or they can be done self-service at any time.
 
 Please see our
 [Research IT Training page](https://www.ucl.ac.uk/advanced-research-computing/education/training)
-for details.
+for details of when the taught versions of these courses are run.
