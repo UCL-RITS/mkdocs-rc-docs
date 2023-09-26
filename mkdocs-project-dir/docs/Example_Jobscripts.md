@@ -51,7 +51,7 @@ To specify a project ID in a job script, use the `-P` object as below:
 
 The lines starting with `#$ -l` are where you are requesting resources like wallclock 
 time (how long your job is allowed to run), memory, and possibly tmpfs (local hard 
-disk space on the node, if it is not diskless). In the case for array jobs, each job in the array are treated independently by the scheduler and are each allocated the same resources as are requested. For example, in a job array of 40 jobs requesting for 24 hours wallclock time and 3GB ram, each job in the array will be allocated 24 hours wallclock time and 3GB ram. Wallclock time does not include the time spent waiting in the queue. More details on how to request resources can be found [here](https://www.rc.ucl.ac.uk/docs/Experienced_Users/#resources-you-can-request).
+disk space on the node, if it is not diskless). In the case for array jobs, each job in the array is treated independently by the scheduler and are each allocated the same resources as are requested. For example, in a job array of 40 jobs requesting for 24 hours wallclock time and 3GB ram, each job in the array will be allocated 24 hours wallclock time and 3GB ram. Wallclock time does not include the time spent waiting in the queue. More details on how to request resources can be found [here](https://www.rc.ucl.ac.uk/docs/Experienced_Users/#resources-you-can-request).
 
 If you have no notion of how much you should request for any of these, have a look at [How do I estimate what resources to request in my jobscript?](howto.md#how-do-i-estimate-what-resources-to-request-in-my-jobscript)
 
