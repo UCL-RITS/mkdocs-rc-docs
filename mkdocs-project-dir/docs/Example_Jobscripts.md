@@ -104,7 +104,7 @@ tar -zcvf $HOME/Scratch/workspace/files_from_job_$JOB_ID.tar.gz $TMPDIR
 
 ## Multi-threaded Job Example
 
-For programs that can use multiple threads, you can request multiple [processor cores](Glossary#Core) using the `-pe smp <number>` option. One common method for using multiple threads in a program is OpenMP, and the `$OMP_NUM_THREADS` environment variable is set automatically in a job of this type to tell OpenMP how many threads it should use. Most methods for running multi-threaded applications should correctly detect how many cores have been allocated, though (*via* a mechanism called `cgroups`).
+For programs that can use multiple threads, you can request multiple processor cores using the `-pe smp <number>` option. One common method for using multiple threads in a program is OpenMP, and the `$OMP_NUM_THREADS` environment variable is set automatically in a job of this type to tell OpenMP how many threads it should use. Most methods for running multi-threaded applications should correctly detect how many cores have been allocated, though (*via* a mechanism called `cgroups`).
 
 Note that this job script works directly in scratch instead of in the temporary `$TMPDIR` storage.
 
