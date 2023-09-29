@@ -1689,7 +1689,7 @@ tar<span class="w"> </span>-zcvf<span class="w"> </span><span class="nv">$HOME</
 </code></pre></div>
 
 <h2 id="multi-threaded-job-example">Multi-threaded Job Example<a class="headerlink" href="#multi-threaded-job-example" title="Permanent link">§</a></h2>
-<p>For programs that can use multiple threads, you can request multiple <a href="Glossary#Core">processor cores</a> using the <code>-pe smp &lt;number&gt;</code> option. One common method for using multiple threads in a program is OpenMP, and the <code>$OMP_NUM_THREADS</code> environment variable is set automatically in a job of this type to tell OpenMP how many threads it should use. Most methods for running multi-threaded applications should correctly detect how many cores have been allocated, though (<em>via</em> a mechanism called <code>cgroups</code>).</p>
+<p>For programs that can use multiple threads, you can request multiple processor cores using the <code>-pe smp &lt;number&gt;</code> option. One common method for using multiple threads in a program is OpenMP, and the <code>$OMP_NUM_THREADS</code> environment variable is set automatically in a job of this type to tell OpenMP how many threads it should use. Most methods for running multi-threaded applications should correctly detect how many cores have been allocated, though (<em>via</em> a mechanism called <code>cgroups</code>).</p>
 <p>Note that this job script works directly in scratch instead of in the temporary <code>$TMPDIR</code> storage.</p>
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
 
