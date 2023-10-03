@@ -48,8 +48,7 @@ one of our main clusters. ["Introduction to the Unix Shell (Moodle)](https://moo
 
 We have an online Moodle course "Introduction to High Performance Computing at UCL" aimed at 
 getting users comfortable with using HPC at UCL. ["Introduction to High Performance Computing at UCL" (Moodle)](https://moodle.ucl.ac.uk/course/view.php?id=33216) 
-(UCL users), non-UCL users will have to go to [UCL mediacentral](https://mediacentral.ucl.ac.uk) 
-and search for "HPC". 
+(UCL users), [UCL mediacentral](https://mediacentral.ucl.ac.uk) and search for "HPC" (non-UCL users). 
 
 We run some instances of these courses between specified dates with scheduled 
 online tutorial sessions or they can be done self-service at any time.
