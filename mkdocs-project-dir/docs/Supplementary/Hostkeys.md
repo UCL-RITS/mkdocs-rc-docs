@@ -39,16 +39,6 @@ RSA      MD5:06:17:f3:f2:0c:3e:0d:df:1d:04:fb:53:dc:77:60:56
 RSA      SHA256:DPcjbsUTBq3LwRggu4N+q2WQR0rkoM42jRdYXJtB86M
 ```
 
-## Thomas
-```
-ECDSA    MD5:6d:32:0f:81:8b:f6:c5:00:25:36:ed:3a:88:40:5a:17
-ECDSA    SHA256:r48udIRDfBEIJG+jiIJFs/56ZayaKUdusFd+JQ3jsO4
-ED25519  MD5:92:6d:97:46:eb:8d:0a:4b:8a:65:cb:0d:65:79:bb:7f
-ED25519  SHA256:waqBYWAb+g1lwUGWz8ku4M48McIBWGCdpMoU8l8j6tU
-RSA      MD5:f2:11:61:e6:01:b1:b2:ee:db:8b:ff:01:2d:85:b4:8b
-RSA      SHA256:AZ88UVU3BfZkSBOsMw5VKgbDi47o3dpEabPlIB9GtcM
-```
-
 ## Michael
 ```
 ECDSA    MD5:11:98:2e:c2:da:14:0c:d3:4e:a3:70:11:e1:59:72:7e
