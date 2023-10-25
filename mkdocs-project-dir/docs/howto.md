@@ -135,7 +135,7 @@ This has particularly been a problem with Mac OS X Big Sur when using the VPN.
 
 You can log out of the systems by typing `exit` and pressing enter.
 
-(`logout` and pressing Ctrl+D also work)
+(`logout` or pressing Ctrl+D also work)
 
 ## How do I transfer data onto the system?
 
