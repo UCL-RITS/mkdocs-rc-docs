@@ -131,6 +131,11 @@ ssh -o ConnectTimeout=10 <your_UCL_user_id>@myriad.rc.ucl.ac.uk
 ```
 This has particularly been a problem with Mac OS X Big Sur when using the VPN.
 
+## How do I log out?
+
+You can log out of the systems by typing `exit` and pressing enter.
+
+(`logout` and pressing Ctrl+D also work)
 
 ## How do I transfer data onto the system?
 
