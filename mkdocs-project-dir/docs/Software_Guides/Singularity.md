@@ -12,9 +12,9 @@ Run `singularity --version` to see which version we currently have installed.
 !!! important “Singularity update to Apptainer”
     On Myriad, we are updating to Singularity to Apptainer. Apptainer is able to run Docker containers without converting them first, unlike earlier versions of Singularity.
     This update will occur on 14th November at the same time as a planned outage, which is planned to start at 8am until the following day.
-    A Singularity command that will no longer be available in Apptainer is --remote
+    A Singularity command that will no longer be available in Apptainer is `--remote`.
     This update may affect any containers that are currently downloaded, so users will have to test them to check their workflow still functions correctly after the update.
-    We apologise for any inconvenience this update may cause.
+    Updates to the other clusters will follow, dates tbc.
 
 ## Set up cache locations and bind directories
 
