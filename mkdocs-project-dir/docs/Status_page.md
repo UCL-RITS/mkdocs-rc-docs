@@ -298,6 +298,14 @@ This page outlines that status of each of the machines managed by the Research C
 
     Thank you for your patience during this time.
 
+  - 2023-10-26 14:50 - We seem to have a dying OmniPath switch in Young. The 32 nodes with names 
+    beginning `node-c12b` lost their connection to the filesystem earlier. Powercycling the switch 
+    only helped temporarily before it went down again. Those nodes are all currently out of service 
+    so new jobs will not start on them, but if your job was running on one of those when the two 
+    failures happened those jobs will have failed.
+
+    (You can see in `jobhist` what the head node of a job was, and the .po file will show all the 
+    nodes that an MPI job ran on).
 
 ### Michael
 
