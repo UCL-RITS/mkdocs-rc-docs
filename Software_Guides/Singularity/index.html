@@ -1454,7 +1454,13 @@
 
 <h1 id="using-singularity-on-our-clusters">Using Singularity on Our Clusters<a class="headerlink" href="#using-singularity-on-our-clusters" title="Permanent link">§</a></h1>
 <p>Singularity is installed on all our clusters. You can use containers you have downloaded in your space.</p>
-<p>Run <code>singularity --version</code> to see which version we currently have installed. </p>
+<p>Run <code>singularity --version</code> to see which version we currently have installed.</p>
+<p>!!! important “Singularity update to Apptainer”
+    On Myriad, we are updating to Singularity to Apptainer. Apptainer is able to run Docker containers without converting them first, unlike earlier versions of Singularity.
+    This update will occur on 14th November at the same time as a planned outage, which is planned to start at 8am until the following day.
+    A Singularity command that will no longer be available in Apptainer is <code>--remote</code>.
+    This update may affect any containers that are currently downloaded, so users will have to test them to check their workflow still functions correctly after the update.
+    Updates to the other clusters will follow, dates tbc.</p>
 <h2 id="set-up-cache-locations-and-bind-directories">Set up cache locations and bind directories<a class="headerlink" href="#set-up-cache-locations-and-bind-directories" title="Permanent link">§</a></h2>
 <p>The cache directories should be set to somewhere in your space so they don't fill up <code>/tmp</code> on 
 the login nodes.</p>
