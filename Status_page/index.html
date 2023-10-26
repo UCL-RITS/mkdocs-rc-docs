@@ -1753,6 +1753,15 @@ after the other. We're now back in full service.</p>
 rc-support@ucl.ac.uk </p>
 <p>Thank you for your patience during this time.</p>
 </li>
+<li>
+<p>2023-10-26 14:50 - We seem to have a dying OmniPath switch in Young. The 32 nodes with names 
+    beginning <code>node-c12b</code> lost their connection to the filesystem earlier. Powercycling the switch 
+    only helped temporarily before it went down again. Those nodes are all currently out of service 
+    so new jobs will not start on them, but if your job was running on one of those when the two 
+    failures happened those jobs will have failed.</p>
+<p>(You can see in <code>jobhist</code> what the head node of a job was, and the .po file will show all the 
+nodes that an MPI job ran on).</p>
+</li>
 </ul>
 <h3 id="michael">Michael<a class="headerlink" href="#michael" title="Permanent link">§</a></h3>
 <ul>
