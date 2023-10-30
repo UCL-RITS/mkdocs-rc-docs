@@ -10,6 +10,7 @@ Singularity is installed on all our clusters. You can use containers you have do
 
 Run `singularity --version` to see which version we currently have installed.
 
+
 !!! important "Singularity update to Apptainer"
     On Myriad, we are updating to Singularity to Apptainer. Apptainer is able to run Docker containers without converting them first, unlike earlier versions of Singularity.
     This update will occur on 14th November at the same time as a planned outage, which is planned to start at 8am until the following day.
