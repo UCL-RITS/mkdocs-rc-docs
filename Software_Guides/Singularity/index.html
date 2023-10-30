@@ -1457,11 +1457,16 @@
 <p>Run <code>singularity --version</code> to see which version we currently have installed.</p>
 <div class="admonition important">
 <p class="admonition-title">Singularity update to Apptainer</p>
-<p>On Myriad, we are updating to Singularity to Apptainer. Apptainer is able to run Docker containers without converting them first, unlike earlier versions of Singularity.
-This update will occur on 14th November at the same time as a planned outage, which is planned to start at 8am until the following day.
-A Singularity command that will no longer be available in Apptainer is <code>--remote</code>.
-This update may affect any containers that are currently downloaded, so users will have to test them to check their workflow still functions correctly after the update.
-Updates to the other clusters will follow, dates tbc.</p>
+<p>On Myriad, we are updating to Singularity to Apptainer. Apptainer is able to run Docker 
+containers without converting them first, unlike earlier versions of Singularity. This update 
+will occur on 14th November during a <a href="../../Planned_Outages/">planned outage</a></p>
+<p>This update may affect any containers that are currently downloaded, so users will have to test
+them to check their workflow still functions correctly after the update. We expect most to work 
+as before, but cannot confirm this.</p>
+<p>A Singularity command that will no longer be available in Apptainer is <code>--remote</code>. If any of 
+you have workflows that depend on this, please email rc-support@ucl.ac.uk. We are currently 
+looking into how we would provide equivalent functionality.</p>
+<p>Updates to the other clusters will follow, dates tbc.</p>
 </div>
 <h2 id="set-up-cache-locations-and-bind-directories">Set up cache locations and bind directories<a class="headerlink" href="#set-up-cache-locations-and-bind-directories" title="Permanent link">§</a></h2>
 <p>The cache directories should be set to somewhere in your space so they don't fill up <code>/tmp</code> on 
