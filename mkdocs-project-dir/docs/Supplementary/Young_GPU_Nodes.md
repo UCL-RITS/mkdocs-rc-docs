@@ -44,6 +44,7 @@ If you are using fewer than 8 GPUs but want to make sure nothing else is running
 the same node as you, add this to your jobscript:
 
 ```
+# Exclusive use of node: no other jobs are allowed to run on the rest of this node
 #$ -ac exclusive
 ```
 
