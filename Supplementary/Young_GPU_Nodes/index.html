@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
     
     
       
@@ -1492,7 +1492,8 @@ two nodes and some number of GPUs per node over those two nodes will block out t
 <h3 id="exclusive-use-of-nodes">Exclusive use of nodes<a class="headerlink" href="#exclusive-use-of-nodes" title="Permanent link">§</a></h3>
 <p>If you are using fewer than 8 GPUs but want to make sure nothing else is running on
 the same node as you, add this to your jobscript:</p>
-<div class="codehilite"><pre><span></span><code>#$ -ac exclusive
+<div class="codehilite"><pre><span></span><code># Exclusive use of node: no other jobs are allowed to run on the rest of this node
+#$ -ac exclusive
 </code></pre></div>
 
 <p>This would generally only be done if you are benchmarking or investigating speeds
@@ -1655,7 +1656,7 @@ NAMD 3 container.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.81fa17fe.min.js"></script>
       
     
   </body>
