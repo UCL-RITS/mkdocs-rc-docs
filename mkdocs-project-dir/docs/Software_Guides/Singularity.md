@@ -193,7 +193,7 @@ as normal
 
 To do the bind mount, you could add it to your `$APPTAINER_BINDPATH`
 ```
-export APPTAINER_BINDPATH=$HOME/.Xauthority,$APPTAINER_BINDPATH
+export APPTAINER_BINDPATH=$APPTAINER_BINDPATH,$HOME/.Xauthority
 ```
 
 or you can pass it in with the `–-bind=$HOME/.Xauthority` option to `singularity shell` or 
