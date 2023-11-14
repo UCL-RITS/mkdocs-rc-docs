@@ -26,7 +26,7 @@
     
     
       
-        <title>Singularity - UCL Research Computing Documentation</title>
+        <title>Singularity/Apptainer - UCL Research Computing Documentation</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-singularity-on-our-clusters" class="md-skip">
+        <a href="#using-apptainer-singularity-on-our-clusters" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Singularity
+              Singularity/Apptainer
             
           </span>
         </div>
@@ -1161,7 +1161,7 @@
           
   
   <span class="md-ellipsis">
-    Singularity
+    Singularity/Apptainer
   </span>
   
 
@@ -1172,7 +1172,7 @@
         
   
   <span class="md-ellipsis">
-    Singularity
+    Singularity/Apptainer
   </span>
   
 
@@ -1194,16 +1194,70 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#apptainer" class="md-nav__link">
+    Apptainer
+  </a>
+  
+    <nav class="md-nav" aria-label="Apptainer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-cache-locations" class="md-nav__link">
+    Set up cache locations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bind-locations" class="md-nav__link">
+    Bind locations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backwards-compatibility" class="md-nav__link">
+    Backwards compatibility
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-remote-is-no-longer-available" class="md-nav__link">
+    build --remote is no longer available
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#singularity" class="md-nav__link">
+    Singularity
+  </a>
+  
+    <nav class="md-nav" aria-label="Singularity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#set-up-cache-locations-and-bind-directories" class="md-nav__link">
     Set up cache locations and bind directories
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#downloading-and-running-a-container" class="md-nav__link">
     Downloading and running a container
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1407,16 +1461,70 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#apptainer" class="md-nav__link">
+    Apptainer
+  </a>
+  
+    <nav class="md-nav" aria-label="Apptainer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-cache-locations" class="md-nav__link">
+    Set up cache locations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bind-locations" class="md-nav__link">
+    Bind locations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backwards-compatibility" class="md-nav__link">
+    Backwards compatibility
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-remote-is-no-longer-available" class="md-nav__link">
+    build --remote is no longer available
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#singularity" class="md-nav__link">
+    Singularity
+  </a>
+  
+    <nav class="md-nav" aria-label="Singularity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#set-up-cache-locations-and-bind-directories" class="md-nav__link">
     Set up cache locations and bind directories
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#downloading-and-running-a-container" class="md-nav__link">
     Downloading and running a container
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1452,23 +1560,69 @@
   
 
 
-<h1 id="using-singularity-on-our-clusters">Using Singularity on Our Clusters<a class="headerlink" href="#using-singularity-on-our-clusters" title="Permanent link">§</a></h1>
-<p>Singularity is installed on all our clusters. You can use containers you have downloaded in your space.</p>
+<h1 id="using-apptainer-singularity-on-our-clusters">Using Apptainer (Singularity) on our clusters<a class="headerlink" href="#using-apptainer-singularity-on-our-clusters" title="Permanent link">§</a></h1>
+<p>Myriad has Apptainer installed, which will be rolled out to our other clusters at a later date. 
+The other clusters still have Singularity. You can use containers you have downloaded in your space.</p>
+<h2 id="apptainer">Apptainer<a class="headerlink" href="#apptainer" title="Permanent link">§</a></h2>
+<p>Run <code>apptainer --version</code> to see which version we currently have installed.</p>
+<h3 id="set-up-cache-locations">Set up cache locations<a class="headerlink" href="#set-up-cache-locations" title="Permanent link">§</a></h3>
+<p>Use this command to load the <code>apptainer</code> module to set up a suitable environment:</p>
+<div class="codehilite"><pre><span></span><code>module load apptainer
+</code></pre></div>
+
+<p>Or set the locations manually:</p>
+<div class="codehilite"><pre><span></span><code># Create a build directory to build your own containers.
+mkdir -p $XDG_RUNTIME_DIR/$USER_apptainerbuild
+
+# Set $APPTAINER_TMPDIR to this local build location.
+export APPTAINER_TMPDIR=$XDG_RUNTIME_DIR/$USER_apptainerbuild
+
+# Create a .apptainer directory in your Scratch
+mkdir $HOME/Scratch/.apptainer
+
+# Set the cache directory to your Scratch.
+export APPTAINER_CACHEDIR=$HOME/Scratch/.apptainer
+</code></pre></div>
+
+<p>You probably want to add those <code>export</code> statements to your <code>.bashrc</code> under <code># User specific aliases and functions</code> so those environment variables are always set when you log in.</p>
+<h3 id="bind-locations">Bind locations<a class="headerlink" href="#bind-locations" title="Permanent link">§</a></h3>
+<p>Your $HOME and Scratch directories are bound automatically so they are available
+from inside your containers.</p>
+<p>For more information on these options, have a look at the Apptainer documentation:</p>
+<ul>
+<li><a href="https://apptainer.org/docs/user/main/index.html">Apptainer user guide</a></li>
+<li><a href="https://apptainer.org/docs/user/main/bind_paths_and_mounts.html">Apptainer bind paths and mounts</a></li>
+<li><a href="https://apptainer.org/docs/user/main/build_env.html">Apptainer build environment</a></li>
+</ul>
+<h3 id="backwards-compatibility">Backwards compatibility<a class="headerlink" href="#backwards-compatibility" title="Permanent link">§</a></h3>
+<p>Apptainer will use the older <code>$SINGULARITY_</code> environment variables if the <code>$APPTAINER_</code> versions
+are not set.</p>
+<h3 id="build-remote-is-no-longer-available"><code>build --remote</code> is no longer available<a class="headerlink" href="#build-remote-is-no-longer-available" title="Permanent link">§</a></h3>
+<p>If you were building remote containers on Sylabs using</p>
+<div class="codehilite"><pre><span></span><code>singularity build --remote
+</code></pre></div>
+
+<p>this functionality is no longer available in Apptainer. You can still log in to Sylabs via the web
+interface, build containers on it and then pull them down with Apptainer.</p>
+<p>Or you can now build containers directly on our clusters without additional permissions, as long
+as they use a local filesystem and not home or Scratch. Our default setup uses <code>$XDG_RUNTIME_DIR</code> 
+on the local disk of the login nodes, or <code>$TMPDIR</code> on a compute node.</p>
+<h2 id="singularity">Singularity<a class="headerlink" href="#singularity" title="Permanent link">§</a></h2>
 <p>Run <code>singularity --version</code> to see which version we currently have installed.</p>
 <div class="admonition important">
 <p class="admonition-title">Singularity update to Apptainer</p>
-<p>On Myriad, we are updating to Singularity to Apptainer. Apptainer is able to run Docker 
-containers without converting them first, unlike earlier versions of Singularity. This update 
-will occur on 14th November during a <a href="../../Planned_Outages/">planned outage</a></p>
+<p>On Myriad, we are updating to Singularity to Apptainer. This update will occur on 14th 
+November during a <a href="../../Planned_Outages/">planned outage</a></p>
 <p>This update may affect any containers that are currently downloaded, so users will have to test
 them to check their workflow still functions correctly after the update. We expect most to work 
 as before, but cannot confirm this.</p>
-<p>A Singularity command that will no longer be available in Apptainer is <code>--remote</code>. If any of 
-you have workflows that depend on this, please email rc-support@ucl.ac.uk. We are currently 
-looking into how we would provide equivalent functionality.</p>
+<p>A Singularity command that will no longer be available in Apptainer is 
+<code>singularity build --remote</code>. If any of you have workflows that depend on this, 
+please email rc-support@ucl.ac.uk. We are currently looking into how we would provide 
+equivalent functionality.</p>
 <p>Updates to the other clusters will follow, dates tbc.</p>
 </div>
-<h2 id="set-up-cache-locations-and-bind-directories">Set up cache locations and bind directories<a class="headerlink" href="#set-up-cache-locations-and-bind-directories" title="Permanent link">§</a></h2>
+<h3 id="set-up-cache-locations-and-bind-directories">Set up cache locations and bind directories<a class="headerlink" href="#set-up-cache-locations-and-bind-directories" title="Permanent link">§</a></h3>
 <p>The cache directories should be set to somewhere in your space so they don't fill up <code>/tmp</code> on 
 the login nodes.</p>
 <p>The bindpath mentioned below specifies what directories are made available inside the container - 
@@ -1505,7 +1659,7 @@ export SINGULARITY_BINDPATH=/scratch/scratch/$USER,/tmpdir
 <li><a href="https://sylabs.io/guides/3.5/user-guide/bind_paths_and_mounts.html">Singularity Bind Paths and Mounts</a></li>
 <li><a href="https://sylabs.io/guides/3.5/user-guide/build_environment.html">Singularity Build Environment</a></li>
 </ul>
-<h2 id="downloading-and-running-a-container">Downloading and running a container<a class="headerlink" href="#downloading-and-running-a-container" title="Permanent link">§</a></h2>
+<h3 id="downloading-and-running-a-container">Downloading and running a container<a class="headerlink" href="#downloading-and-running-a-container" title="Permanent link">§</a></h3>
 <p>Assuming you want to run an existing container, first you need to pull it from somewhere online that
 provides it:</p>
 <div class="codehilite"><pre><span></span><code># make sure we set up singularity as above
