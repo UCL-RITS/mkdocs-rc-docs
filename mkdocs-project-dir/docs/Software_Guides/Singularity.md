@@ -1,33 +1,98 @@
 ---
-title: Singularity
+title: Singularity/Apptainer
 layout: docs
 ---
 
-# Using Singularity on Our Clusters
+# Using Apptainer (Singularity) on our clusters
 
-Singularity is installed on all our clusters. You can use containers you have downloaded in your space.
+Myriad has Apptainer installed, which will be rolled out to our other clusters at a later date. 
+The other clusters still have Singularity. You can use containers you have downloaded in your space.
 
+## Apptainer
+
+Run `apptainer --version` to see which version we currently have installed.
+
+### Set up cache locations
+
+Use this command to load the `apptainer` module to set up a suitable environment:
+
+```
+module load apptainer
+```
+
+Or set the locations manually:
+
+```
+# Create a build directory to build your own containers.
+mkdir -p $XDG_RUNTIME_DIR/$USER_apptainerbuild
+
+# Set $APPTAINER_TMPDIR to this local build location.
+export APPTAINER_TMPDIR=$XDG_RUNTIME_DIR/$USER_apptainerbuild
+
+# Create a .apptainer directory in your Scratch
+mkdir $HOME/Scratch/.apptainer
+
+# Set the cache directory to your Scratch.
+export APPTAINER_CACHEDIR=$HOME/Scratch/.apptainer
+
+```
+
+You probably want to add those `export` statements to your `.bashrc` under `# User specific aliases and functions` so those environment variables are always set when you log in.
+
+### Bind locations
+
+Your $HOME and Scratch directories are bound automatically so they are available
+from inside your containers.
+
+For more information on these options, have a look at the Apptainer documentation:
+
+* [Apptainer user guide](https://apptainer.org/docs/user/main/index.html)
+* [Apptainer bind paths and mounts](https://apptainer.org/docs/user/main/bind_paths_and_mounts.html)
+* [Apptainer build environment](https://apptainer.org/docs/user/main/build_env.html)
+
+### Backwards compatibility
+
+Apptainer will use the older `$SINGULARITY_` environment variables if the `$APPTAINER_` versions
+are not set.
+
+### `build --remote` is no longer available
+
+If you were building remote containers on Sylabs using
+
+```
+singularity build --remote
+```
+
+this functionality is no longer available in Apptainer. You can still log in to Sylabs via the web
+interface, build containers on it and then pull them down with Apptainer.
+
+Or you can now build containers directly on our clusters without additional permissions, as long
+as they use a local filesystem and not home or Scratch. Our default setup uses `$XDG_RUNTIME_DIR` 
+on the local disk of the login nodes, or `$TMPDIR` on a compute node.
+
+
+## Singularity
 
 Run `singularity --version` to see which version we currently have installed.
 
 
 !!! important "Singularity update to Apptainer"
-    On Myriad, we are updating to Singularity to Apptainer. Apptainer is able to run Docker 
-    containers without converting them first, unlike earlier versions of Singularity. This update 
-    will occur on 14th November during a [planned outage](../Planned_Outages.md)
+    On Myriad, we are updating to Singularity to Apptainer. This update will occur on 14th 
+    November during a [planned outage](../Planned_Outages.md)
 
     This update may affect any containers that are currently downloaded, so users will have to test
     them to check their workflow still functions correctly after the update. We expect most to work 
     as before, but cannot confirm this.
 
-    A Singularity command that will no longer be available in Apptainer is `--remote`. If any of 
-    you have workflows that depend on this, please email rc-support@ucl.ac.uk. We are currently 
-    looking into how we would provide equivalent functionality.
+    A Singularity command that will no longer be available in Apptainer is 
+    `singularity build --remote`. If any of you have workflows that depend on this, 
+    please email rc-support@ucl.ac.uk. We are currently looking into how we would provide 
+    equivalent functionality.
 
     Updates to the other clusters will follow, dates tbc.
 
 
-## Set up cache locations and bind directories
+### Set up cache locations and bind directories
 
 The cache directories should be set to somewhere in your space so they don't fill up `/tmp` on 
 the login nodes.
@@ -73,7 +138,7 @@ For more information on these options, have a look at the Singularity documentat
 * [Singularity Bind Paths and Mounts](https://sylabs.io/guides/3.5/user-guide/bind_paths_and_mounts.html)
 * [Singularity Build Environment](https://sylabs.io/guides/3.5/user-guide/build_environment.html)
 
-## Downloading and running a container
+### Downloading and running a container
 
 Assuming you want to run an existing container, first you need to pull it from somewhere online that
 provides it:
