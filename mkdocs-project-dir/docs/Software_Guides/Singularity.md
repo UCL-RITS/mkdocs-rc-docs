@@ -138,27 +138,27 @@ For more information on these options, have a look at the Singularity documentat
 * [Singularity Bind Paths and Mounts](https://sylabs.io/guides/3.5/user-guide/bind_paths_and_mounts.html)
 * [Singularity Build Environment](https://sylabs.io/guides/3.5/user-guide/build_environment.html)
 
-### Downloading and running a container
+## Downloading and running a container
 
 Assuming you want to run an existing container, first you need to pull it from somewhere online that
 provides it:
 
 ```
-# make sure we set up singularity as above
-module load singularity-env
+# make sure we set up apptainer as above
+module load apptainer
 
 # get image from location and call it hello-world.sif in our current directory
-singularity pull hello-world.sif shub://vsoch/hello-world
+apptainer pull hello-world.sif shub://vsoch/hello-world
 ```
 
 Run the container.
 ```
-singularity run hello-world.sif
+apptainer run hello-world.sif
 ```
 
 Run a specific command within our container.
 ```
-singularity exec hello-world.sif /bin/echo Hello World!
+apptainer exec hello-world.sif /bin/echo Hello World!
 ```
 
 You can run containers inside jobscripts in the same way.
@@ -174,11 +174,11 @@ You can use Singularity to run Docker containers. Docker itself is not suitable 
 HPC system, but Singularity can convert and run Docker containers for you.
 
 ```
-singularity pull python-3.9.6.sif docker://python:3.9.6-slim-buster
+apptainer pull python-3.9.6.sif docker://python:3.9.6-slim-buster
 ```
 
-In this case, `singularity pull` is downloading a Docker image, and also converting it into a format
-that Singularity uses. You then use `singularity run` or `singularity exec` on the .sif image as above.
+In this case, `apptainer pull` is downloading a Docker image, and also converting it into a format
+that Apptainer uses. You then use `apptainer run` or `apptainer exec` on the .sif image as above.
 
 ## Graphical containers in interactive jobs
 
@@ -191,11 +191,11 @@ as normal
  * request an [interactive job](../Interactive_Jobs.md) using `qrsh` 
  * bind mount your `$HOME/.Xauthority` file inside the container
 
-To do the bind mount, you could add it to your `$SINGULARITY_BINDPATH`
+To do the bind mount, you could add it to your `$APPTAINER_BINDPATH`
 ```
-export SINGULARITY_BINDPATH=/scratch/scratch/$USER,/tmpdir,$HOME/.Xauthority
+export APPTAINER_BINDPATH=$HOME/.Xauthority,$APPTAINER_BINDPATH
 ```
 
-or you can pass it in with the `--bind` option to `singularity shell` or 
+or you can pass it in with the `–-bind=$HOME/.Xauthority` option to `singularity shell` or 
 `singularity exec`.
 
