@@ -1249,15 +1249,15 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#downloading-and-running-a-container" class="md-nav__link">
     Downloading and running a container
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1516,15 +1516,15 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#downloading-and-running-a-container" class="md-nav__link">
     Downloading and running a container
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1659,22 +1659,22 @@ export SINGULARITY_BINDPATH=/scratch/scratch/$USER,/tmpdir
 <li><a href="https://sylabs.io/guides/3.5/user-guide/bind_paths_and_mounts.html">Singularity Bind Paths and Mounts</a></li>
 <li><a href="https://sylabs.io/guides/3.5/user-guide/build_environment.html">Singularity Build Environment</a></li>
 </ul>
-<h3 id="downloading-and-running-a-container">Downloading and running a container<a class="headerlink" href="#downloading-and-running-a-container" title="Permanent link">§</a></h3>
+<h2 id="downloading-and-running-a-container">Downloading and running a container<a class="headerlink" href="#downloading-and-running-a-container" title="Permanent link">§</a></h2>
 <p>Assuming you want to run an existing container, first you need to pull it from somewhere online that
 provides it:</p>
-<div class="codehilite"><pre><span></span><code># make sure we set up singularity as above
-module load singularity-env
+<div class="codehilite"><pre><span></span><code># make sure we set up apptainer as above
+module load apptainer
 
 # get image from location and call it hello-world.sif in our current directory
-singularity pull hello-world.sif shub://vsoch/hello-world
+apptainer pull hello-world.sif shub://vsoch/hello-world
 </code></pre></div>
 
 <p>Run the container.</p>
-<div class="codehilite"><pre><span></span><code>singularity run hello-world.sif
+<div class="codehilite"><pre><span></span><code>apptainer run hello-world.sif
 </code></pre></div>
 
 <p>Run a specific command within our container.</p>
-<div class="codehilite"><pre><span></span><code>singularity exec hello-world.sif /bin/echo Hello World!
+<div class="codehilite"><pre><span></span><code>apptainer exec hello-world.sif /bin/echo Hello World!
 </code></pre></div>
 
 <p>You can run containers inside jobscripts in the same way.</p>
@@ -1686,11 +1686,11 @@ singularity pull hello-world.sif shub://vsoch/hello-world
 <h2 id="docker-containers">Docker containers<a class="headerlink" href="#docker-containers" title="Permanent link">§</a></h2>
 <p>You can use Singularity to run Docker containers. Docker itself is not suitable for use on a multi-user
 HPC system, but Singularity can convert and run Docker containers for you.</p>
-<div class="codehilite"><pre><span></span><code>singularity pull python-3.9.6.sif docker://python:3.9.6-slim-buster
+<div class="codehilite"><pre><span></span><code>apptainer pull python-3.9.6.sif docker://python:3.9.6-slim-buster
 </code></pre></div>
 
-<p>In this case, <code>singularity pull</code> is downloading a Docker image, and also converting it into a format
-that Singularity uses. You then use <code>singularity run</code> or <code>singularity exec</code> on the .sif image as above.</p>
+<p>In this case, <code>apptainer pull</code> is downloading a Docker image, and also converting it into a format
+that Apptainer uses. You then use <code>apptainer run</code> or <code>apptainer exec</code> on the .sif image as above.</p>
 <h2 id="graphical-containers-in-interactive-jobs">Graphical containers in interactive jobs<a class="headerlink" href="#graphical-containers-in-interactive-jobs" title="Permanent link">§</a></h2>
 <p>If you are trying to run a graphical application from inside a container in an 
 interactive job and it is failing with errors about not being able to open a 
@@ -1701,11 +1701,11 @@ as normal </li>
 <li>request an <a href="../../Interactive_Jobs/">interactive job</a> using <code>qrsh</code> </li>
 <li>bind mount your <code>$HOME/.Xauthority</code> file inside the container</li>
 </ul>
-<p>To do the bind mount, you could add it to your <code>$SINGULARITY_BINDPATH</code></p>
-<div class="codehilite"><pre><span></span><code>export SINGULARITY_BINDPATH=/scratch/scratch/$USER,/tmpdir,$HOME/.Xauthority
+<p>To do the bind mount, you could add it to your <code>$APPTAINER_BINDPATH</code></p>
+<div class="codehilite"><pre><span></span><code>export APPTAINER_BINDPATH=$HOME/.Xauthority,$APPTAINER_BINDPATH
 </code></pre></div>
 
-<p>or you can pass it in with the <code>--bind</code> option to <code>singularity shell</code> or 
+<p>or you can pass it in with the <code>–-bind=$HOME/.Xauthority</code> option to <code>singularity shell</code> or 
 <code>singularity exec</code>.</p>
 
 
