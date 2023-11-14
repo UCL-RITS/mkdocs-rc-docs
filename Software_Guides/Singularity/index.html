@@ -1702,7 +1702,7 @@ as normal </li>
 <li>bind mount your <code>$HOME/.Xauthority</code> file inside the container</li>
 </ul>
 <p>To do the bind mount, you could add it to your <code>$APPTAINER_BINDPATH</code></p>
-<div class="codehilite"><pre><span></span><code>export APPTAINER_BINDPATH=$HOME/.Xauthority,$APPTAINER_BINDPATH
+<div class="codehilite"><pre><span></span><code>export APPTAINER_BINDPATH=$APPTAINER_BINDPATH,$HOME/.Xauthority
 </code></pre></div>
 
 <p>or you can pass it in with the <code>–-bind=$HOME/.Xauthority</code> option to <code>singularity shell</code> or 
