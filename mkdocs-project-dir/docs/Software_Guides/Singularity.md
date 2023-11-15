@@ -52,6 +52,8 @@ For more information on these options, have a look at the Apptainer documentatio
 
 ### Backwards compatibility
 
+The `singularity` command still exists as a symbolic link and will run `apptainer`.
+
 Apptainer will use the older `$SINGULARITY_` environment variables if the `$APPTAINER_` versions
 are not set.
 
