@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.10">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fad675c6.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
@@ -846,49 +846,63 @@
       
         <li class="md-nav__item">
   <a href="#bundles" class="md-nav__link">
-    Bundles
+    <span class="md-ellipsis">
+      Bundles
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#applications" class="md-nav__link">
-    Applications
+    <span class="md-ellipsis">
+      Applications
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#libraries" class="md-nav__link">
-    Libraries
+    <span class="md-ellipsis">
+      Libraries
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#development-tools" class="md-nav__link">
-    Development Tools
+    <span class="md-ellipsis">
+      Development Tools
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#core-modules" class="md-nav__link">
-    Core Modules
+    <span class="md-ellipsis">
+      Core Modules
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#beta-modules" class="md-nav__link">
-    Beta Modules
+    <span class="md-ellipsis">
+      Beta Modules
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#workaround-modules" class="md-nav__link">
-    Workaround Modules
+    <span class="md-ellipsis">
+      Workaround Modules
+    </span>
   </a>
   
 </li>
@@ -1429,49 +1443,63 @@
       
         <li class="md-nav__item">
   <a href="#bundles" class="md-nav__link">
-    Bundles
+    <span class="md-ellipsis">
+      Bundles
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#applications" class="md-nav__link">
-    Applications
+    <span class="md-ellipsis">
+      Applications
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#libraries" class="md-nav__link">
-    Libraries
+    <span class="md-ellipsis">
+      Libraries
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#development-tools" class="md-nav__link">
-    Development Tools
+    <span class="md-ellipsis">
+      Development Tools
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#core-modules" class="md-nav__link">
-    Core Modules
+    <span class="md-ellipsis">
+      Core Modules
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#beta-modules" class="md-nav__link">
-    Beta Modules
+    <span class="md-ellipsis">
+      Beta Modules
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#workaround-modules" class="md-nav__link">
-    Workaround Modules
+    <span class="md-ellipsis">
+      Workaround Modules
+    </span>
   </a>
   
 </li>
@@ -1498,7 +1526,7 @@
 <p>Our clusters have a wide range of software installed, available by using the modules system.</p>
 <p>The module files are organised by name, version, variant (where applicable) and, if relevant, the compiler version used to build the software. If no compiler version is given, either no compiler was required, or only the base system compiler (<code>/usr/bin/gcc</code>) and libraries were used.</p>
 <p>When we install applications, we try to install them on all of our clusters, but sometimes licence restrictions prevent it. If something seems to be missing, it may be because we are not able to provide it. Please contact us for more information if this is hindering your work.</p>
-<p>The lists below were last updated at 11:35:14 (+0000) on 11 Nov 2023, and are generated from the software installed on the <a href="../../Clusters/Myriad/">Myriad</a> cluster.</p>
+<p>The lists below were last updated at 14:05:16 (+0000) on 11 Nov 2023, and are generated from the software installed on the <a href="../../Clusters/Myriad/">Myriad</a> cluster.</p>
 <h2 id="bundles">Bundles<a class="headerlink" href="#bundles" title="Permanent link">§</a></h2>
 <p>Some applications or tools depend on a lot of other modules, or have some awkward requirements. For these, we sometimes make a "bundle" module in this section, that loads all the dependencies.</p>
 <p>For Python and R in particular, we also have <code>recommended</code> bundles that load the module for a recent version of Python or R, along with a collection of packages for it that have been requested by users, and the modules those packages require.</p>
@@ -6073,6 +6101,10 @@
 <td style="text-align: left;">Adds LAMMPS 2 August 2023 to your environment. Binary is lmp_mpi.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>lammps/2aug23/gpu/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds LAMMPS 2 August 2023 GPU build to your environment. Binary is lmp_gpu.</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>lammps/28mar23/basic-fftw/gnu-10.2.0</code></td>
 <td style="text-align: left;">Adds LAMMPS 28 March 2023 to your environment. Binary is lmp_mpi.</td>
 </tr>
@@ -6386,7 +6418,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6c14ae12.min.js"></script>
       
     
   </body>
