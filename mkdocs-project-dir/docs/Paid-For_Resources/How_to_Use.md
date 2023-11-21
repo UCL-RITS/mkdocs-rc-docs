@@ -46,6 +46,22 @@ in 2 hours. When you submit the job, it will reserve 30 Gold and your
 budget will go down by 30. When it ends, the final charge is only 20 Gold,
 so 10 Gold gets put back in your available budget.
 
+## How it works
+
+On Myriad, standard jobs that are submitted all start out with a priority of 
+2.xxxxx once the scheduler has seen them. (Priority 0.00000 means the scheduler
+hasn't cycled round to looking at this job and assigning it a priority yet). 
+Gold jobs begin with priority 3.xxxxx and so will be higher in the queue than 
+any non-Gold jobs.
+
+This does not mean they will be scheduled instantly - the resources they are
+asking for still need to become free, and there could be other Gold jobs also 
+in the queue. But it greatly increases the likelihood that this will be the next
+job to run.
+
+It is possible in rare circumstances on Myriad for a non-Gold job to reach 
+priority 3. It is likely that Gold jobs will still have higher priority.
+
 ### View your Gold budgets
 
 To see the Gold budgets available to you, run:
