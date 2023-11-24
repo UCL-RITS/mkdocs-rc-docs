@@ -48,6 +48,50 @@ This page outlines that status of each of the machines managed by the Research C
 
   - 2023-08-04 10:00 - The reconstruction is complete and we have re-enabled jobs on Myriad.
 
+  - 2023-11-23 14:00 - We need to stop new jobs running on Myriad while its filesystem recovers.
+
+    This means that jobs that are already running will keep running, but new jobs will not start 
+    until we enable them again. The filesystem is likely to be slower than usual. You can still log 
+    in and access your files.
+
+    This is because we've just had two disks fail in the same area of Myriad's filesystem and the 
+    draining of jobs is to reduce usage of the filesystem while it rebuilds onto spare disks.
+
+    The current estimated time for the disk rebuild is 35 hours (but these estimates can be 
+    inaccurate).
+
+    We will update you when new jobs can start running again.
+
+  - 2023-11-24 09:45 - **Myriad filesystem is down.** 
+
+    I'm afraid Myriad's filesystem is currently down. You will not be able to log in and jobs are 
+    stopped.
+
+    A third disk failed in the same area as the last two and we started getting errors that some 
+    areas were unreadable and reconstruction failed. We need to get this area reconstructed so are 
+    in contact with our vendors.
+
+    **Detail**
+
+    Our parallel filesystem is Lustre. It has Object Storage Targets that run on the Object 
+    Storage Servers. Data gets striped across these so one file will have pieces in multiple 
+    different locations, and there is a metadata server that keeps track of what is where. One of 
+    the Object Storage Targets has lost three disks, is unreadable and is what needs to be 
+    reconstructed. While it is unavailable, the filesystem does not work. We will also have some 
+    amount of damaged files which have pieces that are unreadable.
+
+    If the reconstruction succeeds, we will then need to clear out the unreadable sectors. Then we 
+    will be able to start checking how much damage there is to the filesystem.
+
+    This is all going to take some time. We will update you again on Monday by midday, but there 
+    may be no new information by then.
+
+    I'm sorry about this, we don't know right now how long an interruption this will cause to 
+    service, or how much data we may have lost.
+
+    Please send any queries to rc-support@ucl.ac.uk 
+
+
 ### Kathleen
 
   - 2022-09-27 - Kathleen's metadata servers have started encountering the ZFS+Lustre bug that Young 
