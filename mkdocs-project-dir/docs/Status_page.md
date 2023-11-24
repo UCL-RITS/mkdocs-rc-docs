@@ -8,6 +8,11 @@ This page outlines that status of each of the machines managed by the Research C
 
 ### Myriad
 
+  - 2023-11-24 - Myriad is currently offline and should be uncontactable. The Lustre filesystem it uses
+    can handle a number of simultaneous disk drive failures, but too many happened in a short space of
+    time, and so it is currently offline. We are still working to attempt to restore the filesystem and
+    assess the damage, but we expect that there may be data loss. 
+
   - 2023-03-06 - Myriad's filesystem is getting full again, which will impact performance. If you are 
     able, please consider backing up and deleting any files that you aren't actively using for your 
     research for the time being.
