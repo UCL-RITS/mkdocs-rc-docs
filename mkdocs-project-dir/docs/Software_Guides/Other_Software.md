@@ -277,26 +277,6 @@ module load cp2k/8.2/ompi/gnu-10.2.0
 gerun cp2k.popt < input.in > output.out
 ```
 
-For CP2K 4.1 there is also a Chemistry department version with submission script generator. To access it:
-```
-module load chemistry-modules
-module load submission-scripts
-```
-The command `submitters` will then list the submitters available.
-You can then run `cp2k.submit` which will ask you questions in order to create a suitable jobscript.
-
-The `cp2k.submit` submitter takes up to 6 arguments, and any omitted will be asked for interactively:
-```
-cp2k.submit «input_file» «cores» «version» «maximum_run_time» «memory_per_core» «job_name»
-```
-
-So, for example:
-```
-cp2k.submit water.inp 8 4.1 2:00:00 4G mywatermolecule
-```
-would request a job running CP2K 4.1 with the input file `water.inp`, on 8 cores, with a maximum runtime of 2 hours, with 4 gigabytes of memory per core, and a job name of `mywatermolecule`. 
-
-
 ### CRYSTAL
 
 CRYSTAL is a general-purpose program for the study of crystalline solids. The CRYSTAL program computes the electronic structure of periodic systems within Hartree Fock, density functional or various hybrid approximations. 
