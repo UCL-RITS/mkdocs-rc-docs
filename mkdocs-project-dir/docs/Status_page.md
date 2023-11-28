@@ -91,6 +91,23 @@ This page outlines that status of each of the machines managed by the Research C
 
     Please send any queries to rc-support@ucl.ac.uk 
 
+  - 2023-11-27 12:10 - There is not much of an update on Myriad's filesystem yet - we've been in 
+    contact with our vendors, have done some things they asked us to (reseating hardware) and are 
+    waiting for their next update.
+
+    In the meantime, we are starting to copy the backup of home that we have from the backup system
+    where it is very slow to access to somewhere faster to access, should we need to recover files 
+    from it on to Myriad.
+
+    We received a question about backups - the last successful backup for Myriad home directories 
+    ran from Nov 20 23:46 until Nov 22 03:48. Data before that interval should be backed up. Data 
+    after that is not. Data created or changed during it may be backed up, it depends on which 
+    users it was doing when.
+
+    (Ideally we would be backing up every night, but as you can see the backup takes longer than a 
+    day to complete, and then the next one begins. The next backup had started on Nov 22 at 08:00 
+    but did not complete before the disk failures).
+
 
 ### Kathleen
 
