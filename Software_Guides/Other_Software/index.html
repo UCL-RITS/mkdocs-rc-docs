@@ -2879,22 +2879,6 @@ module load cp2k/8.2/ompi/gnu-10.2.0
 gerun cp2k.popt &lt; input.in &gt; output.out
 </code></pre></div>
 
-<p>For CP2K 4.1 there is also a Chemistry department version with submission script generator. To access it:</p>
-<div class="codehilite"><pre><span></span><code>module load chemistry-modules
-module load submission-scripts
-</code></pre></div>
-
-<p>The command <code>submitters</code> will then list the submitters available.
-You can then run <code>cp2k.submit</code> which will ask you questions in order to create a suitable jobscript.</p>
-<p>The <code>cp2k.submit</code> submitter takes up to 6 arguments, and any omitted will be asked for interactively:</p>
-<div class="codehilite"><pre><span></span><code>cp2k.submit «input_file» «cores» «version» «maximum_run_time» «memory_per_core» «job_name»
-</code></pre></div>
-
-<p>So, for example:</p>
-<div class="codehilite"><pre><span></span><code>cp2k.submit water.inp 8 4.1 2:00:00 4G mywatermolecule
-</code></pre></div>
-
-<p>would request a job running CP2K 4.1 with the input file <code>water.inp</code>, on 8 cores, with a maximum runtime of 2 hours, with 4 gigabytes of memory per core, and a job name of <code>mywatermolecule</code>. </p>
 <h3 id="crystal">CRYSTAL<a class="headerlink" href="#crystal" title="Permanent link">§</a></h3>
 <p>CRYSTAL is a general-purpose program for the study of crystalline solids. The CRYSTAL program computes the electronic structure of periodic systems within Hartree Fock, density functional or various hybrid approximations. </p>
 <p>CRYSTAL is commercial software which is available free of charge to UK academics. You must obtain a license from Crystal Solutions: <a href="http://www.crystalsolutions.eu/cat/crystal-cryscor/academic-uk">How to get CRYSTAL - Academic UK license</a>. You need to create an account and then request to be upgraded to Academic UK. Access to CRYSTAL is enabled by being a member of the reserved application group <code>legcryst</code>. For proof of access we accept emails from CRYSTAL saying your account has been upgraded to "Academic UK", or a screenshot of your account page showing you have the full download available rather than just the demo version. </p>
