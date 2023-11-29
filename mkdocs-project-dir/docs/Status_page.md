@@ -108,6 +108,23 @@ This page outlines that status of each of the machines managed by the Research C
     day to complete, and then the next one begins. The next backup had started on Nov 22 at 08:00 
     but did not complete before the disk failures).
 
+  - 2023-11-29 11:30 Today's Myriad filesystem update:
+
+    * We are continuing to meet with our vendor and have sent them more data to analyse.
+
+    * We are going to copy over the failed section of filesystem to a new area, with some data 
+      loss, so we end up with a working volume that we can use to bring the whole filesystem back 
+      up.
+
+    * The copy of data from our backup location to easier access location is ongoing (we have 
+      48TiB of home directories consisting of 219M items, currently copied 15TiB and 27M items).
+
+    Date of next update: Monday 4 Dec by midday.
+
+    Myriad will definitely not be back up this week, and likely to not be back up next week - but 
+    we'll update you on that. The data copying all takes a lot of time, and once it is there, we 
+    need to run filesystem checks on it which also take time.
+
 
 ### Kathleen
 
