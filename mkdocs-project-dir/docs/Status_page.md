@@ -125,6 +125,32 @@ This page outlines that status of each of the machines managed by the Research C
     we'll update you on that. The data copying all takes a lot of time, and once it is there, we 
     need to run filesystem checks on it which also take time.
 
+  - 2023-12-04 12:30 - The data copying is continuing.
+
+    * The copy of the failed section of filesystem to a new area is at 33% done, expected to take 
+      4.5 days more.
+
+    * The copy of home directories from our backup location to easier access location is at 44TiB 
+      and 86M items out of 48TiB and 219M. It is hard to predict how long that may take, as the 
+      number of items is the bottleneck. It has been going through usernames in alphabetical order 
+      and has reached those starting "ucbe".
+
+    If the first of these copies completes successfully, we will then need to go through a 
+    filesystem check. This will also take possibly a week or more - it is difficult to predict 
+    right now. If this recovery continues as it has been and completes successfully, it looks like 
+    we may have lost a relatively small proportion of data - but we cannot guarantee that at this 
+    stage, and the copy has not completed.
+
+    So at present we expect to be down at least all of this week, and all of next week - and 
+    possibly into the week of the 18th before UCL's Christmas closing on the 22nd.
+
+    I'm sorry about this - with these amounts of data and numbers of files, it gets difficult to 
+    predict how long any of these operations will take.
+
+    We've had a couple of questions about whether there is any way people can get their data from 
+    Myriad - until the filesystem is reconstructed and brought back up, we cannot see separate 
+    files or directories on Myriad.
+
 
 ### Kathleen
 
