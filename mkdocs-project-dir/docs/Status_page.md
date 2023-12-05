@@ -117,7 +117,8 @@ This page outlines that status of each of the machines managed by the Research C
       up.
 
     * The copy of data from our backup location to easier access location is ongoing (we have 
-      48TiB of home directories consisting of 219M items, currently copied 15TiB and 27M items).
+      48TiB of home directories consisting of 219M items, currently copied ~~15TiB~~ 7.5TiB and 27M 
+      items).
 
     Date of next update: Monday 4 Dec by midday.
 
@@ -130,7 +131,8 @@ This page outlines that status of each of the machines managed by the Research C
     * The copy of the failed section of filesystem to a new area is at 33% done, expected to take 
       4.5 days more.
 
-    * The copy of home directories from our backup location to easier access location is at 44TiB 
+    * The copy of home directories from our backup location to easier access location is at 
+      ~~44TiB~~ 22TiB (GPFS was reporting twice the real disk usage) 
       and 86M items out of 48TiB and 219M. It is hard to predict how long that may take, as the 
       number of items is the bottleneck. It has been going through usernames in alphabetical order 
       and has reached those starting "ucbe".
