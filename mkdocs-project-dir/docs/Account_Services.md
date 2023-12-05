@@ -38,7 +38,9 @@ The online application form can be found here:
 You will need a UCL user name and password. These are the same credentials used
 to access core services like Portico and HR systems.
 
-
+!!! important 
+    Check our [Status page](Status_page.md) to see current status of clusters. Accounts cannot 
+    be created while clusters are down and will be carried out once they are back up.
 
 ### Application process
 
