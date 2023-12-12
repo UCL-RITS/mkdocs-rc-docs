@@ -9,6 +9,11 @@ layout: docs
 
 ## Cluster access application
 
+!!! important
+    Check our [Status page](Status_page.md) and [Planned outages](Planned_Outages.md) to see 
+    current status of clusters. Accounts cannot be created while clusters are down and will be 
+    carried out once they are back up.
+
 There is a single online form for applying to the majority of our clusters.
 Use of these services is subject to a common set of
 [terms and conditions](Terms_and_Conditions.md).
@@ -37,10 +42,6 @@ The online application form can be found here:
 
 You will need a UCL user name and password. These are the same credentials used
 to access core services like Portico and HR systems.
-
-!!! important 
-    Check our [Status page](Status_page.md) to see current status of clusters. Accounts cannot 
-    be created while clusters are down and will be carried out once they are back up.
 
 ### Application process
 
