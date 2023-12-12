@@ -153,6 +153,22 @@ This page outlines that status of each of the machines managed by the Research C
     Myriad - until the filesystem is reconstructed and brought back up, we cannot see separate 
     files or directories on Myriad.
 
+  - 2023-12-12 15:00 - First data copy complete.
+
+    * The copy of the failed section of filesystem has completed and is showing at 99.92% rescued, 
+      leaving around 75GB of data as not recoverable. (At present we don't know what this data is -
+      it could be from all of home, Scratch, shared spaces and our application install area).
+
+    * The copy of home directories from our backup location to easier access location is still 
+      going, currently at 42.5TiB and 166M items out of 48TiB and 219M. My earlier reports had 
+      doubled the amount we had successfully copied, so when I said 44TiB previously, that was only
+      22TiB. (Corrected in this page). This is progressing slowly and has stalled a couple of times.
+
+    We next need to bring the filesystem up so we can start running checks and see what files are 
+    damaged and missing. We will be discussing our next steps to do this with our vendor. 
+
+    I intend to send another update this week, before the end of Friday. 
+
 
 ### Kathleen
 
