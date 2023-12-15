@@ -169,6 +169,21 @@ This page outlines that status of each of the machines managed by the Research C
 
     I intend to send another update this week, before the end of Friday. 
 
+  - 2023-12-15 17:20 - No news, Christmas closing.
+    
+    No news, I'm afraid. It is looking like Myriad's filesystem will definitely remain down over 
+    Christmas.
+
+    * Our vendors are investigating filesystem logs.
+
+    * The copy of home directories from our backup location to easier access location appears to 
+      have finished the copying stage but was still doing some cleanup earlier today.
+
+    UCL is closed for Christmas from the afternoon of Friday 22 December until 9am on Tuesday 2 
+    January. Any tickets received during this time will be looked at on our return.
+
+    We will send an update next week before UCL closes.
+
 
 ### Kathleen
 
