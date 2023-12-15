@@ -4,6 +4,10 @@ layout: docs
 
 # Planned Outages
 
+!!! important "UCL Christmas closing"
+    UCL is closed from Fri 22 Dec to Mon 1 Jan 2024.
+    Any tickets or issues will be dealt with after we return on Tues 2 Jan.
+
 The second Tuesday of every month is a maintenance day, when the following clusters should be considered at risk from 8:00AM: Myriad, Kathleen, Thomas, Young, Michael, Aristotle and the Data Science Platform. We won’t necessarily perform maintenance every month, and notice by email will not always be given about maintenance day work that only puts services at risk.
 
 Full details of outages are emailed to the cluster-specific user lists. 
@@ -16,12 +20,12 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-14 Nov 2023 | Myriad | Planned | Work on leaf switches in datacentre. Jobs will be drained for 8am. During the outage we intend to upgrade Singularity to Apptainer. We intend to restart jobs on the Weds 15 Nov.
 
 ## Previous Outages
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+14 Nov 2023 | Myriad | Completed | Work on leaf switches in datacentre. Jobs will be drained for 8am. During the outage we intend to upgrade Singularity to Apptainer. We intend to restart jobs on the Weds 15 Nov.
 29 Aug -> 1 Sept 2023 | Kathleen | Completed | Our vendors need us to do some filesystem testing on Kathleen to prepare for the replacement of its Scratch filesystem with a new filesystem later this year. We will drain jobs for 8am on Tues 29th. Depending on how long it takes to gather this information, we may not be running jobs for the rest of the week. We will update you on Thursday around lunchtime. (Jobs were restarted on Mon 4 Sept 12:00)
 11 July 2023        | Myriad  | Completed | Full shutdown for replacement of both Lustre controllers in the filesystem. There will be no login access, no jobs running. Jobs will be drained for 8am. Myriad will be returned to service during the day on Weds 12 July.
 10 -> 15 May 2023 | Myriad | Completed | Power work taking place in the datacentre that Myriad is in which may result in some cabinets losing power. We will be draining jobs for 8am on Weds 10 May and re-enabling them again once the work is complete, likely to be during Tues 16 May.
