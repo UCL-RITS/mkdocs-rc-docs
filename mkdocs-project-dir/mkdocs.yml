@@ -67,6 +67,9 @@ theme:
 # def_list: these use a different syntax to GitHub-flavoured Markdown
 #   Put the term on a line on its own, then follow it with a line that begins with a colon `:`
 #   with the definition. 
+#
+# sane_lists: this makes lists behave a little more sensibly, and lets you start an ordered list with
+#   a specified number. See here for details: https://python-markdown.github.io/extensions/sane_lists/
 markdown_extensions:
   - admonition
   - codehilite:
@@ -79,6 +82,7 @@ markdown_extensions:
   - toc:
       permalink: §
   - footnotes
+  - sane_lists
 
 # Plugins
 # Search is included by default but only if you don't add any others, so
