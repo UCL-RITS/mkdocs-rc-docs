@@ -44,6 +44,14 @@ Modules in this section set up your environment to use specific C, C++, or Fortr
  x_packages.expand_md_list(m_pack["libraries"])
 %>
 
+## Compilers
+
+These modules set up your environment to be able to use specific versions of C, C++, Go, or Rust compilers.
+
+<%
+ x_packages.expand_md_list(m_pack["compilers"])
+%>
+
 ## Development Tools
 
 This section is for modules for programs that are used in software development, profiling, or troubleshooting.
