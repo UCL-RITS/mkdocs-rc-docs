@@ -59,7 +59,7 @@ Useful resources:
 
 ## Available compilers
 
-The following compilers are available and supported on Legion:
+The following compilers are available and supported on our clusters:
 
   - Intel C, C++ and Fortran
   - GNU C, C++ and Fortran
@@ -71,7 +71,7 @@ being able to obtain a valid license. If this happens, simply wait for a
 few minutes and try again.
 
 In addition to the supported tools, there are a number of tools
-installed on Legion which are not supported (for example the PGI
+installed on our clusters which are not supported (for example the PGI
 compilers) which were installed to build certain supported packages.
 Users who use the unsupported packages do so at their own risk.
 
