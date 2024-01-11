@@ -274,7 +274,7 @@ This page outlines that status of each of the machines managed by the Research C
 
 ### Kathleen
 
-    - 2024-01 No current issues. Parallel filesystem soon to be replaced.
+  - 2024-01 No current issues. Parallel filesystem soon to be replaced.
 
 ### Young
 
