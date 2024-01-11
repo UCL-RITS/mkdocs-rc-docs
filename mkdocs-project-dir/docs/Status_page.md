@@ -184,6 +184,91 @@ This page outlines that status of each of the machines managed by the Research C
 
     We will send an update next week before UCL closes.
 
+  - 2023-12-18 15:30 - Home directories from backup available
+
+    We have restored Myriad HOME directories only (no Scratch, Projects or
+    Apps) from the most recent back up which ran from:
+ 
+    Monday Nov 20 23:46 to Wednesday Nov 22 03:48
+ 
+    They are mounted READ ONLY on the Myriad login nodes so you can login
+    to check what files are missing or need updating and scp results etc
+    back to your local computer. We apologize for the delay in making this
+    data available, unfortunately the restore process was only finished during
+    the weekend.
+ 
+    Work on restoring more data (i.e. HOME from after the backup, as well
+    as Scratch and Projects) is still in progress.
+ 
+    It is currently not possible to run jobs.
+ 
+    We still don't expect Myriad to be restored to service before the
+    Christmas and New Year UCL closure.
+ 
+    UCL is closed for Christmas from the afternoon of Friday 22 December until 9am on Tuesday 2 
+    January. Any tickets received during this time will be looked at on our return.
+
+  - 2023-12-22 15:00 - A final Myriad update before UCL closes for the Christmas and New Year break.
+ 
+    The copy of rescued data back onto the re-initialised volume completed this morning (Friday 
+    22nd). We are now running filesystem checks. Myriad will remain down during the Christmas and 
+    New Year closure apart from the read only HOME directories as detailed previously.
+
+  - 2024-01-05 16:50 - An update on the status of Myriad before the weekend
+
+    We wanted to give you a quick update on the progress with Myriad before the weekend as we 
+    know several of you are asking for one.
+ 
+    We are meeting on Monday morning to consider options for returning the live filestore 
+    including Apps, HOME, Scratch and projects to service. We should have some rough timescale we 
+    can give you later on Monday.
+ 
+    Currently a scan is running to discover which files existed either wholly or in part on the 
+    failed volume. So far this has discovered around 60M files, and the scan is about halfway. This 
+    will carry on running over the weekend. Unfortunately, there is likely to be significant data 
+    loss from your Scratch directories.
+ 
+    We will send another update later on Monday.
+
+  - 2024-01-08 17:50 - Myriad update (Monday)
+ 
+    We met this morning to discuss options for returning the live filestore including Apps, HOME, 
+    Scratch and projects to service. Tentatively we hope to be able to allow you access to your 
+    HOME, Scratch and projects by the end of this week.
+ 
+    The scan to discover which files existed either wholly or in part on the failed volume has 
+    completed and found about 70M files which is around 9.1% of the files on Myriad. We are 
+    planning to put files in your HOME directory:
+ 
+    One listing the missing files from your HOME directory.
+ 
+    One listing the missing files from your Scratch directory.
+ 
+    There are also missing files in projects so if you own a project we will give you a list of 
+    these too.
+
+  - 2024-01-11 12:30 - Jobs on Myriad
+
+    We've had questions from you about when jobs will be able to restart. We were able to assess 
+    the damage to our software stack yesterday and most of the centrally installed applications 
+    are affected by missing files and need to be copied over from other clusters or reinstalled.
+
+    We're going to begin by copying over what we can from other systems. We'll be looking at the 
+    results of this first step and seeing how much is still missing after it and how fundamental 
+    those packages are. 
+
+    It would be possible for us to enable jobs before the whole stack was reinstalled, but we need 
+    enough there for you to be able to carry out useful work. We should have a much better idea of 
+    what is still missing by Monday and our plans for reinstating it. I would rather lean towards 
+    giving you access sooner with only the most commonly-used software available rather than 
+    waiting for longer.
+
+    We're on schedule for giving you access to your files by the end of this week.
+
+    New user accounts will start being created again once jobs are re-enabled.
+
+    I'll also be sending an update in the next few days about our future filesystem plans and 
+    mitigations we were working on before this happened.
 
 ### Kathleen
 
