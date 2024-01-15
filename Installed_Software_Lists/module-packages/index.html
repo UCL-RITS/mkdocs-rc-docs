@@ -1611,7 +1611,7 @@
 <p>Our clusters have a wide range of software installed, available by using the modules system.</p>
 <p>The module files are organised by name, version, variant (where applicable) and, if relevant, the compiler version used to build the software. If no compiler version is given, either no compiler was required, or only the base system compiler (<code>/usr/bin/gcc</code>) and libraries were used.</p>
 <p>When we install applications, we try to install them on all of our clusters, but sometimes licence restrictions prevent it. If something seems to be missing, it may be because we are not able to provide it. Please contact us for more information if this is hindering your work.</p>
-<p>The lists below were last updated at 17:05:10 (+0000) on 11 Nov 2023, and are generated from the software installed on the <a href="../../Clusters/Myriad/">Myriad</a> cluster.</p>
+<p>The lists below were last updated at 09:35:09 (+0000) on 01 Jan 2024, and are generated from the software installed on the <a href="../../Clusters/Myriad/">Myriad</a> cluster.</p>
 <h2 id="bundles">Bundles<a class="headerlink" href="#bundles" title="Permanent link">§</a></h2>
 <p>Some applications or tools depend on a lot of other modules, or have some awkward requirements. For these, we sometimes make a "bundle" module in this section, that loads all the dependencies.</p>
 <p>For Python and R in particular, we also have <code>recommended</code> bundles that load the module for a recent version of Python or R, along with a collection of packages for it that have been requested by users, and the modules those packages require.</p>
@@ -4337,6 +4337,10 @@
 <td style="text-align: left;">Adds fftw 3.3.8 (built with OpenMPI) to your environment.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>fftw/3.3.10-impi/intel-2022</code></td>
+<td style="text-align: left;">Adds fftw fftw (built with Intel 2022 Comilers and MPI) to your environment.</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>fftw/3.3.10/nvidia-22.1</code></td>
 <td style="text-align: left;">Adds fftw 3.3.10 to your environment.</td>
 </tr>
@@ -4467,6 +4471,10 @@
 <tr>
 <td style="text-align: center;"><code>hdf/5-1.10.5/gnu-4.9.2</code></td>
 <td style="text-align: left;">Adds hdf 5-1.10.5 to your environment. Serial version built with GNU.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>hdf/5-1.12.3-impi/intel-2022</code></td>
+<td style="text-align: left;">adds HDF5 1.12.3 (Parallel) for Intel 2022 to your environment.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>htslib/1.2.1</code></td>
@@ -4610,6 +4618,10 @@
 </tr>
 <tr>
 <td style="text-align: center;"><code>libxc/4.2.3/intel-2018</code></td>
+<td style="text-align: left;">libxc is a library of routines implementing a range of exchange-correlation functionals for density-functional theory calculations.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>libxc/6.2.2/intel-2022</code></td>
 <td style="text-align: left;">libxc is a library of routines implementing a range of exchange-correlation functionals for density-functional theory calculations.</td>
 </tr>
 <tr>
@@ -4933,6 +4945,10 @@
 <td style="text-align: left;">adds NetCDF 4.6.1 for GCC to your environment.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>netcdf-fortran/4.6.1/intel-2022</code></td>
+<td style="text-align: left;">adds NetCDF 4.6.1 for Intel 2022 to your environment.</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>netcdf/4.3.3.1/gnu-4.9.2</code></td>
 <td style="text-align: left;">adds NetCDF 4.3.3.1 for GCC 4.9.2 to your environment.</td>
 </tr>
@@ -4947,6 +4963,10 @@
 <tr>
 <td style="text-align: center;"><code>netcdf/4.9.2/gnu-10.2.0</code></td>
 <td style="text-align: left;">adds NetCDF 4.9.2 for GCC 10.2.0 to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>netcdf/4.9.2/intel-2022</code></td>
+<td style="text-align: left;">adds NetCDF 4.9.2 for Intel 2022.2 compilers to your environment.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>numactl/2.0.12</code></td>
@@ -6392,6 +6412,10 @@
 <tr>
 <td style="text-align: center;"><code>lammps/2aug23/gpu/gnu-10.2.0</code></td>
 <td style="text-align: left;">Adds LAMMPS 2 August 2023 GPU build to your environment. Binary is lmp_gpu.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>lammps/2aug23/userintel/intel-2022.2</code></td>
+<td style="text-align: left;">Adds LAMMPS 2 August 2023 with INTEL package to your environment. Binary is lmp_mpi or lmp_default.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>lammps/28mar23/basic-fftw/gnu-10.2.0</code></td>
