@@ -247,8 +247,6 @@ This page outlines that status of each of the machines managed by the Research C
     There are also missing files in projects so if you own a project we will give you a list of 
     these too.
 
-#### Latest on Myriad
-
   - 2024-01-11 12:30 - Jobs on Myriad
 
     We've had questions from you about when jobs will be able to restart. We were able to assess 
@@ -271,6 +269,99 @@ This page outlines that status of each of the machines managed by the Research C
 
     I'll also be sending an update in the next few days about our future filesystem plans and 
     mitigations we were working on before this happened.
+
+#### Latest on Myriad
+
+  - 2024-01-12 14:00 Myriad: filesystem access restored, jobs tentatively expected for Monday
+
+    We've restored read-write access to Myriad's filesystem, and you will be able to log in and 
+    see all your directories again. Here's some detail about how you can identify which of your 
+    files were damaged.
+
+    **Your data on Myriad**
+
+    During the incident all files that resided at least partially on OST00 have been lost. 
+    In total these are 70M files (out of a filesystem total of 991M).
+
+    We restored files in `/lustre/home` from the latest backup where available. Data that was 
+    created while the backup was running or afterwards had no backup and could not be restored. 
+    For the time being, we will keep the latest backup available read-only in the directory 
+    `/lustre-backup`.
+
+    Files in `/lustre/scratch` and `/lustre/projects` were not backed up, as a matter of policy. 
+    All OST00 files from these directories have been lost.
+
+    Where files were lost but still showing up in directory listings, we have removed ("unlinked") 
+    them so it doesn't appear that they are still there when they are not.
+
+    For a tiny fraction of the lost files (0.03%), there is still some file data accessible, but 
+    most of these files are damaged (e.g. truncated or partially filled with zeroes). For some 
+    users these damaged files might still contain useful information, so we have left these files 
+    untouched.
+
+    The following files have been placed into your home directory:
+
+     - OST00-FILES-HOME-restored.txt
+       - A list of your home directory files that resided on OST00 and that were successfully 
+         restored from backup.
+
+     - OST00-FILES-HOME-failed.txt
+       - A list of your home directory files that resided on OST00 and that could not be restored 
+         from backup, including one of the following messages:
+       - "no backup, stale directory entry, unlinked" - There was no backup for this file, and we 
+         removed the stale directory entry.
+       - "target file exists, potentially corrupt, leaving untouched" - Original file data is still 
+         accessible, but likely damaged or corrupt. Feel free to delete these files if there's no 
+         useful data in there.
+
+     - OST00-FILES-SCRATCH.txt
+       - A list of your Scratch directory files that resided on OST00, including one of the following
+         messages (similar to the above):
+       - "stale directory entry, unlinked"
+       - "file exists, potentially corrupt, leaving untouched"
+
+    For projects, the following file has been placed in the project root directory:
+
+     - OST00-FILES-PROJECTS.txt
+       - A list of project files that resided on OST00, including one of the following messages:
+       - "stale directory entry, unlinked"
+       - "file exists, potentially corrupt, leaving untouched"
+
+    A very few users had newline characters (`\n`) in their filenames: in this case in the above 
+    .txt files the \n has been replaced by the string `__NEWLINE__`, and an additional .bin file 
+    has been placed alongside the .txt file, containing the list of original filenames terminated 
+    by null bytes (and not including the messages).
+
+    These OST00-FILES-* files are owned by root, so that they don't use up any of your quota. 
+    You can still rename, move, or delete these files.
+
+    **Jobs**
+
+    We're currently running a Lustre filesystem check in the background. Provided it does not throw 
+    up any serious problems, we expect to be able to re-enable jobs during Monday. We'll be putting
+    user holds on all the jobs so you can check that the files and applications they are trying to 
+    use exist before allowing them to be scheduled. They will show in status `hqw` in qstat.
+
+    Once you have made sure they are ok, you will be able to use `qrls` followed by a job ID to 
+    release that job, or `qrls all` to release all your jobs. They will then be in status `qw` and 
+    queue as normal. (Array jobs will have the first task in status `qw` and the rest in `hqw` - 
+    this is normal). If you want to delete the jobs instead, use `qdel` followed by the job ID.
+
+    **Software**
+
+    We have successfully restored the vast majority of Myriad's software stack. I'll send a final 
+    update when we re-enable jobs, but at present I expect the missing applications to be:
+ 
+     - ABAQUS 2017
+     - ANSYS (all versions)
+     - STAR-CCM+ (all versions)
+     - STAR-CD (all versions)
+
+    These are all licensed applications that are best reinstalled from their original media, so 
+    we'll be working through those, starting with the most recent version we had.
+
+    Please send any queries to rc-support@ucl.ac.uk. If you've asked us for account deletions, we 
+    will be starting those next week, along with new user account creations.
 
 ### Kathleen
 
