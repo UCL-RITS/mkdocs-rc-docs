@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
     
     
       
@@ -1852,37 +1852,43 @@ users these damaged files might still contain useful information, so we have lef
 untouched.</p>
 <p>The following files have been placed into your home directory:</p>
 <ul>
-<li>OST00-FILES-HOME-restored.txt</li>
 <li>
-<p>A list of your home directory files that resided on OST00 and that were successfully 
-     restored from backup.</p>
+<p>OST00-FILES-HOME-restored.txt</p>
+<ul>
+<li>A list of your home directory files that resided on OST00 and that were successfully 
+ restored from backup.</li>
+</ul>
 </li>
 <li>
 <p>OST00-FILES-HOME-failed.txt</p>
-</li>
+<ul>
 <li>A list of your home directory files that resided on OST00 and that could not be restored 
-     from backup, including one of the following messages:</li>
+   from backup, including one of the following messages:</li>
 <li>"no backup, stale directory entry, unlinked" - There was no backup for this file, and we 
-     removed the stale directory entry.</li>
-<li>
-<p>"target file exists, potentially corrupt, leaving untouched" - Original file data is still 
-     accessible, but likely damaged or corrupt. Feel free to delete these files if there's no 
-     useful data in there.</p>
+   removed the stale directory entry.</li>
+<li>"target file exists, potentially corrupt, leaving untouched" - Original file data is still 
+   accessible, but likely damaged or corrupt. Feel free to delete these files if there's no 
+   useful data in there.</li>
+</ul>
 </li>
 <li>
 <p>OST00-FILES-SCRATCH.txt</p>
-</li>
-<li>A list of your Scratch directory files that resided on OST00, including one of the following
-     messages (similar to the above):</li>
+<ul>
+<li>A list of your Scratch directory files that resided on OST00, including one of the 
+   following messages (similar to the above):</li>
 <li>"stale directory entry, unlinked"</li>
 <li>"file exists, potentially corrupt, leaving untouched"</li>
 </ul>
+</li>
+</ul>
 <p>For projects, the following file has been placed in the project root directory:</p>
 <ul>
-<li>OST00-FILES-PROJECTS.txt</li>
+<li>OST00-FILES-PROJECTS.txt<ul>
 <li>A list of project files that resided on OST00, including one of the following messages:</li>
 <li>"stale directory entry, unlinked"</li>
 <li>"file exists, potentially corrupt, leaving untouched"</li>
+</ul>
+</li>
 </ul>
 <p>A very few users had newline characters (<code>\n</code>) in their filenames: in this case in the above 
 .txt files the \n has been replaced by the string <code>__NEWLINE__</code>, and an additional .bin file 
@@ -2009,10 +2015,10 @@ nodes that an MPI job ran on).</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["instant"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["instant"], "search": "../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../assets/javascripts/bundle.7389ff0e.min.js"></script>
       
     
   </body>
