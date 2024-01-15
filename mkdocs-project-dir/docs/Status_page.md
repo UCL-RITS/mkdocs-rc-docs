@@ -302,30 +302,30 @@ This page outlines that status of each of the machines managed by the Research C
     The following files have been placed into your home directory:
 
      - OST00-FILES-HOME-restored.txt
-       - A list of your home directory files that resided on OST00 and that were successfully 
+         - A list of your home directory files that resided on OST00 and that were successfully 
          restored from backup.
 
      - OST00-FILES-HOME-failed.txt
-       - A list of your home directory files that resided on OST00 and that could not be restored 
-         from backup, including one of the following messages:
-       - "no backup, stale directory entry, unlinked" - There was no backup for this file, and we 
-         removed the stale directory entry.
-       - "target file exists, potentially corrupt, leaving untouched" - Original file data is still 
-         accessible, but likely damaged or corrupt. Feel free to delete these files if there's no 
-         useful data in there.
+         - A list of your home directory files that resided on OST00 and that could not be restored 
+           from backup, including one of the following messages:
+         - "no backup, stale directory entry, unlinked" - There was no backup for this file, and we 
+           removed the stale directory entry.
+         - "target file exists, potentially corrupt, leaving untouched" - Original file data is still 
+           accessible, but likely damaged or corrupt. Feel free to delete these files if there's no 
+           useful data in there.
 
      - OST00-FILES-SCRATCH.txt
-       - A list of your Scratch directory files that resided on OST00, including one of the following
-         messages (similar to the above):
-       - "stale directory entry, unlinked"
-       - "file exists, potentially corrupt, leaving untouched"
+         - A list of your Scratch directory files that resided on OST00, including one of the 
+           following messages (similar to the above):
+         - "stale directory entry, unlinked"
+         - "file exists, potentially corrupt, leaving untouched"
 
     For projects, the following file has been placed in the project root directory:
 
      - OST00-FILES-PROJECTS.txt
-       - A list of project files that resided on OST00, including one of the following messages:
-       - "stale directory entry, unlinked"
-       - "file exists, potentially corrupt, leaving untouched"
+         - A list of project files that resided on OST00, including one of the following messages:
+         - "stale directory entry, unlinked"
+         - "file exists, potentially corrupt, leaving untouched"
 
     A very few users had newline characters (`\n`) in their filenames: in this case in the above 
     .txt files the \n has been replaced by the string `__NEWLINE__`, and an additional .bin file 
