@@ -270,8 +270,6 @@ This page outlines that status of each of the machines managed by the Research C
     I'll also be sending an update in the next few days about our future filesystem plans and 
     mitigations we were working on before this happened.
 
-#### Latest on Myriad
-
   - 2024-01-12 14:00 Myriad: filesystem access restored, jobs tentatively expected for Monday
 
     We've restored read-write access to Myriad's filesystem, and you will be able to log in and 
@@ -328,7 +326,7 @@ This page outlines that status of each of the machines managed by the Research C
          - "file exists, potentially corrupt, leaving untouched"
 
     A very few users had newline characters (`\n`) in their filenames: in this case in the above 
-    .txt files the \n has been replaced by the string `__NEWLINE__`, and an additional .bin file 
+    .txt files the `\n` has been replaced by the string `__NEWLINE__`, and an additional .bin file 
     has been placed alongside the .txt file, containing the list of original filenames terminated 
     by null bytes (and not including the messages).
 
@@ -362,6 +360,28 @@ This page outlines that status of each of the machines managed by the Research C
 
     Please send any queries to rc-support@ucl.ac.uk. If you've asked us for account deletions, we 
     will be starting those next week, along with new user account creations.
+
+#### Latest on Myriad
+
+  - 2024-01-15 16:00 - Myriad jobs enabled
+
+    We have now allowed jobs to start on Myriad. 
+
+    We have reinstalled ABAQUS 2017, ANSYS 2023.R1, STAR-CCM+ 14.06.013 and STAR-CD 4.28.050. The 
+    older versions of these applications are still missing at the moment.
+
+    Your jobs that were still in the queue from before have user holds on them and show in status 
+    `hqw` in qstat.
+
+    Once you have made sure the files and applications the jobs are using are present and correct, 
+    you will be able to use `qrls` followed by a job ID to release that job, or `qrls all` to 
+    release all your jobs. They will then be in status `qw` and queue as normal. (Array jobs will 
+    have the first task in status `qw` and the rest in `hqw` - this is normal). If you want to 
+    delete the jobs instead, use `qdel` followed by the job ID.
+
+    User deletions and new user creations are underway. We'll need to check that the 
+    synchronisation to the mailing list is working correctly and people are being added and removed
+    as appropriate.
 
 ### Kathleen
 
