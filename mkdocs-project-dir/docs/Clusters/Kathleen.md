@@ -91,6 +91,8 @@ These are numbers of physical cores.
 
 If you have a workload that requires longer jobs than this, you may be able to apply to our governance group for access to a longer queue. Applications will be expected to demonstrate that their work cannot be run using techniques like checkpointing that would allow their workload to be broken up into smaller parts. Please see the section on [Additional Resource Requests](../Additional_Resource_Requests.md) for more details.
 
+The memory you request is always per core, not the total amount. Each node has 192 gigabytes of RAM, and each node has 40 cores, e.g. a job requesting for 40 cores should ask for no more than 4.8G RAM (192/40).
+
 ## Node types
 
 Kathleen's compute capability comprises 192 diskless compute nodes each with two 20-core [Intel Xeon Gold 6248 2.5GHz](https://ark.intel.com/content/www/us/en/ark/products/192446/intel-xeon-gold-6248-processor-27-5m-cache-2-50-ghz.html) processors, 192 gigabytes of 2933MHz DDR4 RAM, and an Intel OmniPath network.
