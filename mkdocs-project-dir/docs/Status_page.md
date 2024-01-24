@@ -270,6 +270,8 @@ This page outlines that status of each of the machines managed by the Research C
     I'll also be sending an update in the next few days about our future filesystem plans and 
     mitigations we were working on before this happened.
 
+#### Check lists of damaged files on Myriad
+
   - 2024-01-12 14:00 Myriad: filesystem access restored, jobs tentatively expected for Monday
 
     We've restored read-write access to Myriad's filesystem, and you will be able to log in and 
@@ -402,7 +404,15 @@ This page outlines that status of each of the machines managed by the Research C
 
 ### Michael
 
-  - All systems are working well.
+  - 2024-01-24 16:40 - Problem on Michael's admin nodes causing DNS failures - now solved
+
+    We have been having DNS problems on Michael today since around 14:40, meaning that scheduler 
+    commands were not working and running jobs may have errors, including failed username lookups. 
+    New jobs trying to start during this time are likely to have failed on start up. Running jobs 
+    may have been affected, so please check the outputs for any jobs that were running during 14:40 
+    to 16:30 today.
+
+    This was caused by a problem on the admin nodes that has now been sorted out.
 
 ### Thomas
 
