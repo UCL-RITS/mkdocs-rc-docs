@@ -426,7 +426,6 @@ If you have access to Kathleen, this test input and jobscript are available at `
 
 ## ANSYS Electromagnetic Suite (AnsysEM)
 
-**Note**: this section needs updating.
 
 The AnsysEM products handle their own parallelisation so a number of complex options need to be passed in job scripts to make it run correctly. Also additional module commands are required.
 
@@ -435,7 +434,7 @@ Here is an example jobscript for running in parallel potentially across more tha
 ```
 #!/bin/bash -l
 
-# AnsysEM 2021 R2: Batch script to run one of the Ansys Electromagnetics Products
+# AnsysEM 2023 R1: Batch script to run one of the Ansys Electromagnetics Products
 # example simulations on Kathleen - distributed parallel (80 cores)
 
 # 1. Force bash as the executing shell.
@@ -455,7 +454,7 @@ Here is an example jobscript for running in parallel potentially across more tha
 
 # 7. Request ANSYS licences $ inserted so currently active. Job will queue until
 # suficient licenses are available. Not currently active.
-# -ac app=cfx
+###$ -ac app=cfx
 
 # 8. Set the working directory to somewhere in your scratch space.  In this
 # case the directory the job was submitted from,
@@ -463,7 +462,7 @@ Here is an example jobscript for running in parallel potentially across more tha
 
 # 9. Load the ANSYS module to set up your environment
 
-module load ansys/2021.r2
+module load ansys/2023.r1
 module load xorg-utils/X11R7.7
 module load giflib/5.1.1
 
