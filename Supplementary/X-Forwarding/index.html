@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.6">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.7">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f2e4d321.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -1497,6 +1497,16 @@
 <p>You can now click "Open" to start the connection, or you can return to the "Session" options to save this setup. </p>
 <h2 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">§</a></h2>
 <p>Like Windows, macOS doesn't come with an X server to receive X windows. The most commonly used X server for macOS is <a href="https://www.xquartz.org/">XQuartz</a>. If you download and install that, you can follow the Linux instructions below. When you connect with X-Forwarding enabled, the XQuartz server program should start automatically, ready to present remote windows.</p>
+<p>If you need to use remote 3D rendering (e.g. for GaussView), you will also need to enable "Indirect rendering", which allows rendering instructions to be sent to your computer.</p>
+<p>If you install XQuartz from the link above, you will need to open a terminal and run:</p>
+<div class="codehilite"><pre><span></span><code>defaults write org.macosforge.xquartz.X11 enable_iglx -bool true
+</code></pre></div>
+
+<p>It is also possible to install Xorg from MacPorts -- in that case the command is instead:</p>
+<div class="codehilite"><pre><span></span><code>defaults write org.macports.X11 enable_iglx -bool true
+</code></pre></div>
+
+<p>In either case, you will need to restart any running X11/Xorg/XQuartz processes.</p>
 <h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">§</a></h2>
 <p>Almost all Linux versions that have a graphical desktop use an X server to provide it, so you don't have to install a separate one.</p>
 <p>You still have to set up your SSH client's connection to "tunnel" the X windows from the remote computer, though. You can do this by simply adding the <code>-X</code> option to your <code>ssh</code> command line, so for example to connect to Myriad with X-Forwarding:</p>
@@ -1603,7 +1613,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e1c3ead8.min.js"></script>
+      <script src="../../assets/javascripts/bundle.caa56a14.min.js"></script>
       
     
   </body>
