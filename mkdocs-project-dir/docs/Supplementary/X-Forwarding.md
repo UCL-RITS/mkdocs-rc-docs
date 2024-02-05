@@ -35,6 +35,22 @@ You can now click "Open" to start the connection, or you can return to the "Sess
 
 Like Windows, macOS doesn't come with an X server to receive X windows. The most commonly used X server for macOS is [XQuartz](https://www.xquartz.org/). If you download and install that, you can follow the Linux instructions below. When you connect with X-Forwarding enabled, the XQuartz server program should start automatically, ready to present remote windows.
 
+If you need to use remote 3D rendering (e.g. for GaussView), you will also need to enable "Indirect rendering", which allows rendering instructions to be sent to your computer.
+
+If you install XQuartz from the link above, you will need to open a terminal and run:
+
+```
+defaults write org.macosforge.xquartz.X11 enable_iglx -bool true
+```
+
+It is also possible to install Xorg from MacPorts -- in that case the command is instead:
+
+```
+defaults write org.macports.X11 enable_iglx -bool true
+```
+
+In either case, you will need to restart any running X11/Xorg/XQuartz processes.
+
 ## Linux
 
 Almost all Linux versions that have a graphical desktop use an X server to provide it, so you don't have to install a separate one.
