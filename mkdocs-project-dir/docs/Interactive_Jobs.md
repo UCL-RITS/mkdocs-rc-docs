@@ -70,14 +70,15 @@ qrsh -l mem=512M,h_rt=0:30:0 \
 
 ## Working on the nodes
 
- If you want to run a command on one of your allocated nodes which is
-not the headnode, you can use a standard `ssh` command: 
-
+ If you want to run a command on one of your other allocated nodes, you
+can use a standard `ssh` command from the interactive session: 
 ```
 ssh <hostname> <command> [args]
 ```
+to access other nodes within your allocation. Note that you are not
+able to `ssh` directly from the login node.
 
-Where `<hostname>` can be obtained by inspecting the file
+In the above, `<hostname>` can be obtained by inspecting the file
 `$TMPDIR/machines`.
 
 ## GPU test nodes
