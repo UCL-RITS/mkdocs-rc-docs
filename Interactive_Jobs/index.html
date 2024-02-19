@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.8">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.10">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.f2e4d321.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -630,10 +630,8 @@
     
     
     
-    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
@@ -695,10 +693,8 @@
     
     
     
-    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
@@ -865,10 +861,8 @@
     
     
     
-    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
@@ -972,10 +966,8 @@
     
     
     
-    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" >
@@ -1100,10 +1092,8 @@
     
     
     
-    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" >
@@ -1186,10 +1176,8 @@
     
     
     
-    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_21" >
@@ -1356,10 +1344,8 @@
     
     
     
-    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" >
@@ -1583,12 +1569,14 @@ example of how you can get a X terminal session with the qrsh command:</p>
 </code></pre></div>
 
 <h2 id="working-on-the-nodes">Working on the nodes<a class="headerlink" href="#working-on-the-nodes" title="Permanent link">§</a></h2>
-<p>If you want to run a command on one of your allocated nodes which is
-not the headnode, you can use a standard <code>ssh</code> command: </p>
+<p>If you want to run a command on one of your other allocated nodes, you
+can use a standard <code>ssh</code> command from the interactive session: </p>
 <div class="codehilite"><pre><span></span><code>ssh &lt;hostname&gt; &lt;command&gt; [args]
 </code></pre></div>
 
-<p>Where <code>&lt;hostname&gt;</code> can be obtained by inspecting the file
+<p>to access other nodes within your allocation. Note that you are not
+able to <code>ssh</code> directly from the login node.</p>
+<p>In the above, <code>&lt;hostname&gt;</code> can be obtained by inspecting the file
 <code>$TMPDIR/machines</code>.</p>
 <h2 id="gpu-test-nodes">GPU test nodes<a class="headerlink" href="#gpu-test-nodes" title="Permanent link">§</a></h2>
 <p>You can also run GPU jobs interactively simply by adding the <code>-l gpu=1</code>
