@@ -20,6 +20,7 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+12 March 2024 | Myriad | Planned | Full outage to fix inaccurate quota reporting. Jobs will be drained for 8am. From 9am no one will be able to log in and no files can be accessed. We do not know until we begin quotachecks whether they will take multiple days.
 
 ## Previous Outages
 
