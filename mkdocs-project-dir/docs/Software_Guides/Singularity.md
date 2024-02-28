@@ -68,9 +68,16 @@ singularity build --remote
 this functionality is no longer available in Apptainer. You can still log in to Sylabs via the web
 interface, build containers on it and then pull them down with Apptainer.
 
-Or you can now build containers directly on our clusters without additional permissions, as long
-as they use a local filesystem and not home or Scratch. Our default setup uses `$XDG_RUNTIME_DIR` 
-on the local disk of the login nodes, or `$TMPDIR` on a compute node.
+### Building your own containers
+
+With Apptainer you can build containers directly on our clusters without additional permissions, 
+as long as they use a local filesystem and not home or Scratch. 
+
+Our default setup uses `$XDG_RUNTIME_DIR` on the local disk of the login nodes, or `$TMPDIR` on a 
+compute node (local disk on the node, on clusters that are not diskless).
+
+If you try to build a container on a parallel filesystem, it will fail with a number of
+permissions errors.
 
 
 ## Singularity
