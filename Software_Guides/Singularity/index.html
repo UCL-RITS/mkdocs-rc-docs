@@ -1267,6 +1267,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#building-your-own-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building your own containers
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1579,6 +1588,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#building-your-own-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building your own containers
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1698,9 +1716,13 @@ are not set.</p>
 
 <p>this functionality is no longer available in Apptainer. You can still log in to Sylabs via the web
 interface, build containers on it and then pull them down with Apptainer.</p>
-<p>Or you can now build containers directly on our clusters without additional permissions, as long
-as they use a local filesystem and not home or Scratch. Our default setup uses <code>$XDG_RUNTIME_DIR</code> 
-on the local disk of the login nodes, or <code>$TMPDIR</code> on a compute node.</p>
+<h3 id="building-your-own-containers">Building your own containers<a class="headerlink" href="#building-your-own-containers" title="Permanent link">§</a></h3>
+<p>With Apptainer you can build containers directly on our clusters without additional permissions, 
+as long as they use a local filesystem and not home or Scratch. </p>
+<p>Our default setup uses <code>$XDG_RUNTIME_DIR</code> on the local disk of the login nodes, or <code>$TMPDIR</code> on a 
+compute node (local disk on the node, on clusters that are not diskless).</p>
+<p>If you try to build a container on a parallel filesystem, it will fail with a number of
+permissions errors.</p>
 <h2 id="singularity">Singularity<a class="headerlink" href="#singularity" title="Permanent link">§</a></h2>
 <p>Run <code>singularity --version</code> to see which version we currently have installed.</p>
 <div class="admonition important">
