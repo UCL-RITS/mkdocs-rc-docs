@@ -402,6 +402,20 @@ This page outlines that status of each of the machines managed by the Research C
 
   - 2024-01 Parallel filesystem soon to be replaced.
 
+  - 2024-01-03 12:30 Filesystem issues on Young: temporary hangs, running but degraded 
+
+    We've just had two periods today where Young's filesystem would have hung - hopefully briefly 
+    enough that operations in progress will have continued after it recovered.
+
+    We failed over from one server to the other and back again. 
+
+    Young's filesystem is more at risk than usual right now since we have some failed disks and 
+    one area (one Object Store Target) is degraded. We have stopped new data from being written 
+    there and are migrating the existing data to the rest of the filesystem. 
+
+    The filesystem is still working and Young is still running jobs. We do not need you to take 
+    any action at present, but things may be running more slowly while this completes.
+
 ### Michael
 
   - 2024-01-24 16:40 - Problem on Michael's admin nodes causing DNS failures - now solved
