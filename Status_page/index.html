@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.11">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.12">
     
     
       
@@ -1961,6 +1961,17 @@ nodes that an MPI job ran on).</p>
 <li>
 <p>2024-01 Parallel filesystem soon to be replaced.</p>
 </li>
+<li>
+<p>2024-01-03 12:30 Filesystem issues on Young: temporary hangs, running but degraded </p>
+<p>We've just had two periods today where Young's filesystem would have hung - hopefully briefly 
+enough that operations in progress will have continued after it recovered.</p>
+<p>We failed over from one server to the other and back again. </p>
+<p>Young's filesystem is more at risk than usual right now since we have some failed disks and 
+one area (one Object Store Target) is degraded. We have stopped new data from being written 
+there and are migrating the existing data to the rest of the filesystem. </p>
+<p>The filesystem is still working and Young is still running jobs. We do not need you to take 
+any action at present, but things may be running more slowly while this completes.</p>
+</li>
 </ul>
 <h3 id="michael">Michael<a class="headerlink" href="#michael" title="Permanent link">§</a></h3>
 <ul>
@@ -2049,7 +2060,7 @@ to 16:30 today.</p>
     <script id="__config" type="application/json">{"base": "..", "features": ["instant"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      <script src="../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
     
   </body>
