@@ -1963,7 +1963,7 @@ Stage: build
     python3 /pi.py
 </code></pre></div>
 
-<p>It copys the <code>pi.py</code> file into the image (the <code>%files</code> section), updates the packages in the container, installs the Code Ready Builder and EPEL repositories, and uses them to install <code>pip</code> and <code>virtualenv</code> (the <code>%post</code> section).  Finally it uses those two tools to build a virtualenvironment with Numba to run the code in. </p>
+<p>It copys the <code>pi.py</code> file into the image (the <code>%files</code> section), updates the packages in the container, installs the Code Ready Builder and EPEL repositories, and uses them to install <code>pip</code> and <code>virtualenv</code> (the <code>%post</code> section).  Finally it uses those two tools to build a virtual environment with Numba to run the code in. </p>
 <p>Finally it sets the container's run command to activate the virtual environment with the dependencies and execute <code>pi.py</code> (the <code>%runscript</code> section).</p>
 <h3 id="build-container">Build container<a class="headerlink" href="#build-container" title="Permanent link">§</a></h3>
 <p>To the build the container simply run:</p>
