@@ -1938,7 +1938,7 @@ as normal </li>
 
 <h3 id="write-a-definition-file">Write a definition file<a class="headerlink" href="#write-a-definition-file" title="Permanent link">§</a></h3>
 <p>Unfortunately Apptainer doesn't (yet) support Dockerfiles and <a href="https://apptainer.org/docs/user/main/definition_files.html">uses its own syntax</a>. </p>
-<p>There are example files in <a href="https://github.com/owainkenwayucl/apptainer_examples">this repository</a> and we will use the "<a href="https://github.com/owainkenwayucl/apptainer_examples/tree/main/almalinux_python">AlmaLinux Python</a> example here.</p>
+<p>There are example files in <a href="https://github.com/owainkenwayucl/apptainer_examples">this repository</a> and we will use the "<a href="https://github.com/owainkenwayucl/apptainer_examples/tree/main/almalinux_python">AlmaLinux Python</a>" example here.</p>
 <p>The two files you need for this example are <a href="https://github.com/owainkenwayucl/apptainer_examples/blob/main/almalinux_python/alma_python.def"><code>alma_python.def</code></a> and <a href="https://github.com/owainkenwayucl/apptainer_examples/blob/main/almalinux_python/pi.py"><code>pi.py</code></a>.</p>
 <p>This example builds an image based on the latest <a href="https://almalinux.org/">AlmaLinux</a> (at time of writing 9.3) container in Dockerhub:</p>
 <div class="codehilite"><pre><span></span><code>Bootstrap: docker
