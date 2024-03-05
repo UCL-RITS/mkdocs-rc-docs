@@ -1332,6 +1332,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#building-containers-with-apptainer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building containers with Apptainer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building containers with Apptainer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-your-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up your environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write-a-definition-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Write a definition file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build container
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the container
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1653,6 +1704,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#building-containers-with-apptainer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building containers with Apptainer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building containers with Apptainer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-your-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up your environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write-a-definition-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Write a definition file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build container
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the container
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1823,6 +1925,56 @@ as normal </li>
 
 <p>or you can pass it in with the <code>–-bind=$HOME/.Xauthority</code> option to <code>singularity shell</code> or 
 <code>singularity exec</code>.</p>
+<h2 id="building-containers-with-apptainer">Building containers with Apptainer<a class="headerlink" href="#building-containers-with-apptainer" title="Permanent link">§</a></h2>
+<div class="codehilite"><pre><span></span><code>This requires Apptainer and will not work in clusters which still use Singularity.
+</code></pre></div>
+
+<p>One of the nice new features of Apptainer is it is now possible to build containers on the login/compute nodes of our clusters and you no longer need to have a separate Linux machine (or the Singularity build service) to do so.</p>
+<h3 id="set-up-your-environment">Set up your environment<a class="headerlink" href="#set-up-your-environment" title="Permanent link">§</a></h3>
+<p>Load the <code>apptainer</code> module:</p>
+<div class="codehilite"><pre><span></span><code>module load apptainer
+</code></pre></div>
+
+<h3 id="write-a-definition-file">Write a definition file<a class="headerlink" href="#write-a-definition-file" title="Permanent link">§</a></h3>
+<p>Unfortunately Apptainer doesn't (yet) support Dockerfiles and <a href="https://apptainer.org/docs/user/main/definition_files.html">uses its own syntax</a>. </p>
+<p>There are example files in <a href="https://github.com/owainkenwayucl/apptainer_examples">this repository</a> and we will use the "<a href="https://github.com/owainkenwayucl/apptainer_examples/tree/main/almalinux_python">AlmaLinux Python</a> example here.</p>
+<p>The two files you need for this example are <a href="https://github.com/owainkenwayucl/apptainer_examples/blob/main/almalinux_python/alma_python.def"><code>alma_python.def</code></a> and <a href="https://github.com/owainkenwayucl/apptainer_examples/blob/main/almalinux_python/pi.py"><code>pi.py</code></a>.</p>
+<p>This example builds an image based on the latest <a href="https://almalinux.org/">AlmaLinux</a> (at time of writing 9.3) container in Dockerhub:</p>
+<div class="codehilite"><pre><span></span><code>Bootstrap: docker
+From: almalinux:latest
+Stage: build
+
+%files
+    ./pi.py /pi.py
+
+%post
+    chmod 644 /pi.py
+    dnf update -y
+    dnf install -y &#39;dnf-command(config-manager)&#39;
+    dnf config-manager --set-enabled crb
+    dnf install -y epel-release
+    dnf install -y python3 python3-pip python3-virtualenv
+    virtualenv /runtime
+    source /runtime/bin/activate
+    pip install --upgrade pip
+    pip install numba
+%runscript
+    source /runtime/bin/activate
+    python3 /pi.py
+</code></pre></div>
+
+<p>It copys the <code>pi.py</code> file into the image (the <code>%files</code> section), updates the packages in the container, installs the Code Ready Builder and EPEL repositories, and uses them to install <code>pip</code> and <code>virtualenv</code> (the <code>%post</code> section).  Finally it uses those two tools to build a virtualenvironment with Numba to run the code in. </p>
+<p>Finally it sets the container's run command to activate the virtual environment with the dependencies and execute <code>pi.py</code> (the <code>%runscript</code> section).</p>
+<h3 id="build-container">Build container<a class="headerlink" href="#build-container" title="Permanent link">§</a></h3>
+<p>To the build the container simply run:</p>
+<div class="codehilite"><pre><span></span><code>apptainer build --fakeroot alma_python.sif alma_python.def
+</code></pre></div>
+
+<p>The <code>--fakeroot</code> option is important because of course as a normal user on our HPC systems you are not <code>root</code>.</p>
+<h3 id="running-the-container">Running the container<a class="headerlink" href="#running-the-container" title="Permanent link">§</a></h3>
+<p>To run the container:</p>
+<div class="codehilite"><pre><span></span><code>apptainer run alma_python.sif 
+</code></pre></div>
 
 
 
