@@ -208,3 +208,74 @@ export APPTAINER_BINDPATH=$APPTAINER_BINDPATH,$HOME/.Xauthority
 or you can pass it in with the `–-bind=$HOME/.Xauthority` option to `singularity shell` or 
 `singularity exec`.
 
+## Building containers with Apptainer
+
+    This requires Apptainer and will not work in clusters which still use Singularity.
+
+
+One of the nice new features of Apptainer is it is now possible to build containers on the login/compute nodes of our clusters and you no longer need to have a separate Linux machine (or the Singularity build service) to do so.
+
+### Set up your environment
+
+Load the `apptainer` module:
+
+```
+module load apptainer
+```
+
+### Write a definition file
+
+Unfortunately Apptainer doesn't (yet) support Dockerfiles and [uses its own syntax](https://apptainer.org/docs/user/main/definition_files.html). 
+
+There are example files in [this repository](https://github.com/owainkenwayucl/apptainer_examples) and we will use the "[AlmaLinux Python](https://github.com/owainkenwayucl/apptainer_examples/tree/main/almalinux_python) example here.
+
+The two files you need for this example are [`alma_python.def`](https://github.com/owainkenwayucl/apptainer_examples/blob/main/almalinux_python/alma_python.def) and [`pi.py`](https://github.com/owainkenwayucl/apptainer_examples/blob/main/almalinux_python/pi.py).
+
+This example builds an image based on the latest [AlmaLinux](https://almalinux.org/) (at time of writing 9.3) container in Dockerhub:
+
+```
+Bootstrap: docker
+From: almalinux:latest
+Stage: build
+
+%files
+	./pi.py /pi.py
+
+%post
+	chmod 644 /pi.py
+	dnf update -y
+	dnf install -y 'dnf-command(config-manager)'
+	dnf config-manager --set-enabled crb
+	dnf install -y epel-release
+	dnf install -y python3 python3-pip python3-virtualenv
+	virtualenv /runtime
+	source /runtime/bin/activate
+	pip install --upgrade pip
+	pip install numba
+%runscript
+	source /runtime/bin/activate
+	python3 /pi.py
+```
+
+
+It copys the `pi.py` file into the image (the `%files` section), updates the packages in the container, installs the Code Ready Builder and EPEL repositories, and uses them to install `pip` and `virtualenv` (the `%post` section).  Finally it uses those two tools to build a virtualenvironment with Numba to run the code in. 
+
+Finally it sets the container's run command to activate the virtual environment with the dependencies and execute `pi.py` (the `%runscript` section).
+
+### Build container
+
+To the build the container simply run:
+
+```
+apptainer build --fakeroot alma_python.sif alma_python.def
+```
+
+The `--fakeroot` option is important because of course as a normal user on our HPC systems you are not `root`.
+
+### Running the container
+
+To run the container:
+
+```
+apptainer run alma_python.sif 
+```
