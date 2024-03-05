@@ -1926,9 +1926,10 @@ as normal </li>
 <p>or you can pass it in with the <code>–-bind=$HOME/.Xauthority</code> option to <code>singularity shell</code> or 
 <code>singularity exec</code>.</p>
 <h2 id="building-containers-with-apptainer">Building containers with Apptainer<a class="headerlink" href="#building-containers-with-apptainer" title="Permanent link">§</a></h2>
-<div class="codehilite"><pre><span></span><code>This requires Apptainer and will not work in clusters which still use Singularity.
-</code></pre></div>
-
+<div class="admonition important">
+<p class="admonition-title">Singularity update to Apptainer</p>
+<p>This requires Apptainer and will not work in clusters which still use Singularity.</p>
+</div>
 <p>One of the nice new features of Apptainer is it is now possible to build containers on the login/compute nodes of our clusters and you no longer need to have a separate Linux machine (or the Singularity build service) to do so.</p>
 <h3 id="set-up-your-environment">Set up your environment<a class="headerlink" href="#set-up-your-environment" title="Permanent link">§</a></h3>
 <p>Load the <code>apptainer</code> module:</p>
