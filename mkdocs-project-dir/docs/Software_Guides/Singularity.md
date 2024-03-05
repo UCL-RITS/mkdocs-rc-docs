@@ -210,6 +210,7 @@ or you can pass it in with the `–-bind=$HOME/.Xauthority` option to `singulari
 
 ## Building containers with Apptainer
 
+!!! important "Singularity update to Apptainer" 
     This requires Apptainer and will not work in clusters which still use Singularity.
 
 
