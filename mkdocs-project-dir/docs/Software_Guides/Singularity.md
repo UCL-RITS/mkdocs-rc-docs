@@ -228,7 +228,7 @@ module load apptainer
 
 Unfortunately Apptainer doesn't (yet) support Dockerfiles and [uses its own syntax](https://apptainer.org/docs/user/main/definition_files.html). 
 
-There are example files in [this repository](https://github.com/owainkenwayucl/apptainer_examples) and we will use the "[AlmaLinux Python](https://github.com/owainkenwayucl/apptainer_examples/tree/main/almalinux_python) example here.
+There are example files in [this repository](https://github.com/owainkenwayucl/apptainer_examples) and we will use the "[AlmaLinux Python](https://github.com/owainkenwayucl/apptainer_examples/tree/main/almalinux_python)" example here.
 
 The two files you need for this example are [`alma_python.def`](https://github.com/owainkenwayucl/apptainer_examples/blob/main/almalinux_python/alma_python.def) and [`pi.py`](https://github.com/owainkenwayucl/apptainer_examples/blob/main/almalinux_python/pi.py).
 
