@@ -258,7 +258,7 @@ Stage: build
 ```
 
 
-It copys the `pi.py` file into the image (the `%files` section), updates the packages in the container, installs the Code Ready Builder and EPEL repositories, and uses them to install `pip` and `virtualenv` (the `%post` section).  Finally it uses those two tools to build a virtualenvironment with Numba to run the code in. 
+It copys the `pi.py` file into the image (the `%files` section), updates the packages in the container, installs the Code Ready Builder and EPEL repositories, and uses them to install `pip` and `virtualenv` (the `%post` section).  Finally it uses those two tools to build a virtual environment with Numba to run the code in. 
 
 Finally it sets the container's run command to activate the virtual environment with the dependencies and execute `pi.py` (the `%runscript` section).
 
