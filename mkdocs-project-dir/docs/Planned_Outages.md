@@ -4,9 +4,9 @@ layout: docs
 
 # Planned Outages
 
-!!! important "UCL Christmas closing"
-    UCL is closed from Fri 22 Dec to Mon 1 Jan 2024.
-    Any tickets or issues will be dealt with after we return on Tues 2 Jan.
+!!! important "UCL Easter closing"
+    UCL is closed from Thurs 28 March to Weds 3 April 2024.
+    Any tickets or issues will be dealt with after we return on Thurs 4 April.
 
 The second Tuesday of every month is a maintenance day, when the following clusters should be considered at risk from 8:00AM: Myriad, Kathleen, Thomas, Young, Michael, Aristotle and the Data Science Platform. We won’t necessarily perform maintenance every month, and notice by email will not always be given about maintenance day work that only puts services at risk.
 
