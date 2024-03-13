@@ -20,12 +20,12 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-12 March 2024 | Myriad | Planned | Full outage to fix inaccurate quota reporting. Jobs will be drained for 8am. From 9am no one will be able to log in and no files can be accessed. We do not know until we begin quotachecks whether they will take multiple days.
 
 ## Previous Outages
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+12 March 2024 | Myriad | Completed | Full outage to fix inaccurate quota reporting. Jobs will be drained for 8am. From 9am no one will be able to log in and no files can be accessed. We do not know until we begin quotachecks whether they will take multiple days. (Completed on Weds 13 March 13:15)
 14 Nov 2023 | Myriad | Completed | Work on leaf switches in datacentre. Jobs will be drained for 8am. During the outage we intend to upgrade Singularity to Apptainer. We intend to restart jobs on the Weds 15 Nov.
 29 Aug -> 1 Sept 2023 | Kathleen | Completed | Our vendors need us to do some filesystem testing on Kathleen to prepare for the replacement of its Scratch filesystem with a new filesystem later this year. We will drain jobs for 8am on Tues 29th. Depending on how long it takes to gather this information, we may not be running jobs for the rest of the week. We will update you on Thursday around lunchtime. (Jobs were restarted on Mon 4 Sept 12:00)
 11 July 2023        | Myriad  | Completed | Full shutdown for replacement of both Lustre controllers in the filesystem. There will be no login access, no jobs running. Jobs will be drained for 8am. Myriad will be returned to service during the day on Weds 12 July.
