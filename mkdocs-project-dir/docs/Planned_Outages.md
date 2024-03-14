@@ -20,6 +20,8 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+21 March 2024 | Kathleen, Young | Planned | Update of module version. Should not cause outage. 
+9 April 2024 | Myriad, Michael | Planned | Update of module version. May require nodes to be drained and then jobs begun again.
 
 ## Previous Outages
 
