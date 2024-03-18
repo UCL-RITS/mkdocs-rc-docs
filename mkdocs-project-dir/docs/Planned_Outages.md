@@ -21,7 +21,8 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
 21 March 2024 | Kathleen, Young | Planned | Update of module version. Should not cause outage. 
-9 April 2024 | Myriad, Michael | Planned | Update of module version. May require nodes to be drained and then jobs begun again.
+5 April -> 8 April 2024 | Kathleen, Young, Michael | Planned | Annual electrical testing in datacentre. No access to cluster from 15:00 on Fri 5 April to later afternoon on Mon 8 April and no jobs will be running. We will update Singularity to Apptainer on 8th on all three clusters. On Michael we will also update the module version (brought forward from 9 April).
+9 April 2024 | Myriad | Planned | Update of module version. May require nodes to be drained and then jobs begun again.
 
 ## Previous Outages
 
