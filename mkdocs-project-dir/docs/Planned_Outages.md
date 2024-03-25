@@ -20,14 +20,14 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-21 March 2024 | Kathleen, Young | Planned | Update of module version. Should not cause outage. 
 5 April -> 8 April 2024 | Kathleen, Young, Michael | Planned | Annual electrical testing in datacentre. No access to cluster from 15:00 on Fri 5 April to later afternoon on Mon 8 April and no jobs will be running. We will update Singularity to Apptainer on 8th on all three clusters. On Michael we will also update the module version (brought forward from 9 April).
-9 April 2024 | Myriad | Planned | Update of module version. May require nodes to be drained and then jobs begun again.
+9 April 2024 | Myriad | Planned | Update of module version. Jobs to be drained for 8am, modules update to be done and then jobs begun again later in the day.
 
 ## Previous Outages
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+21 March 2024 | Kathleen, Young | Completed | Update of module version. Should not cause outage.
 12 March 2024 | Myriad | Completed | Full outage to fix inaccurate quota reporting. Jobs will be drained for 8am. From 9am no one will be able to log in and no files can be accessed. We do not know until we begin quotachecks whether they will take multiple days. (Completed on Weds 13 March 13:15)
 14 Nov 2023 | Myriad | Completed | Work on leaf switches in datacentre. Jobs will be drained for 8am. During the outage we intend to upgrade Singularity to Apptainer. We intend to restart jobs on the Weds 15 Nov.
 29 Aug -> 1 Sept 2023 | Kathleen | Completed | Our vendors need us to do some filesystem testing on Kathleen to prepare for the replacement of its Scratch filesystem with a new filesystem later this year. We will drain jobs for 8am on Tues 29th. Depending on how long it takes to gather this information, we may not be running jobs for the rest of the week. We will update you on Thursday around lunchtime. (Jobs were restarted on Mon 4 Sept 12:00)
