@@ -338,6 +338,20 @@ Output files will be saved in the job's working directory.
 
 On Myriad the maximum number of MPI processors you can request is 36.
 
+#### Changes to jobscripts for ANSYS Fluent 2021.R2
+
+The following changes are needed to the example jobscript for the
+older ANSYS 2021.R2 version. Load this module file instead:
+
+```
+module load ansys/2021.r2
+```
+and run flunent with this MPI option:
+
+```
+fluent 3ddp -t$NSLOTS -mpi=intel -cnf=$TMPDIR/machines -g < test-1.in
+```
+
 ### Troubleshooting Fluent
 
 If you are getting licensing errors when trying to run a parallel job and you have an older version's `~/.ansys/v161/licensing/license.preferences.xml` file, delete it. It does not work with the newer license server. (This applies to all older versions, not just `v161`).
