@@ -1283,6 +1283,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#changes-to-jobscripts-for-ansys-fluent-2021r2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changes to jobscripts for ANSYS Fluent 2021.R2
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1676,6 +1685,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#changes-to-jobscripts-for-ansys-fluent-2021r2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changes to jobscripts for ANSYS Fluent 2021.R2
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2020,6 +2038,16 @@ be used to submit the job eg: </p>
 <p>Output files will be saved in the job's working directory.</p>
 <h4 id="running-ansys-fluent-with-mpi-on-myriad">Running ANSYS Fluent with MPI on Myriad<a class="headerlink" href="#running-ansys-fluent-with-mpi-on-myriad" title="Permanent link">§</a></h4>
 <p>On Myriad the maximum number of MPI processors you can request is 36.</p>
+<h4 id="changes-to-jobscripts-for-ansys-fluent-2021r2">Changes to jobscripts for ANSYS Fluent 2021.R2<a class="headerlink" href="#changes-to-jobscripts-for-ansys-fluent-2021r2" title="Permanent link">§</a></h4>
+<p>The following changes are needed to the example jobscript for the
+older ANSYS 2021.R2 version. Load this module file instead:</p>
+<div class="codehilite"><pre><span></span><code>module load ansys/2021.r2
+</code></pre></div>
+
+<p>and run flunent with this MPI option:</p>
+<div class="codehilite"><pre><span></span><code>fluent 3ddp -t$NSLOTS -mpi=intel -cnf=$TMPDIR/machines -g &lt; test-1.in
+</code></pre></div>
+
 <h3 id="troubleshooting-fluent">Troubleshooting Fluent<a class="headerlink" href="#troubleshooting-fluent" title="Permanent link">§</a></h3>
 <p>If you are getting licensing errors when trying to run a parallel job and you have an older version's <code>~/.ansys/v161/licensing/license.preferences.xml</code> file, delete it. It does not work with the newer license server. (This applies to all older versions, not just <code>v161</code>).</p>
 <p>Fluent 14 required <code>-mpi=pcmpi -pinfiniband</code> in the parallel options: if you have older scripts remember to remove this.</p>
