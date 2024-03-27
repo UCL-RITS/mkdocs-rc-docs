@@ -346,7 +346,7 @@ older ANSYS 2021.R2 version. Load this module file instead:
 ```
 module load ansys/2021.r2
 ```
-and run flunent with this MPI option:
+and run fluent with this MPI option:
 
 ```
 fluent 3ddp -t$NSLOTS -mpi=intel -cnf=$TMPDIR/machines -g < test-1.in
