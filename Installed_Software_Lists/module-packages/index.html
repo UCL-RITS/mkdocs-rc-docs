@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -1597,7 +1597,7 @@
 <p>Our clusters have a wide range of software installed, available by using the modules system.</p>
 <p>The module files are organised by name, version, variant (where applicable) and, if relevant, the compiler version used to build the software. If no compiler version is given, either no compiler was required, or only the base system compiler (<code>/usr/bin/gcc</code>) and libraries were used.</p>
 <p>When we install applications, we try to install them on all of our clusters, but sometimes licence restrictions prevent it. If something seems to be missing, it may be because we are not able to provide it. Please contact us for more information if this is hindering your work.</p>
-<p>The lists below were last updated at 11:05:25 (+0000) on 03 Mar 2024, and are generated from the software installed on the <a href="../../Clusters/Myriad/">Myriad</a> cluster.</p>
+<p>The lists below were last updated at 16:35:11 (+0100) on 04 Apr 2024, and are generated from the software installed on the <a href="../../Clusters/Myriad/">Myriad</a> cluster.</p>
 <h2 id="bundles">Bundles<a class="headerlink" href="#bundles" title="Permanent link">§</a></h2>
 <p>Some applications or tools depend on a lot of other modules, or have some awkward requirements. For these, we sometimes make a "bundle" module in this section, that loads all the dependencies.</p>
 <p>For Python and R in particular, we also have <code>recommended</code> bundles that load the module for a recent version of Python or R, along with a collection of packages for it that have been requested by users, and the modules those packages require.</p>
@@ -1696,6 +1696,10 @@
 <td style="text-align: left;">Adds set of default modules to the environment for gmt users.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>grass/8.0dev</code></td>
+<td style="text-align: left;">adds UCL set of modules for GRASS GIS 8.0 Dev to your environment</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>imperial-modules</code></td>
 <td style="text-align: left;">Adds Imperial College licensed software module space to module avail.</td>
 </tr>
@@ -1772,12 +1776,40 @@
 <td style="text-align: left;">adds UCL recommended set of R packages to your environment variables</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>r/r-3.6.3_bc-3.10</code></td>
+<td style="text-align: left;">adds UCL recommended set of R packages to your environment variables</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>r/r-4.0.2</code></td>
 <td style="text-align: left;">adds UCL recommended set of R packages for R 4.0.2 to your environment variables</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>r/r-4.0.2_bc-3.11</code></td>
+<td style="text-align: left;">adds UCL recommended set of R packages for R 4.0.2 to your environment variables</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>r/r-4.1.1_bc-3.13</code></td>
+<td style="text-align: left;">adds UCL recommended set of R packages for R 4.1.1 to your environment variables</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>r/r-4.2.0_bc-3.15</code></td>
+<td style="text-align: left;">adds UCL recommended set of R packages for R 4.2.0 to your environment variables</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>r/r-4.2.2_bc-3.16</code></td>
+<td style="text-align: left;">adds UCL recommended set of R packages for R 4.2.2 to your environment variables</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>r/r-4.2.3</code></td>
 <td style="text-align: left;">adds UCL recommended set of R packages for R 4.2.3 to your environment variables</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>r/r-4.2.3_bc-3.16</code></td>
+<td style="text-align: left;">adds UCL recommended set of R packages for R 4.2.3 to your environment variables</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>r/r-4.3.3_bc-3.18</code></td>
+<td style="text-align: left;">adds UCL recommended set of R packages for R 4.3.3 to your environment variables</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>r/recommended</code></td>
@@ -1883,6 +1915,18 @@
 <td style="text-align: left;">Adds AMBER 16 to your environment</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>amber/20/mpi/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds AMBER 20 and AmberTools 21 to your environment</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>amber/20/openmp/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds AMBER 20 and AmberTools 21 to your environment. OpenMP threaded version.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>amber/20/serial/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds AMBER 20 and AmberTools 21 to your environment</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>ampliconarchitect/1.3r1</code></td>
 <td style="text-align: left;">Amplicon Architect is a tool for finding amplicons in Illumina reads.</td>
 </tr>
@@ -1919,6 +1963,10 @@
 <td style="text-align: left;">Adds ANTs 2.1.0 (Advanced Normalization Tools) to your environment. ANTs is popularly considered a state-of-the-art medical image registration and segmentation toolkit.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>ants/2.5.1/gnu-10.2.0</code></td>
+<td style="text-align: left;">ANTs (Advanced Normalization Tools) computes high-dimensional mappings to capture the statistics of brain structure and function.</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>approxwf/gnu-4.9.2</code></td>
 <td style="text-align: left;">Adds ApproxWF to your environment.</td>
 </tr>
@@ -1929,6 +1977,14 @@
 <tr>
 <td style="text-align: center;"><code>asp/2.6.2</code></td>
 <td style="text-align: left;">Adds NASA Ames Stereo Pipeline (ASP) 6.2.2 to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>atlas-adna/0.9_2021-04-16/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds ATLAS Ancient DNA Analysis package to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>atlas-adna/0.9_2021-08-13/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds ATLAS Ancient DNA Analysis package to your environment.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>autodock/4.2.6</code></td>
@@ -1977,6 +2033,10 @@
 <tr>
 <td style="text-align: center;"><code>bedtools/2.25.0</code></td>
 <td style="text-align: left;">Adds bedtools 2.25.0 to your environment. The bedtools utilities are a swiss-army knife of tools for a wide-range of genomics analysis tasks.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>bedtools/2.30.0/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds bedtools 2.30.0 to your environment. The bedtools utilities are a swiss-army knife of tools for a wide-range of genomics analysis tasks.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>bgen/1.1.4</code></td>
@@ -2204,6 +2264,10 @@
 </tr>
 <tr>
 <td style="text-align: center;"><code>cp2k/7.1/ompi/gnu-4.9.2</code></td>
+<td style="text-align: left;">Adds CP2K to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>cp2k/8.2/ompi/gnu-10.2.0</code></td>
 <td style="text-align: left;">Adds CP2K to your environment.</td>
 </tr>
 <tr>
@@ -2539,6 +2603,18 @@
 <td style="text-align: left;">adds GDAL 3.0.4 with PROJ.4 6.1.0 to your environment variables. Works with Python 2.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>gdal/3.0.4/gnu-9.2.0</code></td>
+<td style="text-align: left;">adds GDAL 3.0.4 with PROJ.4 7.0.0 to your environment variables.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>gdal/3.1.3/gnu-9.2.0</code></td>
+<td style="text-align: left;">adds GDAL 3.1.3 with PROJ.4 7.0.0 to your environment variables.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>gdal/3.3.2/gnu-10.2.0</code></td>
+<td style="text-align: left;">adds GDAL 3.3.2 with PROJ.4 8.1.1 to your environment variables.</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>gephi/0.9.1</code></td>
 <td style="text-align: left;">Adds Gephi Version 0.9.1 to your environment.</td>
 </tr>
@@ -2571,6 +2647,14 @@
 <td style="text-align: left;">adds GMT 5.4.5 to your environment variables</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>gmt/6.0.0/gnu-9.2.0</code></td>
+<td style="text-align: left;">adds GMT 6.0.0 to your environment variables</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>gmt/6.2.0/gnu-10.2.0</code></td>
+<td style="text-align: left;">adds GMT 6.2.0 to your environment variables</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>gnuplot/5.0.1</code></td>
 <td style="text-align: left;">Adds gnuplot 5.0.1 to your environment. Gnuplot is a portable command-line driven graphing utility.</td>
 </tr>
@@ -2593,6 +2677,10 @@
 <tr>
 <td style="text-align: center;"><code>graphviz/2.40.1/gnu-4.9.2</code></td>
 <td style="text-align: left;">This module adds the Graphviz 2.40.1 package to your environment. Graphviz is open source graph visualization software.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>grass/8.0-dev/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds GRASS GIS 8.0 Development Version to your environment.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>groff/1.22.3/gnu-4.9.2</code></td>
@@ -2659,8 +2747,32 @@
 <td style="text-align: left;">GROMACS 2019.3 molecular dynamics package, built with Intel 2018u3 compilers, PLUMED 2.5.2 patches (including libmatheval).</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>gromacs/2020.1/cuda-10.1</code></td>
+<td style="text-align: left;">Adds gromacs 2020.1 to your environment. GROMACS is a package for performing molecular dynamics, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>gromacs/2020.1/intel-2020</code></td>
+<td style="text-align: left;">Adds gromacs 2020.1 to your environment. GROMACS is a package for performing molecular dynamics, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>gromacs/2020.4/cuda-10.1</code></td>
+<td style="text-align: left;">Adds gromacs 2020.4 to your environment. GROMACS is a package for performing molecular dynamics, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>gromacs/2020.4/intel-2020</code></td>
+<td style="text-align: left;">Adds gromacs 2020.4 to your environment. GROMACS is a package for performing molecular dynamics, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>gromacs/2021.2/gnu-7.3.0</code></td>
+<td style="text-align: left;">Adds gromacs 2021.2 to your environment. GROMACS is a package for performing molecular dynamics, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>gromacs/2021.3/plumed/gnu-10.2.0</code></td>
 <td style="text-align: left;">GROMACS 2021.3 molecular dynamics package, built with GNU 10.2.0 compilers, PLUMED 2.7.2 patches (including libmatheval).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>gromacs/2021.5/cuda-11.3</code></td>
+<td style="text-align: left;">Adds gromacs 2021.5 built with CUDA 11.3 to your environment. ThreadMPI and OpenMPI versions included. GROMACS is a package for performing molecular dynamics, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>gulp/4.5/intel-2018</code></td>
@@ -2775,6 +2887,26 @@
 <td style="text-align: left;">Adds JAGS 4.2.0 to your environment.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>jags/4.3.0/gnu-10.2.0-openblas</code></td>
+<td style="text-align: left;">Adds JAGS 4.3.0 to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>jags/4.3.1/gnu-10.2.0-openblas</code></td>
+<td style="text-align: left;">Adds JAGS 4.3.1 to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>jags/4.3.2/gnu-10.2.0-openblas</code></td>
+<td style="text-align: left;">Adds JAGS 4.3.2 to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>jagurs/gnu-10.2.0-ompi</code></td>
+<td style="text-align: left;">adds JAGURS V0516 MPI version to your environment variables</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>jagurs/mpi/recommended</code></td>
+<td style="text-align: left;">Adds set of default modules to the environment for JAGURS users.</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>jq/1.5/gnu-4.9.2</code></td>
 <td style="text-align: left;">adds jq for GCC 4.9.2 to your environment.</td>
 </tr>
@@ -2809,6 +2941,22 @@
 <tr>
 <td style="text-align: center;"><code>knitro/13.1.0/gnu-4.9.2</code></td>
 <td style="text-align: left;">Adds Knitro solver 13.1.0 to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>lammps/2aug23/basic-fftw/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds LAMMPS 2 August 2023 to your environment. Binary is lmp_mpi.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>lammps/2aug23/basic/intel-2022.2</code></td>
+<td style="text-align: left;">Adds LAMMPS 2nd August 2023 to your environment. Binary is lmp_mpi or lmp_default.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>lammps/2aug23/gpu/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds LAMMPS 2 August 2023 GPU build to your environment. Binary is lmp_gpu.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>lammps/2aug23/userintel/intel-2022.2</code></td>
+<td style="text-align: left;">Adds LAMMPS 2 August 2023 with INTEL package to your environment. Binary is lmp_mpi or lmp_default.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>lammps/3Mar20/plumed-colvars/intel-2018</code></td>
@@ -2853,6 +3001,38 @@
 <tr>
 <td style="text-align: center;"><code>lammps/16Mar18/userintel/intel-2018</code></td>
 <td style="text-align: left;">Adds LAMMPS 16Mar18 to your environment. Binary is lmp_default.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>lammps/28mar23/basic-fftw/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds LAMMPS 28 March 2023 to your environment. Binary is lmp_mpi.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>lammps/29sep21up2/basic-fftw/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds LAMMPS 29Sep2021 Update 2 to your environment. Binary is lmp_mpi.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>lammps/29sep21up2/basic/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds LAMMPS 29Sep2021 Update 2 to your environment. Binary is lmp.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>lammps/29sep21up2/basic/gnu-10.2.0-aristotle</code></td>
+<td style="text-align: left;">Adds LAMMPS 29Sep2021 Update 2 to your environment. Binary is lmp_aristotle.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>lammps/29sep21up2/basic/intel-2020</code></td>
+<td style="text-align: left;">Adds LAMMPS 29Sep2021 Update 2 to your environment. Binary is lmp_mpi or lmp_default.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>lammps/29sep21up2/gpu/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds LAMMPS 29Sep2021 Update 2 to your environment. Binary is lmp.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>lammps/29sep21up2/gpu/intel-2020</code></td>
+<td style="text-align: left;">Adds LAMMPS 29Sep2021 Update 2 with gpu package to your environment. Binary is lmp_gpu or lmp_default.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>lammps/29sep21up2/userintel/intel-2020</code></td>
+<td style="text-align: left;">Adds LAMMPS 29Sep2021 Update 2 with INTEL package to your environment. Binary is lmp_mpi or lmp_default.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>lynx/2.8.9</code></td>
@@ -2908,6 +3088,10 @@
 </tr>
 <tr>
 <td style="text-align: center;"><code>matlab/full/r2018a/9.4</code></td>
+<td style="text-align: left;">Adds Matlab R2018a to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>matlab/full/r2018a/9.4-prefdir-fix</code></td>
 <td style="text-align: left;">Adds Matlab R2018a to your environment.</td>
 </tr>
 <tr>
@@ -3411,8 +3595,24 @@
 <td style="text-align: left;">Adds the PROJ.4 Cartographic Projections library to your environment.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>proj.4/7.0.0/gnu-9.2.0</code></td>
+<td style="text-align: left;">Adds the PROJ.4 Cartographic Projections library to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>proj.4/8.1.1/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds the PROJ.4 Cartographic Projections library to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>proj.4/9.2.0/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds the PROJ.4 Cartographic Projections library to your environment.</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>proovread/2.13.11-8Jan2016-f6a856a</code></td>
 <td style="text-align: left;">Adds proovread 2.13.11-8Jan2016-f6a856a to your environment. f6a856a is the commit for this version.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>prsice/2.3.3/gnu-9.2.0</code></td>
+<td style="text-align: left;">PRSice (pronounced 'precise') is a software package for calculating, applying, evaluating and plotting the results of polygenic risk scores (PRS).</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>pymol/1.7.7.2</code></td>
@@ -3515,6 +3715,18 @@
 <td style="text-align: left;">Adds R 3.6.0 and Bioconductor 3.9 to your environment.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>r/3.6.3-openblas/gnu-9.2.0</code></td>
+<td style="text-align: left;">Adds R 3.6.3 and Bioconductor 3.10 to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>r/4.0.2-openblas/gnu-9.2.0</code></td>
+<td style="text-align: left;">Adds R 4.0.2 and Bioconductor 3.11 to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>r/4.1.1-openblas/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds R 4.1.1 and Bioconductor 3.13 to your environment.</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>r/4.2.0-openblas/gnu-10.2.0</code></td>
 <td style="text-align: left;">Adds R 4.2.0 and Bioconductor 3.15 to your environment.</td>
 </tr>
@@ -3525,6 +3737,10 @@
 <tr>
 <td style="text-align: center;"><code>r/4.2.3-openblas/gnu-10.2.0</code></td>
 <td style="text-align: left;">Adds R 4.2.3 and Bioconductor 3.16 to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>r/4.3.3-openblas/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds R 4.3.3 and Bioconductor 3.18 to your environment.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>randfold/2.0/gnu-4.9.2</code></td>
@@ -3711,8 +3927,16 @@
 <td style="text-align: left;">Adds SQLite Version 3.31.1 to your environment.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>sqlite/3.36.0/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds SQLite Version 3.36.0 to your environment.</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>sqlite/3.41.2</code></td>
 <td style="text-align: left;">SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>sra-tools/3.0.6/gnu-10.2.0</code></td>
+<td style="text-align: left;">adds SRA Tools 3.0.6 for GCC 10.2.0 to your environment.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>stacks/2.54/gnu-4.9.2</code></td>
@@ -3777,6 +4001,10 @@
 <tr>
 <td style="text-align: center;"><code>stata/15</code></td>
 <td style="text-align: left;">Adds Stata/MP 15 to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>stata/16</code></td>
+<td style="text-align: left;">Adds Stata/MP 16 to your environment.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>supermagic/1.2/intel-2017</code></td>
@@ -3991,18 +4219,6 @@
 <td style="text-align: left;">UbPred is a random forest-based predictor of potential ubiquitination sites in proteins.</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>udunits/2.2.19</code></td>
-<td style="text-align: left;">Adds udunits to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>udunits/2.2.20/gnu-4.9.2</code></td>
-<td style="text-align: left;">adds the UDUNITS-2 package to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>udunits/2.2.26/gnu-4.9.2</code></td>
-<td style="text-align: left;">adds the UDUNITS-2 package to your environment.</td>
-</tr>
-<tr>
 <td style="text-align: center;"><code>varscan/2.3.9</code></td>
 <td style="text-align: left;">Adds VarScan v2.3.9 to your environment. VarScan is a platform-independent mutation caller for targeted, exome, and whole-genome resequencing data generated on Illumina, SOLiD, Life/PGM, Roche/454, and similar instruments.</td>
 </tr>
@@ -4167,6 +4383,10 @@
 <td style="text-align: left;">Adds armadillo 7.400.3 to your environment. Armadillo is a linear alebra library for C++, aiming to balance speed and ease of use.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>armadillo/10.4.0/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds Armadillo Version 10.4.0 C++ library to your environment.</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>arpack-ng/3.4.0/intel-2015-update2</code></td>
 <td style="text-align: left;">Adds arpack-ng 3.4.0 to your environment. ARPACK-NG is a collection of Fortran77 subroutines designed to solve large scale eigenvalue problems.</td>
 </tr>
@@ -4181,6 +4401,10 @@
 <tr>
 <td style="text-align: center;"><code>arpack-ng/3.5.0/intel-2017</code></td>
 <td style="text-align: left;">Adds arpack-ng 3.5.0 to your environment. ARPACK-NG is a collection of Fortran77 subroutines designed to solve large scale eigenvalue problems.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>arpack-ng/3.8.0-threaded/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds arpack-ng 3.8.0 to your environment. ARPACK-NG is a collection of Fortran77 subroutines designed to solve large scale eigenvalue problems.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>atlas/3.10.2/gnu-4.9.2</code></td>
@@ -4257,6 +4481,62 @@
 <tr>
 <td style="text-align: center;"><code>cppunit/1.15.1/gnu-10.2.0</code></td>
 <td style="text-align: left;">Adds CppUnit 1.15.1 built wuth GNU 10.2.0 to your environment. CppUnit is a package for writing and running unit tests in C++.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>cudnn/5.1/cuda-7.5</code></td>
+<td style="text-align: left;">Adds cuDNN to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>cudnn/5.1/cuda-8.0</code></td>
+<td style="text-align: left;">Adds cuDNN to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>cudnn/6.0/cuda-7.5</code></td>
+<td style="text-align: left;">Adds cuDNN to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>cudnn/6.0/cuda-8.0</code></td>
+<td style="text-align: left;">Adds cuDNN to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>cudnn/7.0.4/cuda-8.0</code></td>
+<td style="text-align: left;">Adds cuDNN to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>cudnn/7.1.4/cuda-9.0</code></td>
+<td style="text-align: left;">Adds cuDNN to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>cudnn/7.4.2.24/cuda-9.0</code></td>
+<td style="text-align: left;">Adds cuDNN to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>cudnn/7.4.2.24/cuda-10.0</code></td>
+<td style="text-align: left;">Adds cuDNN to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>cudnn/7.5.0.56/cuda-10.0</code></td>
+<td style="text-align: left;">Adds cuDNN to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>cudnn/7.5.0.56/cuda-10.1</code></td>
+<td style="text-align: left;">Adds cuDNN to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>cudnn/7.6.5.32/cuda-10.0</code></td>
+<td style="text-align: left;">Adds cuDNN to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>cudnn/7.6.5.32/cuda-10.1</code></td>
+<td style="text-align: left;">Adds cuDNN to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>cudnn/8.1.0.77/cuda-11.2</code></td>
+<td style="text-align: left;">Adds cuDNN 8.1.0 to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>cudnn/8.2.1.32/cuda-11.3</code></td>
+<td style="text-align: left;">Adds cuDNN 8.2.1 to your environment.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>cunit/2.1-3/gnu-4.9.2</code></td>
@@ -4339,6 +4619,18 @@
 <td style="text-align: left;">Adds fftw 3.3.8 (built with OpenMPI) to your environment.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>fftw/3.3.8/gnu-7.3.0</code></td>
+<td style="text-align: left;">Adds FFTW 3.3.8 for GCC 7.3.0 compilers to your environment variables. Includes single and double precision, plus long-double and quad. Includes OpenMP and POSIX threads libraries.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>fftw/3.3.8/gnu-9.2.0</code></td>
+<td style="text-align: left;">Adds FFTW 3.3.8 for GCC 9.2.0 compilers to your environment variables. Includes single and double precision, plus long-double and quad. Includes OpenMP and POSIX threads libraries.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>fftw/3.3.9/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds FFTW 3.3.9 for GCC 10.2.0 compilers to your environment variables. Includes single and double precision, plus long-double and quad. Includes OpenMP and POSIX threads libraries.</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>fftw/3.3.10-impi/intel-2022</code></td>
 <td style="text-align: left;">Adds fftw fftw (built with Intel 2022 Comilers and MPI) to your environment.</td>
 </tr>
@@ -4371,8 +4663,32 @@
 <td style="text-align: left;">adds GCC 4.9.2 runtime to your evironment.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>gcc-libs/7.3.0</code></td>
+<td style="text-align: left;">Base module for gcc 7.3.0 -- does not set the standard compiler environment variables. The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages (libstdc++,...).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>gcc-libs/8.3.0</code></td>
+<td style="text-align: left;">Base module for gcc 8.3.0 -- does not set the standard compiler environment variables. The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages (libstdc++,...).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>gcc-libs/9.2.0</code></td>
+<td style="text-align: left;">Base module for gcc 9.2.0 -- does not set the standard compiler environment variables. The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages (libstdc++,...).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>gcc-libs/10.2.0</code></td>
+<td style="text-align: left;">Base module for gcc 10.2.0 -- does not set the standard compiler environment variables. The GNU Compiler Collection includes front ends for C, C++, Objective-C, and Fortran, as well as libraries for these languages (libstdc++,...). Patch 95889 for __has_include applied.</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>geos/3.5.0/gnu-4.9.2</code></td>
 <td style="text-align: left;">Adds geos 3.5.0 to your environment. GEOS (Geometry Engine, Open Source) is a library for performing various spatial operations, especially for boolean operations on GIS data. Note this version <em>does not</em> include the SWIG, Python, Ruby, or PHP bindings.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>geos/3.8.1/gnu-9.2.0</code></td>
+<td style="text-align: left;">Adds geos 3.8.1 to your environment. GEOS (Geometry Engine, Open Source) is a library for performing various spatial operations, especially for boolean operations on GIS data. Note this version <em>does not</em> include the SWIG, Python, Ruby, or PHP bindings.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>geos/3.9.1/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds geos 3.9.1 to your environment. GEOS (Geometry Engine, Open Source) is a library for performing various spatial operations, especially for boolean operations on GIS data. Note this version <em>does not</em> include the SWIG, Python, Ruby, or PHP bindings.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>gflags/2.2.1</code></td>
@@ -4421,6 +4737,14 @@
 <tr>
 <td style="text-align: center;"><code>gsl/2.4/intel-2017</code></td>
 <td style="text-align: left;">adds GSL 2.4 for Intel 2017 to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>gsl/2.6/gnu-9.2.0</code></td>
+<td style="text-align: left;">adds GSL 2.6 for GCC 9.2.0 to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>gsl/2.7/gnu-10.2.0</code></td>
+<td style="text-align: left;">adds GSL 2.7 for GCC 10.2.0 to your environment.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>gstreamer/1.12.0</code></td>
@@ -4473,6 +4797,14 @@
 <tr>
 <td style="text-align: center;"><code>hdf/5-1.10.5/gnu-4.9.2</code></td>
 <td style="text-align: left;">Adds hdf 5-1.10.5 to your environment. Serial version built with GNU.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>hdf/5-1.10.5/gnu-9.2.0</code></td>
+<td style="text-align: left;">Adds hdf 5-1.10.5 to your environment. Serial version built with GNU.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>hdf/5-1.10.6/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds hdf 5-1.10.6 to your environment. Serial version built with GNU 10.2.0.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>hdf/5-1.12.3-impi/intel-2022</code></td>
@@ -4587,6 +4919,10 @@
 <td style="text-align: left;">Adds libmatheval 1.1.11 to your environment. GNU libmatheval is a library (callable from C and Fortran) to parse and evaluate symbolic expressions input as text.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>libpng/1.6.37/gnu-9.2.0</code></td>
+<td style="text-align: left;">Adds libpng 1.6.37 to your environment.</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>libsodium/1.0.6/gnu-4.9.2</code></td>
 <td style="text-align: left;">Adds libsodium 1.0.6 to your environment. libsodium is a crypto library primarily used by ZeroMQ.</td>
 </tr>
@@ -4660,6 +4996,10 @@
 </tr>
 <tr>
 <td style="text-align: center;"><code>med/4.0.0/gnu-4.9.2</code></td>
+<td style="text-align: left;">Adds med 4.0.0 to your environment. Allows reading and writing of MED format files.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>med/4.0.0/gnu-9.2.0</code></td>
 <td style="text-align: left;">Adds med 4.0.0 to your environment. Allows reading and writing of MED format files.</td>
 </tr>
 <tr>
@@ -4799,8 +5139,16 @@
 <td style="text-align: left;">Adds openmpi 3.1.4 to your environment. The Open MPI Project is an open source Message Passing Interface implementation.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>mpi/openmpi/3.1.4/gnu-7.3.0</code></td>
+<td style="text-align: left;">Adds openmpi 3.1.4 to your environment. The Open MPI Project is an open source Message Passing Interface implementation.</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>mpi/openmpi/3.1.4/intel-2018</code></td>
 <td style="text-align: left;">Adds openmpi 3.1.4 to your environment. The Open MPI Project is an open source Message Passing Interface implementation.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>mpi/openmpi/3.1.5/gnu-9.2.0</code></td>
+<td style="text-align: left;">Adds openmpi 3.1.5 to your environment. The Open MPI Project is an open source Message Passing Interface implementation.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>mpi/openmpi/3.1.6/gnu-4.9.2</code></td>
@@ -4809,6 +5157,10 @@
 <tr>
 <td style="text-align: center;"><code>mpi/openmpi/4.0.3/gnu-4.9.2</code></td>
 <td style="text-align: left;">Adds openmpi 4.0.3 to your environment. The Open MPI Project is an open source Message Passing Interface implementation.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>mpi/openmpi/4.0.5/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds openmpi 4.0.5 to your environment. The Open MPI Project is an open source Message Passing Interface implementation.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>mpi/openmpi/4.1.1/gnu-4.9.2</code></td>
@@ -4841,6 +5193,10 @@
 <tr>
 <td style="text-align: center;"><code>mumps-thirdparty/3.0.0/intel-2018</code></td>
 <td style="text-align: left;">The COIN-OR Tools project ThirdParty-Mumps can be used to download the MUMPS code and build a MUMPS library that is recognized by Ipopt. This version of ThirdParty-Mumps retrieves and builds MUMPS 5.4.0.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>mumps/5.2.1/gnu-9.2.0</code></td>
+<td style="text-align: left;">Adds mumps 5.2.1 to your environment. Sequential (threaded) version built with GNU, OpenBLAS and METIS.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>mumps/5.2.1/intel-2018</code></td>
@@ -4959,6 +5315,14 @@
 <td style="text-align: left;">adds NetCDF 4.3.3.1 for Intel 2015 to your environment.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>netcdf/4.7.4/gnu-9.2.0</code></td>
+<td style="text-align: left;">adds NetCDF 4.7.4 for GCC 9.2.0 to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>netcdf/4.8.1/gnu-10.2.0</code></td>
+<td style="text-align: left;">adds NetCDF 4.8.1 for GCC 10.2.0 to your environment.</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>netcdf/4.9.0/intel-2018-update3</code></td>
 <td style="text-align: left;">adds NetCDF 4.9.0 for Intel 2018 to your environment.</td>
 </tr>
@@ -5003,12 +5367,36 @@
 <td style="text-align: left;">This is a module with no description string.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>openblas/0.3.7-native-threads/gnu-9.2.0</code></td>
+<td style="text-align: left;">OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>openblas/0.3.7-openmp/gnu-4.9.2</code></td>
 <td style="text-align: left;">This is a module with no description string.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>openblas/0.3.7-openmp/gnu-9.2.0</code></td>
+<td style="text-align: left;">OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>openblas/0.3.7-serial/gnu-4.9.2</code></td>
 <td style="text-align: left;">This is a module with no description string.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>openblas/0.3.7-serial/gnu-9.2.0</code></td>
+<td style="text-align: left;">OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>openblas/0.3.13-native-threads/gnu-10.2.0</code></td>
+<td style="text-align: left;">OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>openblas/0.3.13-openmp/gnu-10.2.0</code></td>
+<td style="text-align: left;">OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>openblas/0.3.13-serial/gnu-10.2.0</code></td>
+<td style="text-align: left;">OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>openjpeg/2.4.0/gnu-4.9.2</code></td>
@@ -5039,6 +5427,14 @@
 <td style="text-align: left;">Adds pcre2 10.21 to your environment. PCRE (Perl-compatible regular expressions) is a C library implementing regular expression pattern-matching using the same semantics as Perl 5.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>pcre2/10.35/gnu-9.2.0</code></td>
+<td style="text-align: left;">Adds pcre2 10.35 to your environment. PCRE (Perl-compatible regular expressions) is a C library implementing regular expression pattern-matching using the same semantics as Perl 5.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>pcre2/10.37/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds pcre2 10.37 to your environment. PCRE (Perl-compatible regular expressions) is a C library implementing regular expression pattern-matching using the same semantics as Perl 5.</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>pgplot/5.2.2/intel-2017</code></td>
 <td style="text-align: left;">Adds PGPlot 5.2.2 to your environment.</td>
 </tr>
@@ -5053,6 +5449,14 @@
 <tr>
 <td style="text-align: center;"><code>protobuf/3.5.1/gnu-4.9.2</code></td>
 <td style="text-align: left;">adds Google Protocol Buffers for GCC 4.9.2 to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>protobuf/3.14.0/gnu-9.2.0</code></td>
+<td style="text-align: left;">adds Google Protocol Buffers for GCC 9.2.0 to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>protobuf/3.17.3/gnu-10.2.0</code></td>
+<td style="text-align: left;">adds Google Protocol Buffers for GCC 10.2.0 to your environment.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>protobuf/12-2017/gnu-4.9.2</code></td>
@@ -5087,6 +5491,10 @@
 <td style="text-align: left;">Adds QUIP to your environment.  QUIP is required for CP2K.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>quip/c6359e1/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds QUIP to your environment built with GNU 10.2.0 for recent versions of LAMMPS</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>qutip/4.1.0/python-2.7.12</code></td>
 <td style="text-align: left;">Adds qutip to your environment.</td>
 </tr>
@@ -5101,6 +5509,10 @@
 <tr>
 <td style="text-align: center;"><code>scalapack/2.0.2/gnu-4.9.2/openblas-0.3.7</code></td>
 <td style="text-align: left;">Adds ScaLAPACK 2.0.2 to your environment, built with GCC, OpenBLAS and OpenMPI. Static and shared libraries.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>scalapack/2.1.0/gnu-9.2.0/openblas-0.3.7</code></td>
+<td style="text-align: left;">ScaLAPACK is a library of high-performance linear algebra routines for parallel distributed memory machines. ScaLAPACK solves dense and banded linear systems, least squares problems, eigenvalue problems, and singular value problems.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>snappy/1.1.7</code></td>
@@ -5147,6 +5559,10 @@
 <td style="text-align: left;">Adds superlu-dist 5.1.0 to your environment. SuperLU_DIST is the distributed-memory parallel version of SuperLU, a general purpose library for the direct solution of large, sparse, nonsymmetric systems of linear equations.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>superlu/5.2.1/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds superlu 5.2.1 to your environment. SuperLU is a general purpose library for the direct solution of large, sparse, nonsymmetric systems of linear equations.</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>superlu/5.2.1/intel-2015-update2</code></td>
 <td style="text-align: left;">Adds superlu 5.2.1 to your environment. SuperLU is a general purpose library for the direct solution of large, sparse, nonsymmetric systems of linear equations.</td>
 </tr>
@@ -5161,6 +5577,30 @@
 <tr>
 <td style="text-align: center;"><code>ucx/1.9.0/gnu-4.9.2</code></td>
 <td style="text-align: left;">Adds ucx 1.9.0 to your environment. Unified Communication X (UCX) provides an optimized communication layer for Message Passing (MPI), PGAS/OpenSHMEM libraries and RPC/data-centric applications.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>ucx/1.9.0/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds ucx 1.9.0 to your environment. Unified Communication X (UCX) provides an optimized communication layer for Message Passing (MPI), PGAS/OpenSHMEM libraries and RPC/data-centric applications.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>udunits/2.2.19</code></td>
+<td style="text-align: left;">Adds udunits to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>udunits/2.2.20/gnu-4.9.2</code></td>
+<td style="text-align: left;">adds the UDUNITS-2 package to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>udunits/2.2.26/gnu-4.9.2</code></td>
+<td style="text-align: left;">adds the UDUNITS-2 package to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>udunits/2.2.26/gnu-9.2.0</code></td>
+<td style="text-align: left;">adds the UDUNITS-2 package to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>udunits/2.2.28/gnu-10.2.0</code></td>
+<td style="text-align: left;">adds the UDUNITS-2 package to your environment.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>unixodbc/2.3.7</code></td>
@@ -5203,12 +5643,32 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: center;"><code>compilers/chapel/1.26.0</code></td>
+<td style="text-align: left;">Chapel 1.26.0 for GCC</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>compilers/clang/8.0.0</code></td>
 <td style="text-align: left;">The Clang project provides a language front-end and tooling infrastructure for languages in the C language family (C, C++, Objective C/C++, OpenCL, CUDA, and RenderScript) for the LLVM project. This module sets variables to make the clang compiler binary the default C and C++ compiler in your environment.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>compilers/gnu/4.9.2</code></td>
 <td style="text-align: left;">adds GCC 4.9.2 compilers to your environment variables</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>compilers/gnu/7.3.0</code></td>
+<td style="text-align: left;">The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages (libstdc++,...).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>compilers/gnu/8.3.0</code></td>
+<td style="text-align: left;">The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages (libstdc++,...).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>compilers/gnu/9.2.0</code></td>
+<td style="text-align: left;">The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages (libstdc++,...).</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>compilers/gnu/10.2.0</code></td>
+<td style="text-align: left;">The GNU Compiler Collection includes front ends for C, C++, Objective-C, and Fortran, as well as libraries for these languages (libstdc++,...).</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>compilers/go/1.7.3</code></td>
@@ -5456,6 +5916,10 @@
 <td style="text-align: left;">Adds binutils 2.29.1 to your environment. The GNU binutils are a collection of tools for working with binary files and assembling and disassembling machine instructions.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>binutils/2.36.1/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds binutils 2.36.1 to your environment. The GNU binutils are a collection of tools for working with binary files and assembling and disassembling machine instructions.</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>bison/3.0.4/gnu-4.9.2</code></td>
 <td style="text-align: left;">Adds Bison 3.0.4 to your environment. Bison is a general-purpose parser generator.</td>
 </tr>
@@ -5520,52 +5984,28 @@
 <td style="text-align: left;">Adds cuda 10.1.243 to your environment. This is for compiling CUDA code to run on NVIDIA GPUs.</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>cudnn/5.1/cuda-7.5</code></td>
-<td style="text-align: left;">Adds cuDNN to your environment.</td>
+<td style="text-align: center;"><code>cuda/10.1.243/gnu-7.3.0</code></td>
+<td style="text-align: left;">Adds cuda 10.1.243 to your environment. This is for compiling CUDA code to run on NVIDIA GPUs.</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>cudnn/5.1/cuda-8.0</code></td>
-<td style="text-align: left;">Adds cuDNN to your environment.</td>
+<td style="text-align: center;"><code>cuda/11.1.1/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds cuda 11.1.1 to your environment. This is for compiling CUDA code to run on NVIDIA GPUs.</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>cudnn/6.0/cuda-7.5</code></td>
-<td style="text-align: left;">Adds cuDNN to your environment.</td>
+<td style="text-align: center;"><code>cuda/11.2.0/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds cuda 11.2.0 to your environment. This is for compiling CUDA code to run on NVIDIA GPUs.</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>cudnn/6.0/cuda-8.0</code></td>
-<td style="text-align: left;">Adds cuDNN to your environment.</td>
+<td style="text-align: center;"><code>cuda/11.3.1/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds cuda 11.3.1 to your environment. This is for compiling CUDA code to run on NVIDIA GPUs.</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>cudnn/7.0.4/cuda-8.0</code></td>
-<td style="text-align: left;">Adds cuDNN to your environment.</td>
+<td style="text-align: center;"><code>cuda/11.8.0/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds cuda 11.8.0 to your environment. This is for compiling CUDA code to run on NVIDIA GPUs.</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>cudnn/7.1.4/cuda-9.0</code></td>
-<td style="text-align: left;">Adds cuDNN to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>cudnn/7.4.2.24/cuda-9.0</code></td>
-<td style="text-align: left;">Adds cuDNN to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>cudnn/7.4.2.24/cuda-10.0</code></td>
-<td style="text-align: left;">Adds cuDNN to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>cudnn/7.5.0.56/cuda-10.0</code></td>
-<td style="text-align: left;">Adds cuDNN to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>cudnn/7.5.0.56/cuda-10.1</code></td>
-<td style="text-align: left;">Adds cuDNN to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>cudnn/7.6.5.32/cuda-10.0</code></td>
-<td style="text-align: left;">Adds cuDNN to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>cudnn/7.6.5.32/cuda-10.1</code></td>
-<td style="text-align: left;">Adds cuDNN to your environment.</td>
+<td style="text-align: center;"><code>cuda/12.2.2/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds cuda 12.2.2 to your environment. This is for compiling CUDA code to run on NVIDIA GPUs.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>ddt/6.0.4</code></td>
@@ -6208,302 +6648,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><code>amber/20/mpi/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds AMBER 20 and AmberTools 21 to your environment</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>amber/20/openmp/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds AMBER 20 and AmberTools 21 to your environment. OpenMP threaded version.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>amber/20/serial/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds AMBER 20 and AmberTools 21 to your environment</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>ants/2.5.1/gnu-10.2.0</code></td>
-<td style="text-align: left;">ANTs (Advanced Normalization Tools) computes high-dimensional mappings to capture the statistics of brain structure and function.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>armadillo/10.4.0/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds Armadillo Version 10.4.0 C++ library to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>arpack-ng/3.8.0-threaded/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds arpack-ng 3.8.0 to your environment. ARPACK-NG is a collection of Fortran77 subroutines designed to solve large scale eigenvalue problems.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>atlas-adna/0.9_2021-04-16/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds ATLAS Ancient DNA Analysis package to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>atlas-adna/0.9_2021-08-13/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds ATLAS Ancient DNA Analysis package to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>bedtools/2.30.0/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds bedtools 2.30.0 to your environment. The bedtools utilities are a swiss-army knife of tools for a wide-range of genomics analysis tasks.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>binutils/2.36.1/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds binutils 2.36.1 to your environment. The GNU binutils are a collection of tools for working with binary files and assembling and disassembling machine instructions.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>compilers/chapel/1.26.0</code></td>
-<td style="text-align: left;">Chapel 1.26.0 for GCC</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>compilers/gnu/7.3.0</code></td>
-<td style="text-align: left;">The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages (libstdc++,...).</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>compilers/gnu/8.3.0</code></td>
-<td style="text-align: left;">The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages (libstdc++,...).</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>compilers/gnu/9.2.0</code></td>
-<td style="text-align: left;">The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages (libstdc++,...).</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>compilers/gnu/10.2.0</code></td>
-<td style="text-align: left;">The GNU Compiler Collection includes front ends for C, C++, Objective-C, and Fortran, as well as libraries for these languages (libstdc++,...).</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>cp2k/8.2/ompi/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds CP2K to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>cuda/10.1.243/gnu-7.3.0</code></td>
-<td style="text-align: left;">Adds cuda 10.1.243 to your environment. This is for compiling CUDA code to run on NVIDIA GPUs.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>cuda/11.1.1/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds cuda 11.1.1 to your environment. This is for compiling CUDA code to run on NVIDIA GPUs.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>cuda/11.2.0/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds cuda 11.2.0 to your environment. This is for compiling CUDA code to run on NVIDIA GPUs.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>cuda/11.3.1/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds cuda 11.3.1 to your environment. This is for compiling CUDA code to run on NVIDIA GPUs.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>cuda/11.8.0/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds cuda 11.8.0 to your environment. This is for compiling CUDA code to run on NVIDIA GPUs.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>cuda/12.2.2/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds cuda 12.2.2 to your environment. This is for compiling CUDA code to run on NVIDIA GPUs.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>cudnn/8.1.0.77/cuda-11.2</code></td>
-<td style="text-align: left;">Adds cuDNN 8.1.0 to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>cudnn/8.2.1.32/cuda-11.3</code></td>
-<td style="text-align: left;">Adds cuDNN 8.2.1 to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>fftw/3.3.8/gnu-7.3.0</code></td>
-<td style="text-align: left;">Adds FFTW 3.3.8 for GCC 7.3.0 compilers to your environment variables. Includes single and double precision, plus long-double and quad. Includes OpenMP and POSIX threads libraries.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>fftw/3.3.8/gnu-9.2.0</code></td>
-<td style="text-align: left;">Adds FFTW 3.3.8 for GCC 9.2.0 compilers to your environment variables. Includes single and double precision, plus long-double and quad. Includes OpenMP and POSIX threads libraries.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>fftw/3.3.9/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds FFTW 3.3.9 for GCC 10.2.0 compilers to your environment variables. Includes single and double precision, plus long-double and quad. Includes OpenMP and POSIX threads libraries.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>gcc-libs/7.3.0</code></td>
-<td style="text-align: left;">Base module for gcc 7.3.0 -- does not set the standard compiler environment variables. The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages (libstdc++,...).</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>gcc-libs/8.3.0</code></td>
-<td style="text-align: left;">Base module for gcc 8.3.0 -- does not set the standard compiler environment variables. The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages (libstdc++,...).</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>gcc-libs/9.2.0</code></td>
-<td style="text-align: left;">Base module for gcc 9.2.0 -- does not set the standard compiler environment variables. The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages (libstdc++,...).</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>gcc-libs/10.2.0</code></td>
-<td style="text-align: left;">Base module for gcc 10.2.0 -- does not set the standard compiler environment variables. The GNU Compiler Collection includes front ends for C, C++, Objective-C, and Fortran, as well as libraries for these languages (libstdc++,...). Patch 95889 for __has_include applied.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>gdal/3.0.4/gnu-9.2.0</code></td>
-<td style="text-align: left;">adds GDAL 3.0.4 with PROJ.4 7.0.0 to your environment variables.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>gdal/3.1.3/gnu-9.2.0</code></td>
-<td style="text-align: left;">adds GDAL 3.1.3 with PROJ.4 7.0.0 to your environment variables.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>gdal/3.3.2/gnu-10.2.0</code></td>
-<td style="text-align: left;">adds GDAL 3.3.2 with PROJ.4 8.1.1 to your environment variables.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>geos/3.8.1/gnu-9.2.0</code></td>
-<td style="text-align: left;">Adds geos 3.8.1 to your environment. GEOS (Geometry Engine, Open Source) is a library for performing various spatial operations, especially for boolean operations on GIS data. Note this version <em>does not</em> include the SWIG, Python, Ruby, or PHP bindings.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>geos/3.9.1/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds geos 3.9.1 to your environment. GEOS (Geometry Engine, Open Source) is a library for performing various spatial operations, especially for boolean operations on GIS data. Note this version <em>does not</em> include the SWIG, Python, Ruby, or PHP bindings.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>gmt/6.0.0/gnu-9.2.0</code></td>
-<td style="text-align: left;">adds GMT 6.0.0 to your environment variables</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>gmt/6.2.0/gnu-10.2.0</code></td>
-<td style="text-align: left;">adds GMT 6.2.0 to your environment variables</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>grass/8.0-dev/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds GRASS GIS 8.0 Development Version to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>grass/8.0dev</code></td>
-<td style="text-align: left;">adds UCL set of modules for GRASS GIS 8.0 Dev to your environment</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>gromacs/2020.1/cuda-10.1</code></td>
-<td style="text-align: left;">Adds gromacs 2020.1 to your environment. GROMACS is a package for performing molecular dynamics, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>gromacs/2020.1/intel-2020</code></td>
-<td style="text-align: left;">Adds gromacs 2020.1 to your environment. GROMACS is a package for performing molecular dynamics, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>gromacs/2020.4/cuda-10.1</code></td>
-<td style="text-align: left;">Adds gromacs 2020.4 to your environment. GROMACS is a package for performing molecular dynamics, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>gromacs/2020.4/intel-2020</code></td>
-<td style="text-align: left;">Adds gromacs 2020.4 to your environment. GROMACS is a package for performing molecular dynamics, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>gromacs/2021.2/gnu-7.3.0</code></td>
-<td style="text-align: left;">Adds gromacs 2021.2 to your environment. GROMACS is a package for performing molecular dynamics, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>gromacs/2021.5/cuda-11.3</code></td>
-<td style="text-align: left;">Adds gromacs 2021.5 built with CUDA 11.3 to your environment. ThreadMPI and OpenMPI versions included. GROMACS is a package for performing molecular dynamics, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>gsl/2.6/gnu-9.2.0</code></td>
-<td style="text-align: left;">adds GSL 2.6 for GCC 9.2.0 to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>gsl/2.7/gnu-10.2.0</code></td>
-<td style="text-align: left;">adds GSL 2.7 for GCC 10.2.0 to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>hdf/5-1.10.5/gnu-9.2.0</code></td>
-<td style="text-align: left;">Adds hdf 5-1.10.5 to your environment. Serial version built with GNU.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>hdf/5-1.10.6/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds hdf 5-1.10.6 to your environment. Serial version built with GNU 10.2.0.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>jags/4.3.0/gnu-10.2.0-openblas</code></td>
-<td style="text-align: left;">Adds JAGS 4.3.0 to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>jags/4.3.1/gnu-10.2.0-openblas</code></td>
-<td style="text-align: left;">Adds JAGS 4.3.1 to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>jags/4.3.2/gnu-10.2.0-openblas</code></td>
-<td style="text-align: left;">Adds JAGS 4.3.2 to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>jagurs/gnu-10.2.0-ompi</code></td>
-<td style="text-align: left;">adds JAGURS V0516 MPI version to your environment variables</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>jagurs/mpi/recommended</code></td>
-<td style="text-align: left;">Adds set of default modules to the environment for JAGURS users.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>lammps/2aug23/basic-fftw/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds LAMMPS 2 August 2023 to your environment. Binary is lmp_mpi.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>lammps/2aug23/basic/intel-2022.2</code></td>
-<td style="text-align: left;">Adds LAMMPS 2nd August 2023 to your environment. Binary is lmp_mpi or lmp_default.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>lammps/2aug23/gpu/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds LAMMPS 2 August 2023 GPU build to your environment. Binary is lmp_gpu.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>lammps/2aug23/userintel/intel-2022.2</code></td>
-<td style="text-align: left;">Adds LAMMPS 2 August 2023 with INTEL package to your environment. Binary is lmp_mpi or lmp_default.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>lammps/28mar23/basic-fftw/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds LAMMPS 28 March 2023 to your environment. Binary is lmp_mpi.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>lammps/29sep21up2/basic-fftw/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds LAMMPS 29Sep2021 Update 2 to your environment. Binary is lmp_mpi.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>lammps/29sep21up2/basic/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds LAMMPS 29Sep2021 Update 2 to your environment. Binary is lmp.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>lammps/29sep21up2/basic/gnu-10.2.0-aristotle</code></td>
-<td style="text-align: left;">Adds LAMMPS 29Sep2021 Update 2 to your environment. Binary is lmp_aristotle.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>lammps/29sep21up2/basic/intel-2020</code></td>
-<td style="text-align: left;">Adds LAMMPS 29Sep2021 Update 2 to your environment. Binary is lmp_mpi or lmp_default.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>lammps/29sep21up2/gpu/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds LAMMPS 29Sep2021 Update 2 to your environment. Binary is lmp.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>lammps/29sep21up2/gpu/intel-2020</code></td>
-<td style="text-align: left;">Adds LAMMPS 29Sep2021 Update 2 with gpu package to your environment. Binary is lmp_gpu or lmp_default.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>lammps/29sep21up2/userintel/intel-2020</code></td>
-<td style="text-align: left;">Adds LAMMPS 29Sep2021 Update 2 with INTEL package to your environment. Binary is lmp_mpi or lmp_default.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>libpng/1.6.37/gnu-9.2.0</code></td>
-<td style="text-align: left;">Adds libpng 1.6.37 to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>matlab/full/r2018a/9.4-prefdir-fix</code></td>
-<td style="text-align: left;">Adds Matlab R2018a to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>med/4.0.0/gnu-9.2.0</code></td>
-<td style="text-align: left;">Adds med 4.0.0 to your environment. Allows reading and writing of MED format files.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>mpi/openmpi/3.1.4/gnu-7.3.0</code></td>
-<td style="text-align: left;">Adds openmpi 3.1.4 to your environment. The Open MPI Project is an open source Message Passing Interface implementation.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>mpi/openmpi/3.1.5/gnu-9.2.0</code></td>
-<td style="text-align: left;">Adds openmpi 3.1.5 to your environment. The Open MPI Project is an open source Message Passing Interface implementation.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>mpi/openmpi/4.0.5/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds openmpi 4.0.5 to your environment. The Open MPI Project is an open source Message Passing Interface implementation.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>mumps/5.2.1/gnu-9.2.0</code></td>
-<td style="text-align: left;">Adds mumps 5.2.1 to your environment. Sequential (threaded) version built with GNU, OpenBLAS and METIS.</td>
-</tr>
-<tr>
 <td style="text-align: center;"><code>namd/2.13/intel-2018-update3/testing</code></td>
 <td style="text-align: left;">Adds NAMD 2.13 to your environment</td>
 </tr>
@@ -6512,116 +6656,12 @@
 <td style="text-align: left;">Adds NAMD 2.13 to your environment</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>netcdf/4.7.4/gnu-9.2.0</code></td>
-<td style="text-align: left;">adds NetCDF 4.7.4 for GCC 9.2.0 to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>netcdf/4.8.1/gnu-10.2.0</code></td>
-<td style="text-align: left;">adds NetCDF 4.8.1 for GCC 10.2.0 to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>openblas/0.3.7-native-threads/gnu-9.2.0</code></td>
-<td style="text-align: left;">OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>openblas/0.3.7-openmp/gnu-9.2.0</code></td>
-<td style="text-align: left;">OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>openblas/0.3.7-serial/gnu-9.2.0</code></td>
-<td style="text-align: left;">OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>openblas/0.3.13-native-threads/gnu-10.2.0</code></td>
-<td style="text-align: left;">OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>openblas/0.3.13-openmp/gnu-10.2.0</code></td>
-<td style="text-align: left;">OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>openblas/0.3.13-serial/gnu-10.2.0</code></td>
-<td style="text-align: left;">OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>pcre2/10.35/gnu-9.2.0</code></td>
-<td style="text-align: left;">Adds pcre2 10.35 to your environment. PCRE (Perl-compatible regular expressions) is a C library implementing regular expression pattern-matching using the same semantics as Perl 5.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>pcre2/10.37/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds pcre2 10.37 to your environment. PCRE (Perl-compatible regular expressions) is a C library implementing regular expression pattern-matching using the same semantics as Perl 5.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>proj.4/7.0.0/gnu-9.2.0</code></td>
-<td style="text-align: left;">Adds the PROJ.4 Cartographic Projections library to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>proj.4/8.1.1/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds the PROJ.4 Cartographic Projections library to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>proj.4/9.2.0/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds the PROJ.4 Cartographic Projections library to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>protobuf/3.14.0/gnu-9.2.0</code></td>
-<td style="text-align: left;">adds Google Protocol Buffers for GCC 9.2.0 to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>protobuf/3.17.3/gnu-10.2.0</code></td>
-<td style="text-align: left;">adds Google Protocol Buffers for GCC 10.2.0 to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>prsice/2.3.3/gnu-9.2.0</code></td>
-<td style="text-align: left;">PRSice (pronounced 'precise') is a software package for calculating, applying, evaluating and plotting the results of polygenic risk scores (PRS).</td>
-</tr>
-<tr>
 <td style="text-align: center;"><code>python/3.9.6-gnu-10.2.0</code></td>
 <td style="text-align: left;">Adds Python 3.9.6 compiled with GNU 10.2.0 with pip and virtualenv to your environment variables.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>python3/3.9-gnu-10.2.0</code></td>
 <td style="text-align: left;">Adds UCL recommended set of python packages to your environment variables. To see what is included, check https://github.com/UCL-RITS/rcps-buildscripts/blob/master/lists/python-shared.list and https://github.com/UCL-RITS/rcps-buildscripts/blob/master/lists/python-3.list</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>quip/c6359e1/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds QUIP to your environment built with GNU 10.2.0 for recent versions of LAMMPS</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>r/3.6.3-openblas/gnu-9.2.0</code></td>
-<td style="text-align: left;">Adds R 3.6.3 and Bioconductor 3.10 to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>r/4.0.2-openblas/gnu-9.2.0</code></td>
-<td style="text-align: left;">Adds R 4.0.2 and Bioconductor 3.11 to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>r/4.1.1-openblas/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds R 4.1.1 and Bioconductor 3.13 to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>r/r-3.6.3_bc-3.10</code></td>
-<td style="text-align: left;">adds UCL recommended set of R packages to your environment variables</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>r/r-4.0.2_bc-3.11</code></td>
-<td style="text-align: left;">adds UCL recommended set of R packages for R 4.0.2 to your environment variables</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>r/r-4.1.1_bc-3.13</code></td>
-<td style="text-align: left;">adds UCL recommended set of R packages for R 4.1.1 to your environment variables</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>r/r-4.2.0_bc-3.15</code></td>
-<td style="text-align: left;">adds UCL recommended set of R packages for R 4.2.0 to your environment variables</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>r/r-4.2.2_bc-3.16</code></td>
-<td style="text-align: left;">adds UCL recommended set of R packages for R 4.2.2 to your environment variables</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>r/r-4.2.3_bc-3.16</code></td>
-<td style="text-align: left;">adds UCL recommended set of R packages for R 4.2.3 to your environment variables</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>rcps-core-beta/gnu-7.3.0</code></td>
@@ -6642,38 +6682,6 @@
 <tr>
 <td style="text-align: center;"><code>sac/102.0-test/gnu-10.2.0</code></td>
 <td style="text-align: left;">Adds SAC 102.0 to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>scalapack/2.1.0/gnu-9.2.0/openblas-0.3.7</code></td>
-<td style="text-align: left;">ScaLAPACK is a library of high-performance linear algebra routines for parallel distributed memory machines. ScaLAPACK solves dense and banded linear systems, least squares problems, eigenvalue problems, and singular value problems.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>sqlite/3.36.0/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds SQLite Version 3.36.0 to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>sra-tools/3.0.6/gnu-10.2.0</code></td>
-<td style="text-align: left;">adds SRA Tools 3.0.6 for GCC 10.2.0 to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>stata/16</code></td>
-<td style="text-align: left;">Adds Stata/MP 16 to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>superlu/5.2.1/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds superlu 5.2.1 to your environment. SuperLU is a general purpose library for the direct solution of large, sparse, nonsymmetric systems of linear equations.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>ucx/1.9.0/gnu-10.2.0</code></td>
-<td style="text-align: left;">Adds ucx 1.9.0 to your environment. Unified Communication X (UCX) provides an optimized communication layer for Message Passing (MPI), PGAS/OpenSHMEM libraries and RPC/data-centric applications.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>udunits/2.2.26/gnu-9.2.0</code></td>
-<td style="text-align: left;">adds the UDUNITS-2 package to your environment.</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>udunits/2.2.28/gnu-10.2.0</code></td>
-<td style="text-align: left;">adds the UDUNITS-2 package to your environment.</td>
 </tr>
 </tbody>
 </table>
@@ -6765,7 +6773,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.bd41221c.min.js"></script>
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
       
     
   </body>
