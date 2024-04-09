@@ -20,13 +20,14 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-5 April -> 8 April 2024 | Kathleen, Young, Michael | Planned | Annual electrical testing in datacentre. No access to cluster from 15:00 on Fri 5 April to later afternoon on Mon 8 April and no jobs will be running. We will update Singularity to Apptainer on 8th on all three clusters. On Michael we will also update the module version (brought forward from 9 April).
-9 April 2024 | Myriad | Planned | Update of module version. Jobs to be drained for 8am, modules update to be done and then jobs begun again later in the day.
+05 April -> 10 May 2024 | Young | In progress | The cabinets in Young are being re-cabled in turn. We plan for an eighth of Young to be out of service at a time, so queues may be longer due to fewer available nodes. This maintenance is essential for the longevity of Young. The rest of Young will be running jobs as usual.
 
 ## Previous Outages
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+9 April 2024 | Myriad | Completed | Update of module version. Jobs to be drained for 8am, modules update to be done and then jobs begun again later in the day.
+5 April -> 8 April 2024 | Kathleen, Young, Michael | Completed | Annual electrical testing in datacentre. No access to cluster from 15:00 on Fri 5 April to later afternoon on Mon 8 April and no jobs will be running. We will update Singularity to Apptainer on 8th on all three clusters. On Michael we will also update the module version (brought forward from 9 April).
 21 March 2024 | Kathleen, Young | Completed | Update of module version. Should not cause outage.
 12 March 2024 | Myriad | Completed | Full outage to fix inaccurate quota reporting. Jobs will be drained for 8am. From 9am no one will be able to log in and no files can be accessed. We do not know until we begin quotachecks whether they will take multiple days. (Completed on Weds 13 March 13:15)
 14 Nov 2023 | Myriad | Completed | Work on leaf switches in datacentre. Jobs will be drained for 8am. During the outage we intend to upgrade Singularity to Apptainer. We intend to restart jobs on the Weds 15 Nov.
