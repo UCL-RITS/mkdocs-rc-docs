@@ -16,7 +16,8 @@ storage science and technology.
 ## Applying for an account
 
 Michael accounts belong to you as an individual and are applied for via
-David Scanlon who is the point of contact for Michael.
+[David Scanlon](http://davidscanlon.com/?page_id=5) who is the point of 
+contact for Michael.
 
 You will need to supply an SSH public key, which is the only method used
 to log in.
