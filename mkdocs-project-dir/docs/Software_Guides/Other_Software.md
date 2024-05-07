@@ -1180,6 +1180,48 @@ Temporary files: by default, Picard writes temporary files into `/tmp` rather th
 
 Quantum Espresso is an integrated suite of Open-Source computer codes for electronic-structure calculations and materials modelling at the nanoscale. It is based on density-functional theory, plane waves, and pseudopotentials. 
 
+The most recent version we have available on the clusters is 7.3.1. For 
+this version we have both the normal CPU/MPI variant and a GPU one. The GPU variant is only 
+available on the Myriad and Young clusters.
+
+For the CPU/MPI variant:
+
+```
+module unload compilers mpi gcc-libs
+module load gcc-libs/10.2.0
+module load compilers/gnu/10.2.0
+module load mpi/openmpi/4.0.5/gnu-10.2.0
+module load fftw/3.3.9/gnu-10.2.0
+module load quantum-espresso/7.3.1-cpu/gnu-10.2.0
+
+# Set the path here to where ever you keep your pseudopotentials.
+export ESPRESSO_PSEUDO=$HOME/qe-psp
+
+# Gerun is our mpirun wrapper which sets the machinefile and number of
+# processes to the amount you requested with -pe mpi.
+gerun pw.x -in input.in >output.out
+
+```
+
+For the GPU variant:
+
+```
+module unload compilers mpi gcc-libs
+module load gcc-libs/10.2.0
+module load compilers/nvidia/hpc-sdk/22.9
+module load quantum-espresso/7.3.1-gpu/nvidia-22.9
+
+# Set the path here to where ever you keep your pseudopotentials.
+export ESPRESSO_PSEUDO=$HOME/qe-psp
+
+# Gerun is our mpirun wrapper which sets the machinefile and number of
+# processes to the amount you requested with -pe mpi.
+gerun pw.x -in input.in >output.out
+
+```
+
+Older versions are still available, for 6.1:
+
 ```
 module load xorg-utils
 module load quantum-espresso/6.1-impi/intel2017
