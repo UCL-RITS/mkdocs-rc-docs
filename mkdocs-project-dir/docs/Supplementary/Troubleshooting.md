@@ -95,7 +95,7 @@ Per session, you can try `LANG=C ssh userid@myriad.rc.ucl.ac.uk`
 
 1.  Minimise the amount of wall clock time you request.
 2.  Use job arrays instead of submitting large numbers of jobs (see our
-    [job script examples](Example_Scripts)).
+    [job script examples](../Example_Jobscripts.md)).
 3.  Plan your work so that you can do other things while your jobs are
     being scheduled.
 
@@ -106,5 +106,5 @@ to the default project "AllUsers" and no longer have to specify this. If
 you see older job script examples mentioning a project ID, you can
 delete that section. Only projects with access to paid or specialised
 resources need to give a project code in order to use those resources.
-If you do not know yours, [contact rc-support](Contact and Support).
+If you do not know yours, [contact rc-support](../Contact_Us.md).
 
