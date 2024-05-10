@@ -141,9 +141,9 @@ These utilities live in GitHub at
 
 ## Software
 
-Michael mounts the [RC Systems software stack](../../Installed_Software_Lists/General_Software_Lists).
+Michael mounts the [RC Systems software stack](../Installed_Software_Lists/module-packages.md).
 
-Have a look at [Software Guides](../../Software_Guides/Other_Software) for specific
+Have a look at [Software Guides](../Software_Guides/Other_Software.md) for specific
 information on running some applications, including example scripts. The
 list there is not exhaustive.
 
@@ -167,7 +167,7 @@ requested.
 ### Installing your own software
 
 You may install software in your own space. Please look at
-[Compiling](Compiling) for tips.
+[Compiling Your Code](../Supplementary/Compiling_Your_Code.md) for tips.
 
 ### Maintaining a piece of software for a group
 
@@ -366,7 +366,7 @@ You have one per-user quota, with a default amount of 250GB - this is the total 
 
 If you go over quota, you will no longer be able to create new files and your jobs will fail as they cannot write.
 
-Quota increases may be granted without further approval, depending on size and how full the filesystem is. Otherwise they may need to go to the Thomas User Group for approval.
+Quota increases may be granted without further approval, depending on size and how full the filesystem is. Otherwise they may need to go to the Michael User Group for approval.
 
 [ back to top](#top "wikilink")
 

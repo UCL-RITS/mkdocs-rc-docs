@@ -175,7 +175,7 @@ You can run containers inside jobscripts in the same way.
 Useful links:
 
 * [Carpentries Incubator lesson: Reproducible computational environments using containers: Introduction to Singularity](https://carpentries-incubator.github.io/singularity-introduction/)
-* [Using NVIDIA Grid Cloud Containers on our clusters](../Supplementary/NVIDIA_Containers/#using-nvidia-grid-cloud-containers)
+* [Using NVIDIA Grid Cloud Containers on our clusters](../Supplementary/NVIDIA_Containers.md#using-nvidia-grid-cloud-containers)
 
 ## Docker containers
 
@@ -195,7 +195,7 @@ If you are trying to run a graphical application from inside a container in an
 interactive job and it is failing with errors about not being able to open a 
 display, you will need to: 
 
- * ssh in to the cluster with [X-forwarding on](../howto.md/#how-do-i-run-a-graphical-program) 
+ * ssh in to the cluster with [X-forwarding on](../howto.md#how-do-i-run-a-graphical-program) 
 as normal 
  * request an [interactive job](../Interactive_Jobs.md) using `qrsh` 
  * bind mount your `$HOME/.Xauthority` file inside the container
