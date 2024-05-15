@@ -13,7 +13,7 @@ R can be run on a single core or multithreaded using many cores (some commands c
 
 `doMPI`, `Rmpi` and `snow` allow multi-node parallel jobs using MPI to be run.
 
-[List of additional R packages](../../Installed_Software_Lists/r-packages) shows you what packages are installed and available for the current R version.
+[List of additional R packages](../Installed_Software_Lists/r-packages.md) shows you what packages are installed and available for the current R version.
 
 ## Setup
 

@@ -38,7 +38,7 @@ Projects are a system used in the scheduler and the accounting system
 to track budgets and access controls.
 
 Most users of UCL's internal clusters will not need to specify a project and will default to the AllUsers 
-project. Users of the Thomas and Michael services should refer to the specific 
+project. Users of the Michael and Young services should refer to the specific 
 pages for those machines, and the information they were given when they registered.
 
 To specify a project ID in a job script, use the `-P` object as below:

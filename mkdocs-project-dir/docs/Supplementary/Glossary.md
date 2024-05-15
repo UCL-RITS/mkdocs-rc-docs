@@ -28,8 +28,13 @@ operate at different bandwidths and with different amounts of latency, which aff
 suitability of a collection of nodes for jobs which use message
 passing ([MPI](#mpi)).
 
+Batch Processing
+: A workflow in which tasks are collected as produced, and then processed as capacity becomes
+available. This usually involves ensuring that the task can be completed without user
+intervention, so that the user does not have to remain present or available.
+
 Job
-: In the context of [Batch Processing](Batch Processing), a job refers to a
+: In the context of [Batch Processing](#batch-processing), a job refers to a
 computational task to be performed such as a single simulation or
 analysis.
 

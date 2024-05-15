@@ -31,7 +31,7 @@ Kathleen is intended for multi-node jobs (using e.g. MPI) and went into service 
 
 - Young
 
-Young is the UK's Tier 2 Materials and Molecular Modelling Hub, and replacement for [Thomas](Clusters/Thomas.md). It is accessible by members of partner institutions and relevant consortia, and is for materials and molecular modelling work only. It has separate access procedures from UCL's central clusters. Access is managed by a Point of Contact from the relevant institution or consortia, not by Research Computing. See [Young](Clusters/Young.md).
+Young is the cluster for the UK's Tier 2 Materials and Molecular Modelling Hub, and replaces the previous Thomas cluster. It is accessible by members of partner institutions and relevant consortia, and is for materials and molecular modelling work only. It has separate access procedures from UCL's central clusters. Access is managed by a Point of Contact from the relevant institution or consortia, not by Research Computing. See [Young](Clusters/Young.md).
 
 - Michael
 

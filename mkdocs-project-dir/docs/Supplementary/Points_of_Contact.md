@@ -8,16 +8,18 @@ layout: docs
 This page contains tools and information for the nominated Points of
 Contact.
 
-Other system-specific information is at [Thomas](../Clusters/Thomas.md),
-[Michael](../Clusters/Michael.md) or [Young](../Clusters/Young.md).
+Other system-specific information is at 
+[Michael](../Clusters/Michael.md) or 
+[Young](../Clusters/Young.md).
 
-These commands can all be run as `thomas-command` or `michael-command`
-or `young-command`:
+These commands can all be run as 
+`michael-command` or
+`young-command`:
 they run the same thing and the different names are for convenience.
 
 ### Displaying user information
 
-`thomas-show`, `michael-show` or `young-show` is a tool that enables you to find a lot
+`young-show`, `michael-show` or `young-show` is a tool that enables you to find a lot
 of information about users. Access to the database is given to points of
 contact individually, contact rc-support@ucl.ac.uk if you try to use
 this and get an access denied.
@@ -29,12 +31,12 @@ everyone's basic info. `--getmmm` will show the most recently used mmm
 username.
 
 ```
-thomas-show -h  
-usage: thomas-show [-h] [--user username] [--contacts] [--institutes]  
+young-show -h  
+usage: young-show [-h] [--user username] [--contacts] [--institutes]  
                   [--allusers] [--getmmm]  
                   {recentusers,getusers,whois} ...
 
-Show data from the Thomas database. Use [positional argument -h] for more  
+Show data from the Young database. Use [positional argument -h] for more  
 help.
 
 positional arguments:  
@@ -54,12 +56,12 @@ optional arguments:
 
 #### Show recent users
 
-`thomas-show recentusers` shows you the
+`young-show recentusers` shows you the
 most recently-added N users, default 5.
 
 ```
-thomas-show recentusers -h  
-usage: thomas-show recentusers [-h] [-n N]
+young-show recentusers -h  
+usage: young-show recentusers [-h] [-n N]
 
 optional arguments:  
  -h, --help  show this help message and exit  
@@ -68,12 +70,12 @@ optional arguments:
 
 #### Show users with a given project, institute, contact
 
-`thomas-show getusers` will search for exact
+`young-show getusers` will search for exact
 matches to the given project, institute, contact combination.
 
 ```
-thomas-show getusers -h  
-usage: thomas-show getusers [-h] [-p PROJECT] [-i INST_ID] [-c POC_ID]
+young-show getusers -h  
+usage: young-show getusers [-h] [-p PROJECT] [-i INST_ID] [-c POC_ID]
 
 optional arguments:  
  -h, --help            show this help message and exit  
@@ -87,13 +89,13 @@ optional arguments:
 
 #### Search for users based on partial information
 
-`thomas-show whois` can be used to search for
+`young-show whois` can be used to search for
 partial matches to username, name, email fragments, including all of
 those in combination.
 
 ```
-thomas-show whois -h  
-usage: thomas-show whois [-h] [-u USERNAME] [-e EMAIL] [-n GIVEN_NAME]  
+young-show whois -h  
+usage: young-show whois [-h] [-u USERNAME] [-e EMAIL] [-n GIVEN_NAME]  
                         [-s SURNAME]
 
 optional arguments:  
@@ -110,7 +112,7 @@ optional arguments:
 
 ### Adding user information and new projects
 
-`thomas-add` will add information to the database.
+`young-add` will add information to the database.
 Access to the database is given to points of contact individually,
 contact rc-support@ucl.ac.uk if you try to use this and get an access
 denied.
@@ -121,10 +123,10 @@ database - double-check that the information you are adding is
 correct.
 
 ```
-thomas-add -h  
-usage: thomas-add [-h] {user,project,projectuser,poc,institute} ...
+young-add -h  
+usage: young-add [-h] {user,project,projectuser,poc,institute} ...
 
-Add data to the Thomas database. Use [positional argument -h] for more help.
+Add data to the Young database. Use [positional argument -h] for more help.
 
 positional arguments:  
  {user,project,projectuser,poc,institute}  
@@ -141,25 +143,25 @@ optional arguments:
 
 #### Add a new user
 
-`thomas-add user` allows you to add a new user,
+`young-add user` allows you to add a new user,
 with their initial project and point of contact. As of 27 June 2022 this now goes 
 ahead and creates their account automatically within 10 minutes - first prompting you 
 that the information you have entered is correct. You do not need to email us separately 
 about creating accounts unless something has gone wrong. The user's initial project
-must already exist (create with `thomas-add project` first).
+must already exist (create with `young-add project` first).
 
 The user will be allocated the next free `mmmxxxx` username - you should 
 only specify username yourself if they are an existing UCL user, or on
-Young if they previously had a Thomas or Michael account you should give
+Young if they previously had a Michael account you should give
 them the same username. If they already have an account on this cluster with
 a different institution, just add them as a projectuser instead using their 
 existing username.
 
-You can get your `poc_id` by looking at `thomas-show --contacts`.
+You can get your `poc_id` by looking at `young-show --contacts`.
 
 ```
-thomas-add user -h  
-usage: thomas-add user [-h] -u USERNAME -n GIVEN_NAME [-s SURNAME] -e  
+young-add user -h  
+usage: young-add user [-h] -u USERNAME -n GIVEN_NAME [-s SURNAME] -e  
                       EMAIL_ADDRESS -k "SSH_KEY" -p PROJECT_ID -c POC_ID  
                       [--debug]
 
@@ -213,7 +215,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAlLhFLr/4LGC3cM1xgRZVxfQ7JgoSvnVXly0K7MNufZb
 Other types of keys (ed25519 etc) will say what they are in the first line,
 and you should change the `ssh-rsa` appropriately. The guide linked at
 [Creating an ssh key in
-Windows](https://wiki.rc.ucl.ac.uk/wiki/Thomas#Creating_an_ssh_key_in_Windows)
+Windows](../Clusters/Young.md#Creating_an_ssh_key_in_Windows)
 also shows where users can get the second format out of PuTTY.
 
 #### Add new users in bulk from a CSV file
@@ -228,7 +230,7 @@ email,given_name,surname,username,project_ID,ssh_key
 ```
 You can leave username empty for it to allocate them a new username, but if 
 they have an existing mmm username you should fill it in. 
-It may be useful to [show users with a given institute](#show-users-with-a-given-project-institute-contact) on Thomas if you are migrating users from one service to another.
+It may be useful to [show users with a given institute](#show-users-with-a-given-project-institute-contact) on Young if you are migrating users from one service to another.
 
 You can [download a CSV template here](MMM_Hub_Files/young.csv). Replace the
 example data.
@@ -251,7 +253,7 @@ beginning with `M-oM-;M-?` and ending with `^M` you probably need to run
 
 #### Add a new project
 
-`thomas-add project` will create a new project,
+`young-add project` will create a new project,
 associated with an institution. It will not show in Gold until it also
 has a user in it.
 
@@ -259,8 +261,8 @@ A project ID should begin with your institute ID, followed by an
 underscore and a project name.
 
 ```
-thomas-add project -h  
-usage: thomas-add project [-h] -p PROJECT_ID -i INST_ID [--debug]
+young-add project -h  
+usage: young-add project [-h] -p PROJECT_ID -i INST_ID [--debug]
 
 optional arguments:  
  -h, --help            show this help message and exit  
@@ -273,7 +275,7 @@ optional arguments:
 
 #### Add a new project/user pairing
 
-`thomas-add projectuser` will add an
+`young-add projectuser` will add an
 existing user to an existing project. Creating a new user for an
 existing project also creates this relationship. After a new
 project-user relationship is added, a cron job will pick that up within
@@ -281,8 +283,8 @@ project-user relationship is added, a cron job will pick that up within
 allocation.
 
 ```
-thomas-add projectuser -h  
-usage: thomas-add projectuser [-h] -u USERNAME -p PROJECT_ID -c POC_ID  
+young-add projectuser -h  
+usage: young-add projectuser [-h] -u USERNAME -p PROJECT_ID -c POC_ID  
                              [--debug]
 
 optional arguments:  
@@ -311,7 +313,7 @@ You can confirm the change by looking at `young-show --user` - it will say
 
 ```
 young-deactivate projectuser -h
-usage: thomas_deactivate.py projectuser [-h] -u USERNAME -p PROJECT [--debug]
+usage: young_deactivate.py projectuser [-h] -u USERNAME -p PROJECT [--debug]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -326,8 +328,8 @@ optional arguments:
 ## Gold resource allocation
 
 We are currently using Gold to manage allocations.
-Thomas and Michael share one Gold database, so all the projects exist on both, 
-but they are only active on the correct cluster. Young has its own database.
+The Michael and Young clusters use separate databases for this, so projects
+on one will not appear on the other.
 
 ### Reporting from Gold
 

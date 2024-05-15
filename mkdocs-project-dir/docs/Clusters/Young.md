@@ -2,9 +2,10 @@
 title: MMM Hub Young
 layout: cluster
 ---
-Young is the UK National Tier 2 High Performance Computing Hub in
-Materials and Molecular Modelling, and replacement for [Thomas](./Thomas.md). 
-Young went into pilot on 3 Aug 2020.
+Young is the compute cluster for the UK National Tier 2 High Performance Computing Hub in
+Materials and Molecular Modelling.
+
+Young entered pilot phase on 3 Aug 2020, and entered full service on 1 Oct 2020.
 
 ## Training resources
 
@@ -201,9 +202,9 @@ You can save these in your `.vimrc`.
 
 ## Software
 
-Young mounts the [RC Systems software stack](../../Installed_Software_Lists/General_Software_Lists).
+Young mounts the [RC Systems software stack](../Installed_Software_Lists/module-packages.md).
 
-Have a look at [Software Guides](../../Software_Guides/Other_Software) for specific
+Have a look at [Software Guides](../Software_Guides/Other_Software.md) for specific
 information on running some applications, including example scripts. The
 list there is not exhaustive. 
 
@@ -257,7 +258,7 @@ requested.
 ### Installing your own software
 
 You may install software in your own space. Please look at
-[Compiling](Compiling) for tips.
+[Compiling Your Code](../Supplementary/Compiling_Your_Code.md) for tips.
 
 ### Maintaining a piece of software for a group
 
