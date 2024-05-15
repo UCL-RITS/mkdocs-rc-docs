@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.22">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.732c4fb1.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -675,27 +675,6 @@
   
   <span class="md-ellipsis">
     Kathleen
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Clusters/Thomas/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    MMM Thomas
   </span>
   
 
@@ -1605,13 +1584,15 @@
 <h2 id="user-management-tools">User management tools<a class="headerlink" href="#user-management-tools" title="Permanent link">§</a></h2>
 <p>This page contains tools and information for the nominated Points of
 Contact.</p>
-<p>Other system-specific information is at <a href="../../Clusters/Thomas/">Thomas</a>,
-<a href="../../Clusters/Michael/">Michael</a> or <a href="../../Clusters/Young/">Young</a>.</p>
-<p>These commands can all be run as <code>thomas-command</code> or <code>michael-command</code>
-or <code>young-command</code>:
+<p>Other system-specific information is at 
+<a href="../../Clusters/Michael/">Michael</a> or 
+<a href="../../Clusters/Young/">Young</a>.</p>
+<p>These commands can all be run as 
+<code>michael-command</code> or
+<code>young-command</code>:
 they run the same thing and the different names are for convenience.</p>
 <h3 id="displaying-user-information">Displaying user information<a class="headerlink" href="#displaying-user-information" title="Permanent link">§</a></h3>
-<p><code>thomas-show</code>, <code>michael-show</code> or <code>young-show</code> is a tool that enables you to find a lot
+<p><code>young-show</code>, <code>michael-show</code> or <code>young-show</code> is a tool that enables you to find a lot
 of information about users. Access to the database is given to points of
 contact individually, contact rc-support@ucl.ac.uk if you try to use
 this and get an access denied.</p>
@@ -1620,12 +1601,12 @@ multiple tables. <code>--contacts</code> shows all points of contact - useful fo
 getting the IDs, and <code>--institutes</code> is the same. <code>--allusers</code> will show
 everyone's basic info. <code>--getmmm</code> will show the most recently used mmm
 username.</p>
-<div class="codehilite"><pre><span></span><code>thomas-show -h  
-usage: thomas-show [-h] [--user username] [--contacts] [--institutes]  
+<div class="codehilite"><pre><span></span><code>young-show -h  
+usage: young-show [-h] [--user username] [--contacts] [--institutes]  
                   [--allusers] [--getmmm]  
                   {recentusers,getusers,whois} ...
 
-Show data from the Thomas database. Use [positional argument -h] for more  
+Show data from the Young database. Use [positional argument -h] for more  
 help.
 
 positional arguments:  
@@ -1644,10 +1625,10 @@ optional arguments:
 </code></pre></div>
 
 <h4 id="show-recent-users">Show recent users<a class="headerlink" href="#show-recent-users" title="Permanent link">§</a></h4>
-<p><code>thomas-show recentusers</code> shows you the
+<p><code>young-show recentusers</code> shows you the
 most recently-added N users, default 5.</p>
-<div class="codehilite"><pre><span></span><code>thomas-show recentusers -h  
-usage: thomas-show recentusers [-h] [-n N]
+<div class="codehilite"><pre><span></span><code>young-show recentusers -h  
+usage: young-show recentusers [-h] [-n N]
 
 optional arguments:  
  -h, --help  show this help message and exit  
@@ -1655,10 +1636,10 @@ optional arguments:
 </code></pre></div>
 
 <h4 id="show-users-with-a-given-project-institute-contact">Show users with a given project, institute, contact<a class="headerlink" href="#show-users-with-a-given-project-institute-contact" title="Permanent link">§</a></h4>
-<p><code>thomas-show getusers</code> will search for exact
+<p><code>young-show getusers</code> will search for exact
 matches to the given project, institute, contact combination.</p>
-<div class="codehilite"><pre><span></span><code>thomas-show getusers -h  
-usage: thomas-show getusers [-h] [-p PROJECT] [-i INST_ID] [-c POC_ID]
+<div class="codehilite"><pre><span></span><code>young-show getusers -h  
+usage: young-show getusers [-h] [-p PROJECT] [-i INST_ID] [-c POC_ID]
 
 optional arguments:  
  -h, --help            show this help message and exit  
@@ -1671,11 +1652,11 @@ optional arguments:
 </code></pre></div>
 
 <h4 id="search-for-users-based-on-partial-information">Search for users based on partial information<a class="headerlink" href="#search-for-users-based-on-partial-information" title="Permanent link">§</a></h4>
-<p><code>thomas-show whois</code> can be used to search for
+<p><code>young-show whois</code> can be used to search for
 partial matches to username, name, email fragments, including all of
 those in combination.</p>
-<div class="codehilite"><pre><span></span><code>thomas-show whois -h  
-usage: thomas-show whois [-h] [-u USERNAME] [-e EMAIL] [-n GIVEN_NAME]  
+<div class="codehilite"><pre><span></span><code>young-show whois -h  
+usage: young-show whois [-h] [-u USERNAME] [-e EMAIL] [-n GIVEN_NAME]  
                         [-s SURNAME]
 
 optional arguments:  
@@ -1691,7 +1672,7 @@ optional arguments:
 </code></pre></div>
 
 <h3 id="adding-user-information-and-new-projects">Adding user information and new projects<a class="headerlink" href="#adding-user-information-and-new-projects" title="Permanent link">§</a></h3>
-<p><code>thomas-add</code> will add information to the database.
+<p><code>young-add</code> will add information to the database.
 Access to the database is given to points of contact individually,
 contact rc-support@ucl.ac.uk if you try to use this and get an access
 denied.</p>
@@ -1699,10 +1680,10 @@ denied.</p>
 to see the query generated without committing the changes to the
 database - double-check that the information you are adding is
 correct.</p>
-<div class="codehilite"><pre><span></span><code>thomas-add -h  
-usage: thomas-add [-h] {user,project,projectuser,poc,institute} ...
+<div class="codehilite"><pre><span></span><code>young-add -h  
+usage: young-add [-h] {user,project,projectuser,poc,institute} ...
 
-Add data to the Thomas database. Use [positional argument -h] for more help.
+Add data to the Young database. Use [positional argument -h] for more help.
 
 positional arguments:  
  {user,project,projectuser,poc,institute}  
@@ -1718,21 +1699,21 @@ optional arguments:
 </code></pre></div>
 
 <h4 id="add-a-new-user">Add a new user<a class="headerlink" href="#add-a-new-user" title="Permanent link">§</a></h4>
-<p><code>thomas-add user</code> allows you to add a new user,
+<p><code>young-add user</code> allows you to add a new user,
 with their initial project and point of contact. As of 27 June 2022 this now goes 
 ahead and creates their account automatically within 10 minutes - first prompting you 
 that the information you have entered is correct. You do not need to email us separately 
 about creating accounts unless something has gone wrong. The user's initial project
-must already exist (create with <code>thomas-add project</code> first).</p>
+must already exist (create with <code>young-add project</code> first).</p>
 <p>The user will be allocated the next free <code>mmmxxxx</code> username - you should 
 only specify username yourself if they are an existing UCL user, or on
-Young if they previously had a Thomas or Michael account you should give
+Young if they previously had a Michael account you should give
 them the same username. If they already have an account on this cluster with
 a different institution, just add them as a projectuser instead using their 
 existing username.</p>
-<p>You can get your <code>poc_id</code> by looking at <code>thomas-show --contacts</code>.</p>
-<div class="codehilite"><pre><span></span><code>thomas-add user -h  
-usage: thomas-add user [-h] -u USERNAME -n GIVEN_NAME [-s SURNAME] -e  
+<p>You can get your <code>poc_id</code> by looking at <code>young-show --contacts</code>.</p>
+<div class="codehilite"><pre><span></span><code>young-add user -h  
+usage: young-add user [-h] -u USERNAME -n GIVEN_NAME [-s SURNAME] -e  
                       EMAIL_ADDRESS -k &quot;SSH_KEY&quot; -p PROJECT_ID -c POC_ID  
                       [--debug]
 
@@ -1780,7 +1761,7 @@ OeLKjOH4rSnAAOLcEqPmJhkLL8k6nQAAK3P/E1PeOaB2xD7NNPqfIsjhAJLZ+2wV
 
 <p>Other types of keys (ed25519 etc) will say what they are in the first line,
 and you should change the <code>ssh-rsa</code> appropriately. The guide linked at
-<a href="https://wiki.rc.ucl.ac.uk/wiki/Thomas#Creating_an_ssh_key_in_Windows">Creating an ssh key in
+<a href="../../Clusters/Young/#Creating_an_ssh_key_in_Windows">Creating an ssh key in
 Windows</a>
 also shows where users can get the second format out of PuTTY.</p>
 <h4 id="add-new-users-in-bulk-from-a-csv-file">Add new users in bulk from a CSV file<a class="headerlink" href="#add-new-users-in-bulk-from-a-csv-file" title="Permanent link">§</a></h4>
@@ -1793,7 +1774,7 @@ automatically within 10 minutes.</p>
 
 <p>You can leave username empty for it to allocate them a new username, but if 
 they have an existing mmm username you should fill it in. 
-It may be useful to <a href="#show-users-with-a-given-project-institute-contact">show users with a given institute</a> on Thomas if you are migrating users from one service to another.</p>
+It may be useful to <a href="#show-users-with-a-given-project-institute-contact">show users with a given institute</a> on Young if you are migrating users from one service to another.</p>
 <p>You can <a href="../MMM_Hub_Files/young.csv">download a CSV template here</a>. Replace the
 example data.</p>
 <p><code>young-add csv</code> will try to automatically get your Point of Contact ID based on
@@ -1808,13 +1789,13 @@ the <code>--noconfirm</code> option.</p>
 beginning with <code>M-oM-;M-?</code> and ending with <code>^M</code> you probably need to run 
 <code>dos2unix</code> on it first.</p>
 <h4 id="add-a-new-project">Add a new project<a class="headerlink" href="#add-a-new-project" title="Permanent link">§</a></h4>
-<p><code>thomas-add project</code> will create a new project,
+<p><code>young-add project</code> will create a new project,
 associated with an institution. It will not show in Gold until it also
 has a user in it.</p>
 <p>A project ID should begin with your institute ID, followed by an
 underscore and a project name.</p>
-<div class="codehilite"><pre><span></span><code>thomas-add project -h  
-usage: thomas-add project [-h] -p PROJECT_ID -i INST_ID [--debug]
+<div class="codehilite"><pre><span></span><code>young-add project -h  
+usage: young-add project [-h] -p PROJECT_ID -i INST_ID [--debug]
 
 optional arguments:  
  -h, --help            show this help message and exit  
@@ -1826,14 +1807,14 @@ optional arguments:
 </code></pre></div>
 
 <h4 id="add-a-new-projectuser-pairing">Add a new project/user pairing<a class="headerlink" href="#add-a-new-projectuser-pairing" title="Permanent link">§</a></h4>
-<p><code>thomas-add projectuser</code> will add an
+<p><code>young-add projectuser</code> will add an
 existing user to an existing project. Creating a new user for an
 existing project also creates this relationship. After a new
 project-user relationship is added, a cron job will pick that up within
 15 minutes and create that project for that user in Gold, with no
 allocation.</p>
-<div class="codehilite"><pre><span></span><code>thomas-add projectuser -h  
-usage: thomas-add projectuser [-h] -u USERNAME -p PROJECT_ID -c POC_ID  
+<div class="codehilite"><pre><span></span><code>young-add projectuser -h  
+usage: young-add projectuser [-h] -u USERNAME -p PROJECT_ID -c POC_ID  
                              [--debug]
 
 optional arguments:  
@@ -1857,7 +1838,7 @@ does not deactivate the user account, just their membership in this project.
 You can confirm the change by looking at <code>young-show --user</code> - it will say 
 'deactivated' rather than 'active' next to their listing for this project.</p>
 <div class="codehilite"><pre><span></span><code>young-deactivate projectuser -h
-usage: thomas_deactivate.py projectuser [-h] -u USERNAME -p PROJECT [--debug]
+usage: young_deactivate.py projectuser [-h] -u USERNAME -p PROJECT [--debug]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -1870,8 +1851,8 @@ optional arguments:
 
 <h2 id="gold-resource-allocation">Gold resource allocation<a class="headerlink" href="#gold-resource-allocation" title="Permanent link">§</a></h2>
 <p>We are currently using Gold to manage allocations.
-Thomas and Michael share one Gold database, so all the projects exist on both, 
-but they are only active on the correct cluster. Young has its own database.</p>
+The Michael and Young clusters use separate databases for this, so projects
+on one will not appear on the other.</p>
 <h3 id="reporting-from-gold">Reporting from Gold<a class="headerlink" href="#reporting-from-gold" title="Permanent link">§</a></h3>
 <p>There are wrapper scripts for a number of Gold commands (these exist in
 the <code>userscripts</code> module, loaded by default).</p>
@@ -1998,7 +1979,7 @@ and the first column is the id.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5cfa9459.min.js"></script>
       
     
   </body>
