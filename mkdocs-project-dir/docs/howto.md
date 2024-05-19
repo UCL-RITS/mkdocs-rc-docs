@@ -11,7 +11,7 @@ I have an account, now:
 
 Logging in is most straightforward if you are inside the UCL firewall. If you are logging in from home or other external networks then you first have to [get on to the UCL network](#logging-in-from-outside-the-ucl-firewall).
 
-### Linux / Unix / Mac OS X
+### Linux / Unix / macOS
 
 Use the terminal and type the below command to secure shell (ssh) into the machine you wish to access. Replace `<your_UCL_user_id>` with your central UCL username, and `<system_name>` with the name of the machine you want to log in to, eg. `myriad`, `kathleen`, `aristotle`. 
 
@@ -122,14 +122,14 @@ Typing `yes` will allow you to continue logging in.
 **WinSCP** will say `Server's host key does not match the one that WinSCP has in cache.` 
 and you will have the option to update the key.
 
-#### Mac OS X connection failures
+#### macOS connection failures
 
-If you are on Mac OS X and getting many ssh connection failures and broken pipe messages
+If you are on macOS and getting many ssh connection failures and broken pipe messages
 when trying to log in, try adding an ssh timeout to your ssh command:
 ```
 ssh -o ConnectTimeout=10 <your_UCL_user_id>@myriad.rc.ucl.ac.uk
 ```
-This has particularly been a problem with Mac OS X Big Sur when using the VPN.
+This has particularly been a problem with macOS Big Sur when using the VPN.
 
 ## How do I log out?
 
@@ -141,7 +141,7 @@ You can log out of the systems by typing `exit` and pressing enter.
 
 You can transfer data to and from our systems using any program capable of using the Secure Copy (SCP) protocol. This uses the same SSH system as you use to log in to a command line session, but then transfers data over it. This means that if you can use SSH to connect to a system, you can usually use SCP to transfer files to it. 
 
-### Copying files using Linux or Mac OS X
+### Copying files using Linux or macOS
 
 You can use the command-line utilities scp, sftp or rsync to copy your data about. You can also use a graphical client (Transmit, CyberDuck, FileZilla).
 
@@ -218,7 +218,7 @@ You can use the [UCL Virtual Private Network](https://www.ucl.ac.uk/isd/services
 
 ### Single-step logins using tunnelling
 
-#### Linux / Unix / Mac OS X
+#### Linux / Unix / macOS
 
 ##### On the command line
 
@@ -294,7 +294,7 @@ a graphical client.
 
 ##### SSH tunnel creation using a terminal
 
-You can do this in Linux, Mac OS X and the Windows Command Prompt on Windows 10 and later.
+You can do this in Linux, macOS and the Windows Command Prompt on Windows 10 and later.
 
 Set up a tunnel between a port on your local computer (this is using 3333 as it is unlikely to be
 in use, but you can pick different ones) to Myriad's port 22 (which is the standard port for ssh), 
@@ -658,9 +658,9 @@ ssh -X <your_UCL_user_id>@myriad.rc.ucl.ac.uk
 
 [A video walkthrough of running remote applications using X11, X-forwarding on compute nodes](https://www.youtube.com/watch?v=nVQlnuo3GSc).
 
-### X-forwarding on Mac OS X
+### X-forwarding on macOS
 
-You will need to install XQuartz to provide an X-Window System for Mac OS X. (Previously known as X11.app).
+You will need to install XQuartz to provide an X-Window System for macOS. (Previously known as X11.app).
 
 You can then follow the Linux instructions using Terminal.app.
 
@@ -697,4 +697,3 @@ Xming is a popular open source X server for Windows. These are instructions for 
 2. Open Xming - the Xming icon should appear on the task bar.
 3. Open PuTTY
 4. Set up PuTTY as shown in the Exceed section.
-

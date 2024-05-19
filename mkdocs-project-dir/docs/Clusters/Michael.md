@@ -30,7 +30,7 @@ must not share your private key with anyone else. You can copy it onto
 multiple machines belonging to you so you can log in from all of them
 (or you can have a separate pair for each machine).
 
-### Creating an ssh key in Linux/Unix/Mac OS X
+### Creating an ssh key in Linux/Unix/macOS
 
 ```
 ssh-keygen -t rsa
@@ -487,4 +487,3 @@ their entire project, broken down by user. See
 Email <rc-support@ucl.ac.uk> with any support queries. It will be helpful
 to include Michael in the subject along with some descriptive text about
 the type of problem, and you should mention your username in the body.
-

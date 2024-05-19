@@ -22,7 +22,7 @@ You can configure your ssh client to automatically connect via these jump boxes 
 
 ### Single-step logins using tunnelling
 
-#### Linux / Unix / Mac OS X
+#### Linux / Unix / macOS
 
 ##### On the command line
 ```
@@ -116,4 +116,3 @@ authorized_keys 100% 0 0.0KB/s 00:00
 ```
 
 and similarly if on `ejp-gateway01` do `scp -r ~/.ssh ejp-gateway02:`
-
