@@ -86,7 +86,7 @@ what Myriad has it set to. You may be more likely to come across this
 with newer versions of macOS - if your client is different, have a
 look for an equivalent option.
 
-In Mac OS X Terminal, click Settings and under International untick the
+In macOS Terminal, click Settings and under International untick the
 box that says "Set locale environment variables on startup".
 
 Per session, you can try `LANG=C ssh userid@myriad.rc.ucl.ac.uk`
@@ -107,4 +107,3 @@ you see older job script examples mentioning a project ID, you can
 delete that section. Only projects with access to paid or specialised
 resources need to give a project code in order to use those resources.
 If you do not know yours, [contact rc-support](../Contact_Us.md).
-

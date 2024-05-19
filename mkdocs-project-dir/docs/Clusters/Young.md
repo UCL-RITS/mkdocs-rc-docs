@@ -45,7 +45,7 @@ must not share your private key with anyone else. You can copy it onto
 multiple machines belonging to you so you can log in from all of them
 (or you can have a separate pair for each machine).
 
-### Creating an ssh key in Linux/Unix/Mac OS X
+### Creating an ssh key in Linux/Unix/macOS
 
 ```
 ssh-keygen -t rsa
@@ -686,4 +686,3 @@ please include:
 Molecular Modelling Hub, which is partially funded by EPSRC
 (EP/T022213/1, EP/W032260/1 and EP/P020194/1), for which access was obtained 
 via the UKCP consortium and funded by EPSRC grant ref EP/P022561/1"
-

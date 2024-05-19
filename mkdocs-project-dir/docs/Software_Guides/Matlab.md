@@ -392,7 +392,7 @@ This directory needs to be in your Scratch directory as compute nodes need to be
 
 * Linux:
 The default local toolbox location is `/usr/local/MATLAB/R2021a/toolbox/local` for R2021a. Navigate to this directory and use `unzip -x archive_name`. 
-* Mac OS X:
+* macOS:
 The default local toolbox location is `/Applications/MATLAB_R2021a.app/toolbox/local` for R2021a. In order to view or change the contents of an application package, open `/Applications` in a Finder window. Then right-click the application and select "View Package Contents." Then navigate to the appropriate directory. Note: if you don't have access to `/Applications/MATLAB_R2021a.app/toolbox/local`, you can unzip the support files into `~/Documents/MATLAB/` instead. 
 * Windows:
 The default local toolbox location is `C:\Program Files\MATLAB\R2021a\toolbox\local` for R2021a. Extract the archive here. You can unzip the support files into `Documents\MATLAB\` instead.
@@ -532,5 +532,3 @@ tar zcvf $HOME/Scratch/Matlab_examples/files_from_job_${JOB_ID}.tgz $TMPDIR
 
 # Make sure you have given enough time for the copy to complete!
 ```
-
-
