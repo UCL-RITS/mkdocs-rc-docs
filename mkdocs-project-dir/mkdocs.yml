@@ -98,6 +98,12 @@ plugins:
   - search
   - awesome-pages
 # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
+  - htmlproofer:
+      enabled: !ENV [DOCS_ENABLE_HTMLPROOFER, True]
+      validate_external_urls: true
+      raise_error: !ENV [DOCS_FAIL_ON_BAD_LINK, False]
+      # ^-- ideally we would change the default here once all the initial problems have been fixed
+
 
 # Customization
 extra:
