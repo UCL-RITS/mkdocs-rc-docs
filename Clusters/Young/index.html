@@ -1108,9 +1108,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#subprojects" class="md-nav__link">
+  <a href="#subprojects-and-pools" class="md-nav__link">
     <span class="md-ellipsis">
-      Subprojects
+      Subprojects and pools
     </span>
   </a>
   
@@ -2249,9 +2249,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#subprojects" class="md-nav__link">
+  <a href="#subprojects-and-pools" class="md-nav__link">
     <span class="md-ellipsis">
-      Subprojects
+      Subprojects and pools
     </span>
   </a>
   
@@ -2841,7 +2841,7 @@ export OMP_NUM_THREADS=80
 <p>This job would still be using 80 physical cores, but would use one MPI 
 process per node which would create 80 threads on the node (on Hyperthreads).</p>
 <h2 id="diskless-nodes">Diskless nodes<a class="headerlink" href="#diskless-nodes" title="Permanent link">§</a></h2>
-<p>Young nodes are diskless (have no local hard drives) - there is no <code>$TMPDIR</code> 
+<p>Young CPU nodes are diskless (have no local hard drives) - there is no <code>$TMPDIR</code> 
 available, so you should not request <code>-l tmpfs=10G</code> in your 
 jobscripts or your job will be rejected at submit time.</p>
 <p>If you need temporary space, you should use somewhere in your Scratch.</p>
@@ -2878,18 +2878,24 @@ longer show up.</p>
 <p>Since Young has <a href="#hyperthreading">hyperthreading</a>, a job asking for 40 
 physical cores and one asking for 80 virtual cores with hyperthreading 
 on both cost the same amount: 80 Gold.</p>
-<h3 id="subprojects">Subprojects<a class="headerlink" href="#subprojects" title="Permanent link">§</a></h3>
-<p>You might be in a subproject that does not itself have an allocation,
-but instead takes allocation from a different project:</p>
+<h3 id="subprojects-and-pools">Subprojects and pools<a class="headerlink" href="#subprojects-and-pools" title="Permanent link">§</a></h3>
+<p>You might be in a subproject that either does not have an allocation itself,
+or has a smaller allocation and is nested under a larger pool that it can 
+take allocation from once its own is exhausted:</p>
 <div class="codehilite"><pre><span></span><code>Project       Machines Balance
 --------      -------- --------
 UCL_physM        ANY   474999.70  
 UCL_physM_Bowler ANY        0.00
+
+Project       Machines Balance
+--------      -------- ---------
+MCC_pool        ANY    240533.60
+MCC_react_cat   ANY      9372.00
 </code></pre></div>
 
 <p>In this case, you submit jobs using the subproject (<code>UCL_physM_Bowler</code>
-here) even though it says it has 0 budget and it takes Gold from the
-superproject.</p>
+or <code>MCC_react_cat</code> here) and once it runs out of budget it will take Gold from 
+the pool.</p>
 <h3 id="submitting-a-job-under-a-project">Submitting a job under a project<a class="headerlink" href="#submitting-a-job-under-a-project" title="Permanent link">§</a></h3>
 <p>To submit a paid job that will take Gold from a particular project
 budget, add this to your jobscript:</p>
