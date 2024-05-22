@@ -467,7 +467,7 @@ process per node which would create 80 threads on the node (on Hyperthreads).
 
 ## Diskless nodes
 
-Young nodes are diskless (have no local hard drives) - there is no `$TMPDIR` 
+Young CPU nodes are diskless (have no local hard drives) - there is no `$TMPDIR` 
 available, so you should not request `-l tmpfs=10G` in your 
 jobscripts or your job will be rejected at submit time.
 
@@ -519,21 +519,27 @@ physical cores and one asking for 80 virtual cores with hyperthreading
 on both cost the same amount: 80 Gold.
 
 
-### Subprojects
+### Subprojects and pools
 
-You might be in a subproject that does not itself have an allocation,
-but instead takes allocation from a different project:
+You might be in a subproject that either does not have an allocation itself,
+or has a smaller allocation and is nested under a larger pool that it can 
+take allocation from once its own is exhausted:
 
 ```
 Project       Machines Balance
 --------      -------- --------
 UCL_physM        ANY   474999.70  
 UCL_physM_Bowler ANY        0.00
+
+Project       Machines Balance
+--------      -------- ---------
+MCC_pool        ANY    240533.60
+MCC_react_cat   ANY      9372.00
 ```
 
 In this case, you submit jobs using the subproject (`UCL_physM_Bowler`
-here) even though it says it has 0 budget and it takes Gold from the
-superproject.
+or `MCC_react_cat` here) and once it runs out of budget it will take Gold from 
+the pool.
 
 ### Submitting a job under a project
 
