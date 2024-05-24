@@ -21,7 +21,7 @@ It currently has the following capabilities:
  - running interactive desktops on the compute nodes
  - running interactive Jupyter servers on the compute nodes
 
-These may expand as we get better acquainted with this system, or add other integrated interactive components. Interactive R Studio/Posit sessions in particular seem possible but not in the scope of the pilot.
+These may expand as we get better acquainted with this system, or add other integrated interactive components. Interactive R Studio/Posit sessions in particular seem possible but are not currently implemented -- we intend to investigate and develop this during the pilot.
 
 For the interactive components, we'll especially need feedback, and be looking for metrics on, whether they interfere with and are interfered with by the batch compute workloads -- it's much more useful to have an interactive desktop available 2 minutes from now than 3 hours from now.
 
