@@ -70,6 +70,11 @@ theme:
 #
 # sane_lists: this makes lists behave a little more sensibly, and lets you start an ordered list with
 #   a specified number. See here for details: https://python-markdown.github.io/extensions/sane_lists/
+#
+# pymdownx.keys: this adds ++key++ syntax for making things formatted like buttons for keys to press
+#
+# attr_list: this lets you specify html classes on elements. in particular we use it to make links
+#            look like buttons occasionally
 markdown_extensions:
   - admonition
   - codehilite:
@@ -83,6 +88,8 @@ markdown_extensions:
       permalink: §
   - footnotes
   - sane_lists
+  - pymdownx.keys
+  - attr_list
 
 # Plugins
 # Search is included by default but only if you don't add any others, so
