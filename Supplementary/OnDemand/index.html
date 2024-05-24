@@ -12,13 +12,13 @@
         <meta name="author" content="UCL RCAS Team">
       
       
-        <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Supplementary/NVIDIA_Containers/">
+        <link rel="canonical" href="https://www.rc.ucl.ac.uk/docs/Supplementary/OnDemand/">
       
       
-        <link rel="prev" href="../Installing_PGI/">
+        <link rel="prev" href="../NVIDIA_Containers/">
       
       
-        <link rel="next" href="../OnDemand/">
+        <link rel="next" href="../Points_of_Contact/">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Using NVIDIA Grid Cloud Containers - UCL Research Computing Documentation</title>
+        <title>Myriad Open OnDemand Pilot - UCL Research Computing Documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-nvidia-grid-cloud-containers" class="md-skip">
+        <a href="#myriad-open-ondemand-pilot" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Using NVIDIA Grid Cloud Containers
+              Myriad Open OnDemand Pilot
             
           </span>
         </div>
@@ -1369,28 +1369,73 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#worked-example-namd-3" class="md-nav__link">
+  <a href="#logging-in-for-the-first-time" class="md-nav__link">
     <span class="md-ellipsis">
-      Worked Example: NAMD 3
+      Logging in for the First Time
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Worked Example: NAMD 3">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tools">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#creating-the-container-image" class="md-nav__link">
+  <a href="#the-file-browser" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating the Container Image
+      The File Browser
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#running-on-a-single-node" class="md-nav__link">
+  <a href="#active-jobs" class="md-nav__link">
     <span class="md-ellipsis">
-      Running on a Single Node
+      Active Jobs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#job-composer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job Composer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal-in-the-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terminal in the Browser
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive Desktop
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jupyter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jupyter
     </span>
   </a>
   
@@ -1419,130 +1464,65 @@
   
 
 
-<h1 id="using-nvidia-grid-cloud-containers">Using NVIDIA Grid Cloud Containers<a class="headerlink" href="#using-nvidia-grid-cloud-containers" title="Permanent link">§</a></h1>
-<p>NVIDIA's <a href="https://catalog.ngc.nvidia.com/">NGC Container Registry</a> stores a lot of containers<sup id="fnref:what_is_container"><a class="footnote-ref" href="#fn:what_is_container">1</a></sup> with various applications pre-configured to be run with GPUs.
-Each container can be set up completely differently, so you'll need to read the instructions in the registry to work out how to use it.</p>
-<p>Many of the instructions for using these containers assume you are using the Docker toolset to run the container, but this is not installed on our services<sup id="fnref:why_no_docker"><a class="footnote-ref" href="#fn:why_no_docker">2</a></sup>. The <a href="https://sylabs.io/singularity">Singularity container runtime</a> can be used instead for most workloads, but there are some limitations, that mostly affect containers that try to run web services.</p>
-<p>In general, if a container's instructions do not have specific instructions for using Singularity, and would tell you to run, for example:</p>
-<div class="codehilite"><pre><span></span><code>docker run --gpus all nvcr.io/some/container
-</code></pre></div>
-
-<p>You should instead use:</p>
-<div class="codehilite"><pre><span></span><code>singularity run --nv https://nvcr.io/some/container
-</code></pre></div>
-
-<p>For jobs using MPI, this is more complicated, because the MPI traffic has to be passed between the container and the operating system underneath. Containers built to use MPI will usually contain instructions for using Singularity, however.</p>
-<h2 id="worked-example-namd-3">Worked Example: NAMD 3<a class="headerlink" href="#worked-example-namd-3" title="Permanent link">§</a></h2>
-<p>The NAMD authors publish a NAMD container on the NGC Container Registry, and we should be able to download this and run it on our cluster inside a batch job. </p>
-<p>The page about how to use the container is here: <a href="https://catalog.ngc.nvidia.com/orgs/hpc/containers/namd">https://catalog.ngc.nvidia.com/orgs/hpc/containers/namd</a></p>
-<p>Following it through, you can download the benchmark example to check later whether your container works:</p>
-<div class="codehilite"><pre><span></span><code>mkdir ngc_namd_experiment
-cd ngc_namd_experiment
-wget -O - https://gitlab.com/NVHPC/ngc-examples/raw/master/namd/3.0/get_apoa1.sh | bash
-</code></pre></div>
-
-<p>There are a couple of typos in the instructions: you'll need to use the tag <code>3.0-alpha3-singlenode</code> instead of <code>3.0_alpha3-singlenode</code>:</p>
-<div class="codehilite"><pre><span></span><code>export NAMD_TAG=&quot;3.0-alpha3-singlenode&quot;
-</code></pre></div>
-
-<h3 id="creating-the-container-image">Creating the Container Image<a class="headerlink" href="#creating-the-container-image" title="Permanent link">§</a></h3>
-<p>Before you use Singularity to create the container image, you should load the Singularity module to set up some directories where things are stored. Not doing this can cause you problems, because the default places often do not have space to store the large files needed.</p>
-<div class="codehilite"><pre><span></span><code>module load singularity-env
-</code></pre></div>
-
-<p>Once you've done that, you can download the container's files and build them into the usable container:</p>
-<div class="codehilite"><pre><span></span><code>singularity build ${NAMD_TAG}.sif docker://nvcr.io/hpc/namd:${NAMD_TAG}
-</code></pre></div>
-
-<p>This can take a while: Singularity has to download quite a few file collections and assemble them into a single usable set. You may see some of the following warnings:</p>
-<div class="codehilite"><pre><span></span><code>WARNING: &#39;nodev&#39; mount option set on /lustre, it could be a source of failure during build process
-2022/02/03 14:06:28  warn xattr{var/log/apt/term.log} ignoring ENOTSUP on setxattr &quot;user.rootlesscontainers&quot;
-2022/02/03 14:06:28  warn xattr{/home/uccaiki/Scratch/.singularity/tmp/rootfs-5ac43e37-84fa-11ec-8784-0894ef553d4e/var/log/apt/term.log} destination filesystem does not support xattrs, further warnings will be suppressed
-</code></pre></div>
-
-<p>These indicate that various capabilities are not available because of how we're building the container. For HPC use, they don't present a problem, but they could be problematic if you were building a web server into a container.</p>
-<p>When Singularity has finished, you should see the following message:</p>
-<div class="codehilite"><pre><span></span><code>INFO:    Creating SIF file...
-INFO:    Build complete: 3.0-alpha3-singlenode.sif
-</code></pre></div>
-
-<p>This file is the <em>container image</em>, which contains the files needed to run NAMD. You can see what NAMD gets when running "inside" the container, by running <code>ls</code> with it:</p>
-<div class="codehilite"><pre><span></span><code>singularity exec 3.0-alpha3-singlenode.sif ls /
-</code></pre></div>
-
-<p>gives:</p>
-<div class="codehilite"><pre><span></span><code>WARNING: Bind mount &#39;/home/uccaiki =&gt; /home/uccaiki&#39; overlaps container CWD /home/uccaiki/ngc_namd_experiment, may not be available
-bin  boot  dev  environment  etc  home  host_pwd  lib  lib64  lustre  media  mnt  opt  proc  root  run  sbin  scratch  singularity  srv  sys  tmp  tmpdir  usr  var
-</code></pre></div>
-
-<p>The warning you get is telling you that your current working directory overlaps with a directory being "bound" into the container. Binding brings a directory into the container's view of the filesystem, so that, for example, programs can still access your home directory as usual. In this case it's not a problem, because it's warning you that your home directory is being bound into the container in the same place it would usually be, and that means the same files are visible.</p>
-<p>By default, the clusters have Singularity configured to bind your home and Scratch directories into the container, as well as the per-job temporary storage allocated to jobs under <code>$TMPDIR</code>. </p>
-<p>The NAMD instructions make an alternative suggestion when setting up this environment variable to use to run Singularity, binding your data directory into a fixed place in the container:</p>
-<div class="codehilite"><pre><span></span><code>SINGULARITY=&quot;$(which singularity) exec --nv -B $(pwd):/host_pwd ${NAMD_TAG}.sif&quot;
-</code></pre></div>
-
-<p>The option <code>-B $(pwd):/host_pwd</code> handles this, binding wherever you run the command from to the fixed location <code>/host_pwd</code> inside the container.</p>
-<p>So, for example, if you run:</p>
-<div class="codehilite"><pre><span></span><code>ls
-$SINGULARITY ls /host_pwd
-</code></pre></div>
-
-<p>In both cases, you should see the same files, because you're looking at the same underlying directory.</p>
-<h3 id="running-on-a-single-node">Running on a Single Node<a class="headerlink" href="#running-on-a-single-node" title="Permanent link">§</a></h3>
-<p>At this point you're ready to run NAMD inside the container, but you need a job script to submit to the scheduler which can set up the number of cores and GPUs correctly.</p>
-<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
-
-<span class="c1"># Start with our resource requirements:</span>
-<span class="c1">#  1 hour&#39;s maximum runtime</span>
-<span class="c1">#$ -l h_rt=1:00:00</span>
-
-<span class="c1"># 2 GPUs</span>
-<span class="c1">#$ -l gpu=2</span>
-
-<span class="c1"># 36 processor cores</span>
-<span class="c1">#$ -pe smp 36</span>
-
-<span class="c1"># Start with current working directory the same as where we submitted the job from</span>
-<span class="c1">#$ -cwd</span>
-
-<span class="c1"># Make sure Singularity looks for our stored container data in the right places</span>
-module<span class="w"> </span>load<span class="w"> </span>singularity-env
-
-<span class="c1"># Set the variables we need for this example to run</span>
-<span class="nv">NAMD_TAG</span><span class="o">=</span><span class="s2">&quot;3.0-alpha3-singlenode&quot;</span>
-<span class="nv">SINGULARITY</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>which<span class="w"> </span>singularity<span class="k">)</span><span class="s2"> exec --nv -B </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">:/host_pwd </span><span class="si">${</span><span class="nv">NAMD_TAG</span><span class="si">}</span><span class="s2">.sif&quot;</span>
-
-<span class="c1"># This is where the benchmark&#39;s data ends up inside the container</span>
-<span class="nv">INPUT</span><span class="o">=</span><span class="s2">&quot;/host_pwd/apoa1/apoa1_nve_cuda.namd&quot;</span>
-
-<span class="c1"># Show us some info we can refer to later</span>
-<span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;Running NAMD using:\n Cores: %d\n GPUs: %d\n Container image: %s\nWorking directory: %s\n Input: %s\n&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="s2">&quot;</span><span class="nv">$NSLOTS</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="s2">&quot;</span><span class="nv">$GPU</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">NAMD_TAG</span><span class="si">}</span><span class="s2">.sif&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="s2">&quot;</span><span class="nv">$INPUT</span><span class="s2">&quot;</span>
-
-<span class="c1"># Run NAMD</span>
-<span class="s2">&quot;</span><span class="nv">$SINGULARITY</span><span class="s2">&quot;</span><span class="w"> </span>namd3<span class="w">  </span>+ppn<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NSLOTS</span><span class="s2">&quot;</span><span class="w"> </span>+setcpuaffinity<span class="w"> </span>+idlepoll<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$INPUT</span><span class="s2">&quot;</span>
-</code></pre></div>
-
-<p>Copy this into a file, and submit it to the queue, e.g.:</p>
-<div class="codehilite"><pre><span></span><code>qsub ngc_namd_experiment.sh
-</code></pre></div>
-
-<p>This should take about 5 minutes to run on a 36-core, 2-GPU node. </p>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:what_is_container">
-<p>A container is a way of bundling up a collection of files and instructions to run as a kind of "altered view" of the computer's files and systems.&#160;<a class="footnote-backref" href="#fnref:what_is_container" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:why_no_docker">
-<p>This is for a variety of reasons, but primarily that Docker presents a much larger range of security and misuse risks when used by inexperienced or hostile users. Singularity represents a much better fit for common HPC workloads and use-cases.&#160;<a class="footnote-backref" href="#fnref:why_no_docker" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-</ol>
+<h1 id="myriad-open-ondemand-pilot">Myriad Open OnDemand Pilot<a class="headerlink" href="#myriad-open-ondemand-pilot" title="Permanent link">§</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This component of the Myriad service is currently in limited pilot.</p>
+<p>As a pilot service, details are subject to change.</p>
 </div>
+<p>Open OnDemand (OOD) is a setup that allows you to connect to, and use, an existing HPC cluster via a web browser.</p>
+<p>We've set this up on Myriad as a pilot service.</p>
+<p><a class="md-button" href="https://ood.myriad.rc.ucl.ac.uk/" target="_blank">Click Here To Access the OnDemand Pilot Service :octicons-link-external-16:</a></p>
+<p>It currently has the following capabilities:</p>
+<ul>
+<li>file browsing, downloading, and uploading</li>
+<li>basic text editing</li>
+<li>SSH access in a browser window</li>
+<li>creating and running jobs based on templates</li>
+<li>running interactive desktops on the compute nodes</li>
+<li>running interactive Jupyter servers on the compute nodes</li>
+</ul>
+<p>These may expand as we get better acquainted with this system, or add other integrated interactive components. Interactive R Studio/Posit sessions in particular seem possible but are not currently implemented -- we intend to investigate and develop this during the pilot.</p>
+<p>For the interactive components, we'll especially need feedback, and be looking for metrics on, whether they interfere with and are interfered with by the batch compute workloads -- it's much more useful to have an interactive desktop available 2 minutes from now than 3 hours from now.</p>
+<p>You'll only be able to access Myriad's OnDemand servers from inside the UCL network, just like the SSH access to Myriad. If you're attempting to access these from off-campus, you'll need to use <a href="https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn/">the UCL VPN</a>, a SOCKS proxy, or some other mechanism of routing through the UCL firewalls.</p>
+<p>The pilot service is not currently available to all Myriad users: there is a limited access group for it. If you need to request an addition to this group, please mail <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#99;&#45;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#117;&#99;&#108;&#46;&#97;&#99;&#46;&#117;&#107;">&#114;&#99;&#45;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#117;&#99;&#108;&#46;&#97;&#99;&#46;&#117;&#107;</a>. If you are not in the group, Microsoft's authentication systems should refuse you access, and if you attempt to access any of the internal links, you should see a page saying "Unauthorized" (HTTP error 401).</p>
+<h2 id="logging-in-for-the-first-time">Logging in for the First Time<a class="headerlink" href="#logging-in-for-the-first-time" title="Permanent link">§</a></h2>
+<p>The first time you connect, Microsoft's authentication systems will ask whether you're happy to let our Open OnDemand instance use Microsoft 365 to authorise you. This is expected and normal.</p>
+<h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permanent link">§</a></h2>
+<p>Ideally we'd like to keep documentation light, since this is supposed to be <em>relatively</em> discoverable, but we'll be looking for feedback on what needs explicitly describing.</p>
+<h3 id="the-file-browser">The File Browser<a class="headerlink" href="#the-file-browser" title="Permanent link">§</a></h3>
+<p><span class="keys"><kbd>Files</kbd></span> ➡ <span class="keys"><kbd>Home Directory</kbd></span> </p>
+<p>This should hopefully look pretty familiar if you've used, e.g. Dropbox or OneDrive's web interfaces.</p>
+<p>From here, you can view the files on Myriad, and download or upload files. You can upload files either by clicking the <span class="keys"><kbd>Upload</kbd></span> button, or by dragging them onto the window.</p>
+<div class="admonition warn">
+<p class="admonition-title">Warn</p>
+<p>The upload and download mechanisms here have a size limit of ~10 GiB.</p>
+</div>
+<!-- ^-- this is changeable, see: https://osc.github.io/ood-documentation/latest/customizations.html#set-upload-limits -->
+<div class="admonition warn">
+<p class="admonition-title">Warn</p>
+<p>The list of files can take a second to populate: if it shows no files at first, it's probably just being slow.</p>
+</div>
+<p>We may add additional storage entries in the menu and side bar -- for example, shared project directories -- later and as these become available.  However, these will not include storage directly attached to other clusters, for technical reasons.</p>
+<h3 id="active-jobs">Active Jobs<a class="headerlink" href="#active-jobs" title="Permanent link">§</a></h3>
+<p><span class="keys"><kbd>Jobs</kbd></span> ➡ <span class="keys"><kbd>Active Jobs</kbd></span></p>
+<p>This is essentially an interface to the <code>qstat</code> command, so it shows queued and running jobs, and not completed jobs. You can also delete/cancel a queued or running job from here.</p>
+<h3 id="job-composer">Job Composer<a class="headerlink" href="#job-composer" title="Permanent link">§</a></h3>
+<p><span class="keys"><kbd>Jobs</kbd></span> ➡ <span class="keys"><kbd>Job Composer</kbd></span></p>
+<h3 id="terminal-in-the-browser">Terminal in the Browser<a class="headerlink" href="#terminal-in-the-browser" title="Permanent link">§</a></h3>
+<p><span class="keys"><kbd>Clusters</kbd></span> ➡ <span class="keys"><kbd>Myriad Shell Access</kbd></span></p>
+<p>This lets you log in to Myriad using SSH, giving you a terminal in the browser window.</p>
+<h3 id="interactive-desktop">Interactive Desktop<a class="headerlink" href="#interactive-desktop" title="Permanent link">§</a></h3>
+<p><span class="keys"><kbd>Interactive Apps</kbd></span> ➡ <span class="keys"><kbd>Myriad Desktop</kbd></span></p>
+<p>This submits a job that launches a desktop GUI on a compute node. For ease of maintenance, this is a containerised Ubuntu 24.04 LTS desktop Apptainer container, but it still has access to all the applications and the shared filesystems. It's possible having Ubuntu inside the container and RHEL outside could cause problems, so please let us know if you see problems you're not expecting.</p>
+<p>We may replace or supplement this with other container images (e.g. RHEL or Fedora) at a later date if we think it gives a better experience.</p>
+<p>Once the job has been configured and submitted, the site sends you to the <span class="keys"><kbd>My Interactive Sessions</kbd></span> page, where you can Cancel it, or open the remote desktop viewer.</p>
+<p>If you close the remote desktop viewer, the job will stay running and you can reconnect later. If you attempt to log out in the remote desktop viewer, the job will end.</p>
+<p>Please note that the Applications menu in the interactive desktop does not currently have icons or entries for any research applications -- these still have to be run from the command line, but can still present a graphical window in the remote desktop.</p>
+<h3 id="jupyter">Jupyter<a class="headerlink" href="#jupyter" title="Permanent link">§</a></h3>
+<p><span class="keys"><kbd>Interactive Apps</kbd></span> ➡ <span class="keys"><kbd>Jupyter Notebook</kbd></span></p>
+<p>Similarly to the Interactive Desktop, this can submit a job that launches a Jupyter Notebook session on a compute node. It then acts as a proxy to let you access that server from your browser.</p>
+<p>This uses a Python virtualenv with only the packages required to run Jupyter -- you may wish to install additional kernels from the command line.</p>
 
 
 
