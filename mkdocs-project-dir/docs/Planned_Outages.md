@@ -4,10 +4,6 @@ layout: docs
 
 # Planned Outages
 
-!!! important "UCL Easter closing"
-    UCL is closed from Thurs 28 March to Weds 3 April 2024.
-    Any tickets or issues will be dealt with after we return on Thurs 4 April.
-
 The second Tuesday of every month is a maintenance day, when the following clusters should be considered at risk from 8:00AM: Myriad, Kathleen, Thomas, Young, Michael, Aristotle and the Data Science Platform. We won’t necessarily perform maintenance every month, and notice by email will not always be given about maintenance day work that only puts services at risk.
 
 Full details of outages are emailed to the cluster-specific user lists. 
@@ -20,12 +16,13 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-05 April -> 10 May 2024 | Young | In progress | The cabinets in Young are being re-cabled in turn. We plan for an eighth of Young to be out of service at a time, so queues may be longer due to fewer available nodes. This maintenance is essential for the longevity of Young. The rest of Young will be running jobs as usual.
+10 June 2024 | Michael | Planned | Full shutdown of Michael for network config alterations in preparation for new filesystem. Jobs will be drained for 8am. No logins and file access during outage. Expected to be back up later that day.
 
 ## Previous Outages
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+05 April -> 10 May 2024 | Young | Completed | The cabinets in Young are being re-cabled in turn. We plan for an eighth of Young to be out of service at a time, so queues may be longer due to fewer available nodes. This maintenance is essential for the longevity of Young. The rest of Young will be running jobs as usual.
 9 April 2024 | Myriad | Completed | Update of module version. Jobs to be drained for 8am, modules update to be done and then jobs begun again later in the day.
 5 April -> 8 April 2024 | Kathleen, Young, Michael | Completed | Annual electrical testing in datacentre. No access to cluster from 15:00 on Fri 5 April to later afternoon on Mon 8 April and no jobs will be running. We will update Singularity to Apptainer on 8th on all three clusters. On Michael we will also update the module version (brought forward from 9 April).
 21 March 2024 | Kathleen, Young | Completed | Update of module version. Should not cause outage.
