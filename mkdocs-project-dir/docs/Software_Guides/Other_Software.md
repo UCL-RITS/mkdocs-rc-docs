@@ -342,7 +342,7 @@ recon-all -openmp $NSLOTS -i sample-001.nii.gz -s bert -all
 
 The General Atomic and Molecular Electronic Structure System (GAMESS) is a general ab initio quantum chemistry package. 
 
-The GAMESS module should be loaded once from a login node before submitting a job - this creates the `~/Scratch/gamess` directory for you which is used as `USERSCR` to write some scratch files during the job. If you don't want to keep these files and would prefer them to be written to `$TMPDIR` instead, you can put `export $GAMESS_USERSCR=$TMPDIR` in your jobscript after the module load command.
+The GAMESS module should be loaded once from a login node before submitting a job - this creates the `~/Scratch/gamess` directory for you which is used as `USERSCR` to write some scratch files during the job. If you don't want to keep these files and would prefer them to be written to `$TMPDIR` instead, you can put `export GAMESS_USERSCR=$TMPDIR` in your jobscript after the module load command.
 
 ```
 module unload compilers mpi
@@ -352,7 +352,7 @@ module load gamess/5Dec2014_R1/intel-2015-update2
 
 # Optional: set where the USERSCR files go. 
 # By default, the module sets it to ~/Scratch/gamess
-export $GAMESS_USERSCR=$TMPDIR
+export GAMESS_USERSCR=$TMPDIR
 
 rungms exam01.inp 00 $NSLOTS $(ppn)
 ```
