@@ -17,6 +17,7 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
 10 June 2024 | Michael | Planned | Full shutdown of Michael for network config alterations in preparation for new filesystem. Jobs will be drained for 8am. No logins and file access during outage. Expected to be back up later that day.
+11 June 2024 | Young | Planned | Drain of one rack for 8am to physically install new hardware. The rest of the cluster will be operating as usual. The new hardware won't be available for use for some time - will still need testing and configuring.
 
 ## Previous Outages
 
