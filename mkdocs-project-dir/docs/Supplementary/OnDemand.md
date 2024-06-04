@@ -10,7 +10,7 @@ Open OnDemand (OOD) is a setup that allows you to connect to, and use, an existi
 
 We've set this up on Myriad as a pilot service.
 
-[Click Here To Access the OnDemand Pilot Service :octicons-link-external-16:](https://ood.myriad.rc.ucl.ac.uk/){ .md-button target="_blank" }
+[Click Here To Access the OnDemand Pilot Service](https://ood.myriad.rc.ucl.ac.uk/){ .md-button target="_blank" }
 
 It currently has the following capabilities:
 
