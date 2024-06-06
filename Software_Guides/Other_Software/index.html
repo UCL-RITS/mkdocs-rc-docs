@@ -1378,6 +1378,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="GAMESS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-gamess" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting GAMESS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2159,6 +2174,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="GAMESS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-gamess" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting GAMESS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2932,6 +2962,53 @@ export GAMESS_USERSCR=$TMPDIR
 rungms exam01.inp 00 $NSLOTS $(ppn)
 </code></pre></div>
 
+<h4 id="troubleshooting-gamess">Troubleshooting GAMESS<a class="headerlink" href="#troubleshooting-gamess" title="Permanent link">§</a></h4>
+<p>If there's something wrong with the way you are running your model or a mismatch between the number of
+processes you tell it to use and what it expects, you may get a log that only shows this:</p>
+<div class="codehilite"><pre><span></span><code>Copying input file exam01.inp to your run&#39;s scratch directory...
+cp tests/standard/exam01.inp /tmpdir/job/12345.undefined/exam01.F05
+unset echo
+@: Expression Syntax.
+</code></pre></div>
+
+<p>To see what was happening to cause the error, you should take a local copy of <code>rungms</code>. Use 
+<code>module show</code> to look at the gamess module you are using, and look at the line that sets the PATH. 
+This shows you where the install is, and where the <code>rungms</code> script is located:</p>
+<div class="codehilite"><pre><span></span><code>module show gamess/5Dec2014_R1/intel-2015-update2
+-------------------------------------------------------------------
+/shared/ucl/apps/modulefiles/applications/gamess/5Dec2014_R1/intel-2015-update2:
+
+module-whatis   {Adds GAMESS 5Dec2014_R1 to your environment, built for Intel MPI. Uses ~/Scratch/gamess for USERSCR. You can override by exporting GAMESS_USERSCR as another path.}
+prereq          gcc-libs
+prereq          compilers/intel/2015/update2
+prereq          mpi/intel/2015/update3/intel
+conflict        gamess
+prepend-path    PATH /shared/ucl/apps/gamess/5Dec2014_R1/intel-2015-update2
+prepend-path    CMAKE_PREFIX_PATH /shared/ucl/apps/gamess/5Dec2014_R1/intel-2015-update2
+setenv          GAMESS_USERSCR ~/Scratch/gamess
+-------------------------------------------------------------------
+</code></pre></div>
+
+<p>Copy <code>rungms</code> from the version you are using to somewhere in your space.</p>
+<div class="codehilite"><pre><span></span><code>cp /shared/ucl/apps/gamess/5Dec2014_R1/intel-2015-update2/rungms` ~/Scratch/gamess_test
+</code></pre></div>
+
+<p>Edit it to add <code>-evx</code> to the very first line so it reads:</p>
+<div class="codehilite"><pre><span></span><code>#!/bin/csh -evx
+</code></pre></div>
+
+<p>Now in your jobscript, use your <code>rungms</code> instead of the central one.</p>
+<div class="codehilite"><pre><span></span><code># using rungms in current directory
+./rungms exam01.inp 00 $NSLOTS $(ppn)
+</code></pre></div>
+
+<p>You should get error output showing you what the script is doing. At the end it might look like this:</p>
+<div class="codehilite"><pre><span></span><code>@ PPN2 = $PPN + $PPN
+@: Expression Syntax.
+</code></pre></div>
+
+<p>This can happen if you were running <code>./rungms exam01.inp 00 $NSLOTS</code> so that <code>$PPN</code> was not being 
+passed to <code>rungms</code> and is undefined.</p>
 <h3 id="gatk">GATK<a class="headerlink" href="#gatk" title="Permanent link">§</a></h3>
 <p>The Genome Analysis Toolkit or GATK is a software package developed at the Broad Institute to analyze high-throughput sequencing data. </p>
 <p>Version 4 of GATK is BSD-licensed so does not require a group to control access to the software. </p>
