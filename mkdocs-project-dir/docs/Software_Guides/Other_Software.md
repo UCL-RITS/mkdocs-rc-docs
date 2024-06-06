@@ -357,6 +357,65 @@ export GAMESS_USERSCR=$TMPDIR
 rungms exam01.inp 00 $NSLOTS $(ppn)
 ```
 
+#### Troubleshooting GAMESS
+
+If there's something wrong with the way you are running your model or a mismatch between the number of
+processes you tell it to use and what it expects, you may get a log that only shows this:
+
+```
+Copying input file exam01.inp to your run's scratch directory...
+cp tests/standard/exam01.inp /tmpdir/job/12345.undefined/exam01.F05
+unset echo
+@: Expression Syntax.
+```
+
+To see what was happening to cause the error, you should take a local copy of `rungms`. Use 
+`module show` to look at the gamess module you are using, and look at the line that sets the PATH. 
+This shows you where the install is, and where the `rungms` script is located:
+
+```
+module show gamess/5Dec2014_R1/intel-2015-update2
+-------------------------------------------------------------------
+/shared/ucl/apps/modulefiles/applications/gamess/5Dec2014_R1/intel-2015-update2:
+
+module-whatis   {Adds GAMESS 5Dec2014_R1 to your environment, built for Intel MPI. Uses ~/Scratch/gamess for USERSCR. You can override by exporting GAMESS_USERSCR as another path.}
+prereq          gcc-libs
+prereq          compilers/intel/2015/update2
+prereq          mpi/intel/2015/update3/intel
+conflict        gamess
+prepend-path    PATH /shared/ucl/apps/gamess/5Dec2014_R1/intel-2015-update2
+prepend-path    CMAKE_PREFIX_PATH /shared/ucl/apps/gamess/5Dec2014_R1/intel-2015-update2
+setenv          GAMESS_USERSCR ~/Scratch/gamess
+-------------------------------------------------------------------
+```
+
+Copy `rungms` from the version you are using to somewhere in your space.
+```
+cp /shared/ucl/apps/gamess/5Dec2014_R1/intel-2015-update2/rungms` ~/Scratch/gamess_test
+```
+
+Edit it to add `-evx` to the very first line so it reads:
+
+```
+#!/bin/csh -evx
+```
+
+Now in your jobscript, use your `rungms` instead of the central one.
+
+```
+# using rungms in current directory
+./rungms exam01.inp 00 $NSLOTS $(ppn)
+```
+
+You should get error output showing you what the script is doing. At the end it might look like this:
+
+```
+@ PPN2 = $PPN + $PPN
+@: Expression Syntax.
+```
+
+This can happen if you were running `./rungms exam01.inp 00 $NSLOTS` so that `$PPN` was not being 
+passed to `rungms` and is undefined.
 
 ### GATK
 
