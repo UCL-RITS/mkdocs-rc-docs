@@ -391,7 +391,7 @@ setenv          GAMESS_USERSCR ~/Scratch/gamess
 
 Copy `rungms` from the version you are using to somewhere in your space.
 ```
-cp /shared/ucl/apps/gamess/5Dec2014_R1/intel-2015-update2/rungms` ~/Scratch/gamess_test
+cp /shared/ucl/apps/gamess/5Dec2014_R1/intel-2015-update2/rungms ~/Scratch/gamess_test
 ```
 
 Edit it to add `-evx` to the very first line so it reads:
