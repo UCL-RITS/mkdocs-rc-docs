@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
     
     
       
@@ -172,7 +172,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -1439,6 +1439,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Jupyter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1523,6 +1538,36 @@
 <p><span class="keys"><kbd>Interactive Apps</kbd></span> ➡ <span class="keys"><kbd>Jupyter Notebook</kbd></span></p>
 <p>Similarly to the Interactive Desktop, this can submit a job that launches a Jupyter Notebook session on a compute node. It then acts as a proxy to let you access that server from your browser.</p>
 <p>This uses a Python virtualenv with only the packages required to run Jupyter -- you may wish to install additional kernels from the command line.</p>
+<p>To do this:</p>
+<h4 id="python">Python<a class="headerlink" href="#python" title="Permanent link">§</a></h4>
+<ol>
+<li>In a shell, load the appropriate Python modules, e.g. for Python 3.11.4:</li>
+</ol>
+<div class="codehilite"><pre><span></span><code>module load openssl/1.1.1u python/3.11.4
+</code></pre></div>
+
+<ol start="2">
+<li>Create a virtual environment and activate it:</li>
+</ol>
+<p>e.g. for a virtual environment called <code>my_env</code>:</p>
+<div class="codehilite"><pre><span></span><code>virtualenv my_env
+source my_env/bin/activate
+</code></pre></div>
+
+<ol start="3">
+<li>Install the packages you need as well as the <code>ipykernel</code> package:</li>
+</ol>
+<p>e.g. to install <code>numpy</code>, <code>matplotlib</code>:</p>
+<div class="codehilite"><pre><span></span><code>pip install numpy matplotlib ipykernel
+</code></pre></div>
+
+<ol start="4">
+<li>Install the kernel, making sure to set the <code>LD_LIBRARY_PATH</code> as follows:</li>
+</ol>
+<div class="codehilite"><pre><span></span><code>python3 -m ipykernel install --user --name my_env --env LD_LIBRARY_PATH ${LD_LIBRARY_PATH}
+</code></pre></div>
+
+<p>You should then be able to select the kernel from the drop-down list in Jupyter.</p>
 
 
 
@@ -1591,7 +1636,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
       
     
   </body>
