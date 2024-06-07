@@ -95,3 +95,37 @@ Similarly to the Interactive Desktop, this can submit a job that launches a Jupy
 
 This uses a Python virtualenv with only the packages required to run Jupyter -- you may wish to install additional kernels from the command line.
 
+To do this:
+
+#### Python
+
+1. In a shell, load the appropriate Python modules, e.g. for Python 3.11.4:
+
+```
+module load openssl/1.1.1u python/3.11.4
+```
+
+2. Create a virtual environment and activate it:
+
+e.g. for a virtual environment called `my_env`:
+
+```
+virtualenv my_env
+source my_env/bin/activate
+```
+
+3. Install the packages you need as well as the `ipykernel` package:
+
+e.g. to install `numpy`, `matplotlib`:
+
+```
+pip install numpy matplotlib ipykernel
+```
+
+4. Install the kernel, making sure to set the `LD_LIBRARY_PATH` as follows:
+
+```
+python3 -m ipykernel install --user --name my_env --env LD_LIBRARY_PATH ${LD_LIBRARY_PATH}
+```
+
+You should then be able to select the kernel from the drop-down list in Jupyter.
