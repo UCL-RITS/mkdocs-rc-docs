@@ -16,13 +16,13 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-10 June 2024 | Michael | Planned | Full shutdown of Michael for network config alterations in preparation for new filesystem. Jobs will be drained for 8am. No logins and file access during outage. Expected to be back up later that day.
 11 June 2024 | Young | Planned | Drain of one rack for 8am to physically install new hardware. The rest of the cluster will be operating as usual. The new hardware won't be available for use for some time - will still need testing and configuring.
 
 ## Previous Outages
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+10 June 2024 | Michael | Completed | Full shutdown of Michael for network config alterations in preparation for new filesystem. Jobs will be drained for 8am. No logins and file access during outage. Expected to be back up later that day.
 05 April -> 10 May 2024 | Young | Completed | The cabinets in Young are being re-cabled in turn. We plan for an eighth of Young to be out of service at a time, so queues may be longer due to fewer available nodes. This maintenance is essential for the longevity of Young. The rest of Young will be running jobs as usual.
 9 April 2024 | Myriad | Completed | Update of module version. Jobs to be drained for 8am, modules update to be done and then jobs begun again later in the day.
 5 April -> 8 April 2024 | Kathleen, Young, Michael | Completed | Annual electrical testing in datacentre. No access to cluster from 15:00 on Fri 5 April to later afternoon on Mon 8 April and no jobs will be running. We will update Singularity to Apptainer on 8th on all three clusters. On Michael we will also update the module version (brought forward from 9 April).
