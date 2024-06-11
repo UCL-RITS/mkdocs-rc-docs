@@ -57,6 +57,12 @@ From here, you can view the files on Myriad, and download or upload files. You c
 
 We may add additional storage entries in the menu and side bar -- for example, shared project directories -- later and as these become available.  However, these will not include storage directly attached to other clusters, for technical reasons.
 
+#### rclone and UCL OneDrive
+
+If you have set up UCL OneDrive as a remote using [`rclone`](https://rclone.org/) on the cluster, your OneDrive storage will show up as a location in the File Browser. You can then use the Copy and Move tools to transfer files between the cluster and OneDrive.
+
+Additional remotes may show up here, but we have not yet tested these.
+
 ### Active Jobs
 
 ++"Jobs"++ ➡ ++"Active Jobs"++
