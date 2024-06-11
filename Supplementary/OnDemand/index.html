@@ -1394,6 +1394,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="The File Browser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rclone-and-ucl-onedrive" class="md-nav__link">
+    <span class="md-ellipsis">
+      rclone and UCL OneDrive
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1519,6 +1534,9 @@
 <p>The list of files can take a second to populate: if it shows no files at first, it's probably just being slow.</p>
 </div>
 <p>We may add additional storage entries in the menu and side bar -- for example, shared project directories -- later and as these become available.  However, these will not include storage directly attached to other clusters, for technical reasons.</p>
+<h4 id="rclone-and-ucl-onedrive">rclone and UCL OneDrive<a class="headerlink" href="#rclone-and-ucl-onedrive" title="Permanent link">§</a></h4>
+<p>If you have set up UCL OneDrive as a remote using <a href="https://rclone.org/"><code>rclone</code></a> on the cluster, your OneDrive storage will show up as a location in the File Browser. You can then use the Copy and Move tools to transfer files between the cluster and OneDrive.</p>
+<p>Additional remotes may show up here, but we have not yet tested these.</p>
 <h3 id="active-jobs">Active Jobs<a class="headerlink" href="#active-jobs" title="Permanent link">§</a></h3>
 <p><span class="keys"><kbd>Jobs</kbd></span> ➡ <span class="keys"><kbd>Active Jobs</kbd></span></p>
 <p>This is essentially an interface to the <code>qstat</code> command, so it shows queued and running jobs, and not completed jobs. You can also delete/cancel a queued or running job from here.</p>
