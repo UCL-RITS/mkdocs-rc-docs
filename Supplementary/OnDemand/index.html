@@ -1542,9 +1542,10 @@
 <p>This is essentially an interface to the <code>qstat</code> command, so it shows queued and running jobs, and not completed jobs. You can also delete/cancel a queued or running job from here.</p>
 <h3 id="job-composer">Job Composer<a class="headerlink" href="#job-composer" title="Permanent link">§</a></h3>
 <p><span class="keys"><kbd>Jobs</kbd></span> ➡ <span class="keys"><kbd>Job Composer</kbd></span></p>
+<p>This lets you select from a set of job templates to copy and edit, then submit to the queue. We'll add to the job templates over time: at the moment there are some basic examples.</p>
 <h3 id="terminal-in-the-browser">Terminal in the Browser<a class="headerlink" href="#terminal-in-the-browser" title="Permanent link">§</a></h3>
 <p><span class="keys"><kbd>Clusters</kbd></span> ➡ <span class="keys"><kbd>Myriad Shell Access</kbd></span></p>
-<p>This lets you log in to Myriad using SSH, giving you a terminal in the browser window.</p>
+<p>This lets you log in to one of Myriad's login nodes using SSH, giving you a terminal in the browser window.</p>
 <h3 id="interactive-desktop">Interactive Desktop<a class="headerlink" href="#interactive-desktop" title="Permanent link">§</a></h3>
 <p><span class="keys"><kbd>Interactive Apps</kbd></span> ➡ <span class="keys"><kbd>Myriad Desktop</kbd></span></p>
 <p>This submits a job that launches a desktop GUI on a compute node. For ease of maintenance, this is a containerised Ubuntu 24.04 LTS desktop Apptainer container, but it still has access to all the applications and the shared filesystems. It's possible having Ubuntu inside the container and RHEL outside could cause problems, so please let us know if you see problems you're not expecting.</p>
