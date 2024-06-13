@@ -73,11 +73,13 @@ This is essentially an interface to the `qstat` command, so it shows queued and 
 
 ++"Jobs"++ ➡ ++"Job Composer"++
 
+This lets you select from a set of job templates to copy and edit, then submit to the queue. We'll add to the job templates over time: at the moment there are some basic examples.
+
 ### Terminal in the Browser
 
 ++"Clusters"++ ➡ ++"Myriad Shell Access"++
 
-This lets you log in to Myriad using SSH, giving you a terminal in the browser window.
+This lets you log in to one of Myriad's login nodes using SSH, giving you a terminal in the browser window.
 
 ### Interactive Desktop
 
