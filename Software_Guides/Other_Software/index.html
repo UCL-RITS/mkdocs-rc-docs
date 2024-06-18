@@ -2949,14 +2949,18 @@ recon-all -openmp $NSLOTS -i sample-001.nii.gz -s bert -all
 
 <h3 id="gamess">GAMESS<a class="headerlink" href="#gamess" title="Permanent link">§</a></h3>
 <p>The General Atomic and Molecular Electronic Structure System (GAMESS) is a general ab initio quantum chemistry package. </p>
-<p>The GAMESS module should be loaded once from a login node before submitting a job - this creates the <code>~/Scratch/gamess</code> directory for you which is used as <code>USERSCR</code> to write some scratch files during the job. If you don't want to keep these files and would prefer them to be written to <code>$TMPDIR</code> instead, you can put <code>export GAMESS_USERSCR=$TMPDIR</code> in your jobscript after the module load command.</p>
+<p>The GAMESS module should be loaded once from a login node before submitting a job - this creates the <code>~/Scratch/gamess/randomLabel</code> directory for you which is used as <code>USERSCR</code> to write some scratch files during the job. If you don't want to keep these files and would prefer them to be written to <code>$TMPDIR</code> instead, you can put <code>export GAMESS_USERSCR=$TMPDIR</code> in your jobscript after the module load command.</p>
+<p>It will also check whether this is a cluster with <code>$TMPDIR</code> available, and set <code>SCR</code> which is the 
+binary scratch directory to <code>$TMPDIR</code> if it exists and <code>~/Scratch/gamess/scr.randomLabel</code> if it
+does not. You can also override this by adding <code>export GAMESS_SCR=</code> to any path you want it to use
+in your jobscript after the module load command.</p>
 <div class="codehilite"><pre><span></span><code>module unload compilers mpi
 module load compilers/intel/2015/update2
 module load mpi/intel/2015/update3/intel
 module load gamess/5Dec2014_R1/intel-2015-update2
 
 # Optional: set where the USERSCR files go. 
-# By default, the module sets it to ~/Scratch/gamess
+# By default, the module sets it to ~/Scratch/gamess/randomLabel
 export GAMESS_USERSCR=$TMPDIR
 
 rungms exam01.inp 00 $NSLOTS $(ppn)
