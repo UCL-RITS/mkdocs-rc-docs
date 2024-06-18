@@ -136,7 +136,6 @@ Launching with `matlab` will give you the full graphical user interface - you wi
 
 Launching with `matlab -nodesktop -nodisplay` will give you the MATLAB terminal.
 
-[//]: # Up to this point on revision.
 
 ## Submitting jobs using the MATLAB Parallel Server (MPS)
 
