@@ -622,7 +622,7 @@ gerun gmx_mpi -v -stepout 10000
 
 #### Passing in options to GROMACS non-interactively
 
-Some GROMACS executables like `trjconv` normally take interactive input. You can't do this in a jobscript, so you need to pass in the input you would normally type in. There are several ways of doing this, mentioned at [GROMACS Documentation - Using Commands in Scripts](http://www.gromacs.org/Documentation/How-tos/Using_Commands_in_Scripts). The simplest is to echo the input in and keep your gmx options as they would normally be. If the inputs you would normally type were 3 and 3, then you can do this:
+Some GROMACS executables like `trjconv` normally take interactive input. You can't do this in a jobscript, so you need to pass in the input you would normally type in. There are several ways of doing this, mentioned at [GROMACS Documentation - Specifying selections from command line](https://manual.gromacs.org/2021/onlinehelp/selections.html#specifying-selections-from-command-line). The simplest is to echo the input in and keep your gmx options as they would normally be. If the inputs you would normally type were 3 and 3, then you can do this:
 
 ```
 echo 3 3 | gmx whatevercommand -options
