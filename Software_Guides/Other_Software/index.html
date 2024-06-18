@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
     
     
       
@@ -3176,7 +3176,7 @@ gerun gmx_mpi -v -stepout 10000
 </code></pre></div>
 
 <h4 id="passing-in-options-to-gromacs-non-interactively">Passing in options to GROMACS non-interactively<a class="headerlink" href="#passing-in-options-to-gromacs-non-interactively" title="Permanent link">§</a></h4>
-<p>Some GROMACS executables like <code>trjconv</code> normally take interactive input. You can't do this in a jobscript, so you need to pass in the input you would normally type in. There are several ways of doing this, mentioned at <a href="http://www.gromacs.org/Documentation/How-tos/Using_Commands_in_Scripts">GROMACS Documentation - Using Commands in Scripts</a>. The simplest is to echo the input in and keep your gmx options as they would normally be. If the inputs you would normally type were 3 and 3, then you can do this:</p>
+<p>Some GROMACS executables like <code>trjconv</code> normally take interactive input. You can't do this in a jobscript, so you need to pass in the input you would normally type in. There are several ways of doing this, mentioned at <a href="https://manual.gromacs.org/2021/onlinehelp/selections.html#specifying-selections-from-command-line">GROMACS Documentation - Specifying selections from command line</a>. The simplest is to echo the input in and keep your gmx options as they would normally be. If the inputs you would normally type were 3 and 3, then you can do this:</p>
 <div class="codehilite"><pre><span></span><code>echo 3 3 | gmx whatevercommand -options
 </code></pre></div>
 
