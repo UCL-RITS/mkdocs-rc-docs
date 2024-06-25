@@ -1382,6 +1382,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#semaphores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semaphores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#troubleshooting-gamess" class="md-nav__link">
     <span class="md-ellipsis">
       Troubleshooting GAMESS
@@ -2178,6 +2187,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#semaphores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semaphores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#troubleshooting-gamess" class="md-nav__link">
     <span class="md-ellipsis">
       Troubleshooting GAMESS
@@ -2963,7 +2981,45 @@ module load gamess/5Dec2014_R1/intel-2015-update2
 # By default, the module sets it to ~/Scratch/gamess/randomLabel
 export GAMESS_USERSCR=$TMPDIR
 
+# removes any of the user’s semaphore arrays that were left from previous
+# jobs on this node. Use if you are using a whole number of nodes.
+ipcrm -a sem
+
 rungms exam01.inp 00 $NSLOTS $(ppn)
+
+# removes all of the user’s semaphore arrays. 
+# Use if you are using a whole number of nodes.
+ipcrm -a sem
+</code></pre></div>
+
+<h4 id="semaphores">Semaphores<a class="headerlink" href="#semaphores" title="Permanent link">§</a></h4>
+<p>GAMESS uses semaphore arrays and leaves these on the nodes where it has been running. This can 
+cause problems for your next jobs or for jobs from other users. </p>
+<p>You will get errors like this if there are not enough semaphores available:</p>
+<div class="codehilite"><pre><span></span><code>DDI Process 12: semget return an error.
+semget errno=ENOSPC -- check system limit for sysv semaphores.
+</code></pre></div>
+
+<p>These lines in the script above will clean up the semaphores belonging to your user on the
+node that you are on:</p>
+<div class="codehilite"><pre><span></span><code># removes all of the user’s semaphore arrays.
+# Use if you are using a whole number of nodes.
+ipcrm -a sem
+</code></pre></div>
+
+<p>Putting this before and after your GAMESS run ought to make sure that no semaphores from you are
+left over, providing your job completes and exits.</p>
+<p>On clusters where you can run multiple jobs per node, running this will cause you problems 
+between your own jobs, because it would delete your second job's semaphore arrays too. In that 
+case, you have two options. You can limit your GAMESS jobs to only running one after the other:</p>
+<div class="codehilite"><pre><span></span><code># submit a job that will only start after job 12345 ends
+qsub -hold_jid=12345
+</code></pre></div>
+
+<p>Or you can request exclusive use of the node you are using so nothing else runs there (if you do 
+this, do use all of the cores available in the node if possible so they are not wasted):</p>
+<div class="codehilite"><pre><span></span><code># request exclusive use of this node so that no other jobs run on it
+#$ -ac exclusive
 </code></pre></div>
 
 <h4 id="troubleshooting-gamess">Troubleshooting GAMESS<a class="headerlink" href="#troubleshooting-gamess" title="Permanent link">§</a></h4>

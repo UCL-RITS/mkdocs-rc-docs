@@ -1576,7 +1576,7 @@
 <p>Our clusters have a wide range of software installed, available by using the modules system.</p>
 <p>The module files are organised by name, version, variant (where applicable) and, if relevant, the compiler version used to build the software. If no compiler version is given, either no compiler was required, or only the base system compiler (<code>/usr/bin/gcc</code>) and libraries were used.</p>
 <p>When we install applications, we try to install them on all of our clusters, but sometimes licence restrictions prevent it. If something seems to be missing, it may be because we are not able to provide it. Please contact us for more information if this is hindering your work.</p>
-<p>The lists below were last updated at 17:05:12 (+0100) on 06 Jun 2024, and are generated from the software installed on the <a href="../../Clusters/Myriad/">Myriad</a> cluster.</p>
+<p>The lists below were last updated at 13:35:10 (+0100) on 06 Jun 2024, and are generated from the software installed on the <a href="../../Clusters/Myriad/">Myriad</a> cluster.</p>
 <h2 id="bundles">Bundles<a class="headerlink" href="#bundles" title="Permanent link">§</a></h2>
 <p>Some applications or tools depend on a lot of other modules, or have some awkward requirements. For these, we sometimes make a "bundle" module in this section, that loads all the dependencies.</p>
 <p>For Python and R in particular, we also have <code>recommended</code> bundles that load the module for a recent version of Python or R, along with a collection of packages for it that have been requested by users, and the modules those packages require.</p>
@@ -1939,6 +1939,10 @@
 </tr>
 <tr>
 <td style="text-align: center;"><code>ansys/2023.r1</code></td>
+<td style="text-align: left;">Adds Ansys CFX/Fluent, EM etc to your environment</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>ansys/2024.r1</code></td>
 <td style="text-align: left;">Adds Ansys CFX/Fluent, EM etc to your environment</td>
 </tr>
 <tr>
@@ -2414,6 +2418,10 @@
 <td style="text-align: left;">EnergyPlus™ is a whole building energy simulation program that engineers, architects, and researchers use to model both energy consumption—for heating, cooling, ventilation, lighting and plug and process loads—and water use in buildings.</td>
 </tr>
 <tr>
+<td style="text-align: center;"><code>energyplus/24.1.0-bindist</code></td>
+<td style="text-align: left;">EnergyPlus™ is a whole building energy simulation program that engineers, architects, and researchers use to model both energy consumption—for heating, cooling, ventilation, lighting and plug and process loads—and water use in buildings.</td>
+</tr>
+<tr>
 <td style="text-align: center;"><code>envi/5.5.2</code></td>
 <td style="text-align: left;">Adds ENVI 5.5.2 with IDL 8.7.2 to your environment.</td>
 </tr>
@@ -2507,7 +2515,7 @@
 </tr>
 <tr>
 <td style="text-align: center;"><code>gamess/5Dec2014_R1/intel-2015-update2</code></td>
-<td style="text-align: left;">Adds GAMESS 5Dec2014_R1 to your environment, built for Intel MPI. Uses ~/Scratch/gamess for USERSCR. You can override by exporting GAMESS_USERSCR as another path.</td>
+<td style="text-align: left;">Adds GAMESS 5Dec2014_R1 to your environment, built for Intel MPI. Uses ~/Scratch/gamess/randomLabel for USERSCR, and TMPDIR or ~/Scratch/gamess/scr.randomLabel for SCR. You can override by exporting GAMESS_USERSCR and GAMESS_SCR as other paths.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>gatk/3.4.46</code></td>
@@ -3112,6 +3120,10 @@
 <tr>
 <td style="text-align: center;"><code>mgltools/1.5.6</code></td>
 <td style="text-align: left;">Adds MGLTools 1.5.6 to your environment. Applications for visualization and analysis of molecular structures. Contains AutoDockTools (ADT), Python Molecular Viewer (PMV) and Vision.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>micress/7.201/intel-2016</code></td>
+<td style="text-align: left;">Adds MICRESS 7.201 to your environment. MICRESS is a software enabling the calculation of microstructure formation in time and space during phase transformations.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>mirdeep/2.0.0.7</code></td>
@@ -5997,6 +6009,10 @@
 <tr>
 <td style="text-align: center;"><code>cmdstan/2.24.1/gnu-4.9.2</code></td>
 <td style="text-align: left;">Adds CmdStan 2.24.1 to your environment.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>cmdstan/2.35.0/gnu-10.2.0</code></td>
+<td style="text-align: left;">Adds CmdStan 2.35.0 to your environment.</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>cuda/7.5.18/gnu-4.9.2</code></td>
