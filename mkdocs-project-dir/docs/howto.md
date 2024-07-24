@@ -545,7 +545,8 @@ flat out, and two are mostly doing nothing. Memory use is low. Swap use is essen
 ### jobhist
 
 Once a job ends, it no longer shows up in `qstat`. To see information about your finished jobs - 
-when they started, when they ended, what node they ran on - type `jobhist`.
+when they started, when they ended, what node they ran on - use the command `jobhist`, part of
+the [`userscripts`](Installed_Software_Lists/module-packages.md) module.
 
 ```
 [uccacxx@login02 ~]$ jobhist
