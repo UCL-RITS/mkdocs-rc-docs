@@ -18,10 +18,10 @@ The following terms also apply to the use of ARC HPC services, including:
  - Kathleen
  - Michael
  - MMM Young
+ - ARC Cluster Filesystem ("ACFS").
 
 They do *not* apply to other ARC services, including:
 
- - ARC Cluster Filesystem
  - Data Safe Haven
  - Research Data Storage Service
 
@@ -60,7 +60,6 @@ Outages and data-loss events will be handled on a best-efforts basis within norm
 You may contact us to arrange to transfer ownership of your data on a service to another user, with their consent. Please arrange this before you stop being a user.
 
 _(nb/TODO: we should make and link here a process description article on this, for both our benefit and the users'. Plus the one for doing it afterwards, the form process with the DPA folks.)_
-
 
 ### Data Access by Support Staff
 
