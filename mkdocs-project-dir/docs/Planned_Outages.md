@@ -16,12 +16,13 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-11 June 2024 | Young | Planned | Drain of one rack for 8am to physically install new hardware. The rest of the cluster will be operating as usual. The new hardware won't be available for use for some time - will still need testing and configuring.
+22 August 2024 | Kathleen | Planned | Migration to new Lustre and mounting of ACFS (ARC Cluster File System). Jobs will be drained for 8am and logins will be prevented from 9 AM. Expected to be back up the following day.
 
 ## Previous Outages
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+11 June 2024 | Young | Completed | Drain of one rack for 8am to physically install new hardware. The rest of the cluster will be operating as usual. The new hardware won't be available for use for some time - will still need testing and configuring.
 10 June 2024 | Michael | Completed | Full shutdown of Michael for network config alterations in preparation for new filesystem. Jobs will be drained for 8am. No logins and file access during outage. Expected to be back up later that day.
 05 April -> 10 May 2024 | Young | Completed | The cabinets in Young are being re-cabled in turn. We plan for an eighth of Young to be out of service at a time, so queues may be longer due to fewer available nodes. This maintenance is essential for the longevity of Young. The rest of Young will be running jobs as usual.
 9 April 2024 | Myriad | Completed | Update of module version. Jobs to be drained for 8am, modules update to be done and then jobs begun again later in the day.
