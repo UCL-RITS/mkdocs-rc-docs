@@ -51,11 +51,6 @@ ssh <your_UCL_user_id>@<system_name>.rc.ucl.ac.uk
 
 **Advanced:** If you find you need to go via the Gateway often, you can set up this jump automatically, see [Single-step logins using tunnelling](#single-step-logins-using-tunnelling)
 
-#### China Connect
-
-If you are on China Connect, you will still need to ssh in to a UCL gateway first as 
-described above.
-
 ### Login problems
 
 If you experience difficulties with your login, please make sure that you are typing your UCL user ID and your password correctly. If you have recently updated your password, it takes some hours to propagate to all UCL systems.

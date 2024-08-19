@@ -26,8 +26,7 @@ The Data Science Platform and all of its components are only
 accessible from the UCL network. When off campus, you will need to
 connect to the
 [UCL VPN](https://ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn)
-first or when working from China, the
-[China Connect Service](https://www.ucl.ac.uk/isd/services/get-connected/china-connect).
+first.
 
 **Please note:** The main aim of this service is to support teaching
   and the service should not be used for computationally intensive
