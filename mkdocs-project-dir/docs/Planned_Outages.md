@@ -16,7 +16,7 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-22 August 2024 | Kathleen | Planned | Migration to new Lustre and mounting of ACFS (ARC Cluster File System). Jobs will be drained for 8am and logins will be prevented from 9am. Expected to be back up the following day.
+~~22 August 2024~~ TBC | Kathleen | Postponed | Migration to new Lustre and mounting of ACFS (ARC Cluster File System). Jobs will be drained for 8am and logins will be prevented from 9am. Expected to be back up the following day.
 
 ## Previous Outages
 
