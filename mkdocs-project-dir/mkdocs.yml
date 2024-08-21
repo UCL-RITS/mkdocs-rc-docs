@@ -71,7 +71,10 @@ theme:
 # sane_lists: this makes lists behave a little more sensibly, and lets you start an ordered list with
 #   a specified number. See here for details: https://python-markdown.github.io/extensions/sane_lists/
 #
+# There's more of these pymdownx extensions if needed
+# See: https://squidfunk.github.io/mkdocs-material/reference/formatting/
 # pymdownx.keys: this adds ++key++ syntax for making things formatted like buttons for keys to press
+# pymdownx.tilde: this adds ~~blah~~ for strikethrough
 #
 # attr_list: this lets you specify html classes on elements. in particular we use it to make links
 #            look like buttons occasionally
@@ -89,6 +92,7 @@ markdown_extensions:
   - footnotes
   - sane_lists
   - pymdownx.keys
+  - pymdownx.tilde
   - attr_list
 
 # Plugins
