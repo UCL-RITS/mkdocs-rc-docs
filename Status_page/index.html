@@ -1924,7 +1924,78 @@ as appropriate.</p>
 </ul>
 <h3 id="kathleen">Kathleen<a class="headerlink" href="#kathleen" title="Permanent link">§</a></h3>
 <ul>
-<li>2024-01 No current issues. Parallel filesystem soon to be replaced.</li>
+<li>
+<p>2024-09-05 - Kathleen outage for new filesystems on Tues 10 September - action required </p>
+<p>The previously-announced Kathleen outage for new filesystems will now take place on maintenance 
+day next week, <strong>Tuesday 10 September</strong>. </p>
+<p>The Kathleen cluster will go into maintenance on Tuesday 10 Sept 2024 from 9:00. Logins to 
+Kathleen will not be possible until the maintenance is finished. Any jobs that won’t finish by 
+the start of the maintenance window will stay queued. We aim to finish the maintenance within 
+one day, so that you can access Kathleen again on Weds 11 Sept.</p>
+<p><strong>We are implementing a number of changes to how data is stored on Kathleen:</strong></p>
+<ul>
+<li>The current Lustre filesystem will be replaced with a new Lustre filesystem. The old Lustre is 
+  running on aging and error-prone hardware, and suffers from performance issues, especially for 
+  interactive work on the login nodes. The new Lustre should provide a vastly better experience.</li>
+<li>The Kathleen nodes will mount the ACFS (ARC Cluster File System) which is ARC’s new centralised 
+  storage system that will (eventually) be available on other ARC systems (e.g. Myriad) too. 
+  ACFS will be available read-write on the login nodes but read-only on the compute nodes.</li>
+<li>Going forward, only the data on ACFS will be backed up. <strong>Please note that the data on the new 
+  Lustre will not be backed up, not even data under <code>/home</code></strong>.</li>
+</ul>
+<p><strong>After the maintenance, you have the following storage locations:</strong></p>
+<ul>
+<li><code>/home/username</code>: your new home directory on the new Lustre; not backed up (this is a change 
+  to the current situation)</li>
+<li><code>/scratch/username</code>: your new scratch directory on the new Lustre; not backed up</li>
+<li><code>/acfs/users/username</code>: your ACFS directory; backed up daily; read-only on the compute nodes</li>
+<li><code>/old_lustre/home/username</code>: your old home directory on the old Lustre; read-only</li>
+<li><code>/old_lustre/scratch/username</code>: your old scratch directory on the old Lustre; read-only</li>
+</ul>
+<p><strong>What you will need to do (after the maintenance):</strong></p>
+<ul>
+<li>After login, you will notice that your new home and scratch directories are mostly empty. 
+  Please copy any data you need from your old home and scratch directories under <code>/old_lustre</code> to 
+  the appropriate new locations.</li>
+<li>E.g. <code>cp -r /old_lustre/home/username/data /home/username</code> will recursively copy your old 
+    <code>data</code> directory and everything in it into your new home.</li>
+<li>Any data that you consider important enough to be backed up should be copied into your ACFS 
+  directory instead.</li>
+<li>You have <strong>three months</strong> to copy your data. After this, the <code>/old_lustre</code> will become unavailable.</li>
+<li>Your queued jobs will be held (showing status <code>hqw</code> in <code>qstat</code>) and won’t start running 
+  automatically, as their job scripts will likely refer to locations on <code>/lustre</code> which won’t exist 
+  until you have copied over the data. After you have copied the data that your jobs need to the new 
+  Lustre, you can release the hold on your queued jobs.</li>
+<li>E.g. <code>qrls $JOB_ID</code> will release a specific job ID, and <code>qrls all</code> will release all your jobs.</li>
+<li>Released array jobs will have the first task in status <code>qw</code> and the rest in <code>hqw</code> - this is normal.</li>
+<li>Depending on the amount of data, the copying may take some time, especially if you have many small 
+  files. If you are copying data to ACFS and you don’t need immediate access to each file individually, 
+  consider creating tar archives instead of copying data recursively.</li>
+<li>E.g. <code>tar -czvf /acfs/users/username/myarchive.tar.gz /old_lustre/home/username/data</code> will 
+    (c)reate a g(z)ipped archive (v)erbosely in the specified (f)ilename location. The contents will be 
+    everything in this user's old <code>data</code> directory. </li>
+</ul>
+<p>Further reminders will be sent before <code>/old_lustre</code> is removed on 11 December.</p>
+<p><strong>Kathleen quotas</strong></p>
+<p>You will continue to have one quota on Kathleen, with a default value of 250G that includes your 
+home and Scratch. If you have an active quota increase request that has not reached its requested 
+expiry date on your old space, we will be recreating these on the new space. As stated above, 
+<code>/home</code> will no longer be backed up.</p>
+<p><strong>ACFS quotas</strong></p>
+<p>You will have 1T of quota on the ACFS. You will be able to check this with the <code>aquota</code> command.</p>
+<p>The ACFS has dual locations for resilience, and as a result standard commands like <code>du</code> or <code>ls -al</code> 
+will report filesizes on it as being twice what they really are. The <code>aquota</code> command will show you 
+real usage and quota. One of the reasons for the previous delay is that we tried to get filesizes to 
+report correctly in all circumstances, but that was not possible so we decided it was less confusing 
+if everything other than <code>aquota</code> always showed double. </p>
+<p>For those interested, the ACFS is a GPFS filesystem.</p>
+<p>This outage will show shortly on <a href="https://www.rc.ucl.ac.uk/docs/Planned_Outages/">Planned Outages</a> 
+and the ACFS information will be added to our documentation.</p>
+<p>We apologise for the inconvenience, but we believe these changes will help to provide a more performant 
+and robust service in the future.</p>
+<p>Please email rc-support@ucl.ac.uk with any queries or raise a request about Kathleen via 
+<a href="https://myservices.ucl.ac.uk/">UCL MyServices</a>.</p>
+</li>
 </ul>
 <h3 id="young">Young<a class="headerlink" href="#young" title="Permanent link">§</a></h3>
 <ul>
@@ -1951,6 +2022,9 @@ there and are migrating the existing data to the rest of the filesystem. </p>
 <p>The filesystem is still working and Young is still running jobs. We do not need you to take 
 any action at present, but things may be running more slowly while this completes.</p>
 </li>
+<li>
+<p>2024-09 Young's new filesystem is being readied for service.</p>
+</li>
 </ul>
 <h3 id="michael">Michael<a class="headerlink" href="#michael" title="Permanent link">§</a></h3>
 <ul>
@@ -1962,6 +2036,9 @@ New jobs trying to start during this time are likely to have failed on start up.
 may have been affected, so please check the outputs for any jobs that were running during 14:40 
 to 16:30 today.</p>
 <p>This was caused by a problem on the admin nodes that has now been sorted out.</p>
+</li>
+<li>
+<p>2024-09 Michael's new filesystem (shared with Young) is being readied for service.</p>
 </li>
 </ul>
 <h3 id="thomas">Thomas<a class="headerlink" href="#thomas" title="Permanent link">§</a></h3>
