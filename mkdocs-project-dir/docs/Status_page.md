@@ -385,9 +385,92 @@ This page outlines that status of each of the machines managed by the Research C
     synchronisation to the mailing list is working correctly and people are being added and removed
     as appropriate.
 
+
 ### Kathleen
 
-  - 2024-01 No current issues. Parallel filesystem soon to be replaced.
+  - 2024-09-05 - Kathleen outage for new filesystems on Tues 10 September - action required 
+
+    The previously-announced Kathleen outage for new filesystems will now take place on maintenance 
+    day next week, **Tuesday 10 September**. 
+
+    The Kathleen cluster will go into maintenance on Tuesday 10 Sept 2024 from 9:00. Logins to 
+    Kathleen will not be possible until the maintenance is finished. Any jobs that won’t finish by 
+    the start of the maintenance window will stay queued. We aim to finish the maintenance within 
+    one day, so that you can access Kathleen again on Weds 11 Sept.
+ 
+    **We are implementing a number of changes to how data is stored on Kathleen:**
+
+    * The current Lustre filesystem will be replaced with a new Lustre filesystem. The old Lustre is 
+      running on aging and error-prone hardware, and suffers from performance issues, especially for 
+      interactive work on the login nodes. The new Lustre should provide a vastly better experience.
+    * The Kathleen nodes will mount the ACFS (ARC Cluster File System) which is ARC’s new centralised 
+      storage system that will (eventually) be available on other ARC systems (e.g. Myriad) too. 
+      ACFS will be available read-write on the login nodes but read-only on the compute nodes.
+    * Going forward, only the data on ACFS will be backed up. **Please note that the data on the new 
+      Lustre will not be backed up, not even data under `/home`**.
+ 
+    **After the maintenance, you have the following storage locations:**
+
+    * `/home/username`: your new home directory on the new Lustre; not backed up (this is a change 
+      to the current situation)
+    * `/scratch/username`: your new scratch directory on the new Lustre; not backed up
+    * `/acfs/users/username`: your ACFS directory; backed up daily; read-only on the compute nodes
+    * `/old_lustre/home/username`: your old home directory on the old Lustre; read-only
+    * `/old_lustre/scratch/username`: your old scratch directory on the old Lustre; read-only
+ 
+    **What you will need to do (after the maintenance):**
+
+    * After login, you will notice that your new home and scratch directories are mostly empty. 
+      Please copy any data you need from your old home and scratch directories under `/old_lustre` to 
+      the appropriate new locations.
+      - E.g. `cp -r /old_lustre/home/username/data /home/username` will recursively copy your old 
+        `data` directory and everything in it into your new home.
+    * Any data that you consider important enough to be backed up should be copied into your ACFS 
+      directory instead.
+    * You have **three months** to copy your data. After this, the `/old_lustre` will become unavailable.
+    * Your queued jobs will be held (showing status `hqw` in `qstat`) and won’t start running 
+      automatically, as their job scripts will likely refer to locations on `/lustre` which won’t exist 
+      until you have copied over the data. After you have copied the data that your jobs need to the new 
+      Lustre, you can release the hold on your queued jobs.
+      - E.g. `qrls $JOB_ID` will release a specific job ID, and `qrls all` will release all your jobs.
+      - Released array jobs will have the first task in status `qw` and the rest in `hqw` - this is normal.
+    * Depending on the amount of data, the copying may take some time, especially if you have many small 
+      files. If you are copying data to ACFS and you don’t need immediate access to each file individually, 
+      consider creating tar archives instead of copying data recursively.
+      - E.g. `tar -czvf /acfs/users/username/myarchive.tar.gz /old_lustre/home/username/data` will 
+        (c)reate a g(z)ipped archive (v)erbosely in the specified (f)ilename location. The contents will be 
+        everything in this user's old `data` directory. 
+
+    Further reminders will be sent before `/old_lustre` is removed on 11 December.
+
+    **Kathleen quotas**
+
+    You will continue to have one quota on Kathleen, with a default value of 250G that includes your 
+    home and Scratch. If you have an active quota increase request that has not reached its requested 
+    expiry date on your old space, we will be recreating these on the new space. As stated above, 
+    `/home` will no longer be backed up.
+
+    **ACFS quotas**
+
+    You will have 1T of quota on the ACFS. You will be able to check this with the `aquota` command.
+
+    The ACFS has dual locations for resilience, and as a result standard commands like `du` or `ls -al` 
+    will report filesizes on it as being twice what they really are. The `aquota` command will show you 
+    real usage and quota. One of the reasons for the previous delay is that we tried to get filesizes to 
+    report correctly in all circumstances, but that was not possible so we decided it was less confusing 
+    if everything other than `aquota` always showed double. 
+
+    For those interested, the ACFS is a GPFS filesystem.
+
+    This outage will show shortly on [Planned Outages](https://www.rc.ucl.ac.uk/docs/Planned_Outages/) 
+    and the ACFS information will be added to our documentation.
+
+    We apologise for the inconvenience, but we believe these changes will help to provide a more performant 
+    and robust service in the future.
+ 
+    Please email rc-support@ucl.ac.uk with any queries or raise a request about Kathleen via 
+    [UCL MyServices](https://myservices.ucl.ac.uk/).
+
 
 ### Young
 
@@ -416,6 +499,8 @@ This page outlines that status of each of the machines managed by the Research C
     The filesystem is still working and Young is still running jobs. We do not need you to take 
     any action at present, but things may be running more slowly while this completes.
 
+  - 2024-09 Young's new filesystem is being readied for service.
+
 ### Michael
 
   - 2024-01-24 16:40 - Problem on Michael's admin nodes causing DNS failures - now solved
@@ -427,6 +512,8 @@ This page outlines that status of each of the machines managed by the Research C
     to 16:30 today.
 
     This was caused by a problem on the admin nodes that has now been sorted out.
+
+  - 2024-09 Michael's new filesystem (shared with Young) is being readied for service.
 
 ### Thomas
 
