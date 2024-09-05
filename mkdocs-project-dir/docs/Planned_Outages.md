@@ -16,7 +16,7 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-10 September 2024 | Kathleen | Planned | Migration to new Lustre filesystem and mounting of ACFS (ARC Cluster File System) as the new backed-up location. Jobs will be drained for 8am and logins will be prevented from 9am. Expected to be back up the following day. Once back up, all jobs will be in `hqw` status and users will need to migrate their data from `/old_lustre/home/username` and `/old_lustre/scratch/username` which will be read-only. Home will bo longer be backed up. `/old_lustre` will remain for three months.
+10 September 2024 | Kathleen | Planned | Migration to new Lustre filesystem and mounting of ACFS (ARC Cluster File System) as the new backed-up location. Jobs will be drained for 8am and logins will be prevented from 9am. Expected to be back up the following day. Once back up, all jobs will be in `hqw` status and users will need to migrate their data from `/old_lustre/home/username` and `/old_lustre/scratch/username` which will be read-only. Home will no longer be backed up. `/old_lustre` will remain for three months and be removed on 11 Dec.
 
 ## Previous Outages
 
