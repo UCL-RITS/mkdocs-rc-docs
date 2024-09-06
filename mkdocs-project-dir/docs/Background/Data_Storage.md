@@ -66,11 +66,4 @@ the same files from both clusters.
 
 - Location: `/acfs/users/<username>`
 - Backed up daily.
-  
-
-## Filesystem retirement
-
-When filesystems or clusters are retired, they will eventually be decommissioned and we will not retain
-the data left on them. Barring unforeseen circumstances, you will receive plenty of notice before this
-happens.
 
