@@ -52,6 +52,21 @@ the same files from both clusters.
 - Backed up daily.
 
 
+## Temporary storage for jobs (TMPDIR)
+
+If the cluster you are on is not described in its about page as being diskless, the compute nodes
+will have local disks that can be written to during your job. 
+
+This is because a local disk is faster to write to than a parallel filesystem. 
+
+This location is created on the compute node when your job begins, and deleted again when it ends.
+You will need to copy the data back out of it before the end of your job into your Scratch. If your
+job fails or runs out of time, you will not be able to recover this data.
+
+- Location: `$TMPDIR`
+- Will only exist during your job and be deleted after.
+
+
 ## Filesystem retirement
 
 When filesystems or clusters are retired, they will eventually be decommissioned and we will not retain
