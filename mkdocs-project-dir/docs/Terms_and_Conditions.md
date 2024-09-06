@@ -82,8 +82,10 @@ We intend to retain user data for 180 days after a user has either left UCL, req
 
 This process is not currently automated, so data may still be retained after this time. Please contact us if you need to ensure your data has been erased.
 
-_(nb/TODO: check how long backups are retained, add here)_
-
+Backup retention:
+- On clusters where home is backed up, backups are retained for 15 days.
+- On the ACFS, backups are retained for 30 days minimum.
+  
 
 ## Acknowledgement in Works
 
