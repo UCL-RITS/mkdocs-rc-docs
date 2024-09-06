@@ -46,3 +46,6 @@ to keep working as intended, we need to keep filesystem usage below that point.
 - Before you leave UCL, please consider what should happen to your data, and take steps to put it in
   a Research Data archive and/or ensure that your colleagues are given access to it.
 
+## What filesystems are available?
+
+See [Data Storage](Data_Storage.md).
