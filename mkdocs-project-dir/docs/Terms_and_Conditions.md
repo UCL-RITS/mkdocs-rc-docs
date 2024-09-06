@@ -78,17 +78,20 @@ Occasionally support requests can involve more involved work, including running 
 
 ### Data Retention
 
+#### Data Retention on Leaving UCL
+
 We intend to retain user data for 180 days after a user has either left UCL, requested that their account be removed, had their institution request that their account be removed, or become ineligible for an account in some other way.
 
 This process is not currently automated, so data may still be retained after this time. Please contact us if you need to ensure your data has been erased.
 
-Backup retention:
+#### Backup Retention
+
 - On clusters where home is backed up, backups are retained for 15 days.
 - On the ACFS, backups are retained for 30 days minimum.
   
-### Filesystem retirement
+#### Filesystem Retirement
 
-When filesystems or clusters are retired, they will eventually be decommissioned and we will not retain
+When filesystems or clusters are retired, they will be decommissioned and we will not retain
 the data left on them. Barring unforeseen circumstances, you will receive three months' notice before this
 happens.
 
