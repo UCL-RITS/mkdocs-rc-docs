@@ -12,6 +12,8 @@ Our clusters have local [parallel filesystems](Parallel_Filesystems.md) consisti
 your home and Scratch directories where you can write data. These are "close to" the 
 compute, connected to it with a fast network.
 
+They may also have local storage on the compute node that can be used during your job.
+
 ## On-cluster storage
 
 ### Home
@@ -34,6 +36,20 @@ Important data should be regularly backed up to another location.
 - Location: `/scratch/scratch/<username>`
 - Also at: `/home/<username>/Scratch` (a shortcut or symbolic link to the first location).
 
+### Temporary storage for jobs (TMPDIR)
+
+If the cluster you are on is not described in its about page as being diskless, the compute nodes
+will have local disks that can be written to during your job. 
+
+This is because a local disk is faster to write to than a parallel filesystem. 
+
+This location is created on the compute node when your job begins, and deleted again when it ends.
+You will need to copy the data back out of it before the end of your job into your Scratch. If your
+job fails or runs out of time, you will not be able to recover this data.
+
+- Location: `$TMPDIR`
+- Will only exist during your job and be deleted after.
+
 
 ## ARC Cluster File System (ACFS)
 
@@ -50,22 +66,7 @@ the same files from both clusters.
 
 - Location: `/acfs/users/<username>`
 - Backed up daily.
-
-
-## Temporary storage for jobs (TMPDIR)
-
-If the cluster you are on is not described in its about page as being diskless, the compute nodes
-will have local disks that can be written to during your job. 
-
-This is because a local disk is faster to write to than a parallel filesystem. 
-
-This location is created on the compute node when your job begins, and deleted again when it ends.
-You will need to copy the data back out of it before the end of your job into your Scratch. If your
-job fails or runs out of time, you will not be able to recover this data.
-
-- Location: `$TMPDIR`
-- Will only exist during your job and be deleted after.
-
+  
 
 ## Filesystem retirement
 
