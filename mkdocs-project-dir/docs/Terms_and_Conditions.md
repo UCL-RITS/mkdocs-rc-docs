@@ -86,6 +86,12 @@ Backup retention:
 - On clusters where home is backed up, backups are retained for 15 days.
 - On the ACFS, backups are retained for 30 days minimum.
   
+### Filesystem retirement
+
+When filesystems or clusters are retired, they will eventually be decommissioned and we will not retain
+the data left on them. Barring unforeseen circumstances, you will receive three months' notice before this
+happens.
+
 
 ## Acknowledgement in Works
 
