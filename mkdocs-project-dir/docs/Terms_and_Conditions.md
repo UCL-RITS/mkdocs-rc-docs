@@ -27,6 +27,10 @@ They do *not* apply to other ARC services, including:
 
 These services have their own terms and conditions for use.
 
+## Commercial Services
+
+It is not permitted to provide commercial services from your account on our systems. 
+
 ## Impairing Other Users
 
 On nodes intended for shared use to access a service ("login nodes"), we run a system intended to restrict the load any single user can produce.
