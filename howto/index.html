@@ -2960,7 +2960,8 @@ shows up in both Primary and Secondaries. The load is very unbalanced - it is us
 flat out, and two are mostly doing nothing. Memory use is low. Swap use is essentially zero.</p>
 <h3 id="jobhist">jobhist<a class="headerlink" href="#jobhist" title="Permanent link">§</a></h3>
 <p>Once a job ends, it no longer shows up in <code>qstat</code>. To see information about your finished jobs - 
-when they started, when they ended, what node they ran on - type <code>jobhist</code>.</p>
+when they started, when they ended, what node they ran on - use the command <code>jobhist</code>, part of
+the <a href="../Installed_Software_Lists/module-packages/"><code>userscripts</code></a> module.</p>
 <div class="codehilite"><pre><span></span><code>[uccacxx@login02 ~]$ jobhist
         FSTIME        |       FETIME        |   HOSTNAME    |  OWNER  | JOB NUMBER | TASK NUMBER | EXIT STATUS |   JOB NAME    
 ----------------------+---------------------+---------------+---------+------------+-------------+-------------+---------------

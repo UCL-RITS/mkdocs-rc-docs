@@ -1609,7 +1609,7 @@
 
 
 <h1 id="where-do-my-results-go">Where do my results go?<a class="headerlink" href="#where-do-my-results-go" title="Permanent link">§</a></h1>
-<p>After submitting your job, you can use the command <code>qstat</code> to view the status of all the jobs you have submitted. Once you can no longer see your job on the list, this means your job has completed. To view details on jobs that have completed, you can run <code>jobhist</code>. There are various ways of monitoring the output of your job.</p>
+<p>After submitting your job, you can use the command <code>qstat</code> to view the status of all the jobs you have submitted. Once you can no longer see your job on the list, this means your job has completed. To view details on jobs that have completed, you can run <code>jobhist</code>, part of the <a href="../Installed_Software_Lists/module-packages/"><code>userscripts</code></a> module. There are various ways of monitoring the output of your job.</p>
 <h2 id="output-and-error-files">Output and error files<a class="headerlink" href="#output-and-error-files" title="Permanent link">§</a></h2>
 <p>When writing your job script you can either tell it to start in the directory you submit it from (<code>-cwd</code>), or from a particular directory (<code>-wd &lt;dir&gt;</code>), or from your home directory (the default). When your job runs, it will create files in this directory for the job's output and errors:</p>
 <table>
