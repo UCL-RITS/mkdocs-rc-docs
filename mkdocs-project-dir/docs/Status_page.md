@@ -417,14 +417,20 @@ This page outlines that status of each of the machines managed by the Research C
     * `/acfs/users/username`: your ACFS directory; backed up daily; read-only on the compute nodes
     * `/old_lustre/home/username`: your old home directory on the old Lustre; read-only
     * `/old_lustre/scratch/username`: your old scratch directory on the old Lustre; read-only
+
+    You will also have a `~/ACFS` shortcut/symbolic link in your home that points to `/acfs/users/username`.
  
+    If you are looking in your `/old_lustre/home/username/Scratch` symbolic link, that will direct you 
+    back to your **new** Scratch not your old Scratch because it uses an absolute path. Please make sure 
+    to access old Scratch using `/old_lustre/scratch/username`.
+
     **What you will need to do (after the maintenance):**
 
     * After login, you will notice that your new home and scratch directories are mostly empty. 
       Please copy any data you need from your old home and scratch directories under `/old_lustre` to 
       the appropriate new locations.
-      - E.g. `cp -r /old_lustre/home/username/data /home/username` will recursively copy your old 
-        `data` directory and everything in it into your new home.
+      - E.g. `cp -rp /old_lustre/home/username/data /home/username` will recursively copy your old 
+        `data` directory and everything in it into your new home, while preserving the permissions.
     * Any data that you consider important enough to be backed up should be copied into your ACFS 
       directory instead.
     * You have **three months** to copy your data. After this, the `/old_lustre` will become unavailable.
