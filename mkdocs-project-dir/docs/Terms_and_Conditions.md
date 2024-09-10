@@ -8,7 +8,7 @@ layout: docs
 # Terms and Conditions
 
 !!! info
-    The Terms and Conditions were changed on _*DATE*_. [The previous Terms and Conditions are still available for reference.](Supplementary/Previous_Terms_and_Conditions.md).
+    The Terms and Conditions were changed on 10 September 2024. [The previous Terms and Conditions are still available for reference.](Supplementary/Previous_Terms_and_Conditions.md).
 
 All use of Research Computing Platforms is subject to the general [UCL Computing Regulations](https://www.ucl.ac.uk/information-security/sites/information_security/files/regulations.pdf).
 
@@ -103,5 +103,3 @@ We request that you acknowledge the use of our HPC services in any publications 
 > "The authors acknowledge the use of the UCL Myriad High Performance Computing Facility (Myriad@UCL), and associated support services, in the completion of this work". 
 
 Or analogous terminology for other services.
-
-
