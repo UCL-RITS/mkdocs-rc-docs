@@ -5,7 +5,7 @@ layout: docs
 
 # Where do my results go?
 
-After submitting your job, you can use the command `qstat` to view the status of all the jobs you have submitted. Once you can no longer see your job on the list, this means your job has completed. To view details on jobs that have completed, you can run `jobhist`. There are various ways of monitoring the output of your job.
+After submitting your job, you can use the command `qstat` to view the status of all the jobs you have submitted. Once you can no longer see your job on the list, this means your job has completed. To view details on jobs that have completed, you can run `jobhist`, part of the [`userscripts`](Installed_Software_Lists/module-packages.md) module. There are various ways of monitoring the output of your job.
 
 ## Output and error files
 
