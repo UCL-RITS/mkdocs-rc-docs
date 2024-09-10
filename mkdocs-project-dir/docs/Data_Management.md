@@ -22,7 +22,7 @@ Check your quota and usage for home and Scratch with the `lquota` command.
 
 Check your ACFS quota and usage with the `aquota` command.
 
-The ACFS has dual locations for resilience, and as a result standard commands like `du` or `ls -al` 
+The ACFS has dual locations for resilience, and as a result commands like `du -h` or `ls -alsh` 
 will report filesizes on it as being twice what they really are. The `aquota` command will show you 
 real usage and quota.  
 
