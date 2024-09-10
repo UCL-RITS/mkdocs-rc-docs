@@ -2014,13 +2014,17 @@ one day, so that you can access Kathleen again on Weds 11 Sept.</p>
 <li><code>/old_lustre/home/username</code>: your old home directory on the old Lustre; read-only</li>
 <li><code>/old_lustre/scratch/username</code>: your old scratch directory on the old Lustre; read-only</li>
 </ul>
+<p>You will also have a <code>~/ACFS</code> shortcut/symbolic link in your home that points to <code>/acfs/users/username</code>.</p>
+<p>If you are looking in your <code>/old_lustre/home/username/Scratch</code> symbolic link, that will direct you 
+back to your <strong>new</strong> Scratch not your old Scratch because it uses an absolute path. Please make sure 
+to access old Scratch using <code>/old_lustre/scratch/username</code>.</p>
 <p><strong>What you will need to do (after the maintenance):</strong></p>
 <ul>
 <li>After login, you will notice that your new home and scratch directories are mostly empty. 
   Please copy any data you need from your old home and scratch directories under <code>/old_lustre</code> to 
   the appropriate new locations.</li>
-<li>E.g. <code>cp -r /old_lustre/home/username/data /home/username</code> will recursively copy your old 
-    <code>data</code> directory and everything in it into your new home.</li>
+<li>E.g. <code>cp -rp /old_lustre/home/username/data /home/username</code> will recursively copy your old 
+    <code>data</code> directory and everything in it into your new home, while preserving the permissions.</li>
 <li>Any data that you consider important enough to be backed up should be copied into your ACFS 
   directory instead.</li>
 <li>You have <strong>three months</strong> to copy your data. After this, the <code>/old_lustre</code> will become unavailable.</li>
