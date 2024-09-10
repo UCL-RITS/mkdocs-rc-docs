@@ -53,7 +53,8 @@ job fails or runs out of time, you will not be able to recover this data.
 
 ## ARC Cluster File System (ACFS)
 
-The ACFS is ARC's centralised storage system that will be available from multiple ARC systems.
+The ARC Cluster File System (ACFS) is ARC's centralised storage system that will be available from
+multiple ARC systems.
 
 It is the backed-up location for data which you wish to keep.
 
@@ -65,5 +66,5 @@ Initially rolled out on Kathleen, you will later be able to access it from Myria
 the same files from both clusters.
 
 - Location: `/acfs/users/<username>`
+- Also at: `/home/<username>/ACFS` (a shortcut or symbolic link to the first location).
 - Backed up daily.
-
