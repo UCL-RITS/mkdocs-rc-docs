@@ -477,6 +477,36 @@ This page outlines that status of each of the machines managed by the Research C
     Please email rc-support@ucl.ac.uk with any queries or raise a request about Kathleen via 
     [UCL MyServices](https://myservices.ucl.ac.uk/).
 
+  - 2024-09-11 09:35 Kathleen filesystem outage complete
+
+    The outage is complete and you can log in and access your new home, Scratch and ACFS directories 
+    on Kathleen.
+
+    In addition to the information given previously:
+
+    - You will have a `~/ACFS` shortcut/symbolic link in your home that points to `/acfs/users/username`
+    - If you want to copy data and preserve the permissions, use `cp -rp` rather than `cp -r`
+    - If you are looking in your `/old_lustre/home/username/Scratch` symbolic link, that will direct you 
+      back to your new Scratch not your old Scratch because it uses an absolute path. Please make sure to 
+      access old Scratch using `/old_lustre/scratch/username`
+
+    This will be added to https://www.rc.ucl.ac.uk/docs/Status_page/#kathleen and has been updated in the 
+    original message there.
+
+    The message you see when first logging in to Kathleen has been updated with the change to backed-up 
+    locations and ACFS information.
+
+    We have these additional pages in our documentation:
+
+    - https://www.rc.ucl.ac.uk/docs/Background/Parallel_Filesystems/ (parallel filesystem concepts)
+    - https://www.rc.ucl.ac.uk/docs/Background/Data_Storage/ (data storage locations we provide)
+    - https://www.rc.ucl.ac.uk/docs/Data_Management/ (how to check quotas, transfer ownership of files)
+
+    **Terms & Conditions update**
+
+    We have updated our Terms and Conditions (https://www.rc.ucl.ac.uk/docs/Terms_and_Conditions/) - 
+    please take a look. It now defines our data retention policies and when we can access your data, 
+    among other things. 
 
 ### Young
 
