@@ -2062,6 +2062,33 @@ and robust service in the future.</p>
 <p>Please email rc-support@ucl.ac.uk with any queries or raise a request about Kathleen via 
 <a href="https://myservices.ucl.ac.uk/">UCL MyServices</a>.</p>
 </li>
+<li>
+<p>2024-09-11 09:35 Kathleen filesystem outage complete</p>
+<p>The outage is complete and you can log in and access your new home, Scratch and ACFS directories 
+on Kathleen.</p>
+<p>In addition to the information given previously:</p>
+<ul>
+<li>You will have a <code>~/ACFS</code> shortcut/symbolic link in your home that points to <code>/acfs/users/username</code></li>
+<li>If you want to copy data and preserve the permissions, use <code>cp -rp</code> rather than <code>cp -r</code></li>
+<li>If you are looking in your <code>/old_lustre/home/username/Scratch</code> symbolic link, that will direct you 
+  back to your new Scratch not your old Scratch because it uses an absolute path. Please make sure to 
+  access old Scratch using <code>/old_lustre/scratch/username</code></li>
+</ul>
+<p>This will be added to https://www.rc.ucl.ac.uk/docs/Status_page/#kathleen and has been updated in the 
+original message there.</p>
+<p>The message you see when first logging in to Kathleen has been updated with the change to backed-up 
+locations and ACFS information.</p>
+<p>We have these additional pages in our documentation:</p>
+<ul>
+<li>https://www.rc.ucl.ac.uk/docs/Background/Parallel_Filesystems/ (parallel filesystem concepts)</li>
+<li>https://www.rc.ucl.ac.uk/docs/Background/Data_Storage/ (data storage locations we provide)</li>
+<li>https://www.rc.ucl.ac.uk/docs/Data_Management/ (how to check quotas, transfer ownership of files)</li>
+</ul>
+<p><strong>Terms &amp; Conditions update</strong></p>
+<p>We have updated our Terms and Conditions (https://www.rc.ucl.ac.uk/docs/Terms_and_Conditions/) - 
+please take a look. It now defines our data retention policies and when we can access your data, 
+among other things. </p>
+</li>
 </ul>
 <h3 id="young">Young<a class="headerlink" href="#young" title="Permanent link">§</a></h3>
 <ul>
