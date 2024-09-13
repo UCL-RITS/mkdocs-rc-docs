@@ -2022,24 +2022,30 @@ to access old Scratch using <code>/old_lustre/scratch/username</code>.</p>
 <ul>
 <li>After login, you will notice that your new home and scratch directories are mostly empty. 
   Please copy any data you need from your old home and scratch directories under <code>/old_lustre</code> to 
-  the appropriate new locations.</li>
+  the appropriate new locations.<ul>
 <li>E.g. <code>cp -rp /old_lustre/home/username/data /home/username</code> will recursively copy your old 
-    <code>data</code> directory and everything in it into your new home, while preserving the permissions.</li>
+  <code>data</code> directory and everything in it into your new home, while preserving the permissions.</li>
+</ul>
+</li>
 <li>Any data that you consider important enough to be backed up should be copied into your ACFS 
   directory instead.</li>
 <li>You have <strong>three months</strong> to copy your data. After this, the <code>/old_lustre</code> will become unavailable.</li>
 <li>Your queued jobs will be held (showing status <code>hqw</code> in <code>qstat</code>) and won’t start running 
   automatically, as their job scripts will likely refer to locations on <code>/lustre</code> which won’t exist 
   until you have copied over the data. After you have copied the data that your jobs need to the new 
-  Lustre, you can release the hold on your queued jobs.</li>
+  Lustre, you can release the hold on your queued jobs.<ul>
 <li>E.g. <code>qrls $JOB_ID</code> will release a specific job ID, and <code>qrls all</code> will release all your jobs.</li>
 <li>Released array jobs will have the first task in status <code>qw</code> and the rest in <code>hqw</code> - this is normal.</li>
+</ul>
+</li>
 <li>Depending on the amount of data, the copying may take some time, especially if you have many small 
   files. If you are copying data to ACFS and you don’t need immediate access to each file individually, 
-  consider creating tar archives instead of copying data recursively.</li>
+  consider creating tar archives instead of copying data recursively.<ul>
 <li>E.g. <code>tar -czvf /acfs/users/username/myarchive.tar.gz /old_lustre/home/username/data</code> will 
-    (c)reate a g(z)ipped archive (v)erbosely in the specified (f)ilename location. The contents will be 
-    everything in this user's old <code>data</code> directory. </li>
+  (c)reate a g(z)ipped archive (v)erbosely in the specified (f)ilename location. The contents will be 
+  everything in this user's old <code>data</code> directory. </li>
+</ul>
+</li>
 </ul>
 <p>Further reminders will be sent before <code>/old_lustre</code> is removed on 11 December.</p>
 <p><strong>Kathleen quotas</strong></p>
