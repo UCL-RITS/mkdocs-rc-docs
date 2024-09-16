@@ -122,7 +122,7 @@ Yes, we’d be happy to discuss this with you. Please contact [rc-support@ucl.ac
 
 #### What type of nodes can we purchase?
 
-[Current node types](#Node_types).
+[Current node types](#node-types).
 
 If you require an alternative/custom specification, we can’t guarantee that we will be able to accommodate this on the cluster, but we’re happy to look into it.
 
