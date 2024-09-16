@@ -103,6 +103,15 @@ press `Ctrl` and then the letter `o`.
 # to open the file for editing in nano
 nano ~/.ssh/known_hosts
 ```
+
+Alternativaly, you can use `sed` to remove that line:
+```
+sed -i.bak '11d' ~/.ssh/known_hosts
+```
+where 11 refers to the line number you want to delete (`d`). With `-i.bak` we are saving the
+original file with a `.bak` extension. If you don't want to keep a backup copy remove `.bak` from
+the `-i` argument.
+
 Once you have removed the old host key you will be able to ssh in again. The first time 
 you log in to an unknown server you will get a message like this:
 ```
