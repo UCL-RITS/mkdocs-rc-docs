@@ -6,12 +6,12 @@ categories:
 
 # Purchasing in Myriad
 
-!!! important "Sept 2024: We are planning a Myriad refresh for Dec 2024, to be confirmed on 8 Oct."
+!!! important "Sept 2024: We are planning a Myriad refresh for Dec 2024, to be confirmed on 9 Oct."
     If it goes ahead, we will be able to add some paid nodes then and also allow planning for 
     future purchases. The nodes we will have available are below. 
 
     Please contact rc-support@ucl.ac.uk for prices and let us know your timescales.
-    We cannot fully confirm this is going ahead until after 8 Oct 2024. 
+    We cannot fully confirm this is going ahead until after 9 Oct 2024. 
 
 Researchers may purchase additional resources to be used as part of the [Myriad](../Clusters/Myriad.md) High Performance Computing cluster if the free service does not meet their needs. These resources can be made available in one of two ways:
 
@@ -22,7 +22,7 @@ Costs will include backend infrastructure – racks, switches, cables etc – ne
 
 ## Deadline
 
-If the refresh is confirmed, we wish to be raising the purchase orders as soon after **8 Oct 2024** as possible, 
+If the refresh is confirmed, we wish to be raising the purchase orders as soon after **9 Oct 2024** as possible, 
 so please tell us now if you have funding and want to buy nodes for the December refresh.
 
 We expect to be able to run regular quarterly rounds again after this.
