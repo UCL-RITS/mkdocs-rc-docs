@@ -137,3 +137,13 @@ python3 -m ipykernel install --user --name my_env --env LD_LIBRARY_PATH ${LD_LIB
 ```
 
 You should then be able to select the kernel from the drop-down list in Jupyter.
+
+### R Studio
+
+++"Interactive Apps"++ ➡ ++"R Studio"++
+
+As with the Jupyter Notebook option, this can submit a job that launches an R Studio session on a compute node. It then acts as a proxy to let you access that server from your browser.
+
+The installation of R used for this is quite barebones, for technical reasons: it is expected that users will install their own packages using e.g. `install.packages("dplyr")`.
+
+To keep package installations separate, packages installed from R Studio sessions will be put in your home directory under `~/oodR` by default, instead of `~/R`. This should avoid problems with compiled C, C++, or Fortran parts of R packages.
