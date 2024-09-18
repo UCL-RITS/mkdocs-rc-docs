@@ -1533,6 +1533,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#r-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      R Studio
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1649,6 +1658,11 @@ source my_env/bin/activate
 </code></pre></div>
 
 <p>You should then be able to select the kernel from the drop-down list in Jupyter.</p>
+<h3 id="r-studio">R Studio<a class="headerlink" href="#r-studio" title="Permanent link">§</a></h3>
+<p><span class="keys"><kbd>Interactive Apps</kbd></span> ➡ <span class="keys"><kbd>R Studio</kbd></span></p>
+<p>As with the Jupyter Notebook option, this can submit a job that launches an R Studio session on a compute node. It then acts as a proxy to let you access that server from your browser.</p>
+<p>The installation of R used for this is quite barebones, for technical reasons: it is expected that users will install their own packages using e.g. <code>install.packages("dplyr")</code>.</p>
+<p>To keep package installations separate, packages installed from R Studio sessions will be put in your home directory under <code>~/oodR</code> by default, instead of <code>~/R</code>. This should avoid problems with compiled C, C++, or Fortran parts of R packages.</p>
 
 
 
