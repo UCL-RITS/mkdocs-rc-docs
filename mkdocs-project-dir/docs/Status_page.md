@@ -537,6 +537,104 @@ This page outlines that status of each of the machines managed by the Research C
 
   - 2024-09 Young's new filesystem is being readied for service.
 
+#### Young new filesystem
+
+  - 2024-09-27 - Young and Michael outage for new filesystem on Mon 7 Oct - action required
+
+    We will be replacing the two filesystems on Young and Michael with one new filesystem on 
+    **Monday 7 October 2024**. 
+ 
+    Both clusters will go into maintenance on Monday 7 Oct 2024 from 09:00am. Logins will not be 
+    possible until the maintenance is finished. Any jobs that won’t finish by the start of the 
+    maintenance window will stay queued. We aim to finish the maintenance within one day, so that 
+    you can access the clusters again on Tues 8 Oct.
+
+    **Single login node outages between 2-4 Oct**
+
+    From 2-4 October, Young `login02` and Michael `login11` will each be out of service for a day 
+    during this period for testing updates before the filesystem migration. There will be no 
+    interruption to jobs or logins to the general addresses `young.rc.ucl.ac.uk` and 
+    `michael.rc.ucl.ac.uk`. If you are on `login02` or `login11` at the time, you may see a message 
+    that it is about to go down for reboot, and if you have a tmux or screen session on that login 
+    node then it will be terminated. You will be able to log back in and be assigned to the other 
+    login node, Young `login01` or Michael `login10`.
+ 
+    **Why the change:**
+ 
+    * Young's filesystem is running on aging and error-prone hardware, and suffers from performance 
+      issues, especially for interactive work on the login nodes. The new Lustre should provide a 
+      vastly better experience.
+    * Michael's filesystem is old and replacement parts are no longer available.
+    * The new filesystem is a HPE ClusterStor Lustre filesystem and will enable both machines to keep 
+      running in a supported and maintainable manner.
+ 
+    **After the maintenance, you have the following storage locations:**
+ 
+    * `/home/username`: your new home directory on the new Lustre; backed up
+    * `/scratch/username`: your new scratch directory on the new Lustre; not backed up
+    * `/old_lustre/home/username`: your old home directory on the old Lustre; read-only
+    * `/old_lustre/scratch/username`: your old scratch directory on the old Lustre; read-only
+
+    If you currently have accounts on both Young and Michael, you will need to log into Young to 
+    see Young's `old_lustre` and into Michael to see Michael's `old_lustre`, but your home and 
+    Scratch will be the same on both, and the data you copy into it will be visible on both.
+
+    **Quotas**
+
+    On the new filesystem we are able to set separate home and Scratch quotas. 
+
+     * Home: 100G, backed up
+     * Scratch: 250G by default
+
+    Previously the default quota was 250G total.
+
+    If you have an existing non-expired quota increase, we will increase your Scratch quota on 
+    the new filesystem to this amount. If you find you need an increased Scratch quota, you can 
+    run the `request_quota` command on either cluster and it will ask you for some information and 
+    send us a support ticket.
+ 
+    **What you will need to do (after the maintenance):**
+ 
+    After login, you will notice that your new home and scratch directories are mostly empty. 
+    Please copy any data you need from your old home and scratch directories under `/old_lustre` to 
+    the appropriate new locations. Your existing SSH keys will all have been copied in so that you 
+    can log in.
+    * E.g. `cp -rp /old_lustre/home/username/data /home/username` will recursively copy with 
+      preserved permissions your old `data` directory and everything in it into your new home.
+    * You have **three months and one week** to copy your data. After this, the `/old_lustre` will 
+      become unavailable.
+    * Your queued jobs will be held (showing status `hqw` in qstat) and won’t start running 
+      automatically, as their job scripts will likely refer to locations on `/lustre` which won’t 
+      exist until you have copied over the data. After you have copied the data that your jobs 
+      need to the new Lustre, you can release the hold on your queued jobs.
+        - E.g. `qrls $JOB_ID` will release a specific job ID, and `qrls all` will release all your jobs.
+        - Released array jobs will have the first task in status `qw` and the rest in `hqw` - this is normal.
+    * Depending on the amount of data, the copying may take some time, especially if you have many 
+      small files. If you wish to archive some of your data, consider creating tar archives straight 
+      away instead of copying data recursively.
+    * E.g. `tar -czvf /home/username/Scratch/myarchive.tar.gz /old_lustre/home/username/data` will 
+      (c)reate a g(z)ipped archive (v)erbosely in the specified (f)ilename location. The contents 
+      will be everything in this user's old `data` directory. 
+ 
+    Further reminders will be sent before the `/old_lustre` locations are removed on **14 January 2025**.
+
+    **Terms & Conditions update**
+
+    We have updated our (Terms and Conditions for all services)[https://www.rc.ucl.ac.uk/docs/Terms_and_Conditions/] 
+    - please take a look. It now defines our data retention policies and when we can access your data, 
+    among other things.
+  
+ 
+    These outages are listed on [Planned Outages](https://www.rc.ucl.ac.uk/docs/Planned_Outages/). 
+    The information above will also be copied into the https://www.rc.ucl.ac.uk/docs/Status_page/ 
+    sections for Young and Michael.
+ 
+    Please email rc-support@ucl.ac.uk with any queries. 
+
+    If you are no longer using Young or Michael and wish to be removed from these mailing lists, 
+    email us confirming that we can delete your accounts and we will do so and remove you from the lists.
+
+
 ### Michael
 
   - 2024-01-24 16:40 - Problem on Michael's admin nodes causing DNS failures - now solved
@@ -550,6 +648,104 @@ This page outlines that status of each of the machines managed by the Research C
     This was caused by a problem on the admin nodes that has now been sorted out.
 
   - 2024-09 Michael's new filesystem (shared with Young) is being readied for service.
+
+#### Michael new filesystem
+
+  - 2024-09-27 - Young and Michael outage for new filesystem on Mon 7 Oct - action required
+
+    We will be replacing the two filesystems on Young and Michael with one new filesystem on
+    **Monday 7 October 2024**.
+
+    Both clusters will go into maintenance on Monday 7 Oct 2024 from 09:00am. Logins will not be
+    possible until the maintenance is finished. Any jobs that won’t finish by the start of the
+    maintenance window will stay queued. We aim to finish the maintenance within one day, so that
+    you can access the clusters again on Tues 8 Oct.
+
+    **Single login node outages between 2-4 Oct**
+
+    From 2-4 October, Young `login02` and Michael `login11` will each be out of service for a day
+    during this period for testing updates before the filesystem migration. There will be no
+    interruption to jobs or logins to the general addresses `young.rc.ucl.ac.uk` and
+    `michael.rc.ucl.ac.uk`. If you are on `login02` or `login11` at the time, you may see a message
+    that it is about to go down for reboot, and if you have a tmux or screen session on that login
+    node then it will be terminated. You will be able to log back in and be assigned to the other
+    login node, Young `login01` or Michael `login10`.
+
+    **Why the change:**
+
+    * Young's filesystem is running on aging and error-prone hardware, and suffers from performance
+      issues, especially for interactive work on the login nodes. The new Lustre should provide a
+      vastly better experience.
+    * Michael's filesystem is old and replacement parts are no longer available.
+    * The new filesystem is a HPE ClusterStor Lustre filesystem and will enable both machines to keep
+      running in a supported and maintainable manner.
+
+    **After the maintenance, you have the following storage locations:**
+
+    * `/home/username`: your new home directory on the new Lustre; backed up
+    * `/scratch/username`: your new scratch directory on the new Lustre; not backed up
+    * `/old_lustre/home/username`: your old home directory on the old Lustre; read-only
+    * `/old_lustre/scratch/username`: your old scratch directory on the old Lustre; read-only
+
+    If you currently have accounts on both Young and Michael, you will need to log into Young to
+    see Young's `old_lustre` and into Michael to see Michael's `old_lustre`, but your home and
+    Scratch will be the same on both, and the data you copy into it will be visible on both.
+
+    **Quotas**
+
+    On the new filesystem we are able to set separate home and Scratch quotas.
+
+     * Home: 100G, backed up
+     * Scratch: 250G by default
+
+    Previously the default quota was 250G total.
+
+    If you have an existing non-expired quota increase, we will increase your Scratch quota on
+    the new filesystem to this amount. If you find you need an increased Scratch quota, you can
+    run the `request_quota` command on either cluster and it will ask you for some information and
+    send us a support ticket.
+
+    **What you will need to do (after the maintenance):**
+
+    After login, you will notice that your new home and scratch directories are mostly empty.
+    Please copy any data you need from your old home and scratch directories under `/old_lustre` to
+    the appropriate new locations. Your existing SSH keys will all have been copied in so that you
+    can log in.
+    * E.g. `cp -rp /old_lustre/home/username/data /home/username` will recursively copy with
+      preserved permissions your old `data` directory and everything in it into your new home.
+    * You have **three months and one week** to copy your data. After this, the `/old_lustre` will
+      become unavailable.
+    * Your queued jobs will be held (showing status `hqw` in qstat) and won’t start running
+      automatically, as their job scripts will likely refer to locations on `/lustre` which won’t
+      exist until you have copied over the data. After you have copied the data that your jobs
+      need to the new Lustre, you can release the hold on your queued jobs.
+        - E.g. `qrls $JOB_ID` will release a specific job ID, and `qrls all` will release all your jobs.
+        - Released array jobs will have the first task in status `qw` and the rest in `hqw` - this is normal.
+    * Depending on the amount of data, the copying may take some time, especially if you have many
+      small files. If you wish to archive some of your data, consider creating tar archives straight
+      away instead of copying data recursively.
+    * E.g. `tar -czvf /home/username/Scratch/myarchive.tar.gz /old_lustre/home/username/data` will
+      (c)reate a g(z)ipped archive (v)erbosely in the specified (f)ilename location. The contents
+      will be everything in this user's old `data` directory.
+
+    Further reminders will be sent before the `/old_lustre` locations are removed on **14 January 2025**.
+
+    **Terms & Conditions update**
+
+    We have updated our (Terms and Conditions for all services)[https://www.rc.ucl.ac.uk/docs/Terms_and_Conditions/]
+    - please take a look. It now defines our data retention policies and when we can access your data,
+    among other things.
+
+
+    These outages are listed on [Planned Outages](https://www.rc.ucl.ac.uk/docs/Planned_Outages/). 
+    The information above will also be copied into the https://www.rc.ucl.ac.uk/docs/Status_page/ 
+    sections for Young and Michael.
+
+    Please email rc-support@ucl.ac.uk with any queries.
+
+    If you are no longer using Young or Michael and wish to be removed from these mailing lists,
+    email us confirming that we can delete your accounts and we will do so and remove you from the lists.
+
 
 ### Thomas
 
