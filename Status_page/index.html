@@ -2234,26 +2234,30 @@ the new filesystem to this amount. If you find you need an increased Scratch quo
 run the <code>request_quota</code> command on either cluster and it will ask you for some information and 
 send us a support ticket.</p>
 <p><strong>What you will need to do (after the maintenance):</strong></p>
-<p>After login, you will notice that your new home and scratch directories are mostly empty. 
-Please copy any data you need from your old home and scratch directories under <code>/old_lustre</code> to 
-the appropriate new locations. Your existing SSH keys will all have been copied in so that you 
-can log in.
-* E.g. <code>cp -rp /old_lustre/home/username/data /home/username</code> will recursively copy with 
-  preserved permissions your old <code>data</code> directory and everything in it into your new home.
-* You have <strong>three months and one week</strong> to copy your data. After this, the <code>/old_lustre</code> will 
-  become unavailable.
-* Your queued jobs will be held (showing status <code>hqw</code> in qstat) and won’t start running 
+<ul>
+<li>After login, you will notice that your new home and scratch directories are mostly empty. 
+  Please copy any data you need from your old home and scratch directories under <code>/old_lustre</code> to 
+  the appropriate new locations. Your existing SSH keys will all have been copied in so that you 
+  can log in.</li>
+<li>E.g. <code>cp -rp /old_lustre/home/username/data /home/username</code> will recursively copy with 
+  preserved permissions your old <code>data</code> directory and everything in it into your new home.</li>
+<li>You have <strong>three months and one week</strong> to copy your data. After this, the <code>/old_lustre</code> will 
+  become unavailable.</li>
+<li>Your queued jobs will be held (showing status <code>hqw</code> in qstat) and won’t start running 
   automatically, as their job scripts will likely refer to locations on <code>/lustre</code> which won’t 
   exist until you have copied over the data. After you have copied the data that your jobs 
-  need to the new Lustre, you can release the hold on your queued jobs.
-    - E.g. <code>qrls $JOB_ID</code> will release a specific job ID, and <code>qrls all</code> will release all your jobs.
-    - Released array jobs will have the first task in status <code>qw</code> and the rest in <code>hqw</code> - this is normal.
-* Depending on the amount of data, the copying may take some time, especially if you have many 
+  need to the new Lustre, you can release the hold on your queued jobs.<ul>
+<li>E.g. <code>qrls $JOB_ID</code> will release a specific job ID, and <code>qrls all</code> will release all your jobs.</li>
+<li>Released array jobs will have the first task in status <code>qw</code> and the rest in <code>hqw</code> - this is normal.</li>
+</ul>
+</li>
+<li>Depending on the amount of data, the copying may take some time, especially if you have many 
   small files. If you wish to archive some of your data, consider creating tar archives straight 
-  away instead of copying data recursively.
-* E.g. <code>tar -czvf /home/username/Scratch/myarchive.tar.gz /old_lustre/home/username/data</code> will 
+  away instead of copying data recursively.</li>
+<li>E.g. <code>tar -czvf /home/username/Scratch/myarchive.tar.gz /old_lustre/home/username/data</code> will 
   (c)reate a g(z)ipped archive (v)erbosely in the specified (f)ilename location. The contents 
-  will be everything in this user's old <code>data</code> directory. </p>
+  will be everything in this user's old <code>data</code> directory. </li>
+</ul>
 <p>Further reminders will be sent before the <code>/old_lustre</code> locations are removed on <strong>14 January 2025</strong>.</p>
 <p><strong>Terms &amp; Conditions update</strong></p>
 <p>We have updated our (Terms and Conditions for all services)[https://www.rc.ucl.ac.uk/docs/Terms_and_Conditions/] 
@@ -2331,26 +2335,30 @@ the new filesystem to this amount. If you find you need an increased Scratch quo
 run the <code>request_quota</code> command on either cluster and it will ask you for some information and
 send us a support ticket.</p>
 <p><strong>What you will need to do (after the maintenance):</strong></p>
-<p>After login, you will notice that your new home and scratch directories are mostly empty.
-Please copy any data you need from your old home and scratch directories under <code>/old_lustre</code> to
-the appropriate new locations. Your existing SSH keys will all have been copied in so that you
-can log in.
-* E.g. <code>cp -rp /old_lustre/home/username/data /home/username</code> will recursively copy with
-  preserved permissions your old <code>data</code> directory and everything in it into your new home.
-* You have <strong>three months and one week</strong> to copy your data. After this, the <code>/old_lustre</code> will
-  become unavailable.
-* Your queued jobs will be held (showing status <code>hqw</code> in qstat) and won’t start running
+<ul>
+<li>After login, you will notice that your new home and scratch directories are mostly empty.
+  Please copy any data you need from your old home and scratch directories under <code>/old_lustre</code> to
+  the appropriate new locations. Your existing SSH keys will all have been copied in so that you
+  can log in.</li>
+<li>E.g. <code>cp -rp /old_lustre/home/username/data /home/username</code> will recursively copy with
+  preserved permissions your old <code>data</code> directory and everything in it into your new home.</li>
+<li>You have <strong>three months and one week</strong> to copy your data. After this, the <code>/old_lustre</code> will
+  become unavailable.</li>
+<li>Your queued jobs will be held (showing status <code>hqw</code> in qstat) and won’t start running
   automatically, as their job scripts will likely refer to locations on <code>/lustre</code> which won’t
   exist until you have copied over the data. After you have copied the data that your jobs
-  need to the new Lustre, you can release the hold on your queued jobs.
-    - E.g. <code>qrls $JOB_ID</code> will release a specific job ID, and <code>qrls all</code> will release all your jobs.
-    - Released array jobs will have the first task in status <code>qw</code> and the rest in <code>hqw</code> - this is normal.
-* Depending on the amount of data, the copying may take some time, especially if you have many
+  need to the new Lustre, you can release the hold on your queued jobs.<ul>
+<li>E.g. <code>qrls $JOB_ID</code> will release a specific job ID, and <code>qrls all</code> will release all your jobs.</li>
+<li>Released array jobs will have the first task in status <code>qw</code> and the rest in <code>hqw</code> - this is normal.</li>
+</ul>
+</li>
+<li>Depending on the amount of data, the copying may take some time, especially if you have many
   small files. If you wish to archive some of your data, consider creating tar archives straight
-  away instead of copying data recursively.
-* E.g. <code>tar -czvf /home/username/Scratch/myarchive.tar.gz /old_lustre/home/username/data</code> will
+  away instead of copying data recursively.</li>
+<li>E.g. <code>tar -czvf /home/username/Scratch/myarchive.tar.gz /old_lustre/home/username/data</code> will
   (c)reate a g(z)ipped archive (v)erbosely in the specified (f)ilename location. The contents
-  will be everything in this user's old <code>data</code> directory.</p>
+  will be everything in this user's old <code>data</code> directory.</li>
+</ul>
 <p>Further reminders will be sent before the <code>/old_lustre</code> locations are removed on <strong>14 January 2025</strong>.</p>
 <p><strong>Terms &amp; Conditions update</strong></p>
 <p>We have updated our (Terms and Conditions for all services)[https://www.rc.ucl.ac.uk/docs/Terms_and_Conditions/]
