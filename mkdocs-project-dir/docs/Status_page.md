@@ -595,10 +595,10 @@ This page outlines that status of each of the machines managed by the Research C
  
     **What you will need to do (after the maintenance):**
  
-    After login, you will notice that your new home and scratch directories are mostly empty. 
-    Please copy any data you need from your old home and scratch directories under `/old_lustre` to 
-    the appropriate new locations. Your existing SSH keys will all have been copied in so that you 
-    can log in.
+    * After login, you will notice that your new home and scratch directories are mostly empty. 
+      Please copy any data you need from your old home and scratch directories under `/old_lustre` to 
+      the appropriate new locations. Your existing SSH keys will all have been copied in so that you 
+      can log in.
     * E.g. `cp -rp /old_lustre/home/username/data /home/username` will recursively copy with 
       preserved permissions your old `data` directory and everything in it into your new home.
     * You have **three months and one week** to copy your data. After this, the `/old_lustre` will 
@@ -707,10 +707,10 @@ This page outlines that status of each of the machines managed by the Research C
 
     **What you will need to do (after the maintenance):**
 
-    After login, you will notice that your new home and scratch directories are mostly empty.
-    Please copy any data you need from your old home and scratch directories under `/old_lustre` to
-    the appropriate new locations. Your existing SSH keys will all have been copied in so that you
-    can log in.
+    * After login, you will notice that your new home and scratch directories are mostly empty.
+      Please copy any data you need from your old home and scratch directories under `/old_lustre` to
+      the appropriate new locations. Your existing SSH keys will all have been copied in so that you
+      can log in.
     * E.g. `cp -rp /old_lustre/home/username/data /home/username` will recursively copy with
       preserved permissions your old `data` directory and everything in it into your new home.
     * You have **three months and one week** to copy your data. After this, the `/old_lustre` will
