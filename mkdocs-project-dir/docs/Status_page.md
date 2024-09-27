@@ -620,7 +620,7 @@ This page outlines that status of each of the machines managed by the Research C
 
     **Terms & Conditions update**
 
-    We have updated our (Terms and Conditions for all services)[https://www.rc.ucl.ac.uk/docs/Terms_and_Conditions/] 
+    We have updated our [Terms and Conditions for all services](https://www.rc.ucl.ac.uk/docs/Terms_and_Conditions/) 
     - please take a look. It now defines our data retention policies and when we can access your data, 
     among other things.
   
@@ -732,7 +732,7 @@ This page outlines that status of each of the machines managed by the Research C
 
     **Terms & Conditions update**
 
-    We have updated our (Terms and Conditions for all services)[https://www.rc.ucl.ac.uk/docs/Terms_and_Conditions/]
+    We have updated our [Terms and Conditions for all services](https://www.rc.ucl.ac.uk/docs/Terms_and_Conditions/)
     - please take a look. It now defines our data retention policies and when we can access your data,
     among other things.
 
