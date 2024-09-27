@@ -16,6 +16,8 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+2-4 October 2024 | Young, Michael | Planned | Young login02 and Michael login11 will each be out of service for a day during this period for testing updates before filesystem migration. No interruption to jobs or logins to the general addresses `young.rc.ucl.ac.uk` and `michael.rc.ucl.ac.uk`.
+7 October 2024 | Young, Michael | Planned | Migration to new filesystem. Jobs will be drained and logins prevented for 9am. Expected to be back up the following day. Once back up, all jobs will be in `hqw` status and users will need to migrate their data from `/old_lustre/home/username` and `/old_lustre/scratch/username` which will be read-only. Users with accounts on both systems will need to log into each to see their old data, but will be copying it to the same shared home and Scratch. SSH keys will be copied to the new filesystem so login is possible. The two `/old_lustre` will remain for three months + 7 days and be removed on Tues 14 Jan 2025.
 8 October 2024 | Kathleen | Planned | There will be a brief ACFS outage while we switch the network gateway from one util node to another. If all goes well it will recover quickly, but reading and writing to the ACFS will hang while it is in progress. We will do this on 8 Oct maintenance day.
 
 ## Previous Outages
