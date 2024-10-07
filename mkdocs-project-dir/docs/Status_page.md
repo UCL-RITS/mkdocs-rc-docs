@@ -634,6 +634,13 @@ This page outlines that status of each of the machines managed by the Research C
     If you are no longer using Young or Michael and wish to be removed from these mailing lists, 
     email us confirming that we can delete your accounts and we will do so and remove you from the lists.
 
+  - 2024-10-07 11:00 - Delay in returning Young GPU nodes to service
+
+    In addition to the above, there may be a delay in allowing the GPU nodes in Young to run jobs again - 
+    we need to rebuild the existing GPU software for those, to have it on an architecture-specific section 
+    of our software stack. This will result in GPU jobs remaining in the queue while we complete this. I 
+    would expect this to be complete by Wednesday or Thursday but will keep you updated.
+
 
 ### Michael
 
