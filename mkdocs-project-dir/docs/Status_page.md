@@ -604,9 +604,9 @@ This page outlines that status of each of the machines managed by the Research C
     * After login, you will notice that your new home and scratch directories are mostly empty. 
       Please copy any data you need from your old home and scratch directories under `/old_lustre` to 
       the appropriate new locations. Your existing SSH keys will all have been copied in so that you 
-      can log in.
-    * E.g. `cp -rp /old_lustre/home/username/data /home/username` will recursively copy with 
-      preserved permissions your old `data` directory and everything in it into your new home.
+      can log in. You can do this copy on the login nodes.
+        - E.g. `cp -rp /old_lustre/home/username/data /home/username` will recursively copy with 
+          preserved permissions your old `data` directory and everything in it into your new home.
     * You have **three months and one week** to copy your data. After this, the `/old_lustre` will 
       become unavailable.
     * Your queued jobs will be held (showing status `hqw` in qstat) and won’t start running 
@@ -618,9 +618,9 @@ This page outlines that status of each of the machines managed by the Research C
     * Depending on the amount of data, the copying may take some time, especially if you have many 
       small files. If you wish to archive some of your data, consider creating tar archives straight 
       away instead of copying data recursively.
-    * E.g. `tar -czvf /home/username/Scratch/myarchive.tar.gz /old_lustre/home/username/data` will 
-      (c)reate a g(z)ipped archive (v)erbosely in the specified (f)ilename location. The contents 
-      will be everything in this user's old `data` directory. 
+        - E.g. `tar -czvf /home/username/Scratch/myarchive.tar.gz /old_lustre/home/username/data` will 
+          (c)reate a g(z)ipped archive (v)erbosely in the specified (f)ilename location. The contents 
+          will be everything in this user's old `data` directory. 
  
     Further reminders will be sent before the `/old_lustre` locations are removed on **14 January 2025**.
 
@@ -729,9 +729,9 @@ This page outlines that status of each of the machines managed by the Research C
     * After login, you will notice that your new home and scratch directories are mostly empty.
       Please copy any data you need from your old home and scratch directories under `/old_lustre` to
       the appropriate new locations. Your existing SSH keys will all have been copied in so that you
-      can log in.
-    * E.g. `cp -rp /old_lustre/home/username/data /home/username` will recursively copy with
-      preserved permissions your old `data` directory and everything in it into your new home.
+      can log in. You can do this copy on the login nodes.
+        - E.g. `cp -rp /old_lustre/home/username/data /home/username` will recursively copy with
+          preserved permissions your old `data` directory and everything in it into your new home.
     * You have **three months and one week** to copy your data. After this, the `/old_lustre` will
       become unavailable.
     * Your queued jobs will be held (showing status `hqw` in qstat) and won’t start running
@@ -743,9 +743,9 @@ This page outlines that status of each of the machines managed by the Research C
     * Depending on the amount of data, the copying may take some time, especially if you have many
       small files. If you wish to archive some of your data, consider creating tar archives straight
       away instead of copying data recursively.
-    * E.g. `tar -czvf /home/username/Scratch/myarchive.tar.gz /old_lustre/home/username/data` will
-      (c)reate a g(z)ipped archive (v)erbosely in the specified (f)ilename location. The contents
-      will be everything in this user's old `data` directory.
+        - E.g. `tar -czvf /home/username/Scratch/myarchive.tar.gz /old_lustre/home/username/data` will
+          (c)reate a g(z)ipped archive (v)erbosely in the specified (f)ilename location. The contents
+          will be everything in this user's old `data` directory.
 
     Further reminders will be sent before the `/old_lustre` locations are removed on **14 January 2025**.
 
