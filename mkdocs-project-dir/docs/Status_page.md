@@ -647,6 +647,12 @@ This page outlines that status of each of the machines managed by the Research C
     of our software stack. This will result in GPU jobs remaining in the queue while we complete this. I 
     would expect this to be complete by Wednesday or Thursday but will keep you updated.
 
+  - 2024-10-08 13:30 Logins are enabled.
+
+    Logins are enabled again.
+
+    We're continuing to rebuild the GPU applications on Young.
+
 
 ### Michael
 
@@ -758,6 +764,10 @@ This page outlines that status of each of the machines managed by the Research C
 
     If you are no longer using Young or Michael and wish to be removed from these mailing lists,
     email us confirming that we can delete your accounts and we will do so and remove you from the lists.
+
+  - 2024-10-08 13:30 Logins are enabled.
+
+    Logins are enabled again.
 
 
 ### Thomas
