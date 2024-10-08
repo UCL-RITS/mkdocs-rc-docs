@@ -2245,9 +2245,11 @@ send us a support ticket.</p>
 <li>After login, you will notice that your new home and scratch directories are mostly empty. 
   Please copy any data you need from your old home and scratch directories under <code>/old_lustre</code> to 
   the appropriate new locations. Your existing SSH keys will all have been copied in so that you 
-  can log in.</li>
+  can log in. You can do this copy on the login nodes.<ul>
 <li>E.g. <code>cp -rp /old_lustre/home/username/data /home/username</code> will recursively copy with 
   preserved permissions your old <code>data</code> directory and everything in it into your new home.</li>
+</ul>
+</li>
 <li>You have <strong>three months and one week</strong> to copy your data. After this, the <code>/old_lustre</code> will 
   become unavailable.</li>
 <li>Your queued jobs will be held (showing status <code>hqw</code> in qstat) and won’t start running 
@@ -2260,10 +2262,12 @@ send us a support ticket.</p>
 </li>
 <li>Depending on the amount of data, the copying may take some time, especially if you have many 
   small files. If you wish to archive some of your data, consider creating tar archives straight 
-  away instead of copying data recursively.</li>
+  away instead of copying data recursively.<ul>
 <li>E.g. <code>tar -czvf /home/username/Scratch/myarchive.tar.gz /old_lustre/home/username/data</code> will 
   (c)reate a g(z)ipped archive (v)erbosely in the specified (f)ilename location. The contents 
   will be everything in this user's old <code>data</code> directory. </li>
+</ul>
+</li>
 </ul>
 <p>Further reminders will be sent before the <code>/old_lustre</code> locations are removed on <strong>14 January 2025</strong>.</p>
 <p><strong>Terms &amp; Conditions update</strong></p>
@@ -2358,9 +2362,11 @@ send us a support ticket.</p>
 <li>After login, you will notice that your new home and scratch directories are mostly empty.
   Please copy any data you need from your old home and scratch directories under <code>/old_lustre</code> to
   the appropriate new locations. Your existing SSH keys will all have been copied in so that you
-  can log in.</li>
+  can log in. You can do this copy on the login nodes.<ul>
 <li>E.g. <code>cp -rp /old_lustre/home/username/data /home/username</code> will recursively copy with
   preserved permissions your old <code>data</code> directory and everything in it into your new home.</li>
+</ul>
+</li>
 <li>You have <strong>three months and one week</strong> to copy your data. After this, the <code>/old_lustre</code> will
   become unavailable.</li>
 <li>Your queued jobs will be held (showing status <code>hqw</code> in qstat) and won’t start running
@@ -2373,10 +2379,12 @@ send us a support ticket.</p>
 </li>
 <li>Depending on the amount of data, the copying may take some time, especially if you have many
   small files. If you wish to archive some of your data, consider creating tar archives straight
-  away instead of copying data recursively.</li>
+  away instead of copying data recursively.<ul>
 <li>E.g. <code>tar -czvf /home/username/Scratch/myarchive.tar.gz /old_lustre/home/username/data</code> will
   (c)reate a g(z)ipped archive (v)erbosely in the specified (f)ilename location. The contents
   will be everything in this user's old <code>data</code> directory.</li>
+</ul>
+</li>
 </ul>
 <p>Further reminders will be sent before the <code>/old_lustre</code> locations are removed on <strong>14 January 2025</strong>.</p>
 <p><strong>Terms &amp; Conditions update</strong></p>
