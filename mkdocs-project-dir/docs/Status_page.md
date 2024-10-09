@@ -640,18 +640,58 @@ This page outlines that status of each of the machines managed by the Research C
     If you are no longer using Young or Michael and wish to be removed from these mailing lists, 
     email us confirming that we can delete your accounts and we will do so and remove you from the lists.
 
-  - 2024-10-07 11:00 - Delay in returning Young GPU nodes to service
+  - 2024-10-07 11:00 - **Delay in returning Young GPU nodes to service**
 
     In addition to the above, there may be a delay in allowing the GPU nodes in Young to run jobs again - 
     we need to rebuild the existing GPU software for those, to have it on an architecture-specific section 
     of our software stack. This will result in GPU jobs remaining in the queue while we complete this. I 
     would expect this to be complete by Wednesday or Thursday but will keep you updated.
 
-  - 2024-10-08 13:30 Logins are enabled.
+  - 2024-10-08 13:30 - **Logins are enabled.**
 
     Logins are enabled again.
 
     We're continuing to rebuild the GPU applications on Young.
+
+  - 2024-10-09 17:00 - **GPU nodes are enabled, plus FAQ**
+
+  The GPU applications are rebuilt so we have re-enabled jobs on the GPU nodes. Please let us know if you 
+  encounter any issues or if we have missed something.
+
+  We found that we hadn't synced keys across for users created after 26 September so they could not log in 
+  - this was sorted out at 10:20am today. It affected mmm1457 to mmm1463 on Young.
+
+  **Some frequently-asked questions about the filesystem update:**
+
+  1. Where is my old `.bashrc`? & Why are my jobs failing with module errors now?
+
+     This is in `/old_lustre/home/username/.bashrc` 
+
+     It begins with a dot and is a hidden file so will only show up with `ls -a` rather than `ls`. You can 
+     copy this across into your current home again. You may have put module load and unload commands in it, 
+     so are now getting module conflicts when your jobs run since the modules are the default ones.
+
+     Note that this also applies to other hidden files or directories you may have, like `.condarc` and `.python3local`.
+
+  2. Do I need to copy my data in a job?
+
+     No, you can do the copy on the login nodes. It can cause a lot of I/O usage on the login nodes so you 
+     could also do it in a job if you wanted or if you noticed that it was going slowly, but using the login 
+     nodes for this is allowed.
+
+  3. I need more than the 100G home quota and 250G Scratch quota for my data, what do I do?
+
+     Home is your backed-up area and is limited in size. Scratch is not backed up and also not deleted and we 
+     can give you more space there. Run the `request_quota` command and it will ask you a few questions and send 
+     us the request. We migrated all quota increases that were made within the last 12 months to Scratch 
+     increases and did not migrate older ones. This allows us to make sure that the quota increases are current 
+     and still needed. We are processing the new requests.
+
+  4. Where should I write large temporary data during my jobs?
+
+     Into Scratch. As above, you can request a larger quota if you need one. (If you are using the GPU nodes, 
+     you can use `$TMPDIR` and request it with `#$ -l tmpfs=20G` for example, but the GPU nodes are the only 
+     ones with local disks so everything else needs to be in Scratch).
 
 
 ### Michael
