@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
     
     
       
@@ -3045,13 +3045,13 @@ export GAMESS_USERSCR=$TMPDIR
 
 # removes any of the user’s semaphore arrays that were left from previous
 # jobs on this node. Use if you are using a whole number of nodes.
-ipcrm -a sem
+ipcrm --all=sem
 
 rungms exam01.inp 00 $NSLOTS $(ppn)
 
 # removes all of the user’s semaphore arrays. 
 # Use if you are using a whole number of nodes.
-ipcrm -a sem
+ipcrm --all=sem
 </code></pre></div>
 
 <h4 id="semaphores">Semaphores<a class="headerlink" href="#semaphores" title="Permanent link">§</a></h4>
@@ -3066,7 +3066,7 @@ semget errno=ENOSPC -- check system limit for sysv semaphores.
 node that you are on:</p>
 <div class="codehilite"><pre><span></span><code># removes all of the user’s semaphore arrays.
 # Use if you are using a whole number of nodes.
-ipcrm -a sem
+ipcrm --all=sem
 </code></pre></div>
 
 <p>Putting this before and after your GAMESS run ought to make sure that no semaphores from you are
