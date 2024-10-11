@@ -361,13 +361,13 @@ export GAMESS_USERSCR=$TMPDIR
 
 # removes any of the user’s semaphore arrays that were left from previous
 # jobs on this node. Use if you are using a whole number of nodes.
-ipcrm -a sem
+ipcrm --all=sem
 
 rungms exam01.inp 00 $NSLOTS $(ppn)
 
 # removes all of the user’s semaphore arrays. 
 # Use if you are using a whole number of nodes.
-ipcrm -a sem
+ipcrm --all=sem
 ```
 
 #### Semaphores
@@ -388,7 +388,7 @@ node that you are on:
 ```
 # removes all of the user’s semaphore arrays.
 # Use if you are using a whole number of nodes.
-ipcrm -a sem
+ipcrm --all=sem
 ```
 
 Putting this before and after your GAMESS run ought to make sure that no semaphores from you are
