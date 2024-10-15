@@ -487,3 +487,9 @@ their entire project, broken down by user. See
 Email <rc-support@ucl.ac.uk> with any support queries. It will be helpful
 to include Michael in the subject along with some descriptive text about
 the type of problem, and you should mention your username in the body.
+
+## Acknowledging the use of Michael in publications
+
+ To acknowledge this facility please include the following test in presentations 
+ and papers: "used the Michael Supercomputer (FIRG030)."
+

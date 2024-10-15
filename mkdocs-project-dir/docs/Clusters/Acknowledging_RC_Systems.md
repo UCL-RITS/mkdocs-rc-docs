@@ -38,3 +38,7 @@ this work."
 
 Please find the appropriate wording at [Acknowledging the use of Young in publications](Young.md#acknowledging-the-use-of-young-in-publications).
 
+## Michael
+
+Please find the appropriate wording at [Acknowledging the use of Michael in publications](Michael.md#acknowledging-the-use-of-michael-in-publications).
+
