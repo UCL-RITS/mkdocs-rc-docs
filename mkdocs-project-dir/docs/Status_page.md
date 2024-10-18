@@ -369,8 +369,6 @@ This page outlines that status of each of the machines managed by the Research C
     Please send any queries to rc-support@ucl.ac.uk. If you've asked us for account deletions, we 
     will be starting those next week, along with new user account creations.
 
-#### Latest on Myriad
-
   - 2024-01-15 16:00 - Myriad jobs enabled
 
     We have now allowed jobs to start on Myriad. 
@@ -390,6 +388,90 @@ This page outlines that status of each of the machines managed by the Research C
     User deletions and new user creations are underway. We'll need to check that the 
     synchronisation to the mailing list is working correctly and people are being added and removed
     as appropriate.
+
+#### Latest on Myriad
+
+  - 2024-10-18 13:55 - **Action required: compression or removal of data on Myriad**
+
+    Myriad's filesystem is too full, so we need everyone to check what data they are keeping on the 
+    cluster and to remove data they are not currently using. To perform effectively, the filesystem 
+    needs a significant portion of empty space. As it gets fuller, performance begins to get worse 
+    and then stability also decreases. 
+
+    The filesystem is at 70% full, and we will need to stop jobs running when it reaches 75%. (1% of 
+    the filesystem is 19.4 TiB).
+
+    Keeping data unnecessarily on the system affects everyone's ability to run jobs.
+
+    We will also be contacting those of you with large amounts of data separately.
+
+    **How to check usage and compress data**
+
+    You can check your quota and see how much space you are using on Myriad with the lquota command, 
+    and you can see which directories are taking the most space using `du -h` which can also be run 
+    in specific directories. You can tell du to only output details of the first level of directory 
+    sizes with the `--max-depth=1` option.
+
+    If you cannot remove your data from the cluster, please consider whether you can archive and 
+    compress any of it for the time being.
+
+    Example to tar up and gzip compress a directory:
+
+    - `tar -czvf /home/username/Scratch/myarchive.tar.gz /home/username/Scratch/work_data` 
+      will (c)reate a g(z)ipped archive (v)erbosely in the specified (f)ilename location. The 
+      contents will be everything in this user's `work_data` directory.
+
+    You can request bzip2 compression instead with `-j` or `--bzip2` and `xz` compression with `-J` 
+    or `--xz`. These will give you better compression than gzip, with xz generally being the most 
+    compressed.
+
+    If you are compressing an individual file rather than a directory, you can use the `gzip`, 
+    `bzip2` and `xz` commands on their own without tar.
+
+    (Have a look at `man tar` or gzip, bzip2 and xz for the manual page details - they also contain 
+    the names of the uncompress commands).
+
+    If you are transferring data to Windows and want to uncompress the data there, 7-zip can open 
+    all of these formats. Or you can create your archives using the `zip` command.
+
+    **Quota policies**
+
+    We are going to be adjusting the policies for granting Scratch quota increases - the CRAG will 
+    be granting them for shorter periods of time and will not be as easily re-granting increases at 
+    the end of that time period. We will have a process for what happens when a quota increase 
+    expires, including notifications to you. You will be asked to consider your plans for what to 
+    do with the data when the quota increase expires at the time of requesting one.
+
+    We are also going to be setting up annual account reapplications again, so we can identify 
+    users who are no longer using the system and activate our account deletion policies.
+
+    This is to prevent the current situation where new users to the system cannot get relatively 
+    small and short term quota increases necessary for their work because increases granted in the 
+    past are still using the space.
+
+    **ARC Cluster File System (ACFS)**
+
+    Timelines for access to the ARC Cluster Filesystem (ACFS) from Myriad are currently being 
+    considered. There is some info about the ACFS at 
+    [ARC Cluster File System](https://www.rc.ucl.ac.uk/docs/Background/Data_Storage/#arc-cluster-file-system-acfs) 
+
+    The ACFS once available from Myriad will give you 1T in total of backed-up data (and your home 
+    directories will no longer be backed up). For those of you with larger Scratch quota increases, 
+    you will still need to consider what you will do with the bulk of your data. 
+
+    **Info**
+
+    We recently added some pages to our documentation which may be relevant:
+
+    - [Parallel Filesystems](https://www.rc.ucl.ac.uk/docs/Background/Parallel_Filesystems/) includes 
+      sections on working effectively with parallel filesystems and tips for use.
+    - [Data Storage](https://www.rc.ucl.ac.uk/docs/Background/Data_Storage/) - what storage locations exist.
+    - [Data Management](https://www.rc.ucl.ac.uk/docs/Data_Management/) - checking quotas, transferring 
+      data to other users, requesting data from those who have left.
+
+    Please email rc-support@ucl.ac.uk with any queries or raise a request about Myriad via 
+    [UCL MyServices](https://myservices.ucl.ac.uk/). If you are no longer using the cluster and 
+    wish to be removed from this mailing list, please also contact us and say we can delete your account.
 
 
 ### Kathleen
