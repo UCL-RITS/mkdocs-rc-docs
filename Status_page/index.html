@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -2031,9 +2031,6 @@ we'll be working through those, starting with the most recent version we had.</p
 <p>Please send any queries to rc-support@ucl.ac.uk. If you've asked us for account deletions, we 
 will be starting those next week, along with new user account creations.</p>
 </li>
-</ul>
-<h4 id="latest-on-myriad">Latest on Myriad<a class="headerlink" href="#latest-on-myriad" title="Permanent link">§</a></h4>
-<ul>
 <li>
 <p>2024-01-15 16:00 - Myriad jobs enabled</p>
 <p>We have now allowed jobs to start on Myriad. </p>
@@ -2049,6 +2046,72 @@ delete the jobs instead, use <code>qdel</code> followed by the job ID.</p>
 <p>User deletions and new user creations are underway. We'll need to check that the 
 synchronisation to the mailing list is working correctly and people are being added and removed
 as appropriate.</p>
+</li>
+</ul>
+<h4 id="latest-on-myriad">Latest on Myriad<a class="headerlink" href="#latest-on-myriad" title="Permanent link">§</a></h4>
+<ul>
+<li>
+<p>2024-10-18 13:55 - <strong>Action required: compression or removal of data on Myriad</strong></p>
+<p>Myriad's filesystem is too full, so we need everyone to check what data they are keeping on the 
+cluster and to remove data they are not currently using. To perform effectively, the filesystem 
+needs a significant portion of empty space. As it gets fuller, performance begins to get worse 
+and then stability also decreases. </p>
+<p>The filesystem is at 70% full, and we will need to stop jobs running when it reaches 75%. (1% of 
+the filesystem is 19.4 TiB).</p>
+<p>Keeping data unnecessarily on the system affects everyone's ability to run jobs.</p>
+<p>We will also be contacting those of you with large amounts of data separately.</p>
+<p><strong>How to check usage and compress data</strong></p>
+<p>You can check your quota and see how much space you are using on Myriad with the lquota command, 
+and you can see which directories are taking the most space using <code>du -h</code> which can also be run 
+in specific directories. You can tell du to only output details of the first level of directory 
+sizes with the <code>--max-depth=1</code> option.</p>
+<p>If you cannot remove your data from the cluster, please consider whether you can archive and 
+compress any of it for the time being.</p>
+<p>Example to tar up and gzip compress a directory:</p>
+<ul>
+<li><code>tar -czvf /home/username/Scratch/myarchive.tar.gz /home/username/Scratch/work_data</code> 
+  will (c)reate a g(z)ipped archive (v)erbosely in the specified (f)ilename location. The 
+  contents will be everything in this user's <code>work_data</code> directory.</li>
+</ul>
+<p>You can request bzip2 compression instead with <code>-j</code> or <code>--bzip2</code> and <code>xz</code> compression with <code>-J</code> 
+or <code>--xz</code>. These will give you better compression than gzip, with xz generally being the most 
+compressed.</p>
+<p>If you are compressing an individual file rather than a directory, you can use the <code>gzip</code>, 
+<code>bzip2</code> and <code>xz</code> commands on their own without tar.</p>
+<p>(Have a look at <code>man tar</code> or gzip, bzip2 and xz for the manual page details - they also contain 
+the names of the uncompress commands).</p>
+<p>If you are transferring data to Windows and want to uncompress the data there, 7-zip can open 
+all of these formats. Or you can create your archives using the <code>zip</code> command.</p>
+<p><strong>Quota policies</strong></p>
+<p>We are going to be adjusting the policies for granting Scratch quota increases - the CRAG will 
+be granting them for shorter periods of time and will not be as easily re-granting increases at 
+the end of that time period. We will have a process for what happens when a quota increase 
+expires, including notifications to you. You will be asked to consider your plans for what to 
+do with the data when the quota increase expires at the time of requesting one.</p>
+<p>We are also going to be setting up annual account reapplications again, so we can identify 
+users who are no longer using the system and activate our account deletion policies.</p>
+<p>This is to prevent the current situation where new users to the system cannot get relatively 
+small and short term quota increases necessary for their work because increases granted in the 
+past are still using the space.</p>
+<p><strong>ARC Cluster File System (ACFS)</strong></p>
+<p>Timelines for access to the ARC Cluster Filesystem (ACFS) from Myriad are currently being 
+considered. There is some info about the ACFS at 
+<a href="https://www.rc.ucl.ac.uk/docs/Background/Data_Storage/#arc-cluster-file-system-acfs">ARC Cluster File System</a> </p>
+<p>The ACFS once available from Myriad will give you 1T in total of backed-up data (and your home 
+directories will no longer be backed up). For those of you with larger Scratch quota increases, 
+you will still need to consider what you will do with the bulk of your data. </p>
+<p><strong>Info</strong></p>
+<p>We recently added some pages to our documentation which may be relevant:</p>
+<ul>
+<li><a href="https://www.rc.ucl.ac.uk/docs/Background/Parallel_Filesystems/">Parallel Filesystems</a> includes 
+  sections on working effectively with parallel filesystems and tips for use.</li>
+<li><a href="https://www.rc.ucl.ac.uk/docs/Background/Data_Storage/">Data Storage</a> - what storage locations exist.</li>
+<li><a href="https://www.rc.ucl.ac.uk/docs/Data_Management/">Data Management</a> - checking quotas, transferring 
+  data to other users, requesting data from those who have left.</li>
+</ul>
+<p>Please email rc-support@ucl.ac.uk with any queries or raise a request about Myriad via 
+<a href="https://myservices.ucl.ac.uk/">UCL MyServices</a>. If you are no longer using the cluster and 
+wish to be removed from this mailing list, please also contact us and say we can delete your account.</p>
 </li>
 </ul>
 <h3 id="kathleen">Kathleen<a class="headerlink" href="#kathleen" title="Permanent link">§</a></h3>
@@ -2516,7 +2579,7 @@ email us confirming that we can delete your accounts and we will do so and remov
     <script id="__config" type="application/json">{"base": "..", "features": ["instant"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>
