@@ -907,6 +907,24 @@ module load lammps/29sep21up2/gpu/intel-2020
 gerun lmp_gpu -sf gpu -pk gpu 1 -in inputfile
 ```
 
+### Mathematica
+
+Wolfram Mathematica: mathematical computation program for areas of technical computing such 
+as machine learning, statistics, symbolic computation, data manipulation, network analysis, 
+time series analysis, NLP, optimization, and plotting functions and various types of data.
+
+```
+module load xorg-utils/X11R7.7
+module load mathematica/13.1.0
+
+wolfram -script input.wl
+# or
+math -script input.m
+# to redirect output to a different file
+wolfram -script input.wl > output.out
+```
+
+
 ### MEME Suite
 
 MEME Suite: Motif-based sequence analysis tools. This install is for the command-line tools and connects to their website for further analysis. 
