@@ -169,11 +169,8 @@ module load castep/19.1.1/intel-2019
 gerun castep.mpi input
 ```
 
-If you have access to the source code and wish to build your own copy, it has been suggested that compiling with these options (on Grace) gave a build that ran about 10% faster than the default compilation options:
-```
-make COMMS_ARCH=mpi SUBARCH=mpi FFT=mkl MATHLIBS=mkl10 BUILD=fast
-```
-Do check for numerical accuracy with any optimisations you carry out.
+If building your own CASTEP, for version 23 onwards module load the newest `cmake` module we have and use the 
+newer cmake build system rather than make.
 
 
 ### Cctools
