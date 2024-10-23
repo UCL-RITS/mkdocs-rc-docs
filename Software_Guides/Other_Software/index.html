@@ -2909,11 +2909,8 @@ module load castep/19.1.1/intel-2019
 gerun castep.mpi input
 </code></pre></div>
 
-<p>If you have access to the source code and wish to build your own copy, it has been suggested that compiling with these options (on Grace) gave a build that ran about 10% faster than the default compilation options:</p>
-<div class="codehilite"><pre><span></span><code>make COMMS_ARCH=mpi SUBARCH=mpi FFT=mkl MATHLIBS=mkl10 BUILD=fast
-</code></pre></div>
-
-<p>Do check for numerical accuracy with any optimisations you carry out.</p>
+<p>If building your own CASTEP, for version 23 onwards module load the newest <code>cmake</code> module we have and use the 
+newer cmake build system rather than make.</p>
 <h3 id="cctools">Cctools<a class="headerlink" href="#cctools" title="Permanent link">§</a></h3>
 <p>Provides the Parrot connector to CVMFS, the CernVM File System. </p>
 <p>By default, the cctools module sets the following:</p>
