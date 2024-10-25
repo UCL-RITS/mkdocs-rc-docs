@@ -389,7 +389,7 @@ This page outlines that status of each of the machines managed by the Research C
     synchronisation to the mailing list is working correctly and people are being added and removed
     as appropriate.
 
-#### Latest on Myriad
+#### Action required - compression or removal of data
 
   - 2024-10-18 13:55 - **Action required: compression or removal of data on Myriad**
 
@@ -472,6 +472,18 @@ This page outlines that status of each of the machines managed by the Research C
     Please email rc-support@ucl.ac.uk with any queries or raise a request about Myriad via 
     [UCL MyServices](https://myservices.ucl.ac.uk/). If you are no longer using the cluster and 
     wish to be removed from this mailing list, please also contact us and say we can delete your account.
+
+#### Latest on Myriad   
+
+  - 2024-10-25 18:20 - Filesystem issues on Myriad
+
+    We have been having some filesystem issues since around 16:50.
+
+    One of the servers that is part of the filesystem kept crashing, we had a failover and then the new 
+    active one crashed as well. This will be preventing logins and jobs will have failed.
+
+    Depending on what is happening, we may not be able to sort this out until Monday and if access is 
+    restored it may be unstable throughout the weekend.
 
 
 ### Kathleen
