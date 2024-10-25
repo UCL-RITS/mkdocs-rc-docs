@@ -56,6 +56,7 @@ Follow the guidance on that page for how to encrypt the form when sending it to 
 to be signed by the head of department/division and the UCL data protection officer 
 (data-protection@ucl.ac.uk).
 
+
 ## Managing shared spaces
 
 If you have applied for a shared space/hosted dataset on the cluster, there are several ways to 
@@ -64,7 +65,7 @@ manage access to that data.
 The best way to manage it will depend on the numbers of people you expect to be giving access to, how 
 much those are likely to change, and what permissions they will need on the data.
 
-### Location
+### Location of shared spaces
 
 * `/lustre/projects`
 * `/shared/ucl/depts` - this is a symbolic link to the above
