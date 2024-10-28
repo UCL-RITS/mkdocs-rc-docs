@@ -485,6 +485,16 @@ This page outlines that status of each of the machines managed by the Research C
     Depending on what is happening, we may not be able to sort this out until Monday and if access is 
     restored it may be unstable throughout the weekend.
 
+  - 2024-10-28 10:20 - Filesystem recovered
+
+    The filesystem recovered on Friday evening and was running ok over the weekend. 
+
+    While it was down, it is likely that many running jobs failed with I/O errors. There will also be 
+    numbers of them in state `dr` which we need to reboot the nodes to clear.
+
+    At the moment we're still seeing some leftover activity in the logs but there don't appear to be any 
+    active problems.
+
 
 ### Kathleen
 
