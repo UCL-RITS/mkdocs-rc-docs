@@ -373,7 +373,7 @@ CPU cores per node.
 | Y     | 40             | 1.5T         | None  | 3     | mpi: mem >=19G, smp: >186G total | None |
 | Z     | 36             | 3.0T         | None  | 3     | mpi: mem >=42G, smp: >1530G total | None |
 | X     | 64             | 1T           | 200G  | 6     | Any | 8 x Nvidia 40G A100 |
-| W     | 64             | (503G usable) | 3.5T  | 32    | Any | None |
+| W     | 64             | 503G usable | 3.5T  | 32    | Any | None |
 
 These are numbers of physical cores: multiply by two for virtual cores with
 hyperthreading. 
@@ -389,7 +389,7 @@ Here are the processors each node type has:
   - Y: Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz
   - Z: Intel(R) Xeon(R) Gold 6240M CPU @ 2.60GHz
   - X: dual AMD EPYC 7543 32-Core Processor
-  - W: Intel (R) Xeon(R) Gold Max
+  - W: Intel (R) Xeon(R) CPU Max 9462
 
 (If you ever need to check this, you can include `cat /proc/cpuinfo` in your jobscript so 
 you get it in your job's .o file for the exact node your job ran on. You will get an entry
