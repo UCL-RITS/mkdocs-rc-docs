@@ -360,7 +360,10 @@ If your job must run within a single CU, you can request the parallel environmen
 
 ## Disk quotas
 
-You have one per-user quota, with a default amount of 250GB - this is the total across home and Scratch.
+You have per-user quotas for home and Scratch.
+
+  - home: 100G quota, backed up, no increases available
+  - Scratch: 250G quota by default, not backed up, increases possible
 
   - `lquota` shows you your quota and total usage (twice).
   - `request_quota` is how you request a quota increase.
