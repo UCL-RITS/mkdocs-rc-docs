@@ -2562,9 +2562,15 @@ not directly map to particular job types.</p>
 <p>If your job must run within a single CU, you can request the parallel environment as <code>-pe wss</code> instead of <code>-pe mpi</code> (<code>wss</code> standing for 'wants single switch'). This will increase your queue times. It is suggested you only do this for benchmarking or if performance is being greatly affected by running in the superqueue.</p>
 <p><a href="#top" title="wikilink"> back to top</a></p>
 <h2 id="disk-quotas">Disk quotas<a class="headerlink" href="#disk-quotas" title="Permanent link">§</a></h2>
-<p>You have one per-user quota, with a default amount of 250GB - this is the total across home and Scratch.</p>
+<p>You have per-user quotas for home and Scratch.</p>
 <ul>
-<li><code>lquota</code> shows you your quota and total usage (twice).</li>
+<li>home: 100G quota, backed up, no increases available</li>
+<li>
+<p>Scratch: 250G quota by default, not backed up, increases possible</p>
+</li>
+<li>
+<p><code>lquota</code> shows you your quota and total usage (twice).</p>
+</li>
 <li><code>request_quota</code> is how you request a quota increase.</li>
 </ul>
 <p>If you go over quota, you will no longer be able to create new files and your jobs will fail as they cannot write.</p>
