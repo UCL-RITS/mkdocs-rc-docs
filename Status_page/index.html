@@ -2432,6 +2432,35 @@ would expect this to be complete by Wednesday or Thursday but will keep you upda
  ones with local disks so everything else needs to be in Scratch).</p>
 </li>
 </ol>
+<ul>
+<li>
+<p>2024-09-04 15:10 - UKRI survey, new HBM nodes and GPU node driver updates</p>
+<p><strong>EPSRC Large Scale Facilities - User survey</strong></p>
+<p><a href="https://engagementhub.ukri.org/epsrc-researchinfrastructure/lsfusersurvey/consultation/intro/">EPSRC Large Scale Facilities survey</a></p>
+<p>Please can you fill in this survey that EPSRC are running on all their Large Scale Facilities - it 
+includes events run by facilities as well as accessibility of the remote service itself, so if you 
+attended the MMM Hub Conference last week and didn't fill it in at the end, please consider it now.</p>
+<p><strong>New High Bandwidth Memory nodes</strong></p>
+<p>We have 32 new high bandwidth memory nodes in Young, each with 64 cores, 503G usable memory and 3.5T 
+available to be requested as tmpfs in your job.</p>
+<p>They are currently configured in cache mode, where the HBM functions as a memory-side cache for the 
+contents of the DDR memory. This should allow all applications to take advantage of it without needing 
+to be specifically configured to use it. </p>
+<p>Please try this out with your applications and let us know how it is working and whether you see an 
+improvement. We have one VASP test case at present and would like to build up suitable test cases 
+with other applications, including more specific ones with VASP. Especially if you already know you 
+have been running up against memory bandwidth limitations, please contact us at rc-support@ucl.ac.uk 
+- if you have test cases and tell us where on the filesystem they are, we can get them from you. 
+After we upgrade the operating system on the cluster we will be testing other HBM modes as well, which 
+can have a greater impact if the application is aware of it.</p>
+<p>We will also be using this information to inform future hardware purchases for the MMM community so any 
+feedback, positive or negative, you have on these nodes would be gratefully received.</p>
+<p><a href="../Clusters/Young/#high-bandwidth-memory-nodes">Information about the nodes and how to use</a></p>
+<p>You will need to request these nodes explicitly in your jobscripts with <code>#$ -ac allow=W</code></p>
+<p>The <a href="../Clusters/Young/#maximum-job-resources">Maximum job resources</a> and 
+<a href="../Clusters/Young/#node-types">Node types</a> tables are also updated.</p>
+</li>
+</ul>
 <h3 id="michael">Michael<a class="headerlink" href="#michael" title="Permanent link">§</a></h3>
 <ul>
 <li>
