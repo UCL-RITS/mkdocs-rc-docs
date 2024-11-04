@@ -6,13 +6,12 @@ categories:
 
 # Purchasing in Myriad
 
-!!! important "29 Oct 2024: We are planning a Myriad refresh for Dec 2024, to be confirmed."
-    If it goes ahead, we will be able to add some paid nodes then and also allow planning for 
+!!! important "4 Nov 2024: The Myriad refresh is confirmed."
+    The filesystem will be replaced first and then new nodes will be added.
+    We will be able to bring new paid nodes online in March 2025 and also allow planning for 
     future purchases. The nodes we will have available are below. 
 
-    Please contact rc-support@ucl.ac.uk for prices and let us know your timescales.
-    We cannot fully confirm this is going ahead until it receives finance approval. It has 
-    moved on to the next stage after the meeting on 9 Oct 2024. 
+    Please contact rc-support@ucl.ac.uk for prices and let us know your timescales. 
 
 Researchers may purchase additional resources to be used as part of the [Myriad](../Clusters/Myriad.md) High Performance Computing cluster if the free service does not meet their needs. These resources can be made available in one of two ways:
 
@@ -23,12 +22,14 @@ Costs will include backend infrastructure – racks, switches, cables etc – ne
 
 ## Deadline
 
-If the refresh is confirmed, we wish to be raising the purchase orders as soon after **9 Oct 2024** as possible, 
-so please tell us now if you have funding and want to buy nodes for the December refresh.
+We will be able to bring new hardware online in March 2025, no hardware can be added to Myriad before then. 
+If you need your purchase to be receipted before this date, let us know and we may be able to accommodate 
+this. However, holding the hardware ahead of March will require additional work for us to store it and 
+would be a last resort. We will not be able to do this for large numbers of nodes.
 
 We expect to be able to run regular quarterly rounds again after this.
 
-Next round (currently unconfirmed): **mid-March 2025**. Let us know if you intend to take part in this one.
+Next round (currently unconfirmed): **mid-June 2025**. Let us know if you intend to take part in this one.
 
 
 ## Node types
