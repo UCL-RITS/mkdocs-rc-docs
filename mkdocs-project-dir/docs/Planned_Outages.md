@@ -16,6 +16,7 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+4-8 November 2024 | Myriad, Young | Planned | New drivers being deployed on the GPU nodes in a rolling fashion. No outage of all nodes at once. 
 
 ## Previous Outages
 
