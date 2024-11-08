@@ -4,12 +4,6 @@ layout: docs
 
 # Status of machines
 
-!!! important
-    There is currently an issue with central groups for new UCL users which means
-    we cannot add you to reserved application or shared data groups at present.
-    This applies to UCL accounts with a start date of 16 August 2024 or later, as far
-    as we are currently aware. 
-
 This page outlines that status of each of the machines managed by the Research Computing team at UCL. We endeavour to keep this page as up-to-date as possible but there might be some delay. Also there are spontaneous errors that we have to deal with (i.e. high load on login nodes) but feel free to report them to rc-support@ucl.ac.uk. Finally, details of our planned outages can be found [here](https://www.rc.ucl.ac.uk/docs/Planned_Outages/).  
 
 ### Myriad
