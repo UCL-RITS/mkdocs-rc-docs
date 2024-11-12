@@ -2124,9 +2124,6 @@ you will still need to consider what you will do with the bulk of your data. </p
 <a href="https://myservices.ucl.ac.uk/">UCL MyServices</a>. If you are no longer using the cluster and 
 wish to be removed from this mailing list, please also contact us and say we can delete your account.</p>
 </li>
-</ul>
-<h4 id="latest-on-myriad">Latest on Myriad<a class="headerlink" href="#latest-on-myriad" title="Permanent link">§</a></h4>
-<ul>
 <li>
 <p>2024-10-25 18:20 - Filesystem issues on Myriad</p>
 <p>We have been having some filesystem issues since around 16:50.</p>
@@ -2142,6 +2139,56 @@ restored it may be unstable throughout the weekend.</p>
 numbers of them in state <code>dr</code> which we need to reboot the nodes to clear.</p>
 <p>At the moment we're still seeing some leftover activity in the logs but there don't appear to be any 
 active problems.</p>
+</li>
+</ul>
+<h4 id="latest-on-myriad">Latest on Myriad<a class="headerlink" href="#latest-on-myriad" title="Permanent link">§</a></h4>
+<ul>
+<li>
+<p>2024-11-12 17:20 - <strong>Myriad filesystem and refresh news; ACFS available now</strong></p>
+<p><strong>The ARC Cluster File System (ACFS) is now available on Myriad.</strong></p>
+<p>The ARC Cluster File System (ACFS) is ARC's centralised storage system that will be available from 
+multiple ARC systems. If you also have a Kathleen account and already put some data in the ACFS, you 
+will now be able to see that data on Myriad too.</p>
+<p>It is the backed-up location for data which you wish to keep.</p>
+<p>The ACFS is available read-write on the login nodes but read-only on the compute nodes. This means 
+that your jobs can read from it, but not write to it, and it is intended that you copy data onto it 
+after deciding which outputs from your jobs are important to keep.</p>
+<ul>
+<li>Location: <code>/acfs/users/&lt;username&gt;</code></li>
+<li>Also at: <code>/home/&lt;username&gt;/ACFS</code> (a shortcut or symbolic link to the first location).</li>
+<li>Backed up daily.</li>
+<li>1T quota - no quota increases available on ACFS at present.</li>
+<li>Check your ACFS quota with <code>aquota</code>.</li>
+</ul>
+<p>The ACFS has dual locations for resilience, and as a result commands like <code>du -h</code> or <code>ls -alsh</code> will 
+report filesizes on it as being twice what they really are. The <code>aquota</code> command will show you real 
+usage and quota.</p>
+<ul>
+<li><a href="../Background/Data_Storage/#arc-cluster-file-system-acfs">Data Storage - ACFS</a></li>
+<li><a href="../Data_Management/#acfs-quotas">Data Management - ACFS quotas</a></li>
+</ul>
+<p><strong>Until Myriad's filesystem is replaced, your home will continue to be backed up.</strong> After the new 
+filesystem is available, only the ACFS will be backed up.</p>
+<p>Please move some of your current data to the ACFS to reduce the usage on Myriad's Scratch.</p>
+<p><strong>Myriad refresh and new filesystem</strong></p>
+<p>The Myriad refresh is going ahead, and we will be adding some new compute nodes to Myriad as well 
+as replacing the filesystem, networking and admin nodes.</p>
+<p>We expect the new filesystem to go live during March 2025. Prior to that, we will be conducting 
+setup, tuning and testing behind the scenes. (We expect the hardware to arrive in December or first 
+week of January depending on delivery windows).</p>
+<p>We expect the new compute nodes to also go live during March 2025 - they will be purchased and 
+arrive later than the filesystem, but their testing period should coincide.</p>
+<p>The new filesystem will be GPFS. The new compute nodes will be AMD EPYC 64 core, ~750G RAM, with 
+~950G local disk for tmpfs. Some of the oldest nodes will be removed (eg types H, I, J which are 
+nodes named node-h, node-i, node-j).</p>
+<p>Timescales are based on our current knowledge and best estimates!</p>
+<p>There will be many software changes as part of this refresh as well - we will be updating the 
+operating system, changing the scheduler to Slurm and refreshing the software stack. More details 
+nearer the time.</p>
+<p><strong>Action required - compression or removal of data</strong></p>
+<p>Myriad's filesystem is still at 70% full and we need to stop jobs at 75% full. Please continue to 
+look at <a href="#action-required-compression-or-removal-of-data">our previous message with full info</a> and 
+move data to the ACFS, off-cluster, or compress it if possible.</p>
 </li>
 </ul>
 <h3 id="kathleen">Kathleen<a class="headerlink" href="#kathleen" title="Permanent link">§</a></h3>
