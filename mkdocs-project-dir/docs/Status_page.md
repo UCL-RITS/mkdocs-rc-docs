@@ -467,8 +467,6 @@ This page outlines that status of each of the machines managed by the Research C
     [UCL MyServices](https://myservices.ucl.ac.uk/). If you are no longer using the cluster and 
     wish to be removed from this mailing list, please also contact us and say we can delete your account.
 
-#### Latest on Myriad   
-
   - 2024-10-25 18:20 - Filesystem issues on Myriad
 
     We have been having some filesystem issues since around 16:50.
@@ -488,6 +486,68 @@ This page outlines that status of each of the machines managed by the Research C
 
     At the moment we're still seeing some leftover activity in the logs but there don't appear to be any 
     active problems.
+
+#### Latest on Myriad
+
+  - 2024-11-12 17:20 - **Myriad filesystem and refresh news; ACFS available now**
+
+    **The ARC Cluster File System (ACFS) is now available on Myriad.**
+
+    The ARC Cluster File System (ACFS) is ARC's centralised storage system that will be available from 
+    multiple ARC systems. If you also have a Kathleen account and already put some data in the ACFS, you 
+    will now be able to see that data on Myriad too.
+
+    It is the backed-up location for data which you wish to keep.
+
+    The ACFS is available read-write on the login nodes but read-only on the compute nodes. This means 
+    that your jobs can read from it, but not write to it, and it is intended that you copy data onto it 
+    after deciding which outputs from your jobs are important to keep.
+
+    * Location: `/acfs/users/<username>`
+    * Also at: `/home/<username>/ACFS` (a shortcut or symbolic link to the first location).
+    * Backed up daily.
+    * 1T quota - no quota increases available on ACFS at present.
+    * Check your ACFS quota with `aquota`.
+
+    The ACFS has dual locations for resilience, and as a result commands like `du -h` or `ls -alsh` will 
+    report filesizes on it as being twice what they really are. The `aquota` command will show you real 
+    usage and quota.
+
+    * [Data Storage - ACFS](Background/Data_Storage.md#arc-cluster-file-system-acfs)
+    * [Data Management - ACFS quotas](Data_Management.md#acfs-quotas)
+
+    **Until Myriad's filesystem is replaced, your home will continue to be backed up.** After the new 
+    filesystem is available, only the ACFS will be backed up.
+
+    Please move some of your current data to the ACFS to reduce the usage on Myriad's Scratch.
+
+    **Myriad refresh and new filesystem**
+
+    The Myriad refresh is going ahead, and we will be adding some new compute nodes to Myriad as well 
+    as replacing the filesystem, networking and admin nodes.
+
+    We expect the new filesystem to go live during March 2025. Prior to that, we will be conducting 
+    setup, tuning and testing behind the scenes. (We expect the hardware to arrive in December or first 
+    week of January depending on delivery windows).
+
+    We expect the new compute nodes to also go live during March 2025 - they will be purchased and 
+    arrive later than the filesystem, but their testing period should coincide.
+
+    The new filesystem will be GPFS. The new compute nodes will be AMD EPYC 64 core, ~750G RAM, with 
+    ~950G local disk for tmpfs. Some of the oldest nodes will be removed (eg types H, I, J which are 
+    nodes named node-h, node-i, node-j).
+
+    Timescales are based on our current knowledge and best estimates!
+
+    There will be many software changes as part of this refresh as well - we will be updating the 
+    operating system, changing the scheduler to Slurm and refreshing the software stack. More details 
+    nearer the time.
+
+    **Action required - compression or removal of data**
+
+    Myriad's filesystem is still at 70% full and we need to stop jobs at 75% full. Please continue to 
+    look at [our previous message with full info](#action-required-compression-or-removal-of-data) and 
+    move data to the ACFS, off-cluster, or compress it if possible.
 
 
 ### Kathleen
