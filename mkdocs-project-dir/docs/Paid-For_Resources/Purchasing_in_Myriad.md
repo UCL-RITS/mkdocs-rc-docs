@@ -145,7 +145,7 @@ We will then either send you a specification to approve, or ask to meet to discu
 
 #### How do I manage who has permission to use our nodes/priority queue?
 
-When you purchase nodes or priority cycles, we will ask you for a list of usernames of people who have permission to use the resource — access is managed using access control lists on Myriad.  If your list of users is an entire department, we can automatically generate this list nightly. Resource owners or designated resource administrators can request a change of membership of these groups by submitting a ticket in Remedy Force or emailing [rc-support@ucl.ac.uk](mailto:rc-support@ucl.ac.uk). 
+When you purchase nodes or priority cycles, we will ask you for a list of usernames of people who have permission to use the resource — access is managed using access control lists on Myriad.  If your list of users is an entire department, we can automatically generate this list nightly. Resource owners or designated resource administrators can request a change of membership of these groups by submitting a request in [MyServices](https://myservices.ucl.ac.uk) or emailing [rc-support@ucl.ac.uk](mailto:rc-support@ucl.ac.uk). 
 
 #### What is the difference between paying for priority cycles and purchasing dedicated nodes?
 
