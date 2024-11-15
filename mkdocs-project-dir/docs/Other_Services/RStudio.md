@@ -88,10 +88,15 @@ There are 2 courses of action for the 2 supported services:
  shares home directories with the central Unix services so you need to
  do:
 
-	1. login to either Socrates (`socrates.ucl.ac.uk`) or Aristotle
+    1. login to either Socrates (`socrates.ucl.ac.uk`) or Aristotle
 (`aristotle.rc.ucl.ac.uk`) via SSH. If you don't know how to do this
-there are istructions here: 
-[l,ogging in via SSH](../Walkthroughs/Logging_In.md)
+there are instructions here - but make sure the system you are logging 
+in to is Socrates or Aristotle not Myriad, because they use the same 
+filesystem as the RStudio machines: 
+
+     * [logging in via SSH](../Walkthroughs/Logging_In.md)
+     * [Remote access](../Remote_Access.md)
+
     2. Change directory to ~/.local/share:
 
 		```
@@ -119,4 +124,33 @@ there are istructions here:
 
 If doing this doesn't resolve your issues,  [get in touch with RC support](../Contact_Us.md) .
 
+### Issues uploading files or failure during writing data
+
+You may have run out of space on the Unix Filestore (T: drive).
+
+Check your quota:
+
+```
+system("quota -s")
+```
+
+It will tell you the space you are using, your quota and the limit, then the number of files, 
+the quota for that and the limit for that. If you are using too much space or too many files 
+you won't be able to add more until you delete some.
+
+If this is not the problem, please [get in touch with RC support](../Contact_Us.md) and tell 
+us:
+
+* How large are the files that are failing to upload?
+* What browser are you using to do the upload to RStudio? Does it work better if you use 
+  Firefox instead? (It is also available on Desktop@UCL).
+
+There is a potential workaround when browser uploads are failing but you definitely have space.
+You can try uploading your data using scp to Socrates or Aristotle and then accessing it from
+RStudio once it is already there.
+
+* [Transferring data onto a system](../howto.md#how-do-i-transfer-data-onto-the-system)
+* [Transferring files with remote computers (Moodle)](https://moodle.ucl.ac.uk/course/section.php?id=852836)
+
+Make sure the system you are transferring files to is Socrates or Aristotle, not Myriad.
 
