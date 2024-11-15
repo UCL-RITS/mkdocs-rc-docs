@@ -1122,6 +1122,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#issues-uploading-files-or-failure-during-writing-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Issues uploading files or failure during writing data
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1617,6 +1626,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#issues-uploading-files-or-failure-during-writing-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Issues uploading files or failure during writing data
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1703,8 +1721,15 @@ resolve the problem using one of the methods below or  <a href="../../Contact_Us
 <ol>
 <li>login to either Socrates (<code>socrates.ucl.ac.uk</code>) or Aristotle
 (<code>aristotle.rc.ucl.ac.uk</code>) via SSH. If you don't know how to do this
-there are istructions here: 
-<a href="../../Walkthroughs/Logging_In/">l,ogging in via SSH</a></li>
+there are instructions here - but make sure the system you are logging 
+in to is Socrates or Aristotle not Myriad, because they use the same 
+filesystem as the RStudio machines: </li>
+</ol>
+<ul>
+<li><a href="../../Walkthroughs/Logging_In/">logging in via SSH</a></li>
+<li><a href="../../Remote_Access/">Remote access</a></li>
+</ul>
+<ol start="2">
 <li>
 <p>Change directory to ~/.local/share:</p>
 <p><code>cd ~/.local/share</code></p>
@@ -1726,6 +1751,30 @@ there are istructions here:
 </li>
 </ul>
 <p>If doing this doesn't resolve your issues,  <a href="../../Contact_Us/">get in touch with RC support</a> .</p>
+<h3 id="issues-uploading-files-or-failure-during-writing-data">Issues uploading files or failure during writing data<a class="headerlink" href="#issues-uploading-files-or-failure-during-writing-data" title="Permanent link">§</a></h3>
+<p>You may have run out of space on the Unix Filestore (T: drive).</p>
+<p>Check your quota:</p>
+<div class="codehilite"><pre><span></span><code>system(&quot;quota -s&quot;)
+</code></pre></div>
+
+<p>It will tell you the space you are using, your quota and the limit, then the number of files, 
+the quota for that and the limit for that. If you are using too much space or too many files 
+you won't be able to add more until you delete some.</p>
+<p>If this is not the problem, please <a href="../../Contact_Us/">get in touch with RC support</a> and tell 
+us:</p>
+<ul>
+<li>How large are the files that are failing to upload?</li>
+<li>What browser are you using to do the upload to RStudio? Does it work better if you use 
+  Firefox instead? (It is also available on Desktop@UCL).</li>
+</ul>
+<p>There is a potential workaround when browser uploads are failing but you definitely have space.
+You can try uploading your data using scp to Socrates or Aristotle and then accessing it from
+RStudio once it is already there.</p>
+<ul>
+<li><a href="../../howto/#how-do-i-transfer-data-onto-the-system">Transferring data onto a system</a></li>
+<li><a href="https://moodle.ucl.ac.uk/course/section.php?id=852836">Transferring files with remote computers (Moodle)</a></li>
+</ul>
+<p>Make sure the system you are transferring files to is Socrates or Aristotle, not Myriad.</p>
 
 
 
