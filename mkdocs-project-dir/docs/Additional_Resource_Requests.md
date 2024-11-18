@@ -40,7 +40,8 @@ other users is not deemed to be significant, or of long duration.
 
 ### Examples of requests
 
- - Increased Scratch quota - tell us how much, for what purpose and how long you'll need it.
+ - Increased Scratch quota - tell us how much, for what purpose and how long you'll need it. Also
+   tell us in brief your plan for removal of the data once your quota increase ends.
     - Once implemented, `lquota` will show the new quota.
     - *NB:* we are not currently accepting requests for an increased storage quota on Myriad. This is because there is insufficient remaining storage.
  - Longer wallclock limit
