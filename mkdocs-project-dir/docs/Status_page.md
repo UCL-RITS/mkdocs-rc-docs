@@ -672,6 +672,38 @@ This page outlines that status of each of the machines managed by the Research C
     please take a look. It now defines our data retention policies and when we can access your data, 
     among other things. 
 
+  - 2024-11-28 14:00 - **Reminder: Kathleen /old_lustre removal on 11 Dec; later upcoming changes**
+
+    This is a reminder that access to `/old_lustre` will be removed on **Monday 11 December**, so if 
+    you still have files in your old home and scratch directories, they will no longer be accessible 
+    after this time.
+
+    Here's the previous information sent out on how to check that and how to copy your data: 
+    https://www.rc.ucl.ac.uk/docs/Status_page/#kathleen
+
+    Note: do check for hidden files starting with a `.` as well, such as customisations you may have 
+    added to your `.bashrc`, config files for programs like `.vimrc` and other directories like `.conda`, 
+    `.python3local`, `.julia`, `.cpanm` where you may have installed packages or have other 
+    environments or configuration.
+
+    These are visible to `ls -a` but not to `ls`.
+
+    **Later upcoming changes**
+
+    You may be aware that we are working to update the operating system on all our clusters to RHEL 9. 
+    Kathleen is likely to be the first deployed. There will be more details nearer the time, but this will 
+    involve an outage and after it the operating system will be updated, the software will be rebuilt and we 
+    will have Slurm as our scheduler instead of SGE.
+
+    We've had questions from some of you about VSCode, since it will stop connecting to unsupported 
+    operating systems in February 2025 - once we have updated the operating system it will be able to connect 
+    again. 
+
+    Right now we don't have a timescale for this but will be letting you know when we do. Development work 
+    is ongoing. Documentation will be updated for what you will need to do with jobscripts and job submission 
+    commands. This is just to let you know that these changes are coming.
+
+
 ### Young
 
   - 2023-10-26 14:50 - We seem to have a dying OmniPath switch in Young. The 32 nodes with names 
