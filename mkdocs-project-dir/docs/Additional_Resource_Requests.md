@@ -37,13 +37,19 @@ additional resources is only likely to be approved if the impact on
 other users is not deemed to be significant, or of long duration.
 
   - [Additional resource request form](Additional_Resource_Requests/CRAG_additional_resources_request_form.rtf)
+  - *NB:* Myriad's filesystem is still very full (replacement due March 2025) and so
+    we need more detail for requests, plus your plan for removal of the data once your 
+    quota increase ends. We will be considering requests in batches and comparing to
+    space left. All granted requests will expire at the end of March 2025 or Myriad
+    refresh date, whichever is earliest, and will require reapplication for the new 
+    filesystem.
+
 
 ### Examples of requests
 
  - Increased Scratch quota - tell us how much, for what purpose and how long you'll need it. Also
    tell us in brief your plan for removal of the data once your quota increase ends.
     - Once implemented, `lquota` will show the new quota.
-    - *NB:* we are not currently accepting requests for an increased storage quota on Myriad. This is because there is insufficient remaining storage.
  - Longer wallclock limit
     - Consider whether you can checkpoint and restart your job: that is, write out everything that
       you need for a second job to begin where the previous one finished. Running multiple shorter
