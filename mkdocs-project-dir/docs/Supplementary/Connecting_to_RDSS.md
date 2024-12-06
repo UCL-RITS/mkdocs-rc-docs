@@ -47,5 +47,5 @@ scp data_file.tgz ccaaxyz@ssh.rd.ucl.ac.uk:<path_to_project_space>
 The RDSS support pages provide more
 information:
 
-<https://www.ucl.ac.uk/isd/live-storage-access-guide>
+<https://www.ucl.ac.uk/advanced-research-computing/rdss-myriad-data-storage-transfer-service>
 
