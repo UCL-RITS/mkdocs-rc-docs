@@ -703,6 +703,12 @@ This page outlines that status of each of the machines managed by the Research C
     is ongoing. Documentation will be updated for what you will need to do with jobscripts and job submission 
     commands. This is just to let you know that these changes are coming.
 
+  - 2024-12-11 09:10 - Kathleen /old_lustre removal
+
+    11 Dec is not a Monday, contrary to my previous email. As a result, we will leave `/old_lustre` 
+    mounted on Kathleen until **Monday 16 December**. If you still have files in your old home and 
+    scratch directories, they will no longer be accessible after this time.
+
 
 ### Young
 
