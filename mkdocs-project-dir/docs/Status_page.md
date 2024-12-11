@@ -707,7 +707,8 @@ This page outlines that status of each of the machines managed by the Research C
 
     11 Dec is not a Monday, contrary to my previous email. As a result, we will leave `/old_lustre` 
     mounted on Kathleen until **Monday 16 December**. If you still have files in your old home and 
-    scratch directories, they will no longer be accessible after this time.
+    scratch directories, they will no longer be accessible after this time. It will be unmounted at
+    or shortly after 9am.
 
 
 ### Young
