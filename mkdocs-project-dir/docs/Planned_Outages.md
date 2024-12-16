@@ -21,13 +21,13 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-16 December 2024 | Kathleen | Planned | /old_lustre will be unmounted at or shortly after 9am. (Moved from 11 Dec). If you still have files in your old home and scratch directories, they will no longer be accessible after this time.
 14 January 2025 | Young, Michael | Planned | /old_lustre will be unmounted. If you still have files in your old home and scratch directories, they will no longer be accessible after this time.
 
 ## Previous Outages
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+16 December 2024 | Kathleen | Completed | /old_lustre will be unmounted at or shortly after 9am. (Moved from 11 Dec). If you still have files in your old home and scratch directories, they will no longer be accessible after this time.
 4-8 November 2024 | Myriad, Young | Completed | New drivers being deployed on the GPU nodes in a rolling fashion. No outage of all nodes at once.
 8 October 2024 | Kathleen | Completed | There will be a brief ACFS outage while we switch the network gateway from one util node to another. If all goes well it will recover quickly, but reading and writing to the ACFS will hang while it is in progress. We will do this on 8 Oct maintenance day.
 7 October 2024 | Young, Michael | Completed | Migration to new filesystem. Jobs will be drained and logins prevented for 9am. Expected to be back up the following day. Once back up, all jobs will be in `hqw` status and users will need to migrate their data from `/old_lustre/home/username` and `/old_lustre/scratch/username` which will be read-only. Users with accounts on both systems will need to log into each to see their old data, but will be copying it to the same shared home and Scratch. SSH keys will be copied to the new filesystem so login is possible. The two `/old_lustre` will remain for three months + 7 days and be removed on Tues 14 Jan 2025. [Logins enabled 8 Oct 13:30]
