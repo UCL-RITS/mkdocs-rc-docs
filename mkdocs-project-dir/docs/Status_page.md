@@ -927,6 +927,33 @@ This page outlines that status of each of the machines managed by the Research C
     The [Maximum job resources](Clusters/Young.md#maximum-job-resources) and 
     [Node types](Clusters/Young.md#node-types) tables are also updated.
 
+#### Latest on Young
+
+  - 2025-01-14 11:10 Extension to availability of `/old_lustre` on Young until **9am on Tues 28 Jan**
+
+    We've had multiple requests from people who have been unable to retrieve their data from Young's 
+    old_lustre in time for the removal of the filesystem today, so we are extending the deadline for 
+    two weeks.
+
+    The old filesystem on Young will be unmounted shortly after **9am on Tuesday 28 January**.
+
+    There have been some questions about ways to transfer files in chunks if your transfers are being 
+    interrupted, without repeating copying the same files - you can use `rsync` for this as it can 
+    resume incomplete copies by running again, and if you use the `-a` option ("archive") it retains 
+    many of the file properties, including e.g. timestamps.
+
+    > Use archive mode (recursively copy directories, copy symlinks without resolving, and preserve 
+    > permissions, ownership and modification times):
+    >
+    >   `rsync -a|--archive path/to/source path/to/destination`
+
+    (This shows that you can use `-a` or `--archive` as the option passed in).
+
+    Alejandro Santana-Bonilla (KCL) also created a script for copying your first 10 (or other number) 
+    directories, then second 10 and so on, if that is useful to you: 
+
+    * [old_lustre_folders script](https://github.com/kcl-tscm/Young_instructions/tree/main/old_lustre_folders)
+
 
 ### Michael
 
