@@ -21,7 +21,7 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-14 January 2025 | Young, Michael | Planned | /old_lustre will be unmounted. If you still have files in your old home and scratch directories, they will no longer be accessible after this time.
+28 January 2025 | Young, Michael | Planned | /old_lustre will be unmounted. If you still have files in your old home and scratch directories, they will no longer be accessible after this time.
 
 ## Previous Outages
 
