@@ -13,8 +13,8 @@ site_description: Documentation for the centrally provided Research Computing HP
 copyright: 'Copyright &copy; 2014 - 2024 UCL Research Computing Group'
 
 # Associated Git Repo Config
-repo_name: UCL-RITS/mkdocs-rc-docs
-repo_url: https://github.com/UCL-RITS/mkdocs-rc-docs
+repo_name: UCL-ARC/mkdocs-rc-docs
+repo_url: https://github.com/UCL-ARC/mkdocs-rc-docs
 
 # If this is removed, the edit buttons will go away. I like them.
 edit_uri: blob/master/mkdocs-project-dir/docs/

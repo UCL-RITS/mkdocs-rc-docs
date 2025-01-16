@@ -174,6 +174,8 @@ These utilities live in GitHub at
 <https://github.com/UCL-RITS/go-clustertools> and
 <https://github.com/UCL-RITS/rcps-cluster-scripts>
 
+<!-- these links will redirect when migrated but still worth updating so the correct URL is displayed -->
+
 
 ### Known problems
 
