@@ -17,7 +17,7 @@ active_ci_system="github"
 
 # We only want to push back the results if we built from this branch.
 mainline_branch="master"
-mainline_repo="UCL-RITS/mkdocs-rc-docs"
+mainline_repo="UCL-ARC/mkdocs-rc-docs"
 
 # And we want to use this as our deployment/push target repo URL and branch.
 #deploy_target_url="" # fully specified target repo url to push results to # not currently used
