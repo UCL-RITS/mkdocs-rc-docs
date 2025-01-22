@@ -137,8 +137,8 @@ help you find information about your jobs after they have run.
     given job.
 
 These utilities live in GitHub at
-<https://github.com/UCL-RITS/go-clustertools> and
-<https://github.com/UCL-RITS/rcps-cluster-scripts>
+<https://github.com/UCL-ARC/go-clustertools> and
+<https://github.com/UCL-ARC/rcps-cluster-scripts>
 
 ## Software
 
@@ -160,7 +160,7 @@ project.
 
 To request software installs, email us at the [support address
 below](#Support) or open an issue on our
-[GitHub](https://github.com/UCL-RITS/rcps-buildscripts/issues). You can
+[GitHub](https://github.com/UCL-ARC/rcps-buildscripts/issues). You can
 see what software has already been requested in the Github issues and
 can add a comment if you're also interested in something already
 requested.
@@ -211,7 +211,7 @@ Please let us know your username when you ask to be added to a group.
     add you. We will add you to the `legvasp5` or `legvasp6` reserved 
     application groups depending on which versions you are licensed for. 
     You may also install your own copy in your home, and we provide a simple
-    [build script on Github](https://github.com/UCL-RITS/rcps-buildscripts/blob/master/vasp_individual_install)
+    [build script on Github](https://github.com/UCL-ARC/rcps-buildscripts/blob/master/vasp_individual_install)
     (tested with VASP 5.4.4, no patches). You need to download the VASP
     source code and then you can run the script following the
     instructions at the top.
