@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPO="https://github.com/UCL-RITS/mkdocs-rc-docs.git"
+REPO="https://github.com/UCL-ARC/mkdocs-rc-docs.git"
 BRANCH="gh-pages"
 
 echo "Content-type: text/plain"

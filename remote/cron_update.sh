@@ -6,7 +6,7 @@ set -o errexit \
     -o pipefail
 
 local_repo_dir="/data/content/rcps_mkdocs/docs"
-remote_repo="UCL-RITS/mkdocs-rc-docs"
+remote_repo="UCL-ARC/mkdocs-rc-docs"
 
 # We had to install jq in a non-standard location on the webserver because
 #  we don't have any way to install packages >:(
