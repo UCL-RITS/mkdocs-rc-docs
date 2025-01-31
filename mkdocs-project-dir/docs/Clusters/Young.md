@@ -278,7 +278,7 @@ check your groups with the `groups` command.
 Please let us know your username when you ask to be added to a group.
 
   - **CASTEP**: You/your group leader need to have 
-    [signed up for a CASTEP license](http://www.castep.org/CASTEP/GettingCASTEP).
+    [signed up for a CASTEP license](https://www.castep.org/get_castep).
     Send us an acceptance email, or we can ask them to verify you have a
     license. You will then be added to the reserved application group
     `lgcastep`. If you are a member of UKCP you are already covered by a
