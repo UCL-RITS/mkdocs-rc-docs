@@ -197,7 +197,7 @@ Please let us know your username when you ask to be added to a group.
     account has been upgraded to "Academic UK" - forward that to us
     along with confirmation from the group leader that you should be in
     their group. You will be added to the `legcryst` group.
-  - **DL\_POLY**: has individual licenses for specific versions. [Sign up at DL\_POLY's website](http://www.scd.stfc.ac.uk//research/app/ccg/software/DL_POLY/40526.aspx)
+  - **DL\_POLY**: has individual licenses for specific versions. [Sign up at DL\_POLY's website](https://www.ccp5.ac.uk/dl_poly/)
     and send us the acceptance email they give you. We will add you to
     the appropriate version's reserved application group, eg `lgdlp408`.
   - **Gaussian**: not currently accessible for non-UCL institutions. UCL
