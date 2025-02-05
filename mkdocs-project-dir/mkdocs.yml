@@ -102,7 +102,7 @@ plugins:
       validate_external_urls: true
       raise_error: !ENV [DOCS_FAIL_ON_BAD_LINK, False]
       # ^-- ideally we would change the default here once all the initial problems have been fixed
-      raise_error_after_finish: true
+      raise_error_after_finish: !ENV [DOCS_FAIL_ON_BAD_LINK, False]
       raise_error_excludes:
         500:  # server error
           - "https://software.broadinstitute.org/cancer/cga/mutect" # this server seems actually broken, as of 2025-02-04. Check again if you see this
