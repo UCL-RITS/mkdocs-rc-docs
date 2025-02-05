@@ -121,6 +121,7 @@ plugins:
       ignore_urls:
         - "https://moodle.ucl.ac.uk/mod/page/view.php*" # these require logging in and so will never be accessed correctly
         - "https://moodle.ucl.ac.uk/course/view.php*" # these require logging in and so will never be accessed correctly
+        - "https://moodle.ucl.ac.uk/course/section.php*" # these require logging in and so will never be accessed correctly
         - "../Installed_Software_Lists/*" # These are generated at deployment time and will not be available in local builds
       #warn_on_ignored_urls: true
       ignore_pages:
