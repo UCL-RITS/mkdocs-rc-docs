@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.a40c8224.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d7758b05.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -2363,7 +2363,7 @@ use it. If you aren't sure what keys your agent can see, running
 <p>Have a look at <a href="https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/#create-new-public-and-private-keys">Key-Based SSH Logins With PuTTY</a> which has
 step-by-step instructions. You can choose whether to use Pageant or not
 to manage your key. You can again pick RSA, ED25519, ECDSA etc <strong>but do not
-pick SSH-1</strong> as that is a very old and insecure key type. As above, DSA is no 
+pick SSH-1</strong> as that is an old and insecure key type. As above, DSA is no 
 longer accepted. The key must be at least 2048-bit.</p>
 <p>If you are using Windows 10, then you probably have OpenSSH installed and could instead run ssh-keygen in a terminal per the Linux instructions and use the ssh command to log in instead of PuTTY.</p>
 <h2 id="information-for-points-of-contact">Information for Points of Contact<a class="headerlink" href="#information-for-points-of-contact" title="Permanent link">§</a></h2>
@@ -2395,7 +2395,7 @@ non-interactive use and <a href="../../howto/#how-do-i-submit-a-job-to-the-sched
 Jobscripts must begin <code>#!/bin/bash -l</code> in order to run as a login shell
  and get your login environment and modules.</p>
 <p>A job on Michael must also specify what type of job it is (Gold, Free,
-Test) and the project it is being submitted for. (See <a href="#Budgets_and_allocations">Budgets and allocations</a> below).</p>
+Test) and the project it is being submitted for. (See <a href="#budgets-and-allocations">Budgets and allocations</a> below).</p>
 <h3 id="memory-requests">Memory requests<a class="headerlink" href="#memory-requests" title="Permanent link">§</a></h3>
 <p>Note: the memory you request is always per core, not the total amount.
 If you ask for 128G RAM and 24 cores, that will run on 24 nodes using
@@ -2418,8 +2418,8 @@ help you find information about your jobs after they have run.</p>
     given job.</li>
 </ul>
 <p>These utilities live in GitHub at
-<a href="https://github.com/UCL-RITS/go-clustertools">https://github.com/UCL-RITS/go-clustertools</a> and
-<a href="https://github.com/UCL-RITS/rcps-cluster-scripts">https://github.com/UCL-RITS/rcps-cluster-scripts</a></p>
+<a href="https://github.com/UCL-ARC/go-clustertools">https://github.com/UCL-ARC/go-clustertools</a> and
+<a href="https://github.com/UCL-ARC/rcps-cluster-scripts">https://github.com/UCL-ARC/rcps-cluster-scripts</a></p>
 <h2 id="software">Software<a class="headerlink" href="#software" title="Permanent link">§</a></h2>
 <p>Michael mounts the <a href="../../Installed_Software_Lists/module-packages/">RC Systems software stack</a>.</p>
 <p>Have a look at <a href="../../Software_Guides/Other_Software/">Software Guides</a> for specific
@@ -2433,9 +2433,9 @@ list there is not exhaustive.</p>
 <p>Access to licensed software may vary based on your host institution and
 project.</p>
 <h3 id="requesting-software-installs">Requesting software installs<a class="headerlink" href="#requesting-software-installs" title="Permanent link">§</a></h3>
-<p>To request software installs, email us at the <a href="#Support">support address
+<p>To request software installs, email us at the <a href="#support">support address
 below</a> or open an issue on our
-<a href="https://github.com/UCL-RITS/rcps-buildscripts/issues">GitHub</a>. You can
+<a href="https://github.com/UCL-ARC/rcps-buildscripts/issues">GitHub</a>. You can
 see what software has already been requested in the Github issues and
 can add a comment if you're also interested in something already
 requested.</p>
@@ -2455,7 +2455,7 @@ these groups, the central group change will happen overnight. You can
 check your groups with the <code>groups</code> command.</p>
 <p>Please let us know your username when you ask to be added to a group.</p>
 <ul>
-<li><strong>CASTEP</strong>: You/your group leader need to have <a href="http://www.castep.org/CASTEP/GettingCASTEP">signed up for a CASTEP license</a>.
+<li><strong>CASTEP</strong>: You/your group leader need to have <a href="https://www.castep.org/get_castep">signed up for a CASTEP license</a>.
     Send us an acceptance email, or we can ask them to verify you have a
     license. You will then be added to the reserved application group
     <code>lgcastep</code>. If you are a member of UKCP you are already covered by a
@@ -2465,7 +2465,7 @@ check your groups with the <code>groups</code> command.</p>
     account has been upgraded to "Academic UK" - forward that to us
     along with confirmation from the group leader that you should be in
     their group. You will be added to the <code>legcryst</code> group.</li>
-<li><strong>DL_POLY</strong>: has individual licenses for specific versions. <a href="http://www.scd.stfc.ac.uk//research/app/ccg/software/DL_POLY/40526.aspx">Sign up at DL_POLY's website</a>
+<li><strong>DL_POLY</strong>: has individual licenses for specific versions. <a href="https://www.ccp5.ac.uk/dl_poly/">Sign up at DL_POLY's website</a>
     and send us the acceptance email they give you. We will add you to
     the appropriate version's reserved application group, eg <code>lgdlp408</code>.</li>
 <li><strong>Gaussian</strong>: not currently accessible for non-UCL institutions. UCL
@@ -2479,7 +2479,7 @@ check your groups with the <code>groups</code> command.</p>
     add you. We will add you to the <code>legvasp5</code> or <code>legvasp6</code> reserved 
     application groups depending on which versions you are licensed for. 
     You may also install your own copy in your home, and we provide a simple
-    <a href="https://github.com/UCL-RITS/rcps-buildscripts/blob/master/vasp_individual_install">build script on Github</a>
+    <a href="https://github.com/UCL-ARC/rcps-buildscripts/blob/master/vasp_individual_install">build script on Github</a>
     (tested with VASP 5.4.4, no patches). You need to download the VASP
     source code and then you can run the script following the
     instructions at the top.</li>
@@ -2611,7 +2611,6 @@ have somewhat unorthodox names as they are only used internally, and do
 not directly map to particular job types.</p>
 <h3 id="preventing-a-job-from-running-cross-cu">Preventing a job from running cross-CU<a class="headerlink" href="#preventing-a-job-from-running-cross-cu" title="Permanent link">§</a></h3>
 <p>If your job must run within a single CU, you can request the parallel environment as <code>-pe wss</code> instead of <code>-pe mpi</code> (<code>wss</code> standing for 'wants single switch'). This will increase your queue times. It is suggested you only do this for benchmarking or if performance is being greatly affected by running in the superqueue.</p>
-<p><a href="#top" title="wikilink"> back to top</a></p>
 <h2 id="disk-quotas">Disk quotas<a class="headerlink" href="#disk-quotas" title="Permanent link">§</a></h2>
 <p>You have per-user quotas for home and Scratch.</p>
 <ul>
@@ -2626,7 +2625,6 @@ not directly map to particular job types.</p>
 </ul>
 <p>If you go over quota, you will no longer be able to create new files and your jobs will fail as they cannot write.</p>
 <p>Quota increases may be granted without further approval, depending on size and how full the filesystem is. Otherwise they may need to go to the Michael User Group for approval.</p>
-<p><a href="#top" title="wikilink"> back to top</a></p>
 <h2 id="budgets-and-allocations">Budgets and allocations<a class="headerlink" href="#budgets-and-allocations" title="Permanent link">§</a></h2>
 <p>We have enabled Gold for allocation management. Jobs that are run under
 a project budget have higher priority than free non-budgeted jobs. All
@@ -2785,7 +2783,7 @@ the type of problem, and you should mention your username in the body.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.5090c770.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f13b1293.min.js"></script>
       
     
   </body>

@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.a40c8224.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.d7758b05.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -2011,7 +2011,7 @@
 <p>UCL services: Fill in the <a href="../Account_Services/">sign-up form</a></p>
 <p>Tier 2 services: Contact your point of contact.</p>
 <h2 id="how-do-i-connect">How do I connect?<a class="headerlink" href="#how-do-i-connect" title="Permanent link">§</a></h2>
-<p>All connections are via SSH, and you use your UCL credentials to log in (external users should use the <code>mmmXXXX</code> account with the SSH key they have provided to their point of contact). UCL services can only be connected to by users inside the UCL network which may mean using the institutional VPN or "bouncing" off another UCL machine when <a href="../howto/#Logging-in-from-outside-the-UCL-firewall">accessing them from outside the UCL network</a>.  The Tier 2 services (Michael and Young) are externally accessible.</p>
+<p>All connections are via SSH, and you use your UCL credentials to log in (external users should use the <code>mmmXXXX</code> account with the SSH key they have provided to their point of contact). UCL services can only be connected to by users inside the UCL network which may mean using the institutional VPN or "bouncing" off another UCL machine when <a href="../howto/#logging-in-from-outside-the-ucl-firewall">accessing them from outside the UCL network</a>. The Tier 2 services (Michael and Young) are externally accessible.</p>
 <h3 id="login-hosts">Login hosts<a class="headerlink" href="#login-hosts" title="Permanent link">§</a></h3>
 <table>
 <thead>
@@ -2047,9 +2047,9 @@
 <p>Generally you should connect to the general alias as this is load-balanced across the available login nodes, however if you use <code>screen</code> or <code>tmux</code> you will want to use the direct hostname so that you can reconnect to your session.</p>
 <p>Please be aware that login nodes are shared resources, so users should not run memory intensive jobs nor jobs with long runtimes in the login node. Doing so may negatively impact the performance of the login node for other users. Hence, identified culprit user processes are systematically killed.</p>
 <h2 id="software-stack">Software stack<a class="headerlink" href="#software-stack" title="Permanent link">§</a></h2>
-<p>All UCL services use the same software stack based upon RHEL 7.x with a standardised set of packages, exposed to the user through environment modules (the <code>module</code> command).  By default this has a set of useful tools loaded, as well as the Intel compilers and MPI but users are free to change their own environment.</p>
+<p>All UCL services use the same software stack based upon RHEL 7.x with a standardised set of packages, exposed to the user through environment modules (the <code>module</code> command). By default this has a set of useful tools loaded, as well as the Intel compilers and MPI but users are free to change their own environment.</p>
 <h2 id="batch-system">Batch System<a class="headerlink" href="#batch-system" title="Permanent link">§</a></h2>
-<p>UCL services use Grid Engine to manage jobs.  This install is somewhat customised and so scripts for non-UCL services <em>may not work</em>.</p>
+<p>UCL services use Grid Engine to manage jobs. This install is somewhat customised and so scripts for non-UCL services <em>may not work</em>.</p>
 <p>We recommend that when launching MPI jobs you use our <code>gerun</code> parallel launcher instead of <code>mpirun</code> as it inherits settings from the job and launches the appropriate number of processes with the MPI implementation you have chosen. It abstracts away a lot of the complexity between different version of MPI.</p>
 <div class="codehilite"><pre><span></span><code># using gerun
 gerun myMPIprogram
@@ -2078,7 +2078,7 @@ mpirun -np $NSLOTS -machinefile $PE_HOSTFILE myMPIprogram
 <div class="codehilite"><pre><span></span><code><span class="c1">#$ -pe smp &lt;number of cores&gt;</span>
 </code></pre></div>
 
-<p>For single core jobs you don't need to request a number of cores.  For hybrid codes use the MPI example and set <code>OMP_NUM_THREADS</code> to control the number of threads per node.  <code>gerun</code> will launch the right number of processes in the right place if you use it.</p>
+<p>For single core jobs you don't need to request a number of cores. For hybrid codes use the MPI example and set <code>OMP_NUM_THREADS</code> to control the number of threads per node. <code>gerun</code> will launch the right number of processes in the right place if you use it.</p>
 <h5 id="amount-of-ram-per-core">Amount of RAM per core<a class="headerlink" href="#amount-of-ram-per-core" title="Permanent link">§</a></h5>
 <div class="codehilite"><pre><span></span><code><span class="c1">#$ -l mem=&lt;integer amount of RAM in G or M&gt;</span>
 </code></pre></div>
@@ -2111,7 +2111,7 @@ you want one slot to block one virtual cpu instead of the normal situation where
 If you have a script with a threads request and want to override it on the command line or set
 it back to normal, the usual case is <code>-l threads=2</code>. (Setting threads to 0 does not disable
 hyperthreading!)</p>
-<p>With Hyperthreads enabled you need to request twice as many cores and then control threads vs MPI ranks with <code>OMP_NUM_THREADS</code>.  E.g. </p>
+<p>With Hyperthreads enabled you need to request twice as many cores and then control threads vs MPI ranks with <code>OMP_NUM_THREADS</code>. E.g. </p>
 <div class="codehilite"><pre><span></span><code><span class="c1">#$ -pe mpi 160</span>
 <span class="c1">#$ -l threads=1</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">2</span>
@@ -2132,7 +2132,7 @@ would be given a sparse process layout across more nodes to meet this requiremen
 <h3 id="submitting-your-jobscript">Submitting your jobscript<a class="headerlink" href="#submitting-your-jobscript" title="Permanent link">§</a></h3>
 <p>Job scripts can be submitted with <code>qsub</code>, jobs can be monitored with <code>qstat</code> and deleted with <code>qdel</code>.</p>
 <h3 id="interactive-jobs">Interactive jobs<a class="headerlink" href="#interactive-jobs" title="Permanent link">§</a></h3>
-<p>If you need to run an interactive job, possibly with X forwarding, you can do so using <code>qrsh</code>.  Please see our page on <a href="../Interactive_Jobs/">interactive jobs</a> for more details.</p>
+<p>If you need to run an interactive job, possibly with X forwarding, you can do so using <code>qrsh</code>. Please see our page on <a href="../Interactive_Jobs/">interactive jobs</a> for more details.</p>
 
 
 
@@ -2204,7 +2204,7 @@ would be given a sparse process layout across more nodes to meet this requiremen
     <script id="__config" type="application/json">{"base": "..", "features": ["instant"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.5090c770.min.js"></script>
+      <script src="../assets/javascripts/bundle.f13b1293.min.js"></script>
       
     
   </body>

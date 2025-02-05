@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.a40c8224.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d7758b05.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -2259,7 +2259,7 @@ results = fetchOutputs(job)
 
 <p>You can get other information: <code>diary(job)</code> will give you the job diary, and <code>load(job)</code> will load the workspace. </p>
 <h4 id="further-reading">Further reading<a class="headerlink" href="#further-reading" title="Permanent link">§</a></h4>
-<p>There is a lot more information about using the MATLAB Distributed Computing Server in the MATLAB manual: <a href="https://uk.mathworks.com/help/distcomp/index.html">Parallel Computing Toolbox User’s Guide</a>.</p>
+<p>There is a lot more information about using the MATLAB Distributed Computing Server in the MATLAB manual: <a href="https://uk.mathworks.com/help/parallel-computing/index.html">Parallel Computing Toolbox User’s Guide</a>.</p>
 <h2 id="submitting-matlab-jobs-from-your-workstationlaptop">Submitting MATLAB jobs from your workstation/laptop<a class="headerlink" href="#submitting-matlab-jobs-from-your-workstationlaptop" title="Permanent link">§</a></h2>
 <p>You can submit MATLAB jobs to Myriad from MATLAB sessions running on your own desktop workstation or laptop systems provided they are running the same version of MATLAB and your computer is within the UCL firewall. </p>
 <p>With MATLAB R2021a you can currently submit jobs to Myriad. Support for R2018b is also still available. </p>
@@ -2308,7 +2308,7 @@ setenv (&#39;SGE_ACCOUNT&#39;, &#39;&lt;your Gold project&gt;&#39;);      # opti
 <div class="codehilite"><pre><span></span><code>c = parcluster (&#39;myriad_R2021a&#39;);
 </code></pre></div>
 
-<p>3) You can now create and submit jobs in a similar way to that shown in the MPS examples above starting from step 4 in the <a href="#example-a-simple-dcs-job">simple MPS job example</a> or step 2 in the <a href="#example-a-dcs-job-with-more-than-one-input-file">MPS job with multiple input files example</a>.</p>
+<p>3) You can now create and submit jobs in a similar way to that shown in the MPS examples above starting from step 4 in the <a href="#example-a-simple-mps-job">simple MPS job example</a> or step 2 in the <a href="#example-a-mps-job-with-more-than-one-input-file">MPS job with multiple input files example</a>.</p>
 <h3 id="viewing-your-results">Viewing your results<a class="headerlink" href="#viewing-your-results" title="Permanent link">§</a></h3>
 <p>After submitting your job remotely from your desktop, you can close MATLAB and come back later. To see your jobs:</p>
 <p>Click "Parallel &gt; Monitor jobs"</p>
@@ -2339,7 +2339,7 @@ jobLog
 
 <p>There will be a lot of output. Look for lines related to errors happening in your own code.</p>
 <h2 id="running-matlab-on-gpus">Running MATLAB on GPUs<a class="headerlink" href="#running-matlab-on-gpus" title="Permanent link">§</a></h2>
-<p>This uses MATLAB's <a href="https://uk.mathworks.com/help/distcomp/examples/illustrating-three-approaches-to-gpu-computing-the-mandelbrot-set.html">Mandelbrot Set GPU example</a>.</p>
+<p>This uses MATLAB's <a href="https://uk.mathworks.com/help/parallel-computing/illustrating-three-approaches-to-gpu-computing-the-mandelbrot-set.html">Mandelbrot Set GPU example</a>.</p>
 <div class="codehilite"><pre><span></span><code>#!/bin/bash -l
 
 # Batch script to run a GPU MATLAB job on Myriad.
@@ -2467,7 +2467,7 @@ tar zcvf $HOME/Scratch/Matlab_examples/files_from_job_${JOB_ID}.tgz $TMPDIR
     <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.5090c770.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f13b1293.min.js"></script>
       
     
   </body>
