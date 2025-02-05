@@ -24,7 +24,7 @@ General information about machines with external access is available at
   - Suitable for workloads spanning multiple compute nodes using GPUs
     and MPI
   - NVIDIA Tesla P100
-  - [Access to CSD3](https://www.csd3.cam.ac.uk/access-mechanisms/epsrc-open-access)
+  - [Access to CSD3](https://www.hpc.cam.ac.uk/national-facilities)
 
 ## JADE
 

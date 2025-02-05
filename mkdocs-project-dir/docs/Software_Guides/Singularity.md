@@ -8,6 +8,8 @@ layout: docs
 Myriad has Apptainer installed, which will be rolled out to our other clusters at a later date. 
 The other clusters still have Singularity. You can use containers you have downloaded in your space.
 
+
+
 ## Apptainer
 
 Run `apptainer --version` to see which version we currently have installed.
@@ -145,7 +147,7 @@ For more information on these options, have a look at the Singularity documentat
 
 * [Singularity user guide](https://sylabs.io/guides/3.5/user-guide/index.html)
 * [Singularity Bind Paths and Mounts](https://sylabs.io/guides/3.5/user-guide/bind_paths_and_mounts.html)
-* [Singularity Build Environment](https://sylabs.io/guides/3.5/user-guide/build_environment.html)
+* [Singularity Build Environment](https://sylabs.io/guides/3.5/user-guide/build_env.html)
 
 ## Downloading and running a container
 

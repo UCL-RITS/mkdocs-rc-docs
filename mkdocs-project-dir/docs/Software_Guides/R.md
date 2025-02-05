@@ -271,7 +271,7 @@ monte_carlo <- function(x, numsides=6){
 }
 ```
 
-This example is based on [SHARCNET's Using R and MPI](https://www.sharcnet.ca/help/index.php/Using_R_and_MPI).
+This example was based on [SHARCNET's Using R and MPI](https://web.archive.org/web/20190107091729/https://www.sharcnet.ca/help/index.php/Using_R_and_MPI).
 
 ## Using your own R packages
 

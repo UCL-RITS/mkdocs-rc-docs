@@ -357,7 +357,7 @@ You can get other information: `diary(job)` will give you the job diary, and `lo
 
 #### Further reading
 
-There is a lot more information about using the MATLAB Distributed Computing Server in the MATLAB manual: [Parallel Computing Toolbox User’s Guide](https://uk.mathworks.com/help/distcomp/index.html).
+There is a lot more information about using the MATLAB Distributed Computing Server in the MATLAB manual: [Parallel Computing Toolbox User’s Guide](https://uk.mathworks.com/help/parallel-computing/index.html).
 
 
 ## Submitting MATLAB jobs from your workstation/laptop
@@ -423,7 +423,7 @@ c = parcluster ('myriad_R2021a');
 ```
 
 
-3) You can now create and submit jobs in a similar way to that shown in the MPS examples above starting from step 4 in the [simple MPS job example](#example-a-simple-dcs-job) or step 2 in the [MPS job with multiple input files example](#example-a-dcs-job-with-more-than-one-input-file).
+3) You can now create and submit jobs in a similar way to that shown in the MPS examples above starting from step 4 in the [simple MPS job example](#example-a-simple-mps-job) or step 2 in the [MPS job with multiple input files example](#example-a-mps-job-with-more-than-one-input-file).
 
 
 ### Viewing your results
@@ -472,7 +472,7 @@ There will be a lot of output. Look for lines related to errors happening in you
 
 ## Running MATLAB on GPUs
 
-This uses MATLAB's [Mandelbrot Set GPU example](https://uk.mathworks.com/help/distcomp/examples/illustrating-three-approaches-to-gpu-computing-the-mandelbrot-set.html).
+This uses MATLAB's [Mandelbrot Set GPU example](https://uk.mathworks.com/help/parallel-computing/illustrating-three-approaches-to-gpu-computing-the-mandelbrot-set.html).
 
 ```
 #!/bin/bash -l

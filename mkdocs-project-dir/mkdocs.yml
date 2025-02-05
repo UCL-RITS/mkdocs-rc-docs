@@ -74,7 +74,7 @@ theme:
 # pymdownx.keys: this adds ++key++ syntax for making things formatted like buttons for keys to press
 #
 # attr_list: this lets you specify html classes on elements. in particular we use it to make links
-#            look like buttons occasionally
+#            look like buttons occasionally, and to manually add linkable IDs to the glossary
 markdown_extensions:
   - admonition
   - codehilite:
@@ -96,13 +96,35 @@ markdown_extensions:
 # we have to add it here
 plugins:
   - search
-  - awesome-pages
-# https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
-  - htmlproofer:
+  - awesome-pages # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
+  - htmlproofer:  # https://github.com/manuzhang/mkdocs-htmlproofer-plugin
       enabled: !ENV [DOCS_ENABLE_HTMLPROOFER, True]
       validate_external_urls: true
       raise_error: !ENV [DOCS_FAIL_ON_BAD_LINK, False]
       # ^-- ideally we would change the default here once all the initial problems have been fixed
+      raise_error_after_finish: true
+      raise_error_excludes:
+        500:  # server error
+          - "https://software.broadinstitute.org/cancer/cga/mutect" # this server seems actually broken, as of 2025-02-04. Check again if you see this
+        504:  # gateway timeout
+          - "https://jupyter.data-science.rc.ucl.ac.uk/" # These are only accessible from inside UCL's network
+          - "https://rstudio.data-science.rc.ucl.ac.uk/"
+          - "https://econ-myriad.rc.ucl.ac.uk/"
+          - "https://ood.myriad.rc.ucl.ac.uk/"
+        404:  # not found
+          - "https://www.gromacs.org/*"
+          - "https://wiki.ucl.ac.uk/*" # temporary, remove once you're ready to dig up all these files again
+        "-1": # too many redirects, or connection timeout
+          - "https://swdb.ucl.ac.uk/*"
+        403:
+          - "https://uk.mathworks.com/help/parallel-computing/*" # these are forbidden by automated clients, I assume to hinder scraping. They work fine in-browser
+      ignore_urls:
+        - "https://moodle.ucl.ac.uk/mod/page/view.php*" # these require logging in and so will never be accessed correctly
+        - "https://moodle.ucl.ac.uk/course/view.php*" # these require logging in and so will never be accessed correctly
+        - "../Installed_Software_Lists/*" # These are generated at deployment time and will not be available in local builds
+      #warn_on_ignored_urls: true
+      ignore_pages:
+        #  - "Supplementary/Glossary.md" # temporary, remove once you're ready to make the Glossary have anchors
 
 
 # Customization

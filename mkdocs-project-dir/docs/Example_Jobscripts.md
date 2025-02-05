@@ -26,9 +26,8 @@ Please be aware that some clusters are diskless (eg Kathleen) and have no `$TMPD
 for use - in those you must remove the request for `tmpfs` in your script. Check the 
 cluster-specific pages.
 
-Note that there is also the option of using the `Local2Scratch` process 
-([see below](#Example Serial Job Using Local2Scratch)), which takes place *after* the
-job has finished, in the clean-up step. This gives you the option of always
+Note that there is also the option of using [the `Local2Scratch` process](#example-array-job-using-local2scratch), 
+which takes place *after* the job has finished, in the clean-up step. This gives you the option of always
 getting the contents of `$TMPDIR` back, at the cost of possibly getting incomplete
 files and not having any control over where the files go.
 

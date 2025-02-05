@@ -399,7 +399,7 @@ too. Add `-Duseshrplib` to your build flags.
 ## R
 
 There are instructions on installing and using local R packages in
-[Using your own R packages](../Software_Guides/R.md#using_your_own_r_packages).
+[Using your own R packages](../Software_Guides/R.md#using-your-own-r-packages).
 
 ## Compiling with MPI
 

@@ -59,7 +59,7 @@ use it. If you aren't sure what keys your agent can see, running
 Have a look at [Key-Based SSH Logins With PuTTY](https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/#create-new-public-and-private-keys) which has
 step-by-step instructions. You can choose whether to use Pageant or not
 to manage your key. You can again pick RSA, ED25519, ECDSA etc **but do not
-pick SSH-1** as that is a very old and insecure key type. As above, DSA is no 
+pick SSH-1** as that is an old and insecure key type. As above, DSA is no 
 longer accepted. The key must be at least 2048-bit.
 
 If you are using Windows 10, then you probably have OpenSSH installed and could instead run ssh-keygen in a terminal per the Linux instructions and use the ssh command to log in instead of PuTTY.
@@ -107,7 +107,7 @@ Jobscripts must begin `#!/bin/bash -l` in order to run as a login shell
  and get your login environment and modules.
 
 A job on Michael must also specify what type of job it is (Gold, Free,
-Test) and the project it is being submitted for. (See [Budgets and allocations](#Budgets_and_allocations) below).
+Test) and the project it is being submitted for. (See [Budgets and allocations](#budgets-and-allocations) below).
 
 ### Memory requests
 
@@ -137,8 +137,8 @@ help you find information about your jobs after they have run.
     given job.
 
 These utilities live in GitHub at
-<https://github.com/UCL-RITS/go-clustertools> and
-<https://github.com/UCL-RITS/rcps-cluster-scripts>
+<https://github.com/UCL-ARC/go-clustertools> and
+<https://github.com/UCL-ARC/rcps-cluster-scripts>
 
 ## Software
 
@@ -159,8 +159,8 @@ project.
 ### Requesting software installs
 
 To request software installs, email us at the [support address
-below](#Support) or open an issue on our
-[GitHub](https://github.com/UCL-RITS/rcps-buildscripts/issues). You can
+below](#support) or open an issue on our
+[GitHub](https://github.com/UCL-ARC/rcps-buildscripts/issues). You can
 see what software has already been requested in the Github issues and
 can add a comment if you're also interested in something already
 requested.
@@ -187,7 +187,7 @@ check your groups with the `groups` command.
 
 Please let us know your username when you ask to be added to a group.
 
-  - **CASTEP**: You/your group leader need to have [signed up for a CASTEP license](http://www.castep.org/CASTEP/GettingCASTEP).
+  - **CASTEP**: You/your group leader need to have [signed up for a CASTEP license](https://www.castep.org/get_castep).
     Send us an acceptance email, or we can ask them to verify you have a
     license. You will then be added to the reserved application group
     `lgcastep`. If you are a member of UKCP you are already covered by a
@@ -211,7 +211,7 @@ Please let us know your username when you ask to be added to a group.
     add you. We will add you to the `legvasp5` or `legvasp6` reserved 
     application groups depending on which versions you are licensed for. 
     You may also install your own copy in your home, and we provide a simple
-    [build script on Github](https://github.com/UCL-RITS/rcps-buildscripts/blob/master/vasp_individual_install)
+    [build script on Github](https://github.com/UCL-ARC/rcps-buildscripts/blob/master/vasp_individual_install)
     (tested with VASP 5.4.4, no patches). You need to download the VASP
     source code and then you can run the script following the
     instructions at the top.
@@ -355,8 +355,6 @@ not directly map to particular job types.
 
 If your job must run within a single CU, you can request the parallel environment as `-pe wss` instead of `-pe mpi` (`wss` standing for 'wants single switch'). This will increase your queue times. It is suggested you only do this for benchmarking or if performance is being greatly affected by running in the superqueue.
 
-[ back to top](#top "wikilink")
-
 
 ## Disk quotas
 
@@ -371,9 +369,6 @@ You have per-user quotas for home and Scratch.
 If you go over quota, you will no longer be able to create new files and your jobs will fail as they cannot write.
 
 Quota increases may be granted without further approval, depending on size and how full the filesystem is. Otherwise they may need to go to the Michael User Group for approval.
-
-[ back to top](#top "wikilink")
-
 
 ## Budgets and allocations
 

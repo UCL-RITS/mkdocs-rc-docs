@@ -249,7 +249,7 @@ Unloading mpi/intel/2018/update3/intel
 
 ### Requesting software installs
 
-To request software installs, email us at the [support address below](#Support) or open an issue on our
+To request software installs, email us at the [support address below](#support) or open an issue on our
 [GitHub](https://github.com/UCL-RITS/rcps-buildscripts/issues). You can
 see what software has already been requested in the Github issues and
 can add a comment if you're also interested in something already
@@ -289,7 +289,7 @@ Please let us know your username when you ask to be added to a group.
     along with confirmation from the group leader that you should be in
     their group. You will be added to the `legcryst` group.
   - **DL\_POLY**: has individual licenses for specific versions.
-    [Sign up at DL\_POLY's website](http://www.scd.stfc.ac.uk//research/app/ccg/software/DL_POLY/40526.aspx)
+    [Sign up at DL\_POLY's website](https://www.ccp5.ac.uk/dl_poly/)
     and send us the acceptance email they give you. We will add you to
     the appropriate version's reserved application group, eg `lgdlp408`.
   - **Gaussian**: not currently accessible for non-UCL institutions. UCL
@@ -303,7 +303,7 @@ Please let us know your username when you ask to be added to a group.
     add you. We will add you to the `legvasp5` or `legvasp6` reserved 
     application groups depending on which versions you are licensed for. 
     You may also install your own copy in your home, and we provide a simple
-    [build script on Github](https://github.com/UCL-RITS/rcps-buildscripts/blob/master/vasp_individual_install)
+    [build script on Github](https://github.com/UCL-ARC/rcps-buildscripts/blob/master/vasp_individual_install)
     (tested with VASP 5.4.4, no patches). You need to download the VASP
     source code and then you can run the script following the
     instructions at the top.
@@ -327,8 +327,8 @@ facilities.
 | Free GPU fast interactive | 64    | 8    | 6hrs          |
 | HBM CPU job, any          | 2048  | 0    | 48hrs         |
 
-CPU jobs or [GPU jobs](#GPU_nodes) can be run on Young, and there are 
-different [nodes](#Node_types) dedicated for each.
+CPU jobs or [GPU jobs](#gpu-nodes) can be run on Young, and there are 
+different [nodes](#node-types) dedicated for each.
 
 These are numbers of physical cores: multiply by two for virtual cores 
 with [hyperthreads](#hyperthreading) on the CPU nodes.
@@ -359,7 +359,6 @@ long waits if every CU is half full.
 
 If your job must run within a single CU, you can request the parallel environment as `-pe wss` instead of `-pe mpi` (`wss` standing for 'wants single switch'). This will increase your queue times. It is suggested you only do this for benchmarking or if performance is being greatly affected by running in the superqueue.
 
-[ back to top](#top "wikilink")
 
 ## Node types
 
@@ -524,7 +523,6 @@ If you go over quota, you will no longer be able to create new files and your jo
 Quota increases may be granted without further approval, depending on size and how full the 
 filesystem is. Otherwise they may need to go to the MMM Hub User Group for approval.
 
-[ back to top](#top "wikilink")
 
 
 ## Budgets and allocations

@@ -23,7 +23,7 @@ Tier 2 services: Contact your point of contact.
 
 ## How do I connect?
 
-All connections are via SSH, and you use your UCL credentials to log in (external users should use the `mmmXXXX` account with the SSH key they have provided to their point of contact). UCL services can only be connected to by users inside the UCL network which may mean using the institutional VPN or "bouncing" off another UCL machine when [accessing them from outside the UCL network](howto.md#Logging-in-from-outside-the-UCL-firewall).  The Tier 2 services (Michael and Young) are externally accessible.
+All connections are via SSH, and you use your UCL credentials to log in (external users should use the `mmmXXXX` account with the SSH key they have provided to their point of contact). UCL services can only be connected to by users inside the UCL network which may mean using the institutional VPN or "bouncing" off another UCL machine when [accessing them from outside the UCL network](howto.md#logging-in-from-outside-the-ucl-firewall). The Tier 2 services (Michael and Young) are externally accessible.
 
 ### Login hosts
 
@@ -40,11 +40,11 @@ Please be aware that login nodes are shared resources, so users should not run m
 
 ## Software stack
 
-All UCL services use the same software stack based upon RHEL 7.x with a standardised set of packages, exposed to the user through environment modules (the `module` command).  By default this has a set of useful tools loaded, as well as the Intel compilers and MPI but users are free to change their own environment.
+All UCL services use the same software stack based upon RHEL 7.x with a standardised set of packages, exposed to the user through environment modules (the `module` command). By default this has a set of useful tools loaded, as well as the Intel compilers and MPI but users are free to change their own environment.
 
 ## Batch System
 
-UCL services use Grid Engine to manage jobs.  This install is somewhat customised and so scripts for non-UCL services *may not work*.
+UCL services use Grid Engine to manage jobs. This install is somewhat customised and so scripts for non-UCL services *may not work*.
 
 We recommend that when launching MPI jobs you use our `gerun` parallel launcher instead of `mpirun` as it inherits settings from the job and launches the appropriate number of processes with the MPI implementation you have chosen. It abstracts away a lot of the complexity between different version of MPI.
 
@@ -88,7 +88,7 @@ For threads:
 #$ -pe smp <number of cores>
 ```
 
-For single core jobs you don't need to request a number of cores.  For hybrid codes use the MPI example and set `OMP_NUM_THREADS` to control the number of threads per node.  `gerun` will launch the right number of processes in the right place if you use it.
+For single core jobs you don't need to request a number of cores. For hybrid codes use the MPI example and set `OMP_NUM_THREADS` to control the number of threads per node. `gerun` will launch the right number of processes in the right place if you use it.
 
 ##### Amount of RAM per core
 ```bash
@@ -136,7 +136,7 @@ If you have a script with a threads request and want to override it on the comma
 it back to normal, the usual case is `-l threads=2`. (Setting threads to 0 does not disable
 hyperthreading!)
 
-With Hyperthreads enabled you need to request twice as many cores and then control threads vs MPI ranks with `OMP_NUM_THREADS`.  E.g. 
+With Hyperthreads enabled you need to request twice as many cores and then control threads vs MPI ranks with `OMP_NUM_THREADS`. E.g. 
 
 ```bash
 #$ -pe mpi 160
@@ -170,4 +170,4 @@ Job scripts can be submitted with `qsub`, jobs can be monitored with `qstat` and
 
 ### Interactive jobs
 
-If you need to run an interactive job, possibly with X forwarding, you can do so using `qrsh`.  Please see our page on [interactive jobs](Interactive_Jobs.md) for more details.
+If you need to run an interactive job, possibly with X forwarding, you can do so using `qrsh`. Please see our page on [interactive jobs](Interactive_Jobs.md) for more details.

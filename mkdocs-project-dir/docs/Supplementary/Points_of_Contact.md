@@ -215,7 +215,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAlLhFLr/4LGC3cM1xgRZVxfQ7JgoSvnVXly0K7MNufZb
 Other types of keys (ed25519 etc) will say what they are in the first line,
 and you should change the `ssh-rsa` appropriately. The guide linked at
 [Creating an ssh key in
-Windows](../Clusters/Young.md#Creating_an_ssh_key_in_Windows)
+Windows](../Clusters/Young.md#creating-an-ssh-key-in-windows)
 also shows where users can get the second format out of PuTTY.
 
 #### Add new users in bulk from a CSV file
@@ -245,7 +245,7 @@ the `--noconfirm` option.
 
 The project you are adding the user to must already exist.
 
-The SSH key must be formatted as shown in [SSH key formats](#ssh_key_formats).
+The SSH key must be formatted as shown in [SSH key formats](#ssh-key-formats).
 
 If you check your CSV file on the cluster with `cat -v` and it shows that it is 
 beginning with `M-oM-;M-?` and ending with `^M` you probably need to run 
