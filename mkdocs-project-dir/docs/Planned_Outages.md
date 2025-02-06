@@ -21,12 +21,13 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
-28 January 2025 | Young, Michael | Planned | /old_lustre will be unmounted. If you still have files in your old home and scratch directories, they will no longer be accessible after this time.
+11 February 2025 | Myriad | Planned | Maintenance day: nodes being drained for a system config change. Also a reboot of ACFS switches will cause the ACFS mount on Myriad to hang for a period during the day.
 
 ## Previous Outages
 
 Date                | Service | Status | Reason 
 --------------------|---------|--------|--------
+28 January 2025 | Young, Michael | Completed | /old_lustre will be unmounted. If you still have files in your old home and scratch directories, they will no longer be accessible after this time.
 16 December 2024 | Kathleen | Completed | /old_lustre will be unmounted at or shortly after 9am. (Moved from 11 Dec). If you still have files in your old home and scratch directories, they will no longer be accessible after this time.
 4-8 November 2024 | Myriad, Young | Completed | New drivers being deployed on the GPU nodes in a rolling fashion. No outage of all nodes at once.
 8 October 2024 | Kathleen | Completed | There will be a brief ACFS outage while we switch the network gateway from one util node to another. If all goes well it will recover quickly, but reading and writing to the ACFS will hang while it is in progress. We will do this on 8 Oct maintenance day.
