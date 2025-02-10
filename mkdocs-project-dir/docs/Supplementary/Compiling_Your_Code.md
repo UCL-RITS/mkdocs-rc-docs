@@ -253,9 +253,9 @@ pip3 install --user <python3pkg>
 
 These will install into `.python2local` or `.python3local` directories in your home directory, respectively.
 
-To see what is already installed, the [Python-shared list](https://github.com/UCL-RITS/rcps-buildscripts/blob/master/lists/python-shared.list)
-shows what is installed for both Python2 and 3, while the [Python2 list](https://github.com/UCL-RITS/rcps-buildscripts/blob/master/lists/python-2.list)
-and [Python3 list](https://github.com/UCL-RITS/rcps-buildscripts/blob/master/lists/python-3.list)
+To see what is already installed, the [Python-shared list](https://github.com/UCL-ARC/rcps-buildscripts/blob/master/lists/python-shared.list)
+shows what is installed for both Python2 and 3, while the [Python2 list](https://github.com/UCL-ARC/rcps-buildscripts/blob/master/lists/python-2.list)
+and [Python3 list](https://github.com/UCL-ARC/rcps-buildscripts/blob/master/lists/python-3.list)
 show what is only installed for one or the other. (There may also be
 prereqs that aren't listed explicitly - pip will tell you if something
 is already installed as long as you have the recommended module bundle
