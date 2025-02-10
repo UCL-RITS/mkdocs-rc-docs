@@ -54,5 +54,5 @@ We run some instances of these courses between specified dates with scheduled
 online tutorial sessions or they can be done self-service at any time.
 
 Please see our
-[Research IT Training page](https://www.ucl.ac.uk/advanced-research-computing/education/training)
+[ARC Training page](https://www.ucl.ac.uk/advanced-research-computing/education/training)
 for details of when the taught versions of these courses are run.
