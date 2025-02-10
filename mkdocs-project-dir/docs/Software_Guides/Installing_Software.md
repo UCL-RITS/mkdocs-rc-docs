@@ -18,7 +18,7 @@ in your ecosystem.
 your home space? We can provide some assistance here if you tell us what problems you are
 encountering.
 
-The requests will be added to the issues in our [buildscripts repository](https://github.com/UCL-RITS/rcps-buildscripts). The buildscripts themselves are there too, so you can see how we 
+The requests will be added to the issues in our [buildscripts repository](https://github.com/UCL-ARC/rcps-buildscripts). The buildscripts themselves are there too, so you can see how we 
 built and installed our central software stack.
 
 You can install software yourself in your space on the cluster. Below are some tips for 
