@@ -171,8 +171,8 @@ help you find information about your jobs after they have run.
     given job.
 
 These utilities live in GitHub at
-<https://github.com/UCL-RITS/go-clustertools> and
-<https://github.com/UCL-RITS/rcps-cluster-scripts>
+<https://github.com/UCL-ARC/go-clustertools> and
+<https://github.com/UCL-ARC/rcps-cluster-scripts>
 
 
 ### Known problems
@@ -250,7 +250,7 @@ Unloading mpi/intel/2018/update3/intel
 ### Requesting software installs
 
 To request software installs, email us at the [support address below](#support) or open an issue on our
-[GitHub](https://github.com/UCL-RITS/rcps-buildscripts/issues). You can
+[GitHub](https://github.com/UCL-ARC/rcps-buildscripts/issues). You can
 see what software has already been requested in the Github issues and
 can add a comment if you're also interested in something already
 requested.
