@@ -157,47 +157,38 @@ Kathleen nodes are diskless (have no local hard drives) - there is no `$TMPDIR` 
 
 If you need temporary space, you should use somewhere in your Scratch.
 
-## Loading and unloading modules
 
-Kathleen has a newer version of `modulecmd` which tries to manage module dependencies automatically by loading or unloading prerequisites for you whenever possible.
+## Test software stack
 
-If you get an error like this:
+There is a test version of our next software stack available now on Kathleen. This has a small number of packages at
+present. What is in it and the names of modules are liable to change over time, so please do not rely on it for
+production work. Instead, please test whether the applications you intend to use work the way you would expect.
 
-```
-[uccaxxx@login01.kathleen ~]$ module unload compilers mpi
-Unloading compilers/intel/2018/update3
-  ERROR: compilers/intel/2018/update3 cannot be unloaded due to a prereq.
-    HINT: Might try "module unload default-modules/2018" first.
+This stack is built using [Spack](https://spack.readthedocs.io/en/latest/).
 
-Unloading mpi/intel/2018/update3/intel
-  ERROR: mpi/intel/2018/update3/intel cannot be unloaded due to a prereq.
-    HINT: Might try "module unload default-modules/2018" first.
-```
-
-You can use the `-f` option to force the module change. It will carry it out and warn you about modules it thinks are dependent.
+To use:
 
 ```
-[uccaxxx@login01.kathleen ~]$ module unload -f compilers mpi
-Unloading compilers/intel/2018/update3
-  WARNING: Dependent default-modules/2018 is loaded
-
-Unloading mpi/intel/2018/update3/intel
-  WARNING: Dependent default-modules/2018 is loaded
+module load beta-modules
+module load test-stack/2025-02
 ```
 
-Otherwise you will need to unload `default-modules/2018` to swap compiler and MPI module, but that will leave you without `gerun` in your path. You can then do either of these things:
+After that, when you type "module avail" there will be several sections of additional modules at the top of the
+output.
+
+Not everything contained in the stack is visible by default - we have made the applications that we expect people 
+to use directly visible and lots of their dependencies are hidden. These will show up if you search for that package 
+specifically, for example:
 
 ```
-# load everything that was in default-modules except the compiler and mpi
-module unload default-modules/2018
-module load rcps-core/1.0.0
-module load whatever
+module avail libpng
+-------------------------- /shared/ucl/apps/spack/0.23/deploy/2025-02/modules/applications/linux-rhel7-cascadelake --------------------------
+libpng/1.6.39/gcc-12.3.0-iopfrab  
 ```
-or
-```
-# just reload gerun
-module unload default-modules/2018
-module load gerun
-module load whatever
-```
+
+This module does not show up in the full list but is still installed. It has a hash at the end of its name `-iopfrab`
+and this will change over time with different builds.
+
+If you find you are needing one of these modules often, let us know and we'll make it one that is not hidden in the 
+next release of this stack.
 
